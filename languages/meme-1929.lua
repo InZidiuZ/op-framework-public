@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 34 (do not change)
+-- AUTO LOCALES: 35 (do not change)
 
 OP.Global.Locales.Languages["meme-1929"] = {
 	-- configuration settings for language
@@ -899,7 +899,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		staff_pm_command_parameter_server_id_help = "The play'r's serve'r ID thee art trying to message.",
 		staff_pm_command_parameter_message = "message",
 		staff_pm_command_parameter_message_help = "The message thee would liketh to send.",
-		staff_pm_command_substitutes = "staffpm",
+		staff_pm_command_substitutes = "undefined",
 
 		important_staff_pm_command = "important_staff_pm",
 		important_staff_pm_command_help = "Send an important message to a player as a staff member.",
@@ -907,7 +907,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		important_staff_pm_command_parameter_server_id_help = "The player's server ID ye be tryin' to message.",
 		important_staff_pm_command_parameter_message = "message",
 		important_staff_pm_command_parameter_message_help = "The important message ye would like to send.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm",
+		important_staff_pm_command_substitutes = "undefined",
 
 		reply_pm_command = "undefined",
 		reply_pm_command_help = "undefined",
@@ -1304,7 +1304,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		register_weapon_command_substitutes = "",
 
 		advanced_metagame_command = "advanced_metagame",
-		advanced_metagame_command_help = "A command for elite admins to refine their metagaming.",
+		advanced_metagame_command_help = "undefined",
+		advanced_metagame_command_parameter_use_characters = "undefined",
+		advanced_metagame_command_parameter_use_characters_help = "undefined",
 		advanced_metagame_command_substitutes = "am",
 
 		list_weapon_attachments_command = "list_weapon_attachments",
@@ -1479,6 +1481,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		leaderboard_command_parameter_total_playtime_help = "undefined",
 		leaderboard_command_substitutes = "",
 
+		economy_leaderboard_command = "undefined",
+		economy_leaderboard_command_help = "undefined",
+		economy_leaderboard_command_substitutes = "undefined",
+
 		package_command = "package",
 		package_command_help = "Examine and update your package.",
 		package_command_substitutes = "refresh_package",
@@ -1589,12 +1595,16 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Toggle the Battle Royale feature.",
+		battle_royale_toggle_command_parameter_max_teammates = "undefined",
+		battle_royale_toggle_command_parameter_max_teammates_help = "undefined",
 		battle_royale_toggle_command_substitutes = "br_toggle",
 
 		battle_royale_start_command = "battle_royale_start",
 		battle_royale_start_command_help = "Commence a Battle Royale tournament.",
 		battle_royale_start_command_parameter_no_vehicles = "no vehicles",
 		battle_royale_start_command_parameter_no_vehicles_help = "Create a tournament with no vehicles.",
+		battle_royale_start_command_parameter_new_inventories = "undefined",
+		battle_royale_start_command_parameter_new_inventories_help = "undefined",
 		battle_royale_start_command_substitutes = "br_start",
 
 		battle_royale_invite_command = "battle_royale_invite",
@@ -1810,7 +1820,12 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		-- game/container_storage
 		containers_command = "undefined",
 		containers_command_help = "undefined",
-		containers_command_substitutes = "",
+		containers_command_substitutes = "undefined",
+
+		-- game/containers
+		containers_debug_command = "undefined",
+		containers_debug_command_help = "undefined",
+		containers_debug_command_substitutes = "",
 
 		-- game/crafting
 		crafting_debug_command = "crafting_debug",
@@ -2121,6 +2136,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		random_position_command = "undefined",
 		random_position_command_help = "undefined",
+		random_position_command_parameter_server_id = "undefined",
+		random_position_command_parameter_server_id_help = "undefined",
 		random_position_command_substitutes = "undefined",
 
 		crash_ui_command = "undefined",
@@ -2153,7 +2170,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		-- game/development
 		toggle_developer_ambience_command = "undefined",
 		toggle_developer_ambience_command_help = "undefined",
-		toggle_developer_ambience_command_substitutes = "",
+		toggle_developer_ambience_command_substitutes = "undefined",
 
 		-- game/dna_evidence
 		take_dna_sample_command = "take_dna_sample",
@@ -2714,6 +2731,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		minecraft_wipe_command_parameter_radius_help = "undefined",
 		minecraft_wipe_command_substitutes = "",
 
+		-- game/minigames
+		skip_minigames_command = "undefined",
+		skip_minigames_command_help = "undefined",
+		skip_minigames_command_substitutes = "",
+
 		-- game/mining
 		mining_debug_command = "mining_debug",
 		mining_debug_command_help = "Toggle the mining debugging interface.",
@@ -2841,6 +2863,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		model_view_command_parameter_model_help = "undefined",
 		model_view_command_parameter_no_blocker = "undefined",
 		model_view_command_parameter_no_blocker_help = "undefined",
+		model_view_command_parameter_clamp = "undefined",
+		model_view_command_parameter_clamp_help = "undefined",
 		model_view_command_parameter_components = "undefined",
 		model_view_command_parameter_components_help = "undefined",
 		model_view_command_substitutes = "undefined",
@@ -3026,6 +3050,12 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		ped_remove_command = "remove_pedestrians",
 		ped_remove_command_help = "Removes all the pedestrians you've spawned.",
 		ped_remove_command_substitutes = "",
+
+		ped_attack_command = "undefined",
+		ped_attack_command_help = "undefined",
+		ped_attack_command_parameter_target = "undefined",
+		ped_attack_command_parameter_target_help = "undefined",
+		ped_attack_command_substitutes = "",
 
 		list_ped_emotes_command = "list_pedestrian_emotes",
 		list_ped_emotes_command_help = "Lists all the available emotes for pedestrians.",
@@ -3461,6 +3491,17 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		tablet_command = "tablet",
 		tablet_command_help = "Opens the tablet UI (if you have a tablet).", -- "Open the tablet user interface (if you have one).",
 		tablet_command_substitutes = "",
+
+		-- game/taxes
+		tax_collection_command = "undefined",
+		tax_collection_command_help = "undefined",
+		tax_collection_command_parameter_percentage = "undefined",
+		tax_collection_command_parameter_percentage_help = "undefined",
+		tax_collection_command_substitutes = "",
+
+		taxes_command = "undefined",
+		taxes_command_help = "undefined",
+		taxes_command_substitutes = "",
 
 		-- game/teleporting
 		tp_back_command = "undefined",
@@ -3965,6 +4006,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		set_fuel_command_parameter_server_id_help = "undefined",
 		set_fuel_command_substitutes = "petrol",
 
+		fuel_debug_command = "undefined",
+		fuel_debug_command_help = "undefined",
+		fuel_debug_command_substitutes = "",
+
 		-- vehicles/garage_access
 		manage_garage_command = "undefined",
 		manage_garage_command_help = "undefined",
@@ -4019,6 +4064,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		pickup_keys_command = "pickup_keys",
 		pickup_keys_command_help = "Make ye pickup the keys o' th' nearest vessel.",
 		pickup_keys_command_substitutes = "",
+
+		grab_keys_command = "undefined",
+		grab_keys_command_help = "undefined",
+		grab_keys_command_substitutes = "",
 
 		keys_command = "undefined",
 		keys_command_help = "undefined",
@@ -4086,6 +4135,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		mute_sirens_command = "silence_sirens",
 		mute_sirens_command_help = "Silences all sirens and horns.",
 		mute_sirens_command_substitutes = "",
+
+		sirens_debug_command = "undefined",
+		sirens_debug_command_help = "undefined",
+		sirens_debug_command_substitutes = "",
 
 		-- vehicles/trailers
 		toggle_trailer_command = "undefined",
@@ -4370,6 +4423,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		player_playtime = "${playerName} (Rank ${position})\nTotal Time Playing: ${totalPlaytime}\nSession Time Playing: ${sessionPlaytime}",
 		leaderboard = "Leader Board",
 		leaderboard_total = "undefined",
+		leaderboard_economy = "undefined",
 		your_position = "Your Position",
 		leaderboard_loading = "undefined",
 		logs_user_reject_connection_title = "Connection Rejected",
@@ -4491,7 +4545,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		fake_disconnect_feature = "undefined",
 		brighter_nights_feature = "undefined",
 		ridealong_feature = "undefined",
-		broadcast_all_feature = "undefined"
+		broadcast_all_feature = "undefined",
+		skip_minigames_feature = "undefined"
 	},
 
 	admin_menu = {
@@ -4568,7 +4623,45 @@ OP.Global.Locales.Languages["meme-1929"] = {
 	},
 
 	animals = {
-		invalid_sound = "undefined"
+		invalid_sound = "undefined",
+		not_enough_space = "undefined",
+
+		male = "undefined",
+		female = "undefined",
+
+		description_cat_unnamed = "undefined",
+		description_cat_named = "undefined",
+
+		description_dog_unnamed = "undefined",
+		description_dog_named = "undefined",
+
+		description_rabbit_unnamed = "undefined",
+		description_rabbit_named = "undefined",
+
+		description_hen_unnamed = "undefined",
+		description_hen_named = "undefined",
+
+		description_rat_unnamed = "undefined",
+		description_rat_named = "undefined",
+
+		pick_up_named = "undefined",
+		pick_up_cat = "undefined",
+		pick_up_dog = "undefined",
+		pick_up_hen = "undefined",
+		pick_up_rabbit = "undefined",
+		pick_up_rat = "undefined",
+
+		failed_pickup_cat = "undefined",
+		failed_pickup_dog = "undefined",
+		failed_pickup_hen = "undefined",
+		failed_pickup_rabbit = "undefined",
+		failed_pickup_rat = "undefined",
+
+		failed_place_cat = "undefined",
+		failed_place_dog = "undefined",
+		failed_place_hen = "undefined",
+		failed_place_rabbit = "undefined",
+		failed_place_rat = "undefined"
 	},
 
 	arcade = {
@@ -4691,8 +4784,28 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		deposit = "Deposit",
 		balance = "Balance",
 		transfer = "Transfer",
+		deposit_coins = "undefined",
 		savings_bonds = "undefined",
 		back = "Back",
+
+		condition_pristine = "undefined",
+		condition_mint = "undefined",
+		condition_slight_worn = "undefined",
+		condition_worn = "undefined",
+		condition_heavy_worn = "undefined",
+		condition_corroded = "undefined",
+		condition_damaged = "undefined",
+		condition_unrecognizable = "undefined",
+
+		mint_p = "undefined",
+		mint_d = "undefined",
+		mint_s = "undefined",
+		mint_w = "undefined",
+		mint_cc = "undefined",
+		mint_o = "undefined",
+		mint_none = "undefined",
+
+		coin_metadata = "undefined",
 
 		amount = "Amount",
 		target = "Target",
@@ -4706,6 +4819,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		failed_withdraw = "Failed to draw money out",
 		failed_transfer = "Failed to hand over money",
 		failed_deposit_bonds = "undefined",
+		failed_deposit_coins = "undefined",
 
 		processing = "Processing...",
 		counting_bills = "Counting Banknotes...",
@@ -4713,22 +4827,29 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		something_went_wrong = "Something went wrong.",
 		error_not_online = "Your target is absent.",
 		error_not_enough_money = "Insufficient funds.",
-		deposit_amount_big = "ATM deposits are limited to $4,000.",
-		withdraw_amount_big = "ATM withdrawals are limited to $6,000.",
+		deposit_amount_big = "undefined",
+		withdraw_amount_big = "undefined",
+		bond_fee_details = "undefined",
+		atm_fee_details = "undefined",
 
 		retrieving_card = "Retrieving Card",
 		atm_damaged = "This ATM is damaged.",
 
 		press_to_use = "Press ~g~${InteractionKey}~w~ to use the ATM.",
 		press_to_interact_bank = "Press ~g~${InteractionKey}~w~ to interact with the Bank.",
+		fee_label = "undefined",
+		no_fee_label = "undefined",
 
 		deposit_log_bank_title = "Bank Deposit",
 		deposit_log_atm_title = "ATM Deposit",
 		deposit_log = "${consoleName} deposited $${amount}.",
 
+		deposit_coins_log_title = "undefined",
+		deposit_coins_log = "undefined",
+
 		withdraw_log_bank_title = "Bank Withdrawal",
 		withdraw_log_atm_title = "Withdraw from ATM",
-		withdraw_log = "${consoleName} withdrew $$${amount}.",
+		withdraw_log = "undefined",
 		withdraw_log_bonds_title = "undefined",
 		withdraw_log_bonds = "undefined",
 
@@ -5599,12 +5720,14 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 	containers = {
 		drill_container = "undefined",
-		drilling_container = "undefined",
+		drill_warehouse = "undefined",
+		drilling_lock = "undefined",
 		failed_drill = "undefined",
 		drill_success = "undefined",
 
 		containers_due_soon = "undefined",
-		container_blip = "undefined"
+		container_blip = "undefined",
+		warehouse_blip = "undefined"
 	},
 
 	crafting = {
@@ -6211,6 +6334,29 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		crafted_bacon = "undefined",
 		failed_craft_bacon = "undefined",
 
+		make_mochi = "undefined",
+		press_to_make_mochi = "undefined",
+
+		mochi_mango_recipe = "undefined",
+		making_mochi_mango = "undefined",
+		made_mochi_mango = "undefined",
+		failed_make_mochi_mango = "undefined",
+
+		mochi_strawberry_recipe = "undefined",
+		making_mochi_strawberry = "undefined",
+		made_mochi_strawberry = "undefined",
+		failed_make_mochi_strawberry = "undefined",
+
+		mochi_green_tea_recipe = "undefined",
+		making_mochi_green_tea = "undefined",
+		made_mochi_green_tea = "undefined",
+		failed_make_mochi_green_tea = "undefined",
+
+		mochi_chocolate_recipe = "undefined",
+		making_mochi_chocolate = "undefined",
+		made_mochi_chocolate = "undefined",
+		failed_make_mochi_chocolate = "undefined",
+
 		cook_food = "undefined",
 		press_to_cook_food = "undefined",
 
@@ -6233,6 +6379,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		cooking_spicy_ramen = "undefined",
 		cooked_spicy_ramen = "undefined",
 		failed_cook_spicy_ramen = "undefined",
+
+		green_tea_recipe = "undefined",
+		brewing_green_tea = "undefined",
+		brewed_green_tea = "undefined",
+		failed_brew_green_tea = "undefined",
 
 		cut_ingridients = "undefined",
 		press_to_cut_ingridients = "undefined",
@@ -6385,6 +6536,30 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		baking_chocolate_cake = "undefined",
 		baked_chocolate_cake = "undefined",
 		failed_baking_chocolate_cake = "undefined",
+
+		make_coffee = "undefined",
+		press_to_make_coffee = "undefined",
+
+		bean_coffee_recipe = "undefined",
+		espresso_recipe = "undefined",
+		cappuccino_regular_recipe = "undefined",
+		cappuccino_almond_recipe = "undefined",
+		cappuccino_pigeon_recipe = "undefined",
+		iced_latte_regular_recipe = "undefined",
+		iced_latte_almond_recipe = "undefined",
+		iced_latte_pigeon_recipe = "undefined",
+
+		brewing_coffee = "undefined",
+		brewed_coffee = "undefined",
+		failed_brewing_coffee = "undefined",
+
+		hot_chocolate_regular_recipe = "undefined",
+		hot_chocolate_pigeon_recipe = "undefined",
+		hot_chocolate_almond_recipe = "undefined",
+
+		making_hot_chocolate = "undefined",
+		made_hot_chocolate = "undefined",
+		failed_make_hot_chocolate = "undefined",
 
 		no_required_items = "You don't have all the necessary items.",
 
@@ -6673,14 +6848,21 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 	container_storage = {
 		rent_container = "undefined",
+		rent_warehouse = "undefined",
 		renting_container = "undefined",
+		renting_warehouse = "undefined",
 		failed_rent_container = "undefined",
+		failed_rent_warehouse = "undefined",
 		rent_container_success = "undefined",
+		rent_warehouse_success = "undefined",
 		access_container = "undefined",
+		access_warehouse = "undefined",
 		container_id = "undefined",
+		warehouse_id = "undefined",
 
 		storage_containers = "undefined",
 		container = "undefined",
+		warehouse = "undefined",
 		loading = "undefined",
 		failed_remove_access = "undefined",
 		failed_add_access = "undefined",
@@ -6865,6 +7047,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		coords = "Location: ${coords}",
 		rotation = "Rotation: ${rotation}",
 		normal = "Surface: ${normal}",
+		surface_heading = "undefined",
 		velocity = "Speed: ${velocity}",
 		ground_material = "Ground Type: ${material}",
 		debug_print_f8 = "Debugging information has been printed in your F8 console.",
@@ -6878,6 +7061,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		copied_model_name = "undefined",
 		copied_entity_id = "undefined",
 		copied_hit_coords = "undefined",
+		copied_surface_heading = "undefined",
 
 		distance = "Distance: ${distance} metres.",
 		distance_first = "Initial location stored.",
@@ -6913,12 +7097,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		model_view_disabled = "Model view disabled.",
 		invalid_component = "Invalid component `${componentName}`.",
 
-		animation_currently_playing = "Currently playing an animation.",
 		invalid_or_missing_animation_dict = "Invalid or missing animation dictionary `${animationDict}`.",
-		missing_animation_name = "Invalid or missing animation name `${animationName}`.",
+		missing_animation_name = "undefined",
 		invalid_animation_flags = "Invalid animation flags.",
-		animation_played = "Playing `${animationName}` from `${animationDict}` (flags: ${flags}).",
-		no_flags = "n/a",
 
 		invalid_coordinates = "Invalid coordinates.",
 		added_coordinates_draw = "Added coordinates `x: ${x}, y: ${y}, z: ${z}` to the draw list with ID `${drawId}`.",
@@ -7703,6 +7884,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		fps_unit = "frames/s",
 		ping_unit = "milliseconds",
 		tps_unit = "undefined",
+		fps_1percent_unit = "undefined",
 
 		smart_warnings = "Warning: ${warnings}!",
 		dehydrated = "parched",
@@ -7990,7 +8172,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		prison_store = "Convict Store",
 		fruit_vendor = "Fruit Vendor",
 		fruit_market = "undefined",
-		food_market = "undefined",
+		super_market = "undefined",
 		island_store = "Island Market",
 		travel_agency = "Travel Agency",
 		island_bar = "Island Tavern",
@@ -8024,7 +8206,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		ems_badge_store = "EMS Badge Kiosk",
 		doj_badge_store = "DOJ Badge Kiosk",
 		state_store = "undefined",
-		pharmacy = "Medical Pharmacy",
+		pharmacy_store = "undefined",
 		chop_shop = "Auto wrecking yard",
 		courthouse = "County courthouse",
 		burger_shot = "Fast food restaurant",
@@ -8035,13 +8217,13 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		bean_machine_fridge = "undefined",
 		hunting_store = "Hunting supplies store",
 		fishing_store = "Fishing supplies store",
+		furniture_store = "undefined",
 		los_santos_golf_club = "Golf course",
 		arcade_bar = "Arcade and bar",
 		japanese_restaurant = "Japanese cuisine restaurant",
 		japanese_restaurant_kitchen = "Japanese Restaurant Kitchen",
 		pizza_restaurant = "undefined",
 		["945_studios"] = "945 Studios",
-		grain_mill = "Grain mill and supplies",
 		pd_prefix = "Police department",
 		ems_prefix = "Emergency medical services",
 		government_prefix = "Government building",
@@ -8105,6 +8287,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		underground_bar_counter = "undefined",
 		pizza_this_counter = "undefined",
 		yellow_jack_counter = "undefined",
+		bean_machine_counter = "undefined",
 
 		inventory_name_missing = "Missing inventory name parameter.",
 
@@ -8131,6 +8314,14 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		craft_combine = "Combine to make <i>${output}</i>",
 		combining = "Combining",
+
+		inspect = "undefined",
+		attachments = "undefined",
+		fill_paper_bag = "undefined",
+		rename = "undefined",
+
+		item_renamed = "undefined",
+		item_failed_rename = "undefined",
 
 		file_serial = "undefined",
 		filing_off_serial_number = "undefined",
@@ -8414,6 +8605,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		paper_bag = "Paper Sack",
 		paper_bag_description = "Perfect for carrying groceries, or perhaps someone's head, dead or alive.",
+		closed_paper_bag = "undefined",
+		closed_paper_bag_description = "undefined",
 		burger_shot_delivery = "Burger Shot Meal",
 		burger_shot_delivery_description = "A marvellous selection of all the meaty delights they serve.",
 		bean_machine_delivery = "Bean Machine Delivery",
@@ -8424,6 +8617,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		green_wonderland_delivery_description = "undefined",
 		pizza_this_delivery = "undefined",
 		pizza_this_delivery_description = "undefined",
+
+		lunch_box = "undefined",
+		lunch_box_description = "undefined",
 
 		empty_box = "undefined",
 		empty_box_description = "undefined",
@@ -8485,6 +8681,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		keys = "undefined",
 		keys_description = "undefined",
+		car_keys = "undefined",
+		car_keys_description = "undefined",
 
 		raw_diamond = "Raw Diamond",
 		raw_diamond_description = "undefined",
@@ -9061,6 +9259,34 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		plush_wasabi = "undefined",
 		plush_wasabi_description = "undefined",
 
+		cat_0 = "undefined",
+		cat_0_description = "undefined",
+		cat_1 = "undefined",
+		cat_1_description = "undefined",
+		cat_2 = "undefined",
+		cat_2_description = "undefined",
+
+		dog_0 = "undefined",
+		dog_0_description = "undefined",
+		dog_1 = "undefined",
+		dog_1_description = "undefined",
+		dog_2 = "undefined",
+		dog_2_description = "undefined",
+
+		hen_0 = "undefined",
+		hen_0_description = "undefined",
+		rat_0 = "undefined",
+		rat_0_description = "undefined",
+
+		rabbit_0 = "undefined",
+		rabbit_0_description = "undefined",
+		rabbit_1 = "undefined",
+		rabbit_1_description = "undefined",
+		rabbit_2 = "undefined",
+		rabbit_2_description = "undefined",
+		rabbit_3 = "undefined",
+		rabbit_3_description = "undefined",
+
 		boxing_gloves = "Boxin' Mitts",
 		boxing_gloves_description = "Turns you into a slugger, but you probably won't get a sequel...",
 		leash = "Leash",
@@ -9190,6 +9416,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		evidence_bag_empty_description = "Can you enhance that?",
 		evidence_bag = "Evidence Pouch",
 		evidence_bag_description = "Sealed evidence in a pouch for future use.",
+		evidence_box = "undefined",
+		evidence_box_description = "undefined",
 		fingerprint_evidence = "Fingerprint Evidence",
 		fingerprint_evidence_description = "Assisting you in capturing those criminal scoundrels.",
 		device_printout = "undefined",
@@ -9239,6 +9467,19 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		savings_bond_1000_description = "undefined",
 		savings_bond_2000 = "undefined",
 		savings_bond_2000_description = "undefined",
+
+		cent_1 = "undefined",
+		cent_1_description = "undefined",
+		cent_5 = "undefined",
+		cent_5_description = "undefined",
+		cent_10 = "undefined",
+		cent_10_description = "undefined",
+		cent_25 = "undefined",
+		cent_25_description = "undefined",
+		cent_50 = "undefined",
+		cent_50_description = "undefined",
+		coin_bag = "undefined",
+		coin_bag_description = "undefined",
 
 		weather_spell_snow = "Weather Charm (Snow)",
 		weather_spell_snow_description = "When you wield this item, thou shalt control thine land's weather, and call forth snow! It can be used once only, so use it judiciously. If thou triest to use two weather charms simultaneously, the second shalt simply tarry for its turn.",
@@ -9430,6 +9671,12 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		fishing_chair_description = "Crafted for comfort during long waits, this fishing chair combines sturdiness with practicality, featuring an integrated rod holder for those peaceful lakeside mornings. Can be positioned anywhere in the world.",
 		sleeping_bag = "undefined",
 		sleeping_bag_description = "Envelope yourself in the coziness of this sleeping bag, tailored for brisk nights beneath the night sky. Its compact structure makes it effortless to transport, offering comfort wherever you rest your head.",
+		red_pillow = "undefined",
+		red_pillow_description = "undefined",
+		spotlight = "undefined",
+		spotlight_description = "undefined",
+		tube_light = "undefined",
+		tube_light_description = "undefined",
 		yoga_mat = "Yoga Mat",
 		yoga_mat_description = "This portable yoga mat serves as your base for serenity and physical activity in outdoor settings. Unfurl it to discover your inner peace or loosen up after an energetic hike. Can be positioned anywhere in the world.",
 		cooler_box = "Cooler Box",
@@ -9466,6 +9713,12 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		spike_strips_large_description = "This one's for catching the big fish or when you need to cover more road. It's like rolling out the crimson carpet, except it's not for VIPs, and it punctures tires. Can be positioned anywhere in the globe.",
 		stop_sticks = "Stop Sticks",
 		stop_sticks_description = "Consider these as the indomitable object meeting the unconquerable force. Stop sticks don’t puncture tires, they bring vehicles to a stop immediately. Perfect for creating impromptu speed check locations. Can be positioned anywhere in the globe.",
+		speed_bump = "undefined",
+		speed_bump_description = "undefined",
+		speed_sign = "undefined",
+		speed_sign_description = "undefined",
+		bumps_sign = "undefined",
+		bumps_sign_description = "undefined",
 		floodlight = "Arc Light",
 		floodlight_description = "Turn night into day when thou art on the hunt. Great for finding lost keys or illuminating sneaky suspects trying to play hide and seek. Can be placed anywhere in the world.",
 		left_diversion_sign = "Turn Left Sign",
@@ -9514,6 +9767,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		claymore = "Claymore",
 		claymore_description = "This deadly Claymore mine serves as a potent defensive device crafted to safeguard and fortify specific areas with accuracy. Once activated, it will detonate forcefully upon detecting an intruder, maintaining stringent perimeter security. Handle and position it cautiously to prevent inadvertent repercussions.",
+		mine = "undefined",
+		mine_description = "undefined",
 
 		tv_stand = "Television Stand",
 		tv_stand_description = "undefined",
@@ -9566,6 +9821,16 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		pink_dildo = "Pink Phallus",
 		pink_dildo_description = "Carefully crafted and tested by Bugsy Middleman himself.",
 
+		cappuccino_regular = "undefined",
+		cappuccino_almond = "undefined",
+		cappuccino_pigeon = "undefined",
+		iced_latte_regular = "undefined",
+		iced_latte_almond = "undefined",
+		iced_latte_pigeon = "undefined",
+		hot_chocolate_regular = "undefined",
+		hot_chocolate_almond = "undefined",
+		hot_chocolate_pigeon = "undefined",
+
 		bean_coffee = "Bean Coffee",
 		bean_coffee_description = "It's basically just bean water.",
 		cappuccino = "Cappuccino",
@@ -9582,6 +9847,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		pink_lemonade_description = "Totally not just regular lemonade dyed pink so we can charge you twice as much...",
 		iced_latte = "undefined",
 		iced_latte_description = "undefined",
+		coffee_beans = "undefined",
+		coffee_beans_description = "undefined",
 
 		berry_cake = "undefined",
 		berry_cake_description = "undefined",
@@ -9755,9 +10022,21 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		spicy_ramen_description = "undefined",
 		bento_box = "undefined",
 		bento_box_description = "undefined",
+		mochi_mango = "undefined",
+		mochi_mango_description = "undefined",
+		mochi_strawberry = "undefined",
+		mochi_strawberry_description = "undefined",
+		mochi_green_tea = "undefined",
+		mochi_green_tea_description = "undefined",
+		mochi_chocolate = "undefined",
+		mochi_chocolate_description = "undefined",
+		green_tea_bag = "undefined",
+		green_tea_bag_description = "undefined",
 
 		asahi_beer = "undefined",
 		asahi_beer_description = "undefined",
+		green_tea = "undefined",
+		green_tea_description = "undefined",
 
 		golf_ball = "Golf ball",
 		golf_ball_description = "This item is commonly used for playing the sport of golf.",
@@ -9947,6 +10226,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		weapon_poolcue = "Billiard Cue",
 		weapon_stone_hatchet = "Stone Hatchet",
 		weapon_candycane = "Candy Cane",
+		weapon_stunrod = "undefined",
 
 		weapon_pistol = "Pistol",
 		weapon_pistol_mk2 = "Mark II Pistol",
@@ -10076,6 +10356,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		weapon_poolcue_description = "For the pool enthusiast, this cue stick is a must-have for a perfect break. For others, it could be useful for cracking some spines.",
 		weapon_stone_hatchet_description = "2.5 million years of research and development and we're still here.",
 		weapon_candycane_description = "A festive candy cane. It's a bit sticky.",
+		weapon_stunrod_description = "undefined",
 
 		weapon_pistol_description = "Standard handgun. A .45 caliber combat pistol with a magazine capacity of 12 rounds which can be extended to 16.",
 		weapon_pistol_mk2_description = "Balance, simplicity, precision: nothing keeps the peace like an extended barrel in the other fellow's mouth.",
@@ -10311,7 +10592,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		weapon_addon_multitool_description = "undefined",
 
 		weapon_addon_ar15 = "undefined",
-		weapon_addon_ar15_description = "undefined"
+		weapon_addon_ar15_description = "undefined",
+
+		weapon_addon_tennisball = "undefined",
+		weapon_addon_tennisball_description = "undefined"
 	},
 
 	invisibility = {
@@ -10403,7 +10687,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		failed_kissaki_delivery = "Failed to unlock kissaki meal.",
 		failed_green_wonderland_delivery = "undefined",
 		failed_pizza_this_delivery = "undefined",
+		failed_closed_paper_bag = "undefined",
 
+		closed_paper_bag_empty = "undefined",
 		burger_shot_delivery_empty = "That Burger Shot meal seemed to be empty.",
 		bean_machine_delivery_empty = "That Bean Machine delivery seemed to be empty.",
 		kissaki_delivery_empty = "That kissaki meal appears to be empty.",
@@ -10539,7 +10825,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		modify_jail_logs_title = "undefined",
 		modify_jail_logs_details = "undefined",
 		triggered_lockdown_logs_title = "undefined",
-		triggered_lockdown_logs_details = "undefined"
+		triggered_lockdown_logs_details = "undefined",
+		mission_reward_logs_title = "undefined",
+		mission_reward_cash_logs_details = "undefined",
+		mission_reward_item_logs_details = "undefined"
 	},
 
 	kiosks = {
@@ -10968,7 +11257,21 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		no_nearby_vehicle = "No vehicle nearby.",
 		already_checking_upgrades = "You are already examining a vehicle's modifications.",
-		engine_is_running = "The locomobile's engine is running."
+		engine_is_running = "The locomobile's engine is running.",
+
+		press_open_shop = "undefined",
+		press_close_shop = "undefined",
+		opening_shop = "undefined",
+		closing_shop = "undefined",
+		shop_closed = "undefined",
+		shop_opened = "undefined",
+		failed_shop_closed = "undefined",
+		failed_shop_opened = "undefined",
+
+		opened_shop_logs_title = "undefined",
+		opened_shop_logs_details = "undefined",
+		closed_shop_logs_title = "undefined",
+		closed_shop_logs_details = "undefined"
 	},
 
 	meow = {
@@ -11011,6 +11314,10 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		success_wipe_blocks = "undefined",
 		failed_wipe_blocks = "undefined",
 		press_to_use_jukebox = "undefined"
+	},
+
+	minigames = {
+		skipping_minigame = "undefined"
 	},
 
 	mining = {
@@ -11118,6 +11425,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		bad_ooc_message = "Attempted to post a potentially bad message in the out-of-character chat: \"${oocMessage}\"",
 		bad_ped_message = "Attempted to create a potentially bad pedestrian message: \"${pedMessage}\"",
 		bad_twitter_post = "Attempted to create a potentially bad tweet: \"${twitterPost}\"",
+		bad_twitter_account = "undefined",
 		bad_phone_message = "Attempted to create a problematic telegram post: \"${message}\"",
 		user_not_found = "We couldn't locate a user with the server ID of `${serverId}`.",
 		player_already_muted = "${consoleName} has already been muted.",
@@ -11125,6 +11433,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		player_has_been_muted = "${consoleName} hath now been muted with reason: `${reason}`.",
 		player_not_muted = "${consoleName} is not muted.",
 		player_has_been_unmuted = "${consoleName} hath now been unmuted.",
+		just_been_muted = "undefined",
+		just_been_muted_no_reason = "undefined",
 		ooc_clear_chat_title = "Chat Cleared",
 		ooc_clear_chat_details = "${consoleName} cleared the chat for everyone.",
 		muted_player = "Muted Player",
@@ -12127,7 +12437,34 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		disabled_generators = "undefined",
 
 		drill_drilling = "undefined",
-		drill_jammed = "undefined"
+		drill_jammed = "undefined",
+		search_safe = "undefined",
+		searching_safe = "undefined",
+
+		close_up_bank = "undefined",
+		press_to_close_up_bank = "undefined",
+		closing_up_bank = "undefined",
+
+		not_enough_police = "undefined",
+
+		dispatch = "undefined",
+		alarm_triggered = "undefined",
+		pacific_bank_alarm = "undefined",
+
+		press_to_search = "undefined",
+		search = "undefined",
+		searching = "undefined",
+		found_nothing = "undefined",
+
+		power_generator_disabled_title = "undefined",
+		power_generator_disabled_details = "undefined",
+
+		pacific_bank_robbery_started_title = "undefined",
+		pacific_bank_robbery_started_details = "undefined",
+
+		pacific_bank_reward_logs_title = "undefined",
+		pacific_bank_reward_saving_bonds_logs_details = "undefined",
+		pacific_bank_reward_items_logs_details = "undefined"
 	},
 
 	panel = {
@@ -12187,14 +12524,20 @@ OP.Global.Locales.Languages["meme-1929"] = {
 	},
 
 	paper_bags = {
-		fill_bag = "[${SeatEjectKey}] Fill Paper Sack",
-		no_bags = "Thou hast no paper sacks.",
-		no_bag_items = "Thou hast no items that thou couldst put in a paper sack.",
-		close_bag = "Close Bag",
-		cancel_bag = "Cancel",
-		title = "Paper Bag",
+		paper_bag_brand = "undefined",
+		paper_bag_no_brand = "undefined",
+
+		burger_shot_delivery = "undefined",
+		bean_machine_delivery = "undefined",
+		kissaki_delivery = "undefined",
+		green_wonderland_delivery = "undefined",
+		pizza_this_delivery = "undefined",
+
 		failed_fill = "Failed to fill paper bag.",
-		filled_bag = "Successfully filled paper bag."
+		filled_bag = "Successfully filled paper bag.",
+
+		filled_bag_log_title = "undefined",
+		filled_bag_log_details = "undefined"
 	},
 
 	parking_meters = {
@@ -12203,7 +12546,13 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		no_cash = "undefined",
 		max_time = "This parking meter hath already been filled to the brim.",
-		failed_pay = "Failed to pay parking meter."
+		failed_pay = "Failed to pay parking meter.",
+
+		failed_lockpick = "undefined",
+		already_lockpicked = "undefined",
+
+		lockpicked_meter_logs_title = "undefined",
+		lockpicked_meter_logs_details = "undefined"
 	},
 
 	pause_menu = {
@@ -12296,6 +12645,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		ped_failed_task = "undefined",
 		invalid_target = "Invalid target server ID.",
 		invalid_task = "undefined",
+		no_nearby_ped = "undefined",
+		ped_attack_success = "undefined",
+		ped_failed_attack = "undefined",
 		ped_emote_success = "undefined",
 		ped_failed_emote = "undefined",
 		invalid_emote = "undefined",
@@ -12509,7 +12861,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		invalid_prop_id = "Invalid prop id.",
 		prop_deleted = "Prop with id ${propId} wast deleted.",
 
-		invalid_wipe_radius = "Invalid wipe radius (between 1 and 100).",
+		invalid_wipe_radius = "undefined",
 		wipe_successful = "Successfully wiped ${amount} prop(s).",
 		wipe_failed = "Failed to wipe props.",
 
@@ -12764,6 +13116,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		logs = "undefined",
 		no_logs = "undefined",
 		summary = "Summarization",
+		summary_description = "undefined",
 		name = "Title",
 		transactions = "Deals",
 		withdrawn = "Drawn",
@@ -13386,6 +13739,15 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		teleport_player_player_logs_details = "undefined"
 	},
 
+	taxes = {
+		taxes_collected = "undefined",
+		taxes = "undefined",
+		transaction_logs = "undefined",
+		paid_taxes = "undefined",
+		no_logs = "undefined",
+		close = "undefined"
+	},
+
 	teleporters = {
 		area_not_clear = "undefined",
 
@@ -13634,6 +13996,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		department_police_undercover = "Undercover Police",
 
+		department_doc_training = "undefined",
 		department_police_training = "Police Training",
 		department_medical_training = "undefined",
 		department_bcfd_training = "undefined"
@@ -14284,6 +14647,8 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		no_nearby_vehicle = "undefined",
 		no_nearby_vehicle_door = "undefined",
 		removing_door = "undefined",
+		cleaning_up_body = "undefined",
+		destroying_spikes = "undefined",
 		failed_remove_door = "undefined",
 		invalid_clothing_type = "undefined",
 		no_nearby_player = "undefined",
@@ -14379,7 +14744,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		none = "None",
 		active = "Active",
 		not_active = "Not active",
-		active_robberies = "\nActive Store: ${store}.\nActive Bank: ${bank}\nActive Jewelry: ${jewelry}",
+		active_robberies = "undefined",
 
 		failed_dispatch = "Failed to send dispatch message.",
 		dispatch_title = "[Dispatch]",
@@ -14472,6 +14837,7 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		on_floor = "On the ${floor}.",
 		ground_floor = "First Floor",
 		second_floor = "Second Floor",
+		third_floor = "Third Storey",
 		icu_floor = "Intensive Care Unit Floor",
 		surgery_floor = "Operating Room Floor",
 
@@ -14513,7 +14879,55 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 		task_disinfect_table = "Sanitize the surgical table.",
 		task_disinfect_table_near = "Press ~INPUT_DETONATE~ to sanitize the surgical table.",
-		task_disinfect_table_active = "Disinfecting Table"
+		task_disinfect_table_active = "Disinfecting Table",
+
+		task_wipe_table = "Wipe the table.",
+		task_wipe_table_near = "Press ~INPUT_DETONATE~ to wipe the table.",
+		task_wipe_table_active = "Wiping Table",
+
+		task_wash_dishes = "Wash the crockery.",
+		task_wash_dishes_near = "Press ~INPUT_DETONATE~ to wash the dishes.",
+		task_wash_dishes_active = "Washing Crockery",
+
+		task_restock_drink_dispenser = "Refill the pop machine.",
+		task_restock_drink_dispenser_near = "Press ~INPUT_DETONATE~ to restock the soda dispenser.",
+		task_restock_drink_dispenser_active = "Refilling Soda Dispenser",
+
+		task_restock_ingredients = "Replenish the provisions.",
+		task_restock_ingredients_near = "Press ~INPUT_DETONATE~ to replenish the provisions.",
+		task_restock_ingredients_active = "Replenishing Provisions",
+
+		task_organize_shelf = "Arrange the shelving.",
+		task_organize_shelf_near = "Press ~INPUT_DETONATE~ to arrange the shelving.",
+		task_organize_shelf_active = "Arranging Shelving",
+
+		task_clean_countertop = "Scrub the countertop.",
+		task_clean_countertop_near = "Press ~INPUT_DETONATE~ to scrub the countertop.",
+		task_clean_countertop_active = "Scrubbing Countertop",
+
+		task_file_taxes = "Submit tax returns.",
+		task_file_taxes_near = "Press ~INPUT_DETONATE~ to submit tax returns.",
+		task_file_taxes_active = "Submitting Tax Returns",
+
+		task_refill_napkins = "Replenish napkins.",
+		task_refill_napkins_near = "Press ~INPUT_DETONATE~ to replenish napkins.",
+		task_refill_napkins_active = "Replenishing Napkins",
+
+		task_refill_water = "Replenish water dispenser.",
+		task_refill_water_near = "Press ~INPUT_DETONATE~ to replenish the water dispenser.",
+		task_refill_water_active = "Replenishing Water Dispenser",
+
+		task_clean_windows = "Clean the glass panes.",
+		task_clean_windows_near = "Press ~INPUT_DETONATE~ to clean the windows.",
+		task_clean_windows_active = "Cleaning Windows",
+
+		task_clean_oven = "Clean the oven.",
+		task_clean_oven_near = "Press ~INPUT_DETONATE~ to clean the oven.",
+		task_clean_oven_active = "Cleaning Oven",
+
+		task_take_nap = "Take a nap.",
+		task_take_nap_near = "Press ~INPUT_DETONATE~ to take a nap.",
+		task_take_nap_active = "Taking Nap"
 	},
 
 	tow = {
@@ -14679,6 +15093,9 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		fuel_level_set_to = "The fuel level has been adjusted to `${fuelLevel}`.",
 		not_in_a_vehicle = "You are not inside a vehicle.",
 		vehicle_engine_on = "The engine is still running.",
+
+		fuel_debug_enabled = "Enabled the fuel debug.",
+		fuel_debug_disabled = "Disabled the fuel debug.",
 
 		vehicle_exploded_logs_title = "Vehicle Exploded",
 		vehicle_exploded_logs_details = "${consoleName} fueled a vehicle and triggered an explosion due to a running engine."
@@ -14846,12 +15263,22 @@ OP.Global.Locales.Languages["meme-1929"] = {
 		gave_keys_success = "Successfully handed ${displayName} the keys to their vehicle.",
 		gave_keys_failure = "Failed t' give ${displayName} th' keys t' their vehicle.",
 
+		car_keys_label = "Keys for ${plate}",
+		something_went_wrong = "Something has gone amiss.",
+		keys_no_longer_work = "Regrettably, these keys are no longer functional.",
+		success_use_keys = "You now possess the keys to `${plate}`.",
+
 		no_nearby_vehicle = "There ain't no nearby automobile around these parts.",
 		there_is_someone_in_the_driver_seat = "There is someone in the chauffeur seat.",
 		the_driver_door_is_closed = "The chauffeur door is closed.",
 		checking_ignition = "Checking Ignition",
 		ignition_tampered_with = "Ignition has been messed with.",
-		ignition_not_tampered_with = "Ignition has not been messed with."
+		ignition_not_tampered_with = "Ignition has not been messed with.",
+
+		used_car_keys_logs_title = "Utilized Automobile Keys",
+		used_car_keys_logs_details = "${consoleName} employed car keys for a vehicle with plate `${plate}` (N-${networkId}).",
+		grabbed_car_keys_logs_title = "Acquired Car Keys",
+		grabbed_car_keys_logs_details = "${consoleName} acquired car keys for a vehicle with plate `${plate}` (N-${networkId})."
 	},
 
 	modifications = {
@@ -14905,7 +15332,11 @@ OP.Global.Locales.Languages["meme-1929"] = {
 
 	sirens = {
 		sirens_muted_on = "All sirens are stilled.",
-		sirens_muted_off = "All sirens are now non muted."
+		sirens_muted_off = "All sirens are now non muted.",
+
+		lights_on = "Illumination: ${count}",
+		sirens_on = "Klaxons: ${count}",
+		horns_on = "Klaxons: ${count}"
 	},
 
 	spawner = {

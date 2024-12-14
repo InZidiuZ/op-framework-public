@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 34 (do not change)
+-- AUTO LOCALES: 35 (do not change)
 
 OP.Global.Locales.Languages["da-DK"] = {
 	-- configuration settings for language
@@ -83,7 +83,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 	ledges = {
 		no_ledge = "Du er ikke tæt på en kant.",
-		invalid_variation = "Ugyldig variation.",
+		invalid_variation = "Ugyldig variation (1 - 13).",
 		press_x_to_stop = "Tryk på ~INPUT_VEH_DUCK~ for at stoppe med at sidde."
 	},
 
@@ -872,7 +872,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		sit_ledge_command = "sidde_kant",
 		sit_ledge_command_help = "Sæt dig på en kant, hvis du er foran en. Du skal stå over for kanten.",
 		sit_ledge_command_parameter_variation = "variation",
-		sit_ledge_command_parameter_variation_help = "Hvilken siddeanimation der skal afspilles (1 - 4).",
+		sit_ledge_command_parameter_variation_help = "Hvilken siddeanimation der skal afspilles (1 - 13).",
 		sit_ledge_command_substitutes = "kant",
 
 		-- animations/walkstyles
@@ -899,7 +899,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		staff_pm_command_parameter_server_id_help = "ID på spilleren du vil sende en besked til.",
 		staff_pm_command_parameter_message = "besked",
 		staff_pm_command_parameter_message_help = "Beskeden du vil sende.",
-		staff_pm_command_substitutes = "staffpm",
+		staff_pm_command_substitutes = "staffpm, besked, pm, msg",
 
 		important_staff_pm_command = "important_staff_pm",
 		important_staff_pm_command_help = "Send en vigtig besked til en spiller som medarbejder.",
@@ -907,7 +907,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		important_staff_pm_command_parameter_server_id_help = "Spillerens server ID, som du forsøger at sende en besked til.",
 		important_staff_pm_command_parameter_message = "besked",
 		important_staff_pm_command_parameter_message_help = "Den vigtige besked, du gerne vil sende.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
 
 		reply_pm_command = "svar_pm",
 		reply_pm_command_help = "Svar på den seneste besked fra personalet, som du modtog.",
@@ -1304,7 +1304,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		register_weapon_command_substitutes = "",
 
 		advanced_metagame_command = "avanceret_metagame",
-		advanced_metagame_command_help = "Superadmin-kommando til at hjælpe dig med at tage din metagame til det næste niveau.",
+		advanced_metagame_command_help = "Kommando til at hjælpe dig med at tage din metagaming til det næste niveau.",
+		advanced_metagame_command_parameter_use_characters = "brug karakterer",
+		advanced_metagame_command_parameter_use_characters_help = "Brug karakternavne i stedet for spillernavne.",
 		advanced_metagame_command_substitutes = "am",
 
 		list_weapon_attachments_command = "list_weapon_attachments",
@@ -1479,6 +1481,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		leaderboard_command_parameter_total_playtime_help = "Som standard vil den faktiske spilletid spillet på karakterer blive brugt. Indstil dette til `y` for at bruge den samlede samlede tid på serveren i stedet.",
 		leaderboard_command_substitutes = "",
 
+		economy_leaderboard_command = "økonomi_topliste",
+		economy_leaderboard_command_help = "Se økonomitoplisten.",
+		economy_leaderboard_command_substitutes = "øtopliste",
+
 		package_command = "pakke",
 		package_command_help = "Kontroller og opdater din pakke.",
 		package_command_substitutes = "opdater_pakke",
@@ -1589,12 +1595,16 @@ OP.Global.Locales.Languages["da-DK"] = {
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Toggler Battle Royale funktionen.",
+		battle_royale_toggle_command_parameter_max_teammates = "maks. holdkammerater",
+		battle_royale_toggle_command_parameter_max_teammates_help = "Det maksimale antal tilladte holdkammerater pr. hold. Standard er 4. Minimum er 1 og maksimum er 10.",
 		battle_royale_toggle_command_substitutes = "br_toggle",
 
 		battle_royale_start_command = "battle_royale_start",
 		battle_royale_start_command_help = "Start en Battle Royale-kamp.",
 		battle_royale_start_command_parameter_no_vehicles = "ingen køretøjer",
 		battle_royale_start_command_parameter_no_vehicles_help = "Opret en kamp uden køretøjer.",
+		battle_royale_start_command_parameter_new_inventories = "nye inventarer",
+		battle_royale_start_command_parameter_new_inventories_help = "Opret en kamp, hvor alle har et tomt, midlertidigt inventar.",
 		battle_royale_start_command_substitutes = "br_start",
 
 		battle_royale_invite_command = "battle_royale_invite",
@@ -1810,7 +1820,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		-- game/container_storage
 		containers_command = "containere",
 		containers_command_help = "Se og administrer dine lejede opbevaringscontainere.",
-		containers_command_substitutes = "",
+		containers_command_substitutes = "lagre",
+
+		-- game/containers
+		containers_debug_command = "lagre_debug",
+		containers_debug_command_help = "Tegn alle nærliggende lagre.",
+		containers_debug_command_substitutes = "",
 
 		-- game/crafting
 		crafting_debug_command = "håndværks_debug",
@@ -2121,6 +2136,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		random_position_command = "random_position",
 		random_position_command_help = "Teleporterer dig til en tilfældig position på hovedøen. (Tænder også for usynlighed)",
+		random_position_command_parameter_server_id = "server id",
+		random_position_command_parameter_server_id_help = "Server-id'en for spilleren, du vil teleportere.",
 		random_position_command_substitutes = "tilfældig",
 
 		crash_ui_command = "crash_ui",
@@ -2153,7 +2170,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		-- game/development
 		toggle_developer_ambience_command = "toggle_developer_ambience",
 		toggle_developer_ambience_command_help = "Tænd/Sluk udvikler omgivelse.",
-		toggle_developer_ambience_command_substitutes = "",
+		toggle_developer_ambience_command_substitutes = "developer_ambience, stemning",
 
 		-- game/dna_evidence
 		take_dna_sample_command = "tag_dna_prøve",
@@ -2714,6 +2731,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 		minecraft_wipe_command_parameter_radius_help = "Radiusen du vil rydde blokke i. (0 = alle blokke, maks. 5000)",
 		minecraft_wipe_command_substitutes = "",
 
+		-- game/minigames
+		skip_minigames_command = "spring_minispil_over",
+		skip_minigames_command_help = "Skift til springning af minispil.",
+		skip_minigames_command_substitutes = "",
+
 		-- game/mining
 		mining_debug_command = "mining_debug",
 		mining_debug_command_help = "Aktiver/deaktiver mining debug.",
@@ -2841,6 +2863,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		model_view_command_parameter_model_help = "Navnet på modellen eller koden, du gerne vil se.",
 		model_view_command_parameter_no_blocker = "ingen blokering",
 		model_view_command_parameter_no_blocker_help = "Deaktiver skyggeblokeringen (standard: ingen).",
+		model_view_command_parameter_clamp = "clamp",
+		model_view_command_parameter_clamp_help = "Spærring størrelsen for altid at være mere end 0,25 (hjælper med små modeller).",
 		model_view_command_parameter_components = "komponenter",
 		model_view_command_parameter_components_help = "Våbenkomponenter (kommasepareret).",
 		model_view_command_substitutes = "model, view",
@@ -3026,6 +3050,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		ped_remove_command = "fjern_ped",
 		ped_remove_command_help = "Fjerner alle de spawnet peds.",
 		ped_remove_command_substitutes = "",
+
+		ped_attack_command = "ped_attack",
+		ped_attack_command_help = "Får den nærmeste person at angribe en bestemt spiller.",
+		ped_attack_command_parameter_target = "mål",
+		ped_attack_command_parameter_target_help = "Spilleren, som du vil have den nærmeste person til at angribe.",
+		ped_attack_command_substitutes = "",
 
 		list_ped_emotes_command = "liste_ped_emotes",
 		list_ped_emotes_command_help = "Lister alle tilgængelige ped-emotes.",
@@ -3461,6 +3491,17 @@ OP.Global.Locales.Languages["da-DK"] = {
 		tablet_command = "tablet",
 		tablet_command_help = "Åbner tabletbrugerfladen (hvis du har en tablet).",
 		tablet_command_substitutes = "",
+
+		-- game/taxes
+		tax_collection_command = "tax_collection",
+		tax_collection_command_help = "Udløser en manuel indsamling af skatter.",
+		tax_collection_command_parameter_percentage = "procent",
+		tax_collection_command_parameter_percentage_help = "Procentdelen, du ønsker at beskatte af spillernes formue. Det vil beskatte offline spillere også. Et normalt tal kunne være 0.1 (0.1 %).",
+		tax_collection_command_substitutes = "",
+
+		taxes_command = "skatter",
+		taxes_command_help = "Vis dine skatter.",
+		taxes_command_substitutes = "",
 
 		-- game/teleporting
 		tp_back_command = "tp_back",
@@ -3965,6 +4006,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		set_fuel_command_parameter_server_id_help = "Hvis du vil indstille brændstoffet for en anden spiller. Hvis feltet er tomt, vælges du automatisk selv.",
 		set_fuel_command_substitutes = "brændstof",
 
+		fuel_debug_command = "brændstof_debug",
+		fuel_debug_command_help = "Udskriv ændringer i køretøjets brændstofniveau til konsollen.",
+		fuel_debug_command_substitutes = "",
+
 		-- vehicles/garage_access
 		manage_garage_command = "håndter_garage",
 		manage_garage_command_help = "Administrer din garage og hvem der har adgang til den.",
@@ -4019,6 +4064,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		pickup_keys_command = "pluk_nøgler_op",
 		pickup_keys_command_help = "Får dig til at plukke nøglerne op fra det nærmeste køretøj.",
 		pickup_keys_command_substitutes = "",
+
+		grab_keys_command = "hent_nøgler",
+		grab_keys_command_help = "Hent nøglerne fra det køretøj, du kører i øjeblikket.",
+		grab_keys_command_substitutes = "",
 
 		keys_command = "nøgler",
 		keys_command_help = "Få nøgler til det køretøj, du befinder dig i.",
@@ -4086,6 +4135,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		mute_sirens_command = "dæmp_sirener",
 		mute_sirens_command_help = "Dæmper alle sirener og horn.",
 		mute_sirens_command_substitutes = "",
+
+		sirens_debug_command = "sirens_debug",
+		sirens_debug_command_help = "Tegn alle sirener, horn og lys.",
+		sirens_debug_command_substitutes = "",
 
 		-- vehicles/trailers
 		toggle_trailer_command = "skift_trailer",
@@ -4370,6 +4423,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		player_playtime = "${playerName} (Placering ${position})\nTotal spilletid: ${totalPlaytime}\nSession Spilletid: ${sessionPlaytime}",
 		leaderboard = "Leaderboard",
 		leaderboard_total = "Topliste (Samlet spilletid)",
+		leaderboard_economy = "Leaderboard (Økonomi)",
 		your_position = "Din position",
 		leaderboard_loading = "Toplisten indlæses stadig.",
 		logs_user_reject_connection_title = "Forbindelse afvist",
@@ -4491,7 +4545,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		fake_disconnect_feature = "Fake-DC",
 		brighter_nights_feature = "BN",
 		ridealong_feature = "Medbringer",
-		broadcast_all_feature = "Sende til alle"
+		broadcast_all_feature = "Sende til alle",
+		skip_minigames_feature = "Spring Minispil Over"
 	},
 
 	admin_menu = {
@@ -4568,7 +4623,45 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	animals = {
-		invalid_sound = "Ugyldig lyd."
+		invalid_sound = "Ugyldig lyd.",
+		not_enough_space = "Du har ikke nok plads til at samle dette dyr op.",
+
+		male = "han",
+		female = "hun",
+
+		description_cat_unnamed = "En ${gender} kat, der vandrer gennem livet med en aura af mystik, ${age} gammel og vejer ${weight}. Med en umættelig svaghed for ${food}, kunne denne spindende vandringsmand måske planlægge verdensherredømmet den ene øjeblik og krølle sig sammen for en lur den næste. Hver knurhår fortæller en historie, hvert blik gemmer på en hemmelighed.",
+		description_cat_named = "${name}, den ${gender} kat, er en ${age} gammel ledsager, der bærer visdommen fra utallige solbeskinnede lure og midnatseventyr. Med en vægt på ${weight} og en ubrydelig passion for ${food}, bevæger ${name} sig gennem verden som et levende gåde—en del kongelig værdigperson, en del skæv gadefilosof.",
+
+		description_dog_unnamed = "En ${gender} hund, ${age} år gammel og med en vægt på ${weight}, med et sind så grænseløst som horisonten. Fuldstændigt dedikeret til ${food} og med et hjerte fuld af ubehersket entusiasme, forvandler denne pelsede ledsager hvert øjeblik til et potentielt eventyr, hver gåtur til en episk rejse.",
+		description_dog_named = "${name}, den ${gender} hund, ${age} ind i denne storslåede historie om venskab, vejer ${weight} og udstråler en energi, der kunne oplyse det mørkeste rum. Helt betaget af ${food}, lever ${name} efter en simpel trosbekendelse: hver dag er en gave, hver ven en skat, hvert øjeblik en mulighed for glæde.",
+
+		description_rabbit_unnamed = "Denne ${gender} kanin, ${age} ung og vejer ${weight}, hopper gennem livet med entusiasmen fra en født opdagelsesrejsende. Drevet af en uventet kærlighed til ${food}, dens ører er altid på vagt, dens ånd uendeligt livlig - et lille hjerte der slår med ubegrænset nysgerrighed.",
+		description_rabbit_named = "${name}, en ${gender} kanin på ${age} år ind i denne vilde rejse gennem livet, vejer ${weight} og bærer en smittende livsglæde, der trodser dens størrelse. Helt hengiven til ${food}, omdanner ${name} hver hop til en erklæring om glæde, hver gnask til et eventyr.",
+
+		description_hen_unnamed = "En ${gender} høne, ${age} år gammel og strutten på ${weight}, der bevæger sig med tilliden fra en bondegårdsfilosof. Drevet af en uventet trang til ${food}, transformerer denne fjerklædte ven almindelige øjeblikke til episke fortællinger om fjerkræets mægtighed.",
+		description_hen_named = "${name}, den ${gender} høne, ${age} klog og vejer ${weight}, galer med autoritet som en erfaren fortæller. Besat af ${food} og mester for det uventede, bevise ${name}, at sand karisma ikke kender til arten.",
+
+		description_rat_unnamed = "Denne ${gender} rotte, ${age} eventyrlysten og vejer ${weight}, navigerer verden med skarp intelligens og uventet charme. Drevet af en absolut hengivenhed til ${food}, forvandler den hvert hjørne til en potentiel opdagelse, hver skygge til en legeplads.",
+		description_rat_named = "${name}, en ${gender} rotte på ${age}, der er interesseret i livets store eksperimenter, vejer ${weight} og er sprængfyldt med personlighed. Med et ubrydeligt bånd til ${food}, udstråler ${name} ånden af nysgerrighed - lille i størrelse, uendelig i ånd.",
+
+		pick_up_named = "[${SeatEjectKey}] Saml ${name} op",
+		pick_up_cat = "[${SeatEjectKey}] Saml Kat op",
+		pick_up_dog = "[${SeatEjectKey}] Saml Hund op",
+		pick_up_hen = "[${SeatEjectKey}] Saml Høne op",
+		pick_up_rabbit = "[${SeatEjectKey}] Saml Kanin op",
+		pick_up_rat = "[${SeatEjectKey}] Saml Rotte op",
+
+		failed_pickup_cat = "Det lykkedes ikke at samle katten op.",
+		failed_pickup_dog = "Det lykkedes ikke at samle hunden op.",
+		failed_pickup_hen = "Det lykkedes ikke at samle hønen op.",
+		failed_pickup_rabbit = "Det lykkedes ikke at samle kaninen op.",
+		failed_pickup_rat = "Det lykkedes ikke at samle rotten op.",
+
+		failed_place_cat = "Det lykkedes ikke at placere katten.",
+		failed_place_dog = "Det lykkedes ikke at placere hunden.",
+		failed_place_hen = "Det lykkedes ikke at placere hønen.",
+		failed_place_rabbit = "Det lykkedes ikke at placere kaninen.",
+		failed_place_rat = "Det lykkedes ikke at placere rotten."
 	},
 
 	arcade = {
@@ -4691,8 +4784,28 @@ OP.Global.Locales.Languages["da-DK"] = {
 		deposit = "Indsæt",
 		balance = "Saldo",
 		transfer = "Overfør",
+		deposit_coins = "Indsæt mønter",
 		savings_bonds = "Opsparingsobligationer",
 		back = "Tilbage",
+
+		condition_pristine = "i perfekt stand",
+		condition_mint = "i næsten perfekt stand",
+		condition_slight_worn = "let slidt",
+		condition_worn = "slidt",
+		condition_heavy_worn = "meget slidt",
+		condition_corroded = "korroderet",
+		condition_damaged = "beskadiget",
+		condition_unrecognizable = "ukendelig",
+
+		mint_p = "Philadelphia (P)",
+		mint_d = "Denver (D)",
+		mint_s = "San Francisco (S)",
+		mint_w = "West Point (W)",
+		mint_cc = "Carson City (CC)",
+		mint_o = "New Orleans (O)",
+		mint_none = "en ukendt placering (ingen prægemærke)",
+
+		coin_metadata = "Präget i ${minted}, denne mønt blev produceret hos ${mark} og er i ${condition}.",
 
 		amount = "Beløb",
 		target = "Mål",
@@ -4706,6 +4819,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		failed_withdraw = "Kunne ikke trække penge",
 		failed_transfer = "Kunne ikke overføre penge",
 		failed_deposit_bonds = "Kunne ikke indsætte opsparingsobligationer",
+		failed_deposit_coins = "Kunne ikke indsætte mønter",
 
 		processing = "Behandler...",
 		counting_bills = "Tæller penge...",
@@ -4713,22 +4827,29 @@ OP.Global.Locales.Languages["da-DK"] = {
 		something_went_wrong = "Noget gik galt.",
 		error_not_online = "Dit mål er ikke tilgængelig.",
 		error_not_enough_money = "Ikke nok penge.",
-		deposit_amount_big = "ATM-indskud er begrænset til 4.000 $.",
-		withdraw_amount_big = "ATM-udtræk er begrænset til 6.000 $.",
+		deposit_amount_big = "ATM-indskud er begrænset til $5.000.",
+		withdraw_amount_big = "ATM-udtræk er begrænset til $10.000.",
+		bond_fee_details = "2% administrationsgebyr for opsparingsobligationer.",
+		atm_fee_details = "1,5% administrationsgebyr for ATM-udtræk.",
 
 		retrieving_card = "Henter kort",
 		atm_damaged = "Denne ATM er beskadiget",
 
 		press_to_use = "Tryk på ~g~${InteractionKey} ~w~for at bruge ATM'en",
 		press_to_interact_bank = "Tryk på ~g~${InteractionKey} ~w~for at interagere med banken",
+		fee_label = "med et gebyr på $${fee}",
+		no_fee_label = "uden gebyr",
 
 		deposit_log_bank_title = "Bankindbetaling",
 		deposit_log_atm_title = "ATM-indbetaling",
 		deposit_log = "${consoleName} indsatte $${amount}.",
 
+		deposit_coins_log_title = "Møntindskud",
+		deposit_coins_log = "${consoleName} indsætter ${coins} til en værdi af $${amount}.",
+
 		withdraw_log_bank_title = "Bankudbetaling",
 		withdraw_log_atm_title = "Hævning ved hæveautomat",
-		withdraw_log = "${consoleName} hævede $${amount}.",
+		withdraw_log = "${consoleName} hævede $${amount} ${fee}.",
 		withdraw_log_bonds_title = "Bankudtræk (Obligationer)",
 		withdraw_log_bonds = "${consoleName} trak $${amount} ud i opsparingsobligationer (${bonds}).",
 
@@ -4736,7 +4857,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		transfer_log = "${consoleName} (#${characterId}) overførte $${amount} til ${targetConsoleName} (#${targetCharacterId}).",
 
 		deposit_log_bonds_title = "Obligationsindbetaling",
-		deposit_bonds_log = "${consoleName} indsatte ${bonds} til en værdi af $${amount}."
+		deposit_bonds_log = "${consoleName} indsatte ${bonds} til en værdi af $${totalMoney} med en gebyr på $${fee} (=$${amount})."
 	},
 
 	attachments = {
@@ -5598,13 +5719,15 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	containers = {
-		drill_container = "Tryk ~INPUT_CONTEXT~ for at bore containeren op.",
-		drilling_container = "Boringer Container",
-		failed_drill = "Kunne ikke bore containeren op.",
-		drill_success = "Containeren blev boret op.",
+		drill_container = "Tryk på ~INPUT_CONTEXT~ for at bore låsen op på beholderen.",
+		drill_warehouse = "Tryk på ~INPUT_CONTEXT~ for at bore låsen op på lageret.",
+		drilling_lock = "Borer lås",
+		failed_drill = "Mislykkedes med at bore låsen op.",
+		drill_success = "Låsen blev succesfuldt boret op.",
 
-		containers_due_soon = "${count} af dine opbevaringsbeholdere er snart forfaldne.",
-		container_blip = "Container"
+		containers_due_soon = "${count} af dine opbevaringsbeholdere/lagre udløber snart.",
+		container_blip = "Container",
+		warehouse_blip = "Lager"
 	},
 
 	crafting = {
@@ -6211,6 +6334,29 @@ OP.Global.Locales.Languages["da-DK"] = {
 		crafted_bacon = "Fremstillet bacon.",
 		failed_craft_bacon = "Mislykkedes at fremstille bacon.",
 
+		make_mochi = "Lav Mochi",
+		press_to_make_mochi = "[${SeatEjectKey}] Lav Mochi",
+
+		mochi_mango_recipe = "Mango Mochi",
+		making_mochi_mango = "Laver Mango Mochi",
+		made_mochi_mango = "Mango mochi lavet.",
+		failed_make_mochi_mango = "Kunne ikke lave mango mochi.",
+
+		mochi_strawberry_recipe = "Jordbær Mochi",
+		making_mochi_strawberry = "Laver Jordbær Mochi",
+		made_mochi_strawberry = "Jordbær mochi lavet.",
+		failed_make_mochi_strawberry = "Kunne ikke lave jordbær mochi.",
+
+		mochi_green_tea_recipe = "Grøn Te Mochi",
+		making_mochi_green_tea = "Laver Grøn Te Mochi",
+		made_mochi_green_tea = "Færdiggjort grøn te mochi.",
+		failed_make_mochi_green_tea = "Kunne ikke lave grøn te mochi.",
+
+		mochi_chocolate_recipe = "Chokolade Mochi",
+		making_mochi_chocolate = "Laver Chokolade Mochi",
+		made_mochi_chocolate = "Færdiggjort chokolade mochi.",
+		failed_make_mochi_chocolate = "Kunne ikke lave chokolade mochi.",
+
 		cook_food = "Tilbered Mad",
 		press_to_cook_food = "[${SeatEjectKey}] Tilbered Mad",
 
@@ -6233,6 +6379,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 		cooking_spicy_ramen = "Koger krydret Ramen",
 		cooked_spicy_ramen = "Kogt krydret ramen.",
 		failed_cook_spicy_ramen = "Det lykkedes ikke at lave krydret ramen.",
+
+		green_tea_recipe = "Grøn Te",
+		brewing_green_tea = "Brygger Grøn Te",
+		brewed_green_tea = "Færdiggjort grøn te.",
+		failed_brew_green_tea = "Kunne ikke brygge grøn te.",
 
 		cut_ingridients = "Skær ingredienser",
 		press_to_cut_ingridients = "[${SeatEjectKey}] Skær ingredienser",
@@ -6385,6 +6536,30 @@ OP.Global.Locales.Languages["da-DK"] = {
 		baking_chocolate_cake = "Bager Chokoladekage",
 		baked_chocolate_cake = "Bagt chokoladekage.",
 		failed_baking_chocolate_cake = "Mislykkedes med at bage chokoladekage.",
+
+		make_coffee = "Lav kaffe",
+		press_to_make_coffee = "[${SeatEjectKey}] Lav kaffe",
+
+		bean_coffee_recipe = "Bønnekaffe",
+		espresso_recipe = "Espresso",
+		cappuccino_regular_recipe = "Cappuccino (Kødmælk)",
+		cappuccino_almond_recipe = "Cappuccino (Mandelmælk)",
+		cappuccino_pigeon_recipe = "Cappuccino (Due-mælk)",
+		iced_latte_regular_recipe = "Iskaffe (Kødmælk)",
+		iced_latte_almond_recipe = "Iskaffe (Mandelmælk)",
+		iced_latte_pigeon_recipe = "Iskaffe (Due-mælk)",
+
+		brewing_coffee = "Brygger kaffe",
+		brewed_coffee = "Brygget kaffe.",
+		failed_brewing_coffee = "Kunne ikke brygge kaffe.",
+
+		hot_chocolate_regular_recipe = "Varm chokolade (Komalke)",
+		hot_chocolate_pigeon_recipe = "Varm chokolade (Mandelmælk)",
+		hot_chocolate_almond_recipe = "Varm chokolade (Due mælk)",
+
+		making_hot_chocolate = "Laver varm chokolade",
+		made_hot_chocolate = "Har lavet varm chokolade.",
+		failed_make_hot_chocolate = "Fejlede i at lave varm chokolade.",
 
 		no_required_items = "Du har ikke alle de påkrævede genstande.",
 
@@ -6672,22 +6847,29 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	container_storage = {
-		rent_container = "[${InteractionKey}] Lej #${id} ($${price} per uge)",
+		rent_container = "[${InteractionKey}] Lej C-${id} ($${price} per uge)",
+		rent_warehouse = "[${InteractionKey}] Lej W-${id} ($${price} per uge)",
 		renting_container = "Lejer Container",
+		renting_warehouse = "Leje af Lager",
 		failed_rent_container = "Kunne ikke leje container.",
+		failed_rent_warehouse = "Kunne ikke leje lageret.",
 		rent_container_success = "Container #${id} er nu lejet. Du kan administrere dine containere ved at bruge `/containers`.",
-		access_container = "[${InteractionKey}] Tilgå #${id}",
-		container_id = "#${id}",
+		rent_warehouse_success = "Lageret #${id} blev lejet succesfuldt. Du kan administrere dine lagre ved at bruge `/warehouses`.",
+		access_container = "[${InteractionKey}] Adgang C-${id}",
+		access_warehouse = "[${InteractionKey}] Adgang W-${id}",
+		container_id = "C-${id}",
+		warehouse_id = "W-${id}",
 
-		storage_containers = "Lagercontainere",
+		storage_containers = "Opbevaringscontainere/Lagre",
 		container = "Container",
+		warehouse = "Lager",
 		loading = "Indlæser...",
 		failed_remove_access = "Kunne ikke fjerne adgang.",
 		failed_add_access = "Kunne ikke tilføje adgang.",
 		access = "Adgang",
 		add_cid = "Tilføj CID",
-		no_containers = "Du ejer ikke eller har adgang til nogen opbevaringsbeholdere.",
-		no_access = "Ingen andre end dig har adgang til denne beholder.",
+		no_containers = "Du ejer ikke eller har adgang til nogen opbevaringscontainere/lagre.",
+		no_access = "Ingen andre end dig har adgang til denne container/lager.",
 		back = "Tilbage",
 		close = "Luk",
 		character_not_exist = "Karakteren findes ikke.",
@@ -6697,14 +6879,14 @@ OP.Global.Locales.Languages["da-DK"] = {
 		not_enough_money = "Du har ikke penge nok.",
 		failed_pay_rent = "Kunne ikke betale husleje.",
 		mark_gps = "Markér GPS",
-		container_alert = "Din beholder #${containerId} bliver pillet ved.",
+		container_alert = "Din container/lager #${containerId} bliver forsøgt manipuleret med.",
 
 		rented_container_logs_title = "Lejet container",
-		rented_container_logs_details = "${consoleName} lejede container #${containerId} for $${price}.",
+		rented_container_logs_details = "${consoleName} lejede ${type} #${containerId} for $${price}.",
 		paid_rent_logs_title = "Betalt containerleje",
-		paid_rent_logs_details = "${consoleName} betalte $${price} leje for container #${containerId}.",
+		paid_rent_logs_details = "${consoleName} betalte $${price} i leje for ${type} #${containerId} (betalt indtil `${till} UTC`).",
 		lockpicked_container_logs_title = "Knækket container",
-		lockpicked_container_logs_details = "${consoleName} knækkede container #${containerId}."
+		lockpicked_container_logs_details = "${consoleName} brød ind i ${type} #${containerId}."
 	},
 
 	courthouse = {
@@ -6865,6 +7047,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		coords = "Koordinater: ${coords}",
 		rotation = "Rotation: ${rotation}",
 		normal = "Overflade: ${normal}",
+		surface_heading = "Overflade: ${heading}",
 		velocity = "Hastighed: ${velocity}",
 		ground_material = "Terræn Materiale: ${material}",
 		debug_print_f8 = "Debug information er blevet udskrevet i din F8 konsol.",
@@ -6878,6 +7061,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		copied_model_name = "Kopieret modelnavn.",
 		copied_entity_id = "Kopieret enheds-id.",
 		copied_hit_coords = "Kopierede koordinater for træf.",
+		copied_surface_heading = "Kopieret overfladeoverskrift.",
 
 		distance = "Afstand: ${distance}m",
 		distance_first = "Gemt første position.",
@@ -6913,12 +7097,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		model_view_disabled = "Model visning deaktiveret.",
 		invalid_component = "Ugyldig komponent `${componentName}`.",
 
-		animation_currently_playing = "Afspiller i øjeblikket en animation.",
 		invalid_or_missing_animation_dict = "Ugyldig eller manglende animering dictionary `${animationDict}`.",
-		missing_animation_name = "Manglende eller ugyldigt navn for animation `${animationName}`.",
+		missing_animation_name = "Ugyldigt eller manglende animationsnavn.",
 		invalid_animation_flags = "Ugyldige animation flags.",
-		animation_played = "Afspiller `${animationDict}` `${animationName}` (flags: ${flags}).",
-		no_flags = "Ingen flag",
 
 		invalid_coordinates = "Ugyldige koordinater.",
 		added_coordinates_draw = "Tilføjede koordinater `x: ${x}, y: ${y}, z: ${z}` til tegnelisten med ID `${drawId}`.",
@@ -7703,6 +7884,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		fps_unit = "fps",
 		ping_unit = "ms",
 		tps_unit = "tps",
+		fps_1percent_unit = "fps 1%",
 
 		smart_warnings = "Advarsel: ${warnings}!",
 		dehydrated = "dehydreret",
@@ -7990,7 +8172,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		prison_store = "Fængselsbutik",
 		fruit_vendor = "Frugtsælger",
 		fruit_market = "Alamo Frugtmarked",
-		food_market = "Madmarked",
+		super_market = "Supermarked",
 		island_store = "Ø-butik",
 		travel_agency = "Rejsebureau",
 		island_bar = "Ø-bar",
@@ -8024,7 +8206,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		ems_badge_store = "EMS Badge Skranke",
 		doj_badge_store = "DOJ Badge Skranke",
 		state_store = "Statsbutik",
-		pharmacy = "Apotek",
+		pharmacy_store = "Apotek",
 		chop_shop = "Bilværksted",
 		courthouse = "Domstol",
 		burger_shot = "Burger Shot",
@@ -8035,13 +8217,13 @@ OP.Global.Locales.Languages["da-DK"] = {
 		bean_machine_fridge = "Bean Machine Køleskab",
 		hunting_store = "Jagtbutik",
 		fishing_store = "Fiskebutik",
+		furniture_store = "Krapea",
 		los_santos_golf_club = "Los Santos Golf Klub",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Japansk Restaurant",
 		japanese_restaurant_kitchen = "undefined",
 		pizza_restaurant = "Pizza Restaurant",
 		["945_studios"] = "945 Studios",
-		grain_mill = "Kornmølle",
 		pd_prefix = "Politi",
 		ems_prefix = "Ambulance",
 		government_prefix = "Regering",
@@ -8105,6 +8287,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		underground_bar_counter = "Underjordisk Bar Tæller",
 		pizza_this_counter = "Pizza This Tæller",
 		yellow_jack_counter = "Yellow Jack Tæller",
+		bean_machine_counter = "Bean Machine Skranke",
 
 		inventory_name_missing = "Manglende parameter for inventarnavn.",
 
@@ -8131,6 +8314,14 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		craft_combine = "Lav <i>${output}</i>",
 		combining = "Laver",
+
+		inspect = "Inspektion",
+		attachments = "Vedhæftninger",
+		fill_paper_bag = "Fyld Papirpose",
+		rename = "Omdøb",
+
+		item_renamed = "Genstand blev omdøbt med succes.",
+		item_failed_rename = "Det mislykkedes at omdøbe genstanden.",
 
 		file_serial = "Fil Serienummer",
 		filing_off_serial_number = "File serienummer af",
@@ -8414,6 +8605,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		paper_bag = "Papirspose",
 		paper_bag_description = "Perfekt til at opbevare dagligvarer eller måske en persons hoved, død eller levende.",
+		closed_paper_bag = "Lukket Papirpose",
+		closed_paper_bag_description = "En klassisk brun pose, der skjuler mysterierne af dens indhold. Er det frokost? En hemmelig stash? Kun én måde at finde ud af det på - flænger den åben og se, hvad der er indeni!",
 		burger_shot_delivery = "Burger Shot Måltid",
 		burger_shot_delivery_description = "En vidunderlig samling af alle de klamme, kødsyge undere, de serverer.",
 		bean_machine_delivery = "Bean Machine Levering",
@@ -8424,6 +8617,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		green_wonderland_delivery_description = "En taske fuld af dine foretrukne grønne godbidder. #420blazeit",
 		pizza_this_delivery = "Pizza Denne Boks",
 		pizza_this_delivery_description = "Transporter din varme og lækre pizza med stil i Pizza Denne leveringsboksen, der sikrer, at hver skive ankommer lige så perfekt, som den forlod ovnen.",
+
+		lunch_box = "Madkasse",
+		lunch_box_description = "En robust lille boks, der holder dine håb, drømme og gårsdagens rester. Perfekt til at holde dine snacks sikre, din sandwich usmurt og dine chips lidt mindre knuste end sædvanligt. Advarsel: Garanterer ikke forbedret frokosttidssocial status.",
 
 		empty_box = "Tom æske",
 		empty_box_description = "Start med denne simple, robuste æske for at skabe en personlig gave. Fyld den med ikke-forgængelige skatte, og den er klar til at blive forvandlet til en tankevækkende gave. Ideel til at pakke alt, der symboliserer kærlighed, undtagen madvarer og våben.",
@@ -8485,6 +8681,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		keys = "Nøgler",
 		keys_description = "Et par nøgler til nogle døre et sted.",
+		car_keys = "Nøgler til bil",
+		car_keys_description = "Et magisk sæt nøgler, som kan låse døre op, starte motorer og øjeblikkeligt få dig til at føle, at du ejer vejen. Ingen to nøgler ser helt ens ud, men de har alle det samme mål - at give dig adgang til det lækre køretøj, de kommer fra. Bare lad være med at tabe dem i kloakken eller låne dem til en \"ven\".",
 
 		raw_diamond = "Rå Diamant",
 		raw_diamond_description = "En sjælden og uforarbejdet diamant, ru og uberørt, der gemmer på uudnyttet glans i sine facetter. Perfekt til dem, der finder skønhed i rå potentiale, venter dette ædelsten på en mesterlig berøring for at frigøre al sin herlighed.",
@@ -9061,6 +9259,34 @@ OP.Global.Locales.Languages["da-DK"] = {
 		plush_wasabi = "Wasabi Vidunderet",
 		plush_wasabi_description = "Denne lille én er en sand sjældenhed, ligesom frisk wasabi! Deres fortryllende grønne frakke vil helt sikkert vende hoveder. Undervurder ikke deres lille størrelse - de er pakket med personlighed og altid klar til sjov.",
 
+		cat_0 = "Stribet kat",
+		cat_0_description = "Denne stribede lille skarn er altid i gang med noget, hvad enten det er at snige sig op i skødet på dig eller planlægge verdensherredømme én lur ad gangen. Den går med en selvsikkerhed som en kat, der ved, at den er hovedpersonen.",
+		cat_1 = "Sort kat",
+		cat_1_description = "Elegant, skyggefuld og muligvis magisk, denne sortpelsede feline ved, hvordan den kan stjæle rampelyset – eller dine snacks. Den er lige dele cool og kælen, med en forkærlighed for dramatiske entréer og lange, dømmende blikke.",
+		cat_2 = "Brun kat",
+		cat_2_description = "Varm og jordnær, denne brune skønhed er som en kop varm chokolade i katteform – hvis varm chokolade af og til væltede ting fra dit skrivebord. Han er afslappet, kærlig og overraskende god til at ignorere dine opkald.",
+
+		dog_0 = "West Highland White Terrier",
+		dog_0_description = "Denne pjuskede lille pelskugle er lige dele loyal følgesvend og gående moppe. Altid klar til et eventyr, selvom det blot betyder at jagte sin egen hale i timevis. God til kram, tvivlsom til at forblive ren.",
+		dog_1 = "Mops",
+		dog_1_description = "En stolt mops med et ansigt, som kun en mor - eller alle andre, virkelig - kan elske. Kort på benene, men stor på personlighed, vil denne fyldige ven snige sig ind i dit hjerte og sandsynligvis dine snacks.",
+		dog_2 = "Puddel",
+		dog_2_description = "En perfekt velplejet puddel, der ved, at de er den fineste hund i rummet. Regal, elegant og lejlighedsvis en total drama queen, de bringer glamour til enhver situation - om det er på den røde løber eller i dit stue.",
+
+		hen_0 = "Høne",
+		hen_0_description = "En selvsikker høne, der spankulerer rundt som om hun ejer bondegården - og ærligt talt, gør hun nok også det. Altid hakken, gokken og giver dig det skæve blik, denne fjerklædte diva er lige dele sød og lettere intimiderende.",
+		rat_0 = "Rotte",
+		rat_0_description = "En snu lille gnaver med gadefornemmelse og en evne til at finde snacks, hvor du mindst venter det. Om det er at skrabe krummer sammen eller planlægge verdensherredømme, er denne rotte altid i gang med noget.",
+
+		rabbit_0 = "Mørkebrun Kanin",
+		rabbit_0_description = "En dyb, mørkebrun kanin med en energiniveau, der matcher sit navn. Altid opmærksom, altid klar til at spurte, og sandsynligvis dømmer dig for at være langsommere end den.",
+		rabbit_1 = "Lysbrun Kanin",
+		rabbit_1_description = "En lysbrun kanin, der ser ud som om den hoppede direkte ud fra en bager. Sød, smuldrende i ånden, og lige den rette mængde kaos til din dag.",
+		rabbit_2 = "Tan Kanin",
+		rabbit_2_description = "En tan kanin med en blød, smør-agtig pels og en evne til at hoppe ind i de mest upraktiske steder. Den er lige dele bedårende og mildt irriterende.",
+		rabbit_3 = "Grå Kanin",
+		rabbit_3_description = "En glat grå kanin, der bevæger sig som en pust af røg i vinden. Blink, så er den væk—men ikke før den har stjålet dit hjerte (og måske din salat).",
+
 		boxing_gloves = "Boksehandsker",
 		boxing_gloves_description = "Får dig til at ligne Rocky, men du får sandsynligvis ikke en fortsættelse...",
 		leash = "Snor",
@@ -9190,6 +9416,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		evidence_bag_empty_description = "Kan du forbedre det?",
 		evidence_bag = "Bevispose",
 		evidence_bag_description = "Forseglede beviser i en pose til senere brug.",
+		evidence_box = "Beviskasse",
+		evidence_box_description = "Retfærdighedens usungne helt, der vogter alle spor, fingeraftryk og tvivlsomme genstande, der er nødvendige for at løse en sag. Fra slikindpakninger til redskaber på gerningsstedet er det som en skattekiste for detektiver—minus guldet, plus en masse papirarbejde.",
 		fingerprint_evidence = "Fingeraftryk beviser",
 		fingerprint_evidence_description = "Hjælper dig med at fange kriminelle forbrydere.",
 		device_printout = "Enhed Uddrag",
@@ -9239,6 +9467,19 @@ OP.Global.Locales.Languages["da-DK"] = {
 		savings_bond_1000_description = "En $1.000 spareobligation, et bevis på din dedikation til at opbygge velstand. Opbevar denne obligation sikkert, indtil du er klar til at indløse den i en bank, hvor den vil give dig et betydeligt økonomisk boost.",
 		savings_bond_2000 = "$2.000 Spareobligation",
 		savings_bond_2000_description = "En $2.000 spareobligation, en væsentlig investering i din økonomiske fremtid. Behold denne obligation, indtil tiden er inde, og indløs den derefter i en bank for at låse dens fulde værdi op, der hjælper dig med at opnå dine økonomiske drømme.",
+
+		cent_1 = "Penny",
+		cent_1_description = "Det ydmyge penny er Amerikas mest overpræsterende kobberfarvede helt. Værd kun et cent, men ofte fundet tappert tilslutter ønsker i springvand eller gemmer sig under sofa puder. Det er stort set møntversionen af lille, men mægtig.",
+		cent_5 = "Nickel",
+		cent_5_description = "Nicklen er en mere robust, sølvfarvet opgradering fra penny med fem gange købekraften, hvilket stadig ikke er meget. En loyal følgesvend for salgsautomater og arkadespil, selvom dens værdi sommetider overses.",
+		cent_10 = "Tiøre",
+		cent_10_description = "Tiøren er en lille men skinnende overachiever, der pakker 10 øre værdi i sit lommevenlige design. Lille nok til at blive væk i dine jeans, men stadig rig nok til at minde dig om, at den er dobbelt så meget værd som en femøre.",
+		cent_25 = "25-øre",
+		cent_25_description = "25-øren er kongen af parkometre og tyggegummiautomater. Med sin imponerende vægt og 25-øres værdi fører denne sølvgladiator ofte din mønt-hær til sejre i kaffebarer og arkader.",
+		cent_50 = "Halv Krone",
+		cent_50_description = "Halvtredsøren er en sjældent set tungvægter inden for amerikansk valuta. Den er som den sejere, mere mystiske ældre søskende til kvartdollar. Dobbelt værdi, dobbelt størrelse og på en eller anden måde altid imponerende skinnende.",
+		coin_bag = "Møntpose",
+		coin_bag_description = "En pålidelig lille pose designet til at holde styr på dine løse mønter, så de ikke klinger rundt alle vegne. Lille, diskret og perfekt for dem, der ønsker at bære deres formue med stil - forudsat at din 'formue' måles i kvartdollar og dime.",
 
 		weather_spell_snow = "Vejrtrylleri (Sne)",
 		weather_spell_snow_description = "Brugen af denne genstand vil midlertidigt give dig kontrol over vejret, så det sneer! Det kan kun bruges en gang, så brug med omtanke. Hvis du bruger to vejrtrollformularer på samme tid, vil den anden automatisk blive køet op.",
@@ -9430,6 +9671,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		fishing_chair_description = "Designet til komfort under lange ventetider, denne fiskestol kombinerer holdbarhed med bekvemmelighed og har en indbygget stangholder til de stille morgener ved søen. Kan placeres hvor som helst i verden.",
 		sleeping_bag = "Sovepose",
 		sleeping_bag_description = "Indhyl dig i varmen fra denne sovepose, designet til kølige nætter under stjernerne. Den kompakte udformning gør den let at bære med sig og giver komfort uanset hvor du lægger hovedet.",
+		red_pillow = "Rød Pude",
+		red_pillow_description = "En alsidig rød pude, der forvandler hårdt underlag til en trone af komfort. Uanset om du mediterer, kigger på mennesker eller bare prøver at undgå at sidde på mystiske pletter, har denne pude din ryg - eller rettere sagt, din bagdel!",
+		spotlight = "Spotlight",
+		spotlight_description = "En spotlight, der er klar til at gøre alt eller alle til stjernen i showet. Perfekt til professionelle fotos, dramatisk belysning eller bare følelsen af at være en filmstjerne i dit stue. Den er lysstærk, pålidelig og stjæler altid scenen.",
+		tube_light = "Rørlys",
+		tube_light_description = "Et strømlinet og minimalistisk rørlys, der bytter lysstyrke til stil og tilføjer en blød glød uden at overvælde rummet. Perfekt til at skabe en hyggelig stemning, det er en subtil opgradering, der ser meget cooler ud end dens bulkede modstykker.",
 		yoga_mat = "Yoga måtte",
 		yoga_mat_description = "Denne bærbare yogamåtte er din base for afslapning og træning udendørs. Rul den ud for at finde din zen eller stræk ud efter en anstrengende vandretur. Kan placeres hvor som helst i verden.",
 		cooler_box = "Køleboks",
@@ -9466,6 +9713,12 @@ OP.Global.Locales.Languages["da-DK"] = {
 		spike_strips_large_description = "Denne er til at fange de store fisk eller når du har brug for at dække mere asfalt. Det er ligesom at lægge den røde løber ud, bortset fra at det ikke er for VIP'er, og den punkterer dæk. Kan placeres hvor som helst i verden.",
 		stop_sticks = "Stop Sticks",
 		stop_sticks_description = "Tænk på disse som det urokkelige objekt møder den ustoppelige kraft. Stop sticks punkterer ikke dæk, de stopper køretøjer øjeblikkeligt. Ideelle til at opstille impulsive \"kontroller din hastighed\" områder. Kan placeres hvor som helst i verden.",
+		speed_bump = "Hastighedshump",
+		speed_bump_description = "Det ultimative redskab til at håndhæve nedsættelser af hastigheden og teste en bils affjedring. Udrul denne bærbare plage og se fartdæmoner genoverveje deres livsvalg – perfekt til at omdanne forfølgelser til kravlende parader.",
+		speed_sign = "Hastighedsbegrænsningsskilt",
+		speed_sign_description = "En venlig påmindelse om, at din tunge fod har brug for en pause. Hold dig til hastighedsbegrænsningen, eller risikér at møde både fartbump og radarpistoler.",
+		bumps_sign = "Bumpskilt",
+		bumps_sign_description = "En høflig advarsel om, at din bils affjedring snart får en udfordring. Kør forsigtigt, eller gør dig klar til en bumpet tur!",
 		floodlight = "Flomlys",
 		floodlight_description = "Skift nat til dag, når du er på jagt. Fantastisk til at finde tabte nøgler eller oplyse snedige mistænkte, der prøver at lege gemmeleg. Kan placeres overalt i verden.",
 		left_diversion_sign = "Venstre Omvejsskilt",
@@ -9514,6 +9767,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		claymore = "Claymore",
 		claymore_description = "undefined",
+		mine = "Mine",
+		mine_description = "Når du har brug for den ekstra 'velkomstmatte', hvis ATF banker på døren. Bare placér, aktiver, og se enhver uvelkommen gæst omdanne sig til en fin, rød tåge.",
 
 		tv_stand = "TV Stand",
 		tv_stand_description = "Opgrader dit binge-watching-setup med denne stilfulde TV-stander. Den holder dit TV på det perfekte øjeniveau og har plads til alle dine tilfældige gadgets. Det er som tronen for din skærm.",
@@ -9566,6 +9821,16 @@ OP.Global.Locales.Languages["da-DK"] = {
 		pink_dildo = "Pink Dildo",
 		pink_dildo_description = "Håndlavet, udskåret og testet af Bugsy Middleman.",
 
+		cappuccino_regular = "Cappuccino (Ko Mælk)",
+		cappuccino_almond = "Cappuccino (Mandel Mælk)",
+		cappuccino_pigeon = "Cappuccino (Due Mælk)",
+		iced_latte_regular = "Isterning Latte (Ko Mælk)",
+		iced_latte_almond = "Isterning Latte (Mandel Mælk)",
+		iced_latte_pigeon = "Isterning Latte (Due Mælk)",
+		hot_chocolate_regular = "Varm Chokolade (Ko Mælk)",
+		hot_chocolate_almond = "Varm Chokolade (Mandel Mælk)",
+		hot_chocolate_pigeon = "Varm Chokolade (Due Mælk)",
+
 		bean_coffee = "Bønnekaffe",
 		bean_coffee_description = "Bønne vand.... det er alt, hvad det egentlig er.",
 		cappuccino = "Cappuccino",
@@ -9582,6 +9847,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		pink_lemonade_description = "Absolut ikke bare almindelig lemonade farvet pink, så vi kan tage dobbelt så høje priser...",
 		iced_latte = "Iskaffe",
 		iced_latte_description = "En forfriskende iskaffe, perfekt til en varm dag.",
+		coffee_beans = "Kaffebønner",
+		coffee_beans_description = "En pose med rige, aromatiske kaffebønner klar til at blive forvandlet til brændstoffet, der driver dine morgener og sene nattetimer. Uanset om du kan lide det kraftigt, blødt eller et sted derimellem, er disse bønner din billet til en perfekt kop koffeininduceret lykke.",
 
 		berry_cake = "Bærtærte",
 		berry_cake_description = "En dejlig bærtærte, fyldt med friske bær og lag af sødt bærsyltetøj. Denne tærte er den perfekte godbid for bærelskere og tilbyder en harmonisk blanding af syrlige og søde smage i hver bid.",
@@ -9755,9 +10022,21 @@ OP.Global.Locales.Languages["da-DK"] = {
 		spicy_ramen_description = "Til dem der kan lide at leve på kanten, bringer Krydret Ramen varmen! Dyk ned i en ildelugtende bouillon med nudler og krydret tilbehør, der vil få dine smagsløg til at danse. Kan du klare det?",
 		bento_box = "Bento Box",
 		bento_box_description = "En dejlig blanding af smage og teksturer, denne Bento Box er din go-to for et afbalanceret måltid. Pakket med en række lækkerier, er det som en picnic i en boks. Perfekt til frokost eller en let aftensmad!",
+		mochi_mango = "Mango Mochi",
+		mochi_mango_description = "En tropisk mango mochi sprængfyldt med den søde, saftige smag af modne mangoer. Indpakket i en blød, klæbrig skal, det er en mini-ferie for dine smagsløg.",
+		mochi_strawberry = "Jordbær Mochi",
+		mochi_strawberry_description = "En dejlig jordbær mochi, der kombinerer en frugtagtig, bærsød fyldning med en blød, strækbar overflade. Som at bide ind i en lille sky af solskin og sødme.",
+		mochi_green_tea = "Grøn Te Mochi",
+		mochi_green_tea_description = "En forfriskende grøn te mochi, der blander jordisk matcha smag med en glat, sej tekstur. Ideel til en zen-lignende dessertoplevelse med den perfekte balance mellem sødme og bitterhed.",
+		mochi_chocolate = "Chokolade Mochi",
+		mochi_chocolate_description = "En overdådig chokolade mochi, der omslutter en tyggevenlig, blød ydre omkring en rig, kakao-fyldt kerne. Perfekt til at tilfredsstille søde cravings med et strejf af klæbrig forkælelse.",
+		green_tea_bag = "Grøn Te",
+		green_tea_bag_description = "En pose med premium løse grønne teflader, klar til at fordybe dig i en verden af jordnær, forfriskende smag. Perfekt til tefans, der foretrækker bryggekunsten frem for bekvemmeligheden ved en færdiglavet tepose. En slurk af dette, og du vil smage roen.",
 
 		asahi_beer = "Asahi-øl",
 		asahi_beer_description = "Nyd den sprøde, rene smag af Asahi-øl, en premium japansk pilsner kendt for sin glatte og forfriskende smag. Denne gyldne bryg er ekspertfremstillet til at løfte enhver lejlighed, hvilket gør den til et perfekt valg både til afslappede slurke og fin spisning.",
+		green_tea = "Grøn te",
+		green_tea_description = "En varm, beroligende kop friskbrygget grøn te, der omslutter dig med sin jordagtige aroma og delikate smag. Perfekt til øjeblikke af ro eller en blid opkvikker, det er som et kram i en kop til din sjæl.",
 
 		golf_ball = "Golfkugle",
 		golf_ball_description = "Bruges til golfsport.",
@@ -9947,6 +10226,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		weapon_poolcue = "Poolkø",
 		weapon_stone_hatchet = "Stenøkse",
 		weapon_candycane = "Kæp med slik",
+		weapon_stunrod = "The Shocker",
 
 		weapon_pistol = "Pistol",
 		weapon_pistol_mk2 = "Pistol Mk. II",
@@ -10076,6 +10356,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		weapon_poolcue_description = "Ah, der er ingen lyd mere tilfredsstillende end lyden af et perfekt brud, især når det er den anden fyrs rygrad.",
 		weapon_stone_hatchet_description = "2.5 million års forskning og udvikling, og vi er stadig her.",
 		weapon_candycane_description = "En festlig candy cane. Det er lidt klæbrig.",
+		weapon_stunrod_description = "Når stumpvold bare ikke er nok, bør du overveje at diversificere din tilgang til overfald med en dosis på 30.000 volt.",
 
 		weapon_pistol_description = "Standard håndvåben. En .45 kaliber kampistol med en magasinkapacitet på 12 patroner, der kan udvides til 16.",
 		weapon_pistol_mk2_description = "Balance, enkelthed, præcision: intet holder freden som en forlænget løb i den anden fyrs mund.",
@@ -10311,7 +10592,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		weapon_addon_multitool_description = "Ligesom det normale multiværktøj, men uden de smarte funktioner.",
 
 		weapon_addon_ar15 = "AR-15",
-		weapon_addon_ar15_description = "Mød AR-15, den pålidelige outsider blandt riflerne. Det er som carbineriflens særprægede fætter—samme indmad, forskellig smag. Perfekt når du vil røre lidt rundt uden at blive for fancy. Pålidelig, præcis og lige den rette mængde 'pew pew' til enhver afslappet situation."
+		weapon_addon_ar15_description = "Mød AR-15, den pålidelige outsider blandt riflerne. Det er som carbineriflens særprægede fætter—samme indmad, forskellig smag. Perfekt når du vil røre lidt rundt uden at blive for fancy. Pålidelig, præcis og lige den rette mængde 'pew pew' til enhver afslappet situation.",
+
+		weapon_addon_tennisball = "Tennisbold",
+		weapon_addon_tennisball_description = "Perfekt til en hurtig leg, en hundeledelse eller en kaotisk kast på tværs af værelset. Bare sigt, kast, og se den sprette vildt - bonuspoint hvis den ikke kommer tilbage!"
 	},
 
 	invisibility = {
@@ -10403,7 +10687,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		failed_kissaki_delivery = "Fejl ved åbning af kissaki-måltidet.",
 		failed_green_wonderland_delivery = "Fejl i åbning af grøn wonderland taske.",
 		failed_pizza_this_delivery = "Mislykkedes med at åbne pizzaæsken.",
+		failed_closed_paper_bag = "Kunne ikke åbne papirpose.",
 
+		closed_paper_bag_empty = "Denne papirpose er tom.",
 		burger_shot_delivery_empty = "Det burgershot måltid syntes at være tomt.",
 		bean_machine_delivery_empty = "Den bean machine leverance syntes at være tom.",
 		kissaki_delivery_empty = "Det kissaki-måltid synes at være tomt.",
@@ -10539,7 +10825,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		modify_jail_logs_title = "Ændret Fængslingstid",
 		modify_jail_logs_details = "${consoleName} ændrede fængslingstiden for ${targetCharacter} #${targetCharacterId} (${operation} ${amount} måneder) til ${after}.",
 		triggered_lockdown_logs_title = "Udløst Nedlukning",
-		triggered_lockdown_logs_details = "${consoleName} udløste en fængselsnedlukning."
+		triggered_lockdown_logs_details = "${consoleName} udløste en fængselsnedlukning.",
+		mission_reward_logs_title = "Fængselsmission Belønning",
+		mission_reward_cash_logs_details = "${consoleName} modtog $${amount} kontant for at fuldføre en fængselsmission.",
+		mission_reward_item_logs_details = "${consoleName} modtog 1x ${itemName} for at fuldføre en fængselsmission."
 	},
 
 	kiosks = {
@@ -10968,7 +11257,21 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		no_nearby_vehicle = "Ingen køretøjer i nærheden.",
 		already_checking_upgrades = "Du undersøger allerede et køretøjs optimering.",
-		engine_is_running = "Køretøjets motor kører."
+		engine_is_running = "Køretøjets motor kører.",
+
+		press_open_shop = "Hold ~INPUT_FRONTEND_RDOWN~ for at åbne mekanikerbutikken.",
+		press_close_shop = "Hold ~INPUT_FRONTEND_RDOWN~ for at lukke mekanikerbutikken.",
+		opening_shop = "${time}s åbner værksted.",
+		closing_shop = "${time}s lukker værksted.",
+		shop_closed = "Værksted lukket med succes.",
+		shop_opened = "Værksted åbnet med succes.",
+		failed_shop_closed = "Mislykkedes i at lukke værksted.",
+		failed_shop_opened = "Mislykkedes i at åbne værksted.",
+
+		opened_shop_logs_title = "Værksted åbnet",
+		opened_shop_logs_details = "${consoleName} åbnede værkstedet `${label}`.",
+		closed_shop_logs_title = "Værksted lukket",
+		closed_shop_logs_details = "${consoleName} lukkede værkstedet `${label}`."
 	},
 
 	meow = {
@@ -11011,6 +11314,10 @@ OP.Global.Locales.Languages["da-DK"] = {
 		success_wipe_blocks = "Slettede succesfuldt ${count} blok(ke) inden for en radius på ${radius}m.",
 		failed_wipe_blocks = "Fejlede i at slette blokke.",
 		press_to_use_jukebox = "Tryk på ~INPUT_CONTEXT~ for at bruge jukeboksen."
+	},
+
+	minigames = {
+		skipping_minigame = "Springer Minispil Over"
 	},
 
 	mining = {
@@ -11118,6 +11425,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		bad_ooc_message = "Der blev forsøgt at poste en muligvis dårlig besked i OOC chatten: \"${oocMessage}\"",
 		bad_ped_message = "Der blev forsøgt at oprette en muligvis dårlig PED besked: \"${pedMessage}\"",
 		bad_twitter_post = "Der blev forsøgt at oprette et muligvis dårligt Twitter opslag: \"${twitterPost}\"",
+		bad_twitter_account = "Forsøgt at oprette en muligvis dårlig Twitter-konto: \"${username}\"",
 		bad_phone_message = "Forsøgte at oprette en muligvis dårlig Twitter-post: \"${message}\"",
 		user_not_found = "Vi kunne ikke finde en bruger med server ID '${serverId}'.",
 		player_already_muted = "${consoleName} er allerede blevet mutet.",
@@ -11125,6 +11433,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		player_has_been_muted = "${consoleName} er nu blevet mutet med årsagen: `${reason}`.",
 		player_not_muted = "${consoleName} er ikke mutet.",
 		player_has_been_unmuted = "${consoleName} er nu blevet umutet.",
+		just_been_muted = "Du er lige blevet mutet fra /ooc og /report af årsagen `${reason}`.",
+		just_been_muted_no_reason = "Du er lige blevet mutet fra /ooc og /report uden angivet årsag.",
 		ooc_clear_chat_title = "Chat Ryddet",
 		ooc_clear_chat_details = "${consoleName} ryddede chatten for alle.",
 		muted_player = "Mutet Spiller",
@@ -12127,7 +12437,34 @@ OP.Global.Locales.Languages["da-DK"] = {
 		disabled_generators = "Deaktiverede ${disabledGeneratorsCount} generator(er).",
 
 		drill_drilling = "Boring (${remainingSeconds}s)",
-		drill_jammed = "[${InteractionKey}] Bånd boremaskine blokeret (${remainingSeconds}s)"
+		drill_jammed = "[${InteractionKey}] Bånd boremaskine blokeret (${remainingSeconds}s)",
+		search_safe = "[${InteractionKey}] Søg i Sikker",
+		searching_safe = "Søger i Sikker",
+
+		close_up_bank = "Luk Bank Op",
+		press_to_close_up_bank = "[${InteractionKey}] Luk Bank Op",
+		closing_up_bank = "Lukker Banken",
+
+		not_enough_police = "Der er ikke nok aktive betjente til at starte røveriet.",
+
+		dispatch = "[Dispatch]",
+		alarm_triggered = "10-90: En alarm er blevet udløst i Pacific Bank.",
+		pacific_bank_alarm = "Pacific Bank Alarm",
+
+		press_to_search = "[${InteractionKey}] Søg",
+		search = "Søg",
+		searching = "Søger",
+		found_nothing = "Fandt intet.",
+
+		power_generator_disabled_title = "Strømgenerator Deaktiveret",
+		power_generator_disabled_details = "${consoleName} deaktiverede strømgeneratoren med navnet '${powerGeneratorName}'.",
+
+		pacific_bank_robbery_started_title = "Pacific Bankrådighedsrøveri Startet",
+		pacific_bank_robbery_started_details = "${consoleName} startede Pacific Bank-røveriet.",
+
+		pacific_bank_reward_logs_title = "Pacific Bank Belønning",
+		pacific_bank_reward_saving_bonds_logs_details = "${consoleName} søgte i en sikkerhedsboks og modtog besparelsesobligationer til en værdi af $${amount}.",
+		pacific_bank_reward_items_logs_details = "${consoleName} søgte i en sikkerhedsboks og modtog ${amount}x genstande."
 	},
 
 	panel = {
@@ -12187,14 +12524,20 @@ OP.Global.Locales.Languages["da-DK"] = {
 	},
 
 	paper_bags = {
-		fill_bag = "[${SeatEjectKey}] Fyld Papirpose",
-		no_bags = "Du har ingen papirposer.",
-		no_bag_items = "Du har ingen genstande, som du kan putte i en papirpose.",
-		close_bag = "Luk pose",
-		cancel_bag = "Annuller",
-		title = "Papirpose",
+		paper_bag_brand = "Denne papirspose har et <b>${brand}</b> logo på.",
+		paper_bag_no_brand = "Dette er en almindelig papirpose.",
+
+		burger_shot_delivery = "Burger Shot",
+		bean_machine_delivery = "Bean Machine",
+		kissaki_delivery = "Kissaki",
+		green_wonderland_delivery = "Green Wonderland",
+		pizza_this_delivery = "Pizza This",
+
 		failed_fill = "Fejl: Kunne ikke fylde papirposen.",
-		filled_bag = "Succes: Fyldte papirposen."
+		filled_bag = "Succes: Fyldte papirposen.",
+
+		filled_bag_log_title = "Fyldt papirpose",
+		filled_bag_log_details = "${consoleName} fyldte en papirpose med ${contents}."
 	},
 
 	parking_meters = {
@@ -12203,7 +12546,13 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		no_cash = "Du har ikke 4 $ i kontanter.",
 		max_time = "Denne parkeringsautomat er allerede fyldt op.",
-		failed_pay = "Fejl: Kunne ikke betale parkeringsautomaten."
+		failed_pay = "Fejl: Kunne ikke betale parkeringsautomaten.",
+
+		failed_lockpick = "Det lykkedes ikke at låse op for parkeringsmåleren.",
+		already_lockpicked = "Denne parkeringsmåler var allerede låst op.",
+
+		lockpicked_meter_logs_title = "Låste parkeringsmålerlogs",
+		lockpicked_meter_logs_details = "${consoleName} låseplukkede en parkeringsmåler og modtog ${items} og $${money} i kontanter."
 	},
 
 	pause_menu = {
@@ -12296,6 +12645,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		ped_failed_task = "Mislykkedes med at tildele `${task}` opgave til spawnede peds.",
 		invalid_target = "Ugyldigt mål server ID.",
 		invalid_task = "Ugyldig eller manglende ped opgave.",
+		no_nearby_ped = "Der er ingen nærliggende personer.",
+		ped_attack_success = "Lykkedes med at få personen med netværks-ID'et `${networkId}` til at angribe ${target}.",
+		ped_failed_attack = "Mislykkedes med at få personen med netværks-ID'et `${networkId}` til at angribe ${target}.",
 		ped_emote_success = "Lykkedes med at få spawnede peds til at udføre `${emote}` emote.",
 		ped_failed_emote = "Mislykkedes med at få spawnede peds til at udføre `${emote}` emote.",
 		invalid_emote = "Ugyldig emote `${emote}`.",
@@ -12509,7 +12861,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		invalid_prop_id = "Ugyldigt rekvisit id.",
 		prop_deleted = "Rekvisit med id ${propId} blev slettet.",
 
-		invalid_wipe_radius = "Ugyldig radius til fjernelse (mellem 1 og 100).",
+		invalid_wipe_radius = "Ugyldig radius for sletning (mellem 1 og 500).",
 		wipe_successful = "Rensning lykkedes. ${amount} enhed(er) blev fjernet.",
 		wipe_failed = "Kunne ikke slette rekvisitter.",
 
@@ -12764,6 +13116,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		logs = "Transaktionslog",
 		no_logs = "Ingen transaktionslogs.",
 		summary = "undefined",
+		summary_description = "Oversigt over alle transaktioner inden for de seneste 90 dage for denne konto.",
 		name = "undefined",
 		transactions = "undefined",
 		withdrawn = "undefined",
@@ -12827,7 +13180,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		scrapyard = "Skrotplads",
 		cant_scrap_vehicle = "Beklager, makker, men den bil har flere advarselslamper end en rodeo. Kan ikke tage den fra dine hænder!",
 		failed_scrap_vehicle = "Det ser ud til, at vores skrotplads har fået hikke. Prøv at skrotte din bil igen senere, makker!",
-		scrap_confirm = "Er du sikker på, at du vil skrotte dette køretøj? Dette vil FJERNE ${name} PERMANENT fra din garage, og du vil modtage 12-16% af dets oprindelige pris i kontanter og guldbarer.",
+		scrap_confirm = "Er du sikker på, at du vil skrotte dette køretøj? Dette vil FJERNE ${name} permanent fra din garage, og du vil modtage 16-20% af dets oprindelige pris i kontanter og guldbarrer.",
 		scrap_success = "Nå, vi forvandlede den skrammel til skat. Det var nok også på tide at sige farvel alligevel, makker!",
 		scrapped_vehicle_logs_title = "Skrotet Køretøj",
 		scrapped_vehicle_logs_details = "${consoleName} skrottede deres køretøj (${modelName} #${vehicleId}) og modtog ${gold}x Guldbarer og $${cash} i kontanter (${percentage}% af den oprindelige pris)."
@@ -13386,6 +13739,15 @@ OP.Global.Locales.Languages["da-DK"] = {
 		teleport_player_player_logs_details = "${consoleName} teleporterede ${sourceConsoleName} til ${targetConsoleName}."
 	},
 
+	taxes = {
+		taxes_collected = "Indsamlede skatter. Beløbene er som følger.\n- Kontanter: $${cash}\n- Bank: $${bank}\n- Aktier: $${stocks}\n- Opsparing: $${savings}\n- Fælles konti: $${sharedAccounts}",
+		taxes = "Skatter",
+		transaction_logs = "Transaktionslogs",
+		paid_taxes = "Du har betalt ${amount} i skat.",
+		no_logs = "Ingen transaktionslogs.",
+		close = "Luk"
+	},
+
 	teleporters = {
 		area_not_clear = "Destinationen er blokeret af et køretøj.",
 
@@ -13634,6 +13996,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		department_police_undercover = "Politi Undercover",
 
+		department_doc_training = "DOC Træning",
 		department_police_training = "Polititræning",
 		department_medical_training = "EMS Træning",
 		department_bcfd_training = "BCFD Træning"
@@ -14284,6 +14647,8 @@ OP.Global.Locales.Languages["da-DK"] = {
 		no_nearby_vehicle = "Ingen nærliggende køretøj.",
 		no_nearby_vehicle_door = "Ikke ved en køretøjsdør.",
 		removing_door = "Fjerner Dør",
+		cleaning_up_body = "Rydde op efter lig",
+		destroying_spikes = "Ødelæggelse af pigge",
 		failed_remove_door = "Kunne ikke fjerne køretøjsdør.",
 		invalid_clothing_type = "Ugyldig tøjtype.",
 		no_nearby_player = "Ingen spiller i nærheden er cuffet eller nede.",
@@ -14379,7 +14744,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		none = "Ingen",
 		active = "Aktiv",
 		not_active = "Ikke aktiv",
-		active_robberies = "\nAktiv butik: ${store}.\nAktiv bank: ${bank}\nAktivt smykkeskrin: ${jewelry}",
+		active_robberies = "\nAktiv butik: ${store}.\nAktivt bankrøveri: ${bank}\nAktivt smykkerøveri: ${jewelry}\nPacific Bank: ${pacificBank}",
 
 		failed_dispatch = "Kunne ikke sende besked til dispatch.",
 		dispatch_title = "[Dispatch]",
@@ -14472,6 +14837,7 @@ OP.Global.Locales.Languages["da-DK"] = {
 		on_floor = "På ${floor}.",
 		ground_floor = "Stueetage",
 		second_floor = "Anden sal",
+		third_floor = "Tredje sal",
 		icu_floor = "Intensivafdeling (ICU)",
 		surgery_floor = "Operationsgang",
 
@@ -14513,7 +14879,55 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 		task_disinfect_table = "Desinficer operationsbordet.",
 		task_disinfect_table_near = "Tryk på ~INPUT_DETONATE~ for at desinficere operationsbordet.",
-		task_disinfect_table_active = "Desinficerer Bord"
+		task_disinfect_table_active = "Desinficerer Bord",
+
+		task_wipe_table = "Tør bordet af.",
+		task_wipe_table_near = "Tryk på ~INPUT_DETONATE~ for at tørre bordet af.",
+		task_wipe_table_active = "Tørrer bordet af",
+
+		task_wash_dishes = "Vask op.",
+		task_wash_dishes_near = "Tryk på ~INPUT_DETONATE~ for at vaske op.",
+		task_wash_dishes_active = "Vasker op",
+
+		task_restock_drink_dispenser = "Genopfyld sodavandsautomaten.",
+		task_restock_drink_dispenser_near = "Tryk på ~INPUT_DETONATE~ for at genopfylde sodavandsautomaten.",
+		task_restock_drink_dispenser_active = "Genopfylder sodavandsautomaten",
+
+		task_restock_ingredients = "Genopfyld ingredienserne.",
+		task_restock_ingredients_near = "Tryk ~INPUT_DETONATE~ for at genopfylde ingredienserne.",
+		task_restock_ingredients_active = "Genopfylder ingredienser",
+
+		task_organize_shelf = "Organiser hylden.",
+		task_organize_shelf_near = "Tryk ~INPUT_DETONATE~ for at organisere hylden.",
+		task_organize_shelf_active = "Organiserer hylden",
+
+		task_clean_countertop = "Rengør bordpladen.",
+		task_clean_countertop_near = "Tryk ~INPUT_DETONATE~ for at rengøre bordpladen.",
+		task_clean_countertop_active = "Rengører bordpladen",
+
+		task_file_taxes = "Indsend skatter.",
+		task_file_taxes_near = "Tryk på ~INPUT_DETONATE~ for at indsende skatter.",
+		task_file_taxes_active = "Indsender skatter",
+
+		task_refill_napkins = "Genopfyld servietter.",
+		task_refill_napkins_near = "Tryk på ~INPUT_DETONATE~ for at genopfylde servietter.",
+		task_refill_napkins_active = "Genopfylder Servietter",
+
+		task_refill_water = "Genopfyld vanddispenser.",
+		task_refill_water_near = "Tryk på ~INPUT_DETONATE~ for at genopfylde vanddispenseren.",
+		task_refill_water_active = "Genopfylder Vanddispenser",
+
+		task_clean_windows = "Rengør vinduerne.",
+		task_clean_windows_near = "Tryk på ~INPUT_DETONATE~ for at rengøre vinduerne.",
+		task_clean_windows_active = "Rengøring af Vinduer",
+
+		task_clean_oven = "Rengør ovnen.",
+		task_clean_oven_near = "Tryk på ~INPUT_DETONATE~ for at rengøre ovnen.",
+		task_clean_oven_active = "Rengøring af Ovn",
+
+		task_take_nap = "Tag en lur.",
+		task_take_nap_near = "Tryk på ~INPUT_DETONATE~ for at tage en lur.",
+		task_take_nap_active = "Tager en lur"
 	},
 
 	tow = {
@@ -14679,6 +15093,9 @@ OP.Global.Locales.Languages["da-DK"] = {
 		fuel_level_set_to = "Mængden af benzinen er blevet sat til `${fuelLevel}`.",
 		not_in_a_vehicle = "Du sidder ikke i et køretøj.",
 		vehicle_engine_on = "Motoren kører stadigvæk.",
+
+		fuel_debug_enabled = "Aktiverede brændstofdebuggen.",
+		fuel_debug_disabled = "Deaktiverede brændstofdebuggen.",
 
 		vehicle_exploded_logs_title = "Køretøj eksploderet",
 		vehicle_exploded_logs_details = "${consoleName} tankede et køretøj og udløste en eksplosion på grund af en kørende motor."
@@ -14846,12 +15263,22 @@ OP.Global.Locales.Languages["da-DK"] = {
 		gave_keys_success = "Har givet ${displayName} nøglerne til deres køretøj.",
 		gave_keys_failure = "Kunne ikke give ${displayName} nøglerne til deres køretøj.",
 
+		car_keys_label = "Nøgler til ${plate}",
+		something_went_wrong = "Noget gik galt.",
+		keys_no_longer_work = "Disse nøgler virker ikke længere.",
+		success_use_keys = "Du har nu nøglerne til `${plate}`.",
+
 		no_nearby_vehicle = "Ingen køretøj i nærheden.",
 		there_is_someone_in_the_driver_seat = "Der er nogen på førersædet.",
 		the_driver_door_is_closed = "Førerdøren er lukket.",
 		checking_ignition = "Kontrollerer Tænding",
 		ignition_tampered_with = "Tændingen er blevet manipuleret.",
-		ignition_not_tampered_with = "Tændingen er ikke blevet manipuleret."
+		ignition_not_tampered_with = "Tændingen er ikke blevet manipuleret.",
+
+		used_car_keys_logs_title = "Brugte Bilnøgler",
+		used_car_keys_logs_details = "${consoleName} brugte bilnøgler til et køretøj med nummerpladen `${plate}` (N-${networkId}).",
+		grabbed_car_keys_logs_title = "Grebet Bilnøgler",
+		grabbed_car_keys_logs_details = "${consoleName} greb bilnøglerne til et køretøj med nummerpladen `${plate}` (N-${networkId})."
 	},
 
 	modifications = {
@@ -14905,7 +15332,11 @@ OP.Global.Locales.Languages["da-DK"] = {
 
 	sirens = {
 		sirens_muted_on = "Alle sirener er nu slået fra.",
-		sirens_muted_off = "Alle sirener er nu slået til."
+		sirens_muted_off = "Alle sirener er nu slået til.",
+
+		lights_on = "Lys: ${count}",
+		sirens_on = "Sirener: ${count}",
+		horns_on = "Horn: ${count}"
 	},
 
 	spawner = {

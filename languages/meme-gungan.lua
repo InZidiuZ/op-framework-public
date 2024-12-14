@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 34 (do not change)
+-- AUTO LOCALES: 35 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -83,7 +83,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 	ledges = {
 		no_ledge = "undefined",
-		invalid_variation = "undefined",
+		invalid_variation = "Meesa-sa sorry, dissa variation is invalid (1 - 13).",
 		press_x_to_stop = "undefined"
 	},
 
@@ -872,7 +872,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		sit_ledge_command = "undefined",
 		sit_ledge_command_help = "undefined",
 		sit_ledge_command_parameter_variation = "undefined",
-		sit_ledge_command_parameter_variation_help = "undefined",
+		sit_ledge_command_parameter_variation_help = "Whosa sit animation to play (1 - 13).",
 		sit_ledge_command_substitutes = "undefined",
 
 		-- animations/walkstyles
@@ -899,7 +899,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		staff_pm_command_parameter_server_id_help = "Da playa's server ID yousa areen trying to mesa-jar-jar binks.",
 		staff_pm_command_parameter_message = "message",
 		staff_pm_command_parameter_message_help = "Da message yousa would liken to senden.",
-		staff_pm_command_substitutes = "staffpm",
+		staff_pm_command_substitutes = "staffpm, mesaaje, pm, msg",
 
 		important_staff_pm_command = "important_staff_pm",
 		important_staff_pm_command_help = "Send an important message to a player as a staff member.",
@@ -907,7 +907,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		important_staff_pm_command_parameter_server_id_help = "Da playa's server ID yousa are tryin' ta message.",
 		important_staff_pm_command_parameter_message = "message",
 		important_staff_pm_command_parameter_message_help = "Da important message yousa would like ta send.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
 
 		reply_pm_command = "undefined",
 		reply_pm_command_help = "undefined",
@@ -1304,7 +1304,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		register_weapon_command_substitutes = "",
 
 		advanced_metagame_command = "yousa wesa besta friend",
-		advanced_metagame_command_help = "Superadmin command to help yousa take yousa metagaming to da next level.",
+		advanced_metagame_command_help = "Command to help you take your metagaming to the next level.",
+		advanced_metagame_command_parameter_use_characters = "use characters",
+		advanced_metagame_command_parameter_use_characters_help = "Use character names instead of player names.",
 		advanced_metagame_command_substitutes = "am",
 
 		list_weapon_attachments_command = "list_weapon_attachments",
@@ -1479,6 +1481,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		leaderboard_command_parameter_total_playtime_help = "undefined",
 		leaderboard_command_substitutes = "",
 
+		economy_leaderboard_command = "gunganpo_leedaboada",
+		economy_leaderboard_command_help = "Check da gunganpo leedaboada.",
+		economy_leaderboard_command_substitutes = "gleedaboada",
+
 		package_command = "package",
 		package_command_help = "Mesa checken un zuricken package.",
 		package_command_substitutes = "refresh_package",
@@ -1589,12 +1595,16 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Ding dong da Battle Royale feature.",
+		battle_royale_toggle_command_parameter_max_teammates = "max ome-cajjas",
+		battle_royale_toggle_command_parameter_max_teammates_help = "Da maxmimum amount of allowed ome-cajjas per team. Defaul is 4. Minimum is 1 and maxmimum is 10.",
 		battle_royale_toggle_command_substitutes = "br_toggle",
 
 		battle_royale_start_command = "battle_royale_startisa",
 		battle_royale_start_command_help = "Startisa a Battle Royale matchen.",
 		battle_royale_start_command_parameter_no_vehicles = "no clanky clankys",
 		battle_royale_start_command_parameter_no_vehicles_help = "Mesa create a matchen with no clanky clankys.",
+		battle_royale_start_command_parameter_new_inventories = "new inventories",
+		battle_royale_start_command_parameter_new_inventories_help = "Mesa create a match where every bombad has an empty, temporary inventory.",
 		battle_royale_start_command_substitutes = "br_startisa",
 
 		battle_royale_invite_command = "battle_royale_inviteisa",
@@ -1810,7 +1820,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		-- game/container_storage
 		containers_command = "undefined",
 		containers_command_help = "undefined",
-		containers_command_substitutes = "",
+		containers_command_substitutes = "nashtuubs",
+
+		-- game/containers
+		containers_debug_command = "containers_debug",
+		containers_debug_command_help = "Mesa speak yousa all nearby containers.",
+		containers_debug_command_substitutes = "",
 
 		-- game/crafting
 		crafting_debug_command = "crafting_debug",
@@ -2121,6 +2136,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		random_position_command = "random_position",
 		random_position_command_help = "Sends you to a random position on zee main island. (Also turns on yer invisibility)",
+		random_position_command_parameter_server_id = "serever id",
+		random_position_command_parameter_server_id_help = "Da serever id of da player yousa want to teleport.",
 		random_position_command_substitutes = "random",
 
 		crash_ui_command = "undefined",
@@ -2153,7 +2170,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		-- game/development
 		toggle_developer_ambience_command = "toggle_developer_ambience",
 		toggle_developer_ambience_command_help = "Mesa toggles the developer ambience.",
-		toggle_developer_ambience_command_substitutes = "",
+		toggle_developer_ambience_command_substitutes = "developer_ambience, ambience",
 
 		-- game/dna_evidence
 		take_dna_sample_command = "take_dna_sample",
@@ -2714,6 +2731,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		minecraft_wipe_command_parameter_radius_help = "undefined",
 		minecraft_wipe_command_substitutes = "",
 
+		-- game/minigames
+		skip_minigames_command = "skip_minigames",
+		skip_minigames_command_help = "Toggle skipping of minigames.",
+		skip_minigames_command_substitutes = "",
+
 		-- game/mining
 		mining_debug_command = "mining_debug",
 		mining_debug_command_help = "Meesa toggle the debug mode for mining.",
@@ -2841,6 +2863,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		model_view_command_parameter_model_help = "undefined",
 		model_view_command_parameter_no_blocker = "undefined",
 		model_view_command_parameter_no_blocker_help = "undefined",
+		model_view_command_parameter_clamp = "bluster",
+		model_view_command_parameter_clamp_help = "Bluster the bulk to always be more than 0.25 (moisture with puny models).",
 		model_view_command_parameter_components = "components",
 		model_view_command_parameter_components_help = "Weapon components (comma separated).",
 		model_view_command_substitutes = "undefined",
@@ -3026,6 +3050,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		ped_remove_command = "muy-muy_remove",
 		ped_remove_command_help = "Mesa away all ya spawned peds.",
 		ped_remove_command_substitutes = "",
+
+		ped_attack_command = "ped_march",
+		ped_attack_command_help = "Makes the nearby ped march towards a specific player.",
+		ped_attack_command_parameter_target = "solitary",
+		ped_attack_command_parameter_target_help = "The individual you want the nearest ped to march towards.",
+		ped_attack_command_substitutes = "",
 
 		list_ped_emotes_command = "list_mesa_emotes",
 		list_ped_emotes_command_help = "Listsa all available mesa emotes.",
@@ -3461,6 +3491,17 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		tablet_command = "tabuleet",
 		tablet_command_help = "Yi amfani da UI na tabuleet (ina da tabuleet ko ba).",
 		tablet_command_substitutes = "",
+
+		-- game/taxes
+		tax_collection_command = "dues_pickin",
+		tax_collection_command_help = "Instigate a handpickin of dues manually.",
+		tax_collection_command_parameter_percentage = "percentage",
+		tax_collection_command_parameter_percentage_help = "Sa percentage yousa want to tax of players wealth. It will tax offline players as well. A normal number might be 0.1 (0.1%).",
+		tax_collection_command_substitutes = "",
+
+		taxes_command = "taxes",
+		taxes_command_help = "Show yousa taxes.",
+		taxes_command_substitutes = "",
 
 		-- game/teleporting
 		tp_back_command = "undefined",
@@ -3965,6 +4006,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		set_fuel_command_parameter_server_id_help = "undefined",
 		set_fuel_command_substitutes = "fuel",
 
+		fuel_debug_command = "fuel_debug",
+		fuel_debug_command_help = "Print vehicle fuel level changes to the console.",
+		fuel_debug_command_substitutes = "",
+
 		-- vehicles/garage_access
 		manage_garage_command = "undefined",
 		manage_garage_command_help = "undefined",
@@ -4019,6 +4064,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		pickup_keys_command = "mesa_keys",
 		pickup_keys_command_help = "Mesa pick up keys da nearest vehicle.",
 		pickup_keys_command_substitutes = "",
+
+		grab_keys_command = "grab_keys",
+		grab_keys_command_help = "Grab the keys from the vehicle yousa are currently driving.",
+		grab_keys_command_substitutes = "",
 
 		keys_command = "keysa",
 		keys_command_help = "Geta keys to da rotta yousa are currently in.",
@@ -4086,6 +4135,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		mute_sirens_command = "moota siraans",
 		mute_sirens_command_help = "Mootas all siraansas and horns.",
 		mute_sirens_command_substitutes = "",
+
+		sirens_debug_command = "krak boom commando",
+		sirens_debug_command_help = "Mesa draw all sirens, horns and lights.",
+		sirens_debug_command_substitutes = "",
 
 		-- vehicles/trailers
 		toggle_trailer_command = "undefined",
@@ -4370,6 +4423,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		player_playtime = "${playerName} (Position ${position})\nTotal Playtime: ${totalPlaytime}\nSession Playtime: ${sessionPlaytime}",
 		leaderboard = "Leaderboard",
 		leaderboard_total = "undefined",
+		leaderboard_economy = "Leaderboard (Economy)",
 		your_position = "Yoursa position",
 		leaderboard_loading = "undefined",
 		logs_user_reject_connection_title = "Connection Rejected",
@@ -4491,7 +4545,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		fake_disconnect_feature = "undefined",
 		brighter_nights_feature = "undefined",
 		ridealong_feature = "undefined",
-		broadcast_all_feature = "Broadcast To All"
+		broadcast_all_feature = "Broadcast To All",
+		skip_minigames_feature = "Skip Minigames"
 	},
 
 	admin_menu = {
@@ -4568,7 +4623,45 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	animals = {
-		invalid_sound = "Meesa sorry, dis sound no good."
+		invalid_sound = "Meesa sorry, dis sound no good.",
+		not_enough_space = "Yousa don't have enough space to pick up this animal.",
+
+		male = "male",
+		female = "female",
+
+		description_cat_unnamed = "A ${gender} feline wandering through life with an air of mystery, ${age} old and weighing ${weight}. With an insatiable weakness for ${food}, this whiskered wanderer could be plotting world domination one moment and curl up for a nap the next. Every whisker tells a story, every glance holds a secret.",
+		description_cat_named = "${name}, da ${gender} cat, be a ${age} old companion who carries da wisdom of countless sunlit naps and midnight adventures. Weighing ${weight} and harboring an unshakeable passion for ${food}, ${name} moves through da world like a living riddle—part royal dignitary, part mischievous street philosopher.",
+
+		description_dog_unnamed = "A ${gender} canine, ${age} old and weighing ${weight}, with a spirit as boundless as da horizon. Utterly devoted to ${food} and wearing a heart full of unbridled enthusiasm, dis furry companion turns every moment into a potential adventure, every walk into an epic journey.",
+		description_dog_named = "${name}, da ${gender} dog, ${age} yoyo dis grand tale o companionship, weighing ${weight} and radiatin' an energy dat could light up da darkest room. Completely enamored wif ${food}, ${name} lives by a simple creed: every day is a gift, every friend a treasure, every moment an opportunity for joy.",
+
+		description_rabbit_unnamed = "Dis ${gender} rabbit, ${age} young and weighing ${weight}, bounds through life wif da enthusiasm of a born explorer. Driven by an unexpected love for ${food}, its ears are always alert, its spirit uncontainably vibrant—a tiny heart beating wif boundless curiosity.",
+		description_rabbit_named = "${name}, a ${gender} rabbit ${age} inessen wild journey of life, weighs ${weight} und carries ah infectious zest dat defies its size. Utterly devoted to ${food}, ${name} turns every hop into ein declaration of joy, every nibble into an adventure.",
+
+		description_hen_unnamed = "Ah ${gender} hen, ${age} old und strutting at ${weight}, who moves with da confidence of ah farmyard philosopher. Fueled by an unexpected craving for ${food}, dis feathered friend transforms ordinary moments into epic narratives of poultry prowess.",
+		description_hen_named = "${name}, da ${gender} hen, ${age} thupaan and weighing ${weight}, gorks wit da authority of a seasoned storyteller. Obsessed wesa ${food} and masters of da unexpected, ${name} proves dat true charisma knows no species.",
+
+		description_rat_unnamed = "Dis ${gender} rat, ${age} adventurous and weighing ${weight}, navigates da world wit razor-sharp intelligence and unexpected charm. Driven by an absolute devotion to ${food}, it turns every corner into a potential discovery, every shadow into a playground.",
+		description_rat_named = "${name}, a ${gender} opee sea killer ${age} into life's grand experiment, weighing ${weight} and bursting with personality. With an unbreakable bond to ${food}, ${name} embodies the spirit of curiosity—small in size, infinite in spirit.",
+
+		pick_up_named = "[${SeatEjectKey}] Pick up ${name}",
+		pick_up_cat = "[${SeatEjectKey}] Pick Up Loth-cat",
+		pick_up_dog = "[${SeatEjectKey}] Pick Up Nuna",
+		pick_up_hen = "[${SeatEjectKey}] Pick Up Aiwha",
+		pick_up_rabbit = "[${SeatEjectKey}] Pick Up Shaak",
+		pick_up_rat = "[${SeatEjectKey}] Pick Up Opee",
+
+		failed_pickup_cat = "Meesa failed to pick up the cat.",
+		failed_pickup_dog = "Meesa failed to pick up the dog.",
+		failed_pickup_hen = "Meesa failed to pick up the hen.",
+		failed_pickup_rabbit = "Meesa failed to pick up the rabbit.",
+		failed_pickup_rat = "Meesa failed to pick up the rat.",
+
+		failed_place_cat = "Meesa failed to place the cat.",
+		failed_place_dog = "Meesa failed to place the dog.",
+		failed_place_hen = "Meesa failed to place the hen.",
+		failed_place_rabbit = "Meesa failed to place the rabbit.",
+		failed_place_rat = "Meesa failed to place the rat."
 	},
 
 	arcade = {
@@ -4691,8 +4784,28 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		deposit = "Deposit",
 		balance = "Balance",
 		transfer = "Transfer",
+		deposit_coins = "Deposit Coins",
 		savings_bonds = "Savings Bonds",
 		back = "Back",
+
+		condition_pristine = "in beauty",
+		condition_mint = "in near-perfect beauty",
+		condition_slight_worn = "a bit worn",
+		condition_worn = "worn",
+		condition_heavy_worn = "seriously worn",
+		condition_corroded = "corroded",
+		condition_damaged = "damaged",
+		condition_unrecognizable = "not recognizable",
+
+		mint_p = "Philadelphia (P)",
+		mint_d = "Denver (D)",
+		mint_s = "San Francisco (S)",
+		mint_w = "West Point (W)",
+		mint_cc = "Carson City (CC)",
+		mint_o = "New Orleans (O)",
+		mint_none = "from far away land (no mark of where)",
+
+		coin_metadata = "Minted in ${minted}, dis coin was produced at ${mark} und issa ${condition}.",
 
 		amount = "Amount",
 		target = "Target",
@@ -4706,6 +4819,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		failed_withdraw = "Meesa sorry, mesa could not withdraw money",
 		failed_transfer = "Meesa sorry, mesa could not transfer money",
 		failed_deposit_bonds = "Failed to deposit savings bonds",
+		failed_deposit_coins = "Failed to deposit coins",
 
 		processing = "Meesa processing...",
 		counting_bills = "Meesa counting bills...",
@@ -4713,22 +4827,29 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		something_went_wrong = "Oopsie, something went wrong.",
 		error_not_online = "Your target is mesa not available.",
 		error_not_enough_money = "Mesa flunked out of money.",
-		deposit_amount_big = "ATM deposits bombad limit is $4,000.",
-		withdraw_amount_big = "ATM withdraws bombad limit is $6,000.",
+		deposit_amount_big = "ATM deposits are limited to $5,000.",
+		withdraw_amount_big = "ATM withdraws are limited to $10,000.",
+		bond_fee_details = "2% processing fee for savings bonds.",
+		atm_fee_details = "1.5% processing fee for ATM withdrawals.",
 
 		retrieving_card = "Retrieving Card",
 		atm_damaged = "Dis bombad ATM ish damaged",
 
 		press_to_use = "Press ~g~${InteractionKey} ~w~to use the ATM",
 		press_to_interact_bank = "Press ~g~${InteractionKey} ~w~to interact with dee Bank",
+		fee_label = "wif a fee of $${fee}",
+		no_fee_label = "wif no fee",
 
 		deposit_log_bank_title = "Bank Deposit",
 		deposit_log_atm_title = "ATM Deposit",
 		deposit_log = "${consoleName} deposited $${amount}.",
 
+		deposit_coins_log_title = "Coin Deposit",
+		deposit_coins_log = "${consoleName} deposited ${coins} worth $${amount}.",
+
 		withdraw_log_bank_title = "Bank Withdraw",
 		withdraw_log_atm_title = "ATM Withdraw",
-		withdraw_log = "${consoleName} withdrawn ${amount} galactic credits.",
+		withdraw_log = "${consoleName} goomba $${amount} ${fee}.",
 		withdraw_log_bonds_title = "Bank Withdraw (Bonds)",
 		withdraw_log_bonds = "${consoleName} withdrew $${amount} in savings bonds (${bonds}).",
 
@@ -4736,7 +4857,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		transfer_log = "${consoleName} (#${characterId}) transferred ${amount} galactic credits to ${targetConsoleName} (#${targetCharacterId}).",
 
 		deposit_log_bonds_title = "Bond Deposit",
-		deposit_bonds_log = "${consoleName} deposit ${bonds} worth $${amount}."
+		deposit_bonds_log = "${consoleName} binka binks ${bonds} worth $${totalMoney} with a $${fee} fee (=$${amount})."
 	},
 
 	attachments = {
@@ -5598,13 +5719,15 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	containers = {
-		drill_container = "Press ~INPUT_CONTEXT~ to drill open da container.",
-		drilling_container = "Drillin' Containah",
-		failed_drill = "Missed da drill on openin' dat containah!",
-		drill_success = "Successfully drilled open da containah.",
+		drill_container = "Press ~INPUT_CONTEXT~ to bink binka the container lock.",
+		drill_warehouse = "Press ~INPUT_CONTEXT~ to bink binka the warehouse lock.",
+		drilling_lock = "Binking Lock",
+		failed_drill = "Failed to bink binka the lock.",
+		drill_success = "Successfully binked binka the lock.",
 
-		containers_due_soon = "undefined",
-		container_blip = "Containah"
+		containers_due_soon = "${count} of your storage binks/warehouses are due soon.",
+		container_blip = "Containah",
+		warehouse_blip = "Pakka-boosta"
 	},
 
 	crafting = {
@@ -6211,6 +6334,29 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		crafted_bacon = "undefined",
 		failed_craft_bacon = "undefined",
 
+		make_mochi = "Mahala Mochi",
+		press_to_make_mochi = "[${SeatEjectKey}] Mahala Mochi",
+
+		mochi_mango_recipe = "Mango Mochi",
+		making_mochi_mango = "Livin Mango Mochi",
+		made_mochi_mango = "Mango mochi pamahtied.",
+		failed_make_mochi_mango = "Failen to make mango mochi.",
+
+		mochi_strawberry_recipe = "Strawberry Mochi",
+		making_mochi_strawberry = "Livin Strawberry Mochi",
+		made_mochi_strawberry = "Strawberry mochi pamahtied.",
+		failed_make_mochi_strawberry = "Failen to make strawberry mochi.",
+
+		mochi_green_tea_recipe = "Green Tea Mochi",
+		making_mochi_green_tea = "Yith fuisseeloo Green Tea Mochi",
+		made_mochi_green_tea = "Fuisseeloo green tea mochi.",
+		failed_make_mochi_green_tea = "Bumblin to fuisseeloo green tea mochi.",
+
+		mochi_chocolate_recipe = "Chocolate Mochi",
+		making_mochi_chocolate = "Yith fuisseeloo Chocolate Mochi",
+		made_mochi_chocolate = "Fuisseeloo chocolate mochi.",
+		failed_make_mochi_chocolate = "Bumblin to fuisseeloo chocolate mochi.",
+
 		cook_food = "undefined",
 		press_to_cook_food = "undefined",
 
@@ -6233,6 +6379,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		cooking_spicy_ramen = "undefined",
 		cooked_spicy_ramen = "undefined",
 		failed_cook_spicy_ramen = "undefined",
+
+		green_tea_recipe = "Green Tea",
+		brewing_green_tea = "Brewin' Green Tea",
+		brewed_green_tea = "Brewed green tea.",
+		failed_brew_green_tea = "Bumblin to brew green tea.",
 
 		cut_ingridients = "undefined",
 		press_to_cut_ingridients = "undefined",
@@ -6385,6 +6536,30 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		baking_chocolate_cake = "undefined",
 		baked_chocolate_cake = "undefined",
 		failed_baking_chocolate_cake = "undefined",
+
+		make_coffee = "Makin Java",
+		press_to_make_coffee = "[${SeatEjectKey}] Makin Java",
+
+		bean_coffee_recipe = "Bean Java",
+		espresso_recipe = "Espresso",
+		cappuccino_regular_recipe = "Cappucino (Cow Milk)",
+		cappuccino_almond_recipe = "Cappucino (Almond Milk)",
+		cappuccino_pigeon_recipe = "Cappucino (Pigeon Milk)",
+		iced_latte_regular_recipe = "Iced Latte (Cow Milk)",
+		iced_latte_almond_recipe = "Iced Latte (Almond Milk)",
+		iced_latte_pigeon_recipe = "Iced Latte (Pigeon Milk)",
+
+		brewing_coffee = "Brewin' Java",
+		brewed_coffee = "Brewed cawa.",
+		failed_brewing_coffee = "Failed to brew cawa.",
+
+		hot_chocolate_regular_recipe = "Hot Chocolate (Cow Milk)",
+		hot_chocolate_pigeon_recipe = "Hot Chocolate (Almond Milk)",
+		hot_chocolate_almond_recipe = "Hot Chocolate (Pigeon Milk)",
+
+		making_hot_chocolate = "Making Hot Chocolate",
+		made_hot_chocolate = "Made hot chocolate.",
+		failed_make_hot_chocolate = "Failed to make hot chocolate.",
 
 		no_required_items = "You no have all the necessary items.",
 
@@ -6672,22 +6847,29 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	container_storage = {
-		rent_container = "undefined",
+		rent_container = "[${InteractionKey}] Rent C-${id} ($${price} per week)",
+		rent_warehouse = "[${InteractionKey}] Rent W-${id} ($${price} per week)",
 		renting_container = "undefined",
+		renting_warehouse = "Yousa Rentin' Warehouse",
 		failed_rent_container = "undefined",
+		failed_rent_warehouse = "Failed to rent warehouse.",
 		rent_container_success = "undefined",
-		access_container = "undefined",
-		container_id = "undefined",
+		rent_warehouse_success = "Successfully rented warehouse #${id}. Yousa can manage yous warehouses using `/warehouses`.",
+		access_container = "[${InteractionKey}] Access C-${id}",
+		access_warehouse = "[${InteractionKey}] Access W-${id}",
+		container_id = "C-${id}",
+		warehouse_id = "W-${id}",
 
-		storage_containers = "undefined",
+		storage_containers = "Storage Containers/Warehouses",
 		container = "undefined",
+		warehouse = "Warehouse",
 		loading = "undefined",
 		failed_remove_access = "undefined",
 		failed_add_access = "undefined",
 		access = "undefined",
 		add_cid = "undefined",
-		no_containers = "undefined",
-		no_access = "undefined",
+		no_containers = "Yousa don't own or have access to any storage containers/warehouses.",
+		no_access = "Mesa nobody except you has access to this container/warehouse.",
 		back = "undefined",
 		close = "undefined",
 		character_not_exist = "undefined",
@@ -6697,14 +6879,14 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		not_enough_money = "undefined",
 		failed_pay_rent = "undefined",
 		mark_gps = "undefined",
-		container_alert = "undefined",
+		container_alert = "Yousa container/warehouse #${containerId} is being tampered with.",
 
 		rented_container_logs_title = "undefined",
-		rented_container_logs_details = "undefined",
+		rented_container_logs_details = "${consoleName} rented ${type} #${containerId} for $${price}.",
 		paid_rent_logs_title = "undefined",
-		paid_rent_logs_details = "undefined",
+		paid_rent_logs_details = "${consoleName} paid $${price} rent for ${type} #${containerId} (paid until `${till} UTC`).",
 		lockpicked_container_logs_title = "undefined",
-		lockpicked_container_logs_details = "undefined"
+		lockpicked_container_logs_details = "${consoleName} lockpicked ${type} #${containerId}."
 	},
 
 	courthouse = {
@@ -6865,6 +7047,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		coords = "Coords: ${coords}",
 		rotation = "Rotation: ${rotation}",
 		normal = "Surfacea: ${normala}",
+		surface_heading = "Surface: ${heading}",
 		velocity = "Velocity: ${velocity}",
 		ground_material = "Ground Material: ${material}",
 		debug_print_f8 = "Debuggin' information has been printed in yousa F8 console.",
@@ -6878,6 +7061,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		copied_model_name = "undefined",
 		copied_entity_id = "undefined",
 		copied_hit_coords = "undefined",
+		copied_surface_heading = "Meesa copied surface heading.",
 
 		distance = "Distance: ${distance}m",
 		distance_first = "Stored first position.",
@@ -6913,12 +7097,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		model_view_disabled = "Mowdel view disebleda.",
 		invalid_component = "Invalida component '${componentName}'.",
 
-		animation_currently_playing = "Mesa currently playin an animation.",
 		invalid_or_missing_animation_dict = "Invalid or missin animation dictionary '${animationDict}'.",
-		missing_animation_name = "Invalida or missin animation name '${animationName}'.",
+		missing_animation_name = "Invalid or missing animation name.",
 		invalid_animation_flags = "Invalida animation flags.",
-		animation_played = "Playin '${animationDict}' '${animationName}' (flags: ${flags}).",
-		no_flags = "N/A",
 
 		invalid_coordinates = "Meesa sorry, but dem coordinates issa invalid.",
 		added_coordinates_draw = "Meesa added dem coordinates `x: ${x}, y: ${y}, z: ${z}` to da draw list with ID `${drawId}`.",
@@ -7703,6 +7884,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		fps_unit = "fpsa",
 		ping_unit = "msa",
 		tps_unit = "undefined",
+		fps_1percent_unit = "fps 1%",
 
 		smart_warnings = "Warninks: ${warnings}!",
 		dehydrated = "dehydrateda",
@@ -7990,7 +8172,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		prison_store = "Prison Stoa",
 		fruit_vendor = "Fruit Vendor",
 		fruit_market = "undefined",
-		food_market = "undefined",
+		super_market = "Supermarket",
 		island_store = "Island Stoa",
 		travel_agency = "Travel Ageeency",
 		island_bar = "Island Baaar",
@@ -8024,7 +8206,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		ems_badge_store = "EMS Badge Desk",
 		doj_badge_store = "DOJ Badge Desk",
 		state_store = "State Store",
-		pharmacy = "Gungan Pharmacy",
+		pharmacy_store = "Apotech",
 		chop_shop = "Chop Shopo",
 		courthouse = "Courthouseo",
 		burger_shot = "Burgershot",
@@ -8035,13 +8217,13 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		bean_machine_fridge = "undefined",
 		hunting_store = "Hunting Storeo",
 		fishing_store = "Fishin' Storeo",
+		furniture_store = "Krapea",
 		los_santos_golf_club = "Los Santos Golf Clubo",
 		arcade_bar = "Arcade Baro",
 		japanese_restaurant = "Japanesey Restauranto",
 		japanese_restaurant_kitchen = "Japanese Restaurant Kitchen",
 		pizza_restaurant = "undefined",
 		["945_studios"] = "945 Studios",
-		grain_mill = "Grain Millen",
 		pd_prefix = "PD",
 		ems_prefix = "EMS",
 		government_prefix = "Gov",
@@ -8105,6 +8287,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		underground_bar_counter = "undefined",
 		pizza_this_counter = "undefined",
 		yellow_jack_counter = "undefined",
+		bean_machine_counter = "Bean Machine Counter",
 
 		inventory_name_missing = "Muba invantory name lissenin.",
 
@@ -8131,6 +8314,14 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		craft_combine = "Craft <i>${output}</i>, mesa help yousa.",
 		combining = "Mesa help yousa with da crafting.",
+
+		inspect = "Inspect",
+		attachments = "Attachments",
+		fill_paper_bag = "Fill Paper Bag",
+		rename = "Rename",
+
+		item_renamed = "Yousa successfully renamed item.",
+		item_failed_rename = "Failed to rename item.",
 
 		file_serial = "File Serial Numbah",
 		filing_off_serial_number = "Filing Off Serial Numbah",
@@ -8414,6 +8605,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		paper_bag = "Peepyrr bagg",
 		paper_bag_description = "Perfect for storing groceriess or perhaps someone's head, dead or alive.",
+		closed_paper_bag = "Closed Paper Bag",
+		closed_paper_bag_description = "Mesa ganna wesa classic brown bag hiding da mysteries of its contents. Issen it lunch? A secret stash? Only one way to find out—tear it open and see what's inside!",
 		burger_shot_delivery = "Muyum Muyum Botto Burger",
 		burger_shot_delivery_description = "Aa mui mui wondaful collexion of all the sloppy meaty wanders they serve.",
 		bean_machine_delivery = "Bean Machine Beam",
@@ -8424,6 +8617,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		green_wonderland_delivery_description = "undefined",
 		pizza_this_delivery = "undefined",
 		pizza_this_delivery_description = "undefined",
+
+		lunch_box = "Munchy Box",
+		lunch_box_description = "A sturdy little box that holds your hopes, dreams, and yesterday’s leftovers. Perfect for keeping your snacks safe, your sandwich un-squished, and your chips slightly less crushed than usual. Warning: Does not guarantee improved munchytime social status.",
 
 		empty_box = "undefined",
 		empty_box_description = "undefined",
@@ -8485,6 +8681,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		keys = "Mol&#869;.",
 		keys_description = "Wurrawurra mol&#869; tukin doors in owehahawa.",
+		car_keys = "Car Keys",
+		car_keys_description = "Mesa magical set of keys that can unlock doors, start engines, and instantly make yousa feel like yousa own da road. No two keys look quite da same, but they all have one goal—giving yousa access to da sweet ride theysa came from. Just don’t drop them in da swamp or lend them to a \"friend\".",
 
 		raw_diamond = "Raw Gooberfish",
 		raw_diamond_description = "undefined",
@@ -9061,6 +9259,34 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		plush_wasabi = "undefined",
 		plush_wasabi_description = "undefined",
 
+		cat_0 = "Tabby Cat",
+		cat_0_description = "This stripey little rascal is always up to someting, whether it’s sneaking into yousa lap or plotting galaxy domination one nap at a time. It struts with da confidence of a cat who knows theysa da main character.",
+		cat_1 = "Black Me-ew",
+		cat_1_description = "Slick, shady, and maybe got some magic, dis black-coated purrer knows how to nab da spotlight—or yer snacks. He gots da cool an' da cuddly, wid a taste for grand entrances an' long, judgin' stares.",
+		cat_2 = "Brown Me-ew",
+		cat_2_description = "Warm an' earthy, dis brown beauty be like a cup o' hot chocolate in cat form—if hot chocolate sometimes be knockin' tings off da desk. He be laid-back, lovable, an' surprisingly good at ignorin' yer calls.",
+
+		dog_0 = "Westie Terrier",
+		dog_0_description = "Muy chuba chuba dissa furball, okeday equally loyal companion tisa walking mop. Always ready for an adventure, even if dat means just chasing their big tail for hours. Great at cuddles, questionable at staying clean.",
+		dog_1 = "Pug",
+		dog_1_description = "A proud pug chuba face dat meesa think only a mother—or anyone, really—could love. Short on legs but big on personality, dissa chunky buddy will wiggle their way into your heart and probably your snacks.",
+		dog_2 = "Poodle",
+		dog_2_description = "A poodlen who is bein' all fancy-schmancy. They knows theysa da fanciest dog in da room. Regal, elegant, and sometimes a total drama queen. Dey bring glamour to any setting, whether it’s a red carpet or your living room.",
+
+		hen_0 = "Chicky-chicky",
+		hen_0_description = "A sassy chicky struttin' around like she owns da barnyard—and mesa thinkin' she probably does. Alwayss peckin', cluckin', and givin' yousa dat side-eye. Dis feathery diva is equal parts adorable and mildly intimidatin'.",
+		rat_0 = "Rat",
+		rat_0_description = "A sneaky little rodent with street smarts and a knack for findin' snacks where yousa least expect. Whether it’s scavengin' crumbs or plottin' world domination, dis rat is alwayss up to somethin'.",
+
+		rabbit_0 = "Ooma Takod Rabbit",
+		rabbit_0_description = "A gola, ooma takod rabbit co te takod yagola. Wishankee tay geesa, wishankee tay shoom, ah chucka jahwaa pichen slidnit yoka slowa.",
+		rabbit_1 = "Ooma Lowdunka Rabbit",
+		rabbit_1_description = "A lowdunka ooma rabbit co roo coosa sa tasty menna bakery. Sweet, crumbly in spirit, ah coos fart hum bunco for yousa mooey.",
+		rabbit_2 = "Ooma Pallop Rabbit",
+		rabbit_2_description = "A pallop ooma rabbit co tan coosa tan chewbakka co. It’s ee-dentz adorable ah mildly enragee.",
+		rabbit_3 = "Mesmeesa Gray Rabbit",
+		rabbit_3_description = "Yousa sleek mesmeesa gray rabbit dat movein like a puff o' smoke in da wind. Blink, and it’s gone—but not before stealin' yousa heart (and maybe yousa lettuce).",
+
 		boxing_gloves = "Boking Gluvesa",
 		boxing_gloves_description = "Mesa suggesta usen des to becomen like Rocky, but yousa probably no getten a sequel...",
 		leash = "Lish",
@@ -9190,6 +9416,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		evidence_bag_empty_description = "Meesa thinkin' yousa need moresa evidence.",
 		evidence_bag = "Evidence Bag",
 		evidence_bag_description = "Sealed crime in a bag for later use. Okeyday for checken by da boss.",
+		evidence_box = "Evidence Mesa",
+		evidence_box_description = "Da unsung hero of justice, safeguarding all da clues, fingerprints, and questionable items needed to crack a case. From candy wrappers to crime scene tools, it’s like a treasure chest for detectives—minus da gold, plus a lotta paperwork.",
 		fingerprint_evidence = "Fingerprint Evidence",
 		fingerprint_evidence_description = "Helping you catch them criminal scumbags. Yousa be careful out there, okeday?",
 		device_printout = "Device Printout",
@@ -9239,6 +9467,19 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		savings_bond_1000_description = "Ān $1,000 mooie bond, da bombad testament to your dedeecayshun to building wealth. Keep disa bond safe until yousa ready to cash it in at a bank, where it gonna provide yousa with a substantial boom to yousa finances.",
 		savings_bond_2000 = "Ān $2,000 Mooie Bond",
 		savings_bond_2000_description = "Ān $2,000 mooie bond, a substantial investment in yousa financial future. Hold onto disa bond until da time is right, and den redeem it at a bank to unlock its full value, helping yousa achieve yousa financial dreams.",
+
+		cent_1 = "Penny",
+		cent_1_description = "Da humblen penny is America’s most overachievin' copper-colored hero. Worth just a cent but oftentimes found bravely pluggin' up fountain wishes or hidin' under couch cushions. It’s basically the coin version of small but mighty.",
+		cent_5 = "Dweenkle",
+		cent_5_description = "Da dweenkle is a chunkier, silver-toned upgrade from da penny with five times da buying power, which still isn’t much. A loyal companion for vendin' machines and arcade games, even if its worth is sometimes overlooked.",
+		cent_10 = "Blub",
+		cent_10_description = "Da blub is a teeny but shiny overachiever, packin' 10 blubs of value into its pocket-sized design. So small enough to get lost in your trouser but still rich enough to remind you it’s worth double a nickel’s effort.",
+		cent_25 = "Yosto",
+		cent_25_description = "Da yosto is da king of parkin' meters and gumball machines. With its impressive heft and 25-blub value, this silver gladiator often leads your coin army into glorious caf and arcade victories.",
+		cent_50 = "Half Glim",
+		cent_50_description = "Da haf dolla is a rarely-seen heavyweight of American banknotes. It’s like da cooler, mo mysterious older sibling of da quarter. Twice da value, double da size, and somehow always impressively shiny.",
+		coin_bag = "Coin Sack",
+		coin_bag_description = "A trusty lil pouch designed to keep your loose change from jingling all over da place. Small, discreet, and perfect for dose who want to carry their wealth in style—assuming your “wealth” is measured in quarters and dimes.",
 
 		weather_spell_snow = "Weathersa Spell (Snow)",
 		weather_spell_snow_description = "Usen thissa item will letten yousa temporarily control the weather and maken it snow! Itsas a one-time use, so use with care. If yousa use two weathersa spells at once, the second onesa will simply queue up.",
@@ -9430,6 +9671,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		fishing_chair_description = "Yousa gonna be cozy in dis fishing chair during long waits. It be strong and handy, with a rod holder for dem peaceful mornings by da lake. Can be put anywheres in da world.",
 		sleeping_bag = "undefined",
 		sleeping_bag_description = "Snuggle up in dis sleeping bag, made for cold nights under da stars. It be small and easy to carry, giving yousa comfort wherever you lay your head.",
+		red_pillow = "Pelek kooy red",
+		red_pillow_description = "Yusa versatile pelek kooy red dat transforms hard ground into a throne of comfort. Whether youse meditating, people-watching, or just trying to avoid sitting on mystery stains, this cushion has your back—or rather, your behind!",
+		spotlight = "Jabeam",
+		spotlight_description = "A jabeam dat’s ready to make anything or anyone the star of the show. Perfect for professional photos, dramatic lighting, or just feeling like a movie star in your living room. It’s bright, reliable, and always steals the scene.",
+		tube_light = "Glow-pipe",
+		tube_light_description = "Yousa sleek and minimalist glow-pipe dat swaps brightness for style, addin' a soft glow without overpowerin' da room. Perfect for creatin' a cozy ambiance, it’s a subtle upgrade dat looks way cooler than its bulkier counterparts.",
 		yoga_mat = "Yoga mat",
 		yoga_mat_description = "Dis portable yoga mat be da perfect base for relaxing and exercising outdoors. Roll it out to reach your inner peace or stretch after a big hike. Can be placed anywhere in da world.",
 		cooler_box = "Coola Boxx",
@@ -9466,6 +9713,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		spike_strips_large_description = "Dis one's for catchin' da big fish or when yousa need to cover mores asphalt. It's like layin' down da red carpet, except it's not for VIPs, and it pops tires. Can be placed anywheres in da galaxy.",
 		stop_sticks = "Stop Sticks",
 		stop_sticks_description = "Think of thesesa as da immovable object meeting da unstoppable force. Stop sticks don’t puncture tires, they stop vehicles dead in their tracks. Ideal for setting up impromptu \"check your speed\" spots. Can be placed anywheres in da galaxy.",
+		speed_bump = "Quick-thud",
+		speed_bump_description = "Da ultimate tool for enforcin' slowdowns and testin' a vehicle's suspension. Deploy dis portable menace and watchin' speed demons rethink their life choices—perfect for turnin' chases into crawlin' parades.",
+		speed_sign = "Speed Limit Jar-Jar",
+		speed_sign_description = "Meesa ganna remind yousa dat yousa need to slow down. Stick to da limit, o else yousa gonna meet da wrath of speed mooie-mooies and radar guns.",
+		bumps_sign = "Bumps Jar-Jar",
+		bumps_sign_description = "Meesa giving yousa a polite heads-up dat your car’s suspension is about to face a challenge. Tread lightly, or be prepared for a bumpy ride!",
 		floodlight = "Kreen chaka",
 		floodlight_description = "Chuba night into day when yousa on da hunt. Greate for finding lost keys or illuminating sneaky suspects trying to play hide and seek. Can be placed anywhere in da mundo.",
 		left_diversion_sign = "Signa da Left Diversion",
@@ -9514,6 +9767,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		claymore = "Claymore",
 		claymore_description = "Disa lethal Claymore mine be a powerful defensive tool designed to protect and secure areas with precision. Once armed, it gonna detonate explosively when an intruder crosses its path, ensuring robust perimeter control. Exercise caution with placement and handling to avoid unintended consequences.",
+		mine = "Boom-Boom",
+		mine_description = "For when yousa need dat extra \"welcome mat\" in case da ATF comes knocking. Just place, arm, and watch any unwelcome guests turn into a fine red mist.",
 
 		tv_stand = "TV Stand",
 		tv_stand_description = "undefined",
@@ -9566,6 +9821,16 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		pink_dildo = "Pink Oongan",
 		pink_dildo_description = "Handmade, carved and tested by Bugsy Middleman.",
 
+		cappuccino_regular = "Capoppa (Cow Milk)",
+		cappuccino_almond = "Capoppa (Almond Milk)",
+		cappuccino_pigeon = "Capoppa (Pigeon Milk)",
+		iced_latte_regular = "Iced Latte (Cow Milk)",
+		iced_latte_almond = "Iced Latte (Almond Milk)",
+		iced_latte_pigeon = "Iced Latte (Pigeon Milk)",
+		hot_chocolate_regular = "Hotta Chokky (Cow Milk)",
+		hot_chocolate_almond = "Hotta Chokky (Almond Milk)",
+		hot_chocolate_pigeon = "Hotta Chokky (Pigeon Milk)",
+
 		bean_coffee = "Bean Coffee",
 		bean_coffee_description = "Bean water.... all it really is.",
 		cappuccino = "Cappuccino",
@@ -9582,6 +9847,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		pink_lemonade_description = "Totally not just regular lemonade dyed pink so we can charge you twice as much...",
 		iced_latte = "undefined",
 		iced_latte_description = "undefined",
+		coffee_beans = "Coffy Beans",
+		coffee_beans_description = "A sackin' o' rich, aromatic coffy beans ready t' transform into da fuel dat powers your mornings and late-night brainstormin'. Whether yousa likin' it bold, smooth, or somewhere in betwixt, dese beans are your tickie to a perfect cup o' caffeinated bliss.",
 
 		berry_cake = "undefined",
 		berry_cake_description = "undefined",
@@ -9755,9 +10022,21 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		spicy_ramen_description = "undefined",
 		bento_box = "undefined",
 		bento_box_description = "undefined",
+		mochi_mango = "Mango Mochi",
+		mochi_mango_description = "A tropical mango mochi bursting with the sweet, juicy flavor of ripe mangoes. Wrapped in a soft, sticky shell, it’s a mini vacation for your taste buds.",
+		mochi_strawberry = "Strawberry Mochi",
+		mochi_strawberry_description = "A delightful strawberry mochi that combines a fruity, berry-sweet filling with a soft, stretchy exterior. Like biting into a little cloud of sunshine and sweetness.",
+		mochi_green_tea = "Gungan Green Tea Mochi",
+		mochi_green_tea_description = "A refreshing green tea mochi that blends earthy matcha flavor with a smooth, chewy texture. Ideal for a zen-like dessert experience with just the right balance of sweetness and bitterness.",
+		mochi_chocolate = "Mochi Chokora",
+		mochi_chocolate_description = "Yousa findin' a decadent chokora mochi dat wrap a chewy, pillowy exterior around a rich, cocoa-filled center. Perfecto for satisfyin' sweet cravings wit a touch of gooey indulgence.",
+		green_tea_bag = "Green Tea",
+		green_tea_bag_description = "A bag of premium loose green tea leaves, ready to steep you into a world of earthy, refreshing flavor. Perfecto for tea enthusiasts who prefer the art of brewing over the convenience of a pre-made bag. A sip of this, and you’ll taste the calm.",
 
 		asahi_beer = "undefined",
 		asahi_beer_description = "undefined",
+		green_tea = "Naboo Herb Tea",
+		green_tea_description = "A cozy, warm mug of freshly steeped Naboo herb tea that envelops you in its earthly fragrance and gentle taste. Ideal for moments of peace or a mild energy boost, it's like a gentle embrace for your spirit.",
 
 		golf_ball = "Meega Golf Ball",
 		golf_ball_description = "Meega used for golfing.",
@@ -9947,6 +10226,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		weapon_poolcue = "Pool Coo",
 		weapon_stone_hatchet = "Stone Hatchit",
 		weapon_candycane = "Candee Kaa",
+		weapon_stunrod = "Zappin' Stick",
 
 		weapon_pistol = "Pistol",
 		weapon_pistol_mk2 = "Blaster Pistol Mk II",
@@ -10076,6 +10356,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		weapon_poolcue_description = "Ah, der isen no-sa sounden asen satisfying asen the cracken of asen perfecten breaken, specially when it'sen the udder guy'sa spine.",
 		weapon_stone_hatchet_description = "Yousa ax for choppin', been in production for 2.5 million Naboo Moons.",
 		weapon_candycane_description = "A festive candy cane. It's a bit gooey, mesa suggesten not eatin'.",
+		weapon_stunrod_description = "When brute force fails, try mixing things up in your approach to confrontation with a jolt of 30,000 volts.",
 
 		weapon_pistol_description = "Standard blaster. A .45 caliber combat pistol with a magazine capacity of 12 rounds that can be extended to 16.",
 		weapon_pistol_mk2_description = "Balancen, simplicity, precision: nothin' keeps da peace like an extended barrel in da other guy's mouth.",
@@ -10311,7 +10592,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		weapon_addon_multitool_description = "undefined",
 
 		weapon_addon_ar15 = "undefined",
-		weapon_addon_ar15_description = "undefined"
+		weapon_addon_ar15_description = "undefined",
+
+		weapon_addon_tennisball = "Squishy Ball",
+		weapon_addon_tennisball_description = "Great for a quick match, distracting a canine friend, or a lively toss across the room. Just take aim, throw, and enjoy the unpredictable bouncing—bonus points if it doesn't come back!"
 	},
 
 	invisibility = {
@@ -10403,7 +10687,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		failed_kissaki_delivery = "Error al abrir la comida Kissaki.",
 		failed_green_wonderland_delivery = "undefined",
 		failed_pizza_this_delivery = "undefined",
+		failed_closed_paper_bag = "Jar Jar fai to openen du paper bag.",
 
+		closed_paper_bag_empty = "Dis paper bag is empty-sa.",
 		burger_shot_delivery_empty = "That burgershot meal seem empty.",
 		bean_machine_delivery_empty = "That bean machine delivery seem empty.",
 		kissaki_delivery_empty = "Esa comida Kissaki parecía estar vacía.",
@@ -10539,7 +10825,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		modify_jail_logs_title = "undefined",
 		modify_jail_logs_details = "undefined",
 		triggered_lockdown_logs_title = "undefined",
-		triggered_lockdown_logs_details = "undefined"
+		triggered_lockdown_logs_details = "undefined",
+		mission_reward_logs_title = "Jail Mission Reward-sa",
+		mission_reward_cash_logs_details = "${consoleName} received $${amount} cash-sa for completing-sa a jail mission.",
+		mission_reward_item_logs_details = "${consoleName} received a 1x ${itemName} for completing-sa a jail mission."
 	},
 
 	kiosks = {
@@ -10968,7 +11257,21 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		no_nearby_vehicle = "Me no see any vehicles around.",
 		already_checking_upgrades = "You no can be checkin' tunes while already checkin' one car.",
-		engine_is_running = "Da vehicula engine is running."
+		engine_is_running = "Da vehicula engine is running.",
+
+		press_open_shop = "Hold ~INPUT_FRONTEND_RDOWN~ to openen du mechanic shop.",
+		press_close_shop = "Hold ~INPUT_FRONTEND_RDOWN~ to coosen du mechanic shop.",
+		opening_shop = "${time}s clama mechanic shop.",
+		closing_shop = "${time}s clama mechanic shop.",
+		shop_closed = "Boompa, clama mechanic shop.",
+		shop_opened = "Boompa, clama mechanic shop.",
+		failed_shop_closed = "Meesa failed to clama mechanic shop.",
+		failed_shop_opened = "Meesa failed to clama mechanic shop.",
+
+		opened_shop_logs_title = "Opened Mechanic Shop",
+		opened_shop_logs_details = "${consoleName} clama the `${label}` mechanic shop.",
+		closed_shop_logs_title = "Closed Mechanic Shop",
+		closed_shop_logs_details = "${consoleName} clama the `${label}` mechanic shop."
 	},
 
 	meow = {
@@ -11011,6 +11314,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		success_wipe_blocks = "Successfully wiped ${count} block(s) in a ${radius}m radius.",
 		failed_wipe_blocks = "undefined",
 		press_to_use_jukebox = "Mesa press to used da jukebox."
+	},
+
+	minigames = {
+		skipping_minigame = "Mesa Skippin' Minigame"
 	},
 
 	mining = {
@@ -11118,6 +11425,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		bad_ooc_message = "Mesa tryin' to post a meesoojah dat might be bombad in da OOC chat: \"${oocMessage}\"",
 		bad_ped_message = "Mesa tryin' to make a meesoojah dat might be bombad ped meesoojah: \"${pedMessage}\"",
 		bad_twitter_post = "Mesa tryin' to make a meesoojah dat might be bombad twitter post: \"${twitterPost}\"",
+		bad_twitter_account = "Mesa tried to create a possibly bad twitter account: \"${username}\"",
 		bad_phone_message = "Meesa seein' a bad twitter post: \"${message}\"",
 		user_not_found = "Wesa no findin' a user with server ID `${serverId}`.",
 		player_already_muted = "${consoleName} isa already muted.",
@@ -11125,6 +11433,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		player_has_been_muted = "${consoleName} ish now been mute-ed witt reason: `${reason}`.",
 		player_not_muted = "${consoleName} ish not mute-ed.",
 		player_has_been_unmuted = "${consoleName} ish now free to speak ees freely.",
+		just_been_muted = "Yousa have just been muted from /ooc and /report for reason `${reason}`.",
+		just_been_muted_no_reason = "Yousa have just been muted from /ooc and /report without a fine reason.",
 		ooc_clear_chat_title = "Chat Cleared",
 		ooc_clear_chat_details = "${consoleName} cleared da chat for everyone.",
 		muted_player = "Mute-ed Player",
@@ -12127,7 +12437,34 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		disabled_generators = "Disabled ${disabledGeneratorsCount} generator(s).",
 
 		drill_drilling = "Drillin' (${remainingSeconds}s)",
-		drill_jammed = "[${InteractionKey}] Drill Jammed (${remainingSeconds}s)"
+		drill_jammed = "[${InteractionKey}] Drill Jammed (${remainingSeconds}s)",
+		search_safe = "[${InteractionKey}] Search Safe",
+		searching_safe = "Searchin' Safe",
+
+		close_up_bank = "Close Up Bank",
+		press_to_close_up_bank = "[${InteractionKey}] Close Up Bank",
+		closing_up_bank = "Closing Up Bankee",
+
+		not_enough_police = "There bombad not enough active lawkeepers to start the robbery.",
+
+		dispatch = "[Dispatcho]",
+		alarm_triggered = "10-90: An alarm has been triggered at Pacific Bank.",
+		pacific_bank_alarm = "Pacific Bank Alarm",
+
+		press_to_search = "[${InteractionKey}] Piki Piki",
+		search = "Piki",
+		searching = "Piki-piki",
+		found_nothing = "Found nothing.",
+
+		power_generator_disabled_title = "Power Generator Disabled",
+		power_generator_disabled_details = "${consoleName} disabled power generator with the name of '${powerGeneratorName}'.",
+
+		pacific_bank_robbery_started_title = "Uh-Oh! Pacifik Bank Robbery Starten",
+		pacific_bank_robbery_started_details = "${consoleName} starten da Pacifik Bank robbery.",
+
+		pacific_bank_reward_logs_title = "Pacifik Bank Reward",
+		pacific_bank_reward_saving_bonds_logs_details = "${consoleName} searchen a safe und nabbed saving bonds worth $${amount}.",
+		pacific_bank_reward_items_logs_details = "${consoleName} searchen a safe und nabbed ${amount}x items."
 	},
 
 	panel = {
@@ -12187,14 +12524,20 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	},
 
 	paper_bags = {
-		fill_bag = "[${SeatEjectKey}] Fill Paper Bag",
-		no_bags = "Yousa don't have any paper bags.",
-		no_bag_items = "Yousa don't have any items that you could put in a paper bag.",
-		close_bag = "Closea Bagga",
-		cancel_bag = "Cancela",
-		title = "Papera Baga",
+		paper_bag_brand = "Dis paper bag has a <b>${brand}</b> logo on it.",
+		paper_bag_no_brand = "Mesa issa plain paper bag.",
+
+		burger_shot_delivery = "Burger Shot",
+		bean_machine_delivery = "Bean Machine",
+		kissaki_delivery = "Kissaki",
+		green_wonderland_delivery = "Green Wonderland",
+		pizza_this_delivery = "Pizza This",
+
 		failed_fill = "Failed to filla papera baga.",
-		filled_bag = "Successfully filleda papera baga."
+		filled_bag = "Successfully filleda papera baga.",
+
+		filled_bag_log_title = "Filled Paper Bag",
+		filled_bag_log_details = "${consoleName} filled a paper bag with ${contents}."
 	},
 
 	parking_meters = {
@@ -12203,7 +12546,13 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		no_cash = "undefined",
 		max_time = "Thisa parkinga meter is already maxen outen.",
-		failed_pay = "Failed to paya parkinga meter."
+		failed_pay = "Failed to paya parkinga meter.",
+
+		failed_lockpick = "Failed to lockpick parking meter.",
+		already_lockpicked = "This parking meter was already lockpicked.",
+
+		lockpicked_meter_logs_title = "Lockpicked Parkingmeter",
+		lockpicked_meter_logs_details = "${consoleName} lockpicked a parkin' meter and received ${items} and $${money} in cash."
 	},
 
 	pause_menu = {
@@ -12296,6 +12645,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		ped_failed_task = "Meesa failed to assign `${task}` task to spawned peds.",
 		invalid_target = "Invalid target server ID. Yousa must check again.",
 		invalid_task = "Invalid or missing ped task.",
+		no_nearby_ped = "Mesa no seein' any nearby peds.",
+		ped_attack_success = "Successfully made ped `${networkId}` attack ${target}.",
+		ped_failed_attack = "Failed to make ped `${networkId}` attack ${target}.",
 		ped_emote_success = "Successfully made spawned peds play `${emote}` emote.",
 		ped_failed_emote = "Meesa failed to make spawned peds play `${emote}` emote.",
 		invalid_emote = "Yousa emote `${emote}` is invalid.",
@@ -12509,7 +12861,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		invalid_prop_id = "Invalid prop id.",
 		prop_deleted = "Prop with id ${propId} was deleted.",
 
-		invalid_wipe_radius = "Invalid wipe radius (between 1 and 100).",
+		invalid_wipe_radius = "Invalid wipe radius (between 1 and 500).",
 		wipe_successful = "Successfully wiped ${amount} prop(s).",
 		wipe_failed = "Failed to wipe props.",
 
@@ -12764,6 +13116,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		logs = "Transaction Logs",
 		no_logs = "Meesa no transaction logs.",
 		summary = "Summary",
+		summary_description = "Summary of all transactions in the last 90 days for this account.",
 		name = "Name",
 		transactions = "Transactions",
 		withdrawn = "Withdrawn",
@@ -12827,7 +13180,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		scrapyard = "undefined",
 		cant_scrap_vehicle = "undefined",
 		failed_scrap_vehicle = "undefined",
-		scrap_confirm = "undefined",
+		scrap_confirm = "Yousa sure you want to scrap this vehicle? This gonna PERMANENTLY remove the ${name} from your garage and yousa gonna receive 16-20% of its original price in cash and gold bars.",
 		scrap_success = "undefined",
 		scrapped_vehicle_logs_title = "undefined",
 		scrapped_vehicle_logs_details = "undefined"
@@ -13386,6 +13739,15 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		teleport_player_player_logs_details = "undefined"
 	},
 
+	taxes = {
+		taxes_collected = "Yousa collected taxes. Da amounts are as following.\n- Cash: G$${cash}\n- Bank: G$${bank}\n- Stocks: G$${stocks}\n- Savings: G$${savings}\n- Shared Accounts: G$${sharedAccounts}",
+		taxes = "Taxes",
+		transaction_logs = "Transaction Logs",
+		paid_taxes = "Yousa paid G${amount} in taxes.",
+		no_logs = "No transaction logs.",
+		close = "Close"
+	},
+
 	teleporters = {
 		area_not_clear = "Da destination issa being blocked by a vehikel.",
 
@@ -13634,6 +13996,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		department_police_undercover = "Undercover PD",
 
+		department_doc_training = "DOC Training",
 		department_police_training = "PD Training",
 		department_medical_training = "undefined",
 		department_bcfd_training = "undefined"
@@ -14284,6 +14647,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		no_nearby_vehicle = "undefined",
 		no_nearby_vehicle_door = "undefined",
 		removing_door = "undefined",
+		cleaning_up_body = "Cleaning Up Body",
+		destroying_spikes = "Destroying Spikes",
 		failed_remove_door = "undefined",
 		invalid_clothing_type = "undefined",
 		no_nearby_player = "undefined",
@@ -14379,7 +14744,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		none = "Mesa",
 		active = "Mooie",
 		not_active = "Not mooie",
-		active_robberies = "\nMooie Store: ${store}.\nMooie Bank: ${bank}\nMooie Jewelry: ${jewelry}",
+		active_robberies = "\nActive Store: ${store}.\nActive Bank: ${bank}\nActive Jewelry: ${jewelry}\nPacific Bank: ${pacificBank}",
 
 		failed_dispatch = "Mooie mooesoo toonga dispatch message.",
 		dispatch_title = "[Dispatch]",
@@ -14472,6 +14837,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		on_floor = "undefined",
 		ground_floor = "undefined",
 		second_floor = "undefined",
+		third_floor = "Mesa Tree Floor",
 		icu_floor = "undefined",
 		surgery_floor = "undefined",
 
@@ -14513,7 +14879,55 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		task_disinfect_table = "undefined",
 		task_disinfect_table_near = "undefined",
-		task_disinfect_table_active = "undefined"
+		task_disinfect_table_active = "undefined",
+
+		task_wipe_table = "Geeber the table.",
+		task_wipe_table_near = "Press ~INPUT_DETONATE~ to geeber the table.",
+		task_wipe_table_active = "Geebering Table",
+
+		task_wash_dishes = "Scrubba the dishes.",
+		task_wash_dishes_near = "Press ~INPUT_DETONATE~ to scrubba the dishes.",
+		task_wash_dishes_active = "Scrubba Dishes",
+
+		task_restock_drink_dispenser = "Replenish the juice jah-jah.",
+		task_restock_drink_dispenser_near = "Press ~INPUT_DETONATE~ to replenish the juice jah-jah.",
+		task_restock_drink_dispenser_active = "Replenishing Juice Jah-Jah",
+
+		task_restock_ingredients = "Yousa Restock da ingredients.",
+		task_restock_ingredients_near = "Press ~INPUT_DETONATE~ to restock da ingredients.",
+		task_restock_ingredients_active = "Restocking Ingredients",
+
+		task_organize_shelf = "Organize da shelf.",
+		task_organize_shelf_near = "Press ~INPUT_DETONATE~ to organize da shelf.",
+		task_organize_shelf_active = "Organizing Shelf",
+
+		task_clean_countertop = "Clean da countertop.",
+		task_clean_countertop_near = "Press ~INPUT_DETONATE~ to clean da countertop.",
+		task_clean_countertop_active = "Cleaning Countertop",
+
+		task_file_taxes = "Ganna file taxes.",
+		task_file_taxes_near = "Press ~INPUT_DETONATE~ to ganna file taxes.",
+		task_file_taxes_active = "Filing Taxes",
+
+		task_refill_napkins = "Refill napkins.",
+		task_refill_napkins_near = "Press ~INPUT_DETONATE~ to refill napkins.",
+		task_refill_napkins_active = "Refilling Napkins",
+
+		task_refill_water = "Refill water dispenser.",
+		task_refill_water_near = "Press ~INPUT_DETONATE~ to refill the water dispenser.",
+		task_refill_water_active = "Refilling Water Dispenser",
+
+		task_clean_windows = "Clean the windows.",
+		task_clean_windows_near = "Press ~INPUT_DETONATE~ to clean the windows.",
+		task_clean_windows_active = "Cleaning Windows",
+
+		task_clean_oven = "Yousa clean da oven.",
+		task_clean_oven_near = "Press ~INPUT_DETONATE~ to clean da oven.",
+		task_clean_oven_active = "Cleaning Oven",
+
+		task_take_nap = "Take a nap.",
+		task_take_nap_near = "Press ~INPUT_DETONATE~ to take a nap.",
+		task_take_nap_active = "Taking Nap"
 	},
 
 	tow = {
@@ -14679,6 +15093,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		fuel_level_set_to = "Da fuel level has been set to `${fuelLevel}`.",
 		not_in_a_vehicle = "Yousen not in a vehicle.",
 		vehicle_engine_on = "Da engine is still-a running.",
+
+		fuel_debug_enabled = "Enabled da fuel debug.",
+		fuel_debug_disabled = "Disabled da fuel debug.",
 
 		vehicle_exploded_logs_title = "Mesa Mess Messed Up!",
 		vehicle_exploded_logs_details = "${consoleName} refueled a mesa and boom-boomed it because of the vroom-vroom."
@@ -14846,12 +15263,22 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		gave_keys_success = "Mesa give ${displayName} the keys to dsa veesha. Yousa good to go.",
 		gave_keys_failure = "Mesa failed to givin ${displayName} da keys to desira vehicle.",
 
+		car_keys_label = "Keys for ${plate}",
+		something_went_wrong = "Yousa bombad makin' a mistakens.",
+		keys_no_longer_work = "Dese keys no longer work, okeyday.",
+		success_use_keys = "You now have da keys to `${plate}`.",
+
 		no_nearby_vehicle = "undefined",
 		there_is_someone_in_the_driver_seat = "undefined",
 		the_driver_door_is_closed = "undefined",
 		checking_ignition = "undefined",
 		ignition_tampered_with = "undefined",
-		ignition_not_tampered_with = "undefined"
+		ignition_not_tampered_with = "undefined",
+
+		used_car_keys_logs_title = "Used Car Keys",
+		used_car_keys_logs_details = "${consoleName} used car keys for a vehicle with plate `${plate}` (N-${networkId}).",
+		grabbed_car_keys_logs_title = "Grabbed Car Keys",
+		grabbed_car_keys_logs_details = "${consoleName} grabbed car keys for a vehicle with plate `${plate}` (N-${networkId})."
 	},
 
 	modifications = {
@@ -14905,7 +15332,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 	sirens = {
 		sirens_muted_on = "Bomba-Dinka sirensen all MULA MUTE-sa.",
-		sirens_muted_off = "Bomba-Dinka sirensen BIG CLANKA-MUTE-sa."
+		sirens_muted_off = "Bomba-Dinka sirensen BIG CLANKA-MUTE-sa.",
+
+		lights_on = "Lights: ${count}",
+		sirens_on = "Boomegas: ${count}",
+		horns_on = "Zouzas: ${count}"
 	},
 
 	spawner = {

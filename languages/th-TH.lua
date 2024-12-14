@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 34 (do not change)
+-- AUTO LOCALES: 35 (do not change)
 
 OP.Global.Locales.Languages["th-TH"] = {
 	-- configuration settings for language
@@ -83,7 +83,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 	ledges = {
 		no_ledge = "คุณไม่อยู่ใกล้ขอบชัน.",
-		invalid_variation = "ค่าที่เลือกไม่ถูกต้อง.",
+		invalid_variation = "รูปแบบไม่ถูกต้อง (1 - 13).",
 		press_x_to_stop = "กด ~INPUT_VEH_DUCK~ เพื่อหยุดนั่ง."
 	},
 
@@ -872,7 +872,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		sit_ledge_command = "sit_ledge",
 		sit_ledge_command_help = "นั่งบนชั้นของหากคุณอยู่หน้าชั้นหนึ่ง คุณต้องมองหน้าชั้น",
 		sit_ledge_command_parameter_variation = "variation",
-		sit_ledge_command_parameter_variation_help = "การเล่นภาพยนตร์ sit (1 - 4)",
+		sit_ledge_command_parameter_variation_help = "แสดงอนิเมชัน sit ชนิดที่เลือก (1 - 13).",
 		sit_ledge_command_substitutes = "ledge",
 
 		-- animations/walkstyles
@@ -899,7 +899,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		staff_pm_command_parameter_server_id_help = "ไอดีเซิร์ฟเวอร์ของผู้เล่นที่คุณต้องการส่งข้อความ",
 		staff_pm_command_parameter_message = "ข้อความ",
 		staff_pm_command_parameter_message_help = "ข้อความที่คุณต้องการส่ง",
-		staff_pm_command_substitutes = "staffpm",
+		staff_pm_command_substitutes = "staffpm, message, pm, msg",
 
 		important_staff_pm_command = "important_staff_pm",
 		important_staff_pm_command_help = "ส่งข้อความสำคัญถึงผู้เล่นเป็นเจ้าหน้าที่.",
@@ -907,7 +907,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		important_staff_pm_command_parameter_server_id_help = "รหัสเซิร์ฟเวอร์ของผู้เล่นที่คุณต้องการส่งข้อความ",
 		important_staff_pm_command_parameter_message = "ข้อความ",
 		important_staff_pm_command_parameter_message_help = "ข้อความสำคัญที่คุณต้องการส่ง",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
 
 		reply_pm_command = "reply_pm",
 		reply_pm_command_help = "ตอบกลับข้อความล่าสุดที่คุณได้รับจากเจ้าหน้าที่",
@@ -1304,7 +1304,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		register_weapon_command_substitutes = "",
 
 		advanced_metagame_command = "advanced_metagame",
-		advanced_metagame_command_help = "คำสั่งซุเปอร์แอดมินเพื่อช่วยให้คุณดึงข้อมูลจากอนุกรมได้มากขึ้น",
+		advanced_metagame_command_help = "คำสั่งที่ช่วยให้คุณเรียนรู้เทคนิคการเล่นเกมแฟนตาซีในระดับสูง.",
+		advanced_metagame_command_parameter_use_characters = "use characters",
+		advanced_metagame_command_parameter_use_characters_help = "ใช้ชื่อตัวละครแทนชื่อผู้เล่น.",
 		advanced_metagame_command_substitutes = "am",
 
 		list_weapon_attachments_command = "list_weapon_attachments",
@@ -1479,6 +1481,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		leaderboard_command_parameter_total_playtime_help = "โดยปกติจะใช้เวลาที่เล่นจริงบนตัวละคร เซ็ตค่าเป็น `y` เพื่อใช้เวลารวมทั้งหมดในเซิร์ฟเวอร์แทน",
 		leaderboard_command_substitutes = "",
 
+		economy_leaderboard_command = "economy_leaderboard",
+		economy_leaderboard_command_help = "ตรวจสอบตารางเกมเศรษฐกิจ",
+		economy_leaderboard_command_substitutes = "eleaderboard",
+
 		package_command = "package",
 		package_command_help = "ตรวจสอบและรีเฟรชแพคเกจของคุณ",
 		package_command_substitutes = "refresh_package",
@@ -1589,12 +1595,16 @@ OP.Global.Locales.Languages["th-TH"] = {
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "เปิดหรือปิดการใช้งานฟีเจอร์ Battle Royale",
+		battle_royale_toggle_command_parameter_max_teammates = "max teammates",
+		battle_royale_toggle_command_parameter_max_teammates_help = "จำนวนสูงสุดของเพื่อนร่วมทีมที่อนุญาตได้ต่อทีม ค่าเริ่มต้นคือ 4 สูงสุดคือ 10",
 		battle_royale_toggle_command_substitutes = "br_toggle",
 
 		battle_royale_start_command = "battle_royale_start",
 		battle_royale_start_command_help = "เริ่มต้นการแข่งขัน Battle Royale",
 		battle_royale_start_command_parameter_no_vehicles = "no vehicles",
 		battle_royale_start_command_parameter_no_vehicles_help = "สร้างการแข่งขันโดยปิดใช้งานยานพาหนะ",
+		battle_royale_start_command_parameter_new_inventories = "new inventories",
+		battle_royale_start_command_parameter_new_inventories_help = "สร้างการแข่งขันที่ทุกคนมีพร้อมเปล่าในกระเป๋าของชั่วคราว",
 		battle_royale_start_command_substitutes = "br_start",
 
 		battle_royale_invite_command = "battle_royale_invite",
@@ -1810,7 +1820,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		-- game/container_storage
 		containers_command = "containers",
 		containers_command_help = "ดูและจัดการตู้เก็บของที่เช่าของคุณ",
-		containers_command_substitutes = "",
+		containers_command_substitutes = "คลังสินค้า",
+
+		-- game/containers
+		containers_debug_command = "containers_debug",
+		containers_debug_command_help = "วาดป้ายสินค้าที่อยู่ใกล้ๆ ทั้งหมด",
+		containers_debug_command_substitutes = "",
 
 		-- game/crafting
 		crafting_debug_command = "การแก้ไขทดสอบการสร้าง",
@@ -2121,6 +2136,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		random_position_command = "random_position",
 		random_position_command_help = "พาคุณไปยังตำแหน่งสุ่มบนเกาะหลัก (พร้อมทั้งเปิดโหมดอาละวาด)",
+		random_position_command_parameter_server_id = "ไอดีเซิร์ฟเวอร์",
+		random_position_command_parameter_server_id_help = "ไอดีเซิร์ฟเวอร์ของผู้เล่นที่ต้องการย้ายที่อยู่",
 		random_position_command_substitutes = "สุ่ม",
 
 		crash_ui_command = "crash_ui",
@@ -2153,7 +2170,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		-- game/development
 		toggle_developer_ambience_command = "toggle_developer_ambience",
 		toggle_developer_ambience_command_help = "เปิด/ปิดเสียงพื้นที่พัฒนา",
-		toggle_developer_ambience_command_substitutes = "",
+		toggle_developer_ambience_command_substitutes = "developer_ambience, ambience",
 
 		-- game/dna_evidence
 		take_dna_sample_command = "take_dna_sample",
@@ -2714,6 +2731,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		minecraft_wipe_command_parameter_radius_help = "รัศมีที่คุณต้องการลบบล็อกใน (0 = บล็อกทั้งหมด, สูงสุด 5000)",
 		minecraft_wipe_command_substitutes = "",
 
+		-- game/minigames
+		skip_minigames_command = "skip_minigames",
+		skip_minigames_command_help = "เปิด-ปิดการข้ามเกมส์ย่อย",
+		skip_minigames_command_substitutes = "",
+
 		-- game/mining
 		mining_debug_command = "mining_debug",
 		mining_debug_command_help = "แสดงหน้าต่างตรวจสอบการขุดเหมือง (debug)",
@@ -2841,6 +2863,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		model_view_command_parameter_model_help = "ชื่อโมเดลหรือแฮชที่คุณต้องการดู",
 		model_view_command_parameter_no_blocker = "no blocker",
 		model_view_command_parameter_no_blocker_help = "ปิดการใช้งานการบล็อกเงา (ค่าเริ่มต้น: ไม่มี)",
+		model_view_command_parameter_clamp = "คลั้ง",
+		model_view_command_parameter_clamp_help = "คลั้งขนาดเสมอเสมอ 0.25 ขึ้นไป (ช่วยในกรณีของโมเดลขนาดเล็ก).",
 		model_view_command_parameter_components = "components",
 		model_view_command_parameter_components_help = "องค์ประกอบของอาวุธ (คั่นด้วยเครื่องหมายจุลภาค).",
 		model_view_command_substitutes = "model, view",
@@ -3026,6 +3050,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		ped_remove_command = "ลบnpc",
 		ped_remove_command_help = "ลบnpcทั้งหมดที่คุณสร้าง.",
 		ped_remove_command_substitutes = "",
+
+		ped_attack_command = "ped_attack",
+		ped_attack_command_help = "ทำให้ตัวละคร AI ที่ใกล้ที่สุดโจมตีผู้เล่นที่เฉพาะเจา.",
+		ped_attack_command_parameter_target = "target",
+		ped_attack_command_parameter_target_help = "ผู้เล่นที่คุณต้องการให้ตัวละคร AI ที่ใกล้ที่สุดโจมตี.",
+		ped_attack_command_substitutes = "",
 
 		list_ped_emotes_command = "รายการemotes",
 		list_ped_emotes_command_help = "แสดงรายการemotes ทั้งหมด.",
@@ -3461,6 +3491,17 @@ OP.Global.Locales.Languages["th-TH"] = {
 		tablet_command = "tablet",
 		tablet_command_help = "เปิดหน้าต่างแท็บเล็ต (หากคุณมีแท็บเล็ต)",
 		tablet_command_substitutes = "",
+
+		-- game/taxes
+		tax_collection_command = "tax_collection",
+		tax_collection_command_help = "เรียกให้เก็บภาษีด้วยวิธีกดมือ",
+		tax_collection_command_parameter_percentage = "เปอร์เซ็นต์",
+		tax_collection_command_parameter_percentage_help = "เปอร์เซ็นต์ที่คุณต้องการหักจากค่าทรัพย์สินของผู้เล่น จะหักเงินจากผู้เล่นที่ออฟไลน์ด้วย ตัวอย่างของตัวเลขที่ถูกต้องคือ 0.1 (0.1%)",
+		tax_collection_command_substitutes = "",
+
+		taxes_command = "ภาษี",
+		taxes_command_help = "แสดงภาษีของคุณ",
+		taxes_command_substitutes = "",
 
 		-- game/teleporting
 		tp_back_command = "tp_back",
@@ -3965,6 +4006,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		set_fuel_command_parameter_server_id_help = "หากคุณต้องการตั้งค่าน้ำมันสำหรับผู้เล่นคนอื่น ปล่อยว่างไว้เพื่อเลือกตัวเองโดยอัตโนมัติ",
 		set_fuel_command_substitutes = "fuel",
 
+		fuel_debug_command = "fuel_debug",
+		fuel_debug_command_help = "พิมพ์ระดับน้ำมันของยานพาหนะที่เปลี่ยนไปในคอนโซล",
+		fuel_debug_command_substitutes = "",
+
 		-- vehicles/garage_access
 		manage_garage_command = "จัดการในโรงจอด",
 		manage_garage_command_help = "จัดการโรงจอดของคุณและผู้ที่สามารถเข้าถึงได้",
@@ -4019,6 +4064,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		pickup_keys_command = "pickup_keys",
 		pickup_keys_command_help = "จะทำให้คุณเก็บกุญแจของยานพาหนะที่อยู่ใกล้ที่สุด",
 		pickup_keys_command_substitutes = "",
+
+		grab_keys_command = "grab_keys",
+		grab_keys_command_help = "เอากุญแจจากรถที่คุณขับ",
+		grab_keys_command_substitutes = "",
 
 		keys_command = "แก้ว",
 		keys_command_help = "รับแก้วสำหรับรถที่คุณอยู่ในปัจจุบัน",
@@ -4086,6 +4135,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		mute_sirens_command = "mute_sirens",
 		mute_sirens_command_help = "Mutes all sirens and horns.",
 		mute_sirens_command_substitutes = "",
+
+		sirens_debug_command = "sirens_debug",
+		sirens_debug_command_help = "วาดไฟกระพริบทั้งหมด, กระดิก เสียงมีด และไฟ.",
+		sirens_debug_command_substitutes = "",
 
 		-- vehicles/trailers
 		toggle_trailer_command = "เปิด/ปิดทรายเลอร์",
@@ -4370,6 +4423,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		player_playtime = "${playerName} (ตำแหน่ง ${position})\nเวลาเล่นทั้งหมด: ${totalPlaytime}\nเวลาเล่นในเซสชั่นนี้: ${sessionPlaytime}",
 		leaderboard = "ตารางคะแนน",
 		leaderboard_total = "ตารางจัดอันดับ (เวลาเล่นรวม)",
+		leaderboard_economy = "ตารางเกม (เศรษฐกิจ)",
 		your_position = "ตำแหน่งของคุณ",
 		leaderboard_loading = "กำลังโหลดตารางจัดอันดับ.",
 		logs_user_reject_connection_title = "การเชื่อมต่อถูกปฏิเสธ",
@@ -4491,7 +4545,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		fake_disconnect_feature = "ปลอมการตัดสินใจ",
 		brighter_nights_feature = "BN",
 		ridealong_feature = "ถ่ายทางนั่งเดียว",
-		broadcast_all_feature = "ประกาศถึงทุกคน"
+		broadcast_all_feature = "ประกาศถึงทุกคน",
+		skip_minigames_feature = "ข้ามเกมส์ย่อย"
 	},
 
 	admin_menu = {
@@ -4568,7 +4623,45 @@ OP.Global.Locales.Languages["th-TH"] = {
 	},
 
 	animals = {
-		invalid_sound = "เสียงไม่ถูกต้อง"
+		invalid_sound = "เสียงไม่ถูกต้อง",
+		not_enough_space = "คุณมีพื้นที่ไม่เพียงพอที่จะเก็บสัตว์ชนิดนี้.",
+
+		male = "ผู้",
+		female = "เมีย",
+
+		description_cat_unnamed = "แมว ${gender} ตัวหนึ่ง ซึ่งเดินทางในชีวิตด้วยลมหายใจของความลึกซึ้ง, อายุ ${age} และน้ำหนัก ${weight} โล. ด้วยความชอบที่มิสามมือไม่ได้กิน ${food}, น้องแมวนี้อาจกำลังวางแผนครองโลกชั่วขึ้นมาจน กลายเป็นคนพักผ่อนในทีเดียว. ทุกหยิกตาเป็นเรื่องราว, ทุกสายตาเก็บความลับ.",
+		description_cat_named = "${name}, แมว${gender}ที่มีอายุ ${age} ปี เป็นเพื่อนร่วมทางที่มีปัญญาของการนอนนอกในแสงแดดและการผจญภัยกลางคืนบาดใจที่ไม่นับสิบ หนัก ${weight} และมีความสนใจที่ไม่สามารถที่จะละเมิด ${food} ${name} วิบัติโลกอย่างมีชีวิตชีวา—เป็นเสมบดินทร์ของกษัตริย์ และเป็นนักปรัชญาชั้นนำบนถนนใหญ่",
+
+		description_dog_unnamed = "สุนัข${gender}ที่อายุ ${age} ปี และน้ำหนัก ${weight} กิโลกรัม มีจิตวิญญาณที่กว้างขวางเท่ากับขอบฟ้า เต็มทุกๆเสย และมีใจที่พลุ่งพล่ามีความกระตือรือร้นอย่างเสี่ยงทาย พร้อมที่จะเปลี่ยวเถลิงทุกสถานการณ์ให้กลายเป็นการผจญภัยที่เป็นได้งานทุกช่วงทาง",
+		description_dog_named = "${name}, สุนัขตัว${gender}, อายุ ${age} ในเรื่องร่วมมือสู้ชีวิตริมบ้า เครื่องหมายเฉพาะของ ${weight} และความพลิกผันของพลังแห่งสว่างสดใส ซึ่งน่าอัศจรรย์กับ ${food}, ${name} มีหลักครอบครองด้วยความง่ายๆ: ทุกวันคือของขวัญ, ทุกคนเป็นสมมติ, ทุกโอกาสเข้าด้วยกันสามารถทำให้ความรื่นรมย์ได้.",
+
+		description_rabbit_unnamed = "กระต่ายตัว${gender} นี้, อายุ ${age} ที่ยังดีเยียวน้อยและชั้นน้ำหนัก ${weight}, กระโจนไปทางชีวิตด้วยความกระตุ้นเช่นนักสำรวจเชื้อชาติ เขา/เธอถูกกระตุ้นด้วยความรักอย่างกลับไม่คาดคิดสำหรับ ${food}, หูของมันหันไปฟังทุกเมื่อ, จิตวิญญาณของมันไร้ขอบเขตที่สดใส—จิตใจขนาดเล็กที่เติบเต็มไปด้วยความ好奇ทะกนอย่างไม่มีขอบเขต.",
+		description_rabbit_named = "${name}, กระต่าย${gender} อายุ ${age} มาร่วมการผจญภัยในชีวิตซึ่งน้ำหนัก ${weight} และมีความกระปรี้กระเปร่าที่แพร่กระจายอย่างต่อเนื่อง ทุ่มเทใจและความเต็มใจในการกิน ${food}, ${name} ทำให้ทุกการกระโดดกลายเป็นการประกาศความสุข แต่ละคำเท็จะกลายเป็นการผจญภัย",
+
+		description_hen_unnamed = "เป็ด${gender} อายุ ${age} ปี เดินอย่างมั่นใจอย่างรวดเร็วที่น้ำหนัก ${weight} ผู้ที่เค็มกิน ${food}, เพื่อนที่มีขนสมเป็นเพลงบททรรศิกาจากสุสานเกษรุ่นบ้าน",
+		description_hen_named = "${name}, แม่ไก่ ${gender}, อายุ ${age} ปี หนัก ${weight} กิโลกรัม, ร้องไห้ด้วยอำนาจของนักเล่าเรื่องที่มีประสบการณ์ เป็นผู้คลั่งแคลง ${food} และเป็นเจ้ามือของสิ่งที่ไม่คาดคิด, ${name} พิสูจน์ว่าคาริสมาแท้หาไม่รู้จักเชื้อชาติ.",
+
+		description_rat_unnamed = "หนูหญิง ${gender} นี้, อายุ ${age} ปี ผจญภัย หนัก ${weight} กิโลกรัม, เดินทางในโลกด้วยความคมชัดและเสน่ห์ที่ไม่คาดคิด เคร่งครัดในการทำ ${food}, ทำให้ทุกมุมกลางเป็นโอกาสใหม่, และทุกเงาเป็นสนามเด็กเล่นที่เป็นไปได้",
+		description_rat_named = "${name}, หนูหนึบเพศ${gender} อายุ${age} ที่สนใจการทดลองชีวิต น้ำหนัก${weight} และเต็มไปด้วยบุคลิกภาพ มีความสัมพันธ์ที่แข็งแกร่งกับ${food} ${name} แสดงถึงจิตวิจิตของความอยากรู้รอบ - ขนาดเล็กกะทัดรัด, จิตใจไม่มีขอบเขต.",
+
+		pick_up_named = "[${SeatEjectKey}] หยิบ${name}ขึ้น",
+		pick_up_cat = "[${SeatEjectKey}] หยิบแมวขึ้น",
+		pick_up_dog = "[${SeatEjectKey}] หยิบหมาขึ้น",
+		pick_up_hen = "[${SeatEjectKey}] หยิบไก่ขึ้น",
+		pick_up_rabbit = "[${SeatEjectKey}] หยิบกระต่ายขึ้น",
+		pick_up_rat = "[${SeatEjectKey}] หยิบหนูหนึบขึ้น",
+
+		failed_pickup_cat = "ไม่สามารถเก็บแมวได้",
+		failed_pickup_dog = "ไม่สามารถเก็บหมาได้",
+		failed_pickup_hen = "ไม่สามารถเก็บไก่ได้",
+		failed_pickup_rabbit = "ไม่สามารถเก็บกระต่ายได้",
+		failed_pickup_rat = "ไม่สามารถเก็บหนูได้",
+
+		failed_place_cat = "ไม่สามารถวางแมวได้",
+		failed_place_dog = "ไม่สามารถวางหมาได้",
+		failed_place_hen = "ไม่สามารถวางไก่ได้",
+		failed_place_rabbit = "ไม่สามารถวางกระต่ายได้",
+		failed_place_rat = "ไม่สามารถวางหนูได้"
 	},
 
 	arcade = {
@@ -4691,8 +4784,28 @@ OP.Global.Locales.Languages["th-TH"] = {
 		deposit = "ฝาก",
 		balance = "ยอดเงินคงเหลือ",
 		transfer = "โอน",
+		deposit_coins = "ฝากเหรียญ",
 		savings_bonds = "พันธบัตรออมทรัพย์",
 		back = "ย้อนกลับ",
+
+		condition_pristine = "ในเงาะถึงสุดยอด",
+		condition_mint = "ในเงาะใกล้เคียงสุดยอด",
+		condition_slight_worn = "มีสภาพใส่น้อย",
+		condition_worn = "มีสภาพใส่",
+		condition_heavy_worn = "มีสภาพใส่มาก",
+		condition_corroded = "มีสภาพถูกกัด",
+		condition_damaged = "มีสภาพเสียหาย",
+		condition_unrecognizable = "ไม่สามารถระบุ",
+
+		mint_p = "ฟิลาเดลเฟีย (P)",
+		mint_d = "เดนเวอร์ (D)",
+		mint_s = "แซนฟรานซิสโก (S)",
+		mint_w = "เวสต์พอยต์ (W)",
+		mint_cc = "คาร์สันซิตี (CC)",
+		mint_o = "นิวออร์ลีนส์ (O)",
+		mint_none = "สถานที่ที่ไม่ทราบ (ไม่มีเครื่องหมายรีวิว)",
+
+		coin_metadata = "เหรียญที่สร้างขึ้นในปี ${minted} ผลิตที่ ${mark} และมีสภาพ ${condition}.",
 
 		amount = "จำนวน",
 		target = "เป้าหมาย",
@@ -4706,6 +4819,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		failed_withdraw = "ถอนเงินไม่สำเร็จ",
 		failed_transfer = "โอนเงินไม่สำเร็จ",
 		failed_deposit_bonds = "ล้มเหลวในการฝากพันธบัตรออมทรัพย์",
+		failed_deposit_coins = "การฝากเหรียญล้มเหลว",
 
 		processing = "กำลังดำเนินการ...",
 		counting_bills = "นับธนบัตร...",
@@ -4713,22 +4827,29 @@ OP.Global.Locales.Languages["th-TH"] = {
 		something_went_wrong = "มีบางอย่างผิดพลาด",
 		error_not_online = "เป้าหมายของคุณไม่ออนไลน์",
 		error_not_enough_money = "ยอดเงินไม่เพียงพอ",
-		deposit_amount_big = "การฝากเงินผ่าน ATM จำกัดการฝากไม่เกิน 4,000 ดอลลาร์",
-		withdraw_amount_big = "การถอนเงินผ่าน ATM จำกัดการถอนไม่เกิน 6,000 ดอลลาร์",
+		deposit_amount_big = "การฝากผ่านตู้ ATM จำกัดที่ $5,000.",
+		withdraw_amount_big = "การถอนผ่านตู้ ATM จำกัดที่ $10,000.",
+		bond_fee_details = "ค่าธรรมเนียมการดำเนินการสำหรับพันธบัตรออมสิน 2%.",
+		atm_fee_details = "ค่าธรรมเนียมการดำเนินการสำหรับการถอนเงินผ่าน ATM 1.5%.",
 
 		retrieving_card = "กำลังเรียกใช้บัตร",
 		atm_damaged = "ATM นี้เสียหาย",
 
 		press_to_use = "กด ~g~${InteractionKey} ~w~เพื่อใช้ ATM",
 		press_to_interact_bank = "กด ~g~${InteractionKey} ~w~เพื่อโต้ตอบกับธนาคาร",
+		fee_label = "พร้อมค่าธรรมเนียม $${fee}",
+		no_fee_label = "โดยไม่มีค่าธรรมเนียม",
 
 		deposit_log_bank_title = "ฝากเงินธนาคาร",
 		deposit_log_atm_title = "ฝากเงิน ATM",
 		deposit_log = "${consoleName} ฝากเงินจำนวน $${amount}",
 
+		deposit_coins_log_title = "การฝากเหรียญ",
+		deposit_coins_log = "${consoleName} ฝากเหรียญมูลค่า ${coins} มูลค่า $${amount}.",
+
 		withdraw_log_bank_title = "ถอนเงินจากธนาคาร",
 		withdraw_log_atm_title = "ถอนเงินจากเอทีเอ็ม",
-		withdraw_log = "${consoleName} ถอนเงินจำนวน $$${amount}",
+		withdraw_log = "${consoleName} ถอน $${amount} ${fee} แล้ว",
 		withdraw_log_bonds_title = "ถอนเงินฝาก (ระลอก)",
 		withdraw_log_bonds = "${consoleName} ถอน $${amount} ในสัญญาเงินฝาก (${bonds})",
 
@@ -4736,7 +4857,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		transfer_log = "${consoleName} (#${characterId}) โอนเงิน $$${amount} ถึง ${targetConsoleName} (#${targetCharacterId}).",
 
 		deposit_log_bonds_title = "ฝากพันธบัตรออมทรัพย์",
-		deposit_bonds_log = "${consoleName} ฝาก ${bonds} มูลค่า $${amount}"
+		deposit_bonds_log = "${consoleName} ฝาก ${bonds} มูลค่า $${totalMoney} ด้วยค่าธรรมเนียม $${fee} (=$${amount})"
 	},
 
 	attachments = {
@@ -5598,13 +5719,15 @@ OP.Global.Locales.Languages["th-TH"] = {
 	},
 
 	containers = {
-		drill_container = "กด ~INPUT_CONTEXT~ เพื่อเจาะเปิดฟองของ",
-		drilling_container = "เครื่องจักรเจาะคอนเทนเนอร์",
-		failed_drill = "ไม่สามารถเจาะเปิดคอนเทนเนอร์ได้",
-		drill_success = "เจาะคอนเทนเนอร์เปิดสำเร็จ",
+		drill_container = "กด ~INPUT_CONTEXT~ เพื่อเจาะล็อคคอนเทนเนอร์",
+		drill_warehouse = "กด ~INPUT_CONTEXT~ เพื่อเจาะล็อคโกดัง",
+		drilling_lock = "เจาะล็อค",
+		failed_drill = "เจาะล๊อคไม่สำเร็จ",
+		drill_success = "เจาะล๊อคสำเร็จ",
 
-		containers_due_soon = "จำนวน ${count} ตู้เก็บของของคุณจะครบกำหนดเร็วๆ นี้",
-		container_blip = "สัญลักษณ์คอนเทนเนอร์"
+		containers_due_soon = "${count} จานคอนเทนเนอร์/โกดังของคุณมีกำหนดชำระเงินเร็วๆนี้",
+		container_blip = "สัญลักษณ์คอนเทนเนอร์",
+		warehouse_blip = "โกดัง"
 	},
 
 	crafting = {
@@ -6211,6 +6334,29 @@ OP.Global.Locales.Languages["th-TH"] = {
 		crafted_bacon = "สร้างเบคอนแล้ว",
 		failed_craft_bacon = "ไม่สามารถสร้างเบคอน",
 
+		make_mochi = "ทำหมอชี",
+		press_to_make_mochi = "[${SeatEjectKey}] ทำหมอชี",
+
+		mochi_mango_recipe = "หมอชีมะม่วง",
+		making_mochi_mango = "กำลังทำหมอชีมะม่วง",
+		made_mochi_mango = "ทำหมอชีมะม่วงเสร็จสมบูรณ์",
+		failed_make_mochi_mango = "ไม่สามารถทำหมอชีมะม่วงได้",
+
+		mochi_strawberry_recipe = "หมอชีสตอเบอร์รี่",
+		making_mochi_strawberry = "กำลังทำหมอชีสตอเบอร์รี่",
+		made_mochi_strawberry = "ทำหมอชีสตอเบอร์รี่เสร็จสมบูรณ์",
+		failed_make_mochi_strawberry = "ไม่สามารถทำหมอชีสตอเบอร์รี่ได้",
+
+		mochi_green_tea_recipe = "หมอชีชาเขียว",
+		making_mochi_green_tea = "การทำโมจิชาเขียว",
+		made_mochi_green_tea = "ทำโมจิชาเขียวเสร็จสิ้น",
+		failed_make_mochi_green_tea = "การทำโมจิชาเขียวล้มเหลว",
+
+		mochi_chocolate_recipe = "โมจิช็อกโกแลต",
+		making_mochi_chocolate = "การทำโมจิช็อกโกแลต",
+		made_mochi_chocolate = "ทำโมจิช็อกโกแลตเสร็จสิ้น",
+		failed_make_mochi_chocolate = "การทำโมจิช็อกโกแลตล้มเหลว",
+
 		cook_food = "ทำอาหาร",
 		press_to_cook_food = "[${SeatEjectKey}] ทำอาหาร",
 
@@ -6233,6 +6379,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 		cooking_spicy_ramen = "กำลังทำราเม็งเผ็ด",
 		cooked_spicy_ramen = "ราเม็งเผ็ดสำเร็จ",
 		failed_cook_spicy_ramen = "ผัดราเม็งเผ็ดล้มเหลว",
+
+		green_tea_recipe = "ชาเขียว",
+		brewing_green_tea = "ชาเขียวกำลังชง",
+		brewed_green_tea = "ชาเขียวชงเสร็จสิ้น",
+		failed_brew_green_tea = "การชงชาเขียวล้มเหลว",
 
 		cut_ingridients = "ตัดวัตถุดิบ",
 		press_to_cut_ingridients = "[${SeatEjectKey}] ตัดวัตถุดิบ",
@@ -6385,6 +6536,30 @@ OP.Global.Locales.Languages["th-TH"] = {
 		baking_chocolate_cake = "กำลังอบเค้กช็อกโกแลต",
 		baked_chocolate_cake = "เค้กช็อกโกแลตอบเสร็จแล้ว",
 		failed_baking_chocolate_cake = "ล้มเหลวในการทำเค้กช็อกโกแลต",
+
+		make_coffee = "ทำกาแฟ",
+		press_to_make_coffee = "[${SeatEjectKey}] ทำกาแฟ",
+
+		bean_coffee_recipe = "กาแฟทำจากเมล็ด",
+		espresso_recipe = "เอสเพรสโซ่",
+		cappuccino_regular_recipe = "คาปูชิโน (นมวัว)",
+		cappuccino_almond_recipe = "คาปูชิโน (นมอัลมอนด์)",
+		cappuccino_pigeon_recipe = "คาปูชิโน (นมนก)",
+		iced_latte_regular_recipe = "ไอซ์ลาเต้ (นมวัว)",
+		iced_latte_almond_recipe = "ไอซ์ลาเต้ (นมอัลมอนด์)",
+		iced_latte_pigeon_recipe = "ไอซ์ลาเต้ (นมนก)",
+
+		brewing_coffee = "กำลังชงกาแฟ",
+		brewed_coffee = "กาแฟชง",
+		failed_brewing_coffee = "ล้มเหลวในการชงกาแฟ",
+
+		hot_chocolate_regular_recipe = "ช็อกโกแลตร้อน (นมวัว)",
+		hot_chocolate_pigeon_recipe = "ช็อกโกแลตร้อน (นมอัลมอนด์)",
+		hot_chocolate_almond_recipe = "ช็อกโกแลตร้อน (นมนกพิจอน)",
+
+		making_hot_chocolate = "กำลังทำช็อกโกแลตร้อน",
+		made_hot_chocolate = "ทำช็อกโกแลตร้อนเรียบร้อย",
+		failed_make_hot_chocolate = "ล้มเหลวในการทำช็อกโกแลตร้อน",
 
 		no_required_items = "คุณไม่มีไอเท็มที่จำเป็นทั้งหมด",
 
@@ -6672,22 +6847,29 @@ OP.Global.Locales.Languages["th-TH"] = {
 	},
 
 	container_storage = {
-		rent_container = "[${InteractionKey}] เช่า #${id} ($${price} ต่อสัปดาห์)",
+		rent_container = "[${InteractionKey}] เช่า C-${id} ($${price} ต่อสัปดาห์)",
+		rent_warehouse = "[${InteractionKey}] เช่า W-${id} ($${price} ต่อสัปดาห์)",
 		renting_container = "กำลังเช่าตู้คอนเทนเนอร์",
+		renting_warehouse = "เช่าคลังสินค้า",
 		failed_rent_container = "ไม่สามารถเช่าตู้คอนเทนเนอร์ได้",
+		failed_rent_warehouse = "เช่าคลังสินค้าไม่สำเร็จ",
 		rent_container_success = "เช่าตู้คอนเทนเนอร์ #${id} เรียบร้อยแล้ว คุณสามารถจัดการตู้คอนเทนเนอร์ของคุณโดยใช้ `/containers`",
-		access_container = "[${InteractionKey}] เข้าถึง #${id}",
-		container_id = "#${id}",
+		rent_warehouse_success = "เช่าคลังสินค้าเรียบร้อย #${id} คุณสามารถจัดการคลังสินค้าของคุณโดยใช้คำสั่ง `/warehouses`",
+		access_container = "[${InteractionKey}] เข้าถึง C-${id}",
+		access_warehouse = "[${InteractionKey}] เข้าถึง W-${id}",
+		container_id = "C-${id}",
+		warehouse_id = "W-${id}",
 
-		storage_containers = "ตู้คอนเทนเนอร์",
+		storage_containers = "กล่องเก็บของ/คลังสินค้า",
 		container = "ตู้คอนเทนเนอร์",
+		warehouse = "คลังสินค้า",
 		loading = "กำลังโหลด...",
 		failed_remove_access = "ไม่สามารถเอาสิทธิ์การเข้าถึงออกได้",
 		failed_add_access = "เพิ่มสิทธิ์ไม่สำเร็จ",
 		access = "สิทธิ์การเข้าถึง",
 		add_cid = "เพิ่ม CID",
-		no_containers = "คุณไม่เป็นเจ้าของหรือไม่ได้รับสิทธิ์เข้าถึงตู้เก็บของใด ๆ",
-		no_access = "ไม่มีใครนอกจากคุณเท่านั้นที่สามารถเข้าถึงตู้เก็บของนี้ได้",
+		no_containers = "คุณไม่มีกล่องเก็บของหรือคลังสินค้าใดๆ",
+		no_access = "ไม่มีใครนอกเหนอไว้ในคอนเทนเนอร์/โกดังนี้.",
 		back = "กลับ",
 		close = "ปิด",
 		character_not_exist = "ตัวละครไม่มีอยู่",
@@ -6697,14 +6879,14 @@ OP.Global.Locales.Languages["th-TH"] = {
 		not_enough_money = "คุณมีเงินไม่พอ",
 		failed_pay_rent = "ล้มเหลวในการจ่ายค่าเช่า",
 		mark_gps = "ทำเครื่องหมาย GPS",
-		container_alert = "ตู้ของคุณ #${containerId} กำลังถูกขโมย",
+		container_alert = "คอนเทนเนอร์/โกดังของคุณ #${containerId} ถูกแก้ไขแล้ว.",
 
 		rented_container_logs_title = "เช่าคอนเทนเนอร์",
-		rented_container_logs_details = "${consoleName} เช่าคอนเทนเนอร์ #${containerId} ในราคา $${price}.",
+		rented_container_logs_details = "${consoleName} เช่า ${type} #${containerId} ในราคา $${price}.",
 		paid_rent_logs_title = "จ่ายค่าเช่าคอนเทนเนอร์",
-		paid_rent_logs_details = "${consoleName} จ่ายค่าเช่า $${price}  สำหรับคอนเทนเนอร์ #${containerId}.",
+		paid_rent_logs_details = "${consoleName} ชำระค่าเช่า $${price} สำหรับ ${type} #${containerId} (ชำระจนถึง `${till} UTC`).",
 		lockpicked_container_logs_title = "สลับกุสต์คอนเทนเนอร์",
-		lockpicked_container_logs_details = "${consoleName} สลับกุสต์คอนเทนเนอร์ #${containerId}."
+		lockpicked_container_logs_details = "${consoleName} ทำการล็อคพิค ${type} #${containerId}."
 	},
 
 	courthouse = {
@@ -6865,6 +7047,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		coords = "พิกัด: ${coords}",
 		rotation = "การหมุน: ${rotation}",
 		normal = "พื้นผิว: ${normal}",
+		surface_heading = "พื้นผิว: ${heading}",
 		velocity = "ความเร็ว: ${velocity}",
 		ground_material = "วัสดุที่อยู่บนพื้น: ${material}",
 		debug_print_f8 = "ข้อมูลการดีบักได้ถูกพิมพ์ในคอนโซล F8 ของคุณแล้ว",
@@ -6878,6 +7061,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		copied_model_name = "คัดลอกรายการโมเดล",
 		copied_entity_id = "คัดลอกรหัสของ entity",
 		copied_hit_coords = "คัดลอกพิกัดการชน",
+		copied_surface_heading = "คัดลอกหัวเรื่องผิว.",
 
 		distance = "ระยะทาง: ${distance} เมตร",
 		distance_first = "บันทึกตำแหน่งแรกแล้ว",
@@ -6913,12 +7097,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		model_view_disabled = "การดูแบบอนุมัติถูกปิดแล้ว",
 		invalid_component = "อุปกรณ์ `${componentName}` ไม่ถูกต้อง",
 
-		animation_currently_playing = "กำลังเล่นอนิเมชันอยู่ในขณะนี้",
 		invalid_or_missing_animation_dict = "พจนานุกรมอนิเมชันไม่ถูกต้องหรือไม่มี `${animationDict}`.",
-		missing_animation_name = "ชื่ออนิเมชันไม่ถูกต้องหรือไม่มี `${animationName}`.",
+		missing_animation_name = "ชื่อการเล่นภาพเคลื่อนไหวไม่ถูกต้องหรือขาดหาย.",
 		invalid_animation_flags = "ธงอนิเมชันไม่ถูกต้อง",
-		animation_played = "กำลังเล่น `${animationDict}` `${animationName}` (ธง: ${flags}) อยู่",
-		no_flags = "ไม่มี",
 
 		invalid_coordinates = "พิกัดไม่ถูกต้อง",
 		added_coordinates_draw = "เพิ่มพิกัด `x: ${x}, y: ${y}, z: ${z}` ในรายการวาดด้วย ID `${drawId}`",
@@ -7703,6 +7884,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		fps_unit = "fps",
 		ping_unit = "มิลลิวินาที",
 		tps_unit = "ชั่วโมงต่อวินาที",
+		fps_1percent_unit = "เฟรมต่อวินาที 1%",
 
 		smart_warnings = "คำเตือน: ${warnings}!",
 		dehydrated = "ขาดน้ำ",
@@ -7990,7 +8172,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		prison_store = "ร้านขายของคุมขัง",
 		fruit_vendor = "ร้านค้าผลไม้",
 		fruit_market = "ตลาดผลไม้อะลาโม",
-		food_market = "ตลาดอาหาร",
+		super_market = "ซุปเปอร์มาร์เก็ต",
 		island_store = "ร้านขายของเกาะ",
 		travel_agency = "บริษัททัวร์",
 		island_bar = "บาร์เกาะ",
@@ -8024,7 +8206,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		ems_badge_store = "โต๊ะขายเครื่องหมาย EMS",
 		doj_badge_store = "โต๊ะขายเครื่องหมาย DOJ",
 		state_store = "ร้านสถานะ",
-		pharmacy = "เภสัชกรรม",
+		pharmacy_store = "ร้านขายยา",
 		chop_shop = "ที่ซ่อมรถเป็นชิ้นส่วน",
 		courthouse = "ศาลยุติธรรม",
 		burger_shot = "ร้านเบอร์เกอร์ช็อต",
@@ -8035,13 +8217,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 		bean_machine_fridge = "ตู้เย็นร้านเบนแมชีน",
 		hunting_store = "ร้านขายอุปกรณ์ล่าสัตว์",
 		fishing_store = "ร้านขายอุปกรณ์ตกปลา",
+		furniture_store = "ร้านเฟอร์นิเจอร์",
 		los_santos_golf_club = "สโมสรกอล์ฟล็อสแซนตอส",
 		arcade_bar = "บาร์เกมส์",
 		japanese_restaurant = "ร้านอาหารญี่ปุ่น",
 		japanese_restaurant_kitchen = "ครัวร้านอาหารญี่ปุ่น",
 		pizza_restaurant = "ร้านพิซซ่า",
 		["945_studios"] = "945 Studios",
-		grain_mill = "โรงสีข้าว",
 		pd_prefix = "ตำรวจ",
 		ems_prefix = "พยาบาล",
 		government_prefix = "รัฐบาล",
@@ -8105,6 +8287,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		underground_bar_counter = "เคาน์เตอร์บาร์ใต้ดิน",
 		pizza_this_counter = "เคาน์เตอร์พิซซ่านี้",
 		yellow_jack_counter = "เคาน์เตอร์ Yellow Jack",
+		bean_machine_counter = "เคาน์เตอร์ Bean Machine",
 
 		inventory_name_missing = "ไม่มีพารามิเตอร์ชื่อสินค้าในกระเป๋า",
 
@@ -8131,6 +8314,14 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		craft_combine = "คุณได้คราฟต์ <i>${output}</i>",
 		combining = "กำลังคราฟต์",
+
+		inspect = "ตรวจสอบ",
+		attachments = "เข็มขัด",
+		fill_paper_bag = "เติมกระเป๋ากระดาษ",
+		rename = "เปลี่ยนชื่อ",
+
+		item_renamed = "เปลี่ยนชื่อรายการสำเร็จ.",
+		item_failed_rename = "เปลี่ยนชื่อรายการล้มเหลว.",
 
 		file_serial = "หมายเลขซีเรียลไฟล์",
 		filing_off_serial_number = "กำลังเคลียร์หมายเลขซีเรียล",
@@ -8414,6 +8605,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		paper_bag = "ถุงกระดาษ",
 		paper_bag_description = "เหมาะแก่การเก็บของชำร่วยหรือบางคน เป็นมิตรหรือไม่มิตรก็ได้",
+		closed_paper_bag = "ปิดถุงกระดาษ",
+		closed_paper_bag_description = "ถุงสีน้ำตาลคลาสสิกที่ซ่อนความลึกลับของเนื้อหาข้างใน มันเป็นอาหารกลางวันหรือคงยังมีสิ่งลับอยู่ข้างใน? มีวิธีเดียวเพื่อค้นพบ—แตกขาดแล้วเห็นว่าอะไรอยู่ข้างใน!",
 		burger_shot_delivery = "อาหารจานพิเศษของ Burger Shot",
 		burger_shot_delivery_description = "ชุดอาหารที่ประกอบไปด้วยเนื้อเนียนมีรสชาติอร่อย",
 		bean_machine_delivery = "บริการจัดส่งอาหารและเครื่องดื่มของ Bean Machine",
@@ -8424,6 +8617,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		green_wonderland_delivery_description = "ถุงที่เต็มไปด้วยสิ่งที่คุณชื่นชอบสีเขียว  #420blazeit",
 		pizza_this_delivery = "กล่องส่งพิซซ่า",
 		pizza_this_delivery_description = "ส่งพิซซ่าอร่อยๆที่ถูกอบออกมาในรูปแบบที่โดดเด่นกับกล่องส่งพิซซ่านี้ ทำให้ทุกคนเคนุ่งทุกชิ้นถึงอินมีเดียของที่อบพิซซ่า",
+
+		lunch_box = "กล่องอาหารกลางวัน",
+		lunch_box_description = "กล่องที่แข็งแรงที่เก็บความหวังของคุณ จะกลุ้มหว้า และของเหลือวาน ลักษณะดีสำหรับการเก็บขนมของคุณให้ปลอดภัย ซึ่งเบียร์ในลมแข็งแรงไม่ต้องมั่นใจว่าจะทำให้คุณดูดีขึ้นในขณะที่กินอาหารกลางวัน",
 
 		empty_box = "กล่องว่าง",
 		empty_box_description = "เริ่มต้นด้วยกล่องที่แข็งแรงและเรียบง่ายนี้ เพื่อสร้างของขวัญที่บุคคลได้อย่างพิเศษ ใส่ของขวัญที่ไม่เสียหายลงไป และมันก็พร้อมสำหรับการเริ่มแปลงให้เป็นของขวัญที่มีเหตุผล ใช้ได้เยี่ยมสำหรับการห่อของที่แสดงถึงความรัก ยกเว้นของเปราะบางและอาวุธ",
@@ -8485,6 +8681,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		keys = "กุญแจ",
 		keys_description = "คู่กุญแจที่ใช้เปิดประตูบางแห่ง",
+		car_keys = "กุญแจรถยนต์",
+		car_keys_description = "ชุดกุญแบบวิเศษที่สามารถปลดล็อคประตู, เริ่มเครื่องยนต์, และทำให้คุณรู้สึกรถเองว่ามีอำนาจทางถนน เหมือนไม่มีกุญ 2 แทบนะ, แต่มีจุดมุ่งหลักเดียวกัน— ให้คุณเข้าถึงรถสุดชิคที่มีมาจากมัน เพียงแค่อย่าหล่นบนทางระบบน้ำหรือให้คน \"เพื่อน\" ยืม.",
 
 		raw_diamond = "เพชรดิบ",
 		raw_diamond_description = "เพชรที่หาได้และยังไม่ได้ตัดเยี่ยมและไม่ได้สัมผัส รอบนอกของมันยังสลัดของสวยงามอยู่ ลงตัวสำหรับคนที่ค้นพบความสวยงามในศักยภาพที่ยังไม่ถูกใช้งาน เจิดจ้างที่รอเฉือนเพื่อปลดปล่อยความยิ่งใหญ่ของมัน",
@@ -9061,6 +9259,34 @@ OP.Global.Locales.Languages["th-TH"] = {
 		plush_wasabi = "วาซาบีวิส",
 		plush_wasabi_description = "เล็กๆ แต่สำคัญ เหมือนกับความอร่อยจากวาซาบี! ชุดสีเขียวสดใสของพวกเขาจะทำให้หันหน้าหันหลังไม่ต้องสงสัย  อย่านำขนาดของพวกเขาให้เป็นที่น้อย - พวกเขาอัดแน่นไปด้วยบุคลิกและพร้อมที่จะร่วมแห่งชื่อใหญ่เสมอ",
 
+		cat_0 = "แมวพันธุ์แท็บบี้",
+		cat_0_description = "เจ้าแมวละมุนสีละมุนเหล่านี้จะทำอะไรก็ตามในทุกสถานการณ์, ไม่ว่าจะเป็นการแอบเข้าไปนอนบนเข่าคุณหรือวางแผนครอบครองโลกหนึ่งชั่วโมงต่อหนึ่งชั่วโมง มันก้าวอย่างมั่นใจแบบแมวที่รู้ว่าตัวเองคือตัวละครหลัก.",
+		cat_1 = "แมวสีดำ",
+		cat_1_description = "เฉียบคม มืดมิด และบางทีอาจจะมีพลังเวทมนตร์ แมวสีดำพันธุ์นี้รู้จัดให้ใครจัดอะไร เหมือนเป็นศิลปินที่ใช้สมองหากิน มีส่วนผสมของการร้อนและน่ากอดพอสมควร มีเอกลักษณ์ในการเดิมทางและมองโต้ตอบของอารมณ์ชังโคล้เกอร์.",
+		cat_2 = "แมวสีน้ำตาล",
+		cat_2_description = "อบอุ่นและเชิงดิน สวยงามสีน้ำตาล หมวกน้ำแบบนี้เหมือนน้ำช็อคโกแลตร้อนในรูปแมว - ถ้าช็อคโกแลตร้อนมันมักจะผลักของบนโต๊ะของคุณ มันชิล อบอุ่น และน่าแปลกใจที่ดีในการไม่สนใจการโทรหาคุณ.",
+
+		dog_0 = "Westie Terrier",
+		dog_0_description = "สุนัขพันธุ์เวสต์เทรเรีย น่ารัก มีขนยาวที่ทำให้ดูเป็นเช่าและเป็นมอปได้ดี มีสัมพันธ์ที่แสนซื่อสัตย์และเป็นเชื่อ พร้อมสำหรับการผจญภัยเสมอ แม้แต่จะแค่ไล่หาหางตัวเองมาหลายชั่วโมง ดีในการกอดและสงบในการเป็นสะอาด",
+		dog_1 = "ปั๊ก",
+		dog_1_description = "ปั๊กที่ภาคภูมิ มีใบหน้าที่เฉพาะเจาะจงที่รักจากแม่หรือจากทุกคน จริงๆ มีขาสั้น แต่มีบุคลิกภาพที่ดี ที่เชียวนี้จะจินตนาการตัวเองเข้าในใจของคุณและน่าจะเข้าไปที่อาหารของคุณด้วย",
+		dog_2 = "พูเดิล",
+		dog_2_description = "ปูเดิลที่ดูดีอย่างสมบูรณ์ซึ่งรู้ว่าตัวเองเป็นสุนัขที่หรูหราที่สุดในห้อง สง่างามและเรียบง่ายบางครั้งก็เป็นเจ้าชู้สุดควาย เขาทำให้สถานที่ใดก็ตามดูมีความมีระดับ - ไม่ว่าจะเป็นพรมแดงหรือห้องนอนของคุณ",
+
+		hen_0 = "ไก่",
+		hen_0_description = "ไก่เล่นทะเล้นเสร้นเท่ากับไม่ได้คอยง่ายง่ายที่มีความสุกใจว่าเธอเป็นเจ้าของฟาร์มไน ตลอดเวลากัดเสียดกัดเสียด กระ่นกัน และใส่ใจคุณด้วยดีที่เนี้ยบ นี้ขุมขิมเพอดีว่าลานกพู่มี่แขสียขอมสัเพฟที่สือันดาน",
+		rat_0 = "หนู",
+		rat_0_description = "ลิงแรงที่เลวร้ายกับคำแนะนำของถนนและความชำนาญในการหาขนมอย่างที่คุณคาดไม่ถึง ไม่ว่าจะเป็นการค้นหาตัดเศษพวกเศษหรือวางแผนการครอบครองโลก คนหรือทางนี้จะกำลังทำอะไรอยู่คงชัลบุกทุกเวลาค่ะ",
+
+		rabbit_0 = "กระต่ายสีน้ำตาลเข้ม",
+		rabbit_0_description = "กระต่ายสีน้ำตาลเข้มที่มีพลังงานสูงเหมือนชื่อของมัน ตื่นเต้นเสมอ, เสมอพร้อมวิ่ง และอาจจะตำหนิคุณที่ช้ากว่ามัน",
+		rabbit_1 = "กระต่ายสีน้ำตาลอ่อน",
+		rabbit_1_description = "กระต่ายสีน้ำตาลอ่อนที่ดูเหมือนวิ่งออกมาจากเบเกอรี่ หวาน กรอดอย่างจิตใจ, และมีความสับสนเหมาะที่ดีสำหรับวันของคุณ",
+		rabbit_2 = "กระต่ายสีแทน",
+		rabbit_2_description = "กระต่ายสีแทนที่มีเสน่ห์นุ่มนวลและความชำนาญในการกระโดดไปยังสถานที่ที่ไม่สะดวกสุดๆ มันเท่าจะน่ารักและน่ารำคาญเล็กน้อย",
+		rabbit_3 = "กระต่ายสีเทา",
+		rabbit_3_description = "กระต่ายสีเทาดุดันที่เคลื่อนไหวเหมือนกับฝุ่นละอองในลม ปิดตาไปแล้วมันก็หายไป—แต่ไม่ได้ผ่านไปโดยไม่ขโมยใจคุณ (และบางทีอาจจะขโมยผักชาช่าของคุณด้วย)",
+
 		boxing_gloves = "ถุงมวย",
 		boxing_gloves_description = "ทำให้คุณเป็น Rocky แต่คุณอาจไม่ได้รับภาคต่อ...",
 		leash = "เชือกคอสัตว์",
@@ -9190,6 +9416,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		evidence_bag_empty_description = "มันออกมายังไงไม่เห็นเลย?",
 		evidence_bag = "ถุงใส่ของพยาน",
 		evidence_bag_description = "ถุงซีลแล้วเก็บของประกอบการอาชญากรรมไว้",
+		evidence_box = "กล่องหลักฐาน",
+		evidence_box_description = "นักรัฐบาลที่โดดเด่นบนความยุติธรรม รักษาทุกคำพูดที่สำคัญ ลายนิ้วมือ และสิ่งของที่น่าสงสัยที่จำเป็นต้องแกะบทลับ ตั้งแต่ถุงหวานถึงเครื่องมือตำรวจที่ใช้ในสถานที่เกิดเหตุ มันเหมือนกับหีบสมบัติสำหรับนักสืบ—ไม่มีทองคำ, แต่มีเอกสารเยอะมาก",
 		fingerprint_evidence = "หลักฐานริ้วมือ",
 		fingerprint_evidence_description = "ช่วยจับคนร้ายให้ได้ง่ายขึ้น",
 		device_printout = "บันทึกอุปกรณ์",
@@ -9239,6 +9467,19 @@ OP.Global.Locales.Languages["th-TH"] = {
 		savings_bond_1000_description = "สลากออมทรัพย์มูลค่า 1,000 ดอลลาร์ เป็นหลักฐานในความมุ่งมั่นในการสร้างความร่ำรวย รักษารักษาสลากฯ นี้ไว้เป็นอันดับสูง จนกระทั่งคุณพร้อมที่จะแลกเปลี่ยนมันที่ธนาคาร ซึ่งจะช่วยเพิ่มรายได้ของคุณอย่างเป็นทางการ",
 		savings_bond_2000 = "สลากออมทรัพย์ 2,000 ดอลลาร์",
 		savings_bond_2000_description = "สลากออมทรัพย์มูลค่า 2,000 ดอลลาร์ เป็นการลงทุนที่มีความสำคัญในอนาคตทางการเงินของคุณ รักษารักษาสลากฯ นี้ไว้จนถึงเวลาที่เหมาะสม แล้วแลกเปลี่ยนที่ธนาคารเพื่อปลดล็อกมูลค่าเต็มรูปแบบของมัน ช่วยให้คุณสามารถสั่งให้ฝันการเงินของคุณเป็นจริง",
+
+		cent_1 = "เซ็นต์",
+		cent_1_description = "เหรียญเพนนีที่เรียบง่ายนี้เป็นหัวขาของเหล่าฮีโร่สีทองแดงในอเมริกา มีมูลค่าเพียงเพนนีเท่านั้น แต่มักจะพบว่ามันกล้าๆ เม็ดๆ กล้าชำระเงินของแห่งอ่างน้ำหรือซ่อนอยู่ใต้เของเก้าอี้ มันเปราะบางและมีพลังงานเหมือนกันกับสก้อนเหรียญเล็กๆ",
+		cent_5 = "นิกเกิล",
+		cent_5_description = "เหรียญนิกเกิลเป็นการอัพเกรดชั้นน้ำหนักของเหรียญจากเพนนี มีอำนาจซื้อของเป็นครั้งที่ห้าเท่า ซึ่งก็ยังไม่มากมาย มันเป็นเพื่อนร่วมที่ทำหน้าที่อย่างเสมอซึ่งตู้จำหน่ายสินค้าและเกมส์โมดในระบบหยิบตัวใช้บริการเครื่องละครแมชชีนบ้านๆ อย่างไรก็ตามมูลค่าของมันอาจถูกระวางเงินบางรองบ้าง",
+		cent_10 = "เหรียญ 10 เซ็นต์",
+		cent_10_description = "เหรียญ 10 เซ็นต์เป็นเหรียญที่เล็กแต่มีประสิทธิภาพ บรรจุมูลค่า 10 เซ็นต์ในการออกแบบที่มีขนาดกระเป๋า ขนาดเล็กพอที่จะถูกหายไปในกระเป๋ายีนส์ของคุณ แต่ก็ยังมีมูลค่าเพียงพอที่จะเตือนคุณว่ามันมีค่าที่เป็นสองเท่าของความพยายามของนิกเกิล",
+		cent_25 = "เหรียญ 25 เซ็นต์",
+		cent_25_description = "เหรียญ 25 เซ็นต์เป็นราชาของตู้จอดรถและเครื่องจำหน่ายลูกกลิ้ง ด้วยน้ำหนักที่หนักและมูลค่า 25 เซ็นต์ เหรียญเงินสีนี้จะนำทีมเหรียญของคุณเข้าสู่ชัยชนะที่ยิ่งใหญ่ในกาลกาแอดและอาเคดโกลรี",
+		cent_50 = "เหรียญครึ่งดอลลาร์",
+		cent_50_description = "เหรียญครึ่งดอลลาร์เป็นเหรียญหนักหนาที่มองไม่เห็นบ่อยในเงินตราของอเมริกา มันเหมือนพี่ชายที่เก๋ ลึกลับกว่าเหรียญ 25 เซ็นต์ มูลค่าสองเท่า ขนาดใหญ่สองเท่า และดูเสมอจนอยู่ในความสุขที่น่าประทับใจ",
+		coin_bag = "ถุงเหรียญ",
+		coin_bag_description = "ถุงเล็กน่าเชื่อถือที่ออกแบบมาเพื่อรักษาเหรียญทองที่สับสนไม่ให้เห้อเหรอไปทั่วทุกที่ เล็ก ดีดี และลงตัวสำหรับผู้ที่ต้องการพกจำนวนเงินไว้อย่างสุภาพ—ให้เราสมมติว่า \"ความร่ำรวย\"",
 
 		weather_spell_snow = "สมองแหกพายุหิมะ",
 		weather_spell_snow_description = "การใช้ไอเท็มนี้จะช่วยให้คุณควบคุมสภาพอากาศชั่วคราวและทำให้เกิดหิมะ! นี่เป็นของใช้เพียงครั้งเดียวดังนั้นขอให้ใช้ระวัง หากคุณใช้สัญญาณอากาศสองชนิดพร้อมกัน สัญญาณชนิดที่สองจะถูกจัดคิวลงไป",
@@ -9430,6 +9671,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		fishing_chair_description = "ออกแบบสำหรับความสะดวกในระหว่างรอนานๆ โครงเหล็กของเก้าอี้ตกปลานี้ทนทานและสะดวกสบาย มาพร้อมที่วางเหยื่อตกปลาสำหรับเช้าที่หยิบปลาได้. สามารถวางไว้ที่ทุกที่ในโลก",
 		sleeping_bag = "ถุงนอน",
 		sleeping_bag_description = "ห่อตัวตัวเองด้วยความอบอุ่นจากถุงนอนนี้ ออกแบบสำหรับคืนที่เย็นหนาวใต้ดาว. ดีไซน์ที่กระชับทำให้ง่ายต่อการพกพา ให้ความสะดวกทุกหนทุกแห่งที่วางหัว",
+		red_pillow = "หมอนสีแดง",
+		red_pillow_description = "หมอนสีแดงทรงสตรีมที่ทำให้พื้นแข็งกลายเป็นวังของความสบาย ไม่ว่าคุณกำลังทำสมาธิ ดูคน หรือแค่พยายามหลีกเลี่ยงการนั่งบนเส้นเลือดลึก เครื่องนอนนี้จะช่วยอำนวยความสะดวกของคุณ—หรือถูกสะโพกของคุณ!",
+		spotlight = "สปอตไลท์",
+		spotlight_description = "สปอตไลท์ที่พร้อมทำให้ทุกสิ่งหรือใครกลายเป็นดาวของการแสดง. เหมาะสำหรับภาพถ่ายอย่างมืออาชีพ, แสงที่มีลักษณะของความทรงจำ, หรือแค่รู้สึกรถึไม่พอใจในห้องนั่งของคุณ. มันสว่าง, เชื่อถือได้, และเสพพลัดฉายเอื้องมาย.",
+		tube_light = "โคมไฟท่อ",
+		tube_light_description = "โคมไฟท่อที่ดีงามและมีสไตล์ และแลกรุ่นแวววาวในแสงสว่างที่เหมาะต่อการสร้างบรรยากาศอบอุ่น มันเป็นการอัพเกรดที่หลงไหลที่มองดูเชิดสวยและเยอะกว่าส่วนตัวของมัน",
 		yoga_mat = "เสื่อโยคะ",
 		yoga_mat_description = "เสื่อโยคะพกพานี้เป็นพื้นฐานของความผ่อนคลายและการออกกำลังกายข้างนอก. คลายเส้นมันเพื่อหาสมาธิของคุณหรือยื่นหยุ่มหลังจากไปปีนเขาอย่างหนัก. สามารถวางไว้ที่ทุกที่ในโลก",
 		cooler_box = "กล่องเก็บเย็น",
@@ -9466,6 +9713,12 @@ OP.Global.Locales.Languages["th-TH"] = {
 		spike_strips_large_description = "เครื่องมือช็อคขนาดใหญ่นี้เหมาะสำหรับการจับเหยื่อขนาดใหญ่หรือเมื่อคุณต้องการปกคลุมพื้นที่มากขึ้น. เหมือนการวางพรมแดง, นอกเส้นที่มันไม่ใช่เพื่อ VIP และจะทำให้ยางรถแตกร้าง. สามารถวางได้ที่ทุกที่บนโลก.",
 		stop_sticks = "แท่นหยุดยาง",
 		stop_sticks_description = "คิดว่าเหมือนวัตถุที่มิไหวพ้นหนีกับแรงที่ไม่สามารถหยุดได้. แท่นหยุดยางไม่ทำให้ยางรถแตกร้าง, แต่ทำให้ยางรถหยุดกึ่งอยู่ในทางเดินของมัน. เหมาะสำหรับการติดตั้งจุด \"ตรวจสอบความเร็ว\" แบบไม่คาดคิด. สามารถวางได้ที่ทุกที่บนโลก.",
+		speed_bump = "ไฮเวย์หยุดสปีด",
+		speed_bump_description = "เครื่องมือสุดยอดสำหรับบังคับให้ใช้ความช้าลงและทดสอบโชต์รถ วางนั่นพร้อมสร้างสรรค์อุปการคณ์เคลื่อนที่เลนท์และเหล่ขอการเดินของดวงวีรกว่าเรื่องของชีวิตของพวกมัน-เหมาะสำหรับทำให้การตายโมเดี้ยนไปสู่การแรงความเร็วที่ช้าลงแปลง",
+		speed_sign = "ป้ายจำกัดความเร็ว",
+		speed_sign_description = "เพียงแค่คำเตือนเพื่อให้ท่านหยุดเหยียดที่แล้ว จำกัดความเร็วหรือจะเสี่ยงพบกับอุปสรรคลากระทิงและปืนยาง.",
+		bumps_sign = "ป้ายช่องราง",
+		bumps_sign_description = "การเตือนอย่างสุภาพว่าระบบโชคกรรมของรถของท่านกำลังพบกับความท้าทาย ขับด้วยความสำรองหรือเตรียมพบกับการขับขี่อย่างยากลำบาก!",
 		floodlight = "ไฟเน้นสนาม",
 		floodlight_description = "เปลี่ยนคืนให้เป็นกลางวันเมื่อคุณอยู่ในการล่า. เหมาะสำหรับการค้นหากุญแจที่หายหรือใช้เป็นไฟส่องพื้นที่ในการหาคนตัวร้ายที่พยายามปกปิดหนี. สามารถวางไว้ที่ทุกที่ในโลก.",
 		left_diversion_sign = "ป้ายเปลี่ยนเส้นทางไปทางซ้าย",
@@ -9514,6 +9767,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		claymore = "ก้อนดินเผา",
 		claymore_description = "Claymore mine สุดหยาดนี้เป็นอุปกรณ์ป้องกันที่มีความรุนแรงที่ออกแบบมาเพื่อปกป้องและรักษาพื้นที่โดยมีความแม่นยำ หลังจากที่ทำการติดตั้ง จะมีการระเบิดอย่างรุนแรงเมื่อบุคคลบุคคลคนข้ามทางของมัน เพื่อให้มั่นใจในการควบคุมขอบเขตอย่างแข็งแรง ออกจำกัดการเคลื่อนไหวพื้นเหลือม ให้ความระวังกับสถานที่จัดวางและการจัดการเพื่อหลีกเลี่ยงผลลัพธ์ที่ไม่คาดคิด.",
+		mine = "กั้น",
+		mine_description = "สำหรับเมื่อท่านต้องการผานศาสตร์พิเศษในกรณีที่สำนักข่าวจงอาร์ทีเอฟมาตรวจสอบ แค่วางไว้ เปิดใช้งาน แล้วได้รับการให้สารทุกแก่นที่ไม่ถูกต้อง.",
 
 		tv_stand = "ตู้วางทีวี",
 		tv_stand_description = "อัพเกรดชุดวัสดุการรับชมแบบ Binge-watching ของคุณด้วย TV Stand สไตล์นี้ มันช่วยเก็บ TV ของคุณอยู่ในระดับดวงตาที่สมบูรณ์และมีพื้นที่สำหรับเครื่องมือต่างๆของคุณ มันเหมือนบัตรเพื่อจอของคุณ.",
@@ -9566,6 +9821,16 @@ OP.Global.Locales.Languages["th-TH"] = {
 		pink_dildo = "ดิลโด้สีชมพู",
 		pink_dildo_description = "ทำด้วยมือ และสกัดโดยบัคซี มิดเดิลแมน",
 
+		cappuccino_regular = "คาปูชิโน (นมวัว)",
+		cappuccino_almond = "คาปูชิโน (นมอัลมอนด์)",
+		cappuccino_pigeon = "คาปูชิโน (นมนก)",
+		iced_latte_regular = "ไอซ์ลาเต้ (นมวัว)",
+		iced_latte_almond = "ไอซ์ลาเต้ (นมอัลมอนด์)",
+		iced_latte_pigeon = "ไอซ์ลาเต้ (นมนก)",
+		hot_chocolate_regular = "ช็อคโกแลตร้อน (นมวัว)",
+		hot_chocolate_almond = "ช็อคโกแลตร้อน (นมอัลมอนด์)",
+		hot_chocolate_pigeon = "ช็อคโกแลตร้อน (นมนก)",
+
 		bean_coffee = "กาแฟเมล็ด",
 		bean_coffee_description = "น้ำเมล็ดถั่ว... นั่นทั้งหมดสิ",
 		cappuccino = "คาปูชิโน่",
@@ -9582,6 +9847,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		pink_lemonade_description = "ไม่ใช่น้ำมะนาวที่เป็นสีชมพูเพื่อเพิ่มราคา แต่เป็นน้ำมะนาวแบบพิเศษที่จะให้คุณฟินไปตลอดวัน",
 		iced_latte = "กาแฟเย็น",
 		iced_latte_description = "กาแฟเย็นที่ช่วยร้องระบายให้เชื่อมั่นสำหรับวันที่ร้อน",
+		coffee_beans = "เมล็ดกาแฟ",
+		coffee_beans_description = "ถุงเมล็ดกาแฟหอมโดดเด่นพร้อมที่จะเปลี่ยนเป็นเชื้อเพลิงที่ขับเคลื่อนเช้าและการสร้างความคิดในคืนดึกของคุณ ไม่ว่าคุณจะชอบเข้ม นุ่ม หรืออยู่ในช่วงกลาง เมล็ดเหล่านี้คือตั๋วสำหรับคุณไปสู่แก้วกาแฟที่สมบูรณ์แบบของความสุขที่ทำให้ตื่นเต้น",
 
 		berry_cake = "เค้กเบอร์รี่",
 		berry_cake_description = "เค้กเบอร์รี่ที่อร่อยมาก ที่แตกต่างด้วยเบอร์รี่สดๆและชั้นของน้ำเบอร์รี่หวานหวาน  เค้กนี้เป็นของหวานที่ลงตัวสำหรับคนรักเบอร์รี่ มีความอันละมุนและหวาน กลมกล่อมในทุกจาน",
@@ -9755,9 +10022,21 @@ OP.Global.Locales.Languages["th-TH"] = {
 		spicy_ramen_description = "สำหรับคนที่ชอบผจญภัย ราเมนเผ็ดจะเสน่ห์ด้วยความร้อน! จุดหน้าถึงซุปที่เผ็ดร้อนพร้อมกับเส้นบะหมี่และท็อปปิ้งเผ็ดที่ทำให้รสชาติของคุณเต้นรำคาญ คุณรับทุกทีหรือไม่?",
 		bento_box = "เบนโทบอกซ์",
 		bento_box_description = "ผสานรสชาติและเนื้อด้วยกัน นี่คือเบนโทบอกซ์ที่เป็นเพื่อนคู่ควรสำหรับอาหารสมดุล ติดอีกแล้วด้วยของอร่อยในชั้น มันเหมือนพิกนิกในกล่อง ลงตัวเพื่ออาหารกลางวันหรือมื้อค่ำที่น้อยกว่า!",
+		mochi_mango = "มังโก้โมจิ",
+		mochi_mango_description = "มังโก้โมจิที่มีรสชาติหวานจากมะม่วงสุกถูกฝังอยู่ในเปลือกอ่อนแอบด้วยมะม่วงสุก คลุมด้วยเปลือกซึ่งอบอ่อนนุ่ม ที่จะทำให้ปากอร่อยเหมือนได้พักผ่อนในวันหยด.",
+		mochi_strawberry = "มังโก้โมจิสตรอเบอรี่",
+		mochi_strawberry_description = "มังโก้โมจิสตรอเบอรี่ที่น่ารักซึ่งรวมรสชาติผลไม้ที่หวานหอมของสตรอเบอรี่กับเปลือกนุ่มยืดหยุ่น. เหมือนกับการกัดแบบมีเมฆของแสงอาทิตย์และความหวาน.",
+		mochi_green_tea = "มังโก้โมจิชาเขียว",
+		mochi_green_tea_description = "มังโก้โมจิชาเขียวที่สดชื่นซึ่งผสมรสชาติของชาเขียวดินดำกับส่วนผสมเนื้อหมากเบาลื่น. เหมาะสำหรับประสบการณ์ของของหวานแบบซึเสียของการทานของหวานในสภาพอากาศที่สมบูรณ์แบบด้วยความสมดุลของความหวานและความขม.",
+		mochi_chocolate = "โมจิช็อกโกแลต",
+		mochi_chocolate_description = "โมจิช็อกโกแลตที่อร่อยอันหรูหรา ที่มีชั้นเนื้อซุบซับและอู่ที่นุ่ม พันหน้าล้อมรอบด้วยไล่สี่ขนมุกซึ่งเต็มไปด้วยความหอมอร่อยของโกโก้ ลงตัวพอสมควรสำหรับความอยากหวานพร้อมความเจ็บคอ อย่างยอดเยี่ยม",
+		green_tea_bag = "ชาเขียว",
+		green_tea_bag_description = "ถุงชาใบชาเขียวพรีเมี่ยม พร้อมอยู่เสมอ เช่นใบชาเขียวบรรจุลูกลงค์ ตื่นตาตื่นใจคุณออกมาในโลกของรสชาติที่หนาแน่นของดินและรสชาติที่กระจ่าง ลงตัวพอสมควรสำหรับคนรักชาที่ชอบชงชาด้วยรสชาติที่หนาแน่นดีกว่าผ่านถุงที่ทำไว้ล่วงหน้า หยดเดียวออกครั้งนี้แล้ว ก็จะรสชาติที่มีความสงบสุขจัง",
 
 		asahi_beer = "เบียร์อาซาฮิ",
 		asahi_beer_description = "สนุกกับรสชาติสดชื่นของเบียร์อาซาฮิ ลาเกอร์ญี่ปุ่นชั้นนำที่มีรสชาติเรียบหรูและสดชื่น น้ำทะเลเหลืองนี้ถูกผลิตอย่างชำนาญเพื่อเสริมคุณภาพของทุกๆ โอกาส ทำให้เป็นทางเลือกที่ดีที่สุดสำหรับการดื่มเพลิดเพลินทั้งในที่พักผ่อนและการรับประทานอาหารหรู",
+		green_tea = "ชาเขียว",
+		green_tea_description = "ถ้ำใจด้วยกลิ่นหอมและรสชาติอ่อนๆ ของชาเขียวสดชื่น ที่เหมือนกับการกอดแขนจากกาชาอุ",
 
 		golf_ball = "ลูกกอล์ฟ",
 		golf_ball_description = "ใช้สำหรับการเล่นกอล์ฟ",
@@ -9947,6 +10226,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		weapon_poolcue = "ต Cue",
 		weapon_stone_hatchet = "ขวานหิน",
 		weapon_candycane = "ไม้คีบตัดหวาน",
+		weapon_stunrod = "ไซเรนเชอร์",
 
 		weapon_pistol = "ปืนพก",
 		weapon_pistol_mk2 = "ปืนพก Mk II",
@@ -10076,6 +10356,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		weapon_poolcue_description = "ขอบคุณเสียงแตกของการโค่งเพลงบรรเลงที่สมบูรณ์แบบ เพิ่มความสุขสันต์ให้กับการที่ส่วนอื่นๆ ของผู้เล่นถูกกระแทก",
 		weapon_stone_hatchet_description = "การวิจัยและพัฒนามาเป็นเวลา 2.5 ล้านปีและเรายังคงอยู่ที่นี่",
 		weapon_candycane_description = "คันดินสอดีที่มาพร้อมกับช่วงเทศกาล วันสำคัญ หรือว่ายาวๆเวลาว่างๆ",
+		weapon_stunrod_description = "เมื่อบาดเจ็บด้วยแรงกระทบไม่พอ ลองหาทางเสริมเพิ่มด้วยการกระตุ้นด้วยกระแสไฟฟ้า 30,000 โวลต์",
 
 		weapon_pistol_description = "ปืนพกประจำตัวชนิดมาตรฐาน ปืนพกปืนหนึ่งที่ใช้กระบอก .45 มม. มีความจุกล่อง 12 นัด แต่สามารถเพิ่มได้เป็น 16 นัด",
 		weapon_pistol_mk2_description = "ความสมดุล ความเรียบง่าย แม่นยำ: ไม่มีอะไรที่สามารถให้ความสงบสุขได้เหมือนกับกระบอกปืนที่ยาวขึ้นในปากคนตรงข้าม",
@@ -10311,7 +10592,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		weapon_addon_multitool_description = "เหมือนเครื่องมือหลายฟังก์ชันทั่วไป แต่ไม่มีสิ่งที่แว๊น",
 
 		weapon_addon_ar15 = "AR-15",
-		weapon_addon_ar15_description = "พบกับ AR-15, ปืนไรเฟิลที่เชื่อถือได้ มันเหมือนคุณพี่น้องยายของปืนไรเฟิลตัวเล็ก—ช่วงอกเดียวกัน รสชาติต่างกัน เหมาะสำหรับเมืองเราที่ต้องการใส่สีให้ดูสมบูรณ์โดยไม่ต้องมีสิ่งต่างๆ น่าเชื่อถือ แม่นยำ และเพียงพอสำหรับสถานการณ์ที่เงียบๆ"
+		weapon_addon_ar15_description = "พบกับ AR-15, ปืนไรเฟิลที่เชื่อถือได้ มันเหมือนคุณพี่น้องยายของปืนไรเฟิลตัวเล็ก—ช่วงอกเดียวกัน รสชาติต่างกัน เหมาะสำหรับเมืองเราที่ต้องการใส่สีให้ดูสมบูรณ์โดยไม่ต้องมีสิ่งต่างๆ น่าเชื่อถือ แม่นยำ และเพียงพอสำหรับสถานการณ์ที่เงียบๆ",
+
+		weapon_addon_tennisball = "ลูกเทนนิส",
+		weapon_addon_tennisball_description = "เหมาะสำหรับเกมสั้น ภเรับเส้นหมา หรือ การโยนไปทิ้งจะสร้างความสั่นสะท้าน แค่มอง โยน และ รอดูว่าลูกจะกระโดดอย่างสับสน—จะได้โบนัสถ้ามันไม่มากลับมา!"
 	},
 
 	invisibility = {
@@ -10403,7 +10687,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		failed_kissaki_delivery = "ไม่สามารถเปิดอาหาร kissaki ได้",
 		failed_green_wonderland_delivery = "ไม่สามารถเปิดถุง green wonderland",
 		failed_pizza_this_delivery = "ไม่สามารถเปิดกล่องพิซซ่าได้",
+		failed_closed_paper_bag = "เปิดถุงกระดาษล้มเหลว",
 
+		closed_paper_bag_empty = "ถุงกระดาษนี้ว่างเปล่า",
 		burger_shot_delivery_empty = "อาหาร Burger Shot ดูเหมือนว่าจะว่างเปล่า",
 		bean_machine_delivery_empty = "อาหาร Bean Machine ดูเหมือนว่าจะว่างเปล่า",
 		kissaki_delivery_empty = "เห็นเหมือนว่าอาหาร kissaki นั้นว่างเปล่า",
@@ -10539,7 +10825,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		modify_jail_logs_title = "ปรับเวลาคุก",
 		modify_jail_logs_details = "${consoleName} ปรับเวลาคุกของ ${targetCharacter} #${targetCharacterId} (${operation} ${amount} เดือน) เป็น ${after}",
 		triggered_lockdown_logs_title = "เริ่มการล็อคดาวน์",
-		triggered_lockdown_logs_details = "${consoleName} เริ่มการล็อคดาวน์ของเรือนจำ"
+		triggered_lockdown_logs_details = "${consoleName} เริ่มการล็อคดาวน์ของเรือนจำ",
+		mission_reward_logs_title = "รางวัลภารกิจในเรือนจำ",
+		mission_reward_cash_logs_details = "${consoleName} ได้รับเงิน $${amount} สำหรับการสำเร็จภารกิจในเรือนจำ",
+		mission_reward_item_logs_details = "${consoleName} ได้รับ 1x ${itemName} สำหรับการสำเร็จภารกิจในเรือนจำ"
 	},
 
 	kiosks = {
@@ -10968,7 +11257,21 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		no_nearby_vehicle = "ไม่มีรถใกล้เคียง",
 		already_checking_upgrades = "คุณกำลังตรวจสอบการปรับแต่งรถของคุณอยู่แล้ว",
-		engine_is_running = "เครื่องยนต์รถทำงานอยู่"
+		engine_is_running = "เครื่องยนต์รถทำงานอยู่",
+
+		press_open_shop = "กดค้าง ~INPUT_FRONTEND_RDOWN~ เพื่อเปิดร้านซ่อมรถ",
+		press_close_shop = "กดค้าง ~INPUT_FRONTEND_RDOWN~ เพื่อปิดร้านซ่อมรถ",
+		opening_shop = "${time} วินาที เปิดร้านช่าง",
+		closing_shop = "${time} วินาที ปิดร้านช่าง",
+		shop_closed = "ปิดร้านช่างเรียบร้อย",
+		shop_opened = "เปิดร้านช่างเรียบร้อย",
+		failed_shop_closed = "ล้มเหลวในการปิดร้านช่าง",
+		failed_shop_opened = "ล้มเหลวในการเปิดร้านช่าง",
+
+		opened_shop_logs_title = "เปิดร้านช่าง",
+		opened_shop_logs_details = "${consoleName} เปิดร้านช่าง `${label}`",
+		closed_shop_logs_title = "ปิดร้านช่าง",
+		closed_shop_logs_details = "${consoleName} ปิดร้านช่าง `${label}`"
 	},
 
 	meow = {
@@ -11011,6 +11314,10 @@ OP.Global.Locales.Languages["th-TH"] = {
 		success_wipe_blocks = "ลบ ${count} บล็อกเสร็จสมบูรณ์ในรัศมี ${radius} เมตร.",
 		failed_wipe_blocks = "ล้างบล็อกไม่สำเร็จ",
 		press_to_use_jukebox = "กด ~INPUT_CONTEXT~ เพื่อใช้เจว์บอกซ์."
+	},
+
+	minigames = {
+		skipping_minigame = "ข้ามเกมมินิเกม"
 	},
 
 	mining = {
@@ -11118,6 +11425,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		bad_ooc_message = "พยายามโพสต์ข้อความที่อาจเสี่ยงต่อการไม่เหมาะสมในแชท OOC: \"${oocMessage}\"",
 		bad_ped_message = "พยายามสร้างข้อความบุคคลที่อาจเสี่ยงต่อการไม่เหมาะสม: \"${pedMessage}\"",
 		bad_twitter_post = "พยายามสร้างโพสต์ทวิตเตอร์ที่อาจเสี่ยงต่อการไม่เหมาะสม: \"${twitterPost}\"",
+		bad_twitter_account = "พยายามสร้างบัญชีทวิตเตอร์ที่น่าสงสัย: \"${username}\"",
 		bad_phone_message = "พยายามสร้างโพสต์ทวิตเตอร์ที่อาจไม่ดี: \"${message}\"",
 		user_not_found = "เราไม่พบผู้ใช้ด้วย Server ID ${serverId}",
 		player_already_muted = "${consoleName}ถูกปิดเสียงไว้แล้ว",
@@ -11125,6 +11433,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		player_has_been_muted = "${consoleName} ถูกปิดไมค์แล้ว เนื่องจาก: `${reason}`.",
 		player_not_muted = "${consoleName} ไม่ได้ถูกปิดไมค์.",
 		player_has_been_unmuted = "${consoleName} ได้ถูกยกเลิกการถูกปิดไมค์แล้ว.",
+		just_been_muted = "คุณถูกปิดเสียงจาก /ooc และ /report เพื่อเหตุผล `${reason}`",
+		just_been_muted_no_reason = "คุณถูกปิดเสียงจาก /ooc และ /report โดยไม่ระบุเหตุผล",
 		ooc_clear_chat_title = "ล้างแชท",
 		ooc_clear_chat_details = "${consoleName} ล้างแชทสำหรับผู้เล่นทุกคน.",
 		muted_player = "ปิดไมค์ผู้เล่น",
@@ -12127,7 +12437,34 @@ OP.Global.Locales.Languages["th-TH"] = {
 		disabled_generators = "ปิดใช้งาน ${disabledGeneratorsCount} เครื่องกำเนิดไฟฟ้า",
 
 		drill_drilling = "กำลังเจาะ (${remainingSeconds} วินาที)",
-		drill_jammed = "[${InteractionKey}] เจาะติด (${remainingSeconds} วินาที)"
+		drill_jammed = "[${InteractionKey}] เจาะติด (${remainingSeconds} วินาที)",
+		search_safe = "[${InteractionKey}] ค้นหาตู้เซฟ",
+		searching_safe = "กำลังค้นหาตู้เซฟ",
+
+		close_up_bank = "ปิดธนาคาร",
+		press_to_close_up_bank = "[${InteractionKey}] ปิดธนาคาร",
+		closing_up_bank = "ปิดร้านธนาคาร",
+
+		not_enough_police = "ไม่มีตำรวจที่ใช้งานเพียงพอเพื่อเริ่มการปล้น",
+
+		dispatch = "[ส่งพล]",
+		alarm_triggered = "10-90: ได้เริ่มเปิดเสียงเตือนที่ธนาคารแปซิฟิค",
+		pacific_bank_alarm = "เสียงเตือนธนาคารแปซิฟิค",
+
+		press_to_search = "[${InteractionKey}] ค้นหา",
+		search = "ค้นหา",
+		searching = "กำลังค้นหา",
+		found_nothing = "ไม่พบของใดๆ",
+
+		power_generator_disabled_title = "ปิดใช้งานเครื่องกำเนิดไฟฟ้า",
+		power_generator_disabled_details = "${consoleName} ได้ปิดใช้งานเครื่องกำเนิดไฟฟ้าชื่อ '${powerGeneratorName}'",
+
+		pacific_bank_robbery_started_title = "เริ่มการปล้นธนาคารแปซิฟิก",
+		pacific_bank_robbery_started_details = "${consoleName} ได้เริ่มการปล้นธนาคารแปซิฟิก",
+
+		pacific_bank_reward_logs_title = "รางวัลการปล้นธนาคารแปซิฟิก",
+		pacific_bank_reward_saving_bonds_logs_details = "${consoleName} ได้ค้นหาตู้เซฟและได้รับสัญญาออมสินมูลค่า $${amount}",
+		pacific_bank_reward_items_logs_details = "${consoleName} ได้ค้นหาตู้เซฟและได้รับไอเทม ${amount} ชิ้น"
 	},
 
 	panel = {
@@ -12187,14 +12524,20 @@ OP.Global.Locales.Languages["th-TH"] = {
 	},
 
 	paper_bags = {
-		fill_bag = "[${SeatEjectKey}] เติมถุงกระดาษ",
-		no_bags = "คุณไม่มีถุงกระดาษ",
-		no_bag_items = "คุณไม่มีไอเท็มที่คุณสามารถใส่ลงในถุงกระดาษได้",
-		close_bag = "ปิดถุงกระดาษ",
-		cancel_bag = "ยกเลิก",
-		title = "ถุงกระดาษ",
+		paper_bag_brand = "ถุงกระดาษนี้มีโลโก้ <b>${brand}</b> อยู่บนนั้น",
+		paper_bag_no_brand = "นี่คือถุงกระดาษพื้นฐาน",
+
+		burger_shot_delivery = "เบอร์เกอร์ ช็อต",
+		bean_machine_delivery = "บีน แมชีน",
+		kissaki_delivery = "คิซซากิ",
+		green_wonderland_delivery = "กรีน วันเดอร์แลนด์",
+		pizza_this_delivery = "พิซซ่า ดิส",
+
 		failed_fill = "เกิดข้อผิดพลาดในการเติมถุงกระดาษ",
-		filled_bag = "เติมถุงกระดาษสำเร็จแล้ว"
+		filled_bag = "เติมถุงกระดาษสำเร็จแล้ว",
+
+		filled_bag_log_title = "ถุงกระดาษที่เต็ม",
+		filled_bag_log_details = "${consoleName} ได้เติมใส่ถุงกระดาษด้วย ${contents}"
 	},
 
 	parking_meters = {
@@ -12203,7 +12546,13 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		no_cash = "คุณไม่มี $4 เงินสด",
 		max_time = "ไม่สามารถเติมเวลาได้อีก",
-		failed_pay = "เกิดข้อผิดพลาดในการชำระเงินที่จอดรถ"
+		failed_pay = "เกิดข้อผิดพลาดในการชำระเงินที่จอดรถ",
+
+		failed_lockpick = "ล้มเหลวในการ lockpick เพื่อจอดรถ",
+		already_lockpicked = "เครื่องคิดเงินนี้ถูก lockpick ไปแล้ว",
+
+		lockpicked_meter_logs_title = "Lockpicked เครื่องคิดเงิน",
+		lockpicked_meter_logs_details = "${consoleName} ล็อคพิกไก่เพื่อกาหวายและได้รับ ${items} และ $${money} เป็นเงินสด"
 	},
 
 	pause_menu = {
@@ -12296,6 +12645,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		ped_failed_task = "ไม่สามารถกำหนดงาน `${task}` ให้กับผู้เยี่ยมที่สร้าง",
 		invalid_target = "ID เซิร์ฟเวอร์เป้าหมายไม่ถูกต้อง",
 		invalid_task = "งานผู้เยี่ยมไม่ถูกต้องหรือขาดหาย",
+		no_nearby_ped = "ไม่พบคนรอบตัว",
+		ped_attack_success = "ทำให้คนรหัส `${networkId}` โจมตี ${target} สำเร็จ",
+		ped_failed_attack = "ล้มเหลวในการทำให้คนรหัส `${networkId}` โจมตี ${target}",
 		ped_emote_success = "สร้างคำสั่งให้ผู้เยี่ยมที่สร้างเล่นท่า `${emote}` เรียบร้อย",
 		ped_failed_emote = "ไม่สามารถสร้างคำสั่งให้ผู้เยี่ยมที่สร้างเล่นท่า `${emote}`",
 		invalid_emote = "การกระพริบที่ไม่ถูกต้อง `${emote}`.",
@@ -12509,7 +12861,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		invalid_prop_id = "รหัสสิ่งของไม่ถูกต้อง.",
 		prop_deleted = "ลบสิ่งของที่มีรหัส ${propId} เรียบร้อยแล้ว.",
 
-		invalid_wipe_radius = "รัศมีการลบไม่ถูกต้อง (ตั้งแต่ 1 ถึง 100).",
+		invalid_wipe_radius = "รัศมีทำลายไม่ถูกต้อง (ระหว่าง 1 และ 500)",
 		wipe_successful = "ล้างสำเร็จ ${amount} อุปกรณ์(s).",
 		wipe_failed = "ล้มเหลวในการล้างออก",
 
@@ -12764,6 +13116,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		logs = "บันทึกรายการ",
 		no_logs = "ไม่มีบันทึกการทำธุรกรรม",
 		summary = "สรุป",
+		summary_description = "สรุปรายละเอียดของธุรกรรมทั้งหมดในรอบ 90 วันล่าสุดสำหรับบัญชีนี้",
 		name = "ชื่อ",
 		transactions = "ธุรกรรม",
 		withdrawn = "ถอน",
@@ -12827,7 +13180,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		scrapyard = "ที่ทำลายยานพาหนะ",
 		cant_scrap_vehicle = "ขอโทษนะครับ แต่รถคันนี้มีธงแดงมากกว่าการแข่งวิ่ง ไม่สามารถรับของได้ครับ!",
 		failed_scrap_vehicle = "ดูเหมือนว่าที่ทำลายยานพาหนะของเรามีบาดแผลบ้างครับ ลองทำลายยานพาหนะอีกครั้งในภายหลังนะครับ!",
-		scrap_confirm = "คุณแน่ใจที่จะทำลายยานพาหนะคันนี้หรือไม่? การนี้จะลบ ${name} ออกจากโรงเก็บรถของคุณอย่างถาวร และคุณจะได้รับเงินสดและทองคำ 12-16% จากราคาเดิมของรถ",
+		scrap_confirm = "คุณแน่ใจหรือไม่ว่าต้องการทำลายยานพาหนะนี้? นี่จะลบ ${name} ออกจากโรงจอดของคุณอย่างถาวรและคุณจะได้รับ 16-20% จากราคาเดิมเป็นเงินสดและทองคำ",
 		scrap_success = "ดีมาก! เราได้เปลี่ยนรถหัวรถเงินนั้นเป็นสมบัติค่าของเรียบร้อยแล้ว คงมีเวลาที่จะลากันนะ หนู!",
 		scrapped_vehicle_logs_title = "ยานพาหนะที่ถูกนำมาขายเป็นเศษ",
 		scrapped_vehicle_logs_details = "${consoleName} ได้ขายยานพาหนะ (${modelName} #${vehicleId}) ของตนและได้รับ ${gold} เถื่อนทองและ $${cash} เป็นเงินสด (${percentage}% ของราคาเดิม)"
@@ -13386,6 +13739,15 @@ OP.Global.Locales.Languages["th-TH"] = {
 		teleport_player_player_logs_details = "${consoleName} ย้ายตัว ${sourceConsoleName} ไปยัง ${targetConsoleName}"
 	},
 
+	taxes = {
+		taxes_collected = "บันทึกรายได้จากภาษี จำนวนเงินดังต่อไปนี้\n- เงินสด: $${cash}\n- ธนาคาร: $${bank}\n- หุ้น: $${stocks}\n- เงินออม: $${savings}\n- บัญชีร่วม: $${sharedAccounts}",
+		taxes = "ภาษี",
+		transaction_logs = "บันทึกรายการธุรกรรม",
+		paid_taxes = "คุณจ่ายภาษีจำนวน ${amount} บาท",
+		no_logs = "ไม่มีบันทึกรายการ",
+		close = "ปิด"
+	},
+
 	teleporters = {
 		area_not_clear = "ที่หมายปลายทางถูกบล็อคด้วยรถยนต์",
 
@@ -13634,6 +13996,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		department_police_undercover = "ตำรวจลับ",
 
+		department_doc_training = "การฝึกอบรมของ DOC",
 		department_police_training = "การฝึกอบรมตำรวจ",
 		department_medical_training = "การฝึกอบรม EMS",
 		department_bcfd_training = "การฝึกอบรม BCFD"
@@ -14284,6 +14647,8 @@ OP.Global.Locales.Languages["th-TH"] = {
 		no_nearby_vehicle = "ไม่พบยานพาหนะใกล้เคียง",
 		no_nearby_vehicle_door = "ไม่ได้อยู่ใกล้ที่มีประตูของยานพาหนะ",
 		removing_door = "กำลังลบประตู",
+		cleaning_up_body = "กำจัดศพ",
+		destroying_spikes = "ทำลายเสามีด",
 		failed_remove_door = "ล้มเหลวในการลบประตูของยานพาหนะ",
 		invalid_clothing_type = "ประเภทเสื้อผ้าไม่ถูกต้อง",
 		no_nearby_player = "ไม่มีผู้เล่นที่ถูกยึดหรือล้มลงใกล้เคียง",
@@ -14379,7 +14744,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		none = "ไม่มี",
 		active = "ใช้งาน",
 		not_active = "ไม่ได้ใช้งาน",
-		active_robberies = "\nร้านค้าที่ใช้งาน: ${store}.\nธนาคารที่ใช้งาน: ${bank}\nเครื่องประดับที่ใช้งาน: ${jewelry}",
+		active_robberies = "\nร้านสะดวกซื้อที่กำลังถูกปล้น: ${store}.\nธนาคารที่กำลังถูกปล้น: ${bank}\nร้านเพรชเพอรี่ที่กำลังถูกปล้น: ${jewelry}\nธนาคารแปซิฟิก: ${pacificBank}",
 
 		failed_dispatch = "ไม่สามารถส่งข้อความเผยแพร่ได้",
 		dispatch_title = "[การส่ง Dispatch]",
@@ -14472,6 +14837,7 @@ OP.Global.Locales.Languages["th-TH"] = {
 		on_floor = "อยู่ที่ ${ชั้น}",
 		ground_floor = "ชั้นล่าง",
 		second_floor = "ชั้นสอง",
+		third_floor = "ชั้นสาม",
 		icu_floor = "ชั้นICU",
 		surgery_floor = "ชั้นผ่าตัด",
 
@@ -14513,7 +14879,55 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 		task_disinfect_table = "ทำความสะอาดโต๊ะผ่าตัด",
 		task_disinfect_table_near = "กด ~INPUT_DETONATE~ เพื่อทำความสะอาดโต๊ะผ่าตัด",
-		task_disinfect_table_active = "ทำความสะอาดโต๊ะ"
+		task_disinfect_table_active = "ทำความสะอาดโต๊ะ",
+
+		task_wipe_table = "เช็ดโต๊ะ",
+		task_wipe_table_near = "กด ~INPUT_DETONATE~ เพื่อเช็ดโต๊ะ",
+		task_wipe_table_active = "กำลังเช็ดโต๊ะ",
+
+		task_wash_dishes = "ล้างจาน",
+		task_wash_dishes_near = "กด ~INPUT_DETONATE~ เพื่อล้างจาน",
+		task_wash_dishes_active = "กำลังล้างจาน",
+
+		task_restock_drink_dispenser = "เติมสินค้าในเครื่องดื่ม",
+		task_restock_drink_dispenser_near = "กด ~INPUT_DETONATE~ เพื่อเติมสินค้าในเครื่องดื่ม",
+		task_restock_drink_dispenser_active = "กำลังเติมสินค้าในเครื่องดื่ม",
+
+		task_restock_ingredients = "เติมวัตถุดิบ",
+		task_restock_ingredients_near = "กด ~INPUT_DETONATE~ เพื่อเติมวัตถุดิบ",
+		task_restock_ingredients_active = "กำลังเติมวัตถุดิบ",
+
+		task_organize_shelf = "จัดเรียงชั้นวางของ",
+		task_organize_shelf_near = "กด ~INPUT_DETONATE~ เพื่อจัดเรียงชั้นวางของ",
+		task_organize_shelf_active = "กำลังจัดเรียงชั้นวางของ",
+
+		task_clean_countertop = "ทำความสะอาดเคาน์เตอร์",
+		task_clean_countertop_near = "กด ~INPUT_DETONATE~ เพื่อทำความสะอาดเคาน์เตอร์",
+		task_clean_countertop_active = "กำลังทำความสะอาดเคาน์เตอร์",
+
+		task_file_taxes = "ยื่นภาษี.",
+		task_file_taxes_near = "กด ~INPUT_DETONATE~ เพื่อยื่นภาษี.",
+		task_file_taxes_active = "กำลังยื่นภาษี",
+
+		task_refill_napkins = "เติมทิชชู่.",
+		task_refill_napkins_near = "กด ~INPUT_DETONATE~ เพื่อเติมทิชชู่.",
+		task_refill_napkins_active = "กำลังเติมทิชชู่",
+
+		task_refill_water = "เติมน้ำในเครื่องกาแฟ.",
+		task_refill_water_near = "กด ~INPUT_DETONATE~ เพื่อเติมน้ำในเครื่องกาแฟ.",
+		task_refill_water_active = "กำลังเติมน้ำในเครื่องกาแฟ",
+
+		task_clean_windows = "ทำความสะอาดหน้าต่าง.",
+		task_clean_windows_near = "กด ~INPUT_DETONATE~ เพื่อทำความสะอาดหน้าต่าง.",
+		task_clean_windows_active = "กำลังทำความสะอาดหน้าต่าง",
+
+		task_clean_oven = "ทำความสะอาดเตาอบ.",
+		task_clean_oven_near = "กด ~INPUT_DETONATE~ เพื่อทำความสะอาดเตาอบ.",
+		task_clean_oven_active = "กำลังทำความสะอาดเตาอบ",
+
+		task_take_nap = "นอนคลายร่างกาย.",
+		task_take_nap_near = "กด ~INPUT_DETONATE~ เพื่อนอนคลายร่างกาย.",
+		task_take_nap_active = "กำลังนอนคลายร่างกาย"
 	},
 
 	tow = {
@@ -14679,6 +15093,9 @@ OP.Global.Locales.Languages["th-TH"] = {
 		fuel_level_set_to = "ระดับน้ำมันถูกตั้งค่าเป็น `${fuelLevel}`.",
 		not_in_a_vehicle = "คุณไม่ได้อยู่ในยานพาหนะ.",
 		vehicle_engine_on = "เครื่องยนต์ยังทำงานอยู่.",
+
+		fuel_debug_enabled = "เปิดการแสดงผลการทดสอบเชื้อเพลิง.",
+		fuel_debug_disabled = "ปิดการแสดงผลการทดสอบเชื้อเพลิง.",
 
 		vehicle_exploded_logs_title = "รถระเบิดแล้ว",
 		vehicle_exploded_logs_details = "${consoleName} เติมเชื้อเพลิงให้กับรถและเกิดระเบิดเนื่องจากเครื่องยนต์ที่ทำงานอยู่"
@@ -14846,12 +15263,22 @@ OP.Global.Locales.Languages["th-TH"] = {
 		gave_keys_success = "ส่งกุญแจของรถของ ${displayName} สำเร็จ.",
 		gave_keys_failure = "Izolare jucător",
 
+		car_keys_label = "กุญแจสำหรับ ${plate}",
+		something_went_wrong = "เกิดข้อผิดพลาดบางอย่าง.",
+		keys_no_longer_work = "กุญแจเหล่านี้ไม่ทำงานอีกต่อไป.",
+		success_use_keys = "ตอนนี้คุณมีกุญแจสำหรับ `${plate}`.",
+
 		no_nearby_vehicle = "ไม่มีรถใกล้เคียง",
 		there_is_someone_in_the_driver_seat = "มีคนนั่งที่ที่นั่งขับ",
 		the_driver_door_is_closed = "ประตูของคนขับปิดอยู่",
 		checking_ignition = "กำลังตรวจสอบไอกนิชั่น",
 		ignition_tampered_with = "ไอกนิชั่นถูกแก้ไข",
-		ignition_not_tampered_with = "ไอกนิชั่นไม่ได้ถูกแก้ไข"
+		ignition_not_tampered_with = "ไอกนิชั่นไม่ได้ถูกแก้ไข",
+
+		used_car_keys_logs_title = "ใช้กุญแจรถยนต์",
+		used_car_keys_logs_details = "${consoleName} ใช้กุญแจรถยนต์สำหรับรถที่มีเลขทะเบียน `${plate}` (N-${networkId}).",
+		grabbed_car_keys_logs_title = "เก็บกุญแจรถยนต์",
+		grabbed_car_keys_logs_details = "${consoleName} เก็บกุญแจรถยนต์สำหรับรถที่มีเลขทะเบียน `${plate}` (N-${networkId})."
 	},
 
 	modifications = {
@@ -14905,7 +15332,11 @@ OP.Global.Locales.Languages["th-TH"] = {
 
 	sirens = {
 		sirens_muted_on = "เสียงไซเรนทั้งหมดหยุดทำงานแล้ว",
-		sirens_muted_off = "เสียงไซเรนตั้งเรียบร้อยแล้ว"
+		sirens_muted_off = "เสียงไซเรนตั้งเรียบร้อยแล้ว",
+
+		lights_on = "ไฟ: ${count}",
+		sirens_on = "ไซเรน: ${count}",
+		horns_on = "ฮอร์น: ${count}"
 	},
 
 	spawner = {

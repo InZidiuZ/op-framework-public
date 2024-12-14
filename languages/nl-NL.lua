@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 34 (do not change)
+-- AUTO LOCALES: 35 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -83,7 +83,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	ledges = {
 		no_ledge = "Je bent niet in de buurt van een richel.",
-		invalid_variation = "Ongeldige variatie.",
+		invalid_variation = "Ongeldige variatie (1 - 13).",
 		press_x_to_stop = "Druk op ~INPUT_VEH_DUCK~ om te stoppen met zitten."
 	},
 
@@ -872,7 +872,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		sit_ledge_command = "zit_uitsteeksel",
 		sit_ledge_command_help = "Ga op een uitsteeksel zitten als je ervoor staat. Je moet naar het uitsteeksel kijken.",
 		sit_ledge_command_parameter_variation = "variatie",
-		sit_ledge_command_parameter_variation_help = "Welke zit-animatie afgespeeld moet worden (1 - 4).",
+		sit_ledge_command_parameter_variation_help = "Welke zit-animatie af te spelen (1 - 13).",
 		sit_ledge_command_substitutes = "uitsteeksel",
 
 		-- animations/walkstyles
@@ -899,7 +899,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		staff_pm_command_parameter_server_id_help = "De server ID van de speler die u wilt berichten.",
 		staff_pm_command_parameter_message = "bericht",
 		staff_pm_command_parameter_message_help = "Het bericht dat u wilt verzenden.",
-		staff_pm_command_substitutes = "stafpm",
+		staff_pm_command_substitutes = "staffpm, bericht, pm, msg",
 
 		important_staff_pm_command = "belangrijk_staff_pm",
 		important_staff_pm_command_help = "Stuur een belangrijk bericht naar een speler als stafflid.",
@@ -907,7 +907,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		important_staff_pm_command_parameter_server_id_help = "Het server-ID van de speler die je wilt berichten.",
 		important_staff_pm_command_parameter_message = "bericht",
 		important_staff_pm_command_parameter_message_help = "Het belangrijke bericht dat je wilt versturen.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
 
 		reply_pm_command = "antwoord_pm",
 		reply_pm_command_help = "Antwoord op het laatste personeelsbericht dat je hebt ontvangen.",
@@ -1304,7 +1304,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		register_weapon_command_substitutes = "",
 
 		advanced_metagame_command = "geavanceerd_metagame",
-		advanced_metagame_command_help = "Superadmin commando om je metagaming naar een hoger niveau te tillen.",
+		advanced_metagame_command_help = "Commando om je metagaming naar een hoger niveau te tillen.",
+		advanced_metagame_command_parameter_use_characters = "gebruik karakters",
+		advanced_metagame_command_parameter_use_characters_help = "Gebruik karakternamen in plaats van spelernamen.",
 		advanced_metagame_command_substitutes = "am",
 
 		list_weapon_attachments_command = "lijst_wapen_attachments",
@@ -1479,6 +1481,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		leaderboard_command_parameter_total_playtime_help = "Standaard wordt de daadwerkelijk gespeelde tijd op personages gebruikt. Stel dit in op `y` om in plaats daarvan de totale tijd in de server te gebruiken.",
 		leaderboard_command_substitutes = "",
 
+		economy_leaderboard_command = "economy_leaderboard",
+		economy_leaderboard_command_help = "Bekijk de economie-leiderbord.",
+		economy_leaderboard_command_substitutes = "eleiderbord",
+
 		package_command = "pakket",
 		package_command_help = "Controleer en vernieuw uw package.",
 		package_command_substitutes = "vernieuw_package",
@@ -1589,12 +1595,16 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Schakel de Battle Royale-functie in of uit.",
+		battle_royale_toggle_command_parameter_max_teammates = "max teammates",
+		battle_royale_toggle_command_parameter_max_teammates_help = "Het maximale aantal toegestane teamgenoten per team. Standaard is 4. Minimaal is 1 en maximaal is 10.",
 		battle_royale_toggle_command_substitutes = "br_toggle",
 
 		battle_royale_start_command = "battle_royale_start",
 		battle_royale_start_command_help = "Start een Battle Royale-wedstrijd.",
 		battle_royale_start_command_parameter_no_vehicles = "geen voertuigen",
 		battle_royale_start_command_parameter_no_vehicles_help = "Maak een wedstrijd zonder voertuigen.",
+		battle_royale_start_command_parameter_new_inventories = "nieuwe inventarissen",
+		battle_royale_start_command_parameter_new_inventories_help = "Creëer een match waar iedereen een lege, tijdelijke inventaris heeft.",
 		battle_royale_start_command_substitutes = "br_start",
 
 		battle_royale_invite_command = "battle_royale_invite",
@@ -1810,7 +1820,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		-- game/container_storage
 		containers_command = "containers",
 		containers_command_help = "Bekijk en beheer je gehuurde opslagcontainers.",
-		containers_command_substitutes = "",
+		containers_command_substitutes = "opslagplaatsen",
+
+		-- game/containers
+		containers_debug_command = "containers_debug",
+		containers_debug_command_help = "Tekent alle nabije containers.",
+		containers_debug_command_substitutes = "",
 
 		-- game/crafting
 		crafting_debug_command = "crafting_debug",
@@ -2121,6 +2136,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		random_position_command = "willekeurige_positie",
 		random_position_command_help = "Teleporteert je naar een willekeurige positie op het hoofdeiland. (Schakelt ook je onzichtbaarheid in)",
+		random_position_command_parameter_server_id = "server-id",
+		random_position_command_parameter_server_id_help = "De server-id van de speler waarnaar je wilt teleporteren.",
 		random_position_command_substitutes = "willekeurig",
 
 		crash_ui_command = "crash_ui",
@@ -2153,7 +2170,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		-- game/development
 		toggle_developer_ambience_command = "Refleksjon er aktivert.",
 		toggle_developer_ambience_command_help = "Ontwikkelaars ambiance aan/uit zetten.",
-		toggle_developer_ambience_command_substitutes = "",
+		toggle_developer_ambience_command_substitutes = "developer_ambience, ambience",
 
 		-- game/dna_evidence
 		take_dna_sample_command = "neem_dna_sample",
@@ -2714,6 +2731,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		minecraft_wipe_command_parameter_radius_help = "De straal waarin je blokken wilt wissen. (0 = alle blokken, max 5000)",
 		minecraft_wipe_command_substitutes = "",
 
+		-- game/minigames
+		skip_minigames_command = "minigames_overslaan",
+		skip_minigames_command_help = "Schakelt het overslaan van minigames in of uit.",
+		skip_minigames_command_substitutes = "",
+
 		-- game/mining
 		mining_debug_command = "mining_debug",
 		mining_debug_command_help = "Schakel de mijnbouwdebugmodus in of uit.",
@@ -2841,6 +2863,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		model_view_command_parameter_model_help = "De modelnaam of hash die je wilt bekijken.",
 		model_view_command_parameter_no_blocker = "geen blokkeerder",
 		model_view_command_parameter_no_blocker_help = "Schakel de schaduwblokkeerder uit (standaard: nee).",
+		model_view_command_parameter_clamp = "clamp",
+		model_view_command_parameter_clamp_help = "Beperk de grootte altijd tot meer dan 0,25 (helpt bij kleine modellen).",
 		model_view_command_parameter_components = "onderdelen",
 		model_view_command_parameter_components_help = "Wapenonderdelen (gescheiden door komma's).",
 		model_view_command_substitutes = "model, weergave",
@@ -3026,6 +3050,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		ped_remove_command = "ped_verwijderen",
 		ped_remove_command_help = "Verwijdert alle door jou gespawnede mensen.",
 		ped_remove_command_substitutes = "",
+
+		ped_attack_command = "ped_aanval",
+		ped_attack_command_help = "Laat de dichtstbijzijnde ped een bepaalde speler aanvallen.",
+		ped_attack_command_parameter_target = "doelwit",
+		ped_attack_command_parameter_target_help = "De speler die je wilt laten aanvallen door de dichtstbijzijnde ped.",
+		ped_attack_command_substitutes = "",
 
 		list_ped_emotes_command = "lijst_ped_emotes",
 		list_ped_emotes_command_help = "Lijst van alle beschikbare emoties voor mensen.",
@@ -3461,6 +3491,17 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		tablet_command = "tablet",
 		tablet_command_help = "Opent de tablet UI (als je een tablet hebt).",
 		tablet_command_substitutes = "",
+
+		-- game/taxes
+		tax_collection_command = "belasting_inning",
+		tax_collection_command_help = "Start een handmatige inning van belastingen.",
+		tax_collection_command_parameter_percentage = "percentage",
+		tax_collection_command_parameter_percentage_help = "Het percentage dat je wilt belasten van het vermogen van spelers. Ook offline spelers worden belast. Een normaal getal kan bijvoorbeeld 0.1 zijn (0.1%).",
+		tax_collection_command_substitutes = "",
+
+		taxes_command = "belasting",
+		taxes_command_help = "Toon jouw belastingen.",
+		taxes_command_substitutes = "",
 
 		-- game/teleporting
 		tp_back_command = "tp_terug",
@@ -3965,6 +4006,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		set_fuel_command_parameter_server_id_help = "Als je de brandstof voor een andere speler wilt instellen. Laat dit leeg om automatisch jezelf te selecteren.",
 		set_fuel_command_substitutes = "brandstof",
 
+		fuel_debug_command = "brandstof_debug",
+		fuel_debug_command_help = "Print veranderingen in het brandstofniveau van voertuigen naar de console.",
+		fuel_debug_command_substitutes = "",
+
 		-- vehicles/garage_access
 		manage_garage_command = "beheer_garage",
 		manage_garage_command_help = "Beheer je garage en wie er toegang toe heeft.",
@@ -4019,6 +4064,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		pickup_keys_command = "sleutels_oprapen",
 		pickup_keys_command_help = "Hiermee raap je de sleutels op van het dichtstbijzijnde voertuig.",
 		pickup_keys_command_substitutes = "",
+
+		grab_keys_command = "pak_sleutels",
+		grab_keys_command_help = "Pak de sleutels van het voertuig waar je op dit moment in rijdt.",
+		grab_keys_command_substitutes = "",
 
 		keys_command = "sleutels",
 		keys_command_help = "Krijg sleutels voor het voertuig waarin je je momenteel bevindt.",
@@ -4086,6 +4135,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		mute_sirens_command = "dempen_sirenes",
 		mute_sirens_command_help = "Dempt alle sirenes en claxons.",
 		mute_sirens_command_substitutes = "",
+
+		sirens_debug_command = "sirens_debug",
+		sirens_debug_command_help = "Teken alle sirenes, hoorns en lichten.",
+		sirens_debug_command_substitutes = "",
 
 		-- vehicles/trailers
 		toggle_trailer_command = "schakel_aanhangwagen",
@@ -4370,6 +4423,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		player_playtime = "${playerName} (Positie ${position})\nTotale speeltijd: ${totalPlaytime}\nSessie speeltijd: ${sessionPlaytime}",
 		leaderboard = "Scorebord",
 		leaderboard_total = "Scorebord (Totale speeltijd)",
+		leaderboard_economy = "Leaderboard (Economie)",
 		your_position = "Jouw positie",
 		leaderboard_loading = "Het scorebord wordt nog geladen.",
 		logs_user_reject_connection_title = "Verbinding Geweigerd",
@@ -4491,7 +4545,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		fake_disconnect_feature = "Nep-DC",
 		brighter_nights_feature = "Heldere nachten",
 		ridealong_feature = "Mee rijden",
-		broadcast_all_feature = "Uitzenden naar iedereen"
+		broadcast_all_feature = "Uitzenden naar iedereen",
+		skip_minigames_feature = "Minigames overslaan"
 	},
 
 	admin_menu = {
@@ -4568,7 +4623,45 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	animals = {
-		invalid_sound = "Ongeldig geluid."
+		invalid_sound = "Ongeldig geluid.",
+		not_enough_space = "Je hebt niet genoeg ruimte om dit dier op te pakken.",
+
+		male = "man",
+		female = "vrouw",
+
+		description_cat_unnamed = "Een ${gender} kat die door het leven zwerft met een zweem van mysterie, ${age} oud en ${weight} wegend. Met een onstilbare zwakte voor ${food}, kan deze snorharige zwerver het ene moment wereldheerschappij beramen en het volgende moment zich oprollen voor een dutje. Elke snorhaar vertelt een verhaal, elke blik bewaart een geheim.",
+		description_cat_named = "${name}, de ${gender} kat, is een met de jaren wijs geworden metgezel die de wijsheid draagt van ontelbare zonnige dutjes en nachtelijke avonturen. Met een gewicht van ${weight} en een onwrikbare passie voor ${food}, beweegt ${name} zich door de wereld als een levend raadsel - deels koninklijke hoogwaardigheidsbekleder, deels ondeugende straatfilosoof.",
+
+		description_dog_unnamed = "Een ${gender} hond, ${age} jaar oud en wegend ${weight}, met een geest zo grenzeloos als de horizon. Volledig toegewijd aan ${food} en met een hart vol ongetemde enthousiasme, verandert deze harige metgezel elk moment in een potentieel avontuur, elke wandeling in een epische reis.",
+		description_dog_named = "${name}, de ${gender} hond, stapt in dit grote verhaal van vriendschap, weegt ${weight} en straalt een energie uit die de donkerste kamer kan verlichten. Helemaal gecharmeerd van ${food}, leeft ${name} volgens een eenvoudige credo: elke dag is een geschenk, elke vriend een schat, elk moment een kans op vreugde.",
+
+		description_rabbit_unnamed = "Deze ${gender} konijn, ${age} jong en wegend ${weight}, stuitert door het leven met de enthousiasme van een geboren ontdekkingsreiziger. Gedreven door een onverwachte liefde voor ${food}, zijn de oren altijd alert, de geest onbeheersbaar levendig - een klein hart dat klopt van grenzeloze nieuwsgierigheid.",
+		description_rabbit_named = "${name}, een ${gender} konijn van ${age} die deze wilde reis door het leven gaat, weegt ${weight} en draagt een aanstekelijk enthousiasme dat de grootte tart. Volledig toegewijd aan ${food}, maakt ${name} van elke sprong een verklaring van vreugde, elke hap een avontuur.",
+
+		description_hen_unnamed = "Een ${gender} hen, ${age} oud en parmantig met een gewicht van ${weight}, die zich beweegt met het zelfvertrouwen van een boerderij-filosoof. Gedreven door een onverwachte trek in ${food}, verandert deze gevederde vriend gewone momenten in epische verhalen van pluimvee-prowess.",
+		description_hen_named = "${name}, de ${gender} hen, ${age} wijs en met een gewicht van ${weight} kilogram, kakelt met de autoriteit van een doorgewinterde verhalenverteller. Geobsedeerd door ${food} en meester van het onverwachte, bewijst ${name} dat ware charme geen soort kent.",
+
+		description_rat_unnamed = "Deze ${gender} rat, ${age} avontuurlijk en met een gewicht van ${weight} kilogram, navigeert de wereld met vlijmscherpe intelligentie en onverwachte charme. Gedreven door een absolute toewijding aan ${food}, verandert het elk hoekje in een mogelijke ontdekking, elke schaduw in een speeltuin.",
+		description_rat_named = "${name}, een ${gender} rat van ${leeftijd} die gek is op het grote experiment dat het leven is, weegt ${weight} en barst van de persoonlijkheid. Met een onverwoestbare band met ${food}, belichaamt ${name} de geest van nieuwsgierigheid - klein van formaat, oneindig van geest.",
+
+		pick_up_named = "[${SeatEjectKey}] ${name} oppakken",
+		pick_up_cat = "[${SeatEjectKey}] Kat oppakken",
+		pick_up_dog = "[${SeatEjectKey}] Hond oppakken",
+		pick_up_hen = "[${SeatEjectKey}] Kip oppakken",
+		pick_up_rabbit = "[${SeatEjectKey}] Konijn oppakken",
+		pick_up_rat = "[${SeatEjectKey}] Rat oppakken",
+
+		failed_pickup_cat = "Niet gelukt om de kat op te pakken.",
+		failed_pickup_dog = "Niet gelukt om de hond op te pakken.",
+		failed_pickup_hen = "Niet gelukt om de kip op te pakken.",
+		failed_pickup_rabbit = "Niet gelukt om het konijn op te pakken.",
+		failed_pickup_rat = "Niet gelukt om de rat op te pakken.",
+
+		failed_place_cat = "Niet gelukt om de kat neer te zetten.",
+		failed_place_dog = "Niet gelukt om de hond neer te zetten.",
+		failed_place_hen = "Niet gelukt om de kip neer te zetten.",
+		failed_place_rabbit = "Niet gelukt om het konijn neer te zetten.",
+		failed_place_rat = "Niet gelukt om de rat neer te zetten."
 	},
 
 	arcade = {
@@ -4691,8 +4784,28 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		deposit = "Storten",
 		balance = "Balans",
 		transfer = "Overboeken",
+		deposit_coins = "Munten storten",
 		savings_bonds = "Spaarobligaties",
 		back = "Terug",
+
+		condition_pristine = "in perfecte staat",
+		condition_mint = "in bijna perfecte staat",
+		condition_slight_worn = "licht versleten",
+		condition_worn = "versleten",
+		condition_heavy_worn = "zwaar versleten",
+		condition_corroded = "gecorrodeerd",
+		condition_damaged = "beschadigd",
+		condition_unrecognizable = "onherkenbaar",
+
+		mint_p = "Philadelphia (P)",
+		mint_d = "Denver (D)",
+		mint_s = "San Francisco (S)",
+		mint_w = "West Point (W)",
+		mint_cc = "Carson City (CC)",
+		mint_o = "New Orleans (O)",
+		mint_none = "een onbekende locatie (geen munthuismarkering)",
+
+		coin_metadata = "Geslagen in ${minted}, deze munt is geproduceerd bij ${mark} en is ${condition}.",
 
 		amount = "Bedrag",
 		target = "Doelwit",
@@ -4706,6 +4819,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		failed_withdraw = "Kan geen geld opnemen",
 		failed_transfer = "Kan geen geld overboeken",
 		failed_deposit_bonds = "Kon de spaarobligaties niet storten",
+		failed_deposit_coins = "Mislukt om munten te storten",
 
 		processing = "Verwerken...",
 		counting_bills = "Biljetten tellen...",
@@ -4713,22 +4827,29 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		something_went_wrong = "Er is iets misgegaan.",
 		error_not_online = "Je doelwit is niet beschikbaar.",
 		error_not_enough_money = "Niet genoeg geld.",
-		deposit_amount_big = "ATM-stortingen zijn beperkt tot $4.000.",
-		withdraw_amount_big = "ATM-opnames zijn beperkt tot $6.000.",
+		deposit_amount_big = "ATM-stortingen zijn beperkt tot $5.000.",
+		withdraw_amount_big = "ATM-opnames zijn beperkt tot $10.000.",
+		bond_fee_details = "2% verwerkingskosten voor spaarobligaties.",
+		atm_fee_details = "1,5% verwerkingskosten voor ATM-opnames.",
 
 		retrieving_card = "Kaart ophalen",
 		atm_damaged = "Deze geldautomaat is beschadigd",
 
 		press_to_use = "Druk op ~g~${InteractionKey} ~w~om de ATM te gebruiken",
 		press_to_interact_bank = "Druk op ~g~${InteractionKey} ~w~om met de bank te interageren",
+		fee_label = "met een vergoeding van $${fee}",
+		no_fee_label = "zonder kosten",
 
 		deposit_log_bank_title = "Bank Storting",
 		deposit_log_atm_title = "Storting bij de geldautomaat",
 		deposit_log = "${consoleName} heeft $${amount} gestort.",
 
+		deposit_coins_log_title = "Muntstorting",
+		deposit_coins_log = "${consoleName} heeft ${coins} ter waarde van $${amount} gestort.",
+
 		withdraw_log_bank_title = "Bank Opname",
 		withdraw_log_atm_title = "Opname bij de geldautomaat",
-		withdraw_log = "${consoleName} heeft $${amount} opgenomen.",
+		withdraw_log = "${consoleName} heeft $${amount} ${fee} opgenomen.",
 		withdraw_log_bonds_title = "Bank Opname (Obligaties)",
 		withdraw_log_bonds = "${consoleName} nam $${amount} op in spaarobligaties (${bonds}).",
 
@@ -4736,7 +4857,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		transfer_log = "${consoleName} (#${characterId}) heeft $${amount} overgeboekt naar ${targetConsoleName} (#${targetCharacterId}).",
 
 		deposit_log_bonds_title = "Obligatie Storting",
-		deposit_bonds_log = "${consoleName} heeft ${bonds} ter waarde van $${amount} gestort."
+		deposit_bonds_log = "${consoleName} heeft ${bonds} ter waarde van $${totalMoney} gestort met een $${fee} vergoeding (= $${amount})."
 	},
 
 	attachments = {
@@ -5598,13 +5719,15 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	containers = {
-		drill_container = "Druk op ~INPUT_CONTEXT~ om de container open te boren.",
-		drilling_container = "Boorcontainer",
-		failed_drill = "Kon de container niet openboren.",
-		drill_success = "Container succesvol opengeboord.",
+		drill_container = "Druk op ~INPUT_CONTEXT~ om het container slot open te boren.",
+		drill_warehouse = "Druk op ~INPUT_CONTEXT~ om het magazijnslot open te boren.",
+		drilling_lock = "Slot aan het boren",
+		failed_drill = "Het is niet gelukt om het slot open te boren.",
+		drill_success = "Het slot is succesvol open geboord.",
 
-		containers_due_soon = "${count} van je opslagcontainers zijn binnenkort verlopen.",
-		container_blip = "Container"
+		containers_due_soon = "${count} van jouw opslagcontainers/magazijnen zijn binnenkort verschuldigd.",
+		container_blip = "Container",
+		warehouse_blip = "Pakhuis"
 	},
 
 	crafting = {
@@ -6211,6 +6334,29 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		crafted_bacon = "Spek gemaakt.",
 		failed_craft_bacon = "Kan geen spek maken.",
 
+		make_mochi = "Maak Mochi",
+		press_to_make_mochi = "[${SeatEjectKey}] Maak Mochi",
+
+		mochi_mango_recipe = "Mango Mochi",
+		making_mochi_mango = "Mango Mochi maken",
+		made_mochi_mango = "Mango mochi gemaakt.",
+		failed_make_mochi_mango = "Mislukt om mango mochi te maken.",
+
+		mochi_strawberry_recipe = "Aardbei Mochi",
+		making_mochi_strawberry = "Aardbei Mochi maken",
+		made_mochi_strawberry = "Aardbei mochi gemaakt.",
+		failed_make_mochi_strawberry = "Mislukt om aardbei mochi te maken.",
+
+		mochi_green_tea_recipe = "Groene Thee Mochi",
+		making_mochi_green_tea = "Groene Thee Mochi maken",
+		made_mochi_green_tea = "Groene thee mochi gemaakt.",
+		failed_make_mochi_green_tea = "Kan geen groene thee mochi maken.",
+
+		mochi_chocolate_recipe = "Chocolade Mochi",
+		making_mochi_chocolate = "Chocolade Mochi maken",
+		made_mochi_chocolate = "Chocolade mochi gemaakt.",
+		failed_make_mochi_chocolate = "Kan geen chocolade mochi maken.",
+
 		cook_food = "Eten bereiden",
 		press_to_cook_food = "[${SeatEjectKey}] Eten bereiden",
 
@@ -6233,6 +6379,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		cooking_spicy_ramen = "Pittige Ramen aan het koken",
 		cooked_spicy_ramen = "Pittige ramen gekookt.",
 		failed_cook_spicy_ramen = "Pittige ramen koken mislukt.",
+
+		green_tea_recipe = "Groene Thee",
+		brewing_green_tea = "Groene thee aan het brouwen",
+		brewed_green_tea = "Groene thee gebrouwen.",
+		failed_brew_green_tea = "Kan geen groene thee brouwen.",
 
 		cut_ingridients = "Ingrediënten snijden",
 		press_to_cut_ingridients = "[${SeatEjectKey}] Ingrediënten snijden",
@@ -6385,6 +6536,30 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		baking_chocolate_cake = "Chocoladetaart aan het bakken",
 		baked_chocolate_cake = "Chocoladetaart gebakken.",
 		failed_baking_chocolate_cake = "Mislukt om chocoladetaart te bakken.",
+
+		make_coffee = "Koffie zetten",
+		press_to_make_coffee = "[${SeatEjectKey}] Koffie zetten",
+
+		bean_coffee_recipe = "Koffieboon",
+		espresso_recipe = "Espresso",
+		cappuccino_regular_recipe = "Cappuccino (Koeienmelk)",
+		cappuccino_almond_recipe = "Cappuccino (Amandelmelk)",
+		cappuccino_pigeon_recipe = "Cappuccino (Duivenmelk)",
+		iced_latte_regular_recipe = "Iced Latte (Koeienmelk)",
+		iced_latte_almond_recipe = "Iced Latte (Amandelmelk)",
+		iced_latte_pigeon_recipe = "Iced Latte (Duivenmelk)",
+
+		brewing_coffee = "Koffie aan het zetten",
+		brewed_coffee = "Oploskoffie.",
+		failed_brewing_coffee = "Mislukt om koffie te zetten.",
+
+		hot_chocolate_regular_recipe = "Warme Chocolademelk (Koemelk)",
+		hot_chocolate_pigeon_recipe = "Warme Chocolademelk (Amandelmelk)",
+		hot_chocolate_almond_recipe = "Warme Chocolademelk (Duivenmelk)",
+
+		making_hot_chocolate = "Chocolademelk maken",
+		made_hot_chocolate = "Chocolademelk gemaakt.",
+		failed_make_hot_chocolate = "Mislukt om chocolademelk te maken.",
 
 		no_required_items = "Je hebt niet alle benodigde items.",
 
@@ -6672,22 +6847,29 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	container_storage = {
-		rent_container = "[${InteractionKey}] Huur #${id} ($${price} per week)",
+		rent_container = "[${InteractionKey}] Huur C-${id} ($${price} per week)",
+		rent_warehouse = "[${InteractionKey}] Huur W-${id} ($${price} per week)",
 		renting_container = "Container Huren",
+		renting_warehouse = "Magazijn huren",
 		failed_rent_container = "Het huren van de container is mislukt.",
+		failed_rent_warehouse = "Het huren van het magazijn is mislukt.",
 		rent_container_success = "Container #${id} succesvol gehuurd. U kunt uw containers beheren met behulp van `/containers`.",
-		access_container = "[${InteractionKey}] Toegang #${id}",
-		container_id = "#${id}",
+		rent_warehouse_success = "Magazijn #${id} succesvol gehuurd. Je kunt je magazijnen beheren met behulp van `/warehouses`.",
+		access_container = "[${InteractionKey}] Toegang C-${id}",
+		access_warehouse = "[${InteractionKey}] Toegang W-${id}",
+		container_id = "C-${id}",
+		warehouse_id = "W-${id}",
 
-		storage_containers = "Opslagcontainers",
+		storage_containers = "Opslagcontainers/Magazijnen",
 		container = "Container",
+		warehouse = "Magazijn",
 		loading = "Laden...",
 		failed_remove_access = "Toegang verwijderen is mislukt.",
 		failed_add_access = "Kan geen toegang toevoegen.",
 		access = "Toegang",
 		add_cid = "CID toevoegen",
-		no_containers = "Je bezit geen opslagcontainers of hebt er geen toegang toe.",
-		no_access = "Niemand behalve jij heeft toegang tot deze container.",
+		no_containers = "Je bezit geen opslagcontainers/magazijnen of hebt er geen toegang toe.",
+		no_access = "Niemand behalve jij heeft toegang tot deze container/magazijn.",
 		back = "Terug",
 		close = "Sluiten",
 		character_not_exist = "Personage bestaat niet.",
@@ -6697,14 +6879,14 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		not_enough_money = "Je hebt niet genoeg geld.",
 		failed_pay_rent = "Huur betalen mislukt.",
 		mark_gps = "GPS markeren",
-		container_alert = "Je container #${containerId} wordt gemanipuleerd.",
+		container_alert = "Jouw container/magazijn #${containerId} wordt aangeraakt.",
 
 		rented_container_logs_title = "Gehuurde container",
-		rented_container_logs_details = "${consoleName} heeft container #${containerId} gehuurd voor $${price}.",
+		rented_container_logs_details = "${consoleName} huurde ${type} #${containerId} voor $${price}.",
 		paid_rent_logs_title = "Containerhuur betaald",
-		paid_rent_logs_details = "${consoleName} heeft $${price} betaald voor de huur van container #${containerId}.",
+		paid_rent_logs_details = "${consoleName} betaalde $${price} huur voor ${type} #${containerId} (betaald tot `${till} UTC`).",
 		lockpicked_container_logs_title = "Container opengebroken",
-		lockpicked_container_logs_details = "${consoleName} heeft container #${containerId} opengebroken."
+		lockpicked_container_logs_details = "${consoleName} heeft het slot van ${type} #${containerId} opengebroken."
 	},
 
 	courthouse = {
@@ -6865,6 +7047,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		coords = "Coördinaten: ${coords}",
 		rotation = "Rotatie: ${rotation}",
 		normal = "Oppervlak: ${normal}",
+		surface_heading = "Oppervlak: ${heading}",
 		velocity = "Snelheidsvector: ${velocity}",
 		ground_material = "Grondmateriaal: ${material}",
 		debug_print_f8 = "Debugging informatie is geprint in je F8 console.",
@@ -6878,6 +7061,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		copied_model_name = "Gekopieerde modelnaam.",
 		copied_entity_id = "Gekopieerde entiteit-ID.",
 		copied_hit_coords = "Gekopieerde raakcoördinaten.",
+		copied_surface_heading = "Oppervlakte kopieerd.",
 
 		distance = "Afstand: ${distance}m",
 		distance_first = "Eerste positie opgeslagen.",
@@ -6913,12 +7097,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		model_view_disabled = "Modelweergave uitgeschakeld.",
 		invalid_component = "Ongeldige component `${componentName}`.",
 
-		animation_currently_playing = "Er wordt momenteel een animatie afgespeeld.",
 		invalid_or_missing_animation_dict = "Ongeldig of ontbrekend animatiedictionary '${animationDict}'.",
-		missing_animation_name = "Ontbrekende of ongeldige animatienaam '${animationName}'.",
+		missing_animation_name = "Ongeldige of ontbrekende animatienaam.",
 		invalid_animation_flags = "Ongeldige animatievlaggen.",
-		animation_played = "Afspelen '${animationDict}' '${animationName}' (vlaggen: ${flags}).",
-		no_flags = "N/B",
 
 		invalid_coordinates = "Ongeldige coördinaten.",
 		added_coordinates_draw = "Coördinaten `x: ${x}, y: ${y}, z: ${z}` zijn toegevoegd aan de lijst met tekeningen met ID `${drawId}`.",
@@ -7703,6 +7884,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		fps_unit = "fps",
 		ping_unit = "ms",
 		tps_unit = "tps",
+		fps_1percent_unit = "fps 1%",
 
 		smart_warnings = "Waarschuwing: ${warnings}!",
 		dehydrated = "uitgedroogd",
@@ -7990,7 +8172,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		prison_store = "Gevangeniswinkel",
 		fruit_vendor = "Fruitverkoper",
 		fruit_market = "Alamo Fruitmarkt",
-		food_market = "Voedselmarkt",
+		super_market = "Supermarkt",
 		island_store = "Eilandwinkel",
 		travel_agency = "Reisbureau",
 		island_bar = "Eilandbar",
@@ -8024,7 +8206,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		ems_badge_store = "EMS Badge Desk",
 		doj_badge_store = "DOJ Badge Desk",
 		state_store = "Staatwinkel",
-		pharmacy = "Apotheek",
+		pharmacy_store = "Apotheek",
 		chop_shop = "Autosloperij",
 		courthouse = "Gerechtsgebouw",
 		burger_shot = "Burger Shot",
@@ -8035,13 +8217,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		bean_machine_fridge = "Bean Machine Koelkast",
 		hunting_store = "Wapenwinkel",
 		fishing_store = "Viswinkel",
+		furniture_store = "Meubelwinkel",
 		los_santos_golf_club = "Golfclub van Los Santos",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Japans Restaurant",
 		japanese_restaurant_kitchen = "Japanse Restaurant Keuken",
 		pizza_restaurant = "Pizzeria",
 		["945_studios"] = "945 Studios",
-		grain_mill = "Graanmolen",
 		pd_prefix = "Politie",
 		ems_prefix = "Ambulance",
 		government_prefix = "Overheid",
@@ -8105,6 +8287,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		underground_bar_counter = "Ondergrondse Barkraam",
 		pizza_this_counter = "Pizza Deze Teller",
 		yellow_jack_counter = "Yellow Jack Teller",
+		bean_machine_counter = "Bean Machine Teller",
 
 		inventory_name_missing = "Ontbrekende inventarisnaamparameter.",
 
@@ -8131,6 +8314,14 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		craft_combine = "Maak <i>${output}</i>",
 		combining = "Aan het maken",
+
+		inspect = "Inspecteren",
+		attachments = "Bijlagen",
+		fill_paper_bag = "Papieren zak vullen",
+		rename = "Hernoemen",
+
+		item_renamed = "Item succesvol hernoemd.",
+		item_failed_rename = "Kan item niet hernoemen.",
 
 		file_serial = "세계에서 가장 우수한 아일랜드 맥주, 한 잔 마시세요.",
 		filing_off_serial_number = "제임슨 위스키",
@@ -8414,6 +8605,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		paper_bag = "Papieren Zak",
 		paper_bag_description = "Perfect om boodschappen in te bewaren of misschien wel iemands hoofd, dood of levend.",
+		closed_paper_bag = "Gesloten papieren zak",
+		closed_paper_bag_description = "Een klassieke bruine tas die de mysteries van de inhoud verbergt. Is het lunch? Een geheime voorraad? Slechts één manier om erachter te komen - scheur het open en zie wat erin zit!",
 		burger_shot_delivery = "Burger Shot Maaltijd",
 		burger_shot_delivery_description = "Een fantastische verzameling van alle verscheiden slappe vlees lekkernijen die ze serveren.",
 		bean_machine_delivery = "Bean Machine Bezorging",
@@ -8424,6 +8617,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		green_wonderland_delivery_description = "Een tas vol met jouw favoriete groene lekkernijen. #420blazeit",
 		pizza_this_delivery = "Pizza This Doos",
 		pizza_this_delivery_description = "Vervoer je warme en heerlijke pizza in stijl met de Pizza This bezorgdoos, zodat elke plak net zo perfect aankomt als toen hij de oven verliet.",
+
+		lunch_box = "Lunchbox",
+		lunch_box_description = "Een stevig doosje dat je hoop, dromen en restjes van gisteren bewaart. Perfect om je snacks veilig te houden, je boterham niet platgedrukt, en je chips iets minder verkruimeld dan normaal. Waarschuwing: Garandeert geen verbeterde sociale status tijdens de lunchpauze.",
 
 		empty_box = "Lege doos",
 		empty_box_description = "Begin met deze eenvoudige, stevige doos om een gepersonaliseerd cadeau te maken. Vul het met niet-bederfelijke schatten, en het is klaar om getransformeerd te worden tot een attent cadeau. Ideaal voor het inpakken van alles wat genegenheid symboliseert, behalve bederfelijke waren en wapens.",
@@ -8485,6 +8681,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		keys = "Sleutels",
 		keys_description = "Een paar sleutels voor een aantal deuren ergens.",
+		car_keys = "Autosleutels",
+		car_keys_description = "Een magische set sleutels waarmee je deuren kunt ontgrendelen, motoren kunt starten en je direct het gevoel geeft dat je de weg beheerst. Geen twee sleutels zien er precies hetzelfde uit, maar ze hebben allemaal hetzelfde doel: jou toegang geven tot de geweldige rit waar ze vandaan komen. Laat ze alleen niet in het riool vallen of leen ze uit aan een \"vriend\".",
 
 		raw_diamond = "Onbewerkte Diamant",
 		raw_diamond_description = "undefined",
@@ -9061,6 +9259,34 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		plush_wasabi = "Wasabi Wonder",
 		plush_wasabi_description = "Dit kleintje is een ware zeldzaamheid, net als een frisse explosie van Wasabi! Hun oogverblindende groene vacht zal zeker de aandacht trekken. Onderschat hun kleine formaat niet - ze zitten boordevol persoonlijkheid en zijn altijd klaar voor een draai.",
 
+		cat_0 = "Cyperse Kat",
+		cat_0_description = "Dit gestreepte kleine boefje is altijd bezig, of het nu is door stiekem op je schoot te kruipen of het beramen van wereldoverheersing, één dutje per keer. Het paradeert met het zelfvertrouwen van een kat die weet dat ze de hoofdrolspeler zijn.",
+		cat_1 = "Zwarte Kat",
+		cat_1_description = "Glad, schaduwachtig en mogelijk magisch, deze zwarte kat weet hoe hij de aandacht kan trekken - of je snacks kan stelen. Het is even cool en knuffelig, met een voorliefde voor dramatische entrees en lange, oordelende blikken.",
+		cat_2 = "Bruine Kat",
+		cat_2_description = "Warm en aards, deze bruine schoonheid is als een kop hete chocolade in de vorm van een kat - als hete chocolade af en toe dingen van je bureau af gooide. Hij is relaxed, aanhankelijk en verrassend goed in het negeren van je oproepen.",
+
+		dog_0 = "West Highland White Terrier",
+		dog_0_description = "Deze harige kleine furball is zowel een trouwe metgezel als een wandelende dweil. Altijd klaar voor een avontuur, zelfs als dat betekent dat ze urenlang hun eigen staart achterna rennen. Geweldig in knuffels, twijfelachtig in schoon blijven.",
+		dog_1 = "Mopshond",
+		dog_1_description = "Een trotse mopshond met een gezicht dat alleen een moeder - of eigenlijk iedereen - zou kunnen liefhebben. Kort van poot maar groot van persoonlijkheid, deze gezette vriend zal zich een weg naar je hart en waarschijnlijk naar je snacks wurmen.",
+		dog_2 = "Poedel",
+		dog_2_description = "Een perfect verzorgde poedel die weet dat ze de meest chique hond in de kamer zijn. Statig, elegant en af en toe een totale drama queen, ze brengen glamour in elke omgeving - of het nu op de rode loper is of in je woonkamer.",
+
+		hen_0 = "Kip",
+		hen_0_description = "Een brutale hen die rondstruint alsof ze de boerderij bezit - en eerlijk gezegd, waarschijnlijk doet ze dat ook. Altijd pikken, kakelen en je die zijdelingse blik geven, deze gevederde diva is even schattig als lichtelijk intimiderend.",
+		rat_0 = "Rat",
+		rat_0_description = "Een sluwe kleine knaagdier met straatwijsheid en een talent om snacks te vinden waar je het minst verwacht. Of het nu gaat om kruimels aan het oprapen of het beramen van wereldheerschappij, deze rat is altijd bezig met iets.",
+
+		rabbit_0 = "Donkerbruine Konijn",
+		rabbit_0_description = "Een rijk, donkerbruin konijn met een energieniveau dat overeenkomt met zijn naamgenoot. Altijd alert, altijd klaar om te sprinten, en waarschijnlijk oordeelt het over je omdat je langzamer bent dan hem.",
+		rabbit_1 = "Lichtbruine Konijn",
+		rabbit_1_description = "Een lichtbruin konijn dat eruitziet alsof het rechtstreeks uit een bakkerij is gehopt. Zoet, brokkelig van geest, en precies de juiste hoeveelheid chaos voor je dag.",
+		rabbit_2 = "Beige Konijn",
+		rabbit_2_description = "Een beige konijn met een boterzachte vacht en een talent voor opspringen in de meest onhandige plaatsen. Het is evenzeer schattig als mild frustrerend.",
+		rabbit_3 = "Grijze Konijn",
+		rabbit_3_description = "Een gestroomlijnd grijs konijn dat beweegt als een pluim van rook in de wind. Knipper met je ogen, en het is weg—maar niet voordat het je hart (en misschien je sla) heeft gestolen.",
+
 		boxing_gloves = "Bokshandschoenen",
 		boxing_gloves_description = "Verandert je in Rocky, maar waarschijnlijk krijg je geen vervolg...",
 		leash = "Hondenriem",
@@ -9190,6 +9416,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		evidence_bag_empty_description = "Kun je dat verbeteren?",
 		evidence_bag = "Bewijszak",
 		evidence_bag_description = "Verzegeld bewijsstuk voor later gebruik.",
+		evidence_box = "Bewijskist",
+		evidence_box_description = "De onbekende held van gerechtigheid, bewaart alle aanwijzingen, vingerafdrukken en twijfelachtige items die nodig zijn om een zaak op te lossen. Van snoeppapiertjes tot crime scene tools, het is als een schatkist voor detectives—zonder het goud, maar wel met veel papierwerk.",
 		fingerprint_evidence = "Vingerafdruk Bewijs",
 		fingerprint_evidence_description = "Helpt bij het vangen van criminele schurken.",
 		device_printout = "Apparaat Printout",
@@ -9239,6 +9467,19 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		savings_bond_1000_description = "Een $1.000 spaarobligatie, een bewijs van jouw toewijding om vermogen op te bouwen. Bewaar deze obligatie veilig totdat je klaar bent om deze in te wisselen bij een bank, waar het je een aanzienlijke financiële boost zal geven.",
 		savings_bond_2000 = "$2.000 Spaarobligatie",
 		savings_bond_2000_description = "Een $2.000 spaarobligatie, een flinke investering in jouw financiële toekomst. Houd deze obligatie vast totdat het juiste moment is aangebroken, en wissel het dan in bij een bank om de volledige waarde te ontgrendelen en jouw financiële dromen te verwezenlijken.",
+
+		cent_1 = "Cent",
+		cent_1_description = "De nederige cent is de meest hardwerkende koperkleurige held van Amerika. Slechts een cent waard maar vaak moedig te vinden die wensen in fonteinen dichtstopt of verstopt onder bankkussens. Het is eigenlijk het muntstukversie van klein maar krachtig.",
+		cent_5 = "Nikkel",
+		cent_5_description = "De nikkel is een grovere, zilverkleurige upgrade van de cent met vijf keer zo veel koopkracht, wat nog steeds niet veel is. Een loyale metgezel voor automaten en speelautomaten, zelfs als zijn waarde soms over het hoofd wordt gezien.",
+		cent_10 = "Dubbeltje",
+		cent_10_description = "Het dubbeltje is een klein maar glanzend overachiever, met 10 cent aan waarde in zijn zakformaat design. Klein genoeg om te verdwalen in je jeans, maar nog steeds rijk genoeg om je eraan te herinneren dat het dubbele waard is van de inspanning van een stuiver.",
+		cent_25 = "Kwartje",
+		cent_25_description = "Het kwartje is de koning van parkeermeters en kauwgomballenautomaten. Met zijn indrukwekkende gewicht en 25 cent aan waarde, leidt deze zilveren gladiator vaak je muntenleger naar glorieuze overwinningen in koffiebars en arcades.",
+		cent_50 = "Halve Dollar",
+		cent_50_description = "De halve dollar is een zelden gezien zwaargewicht van Amerikaanse valuta. Het is als de coolere, meer mysterieuze oudere broer van de kwart. Dubbele waarde, dubbele grootte, en altijd indrukwekkend glanzend.",
+		coin_bag = "Muntentas",
+		coin_bag_description = "Een betrouwbaar klein zakje ontworpen om te voorkomen dat je losse munten overal rinkelen. Klein, discreet, en perfect voor degenen die hun rijkdom in stijl willen dragen—ervan uitgaande dat jouw \"rijkdom\" wordt gemeten in kwartjes en dimes.",
 
 		weather_spell_snow = "Weerspreuk (Sneeuw)",
 		weather_spell_snow_description = "Met behulp van dit item kun je tijdelijk het weer beheersen en het laten sneeuwen! Het is eenmalig te gebruiken, dus wees voorzichtig. Als je twee weer spreuken tegelijk gebruikt, wordt de tweede gewoon in de wachtrij geplaatst.",
@@ -9430,6 +9671,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		fishing_chair_description = "undefined",
 		sleeping_bag = "Slaapzak",
 		sleeping_bag_description = "undefined",
+		red_pillow = "Rode Kussen",
+		red_pillow_description = "Een veelzijdig rood kussen dat harde grond verandert in een troon van comfort. Of je nu aan het mediteren bent, mensen kijkt, of gewoon probeert om niet op mysterieuze vlekken te zitten, deze kussen heeft je rug - of beter gezegd, je achterwerk!",
+		spotlight = "Schiijnwerper",
+		spotlight_description = "Een schijnwerper die klaar staat om alles of iedereen de ster van de show te maken. Perfect voor professionele foto's, dramatische verlichting, of gewoon om je als een filmster te voelen in je woonkamer. Het is helder, betrouwbaar, en steelt altijd de show.",
+		tube_light = "Buislamp",
+		tube_light_description = "Een strakke en minimalistische buislamp die helderheid inruilt voor stijl, en een zachte gloed toevoegt zonder de kamer te overheersen. Perfect om een gezellige sfeer te creëren, het is een subtiele upgrade die er veel cooler uitziet dan zijn loggere tegenhangers.",
 		yoga_mat = "Yogamat",
 		yoga_mat_description = "undefined",
 		cooler_box = "Koelbox",
@@ -9466,6 +9713,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		spike_strips_large_description = "undefined",
 		stop_sticks = "undefined",
 		stop_sticks_description = "undefined",
+		speed_bump = "Snelheidsdrempel",
+		speed_bump_description = "Het ultieme gereedschap voor het afdwingen van vertragingen en het testen van de vering van een auto. Plaats dit draagbare obstakel en zie snelheidsduivels hun levenskeuzes heroverwegen - perfect om achtervolgingen te veranderen in kruipende optochten.",
+		speed_sign = "Snelheidslimiet bord",
+		speed_sign_description = "Een vriendelijke herinnering dat je loodvoet even rust nodig heeft. Houd je aan de limiet, of loop het risico de woede van snelheidsdrempels en radarguns te ontmoeten.",
+		bumps_sign = "Verkeersdrempels bord",
+		bumps_sign_description = "Een beleefde waarschuwing dat de ophanging van je auto zijn gelijke zal vinden. Betreed voorzichtig, of bereid je voor op een hobbelige rit!",
 		floodlight = "Schenklicht",
 		floodlight_description = "undefined",
 		left_diversion_sign = "Omleidingsbord - Links",
@@ -9514,6 +9767,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		claymore = "Claymore",
 		claymore_description = "undefined",
+		mine = "Mijn",
+		mine_description = "Voor wanneer je die extra 'welkomstmat' nodig hebt voor het geval de ATF aan de deur komt kloppen. Plaats het gewoon, beveilig het en kijk toe hoe onwelkome gasten veranderen in een fijne rode nevel.",
 
 		tv_stand = "TV-standaard",
 		tv_stand_description = "Upgrade je binge-watch setup met deze stijlvolle tv-standaard. Hiermee staat je tv op de perfecte ooghoogte en er is ruimte voor al je willekeurige gadgets. Het is als de troon voor je scherm.",
@@ -9566,6 +9821,16 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		pink_dildo = "Roze Dildo",
 		pink_dildo_description = "Handgemaakt, gesneden en getest door Bugsy Middleman.",
 
+		cappuccino_regular = "Cappuccino (Koeienmelk)",
+		cappuccino_almond = "Cappuccino (Amandelmelk)",
+		cappuccino_pigeon = "Cappuccino (Duivenmelk)",
+		iced_latte_regular = "Iced Latte (Koeienmelk)",
+		iced_latte_almond = "Iced Latte (Amandelmelk)",
+		iced_latte_pigeon = "Iced Latte (Duivenmelk)",
+		hot_chocolate_regular = "Warme Chocolademelk (Koeienmelk)",
+		hot_chocolate_almond = "Warme Chocolademelk (Amandelmelk)",
+		hot_chocolate_pigeon = "Warme Chocolademelk (Duivenmelk)",
+
 		bean_coffee = "Boonkoffie",
 		bean_coffee_description = "Boonwater.... dat is het eigenlijk.",
 		cappuccino = "Cappuccino",
@@ -9582,6 +9847,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		pink_lemonade_description = "Absoluut niet zomaar gewone limonade die roze is geverfd zodat we je het dubbele kunnen vragen...",
 		iced_latte = "IJskoffie",
 		iced_latte_description = "Een verfrissende ijskoffie, perfect voor een warme dag.",
+		coffee_beans = "Koffiebonen",
+		coffee_beans_description = "Een zak met rijke, aromatische koffiebonen klaar om te transformeren tot de brandstof die je ochtenden en late avond brainstormsessies aandrijft. Of je nu van sterk, glad, of ergens daartussen houdt, deze bonen zijn jouw ticket naar een perfect kopje cafeïnehoudend geluk.",
 
 		berry_cake = "Bessentaart",
 		berry_cake_description = "Een verrukkelijke bessentaart, boordevol verse bessen en lagen zoete bessenjam. Deze taart is de perfecte traktatie voor bessenliefhebbers en biedt een harmonieuze mix van friszure en zoete smaken in elke hap.",
@@ -9755,9 +10022,21 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		spicy_ramen_description = "Voor de durfallen onder ons, Pittige Ramen brengt de hitte! Duik in een vurige bouillon met noedels en pittige toppings die je smaakpapillen laten dansen. Kan jij het aan?",
 		bento_box = "Bento Box",
 		bento_box_description = "Een heerlijke mix van smaken en texturen, deze Bento Box is jouw keuze voor een gebalanceerde maaltijd. Gevuld met een verscheidenheid aan lekkernijen, het is als een picknick in een doos. Perfect voor lunch of een lichte avondmaaltijd!",
+		mochi_mango = "Mango Mochi",
+		mochi_mango_description = "Een tropische mango mochi barstend van de zoete, sappige smaak van rijpe mango's. Verpakt in een zachte, plakkerige schil, is het een mini-vakantie voor je smaakpapillen.",
+		mochi_strawberry = "Aardbeien Mochi",
+		mochi_strawberry_description = "Een verrukkelijke aardbeien mochi die een fruitige, bessenzoete vulling combineert met een zachte, rekbare buitenkant. Als het bijten in een wolk van zonneschijn en zoetheid.",
+		mochi_green_tea = "Groene Thee Mochi",
+		mochi_green_tea_description = "Een verfrissende groene thee mochi die aardse matcha-smaak combineert met een gladde, kauwachtige textuur. Ideaal voor een zen-achtige dessertervaring met precies de juiste balans tussen zoetheid en bitterheid.",
+		mochi_chocolate = "Chocolade Mochi",
+		mochi_chocolate_description = "Een heerlijke chocolademochi die een zachte, kussenachtige buitenkant omhult met een rijke, cacao-gevulde kern. Perfect om zoete trek te stillen met een vleugje plakkerige verwennerij.",
+		green_tea_bag = "Groene Thee",
+		green_tea_bag_description = "Een zakje met premium losse groene theebladeren, klaar om je onder te dompelen in een wereld van aardse, verfrissende smaak. Perfect voor theeliefhebbers die de kunst van het zetten verkiezen boven het gemak van een voorverpakt zakje. Een slok hiervan en je proeft de rust.",
 
 		asahi_beer = "Asahi Bier",
 		asahi_beer_description = "Geniet van de frisse, schone smaak van Asahi Bier, een premium Japans bier bekend om zijn gladde en verfrissende smaak. Dit gouden brouwsel is vakkundig gemaakt om elke gelegenheid te verheffen, waardoor het een perfecte keuze is voor zowel casual slokjes als fine dining.",
+		green_tea = "Groene Thee",
+		green_tea_description = "Een warme, rustgevende kop vers gezette groene thee die je omhult met zijn aardse aroma en delicate smaak. Perfect voor momenten van rust of een zachte oppepper, het is als een knuffel in een mok voor je ziel.",
 
 		golf_ball = "Golfbal",
 		golf_ball_description = "Gebruikt voor golfen.",
@@ -9947,6 +10226,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		weapon_poolcue = "Poolkeu",
 		weapon_stone_hatchet = "Stenen Hakbijl",
 		weapon_candycane = "Zuurstok",
+		weapon_stunrod = "De Shocker",
 
 		weapon_pistol = "Pistool",
 		weapon_pistol_mk2 = "Pistool Mk II",
@@ -10076,6 +10356,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		weapon_poolcue_description = "Er is geen geluid zo bevredigend als het kraken van een perfecte break, vooral als het de rug van de tegenstander is.",
 		weapon_stone_hatchet_description = "2,5 miljoen jaar R&D en we zijn nog steeds hier.",
 		weapon_candycane_description = "Een feestelijke zuurstok. Het is een beetje plakkerig.",
+		weapon_stunrod_description = "Als stomp trauma gewoon niet genoeg is, overweeg dan om je aanpak van zware mishandeling te diversifiëren met een dosis van 30.000 volt.",
 
 		weapon_pistol_description = "Standaard pistool. Een .45 kaliber gevechtspistool met een magazijncapaciteit van 12 patronen die kan worden verlengd tot 16.",
 		weapon_pistol_mk2_description = "Balans, eenvoud, precisie: er is niets dat de vrede bewaart als een verlengde loop in de mond van de ander.",
@@ -10311,7 +10592,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		weapon_addon_multitool_description = "Net als de normale multitool, maar zonder de poespas.",
 
 		weapon_addon_ar15 = "AR-15",
-		weapon_addon_ar15_description = "Maak kennis met de AR-15, de betrouwbare underdog onder de geweren. Het is als het aparte neefje van de carbinerifle - dezelfde basis, maar een andere smaak. Perfect voor als je dingen wilt mixen zonder te overdrijven. Betrouwbaar, nauwkeurig en precies de juiste dosis 'pew pew' voor elke relaxte situatie."
+		weapon_addon_ar15_description = "Maak kennis met de AR-15, de betrouwbare underdog onder de geweren. Het is als het aparte neefje van de carbinerifle - dezelfde basis, maar een andere smaak. Perfect voor als je dingen wilt mixen zonder te overdrijven. Betrouwbaar, nauwkeurig en precies de juiste dosis 'pew pew' voor elke relaxte situatie.",
+
+		weapon_addon_tennisball = "Tennisbal",
+		weapon_addon_tennisball_description = "Perfect voor een snel spel, afleiding voor een hond, of een chaotische worp door de kamer. Richt, gooi, en kijk hoe het wild stuitert - bonuspunten als het niet terugkomt!"
 	},
 
 	invisibility = {
@@ -10403,7 +10687,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		failed_kissaki_delivery = "Mislukt om kissaki maaltijd te openen.",
 		failed_green_wonderland_delivery = "Kon de groene wonderlandtas niet openen.",
 		failed_pizza_this_delivery = "Het is niet gelukt om de pizzadoos te openen.",
+		failed_closed_paper_bag = "Kan de papieren zak niet openen.",
 
+		closed_paper_bag_empty = "Deze papieren zak is leeg.",
 		burger_shot_delivery_empty = "Deze burgershot maaltijd lijkt leeg te zijn.",
 		bean_machine_delivery_empty = "Die levering van Bean Machine lijkt leeg te zijn.",
 		kissaki_delivery_empty = "Die kissaki maaltijd leek leeg te zijn.",
@@ -10539,7 +10825,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		modify_jail_logs_title = "Gewijzigde Gevangenistijd",
 		modify_jail_logs_details = "${consoleName} heeft de gevangenistijd voor ${targetCharacter} #${targetCharacterId} (${operation} ${amount} maanden) gewijzigd naar ${after}.",
 		triggered_lockdown_logs_title = "Lockdown Geactiveerd",
-		triggered_lockdown_logs_details = "${consoleName} heeft een gevangenislockdown geactiveerd."
+		triggered_lockdown_logs_details = "${consoleName} heeft een gevangenislockdown geactiveerd.",
+		mission_reward_logs_title = "Beloning Gevangenismissie",
+		mission_reward_cash_logs_details = "${consoleName} heeft $${amount} contant geld ontvangen voor het voltooien van een gevangenismissie.",
+		mission_reward_item_logs_details = "${consoleName} heeft 1x ${itemName} ontvangen voor het voltooien van een gevangenismissie."
 	},
 
 	kiosks = {
@@ -10968,7 +11257,21 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		no_nearby_vehicle = "Geen voertuig in de buurt.",
 		already_checking_upgrades = "Je controleert al de aanpassingen van een voertuig.",
-		engine_is_running = "De motor van het voertuig draait."
+		engine_is_running = "De motor van het voertuig draait.",
+
+		press_open_shop = "Houd ~INPUT_FRONTEND_RDOWN~ ingedrukt om de werkplaats van de monteur te openen.",
+		press_close_shop = "Houd ~INPUT_FRONTEND_RDOWN~ ingedrukt om de werkplaats van de monteur te sluiten.",
+		opening_shop = "${time}s bezig met openen van monteurswerkplaats.",
+		closing_shop = "${time}s bezig met sluiten van monteurswerkplaats.",
+		shop_closed = "Monteurswerkplaats succesvol gesloten.",
+		shop_opened = "Monteurswerkplaats succesvol geopend.",
+		failed_shop_closed = "Kan monteurswerkplaats niet sluiten.",
+		failed_shop_opened = "Kan monteurswerkplaats niet openen.",
+
+		opened_shop_logs_title = "Monteurswerkplaats Geopend",
+		opened_shop_logs_details = "${consoleName} heeft de `${label}` monteurswerkplaats geopend.",
+		closed_shop_logs_title = "Monteurswerkplaats Gesloten",
+		closed_shop_logs_details = "${consoleName} heeft de `${label}` monteurswerkplaats gesloten."
 	},
 
 	meow = {
@@ -11011,6 +11314,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		success_wipe_blocks = "Succesvol ${count} blok(ken) gewist in een straal van ${radius}m.",
 		failed_wipe_blocks = "Kon blokken niet wissen.",
 		press_to_use_jukebox = "Druk op ~INPUT_CONTEXT~ om de jukebox te gebruiken."
+	},
+
+	minigames = {
+		skipping_minigame = "Minigame overslaan"
 	},
 
 	mining = {
@@ -11118,6 +11425,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		bad_ooc_message = "Er is een mogelijk ongepast bericht gepost in de OOC chat: \"${oocMessage}\"",
 		bad_ped_message = "Er is geprobeerd mogelijk een slechte ped-bericht te maken: \"${pedMessage}\"",
 		bad_twitter_post = "Er is geprobeerd mogelijk een slechte twitter-post te maken: \"${twitterPost}\"",
+		bad_twitter_account = "Poging om mogelijk een slecht Twitter-account aan te maken: \"${username}\"",
 		bad_phone_message = "Er is geprobeerd mogelijk een slecht telefoonbericht te maken: \"${message}\"",
 		user_not_found = "We konden geen gebruiker vinden met server-ID `${serverId}`.",
 		player_already_muted = "${consoleName} is al gemute.",
@@ -11125,6 +11433,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		player_has_been_muted = "${consoleName} is nu gemute met reden: `${reason}`.",
 		player_not_muted = "${consoleName} is niet gemute.",
 		player_has_been_unmuted = "${consoleName} is nu geunmute.",
+		just_been_muted = "Je bent zojuist gedempt van /ooc en /report vanwege reden `${reason}`.",
+		just_been_muted_no_reason = "Je bent zojuist gedempt van /ooc en /report zonder opgegeven reden.",
 		ooc_clear_chat_title = "Chat gewist",
 		ooc_clear_chat_details = "${consoleName} heeft de chat voor iedereen leeg gemaakt.",
 		muted_player = "Speler Gestraft",
@@ -12127,7 +12437,34 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		disabled_generators = "${disabledGeneratorsCount} generator(s) uitgeschakeld.",
 
 		drill_drilling = "Aan het boren (${remainingSeconds}s)",
-		drill_jammed = "[${InteractionKey}] Boren Vastgelopen (${remainingSeconds}s)"
+		drill_jammed = "[${InteractionKey}] Boren Vastgelopen (${remainingSeconds}s)",
+		search_safe = "[${InteractionKey}] Kluis doorzoeken",
+		searching_safe = "Kluis doorzoeken",
+
+		close_up_bank = "Bank afsluiten",
+		press_to_close_up_bank = "[${InteractionKey}] Bank afsluiten",
+		closing_up_bank = "Bank Sluiten",
+
+		not_enough_police = "Er zijn niet genoeg actieve politieagenten om de overval te starten.",
+
+		dispatch = "[Meldkamer]",
+		alarm_triggered = "10-90: Een alarm is afgegaan bij Pacific Bank.",
+		pacific_bank_alarm = "Alarm Pacific Bank",
+
+		press_to_search = "[${InteractionKey}] Zoeken",
+		search = "Zoeken",
+		searching = "Bezig met zoeken",
+		found_nothing = "Niets gevonden.",
+
+		power_generator_disabled_title = "Stroomgenerator Uitgeschakeld",
+		power_generator_disabled_details = "${consoleName} heeft de stroomgenerator met de naam '${powerGeneratorName}' uitgeschakeld.",
+
+		pacific_bank_robbery_started_title = "Overval op Pacific Bank gestart",
+		pacific_bank_robbery_started_details = "${consoleName} is begonnen met de overval op de Pacific Bank.",
+
+		pacific_bank_reward_logs_title = "Beloning Pacific Bank",
+		pacific_bank_reward_saving_bonds_logs_details = "${consoleName} heeft een kluis doorzocht en ontving spaarobligaties ter waarde van $${amount}.",
+		pacific_bank_reward_items_logs_details = "${consoleName} heeft een kluis doorzocht en ontving ${amount}x items."
 	},
 
 	panel = {
@@ -12187,14 +12524,20 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	},
 
 	paper_bags = {
-		fill_bag = "[${SeatEjectKey}] Vul papieren tas",
-		no_bags = "Je hebt geen papieren tassen.",
-		no_bag_items = "Je hebt geen items die je in een papieren tas kan doen.",
-		close_bag = "Sluit Tas",
-		cancel_bag = "Annuleren",
-		title = "Papieren Tas",
+		paper_bag_brand = "Deze papieren zak heeft een logo van <b>${brand}</b> erop.",
+		paper_bag_no_brand = "Dit is een gewone papieren zak.",
+
+		burger_shot_delivery = "Burger Shot",
+		bean_machine_delivery = "Bean Machine",
+		kissaki_delivery = "Kissaki",
+		green_wonderland_delivery = "Green Wonderland",
+		pizza_this_delivery = "Pizza This",
+
 		failed_fill = "Vullen van papieren tas mislukt.",
-		filled_bag = "Papieren tas succesvol gevuld."
+		filled_bag = "Papieren tas succesvol gevuld.",
+
+		filled_bag_log_title = "Gevulde papieren zak",
+		filled_bag_log_details = "${consoleName} heeft een papieren zak gevuld met ${contents}."
 	},
 
 	parking_meters = {
@@ -12203,7 +12546,13 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		no_cash = "Je hebt geen $4 in contanten.",
 		max_time = "De parkeermeter heeft zijn maximum bereikt.",
-		failed_pay = "Kon parkeermeter niet betalen."
+		failed_pay = "Kon parkeermeter niet betalen.",
+
+		failed_lockpick = "Mislukt om parkeermeter open te breken.",
+		already_lockpicked = "Deze parkeermeter was al opengebroken.",
+
+		lockpicked_meter_logs_title = "Opengebroken parkeermeter",
+		lockpicked_meter_logs_details = "${consoleName} heeft een parkeermeter opengebroken en ontving ${items} en $${money} in contanten."
 	},
 
 	pause_menu = {
@@ -12296,6 +12645,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		ped_failed_task = "Mislukt om de '${task}' taak toe te wijzen aan gespawnede peds.",
 		invalid_target = "Ongeldige server-ID.",
 		invalid_task = "Ongeldige of ontbrekende ped taak.",
+		no_nearby_ped = "Er zijn geen nabijgelegen personages.",
+		ped_attack_success = "Succesvol personage `${networkId}` aangevallen op ${target}.",
+		ped_failed_attack = "Mislukt om personage `${networkId}` aan te laten vallen op ${target}.",
 		ped_emote_success = "Gespawnede peds spelen succesvol de '${emote}' emotie af.",
 		ped_failed_emote = "Mislukt om gespawnede peds de '${emote}' emotie te laten afspelen.",
 		invalid_emote = "Ongeldige emotie `${emote}`.",
@@ -12509,7 +12861,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		invalid_prop_id = "Ongeldige prop-id.",
 		prop_deleted = "Prop met id ${propId} is verwijderd.",
 
-		invalid_wipe_radius = "Ongeldige afstand om op te ruimen (tussen 1 en 100).",
+		invalid_wipe_radius = "Ongeldige veegradius (tussen 1 en 500).",
 		wipe_successful = "Succesvol ${amount} prop(s) verwijderd.",
 		wipe_failed = "Kan props niet verwijderen.",
 
@@ -12764,6 +13116,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		logs = "Transactie Logs",
 		no_logs = "Geen transactie logs.",
 		summary = "Samenvatting",
+		summary_description = "Samenvatting van alle transacties in de laatste 90 dagen voor deze account.",
 		name = "Naam",
 		transactions = "Transacties",
 		withdrawn = "Opgehaald",
@@ -12827,7 +13180,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		scrapyard = "Sloopplaats",
 		cant_scrap_vehicle = "Sorry, maat, maar deze auto heeft meer rode vlaggen dan een rodeo. Kan 'm niet van je overnemen!",
 		failed_scrap_vehicle = "Ziet ernaar uit dat onze sloopplaats de hik heeft. Probeer je voertuig later nog eens te slopen, maat!",
-		scrap_confirm = "Weet je zeker dat je dit voertuig wil slopen? Dit zal de ${name} PERMANENT van je garage verwijderen en je ontvangt 12-16% van de oorspronkelijke prijs in contant geld en goudstaven.",
+		scrap_confirm = "Weet je zeker dat je dit voertuig wilt slopen? Dit zal PERMANENT de ${name} uit je garage verwijderen en je ontvangt 16-20% van de oorspronkelijke prijs in contanten en goudstaven.",
 		scrap_success = "Nou, we hebben die oude bak omgetoverd tot een schat. Het was toch tijd om afscheid te nemen, partner!",
 		scrapped_vehicle_logs_title = "Gesloopt Voertuig",
 		scrapped_vehicle_logs_details = "${consoleName} heeft hun voertuig (${modelName} #${vehicleId}) gesloopt en kreeg ${gold}x goudstaaf(fen) en $${cash} in contanten (${percentage}% van de oorspronkelijke prijs)."
@@ -13386,6 +13739,15 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		teleport_player_player_logs_details = "${consoleName} heeft ${sourceConsoleName} geteleporteerd naar ${targetConsoleName}."
 	},
 
+	taxes = {
+		taxes_collected = "Belastingen geïnd. De bedragen zijn als volgt.\n- Contant: $${cash}\n- Bank: $${bank}\n- Aandelen: $${stocks}\n- Spaarrekening: $${savings}\n- Gedeelde Accounts: $${sharedAccounts}",
+		taxes = "Belastingen",
+		transaction_logs = "Transactielogs",
+		paid_taxes = "U heeft ${amount} aan belastingen betaald.",
+		no_logs = "Geen transactielogs.",
+		close = "Sluiten"
+	},
+
 	teleporters = {
 		area_not_clear = "De bestemming is geblokkeerd door een voertuig.",
 
@@ -13634,6 +13996,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		department_police_undercover = "Undercover Politie",
 
+		department_doc_training = "DOC Training",
 		department_police_training = "Politie Opleiding",
 		department_medical_training = "EMS Training",
 		department_bcfd_training = "BCFD Training"
@@ -14284,6 +14647,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		no_nearby_vehicle = "Geen voertuig in de buurt.",
 		no_nearby_vehicle_door = "Niet bij een voertuigdeur in de buurt.",
 		removing_door = "Deur verwijderen",
+		cleaning_up_body = "Lijk opruimen",
+		destroying_spikes = "Spikes vernietigen",
 		failed_remove_door = "Kon de voertuigdeur niet verwijderen.",
 		invalid_clothing_type = "Ongeldig kledingtype.",
 		no_nearby_player = "Geen speler in de buurt die geboeid is of neergeschoten is.",
@@ -14379,7 +14744,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		none = "Geen",
 		active = "Actief",
 		not_active = "Niet actief",
-		active_robberies = "\nActieve Winkeldiefstal: ${store}.\nActieve Bankoverval: ${bank}\nActieve Sieradendiefstal: ${jewelry}",
+		active_robberies = "\nActieve winkel: ${store}.\nActieve bank: ${bank}\nActieve juwelier: ${jewelry}\nPacific Bank: ${pacificBank}",
 
 		failed_dispatch = "Verzenden van melding mislukt.",
 		dispatch_title = "[Melding]",
@@ -14472,6 +14837,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		on_floor = "Op de ${floor}.",
 		ground_floor = "Begane grond",
 		second_floor = "Tweede verdieping",
+		third_floor = "Derde verdieping",
 		icu_floor = "ICU verdieping",
 		surgery_floor = "Chirurgie verdieping",
 
@@ -14513,7 +14879,55 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		task_disinfect_table = "Ontsmet de operatietafel.",
 		task_disinfect_table_near = "Druk op ~INPUT_DETONATE~ om de operatietafel te ontsmetten.",
-		task_disinfect_table_active = "Tafel aan het ontsmetten"
+		task_disinfect_table_active = "Tafel aan het ontsmetten",
+
+		task_wipe_table = "Tafel afnemen.",
+		task_wipe_table_near = "Druk op ~INPUT_DETONATE~ om de tafel af te nemen.",
+		task_wipe_table_active = "Tafel afnemen",
+
+		task_wash_dishes = "Afwas doen.",
+		task_wash_dishes_near = "Druk op ~INPUT_DETONATE~ om de afwas te doen.",
+		task_wash_dishes_active = "Afwas doen",
+
+		task_restock_drink_dispenser = "Bijvullen frisdrankautomaat.",
+		task_restock_drink_dispenser_near = "Druk op ~INPUT_DETONATE~ om de frisdrankautomaat bij te vullen.",
+		task_restock_drink_dispenser_active = "Frisdrankautomaat bijvullen",
+
+		task_restock_ingredients = "Vul de ingrediënten aan.",
+		task_restock_ingredients_near = "Druk op ~INPUT_DETONATE~ om de ingrediënten aan te vullen.",
+		task_restock_ingredients_active = "Ingrediënten aanvullen",
+
+		task_organize_shelf = "Organiseer de plank.",
+		task_organize_shelf_near = "Druk op ~INPUT_DETONATE~ om de plank te organiseren.",
+		task_organize_shelf_active = "Plank organiseren",
+
+		task_clean_countertop = "Maak het aanrecht schoon.",
+		task_clean_countertop_near = "Druk op ~INPUT_DETONATE~ om het aanrecht schoon te maken.",
+		task_clean_countertop_active = "Aanrecht schoonmaken",
+
+		task_file_taxes = "Belastingaangifte indienen.",
+		task_file_taxes_near = "Druk op ~INPUT_DETONATE~ om belastingaangifte te doen.",
+		task_file_taxes_active = "Belastingaangifte indienen",
+
+		task_refill_napkins = "Servetten bijvullen.",
+		task_refill_napkins_near = "Druk op ~INPUT_DETONATE~ om servetten bij te vullen.",
+		task_refill_napkins_active = "Servetten bijvullen",
+
+		task_refill_water = "Waterdispenser bijvullen.",
+		task_refill_water_near = "Druk op ~INPUT_DETONATE~ om de waterdispenser bij te vullen.",
+		task_refill_water_active = "Waterdispenser bijvullen",
+
+		task_clean_windows = "De ramen schoonmaken.",
+		task_clean_windows_near = "Druk op ~INPUT_DETONATE~ om de ramen schoon te maken.",
+		task_clean_windows_active = "Ramen Schoonmaken",
+
+		task_clean_oven = "Maak de oven schoon.",
+		task_clean_oven_near = "Druk op ~INPUT_DETONATE~ om de oven schoon te maken.",
+		task_clean_oven_active = "Oven Schoonmaken",
+
+		task_take_nap = "Doe een dutje.",
+		task_take_nap_near = "Druk op ~INPUT_DETONATE~ om een dutje te doen.",
+		task_take_nap_active = "Dutje Doen"
 	},
 
 	tow = {
@@ -14679,6 +15093,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		fuel_level_set_to = "De brandstofniveau is ingesteld op `${fuelLevel}`.",
 		not_in_a_vehicle = "Je zit niet in een voertuig.",
 		vehicle_engine_on = "De motor draait nog steeds.",
+
+		fuel_debug_enabled = "Brandstofdebug ingeschakeld.",
+		fuel_debug_disabled = "Brandstofdebug uitgeschakeld.",
 
 		vehicle_exploded_logs_title = "Voertuig ontploft",
 		vehicle_exploded_logs_details = "${consoleName} heeft een voertuig bijgetankt en veroorzaakte een explosie door een lopende motor."
@@ -14846,12 +15263,22 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		gave_keys_success = "Met succes de sleutels gegeven aan ${displayName} voor hun voertuig.",
 		gave_keys_failure = "${displayName} de sleutels van hun voertuig geven is mislukt.",
 
+		car_keys_label = "Sleutels voor ${plate}",
+		something_went_wrong = "Er is iets misgegaan.",
+		keys_no_longer_work = "Deze sleutels werken niet meer.",
+		success_use_keys = "Je hebt nu de sleutels voor `${plate}`.",
+
 		no_nearby_vehicle = "Geen voertuig in de buurt.",
 		there_is_someone_in_the_driver_seat = "Er zit iemand op de bestuurdersstoel.",
 		the_driver_door_is_closed = "De bestuurdersdeur is gesloten.",
 		checking_ignition = "Controleer Ontsteking",
 		ignition_tampered_with = "Ontsteking is gemanipuleerd.",
-		ignition_not_tampered_with = "Ontsteking is niet gemanipuleerd."
+		ignition_not_tampered_with = "Ontsteking is niet gemanipuleerd.",
+
+		used_car_keys_logs_title = "Gebruikte Autosleutels",
+		used_car_keys_logs_details = "${consoleName} heeft autosleutels gebruikt voor een voertuig met kenteken `${plate}` (N-${networkId}).",
+		grabbed_car_keys_logs_title = "Gepakte Autosleutels",
+		grabbed_car_keys_logs_details = "${consoleName} heeft autosleutels gepakt voor een voertuig met kenteken `${plate}` (N-${networkId})."
 	},
 
 	modifications = {
@@ -14905,7 +15332,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	sirens = {
 		sirens_muted_on = "Alle sirenes zijn nu uitgeschakeld.",
-		sirens_muted_off = "Alle sirenes zijn nu ingeschakeld."
+		sirens_muted_off = "Alle sirenes zijn nu ingeschakeld.",
+
+		lights_on = "Verlichting: ${count}",
+		sirens_on = "Zwaailichten: ${count}",
+		horns_on = "Claxons: ${count}"
 	},
 
 	spawner = {

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 34 (do not change)
+-- AUTO LOCALES: 35 (do not change)
 
 OP.Global.Locales.Languages["en-GB"] = {
 	-- configuration settings for language
@@ -83,7 +83,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 	ledges = {
 		no_ledge = "You are not near a ledge.",
-		invalid_variation = "Invalid variation.",
+		invalid_variation = "Invalid variation (1 - 13).",
 		press_x_to_stop = "Press ~INPUT_VEH_DUCK~ to stop sitting."
 	},
 
@@ -872,7 +872,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		sit_ledge_command = "sit_ledge",
 		sit_ledge_command_help = "Sit on a ledge if you are in front of one. You have to be facing the ledge.",
 		sit_ledge_command_parameter_variation = "variation",
-		sit_ledge_command_parameter_variation_help = "Which sit animation to play (1 - 4).",
+		sit_ledge_command_parameter_variation_help = "Which sit animation to play (1 - 13).",
 		sit_ledge_command_substitutes = "ledge",
 
 		-- animations/walkstyles
@@ -899,7 +899,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		staff_pm_command_parameter_server_id_help = "The player's server ID you are trying to message.",
 		staff_pm_command_parameter_message = "message",
 		staff_pm_command_parameter_message_help = "The message you would like to send.",
-		staff_pm_command_substitutes = "staffpm",
+		staff_pm_command_substitutes = "staffpm, message, pm, msg",
 
 		important_staff_pm_command = "important_staff_pm",
 		important_staff_pm_command_help = "Send an important message to a player as a staff member.",
@@ -907,7 +907,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		important_staff_pm_command_parameter_server_id_help = "The player's server ID you are trying to message.",
 		important_staff_pm_command_parameter_message = "message",
 		important_staff_pm_command_parameter_message_help = "The important message you would like to send.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
 
 		reply_pm_command = "reply_pm",
 		reply_pm_command_help = "Reply to the last staff message you received.",
@@ -1304,7 +1304,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		register_weapon_command_substitutes = "",
 
 		advanced_metagame_command = "advanced_metagame",
-		advanced_metagame_command_help = "Superadmin command to help you take your metagaming to the next level.",
+		advanced_metagame_command_help = "Command to assist in enhancing your metagaming skills.",
+		advanced_metagame_command_parameter_use_characters = "use characters",
+		advanced_metagame_command_parameter_use_characters_help = "Specify character names instead of player names.",
 		advanced_metagame_command_substitutes = "am",
 
 		list_weapon_attachments_command = "list_weapon_attachments",
@@ -1479,6 +1481,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		leaderboard_command_parameter_total_playtime_help = "By default the playtime actually played on characters will be used. Set this to `y` to use the total overall time in the server instead.",
 		leaderboard_command_substitutes = "",
 
+		economy_leaderboard_command = "economy_leaderboard",
+		economy_leaderboard_command_help = "Check the economy leaderboard.",
+		economy_leaderboard_command_substitutes = "eleaderboard",
+
 		package_command = "package",
 		package_command_help = "Check and refresh your package.",
 		package_command_substitutes = "refresh_package",
@@ -1589,12 +1595,16 @@ OP.Global.Locales.Languages["en-GB"] = {
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Toggle the Battle Royale feature.",
+		battle_royale_toggle_command_parameter_max_teammates = "max teammates",
+		battle_royale_toggle_command_parameter_max_teammates_help = "The maximum amount of allowed teammates per team. Default is 4. Minimum is 1 and maximum is 10.",
 		battle_royale_toggle_command_substitutes = "br_toggle",
 
 		battle_royale_start_command = "battle_royale_start",
 		battle_royale_start_command_help = "Start a Battle Royale match.",
 		battle_royale_start_command_parameter_no_vehicles = "no vehicles",
 		battle_royale_start_command_parameter_no_vehicles_help = "Create a match with no vehicles.",
+		battle_royale_start_command_parameter_new_inventories = "new inventories",
+		battle_royale_start_command_parameter_new_inventories_help = "Create a match where everyone has an empty, temporary inventory.",
 		battle_royale_start_command_substitutes = "br_start",
 
 		battle_royale_invite_command = "battle_royale_invite",
@@ -1810,7 +1820,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 		-- game/container_storage
 		containers_command = "containers",
 		containers_command_help = "View and manage your rented storage containers.",
-		containers_command_substitutes = "",
+		containers_command_substitutes = "warehouses",
+
+		-- game/containers
+		containers_debug_command = "containers_debug",
+		containers_debug_command_help = "Draw all nearby containers.",
+		containers_debug_command_substitutes = "",
 
 		-- game/crafting
 		crafting_debug_command = "crafting_debug",
@@ -2121,6 +2136,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		random_position_command = "random_position",
 		random_position_command_help = "Teleports you to a random position on the main island. (Also turns on your invisibility)",
+		random_position_command_parameter_server_id = "server id",
+		random_position_command_parameter_server_id_help = "The server ID of the player you want to teleport.",
 		random_position_command_substitutes = "random",
 
 		crash_ui_command = "crash_ui",
@@ -2153,7 +2170,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		-- game/development
 		toggle_developer_ambience_command = "Ihr HUD scheint teilweise vom Bildschirm abzurutschen (~${amount}px). Sie können dies korrigieren, indem Sie die \"*Sicherheitszone Größe*\" in Ihren \"*Anzeige*\"-Einstellungen verringern.",
 		toggle_developer_ambience_command_help = "Toggle the developer ambience.",
-		toggle_developer_ambience_command_substitutes = "",
+		toggle_developer_ambience_command_substitutes = "developer_ambience, ambience",
 
 		-- game/dna_evidence
 		take_dna_sample_command = "take_dna_sample",
@@ -2714,6 +2731,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		minecraft_wipe_command_parameter_radius_help = "The radius you want to wipe blocks in. (0 = all blocks, max 5000)",
 		minecraft_wipe_command_substitutes = "",
 
+		-- game/minigames
+		skip_minigames_command = "skip_minigames",
+		skip_minigames_command_help = "Toggle skipping of minigames.",
+		skip_minigames_command_substitutes = "",
+
 		-- game/mining
 		mining_debug_command = "mining_debug",
 		mining_debug_command_help = "Toggle the mining debug.",
@@ -2841,6 +2863,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		model_view_command_parameter_model_help = "The model name or hash you would like to view.",
 		model_view_command_parameter_no_blocker = "no blocker",
 		model_view_command_parameter_no_blocker_help = "Disable the shadow blocker (default: no).",
+		model_view_command_parameter_clamp = "clamp",
+		model_view_command_parameter_clamp_help = "Clamp the size to always be more than 0.25 (helps with small models).",
 		model_view_command_parameter_components = "components",
 		model_view_command_parameter_components_help = "Weapon components (separated by commas).",
 		model_view_command_substitutes = "model, view",
@@ -3026,6 +3050,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 		ped_remove_command = "ped_remove",
 		ped_remove_command_help = "Gets rid of all your spawned peds.",
 		ped_remove_command_substitutes = "",
+
+		ped_attack_command = "ped_attack",
+		ped_attack_command_help = "Makes the closest ped attack a certain player.",
+		ped_attack_command_parameter_target = "target",
+		ped_attack_command_parameter_target_help = "The player you want the closest ped to attack.",
+		ped_attack_command_substitutes = "",
 
 		list_ped_emotes_command = "list_ped_emotes",
 		list_ped_emotes_command_help = "Lists all available ped emotes.",
@@ -3461,6 +3491,17 @@ OP.Global.Locales.Languages["en-GB"] = {
 		tablet_command = "tablet",
 		tablet_command_help = "Opens the tablet UI (if you have a tablet).",
 		tablet_command_substitutes = "",
+
+		-- game/taxes
+		tax_collection_command = "tax_collection",
+		tax_collection_command_help = "Trigger a manual collection of taxes",
+		tax_collection_command_parameter_percentage = "percentage",
+		tax_collection_command_parameter_percentage_help = "The percentage you want to tax of players' wealth. It will tax offline players as well. A normal number might be 0.1 (0.1%).",
+		tax_collection_command_substitutes = "",
+
+		taxes_command = "taxes",
+		taxes_command_help = "Show your taxes.",
+		taxes_command_substitutes = "",
 
 		-- game/teleporting
 		tp_back_command = "tp_back",
@@ -3965,6 +4006,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		set_fuel_command_parameter_server_id_help = "If you wish to set the fuel for another player. Leaving this blank will automatically select yourself.",
 		set_fuel_command_substitutes = "fuel",
 
+		fuel_debug_command = "fuel_debug",
+		fuel_debug_command_help = "Print vehicle fuel level changes to the console.",
+		fuel_debug_command_substitutes = "",
+
 		-- vehicles/garage_access
 		manage_garage_command = "manage_garage",
 		manage_garage_command_help = "Manage your garage and who has access to it.",
@@ -4019,6 +4064,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		pickup_keys_command = "pickup_keys",
 		pickup_keys_command_help = "Makes you pickup the keys of the nearest vehicle.",
 		pickup_keys_command_substitutes = "",
+
+		grab_keys_command = "grab_keys",
+		grab_keys_command_help = "Take the keys from the vehicle you are currently driving.",
+		grab_keys_command_substitutes = "",
 
 		keys_command = "keys",
 		keys_command_help = "Get keys to the vehicle you are currently in.",
@@ -4086,6 +4135,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		mute_sirens_command = "mute_sirens",
 		mute_sirens_command_help = "Mutes all sirens and horns.",
 		mute_sirens_command_substitutes = "",
+
+		sirens_debug_command = "sirens_debug",
+		sirens_debug_command_help = "Draw all sirens, horns and lights.",
+		sirens_debug_command_substitutes = "",
 
 		-- vehicles/trailers
 		toggle_trailer_command = "toggle_trailer",
@@ -4370,6 +4423,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		player_playtime = "${playerName} (Position ${position})\nTotal Playtime: ${totalPlaytime}\nSession Playtime: ${sessionPlaytime}",
 		leaderboard = "Leaderboard",
 		leaderboard_total = "Leaderboard (Total Playtime)",
+		leaderboard_economy = "Leaderboard (Economy)",
 		your_position = "Your position",
 		leaderboard_loading = "The leaderboard is still loading.",
 		logs_user_reject_connection_title = "Connection Rejected",
@@ -4491,7 +4545,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		fake_disconnect_feature = "Simulated Disconnect",
 		brighter_nights_feature = "Brighter Evenings",
 		ridealong_feature = "Passenger Seat",
-		broadcast_all_feature = "Broadcast to All"
+		broadcast_all_feature = "Broadcast to All",
+		skip_minigames_feature = "Skip Minigames"
 	},
 
 	admin_menu = {
@@ -4568,7 +4623,45 @@ OP.Global.Locales.Languages["en-GB"] = {
 	},
 
 	animals = {
-		invalid_sound = "Invalid sound."
+		invalid_sound = "Invalid sound.",
+		not_enough_space = "You don't have enough space to pick up this animal.",
+
+		male = "male",
+		female = "female",
+
+		description_cat_unnamed = "A ${gender} feline wandering through life with an air of mystery, ${age} old and weighing ${weight}. With an insatiable weakness for ${food}, this whiskered wanderer could be plotting world domination one moment and curl up for a nap the next. Every whisker tells a story, every glance holds a secret.",
+		description_cat_named = "${name}, the ${gender} cat, is a ${age} old companion who carries the wisdom of countless sunny naps and midnight adventures. Weighing ${weight} and harbouring an unshakeable passion for ${food}, ${name} moves through the world like a living riddle—part royal dignitary, part mischievous street philosopher.",
+
+		description_dog_unnamed = "A ${gender} canine, ${age} old and weighing ${weight}, with a spirit as boundless as the horizon. Utterly devoted to ${food} and wearing a heart full of unbridled enthusiasm, this furry companion turns every moment into a potential adventure, every walk into an epic journey.",
+		description_dog_named = "${name}, the ${gender} dog, is ${age} in this wonderful tale of friendship, weighing ${weight} and emanating an energy that could illuminate the darkest room. Completely captivated by ${food}, ${name} lives by a simple motto: every day is a blessing, every friend a treasure, every moment an opportunity for happiness.",
+
+		description_rabbit_unnamed = "This ${gender} rabbit, ${age} young and weighing ${weight}, hops through life with the zest of a natural explorer. Fueled by an unexpected fondness for ${food}, its ears are always alert, its spirit irresistibly lively—a tiny heart pulsating with endless curiosity.",
+		description_rabbit_named = "${name}, a ${gender} rabbit aged ${age} on this wild journey of life, weighs ${weight} and carries an infectious zest that belies its size. Utterly devoted to ${food}, ${name} turns every hop into a declaration of joy, every nibble into an adventure.",
+
+		description_hen_unnamed = "A ${gender} hen, ${age} years old and strutting at ${weight}, who moves with the confidence of a farmyard philosopher. Fueled by an unexpected craving for ${food}, this feathered friend transforms ordinary moments into epic narratives of poultry prowess.",
+		description_hen_named = "${name}, the ${gender} hen, ${age} wise and weighing ${weight}, clucks with the authority of a seasoned storyteller. Obsessed with ${food} and masters of the unexpected, ${name} proves that true charisma knows no species.",
+
+		description_rat_unnamed = "This ${gender} rat, ${age} adventurous and weighing ${weight}, navigates the world with razor-sharp intelligence and unexpected charm. Driven by an absolute devotion to ${food}, it turns every corner into a potential discovery, every shadow into a playground.",
+		description_rat_named = "${name}, a ${gender} rat aged ${age}, embarking on life's grand experiment, weighing ${weight} and brimming with personality. With an unbreakable bond to ${food}, ${name} encapsulates the essence of curiosity—small in stature, boundless in spirit.",
+
+		pick_up_named = "[${SeatEjectKey}] Pick up ${name}",
+		pick_up_cat = "[${SeatEjectKey}] Pick Up Cat",
+		pick_up_dog = "[${SeatEjectKey}] Pick Up Dog",
+		pick_up_hen = "[${SeatEjectKey}] Pick Up Hen",
+		pick_up_rabbit = "[${SeatEjectKey}] Pick Up Rabbit",
+		pick_up_rat = "[${SeatEjectKey}] Pick Up Rat",
+
+		failed_pickup_cat = "Failed to pick up the cat.",
+		failed_pickup_dog = "Failed to pick up the dog.",
+		failed_pickup_hen = "Failed to pick up the hen.",
+		failed_pickup_rabbit = "Failed to pick up the rabbit.",
+		failed_pickup_rat = "Failed to pick up the rat.",
+
+		failed_place_cat = "Failed to place the cat.",
+		failed_place_dog = "Failed to place the dog.",
+		failed_place_hen = "Failed to place the hen.",
+		failed_place_rabbit = "Failed to place the rabbit.",
+		failed_place_rat = "Failed to place the rat."
 	},
 
 	arcade = {
@@ -4691,8 +4784,28 @@ OP.Global.Locales.Languages["en-GB"] = {
 		deposit = "Deposit",
 		balance = "Balance",
 		transfer = "Transfer",
+		deposit_coins = "Deposit Coins",
 		savings_bonds = "Savings Bonds",
 		back = "Back",
+
+		condition_pristine = "in pristine condition",
+		condition_mint = "in near mint condition",
+		condition_slight_worn = "slightly worn",
+		condition_worn = "worn",
+		condition_heavy_worn = "heavily worn",
+		condition_corroded = "corroded",
+		condition_damaged = "damaged",
+		condition_unrecognizable = "unrecognisable",
+
+		mint_p = "Philadelphia (P)",
+		mint_d = "Denver (D)",
+		mint_s = "San Francisco (S)",
+		mint_w = "West Point (W)",
+		mint_cc = "Carson City (CC)",
+		mint_o = "New Orleans (O)",
+		mint_none = "an unknown location (no mint mark)",
+
+		coin_metadata = "Minted in ${minted}, this coin was produced at ${mark} and is ${condition}.",
 
 		amount = "Amount",
 		target = "Target",
@@ -4706,6 +4819,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		failed_withdraw = "Failed to withdraw money",
 		failed_transfer = "Failed to transfer money",
 		failed_deposit_bonds = "Failed to deposit savings bonds",
+		failed_deposit_coins = "Failed to deposit coins",
 
 		processing = "Processing...",
 		counting_bills = "Counting Bills...",
@@ -4713,22 +4827,29 @@ OP.Global.Locales.Languages["en-GB"] = {
 		something_went_wrong = "Something went wrong.",
 		error_not_online = "Your target is unavailable.",
 		error_not_enough_money = "Not enough money.",
-		deposit_amount_big = "ATM deposits are limited to $4,000.",
-		withdraw_amount_big = "ATM withdraws are limited to $6,000.",
+		deposit_amount_big = "ATM deposits are limited to £5,000.",
+		withdraw_amount_big = "ATM withdraws are limited to £10,000.",
+		bond_fee_details = "2% processing fee for savings bonds.",
+		atm_fee_details = "1.5% processing fee for ATM withdrawals.",
 
 		retrieving_card = "Retrieving Card",
 		atm_damaged = "This ATM is damaged",
 
 		press_to_use = "Press ~g~${InteractionKey} ~w~to use the ATM",
 		press_to_interact_bank = "Press ~g~${InteractionKey} ~w~to interact with the Bank",
+		fee_label = "with a fee of £${fee}",
+		no_fee_label = "with no fee",
 
 		deposit_log_bank_title = "Bank Deposit",
 		deposit_log_atm_title = "ATM Deposit",
 		deposit_log = "${consoleName} deposited $${amount}.",
 
+		deposit_coins_log_title = "Coin Deposit",
+		deposit_coins_log = "${consoleName} deposited ${coins} worth £${amount}.",
+
 		withdraw_log_bank_title = "Bank Withdraw",
 		withdraw_log_atm_title = "ATM Withdraw",
-		withdraw_log = "${consoleName} withdrew $${amount}.",
+		withdraw_log = "${consoleName} withdrew £${amount} ${fee}.",
 		withdraw_log_bonds_title = "Bank Withdrawal (Bonds)",
 		withdraw_log_bonds = "${consoleName} withdrew $${amount} in savings bonds (${bonds}).",
 
@@ -4736,7 +4857,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		transfer_log = "${consoleName} (#${characterId}) transferred $${amount} to ${targetConsoleName} (#${targetCharacterId}).",
 
 		deposit_log_bonds_title = "Bond Deposit",
-		deposit_bonds_log = "${consoleName} deposited ${bonds} worth $${amount}."
+		deposit_bonds_log = "${consoleName} deposited ${bonds} worth £${totalMoney} with a £${fee} fee (=£${amount})."
 	},
 
 	attachments = {
@@ -5598,13 +5719,15 @@ OP.Global.Locales.Languages["en-GB"] = {
 	},
 
 	containers = {
-		drill_container = "Press ~INPUT_CONTEXT~ to drill open the container.",
-		drilling_container = "Drilling Container",
-		failed_drill = "Failed to drill open the container.",
-		drill_success = "Successfully drilled open the container.",
+		drill_container = "Press ~INPUT_CONTEXT~ to drill open the container lock.",
+		drill_warehouse = "Press ~INPUT_CONTEXT~ to drill open the warehouse lock.",
+		drilling_lock = "Drilling Lock",
+		failed_drill = "Failed to drill open the lock.",
+		drill_success = "Successfully drilled open the lock.",
 
-		containers_due_soon = "${count} of your storage containers are due soon.",
-		container_blip = "Container"
+		containers_due_soon = "${count} of your storage containers/warehouses are due soon.",
+		container_blip = "Container",
+		warehouse_blip = "Warehouse"
 	},
 
 	crafting = {
@@ -6211,6 +6334,29 @@ OP.Global.Locales.Languages["en-GB"] = {
 		crafted_bacon = "Crafted bacon.",
 		failed_craft_bacon = "Failed to craft bacon.",
 
+		make_mochi = "Make Mochi",
+		press_to_make_mochi = "[${SeatEjectKey}] Make Mochi",
+
+		mochi_mango_recipe = "Mango Mochi",
+		making_mochi_mango = "Making Mango Mochi",
+		made_mochi_mango = "Made mango mochi.",
+		failed_make_mochi_mango = "Failed to make mango mochi.",
+
+		mochi_strawberry_recipe = "Strawberry Mochi",
+		making_mochi_strawberry = "Making Strawberry Mochi",
+		made_mochi_strawberry = "Made strawberry mochi.",
+		failed_make_mochi_strawberry = "Failed to make strawberry mochi.",
+
+		mochi_green_tea_recipe = "Green Tea Mochi",
+		making_mochi_green_tea = "Making Green Tea Mochi",
+		made_mochi_green_tea = "Made green tea mochi.",
+		failed_make_mochi_green_tea = "Failed to make green tea mochi.",
+
+		mochi_chocolate_recipe = "Chocolate Mochi",
+		making_mochi_chocolate = "Making Chocolate Mochi",
+		made_mochi_chocolate = "Made chocolate mochi.",
+		failed_make_mochi_chocolate = "Failed to make chocolate mochi.",
+
 		cook_food = "Cook Food",
 		press_to_cook_food = "[${SeatEjectKey}] Cook Food",
 
@@ -6233,6 +6379,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 		cooking_spicy_ramen = "Cooking Spicy Ramen",
 		cooked_spicy_ramen = "Cooked spicy ramen.",
 		failed_cook_spicy_ramen = "Failed to cook spicy ramen.",
+
+		green_tea_recipe = "Green Tea",
+		brewing_green_tea = "Brewing Green Tea",
+		brewed_green_tea = "Brewed green tea.",
+		failed_brew_green_tea = "Failed to brew green tea.",
 
 		cut_ingridients = "Prepare Ingredients",
 		press_to_cut_ingridients = "[${SeatEjectKey}] Prepare Ingredients",
@@ -6385,6 +6536,30 @@ OP.Global.Locales.Languages["en-GB"] = {
 		baking_chocolate_cake = "Baking Chocolate Cake",
 		baked_chocolate_cake = "Baked chocolate cake.",
 		failed_baking_chocolate_cake = "Failed to bake chocolate cake.",
+
+		make_coffee = "Make Coffee",
+		press_to_make_coffee = "[${SeatEjectKey}] Make Coffee",
+
+		bean_coffee_recipe = "Bean Coffee",
+		espresso_recipe = "Espresso",
+		cappuccino_regular_recipe = "Cappuccino (Cow Milk)",
+		cappuccino_almond_recipe = "Cappuccino (Almond Milk)",
+		cappuccino_pigeon_recipe = "Cappuccino (Pigeon Milk)",
+		iced_latte_regular_recipe = "Iced Latte (Cow Milk)",
+		iced_latte_almond_recipe = "Iced Latte (Almond Milk)",
+		iced_latte_pigeon_recipe = "Iced Latte (Pigeon Milk)",
+
+		brewing_coffee = "Brewing Coffee",
+		brewed_coffee = "Filtered coffee.",
+		failed_brewing_coffee = "Failed to brew coffee.",
+
+		hot_chocolate_regular_recipe = "Hot Chocolate (Cow’s Milk)",
+		hot_chocolate_pigeon_recipe = "Hot Chocolate (Almond Milk)",
+		hot_chocolate_almond_recipe = "Hot Chocolate (Pigeon Milk)",
+
+		making_hot_chocolate = "Preparing Hot Chocolate",
+		made_hot_chocolate = "Hot chocolate prepared.",
+		failed_make_hot_chocolate = "Failed to prepare hot chocolate.",
 
 		no_required_items = "You don't have all the required items.",
 
@@ -6672,22 +6847,29 @@ OP.Global.Locales.Languages["en-GB"] = {
 	},
 
 	container_storage = {
-		rent_container = "[${InteractionKey}] Hire #${id} (£${price} per week)",
+		rent_container = "[${InteractionKey}] Rent C-${id} (£${price} per week)",
+		rent_warehouse = "[${InteractionKey}] Rent W-${id} (£${price} per week)",
 		renting_container = "Hiring Container",
+		renting_warehouse = "Renting Warehouse",
 		failed_rent_container = "Failed to hire container.",
+		failed_rent_warehouse = "Failed to rent warehouse.",
 		rent_container_success = "Successfully hired container #${id}. You can manage your containers using `/containers`.",
-		access_container = "[${InteractionKey}] Access #${id}",
-		container_id = "#${id}",
+		rent_warehouse_success = "Successfully rented warehouse #${id}. You can manage your warehouses using `/warehouses`.",
+		access_container = "[${InteractionKey}] Access C-${id}",
+		access_warehouse = "[${InteractionKey}] Access W-${id}",
+		container_id = "C-${id}",
+		warehouse_id = "W-${id}",
 
-		storage_containers = "Storage Containers",
+		storage_containers = "Storage Containers/Warehouses",
 		container = "Container",
+		warehouse = "Warehouse",
 		loading = "Loading...",
 		failed_remove_access = "Failed to remove access.",
 		failed_add_access = "Failed to add access.",
 		access = "Access",
 		add_cid = "Add CID",
-		no_containers = "You don't own or have access to any storage containers.",
-		no_access = "Only you have access to this container.",
+		no_containers = "You don't own or have access to any storage containers/warehouses.",
+		no_access = "Only you have access to this container/warehouse.",
 		back = "Back",
 		close = "Close",
 		character_not_exist = "Character does not exist.",
@@ -6697,14 +6879,14 @@ OP.Global.Locales.Languages["en-GB"] = {
 		not_enough_money = "You do not have enough money.",
 		failed_pay_rent = "Failed to pay rent.",
 		mark_gps = "Mark GPS",
-		container_alert = "Your container #${containerId} is being tampered with.",
+		container_alert = "Your container/warehouse #${containerId} is being interfered with.",
 
 		rented_container_logs_title = "Rented Container",
-		rented_container_logs_details = "${consoleName} rented container #${containerId} for £${price}.",
+		rented_container_logs_details = "${consoleName} rented ${type} #${containerId} for £${price}.",
 		paid_rent_logs_title = "Paid Container Rent",
-		paid_rent_logs_details = "${consoleName} paid £${price} rent for container #${containerId}.",
+		paid_rent_logs_details = "${consoleName} paid £${price} rent for ${type} #${containerId} (paid until `${till} UTC`).",
 		lockpicked_container_logs_title = "Lockpicked Container",
-		lockpicked_container_logs_details = "${consoleName} lockpicked container #${containerId}."
+		lockpicked_container_logs_details = "${consoleName} lockpicked ${type} #${containerId}."
 	},
 
 	courthouse = {
@@ -6865,6 +7047,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		coords = "Coords: ${coords}",
 		rotation = "Rotation: ${rotation}",
 		normal = "Surface: ${normal}",
+		surface_heading = "Surface: ${heading}",
 		velocity = "Velocity: ${velocity}",
 		ground_material = "Ground Material: ${material}",
 		debug_print_f8 = "Debugging information has been printed in your F8 console.",
@@ -6878,6 +7061,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		copied_model_name = "Copied model name.",
 		copied_entity_id = "Copied entity id.",
 		copied_hit_coords = "Copied hit coordinates.",
+		copied_surface_heading = "Surface heading copied.",
 
 		distance = "Distance: ${distance}m",
 		distance_first = "Stored first position.",
@@ -6913,12 +7097,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		model_view_disabled = "Model view disabled.",
 		invalid_component = "Invalid component `${componentName}`.",
 
-		animation_currently_playing = "Currently playing an animation.",
 		invalid_or_missing_animation_dict = "Invalid or missing animation dictionary `${animationDict}`.",
-		missing_animation_name = "Invalid or missing animation name `${animationName}`.",
+		missing_animation_name = "Invalid or missing animation name.",
 		invalid_animation_flags = "Invalid animation flags.",
-		animation_played = "Playing `${animationDict}` `${animationName}` (flags: ${flags}).",
-		no_flags = "N/A",
 
 		invalid_coordinates = "Invalid coordinates.",
 		added_coordinates_draw = "Added coordinates `x: ${x}, y: ${y}, z: ${z}` to the draw list with ID `${drawId}`.",
@@ -7703,6 +7884,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		fps_unit = "fps",
 		ping_unit = "ms",
 		tps_unit = "tps",
+		fps_1percent_unit = "fps 1%",
 
 		smart_warnings = "Warning: ${warnings}!",
 		dehydrated = "dehydrated",
@@ -7990,7 +8172,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		prison_store = "Prison Store",
 		fruit_vendor = "Fruit Vendor",
 		fruit_market = "Alamo Fruit Market",
-		food_market = "Food Market",
+		super_market = "Supermarket",
 		island_store = "Island Store",
 		travel_agency = "Travel Agency",
 		island_bar = "Island Bar",
@@ -8024,7 +8206,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		ems_badge_store = "EMS Badge Desk",
 		doj_badge_store = "DOJ Badge Desk",
 		state_store = "State Shop",
-		pharmacy = "Pharmacy",
+		pharmacy_store = "Pharmacy",
 		chop_shop = "Chop Shop",
 		courthouse = "Courthouse",
 		burger_shot = "Burger Shot",
@@ -8035,13 +8217,13 @@ OP.Global.Locales.Languages["en-GB"] = {
 		bean_machine_fridge = "Bean Machine Fridge",
 		hunting_store = "Hunting Store",
 		fishing_store = "Fishing Store",
+		furniture_store = "Krapea",
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Arcade Bar",
 		japanese_restaurant = "Japanese Restaurant",
 		japanese_restaurant_kitchen = "Japanese Restaurant Kitchen",
 		pizza_restaurant = "Pizza Restaurant",
 		["945_studios"] = "945 Studios",
-		grain_mill = "Grain Mill",
 		pd_prefix = "PD",
 		ems_prefix = "EMS",
 		government_prefix = "Gov",
@@ -8105,6 +8287,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		underground_bar_counter = "Underground Bar Counter",
 		pizza_this_counter = "Pizza This Counter",
 		yellow_jack_counter = "Yellow Jack Counter",
+		bean_machine_counter = "Bean Machine Counter",
 
 		inventory_name_missing = "Missing inventory name parameter.",
 
@@ -8131,6 +8314,14 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		craft_combine = "Craft <i>${output}</i>",
 		combining = "Crafting",
+
+		inspect = "Inspect",
+		attachments = "Attachments",
+		fill_paper_bag = "Fill Paper Bag",
+		rename = "Rename",
+
+		item_renamed = "Successfully renamed item.",
+		item_failed_rename = "Failed to rename item.",
 
 		file_serial = "File Serial Number",
 		filing_off_serial_number = "Filing Off Serial Number",
@@ -8414,6 +8605,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		paper_bag = "Paper Bag",
 		paper_bag_description = "Perfect for storing groceries or perhaps someone's head, dead or alive.",
+		closed_paper_bag = "Closed Paper Bag",
+		closed_paper_bag_description = "A classic brown bag concealing the mysteries of its contents. Is it lunch? A secret stash? Only one way to find out—tear it open and see what's inside!",
 		burger_shot_delivery = "Burger Shot Meal",
 		burger_shot_delivery_description = "A wonderful collection of all the sloppy meaty wonders they serve.",
 		bean_machine_delivery = "Bean Machine Delivery",
@@ -8424,6 +8617,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		green_wonderland_delivery_description = "A bag full of your favourite green goodies. #420blazeit",
 		pizza_this_delivery = "Pizza This Box",
 		pizza_this_delivery_description = "Transport your hot and tasty pizza in style with the Pizza This delivery box, ensuring each slice arrives just as perfect as when it left the oven.",
+
+		lunch_box = "Lunch Box",
+		lunch_box_description = "A robust little box that holds your aspirations, dreams, and yesterday’s leftovers. Perfect for keeping your snacks secure, your sandwich un-squished, and your crisps slightly less crushed than usual. Warning: Does not guarantee enhanced lunchtime social status.",
 
 		empty_box = "Empty Box",
 		empty_box_description = "Start with this simple, sturdy box to create a personalised gift. Fill it with non-perishable treasures, and it's ready to be transformed into a thoughtful present. Ideal for packing everything that symbolises affection, except perishables and weapons.",
@@ -8485,6 +8681,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		keys = "Keys",
 		keys_description = "A pair of keys to some doors somewhere.",
+		car_keys = "Car Keys",
+		car_keys_description = "A magical set of keys that can unlock doors, start engines, and instantly make you feel like you own the road. No two keys look quite the same, but they all have one goal—giving you access to the sweet ride they came from. Just don’t drop them in the sewer or lend them to a 'friend'.",
 
 		raw_diamond = "Unprocessed Diamond",
 		raw_diamond_description = "A rare and uncut diamond, rough and untouched, holding untapped brilliance within its facets. Perfect for those who find beauty in raw potential, this gem awaits a master's touch to unleash its full splendour.",
@@ -9061,6 +9259,34 @@ OP.Global.Locales.Languages["en-GB"] = {
 		plush_wasabi = "Wasabi Whiz",
 		plush_wasabi_description = "This little one is a true gem, just like a fresh burst of Wasabi! Their bright green fur is bound to catch attention. Don't underestimate their small size - they're bursting with personality and always ready for excitement.",
 
+		cat_0 = "Tabby Cat",
+		cat_0_description = "This stripey little rascal is always up to something, whether it’s sneaking into your lap or plotting world domination one nap at a time. It struts with the confidence of a cat who knows they’re the main character.",
+		cat_1 = "Black Cat",
+		cat_1_description = "Sleek, shadowy, and possibly magical, this black-coated feline knows how to steal the limelight—or your snacks. It is equally cool and cuddly, with a penchant for dramatic entrances and prolonged, disapproving gazes.",
+		cat_2 = "Brown Cat",
+		cat_2_description = "Warm and earthy, this brown beauty is like a mug of hot chocolate in cat form—if hot chocolate occasionally swiped things off your desk. He is laid-back, affectionate, and surprisingly adept at ignoring your summons.",
+
+		dog_0 = "West Highland White Terrier",
+		dog_0_description = "This shaggy little furball is equal parts loyal companion and walking mop. Always ready for an adventure, even if that means just chasing their own tail for hours. Great at cuddles, questionable at staying clean.",
+		dog_1 = "Pug",
+		dog_1_description = "A proud pug with a face that only a mother—or anyone, really—could love. Short on legs but big on personality, this chunky buddy will wiggle their way into your heart and probably your snacks.",
+		dog_2 = "Poodle",
+		dog_2_description = "A perfectly groomed poodle who knows they’re the fanciest dog in the room. Regal, elegant, and occasionally a total drama queen, they bring glamour to any setting—whether it’s a red carpet or your living room.",
+
+		hen_0 = "Chicken",
+		hen_0_description = "A sassy hen strutting around like she owns the farmyard—and honestly, she probably does. Always pecking, clucking, and giving you that side-eye, this feathery diva is equal parts adorable and mildly intimidating.",
+		rat_0 = "Rat",
+		rat_0_description = "A sneaky little rodent with street smarts and a knack for finding snacks where you least expect. Whether it’s scavenging crumbs or plotting world domination, this rat is always up to something.",
+
+		rabbit_0 = "Dark Brown Rabbit",
+		rabbit_0_description = "A deep, dark brown rabbit with an energy level that matches its name. Always alert, ready to sprint, and probably judging you for being slower than it.",
+		rabbit_1 = "Light Brown Rabbit",
+		rabbit_1_description = "A light brown rabbit that looks like it hopped straight out of a bakery. Sweet, crumbly in spirit, and just the right amount of chaos for your day.",
+		rabbit_2 = "Tan Rabbit",
+		rabbit_2_description = "A tan rabbit with a buttery smooth coat and a talent for hopping into the most inconvenient places. It’s equally adorable and mildly infuriating.",
+		rabbit_3 = "Grey Rabbit",
+		rabbit_3_description = "A sleek grey rabbit that moves like a puff of smoke in the wind. Blink, and it’s gone—but not before stealing your heart (and maybe your lettuce).",
+
 		boxing_gloves = "Boxing Gloves",
 		boxing_gloves_description = "Turns you into Rocky, but you probably won't get a sequel...",
 		leash = "Lead",
@@ -9190,6 +9416,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		evidence_bag_empty_description = "Can you enhance that?",
 		evidence_bag = "Evidence Bag",
 		evidence_bag_description = "Sealed crime in a bag for later use.",
+		evidence_box = "Evidence Locker",
+		evidence_box_description = "The unsung hero of justice, safeguarding all the clues, fingerprints, and questionable items needed to crack a case. From candy wrappers to crime scene tools, it’s like a treasure trove for detectives—minus the gold, plus a lot of paperwork.",
 		fingerprint_evidence = "Fingerprint Evidence",
 		fingerprint_evidence_description = "Helping you catch them criminal scumbags.",
 		device_printout = "Device Printout",
@@ -9239,6 +9467,19 @@ OP.Global.Locales.Languages["en-GB"] = {
 		savings_bond_1000_description = "A £1,000 savings bond, a testament to your dedication to building wealth. Keep this bond safe until you're ready to cash it in at a bank, where it will provide you with a substantial financial boost.",
 		savings_bond_2000 = "£2,000 Savings Bond",
 		savings_bond_2000_description = "A £2,000 savings bond, a substantial investment in your financial future. Hold onto this bond until the time is right, and then redeem it at a bank to unlock its full value, helping you achieve your financial dreams.",
+
+		cent_1 = "Penny",
+		cent_1_description = "The humble penny is Britain’s most overachieving copper-coloured hero. Worth just one pence but often found bravely plugging up fountain wishes or hiding under sofa cushions. It’s basically the coin version of small but mighty.",
+		cent_5 = "Five pence",
+		cent_5_description = "The five pence coin is a chunkier, silver-toned upgrade from the penny with five times the buying power, which still isn’t much. A loyal companion for vending machines and arcade games, even if its worth is sometimes overlooked.",
+		cent_10 = "10p",
+		cent_10_description = "The 10p coin is a small but valuable currency, packed with 10 pence worth of value in its compact design. It may be small enough to easily get lost in your pocket, but its worth is double that of a 5p coin.",
+		cent_25 = "25p",
+		cent_25_description = "The 25p coin is known as the quarter and is a high-value denomination in vending machines and parking meters. With its significant weight and value, this silver coin often leads the charge in your change collection for coffee and arcade adventures.",
+		cent_50 = "50p",
+		cent_50_description = "The fifty cent piece is a seldom-seen sturdy player in American currency. It's like the cooler, more enigmatic elder sibling of the quarter. Double the value, twice the size, and consistently remarkably shiny.",
+		coin_bag = "Coin Bag",
+		coin_bag_description = "A reliable little bag intended to prevent your loose change from rattling around. Small, subtle, and ideal for those who wish to transport their money stylishly—presuming your \"money\" is in quarters and dimes.",
 
 		weather_spell_snow = "Weather Spell (Snow)",
 		weather_spell_snow_description = "Using this item will let you temporarily control the weather and make it snow! It is a one-time use, so use with care. If you use two weather spells at once, the second one will simply queue up.",
@@ -9430,6 +9671,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 		fishing_chair_description = "Designed for comfort during long waits, this fishing chair combines durability with convenience, featuring a built-in rod holder for those peaceful lakeside mornings. Can be placed anywhere in the world.",
 		sleeping_bag = "Camping Bedroll",
 		sleeping_bag_description = "Wrap yourself in the warmth of this sleeping bag, designed for cold nights under the stars. Its compact design makes it easy to carry, providing comfort wherever you rest your head.",
+		red_pillow = "Red Cushion",
+		red_pillow_description = "A versatile red cushion that transforms hard ground into a throne of comfort. Whether you're meditating, people-watching, or just trying to avoid sitting on mystery stains, this cushion has your back—or rather, your behind!",
+		spotlight = "Floodlight",
+		spotlight_description = "A floodlight that’s ready to make anything or anyone the star of the show. Perfect for professional photos, dramatic lighting, or just feeling like a movie star in your living room. It’s bright, reliable, and always steals the scene.",
+		tube_light = "Tube Light",
+		tube_light_description = "A stylish and minimalistic tube light that prioritises style over brightness, offering a gentle glow without dominating the room. Ideal for creating a cosy atmosphere, it's a subtle enhancement that appears much sleeker than its larger alternatives.",
 		yoga_mat = "Yoga Mat",
 		yoga_mat_description = "This portable yoga mat is your base for relaxation and exercise outdoors. Unroll it to find your inner peace or stretch after a challenging hike. Can be placed anywhere in the world.",
 		cooler_box = "Cooler Box",
@@ -9466,6 +9713,12 @@ OP.Global.Locales.Languages["en-GB"] = {
 		spike_strips_large_description = "This one's for catching the big fish or when you need to cover more tarmac. It's like rolling out the red carpet, except it's not for VIPs, and it deflates tyres. Can be placed anywhere in the world.",
 		stop_sticks = "Stop Sticks",
 		stop_sticks_description = "Think of these as the immovable object meeting the unstoppable force. Stop sticks don’t puncture tyres, they halt vehicles dead in their tracks. Ideal for setting up impromptu \"check your speed\" spots. Can be placed anywhere in the world.",
+		speed_bump = "Speed Bump",
+		speed_bump_description = "The essential device for encouraging reduced speeds and evaluating a car's suspension. Activate this movable obstacle and observe fast drivers reconsider their decisions—great for transforming pursuits into slow-moving processions.",
+		speed_sign = "Speed Limit Sign",
+		speed_sign_description = "A friendly reminder that you need to take it easy on the accelerator. Stick to the limit, or risk facing speed bumps and speed cameras.",
+		bumps_sign = "Bumps Sign",
+		bumps_sign_description = "A courteous warning that your vehicle's suspension is in for a challenge. Drive carefully, or get ready for a rough journey!",
 		floodlight = "Floodlight",
 		floodlight_description = "Turn night into day when you're on the prowl. Ideal for locating misplaced keys or shedding light on sneaky suspects attempting to play hide and seek. Can be positioned anywhere in the world.",
 		left_diversion_sign = "Left Diversion Sign",
@@ -9514,6 +9767,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		claymore = "Claymore",
 		claymore_description = "This deadly Claymore mine is a potent defensive device crafted to safeguard and fortify areas with accuracy. Once activated, it will detonate forcefully when a trespasser passes by, guaranteeing strong perimeter security. Exercise care in positioning and handling to prevent unintended outcomes.",
+		mine = "Mine",
+		mine_description = "Useful for when you want an extra layer of security in case authorities pay a visit. Simply place, arm, and witness any unwanted guests vanish in a cloud of red mist.",
 
 		tv_stand = "TV Stand",
 		tv_stand_description = "Enhance your binge-watching setup with this stylish TV Stand. It keeps your TV at the perfect eye level and has space for all your miscellaneous gadgets. It’s like the throne for your screen.",
@@ -9566,6 +9821,16 @@ OP.Global.Locales.Languages["en-GB"] = {
 		pink_dildo = "Pink Dildo",
 		pink_dildo_description = "Handmade, carved and tested by Bugsy Middleman.",
 
+		cappuccino_regular = "Cappuccino (Cow Milk)",
+		cappuccino_almond = "Cappuccino (Almond Milk)",
+		cappuccino_pigeon = "Cappuccino (Pigeon Milk)",
+		iced_latte_regular = "Iced Latte (Cow Milk)",
+		iced_latte_almond = "Iced Latte (Almond Milk)",
+		iced_latte_pigeon = "Iced Latte (Pigeon Milk)",
+		hot_chocolate_regular = "Hot Chocolate (Cow Milk)",
+		hot_chocolate_almond = "Hot Chocolate (Almond Milk)",
+		hot_chocolate_pigeon = "Hot Chocolate (Pigeon Milk)",
+
 		bean_coffee = "Bean Coffee",
 		bean_coffee_description = "Bean water.... all it really is.",
 		cappuccino = "Cappuccino",
@@ -9582,6 +9847,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		pink_lemonade_description = "Totally not just regular lemonade dyed pink so we can charge you twice as much...",
 		iced_latte = "Iced Latte",
 		iced_latte_description = "A refreshing iced coffee, perfect for a hot day.",
+		coffee_beans = "Coffee Beans",
+		coffee_beans_description = "A packet of richly aromatic coffee beans ready to be brewed into the fuel that propels your mornings and late-night brainstorming sessions. Whether you prefer it strong, velvety, or somewhere in between, these beans are your passport to a flawless cup of caffeinated happiness.",
 
 		berry_cake = "Berry Cake",
 		berry_cake_description = "A delightful Berry Cake, bursting with fresh berries and layers of sweet berry jam. This cake is the perfect treat for berry lovers, offering a harmonious blend of tangy and sweet flavours in every bite.",
@@ -9755,9 +10022,21 @@ OP.Global.Locales.Languages["en-GB"] = {
 		spicy_ramen_description = "For those who like to live on the edge, Spicy Ramen brings the heat! Dive into a fiery broth with noodles and spicy toppings that'll make your taste buds dance. Can you handle it?",
 		bento_box = "Bento Box",
 		bento_box_description = "A delightful mix of flavours and textures, this Bento Box is your go-to for a balanced meal. Packed with a variety of goodies, it's like a picnic in a box. Perfect for lunch or a light dinner!",
+		mochi_mango = "Mango Mochi",
+		mochi_mango_description = "A tropical mango mochi bursting with the sweet, juicy flavour of ripe mangoes. Wrapped in a soft, sticky shell, it’s a mini holiday for your taste buds.",
+		mochi_strawberry = "Strawberry Mochi",
+		mochi_strawberry_description = "A delightful strawberry mochi that combines a fruity, berry-sweet filling with a soft, stretchy exterior. Like biting into a little cloud of sunshine and sweetness.",
+		mochi_green_tea = "Green Tea Mochi",
+		mochi_green_tea_description = "A refreshing green tea mochi that blends earthy matcha flavour with a smooth, chewy texture. Ideal for a zen-like dessert experience with just the right balance of sweetness and bitterness.",
+		mochi_chocolate = "Chocolate Mochi",
+		mochi_chocolate_description = "A decadent chocolate mochi that envelops a chewy, soft exterior around a rich, cocoa-filled centre. Perfect for satisfying sweet cravings with a touch of gooey indulgence.",
+		green_tea_bag = "Green Tea",
+		green_tea_bag_description = "A pouch of premium loose green tea leaves, ready to immerse you in a world of earthy, refreshing flavour. Perfect for tea enthusiasts who appreciate the art of brewing over the convenience of a pre-made bag. Take a sip of this, and you'll savor the tranquility.",
 
 		asahi_beer = "Asahi Beer",
 		asahi_beer_description = "Enjoy the crisp, clean taste of Asahi Beer, a premium Japanese lager known for its smooth and refreshing flavour. This golden brew is expertly crafted to elevate any occasion, making it a perfect choice for both casual sips and fine dining.",
+		green_tea = "Green Tea",
+		green_tea_description = "A warm, soothing cup of freshly brewed green tea that envelops you in its earthy aroma and delicate flavour. Perfect for moments of tranquillity or a gentle energy boost, it’s like a comforting embrace in a cup for your spirit.",
 
 		golf_ball = "Golf Ball",
 		golf_ball_description = "Used for golfing.",
@@ -9947,6 +10226,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		weapon_poolcue = "Pool Cue",
 		weapon_stone_hatchet = "Stone Hatchet",
 		weapon_candycane = "Candy Cane",
+		weapon_stunrod = "The Shocker",
 
 		weapon_pistol = "Pistol",
 		weapon_pistol_mk2 = "Pistol Mk II",
@@ -10076,6 +10356,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		weapon_poolcue_description = "Ah, there's no sound as satisfying as the crack of a perfect break, especially when it's the other guy's spine.",
 		weapon_stone_hatchet_description = "2.5 million years of R&D and we're still here.",
 		weapon_candycane_description = "A festive candy cane. It's a bit sticky.",
+		weapon_stunrod_description = "When blunt force trauma simply doesn't cut it, consider broadening your approach to assault with a jolt of 30,000 volts.",
 
 		weapon_pistol_description = "Standard handgun. A .45 caliber combat pistol with a magazine capacity of 12 rounds that can be extended to 16.",
 		weapon_pistol_mk2_description = "Balance, simplicity, precision: nothing keeps the peace like an extended barrel in the other guy's mouth.",
@@ -10311,7 +10592,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		weapon_addon_multitool_description = "Just like the normal multitool but without the fancy stuff.",
 
 		weapon_addon_ar15 = "AR-15",
-		weapon_addon_ar15_description = "Meet the AR-15, the dependable underdog of rifles. It's like the carbinerifle's quirky cousin—same guts, different flavour. Perfect for when you want to mix things up without getting too fancy. Reliable, accurate, and just the right amount of \"pew pew\" for any low-key situation."
+		weapon_addon_ar15_description = "Meet the AR-15, the dependable underdog of rifles. It's like the carbinerifle's quirky cousin—same guts, different flavour. Perfect for when you want to mix things up without getting too fancy. Reliable, accurate, and just the right amount of \"pew pew\" for any low-key situation.",
+
+		weapon_addon_tennisball = "Tennis Ball",
+		weapon_addon_tennisball_description = "Ideal for a swift game, distracting canines, or a lively throw across the room. Just aim, throw, and enjoy its unpredictable bounce—extra points if it doesn't return!"
 	},
 
 	invisibility = {
@@ -10403,7 +10687,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		failed_kissaki_delivery = "Failed to open the Kissaki meal.",
 		failed_green_wonderland_delivery = "Failed to open the Green Wonderland bag.",
 		failed_pizza_this_delivery = "Failed to open pizza box.",
+		failed_closed_paper_bag = "Failed to open paper bag.",
 
+		closed_paper_bag_empty = "This paper bag is empty.",
 		burger_shot_delivery_empty = "That burgershot meal seemed to be empty.",
 		bean_machine_delivery_empty = "That bean machine delivery seemed to be empty.",
 		kissaki_delivery_empty = "That Kissaki meal seemed to be empty.",
@@ -10539,7 +10825,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		modify_jail_logs_title = "Modified Jail Time",
 		modify_jail_logs_details = "${consoleName} modified the jail time for ${targetCharacter} #${targetCharacterId} (${operation} ${amount} months) to ${after}.",
 		triggered_lockdown_logs_title = "Triggered Lockdown",
-		triggered_lockdown_logs_details = "${consoleName} triggered a prison lockdown."
+		triggered_lockdown_logs_details = "${consoleName} triggered a prison lockdown.",
+		mission_reward_logs_title = "Jail Mission Reward",
+		mission_reward_cash_logs_details = "${consoleName} received £${amount} cash for completing a jail mission.",
+		mission_reward_item_logs_details = "${consoleName} received a 1x ${itemName} for completing a jail mission."
 	},
 
 	kiosks = {
@@ -10968,7 +11257,21 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		no_nearby_vehicle = "No nearby vehicle.",
 		already_checking_upgrades = "You are already checking a vehicles tunes.",
-		engine_is_running = "The vehicles engine is running."
+		engine_is_running = "The vehicles engine is running.",
+
+		press_open_shop = "Hold ~INPUT_FRONTEND_RDOWN~ to open the mechanic shop.",
+		press_close_shop = "Hold ~INPUT_FRONTEND_RDOWN~ to close the mechanic shop.",
+		opening_shop = "${time}s until opening mechanic shop.",
+		closing_shop = "${time}s until closing mechanic shop.",
+		shop_closed = "Mechanic shop successfully closed.",
+		shop_opened = "Mechanic shop successfully opened.",
+		failed_shop_closed = "Failed to close mechanic shop.",
+		failed_shop_opened = "Failed to open mechanic shop.",
+
+		opened_shop_logs_title = "Mechanic Shop Opened",
+		opened_shop_logs_details = "${consoleName} opened the `${label}` mechanic shop.",
+		closed_shop_logs_title = "Mechanic Shop Closed",
+		closed_shop_logs_details = "${consoleName} closed the `${label}` mechanic shop."
 	},
 
 	meow = {
@@ -11011,6 +11314,10 @@ OP.Global.Locales.Languages["en-GB"] = {
 		success_wipe_blocks = "Successfully cleared ${count} block(s) in a ${radius}m radius.",
 		failed_wipe_blocks = "Failed to wipe blocks.",
 		press_to_use_jukebox = "Press ~INPUT_CONTEXT~ to use the jukebox."
+	},
+
+	minigames = {
+		skipping_minigame = "Skipping Minigame"
 	},
 
 	mining = {
@@ -11118,6 +11425,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		bad_ooc_message = "Attempted to post a possibly bad message in the OOC chat: \"${oocMessage}\"",
 		bad_ped_message = "Attempted to create a possibly bad ped message: \"${pedMessage}\"",
 		bad_twitter_post = "Attempted to create a possibly bad twitter post: \"${twitterPost}\"",
+		bad_twitter_account = "Attempted to create a potentially bad twitter account: \"${username}\"",
 		bad_phone_message = "Attempted to create a possibly bad twitter post: \"${message}\"",
 		user_not_found = "We were unable to find a user with server ID `${serverId}`.",
 		player_already_muted = "${consoleName} has already been muted.",
@@ -11125,6 +11433,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		player_has_been_muted = "${consoleName} has now been muted with reason: `${reason}`.",
 		player_not_muted = "${consoleName} is not muted.",
 		player_has_been_unmuted = "${consoleName} has now been unmuted.",
+		just_been_muted = "You have just been muted from /ooc and /report for reason `${reason}`.",
+		just_been_muted_no_reason = "You have just been muted from /ooc and /report without a specified reason.",
 		ooc_clear_chat_title = "Chat Cleared",
 		ooc_clear_chat_details = "${consoleName} cleared the chat for everyone.",
 		muted_player = "Muted Player",
@@ -12127,7 +12437,34 @@ OP.Global.Locales.Languages["en-GB"] = {
 		disabled_generators = "Disabled ${disabledGeneratorsCount} generator(s).",
 
 		drill_drilling = "Drilling (${remainingSeconds}s)",
-		drill_jammed = "[${InteractionKey}] Drill Jammed (${remainingSeconds}s)"
+		drill_jammed = "[${InteractionKey}] Drill Jammed (${remainingSeconds}s)",
+		search_safe = "[${InteractionKey}] Search Safe",
+		searching_safe = "Searching Safe",
+
+		close_up_bank = "Close Up Bank",
+		press_to_close_up_bank = "[${InteractionKey}] Close Up Bank",
+		closing_up_bank = "Closing Up Bank",
+
+		not_enough_police = "There are not enough active police officers to initiate the robbery.",
+
+		dispatch = "[Dispatch]",
+		alarm_triggered = "10-90: An alarm has been triggered at Pacific Bank.",
+		pacific_bank_alarm = "Pacific Bank Alarm",
+
+		press_to_search = "[${InteractionKey}] Search",
+		search = "Search",
+		searching = "Searching",
+		found_nothing = "Found nothing.",
+
+		power_generator_disabled_title = "Power Generator Disabled",
+		power_generator_disabled_details = "${consoleName} disabled the power generator named '${powerGeneratorName}'.",
+
+		pacific_bank_robbery_started_title = "Pacific Bank Robbery Started",
+		pacific_bank_robbery_started_details = "${consoleName} started the Pacific Bank robbery.",
+
+		pacific_bank_reward_logs_title = "Pacific Bank Reward",
+		pacific_bank_reward_saving_bonds_logs_details = "${consoleName} searched a safe and received savings bonds worth £${amount}.",
+		pacific_bank_reward_items_logs_details = "${consoleName} searched a safe and received ${amount}x items."
 	},
 
 	panel = {
@@ -12187,14 +12524,20 @@ OP.Global.Locales.Languages["en-GB"] = {
 	},
 
 	paper_bags = {
-		fill_bag = "[${SeatEjectKey}] Fill Paper Bag",
-		no_bags = "You don't have any paper bags.",
-		no_bag_items = "You don't have any items that you could put in a paper bag.",
-		close_bag = "Close Bag",
-		cancel_bag = "Cancel",
-		title = "Paper Bag",
+		paper_bag_brand = "This paper bag has a <b>${brand}</b> logo on it.",
+		paper_bag_no_brand = "This is a plain paper bag.",
+
+		burger_shot_delivery = "Burger Shot",
+		bean_machine_delivery = "Bean Machine",
+		kissaki_delivery = "Kissaki",
+		green_wonderland_delivery = "Green Wonderland",
+		pizza_this_delivery = "Pizza This",
+
 		failed_fill = "Failed to fill paper bag.",
-		filled_bag = "Successfully filled paper bag."
+		filled_bag = "Successfully filled paper bag.",
+
+		filled_bag_log_title = "Filled Paper Bag",
+		filled_bag_log_details = "${consoleName} filled a paper bag with ${contents}."
 	},
 
 	parking_meters = {
@@ -12203,7 +12546,13 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		no_cash = "You don't have $4 in cash.",
 		max_time = "This parking meter is already maxed out.",
-		failed_pay = "Failed to pay parking meter."
+		failed_pay = "Failed to pay parking meter.",
+
+		failed_lockpick = "Failed to lockpick parking meter.",
+		already_lockpicked = "This parking meter was already lockpicked.",
+
+		lockpicked_meter_logs_title = "Lockpicked Parkingmeter",
+		lockpicked_meter_logs_details = "${consoleName} lockpicked a parking meter and received ${items} and £${money} in cash."
 	},
 
 	pause_menu = {
@@ -12296,6 +12645,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		ped_failed_task = "Failed to assign `${task}` task to spawned peds.",
 		invalid_target = "Invalid target server ID.",
 		invalid_task = "Invalid or missing ped task.",
+		no_nearby_ped = "There are no nearby NPCs.",
+		ped_attack_success = "Successfully made NPC `${networkId}` attack ${target}.",
+		ped_failed_attack = "Failed to make NPC `${networkId}` attack ${target}.",
 		ped_emote_success = "Successfully made spawned peds play `${emote}` emote.",
 		ped_failed_emote = "Failed to make spawned peds play `${emote}` emote.",
 		invalid_emote = "Invalid emote `${emote}`.",
@@ -12509,7 +12861,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		invalid_prop_id = "Invalid prop id.",
 		prop_deleted = "Prop with id ${propId} was deleted.",
 
-		invalid_wipe_radius = "Invalid wipe radius (between 1 and 100).",
+		invalid_wipe_radius = "Invalid wipe radius (between 1 and 500).",
 		wipe_successful = "Successfully wiped ${amount} prop(s).",
 		wipe_failed = "Failed to wipe props.",
 
@@ -12764,6 +13116,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		logs = "Transaction Logs",
 		no_logs = "No transaction logs.",
 		summary = "Summary",
+		summary_description = "Summary of all transactions in the last 90 days for this account.",
 		name = "Name",
 		transactions = "Transactions",
 		withdrawn = "Withdrawn",
@@ -12827,7 +13180,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		scrapyard = "Breakers Yard",
 		cant_scrap_vehicle = "Sorry, mate, but that car's got more red flags than a rodeo. Can't take it off your hands!",
 		failed_scrap_vehicle = "Looks like our breakers yard's got the hiccups. Try scrapping your ride again later, mate!",
-		scrap_confirm = "Are you sure you want to scrap this vehicle? This will PERMANENTLY remove the ${name} from your garage and you will receive 12-16% of its original price in cash and gold bars.",
+		scrap_confirm = "Are you sure you want to scrap this vehicle? This will PERMANENTLY remove the ${name} from your garage and you will receive 16-20% of its original price in cash and gold bars.",
 		scrap_success = "Well, we turned that old car into treasure. I suppose it was time to bid farewell anyway, partner!",
 		scrapped_vehicle_logs_title = "Scrapped Vehicle",
 		scrapped_vehicle_logs_details = "${consoleName} scrapped their vehicle (${modelName} #${vehicleId}) and received ${gold}x Gold Bar(s) and £${cash} in cash (${percentage}% of the original price)."
@@ -13386,6 +13739,15 @@ OP.Global.Locales.Languages["en-GB"] = {
 		teleport_player_player_logs_details = "${consoleName} teleported ${sourceConsoleName} to ${targetConsoleName}."
 	},
 
+	taxes = {
+		taxes_collected = "Collected taxes. The amounts are as follows.\n- Cash: £${cash}\n- Bank: £${bank}\n- Stocks: £${stocks}\n- Savings: £${savings}\n- Shared Accounts: £${sharedAccounts}",
+		taxes = "Taxes",
+		transaction_logs = "Transaction Logs",
+		paid_taxes = "You paid £${amount} in taxes.",
+		no_logs = "No transaction logs.",
+		close = "Close"
+	},
+
 	teleporters = {
 		area_not_clear = "The destination is blocked by a vehicle.",
 
@@ -13634,6 +13996,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		department_police_undercover = "Undercover PD",
 
+		department_doc_training = "DOC Training",
 		department_police_training = "PD Training",
 		department_medical_training = "Emergency Medical Services Training",
 		department_bcfd_training = "Blaine County Fire Department Training"
@@ -14284,6 +14647,8 @@ OP.Global.Locales.Languages["en-GB"] = {
 		no_nearby_vehicle = "No nearby vehicle.",
 		no_nearby_vehicle_door = "Not near a vehicle door.",
 		removing_door = "Removing Door",
+		cleaning_up_body = "Cleaning Up Body",
+		destroying_spikes = "Destroying Spikes",
 		failed_remove_door = "Failed to remove vehicle door.",
 		invalid_clothing_type = "Invalid clothing type.",
 		no_nearby_player = "No restrained or incapacitated player nearby.",
@@ -14379,7 +14744,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		none = "None",
 		active = "Active",
 		not_active = "Not active",
-		active_robberies = "\nActive Store: ${store}.\nActive Bank: ${bank}\nActive Jewelry: ${jewelry}",
+		active_robberies = "\nActive Store: ${store}.\nActive Bank: ${bank}\nActive Jewelry: ${jewelry}\nPacific Bank: ${pacificBank}",
 
 		failed_dispatch = "Failed to send dispatch message.",
 		dispatch_title = "[Dispatch]",
@@ -14472,6 +14837,7 @@ OP.Global.Locales.Languages["en-GB"] = {
 		on_floor = "On the ${floor}.",
 		ground_floor = "Ground Floor",
 		second_floor = "First Floor",
+		third_floor = "Third Floor",
 		icu_floor = "ICU Floor",
 		surgery_floor = "Surgery Floor",
 
@@ -14513,7 +14879,55 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 		task_disinfect_table = "Disinfect the operating table.",
 		task_disinfect_table_near = "Press ~INPUT_DETONATE~ to disinfect the operating table.",
-		task_disinfect_table_active = "Disinfecting Table"
+		task_disinfect_table_active = "Disinfecting Table",
+
+		task_wipe_table = "Wipe the table.",
+		task_wipe_table_near = "Press ~INPUT_DETONATE~ to wipe the table.",
+		task_wipe_table_active = "Wiping Table",
+
+		task_wash_dishes = "Wash the dishes.",
+		task_wash_dishes_near = "Press ~INPUT_DETONATE~ to wash the dishes.",
+		task_wash_dishes_active = "Washing Dishes",
+
+		task_restock_drink_dispenser = "Restock the drinks dispenser.",
+		task_restock_drink_dispenser_near = "Press ~INPUT_DETONATE~ to restock the drinks dispenser.",
+		task_restock_drink_dispenser_active = "Restocking Drinks Dispenser",
+
+		task_restock_ingredients = "Restock the ingredients.",
+		task_restock_ingredients_near = "Press ~INPUT_DETONATE~ to restock the ingredients.",
+		task_restock_ingredients_active = "Restocking Ingredients",
+
+		task_organize_shelf = "Organise the shelf.",
+		task_organize_shelf_near = "Press ~INPUT_DETONATE~ to organise the shelf.",
+		task_organize_shelf_active = "Organising Shelf",
+
+		task_clean_countertop = "Clean the countertop.",
+		task_clean_countertop_near = "Press ~INPUT_DETONATE~ to clean the countertop.",
+		task_clean_countertop_active = "Cleaning Countertop",
+
+		task_file_taxes = "Submit tax return.",
+		task_file_taxes_near = "Press ~INPUT_DETONATE~ to submit tax return.",
+		task_file_taxes_active = "Submitting Tax Return",
+
+		task_refill_napkins = "Restock napkins.",
+		task_refill_napkins_near = "Press ~INPUT_DETONATE~ to restock napkins.",
+		task_refill_napkins_active = "Restocking Napkins",
+
+		task_refill_water = "Refill water cooler.",
+		task_refill_water_near = "Press ~INPUT_DETONATE~ to refill the water cooler.",
+		task_refill_water_active = "Refilling Water Cooler",
+
+		task_clean_windows = "Clean the windows.",
+		task_clean_windows_near = "Press ~INPUT_DETONATE~ to clean the windows.",
+		task_clean_windows_active = "Cleaning Windows",
+
+		task_clean_oven = "Clean the oven.",
+		task_clean_oven_near = "Press ~INPUT_DETONATE~ to clean the oven.",
+		task_clean_oven_active = "Cleaning Oven",
+
+		task_take_nap = "Take a nap.",
+		task_take_nap_near = "Press ~INPUT_DETONATE~ to take a nap.",
+		task_take_nap_active = "Taking Nap"
 	},
 
 	tow = {
@@ -14679,6 +15093,9 @@ OP.Global.Locales.Languages["en-GB"] = {
 		fuel_level_set_to = "The fuel level has been set to `${fuelLevel}`.",
 		not_in_a_vehicle = "You are not in a vehicle.",
 		vehicle_engine_on = "The engine is still running.",
+
+		fuel_debug_enabled = "Enabled the fuel debug.",
+		fuel_debug_disabled = "Disabled the fuel debug.",
 
 		vehicle_exploded_logs_title = "Vehicle Exploded",
 		vehicle_exploded_logs_details = "${consoleName} refueled a vehicle and triggered an explosion due to a running engine."
@@ -14846,12 +15263,22 @@ OP.Global.Locales.Languages["en-GB"] = {
 		gave_keys_success = "Successfully gave ${displayName} the keys to their vehicle.",
 		gave_keys_failure = "Failed to give ${displayName} the keys to their vehicle.",
 
+		car_keys_label = "Keys for ${plate}",
+		something_went_wrong = "Something went wrong.",
+		keys_no_longer_work = "These keys no longer work.",
+		success_use_keys = "You now have the keys to `${plate}`.",
+
 		no_nearby_vehicle = "No nearby vehicle.",
 		there_is_someone_in_the_driver_seat = "There is someone in the driver's seat.",
 		the_driver_door_is_closed = "The driver's door is closed.",
 		checking_ignition = "Checking Ignition",
 		ignition_tampered_with = "Ignition has been tampered with.",
-		ignition_not_tampered_with = "Ignition has not been tampered with."
+		ignition_not_tampered_with = "Ignition has not been tampered with.",
+
+		used_car_keys_logs_title = "Used Car Keys",
+		used_car_keys_logs_details = "${consoleName} used car keys for a vehicle with plate `${plate}` (N-${networkId}).",
+		grabbed_car_keys_logs_title = "Grabbed Car Keys",
+		grabbed_car_keys_logs_details = "${consoleName} grabbed car keys for a vehicle with plate `${plate}` (N-${networkId})."
 	},
 
 	modifications = {
@@ -14905,7 +15332,11 @@ OP.Global.Locales.Languages["en-GB"] = {
 
 	sirens = {
 		sirens_muted_on = "All sirens are now muted.",
-		sirens_muted_off = "All sirens are now unmuted."
+		sirens_muted_off = "All sirens are now unmuted.",
+
+		lights_on = "Lights: ${count}",
+		sirens_on = "Sirens: ${count}",
+		horns_on = "Horns: ${count}"
 	},
 
 	spawner = {

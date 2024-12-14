@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 34 (do not change)
+-- AUTO LOCALES: 35 (do not change)
 
 OP.Global.Locales.Languages["fi-FI"] = {
 	-- configuration settings for language
@@ -83,7 +83,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 	ledges = {
 		no_ledge = "Et ole lähellä reunaa.",
-		invalid_variation = "Virheellinen variaatio.",
+		invalid_variation = "Virheellinen vaihtoehto (1 - 13).",
 		press_x_to_stop = "Paina ~INPUT_VEH_DUCK~, lopettaaksesi istumisen."
 	},
 
@@ -872,7 +872,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		sit_ledge_command = "istu_reunalla",
 		sit_ledge_command_help = "Istu reunalla, jos olet sen edessä. Sinun tulee olla reunaa kohti.",
 		sit_ledge_command_parameter_variation = "variaatio",
-		sit_ledge_command_parameter_variation_help = "Millainen istumisaniimi halutaan toistaa (1 - 4).",
+		sit_ledge_command_parameter_variation_help = "Mikä istuma-animaatio toistetaan (1 - 13).",
 		sit_ledge_command_substitutes = "reuna",
 
 		-- animations/walkstyles
@@ -899,7 +899,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		staff_pm_command_parameter_server_id_help = "Pelaajan palvelimen tunniste, jolle yrität lähettää viestin.",
 		staff_pm_command_parameter_message = "viesti",
 		staff_pm_command_parameter_message_help = "Viesti, jonka haluat lähettää.",
-		staff_pm_command_substitutes = "henkilöstöviesti",
+		staff_pm_command_substitutes = "staffpm, viesti, pm, msg",
 
 		important_staff_pm_command = "tärkeä_henkilöstöviesti",
 		important_staff_pm_command_help = "Lähetä tärkeä viesti pelaajalle henkilöstön jäsenenä.",
@@ -907,7 +907,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		important_staff_pm_command_parameter_server_id_help = "Pelaajan palvelimen tunniste, jolle yrität lähettää viestiä.",
 		important_staff_pm_command_parameter_message = "viesti",
 		important_staff_pm_command_parameter_message_help = "Tärkeä viesti, jonka haluat lähettää.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
 
 		reply_pm_command = "vastaa_pm",
 		reply_pm_command_help = "Vastaa viimeiseen saamaasi henkilökunnan viestiin.",
@@ -1304,7 +1304,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		register_weapon_command_substitutes = "",
 
 		advanced_metagame_command = "edistynyt_metapeli",
-		advanced_metagame_command_help = "Superadmin-komento auttaa sinua viemään metapelaamisesi seuraavalle tasolle.",
+		advanced_metagame_command_help = "Komento auttaa sinua viemään metapelisi seuraavalle tasolle.",
+		advanced_metagame_command_parameter_use_characters = "käytä hahmoja",
+		advanced_metagame_command_parameter_use_characters_help = "Käytä hahmon nimiä pelaajien sijaan.",
 		advanced_metagame_command_substitutes = "am",
 
 		list_weapon_attachments_command = "listaa_aseen_liitteet",
@@ -1479,6 +1481,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		leaderboard_command_parameter_total_playtime_help = "Oletuksena käytetään hahmoilla todellista peliaikaa. Aseta tämä `y`:ksi käyttääksesi sen sijaan kokonaisaikaa palvelimella.",
 		leaderboard_command_substitutes = "",
 
+		economy_leaderboard_command = "economy_leaderboard",
+		economy_leaderboard_command_help = "Tarkista talousjohtajien tuloslista.",
+		economy_leaderboard_command_substitutes = "eleaderboard",
+
 		package_command = "paketti",
 		package_command_help = "Tarkista ja päivitä pakettisi.",
 		package_command_substitutes = "paivita_paketti",
@@ -1589,12 +1595,16 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		-- game/battle_royale
 		battle_royale_toggle_command = "taistelu_royale_vaihto",
 		battle_royale_toggle_command_help = "Vaihda Taistelu Royale -ominaisuus päälle/pois.",
+		battle_royale_toggle_command_parameter_max_teammates = "max joukkuetoverit",
+		battle_royale_toggle_command_parameter_max_teammates_help = "Sallittujen joukkuetoverien enimmäismäärä tiimiä kohden. Oletusarvo on 4. Minimimäärä on 1 ja maksimimäärä on 10.",
 		battle_royale_toggle_command_substitutes = "tr_vaihto",
 
 		battle_royale_start_command = "taistelu_royale_alku",
 		battle_royale_start_command_help = "Aloita Taistelu Royale -ottelu.",
 		battle_royale_start_command_parameter_no_vehicles = "ei ajoneuvoja",
 		battle_royale_start_command_parameter_no_vehicles_help = "Luo ottelu ilman ajoneuvoja.",
+		battle_royale_start_command_parameter_new_inventories = "uudet inventaariot",
+		battle_royale_start_command_parameter_new_inventories_help = "Luo ottelu, jossa kaikilla on tyhjä, väliaikainen inventaario.",
 		battle_royale_start_command_substitutes = "aloita_br",
 
 		battle_royale_invite_command = "kutsu_br",
@@ -1810,7 +1820,12 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		-- game/container_storage
 		containers_command = "kontit",
 		containers_command_help = "Näytä ja hallitse vuokraamiasi varastokontteja.",
-		containers_command_substitutes = "",
+		containers_command_substitutes = "varastot",
+
+		-- game/containers
+		containers_debug_command = "varastot_debug",
+		containers_debug_command_help = "Piirrä kaikki lähistöllä olevat varastot.",
+		containers_debug_command_substitutes = "",
 
 		-- game/crafting
 		crafting_debug_command = "valmistus_vianmääritys",
@@ -2121,6 +2136,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		random_position_command = "satunnainen_sijainti",
 		random_position_command_help = "Teleporttaa sinut satunnaiseen sijaintiin pääsaarella. (Myös päällystää sinut näkymättömäksi)",
+		random_position_command_parameter_server_id = "palvelimen tunnus",
+		random_position_command_parameter_server_id_help = "Pelaajan palvelimen tunnus, johon haluat teleportata.",
 		random_position_command_substitutes = "satunnainen",
 
 		crash_ui_command = "kaada_ui",
@@ -2153,7 +2170,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		-- game/development
 		toggle_developer_ambience_command = "toggle_developer_ambience",
 		toggle_developer_ambience_command_help = "Vaihda kehittäjä taustamelu päälle/pois.",
-		toggle_developer_ambience_command_substitutes = "",
+		toggle_developer_ambience_command_substitutes = "kehittäjä_ambienssi, ambienssi",
 
 		-- game/dna_evidence
 		take_dna_sample_command = "take_dna_sample",
@@ -2714,6 +2731,11 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		minecraft_wipe_command_parameter_radius_help = "Säde, jossa haluat pyyhkiä lohkot. (0 = kaikki lohkot, enintään 5000)",
 		minecraft_wipe_command_substitutes = "",
 
+		-- game/minigames
+		skip_minigames_command = "ohita_minipelit",
+		skip_minigames_command_help = "Vaihda minipelien ohituksen tilaa.",
+		skip_minigames_command_substitutes = "",
+
 		-- game/mining
 		mining_debug_command = "mining_debug",
 		mining_debug_command_help = "Vaihda kaivostuksen vianmääritys päälle/pois.",
@@ -2841,6 +2863,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		model_view_command_parameter_model_help = "Mallin nimi tai tunnus, jonka haluat nähdä.",
 		model_view_command_parameter_no_blocker = "ei estäjää",
 		model_view_command_parameter_no_blocker_help = "Poista varjostimen estäminen (oletus: ei).",
+		model_view_command_parameter_clamp = "clamp",
+		model_view_command_parameter_clamp_help = "Rajoita koon olevan aina yli 0,25 (auttaa pienissä malleissa).",
 		model_view_command_parameter_components = "komponentit",
 		model_view_command_parameter_components_help = "Asekomponentit (pilkulla erotettuna).",
 		model_view_command_substitutes = "malli, näkymä",
@@ -3026,6 +3050,12 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		ped_remove_command = "ped_remove",
 		ped_remove_command_help = "Poistaa kaikki luomasi pedsit.",
 		ped_remove_command_substitutes = "",
+
+		ped_attack_command = "ped_attack",
+		ped_attack_command_help = "Saa lähimmän tekoälyn hyökkäämään tiettyä pelaajaa kohti.",
+		ped_attack_command_parameter_target = "kohde",
+		ped_attack_command_parameter_target_help = "Pelaaja, jonka haluat lähimmän tekoälyn hyökkäävän.",
+		ped_attack_command_substitutes = "",
 
 		list_ped_emotes_command = "list_ped_emotes",
 		list_ped_emotes_command_help = "Listaa kaikki käytettävissä olevat hahmojen eleet.",
@@ -3461,6 +3491,17 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		tablet_command = "tabletti",
 		tablet_command_help = "Avaa tabletti käyttöliittymän (jos sinulla on tabletti).",
 		tablet_command_substitutes = "",
+
+		-- game/taxes
+		tax_collection_command = "tax_collection",
+		tax_collection_command_help = "Käynnistä veron manuaalinen keräys.",
+		tax_collection_command_parameter_percentage = "prosenttia",
+		tax_collection_command_parameter_percentage_help = "Prosenttimäärä, jolla haluat verottaa pelaajien varallisuutta. Se verottaa myös pelaajia, jotka ovat offline-tilassa. Normaali luku voi olla esimerkiksi 0.1 (0.1%).",
+		tax_collection_command_substitutes = "",
+
+		taxes_command = "verot",
+		taxes_command_help = "Näytä verosi.",
+		taxes_command_substitutes = "",
 
 		-- game/teleporting
 		tp_back_command = "tp_takaisin",
@@ -3965,6 +4006,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		set_fuel_command_parameter_server_id_help = "Jos haluat asettaa polttoaineen toiselle pelaajalle. Jättämällä tämän tyhjäksi valitsee automaattisesti itsesi.",
 		set_fuel_command_substitutes = "polttoaine",
 
+		fuel_debug_command = "polttoaine_debug",
+		fuel_debug_command_help = "Tulosta ajoneuvon polttoainetasojen muutokset konsoliin.",
+		fuel_debug_command_substitutes = "",
+
 		-- vehicles/garage_access
 		manage_garage_command = "hallitse_autotalli",
 		manage_garage_command_help = "Hallitse autotalliasi ja niihin pääsyä.",
@@ -4019,6 +4064,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		pickup_keys_command = "pickup_keys",
 		pickup_keys_command_help = "Poimii lähimmän ajoneuvon avaimet sinulle.",
 		pickup_keys_command_substitutes = "",
+
+		grab_keys_command = "ota_avaimet",
+		grab_keys_command_help = "Ota avaimet ajoneuvosta, jota tällä hetkellä ajat.",
+		grab_keys_command_substitutes = "",
 
 		keys_command = "keys",
 		keys_command_help = "Saat avaimet ajoneuvoon, jossa olet tällä hetkellä.",
@@ -4086,6 +4135,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		mute_sirens_command = "mute_sirens",
 		mute_sirens_command_help = "Mykistää kaikki hälytysäänet ja torvet.",
 		mute_sirens_command_substitutes = "",
+
+		sirens_debug_command = "sirens_debug",
+		sirens_debug_command_help = "Piirrä kaikki sireenit, torvet ja valot.",
+		sirens_debug_command_substitutes = "",
 
 		-- vehicles/trailers
 		toggle_trailer_command = "vaihda_perävaunu",
@@ -4370,6 +4423,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		player_playtime = "${playerName} (Sijoitus ${position})\nYhteensä pelattu aika: ${totalPlaytime}\nIstunnon aikainen pelattu aika: ${sessionPlaytime}",
 		leaderboard = "Tuloslista",
 		leaderboard_total = "Tilasto (Kokonaisaika)",
+		leaderboard_economy = "Tilasto (Talous)",
 		your_position = "Sijoituksesi",
 		leaderboard_loading = "Tilastoa ladataan edelleen.",
 		logs_user_reject_connection_title = "Yhteys hylätty",
@@ -4491,7 +4545,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		fake_disconnect_feature = "Väärennetty DC",
 		brighter_nights_feature = "Kirkkaammat yöt",
 		ridealong_feature = "Matkustaja",
-		broadcast_all_feature = "Lähetä kaikille"
+		broadcast_all_feature = "Lähetä kaikille",
+		skip_minigames_feature = "Ohita Minipelit"
 	},
 
 	admin_menu = {
@@ -4568,7 +4623,45 @@ OP.Global.Locales.Languages["fi-FI"] = {
 	},
 
 	animals = {
-		invalid_sound = "Virheellinen ääni."
+		invalid_sound = "Virheellinen ääni.",
+		not_enough_space = "Sinulla ei ole tarpeeksi tilaa ottaaksesi tämän eläimen mukaasi.",
+
+		male = "uros",
+		female = "naaras",
+
+		description_cat_unnamed = "Mysteerin verhoamana ${gender} kissaeläin, ${age} vuotta vanha ja painoltaan ${weight}. Kuin salaperäinen kulkuri, jolla on hillitön heikkous ${food}:lle. Tämä viiksikas kulkija saattaa suunnitella maailmanvalloitusta yhtenä hetkenä ja kietoutua sitten torkuille seuraavassa. Jokainen viiksi kertoo tarinan, jokainen katse kätkee salaisuuden.",
+		description_cat_named = "${name}, ${gender} kissa, on ${age} vuotta vanha kumppani, joka kantaa mukanaan lukemattomien aurinkoisten päiväunien ja keskiyön seikkailujen viisautta. Painoltaan ${weight} ja kätkeen sisäänsä horjumattoman intohimon ${food}ia kohtaan, ${name} liikkuu maailmassa kuin elävä arvoitus—osittain kuninkaallinen arvohenkilö, osittain ilkikurinen katufilosofi.",
+
+		description_dog_unnamed = "${gender} koira, ${age} vuotta vanha ja painoltaan ${weight}, jonka henki on yhtä rajaton kuin horisontti. Täysin omistautunut ${food}ille ja sydämessään vyöryttämätöntä innostusta, tämä karvainen kumppani muuttaa jokaisen hetken mahdolliseksi seikkailuksi, jokaisen lenkin eeppiseksi matkaksi.",
+		description_dog_named = "${name}, ${gender} koira, ${age} astui mukaan tähän suureen tarinaan ystävyydestä, painaen ${weight} ja säteillen energiaa, joka voisi valaista pimeimmänkin huoneen. Täysin lumoutunut ${food}:sta, ${name} elää yksinkertaisella motolla: jokainen päivä on lahja, jokainen ystävä aarre, jokainen hetki ilon mahdollisuus.",
+
+		description_rabbit_unnamed = "Tämä ${gender} kani, ${age} nuori ja painoltaan ${weight}, hyppii läpi elämän syntyneen tutkimusmatkailijan innolla. Innostunut odottamattomasta rakkaudestaan ${food}:iin, sen korvat ovat aina valppaina, sen henki hillittömän eloisa - pieni sydän sykkien rajattomasta uteliaisuudesta.",
+		description_rabbit_named = "${name}, ${gender} kani ${age}-vuotias tähän villiin elämän matkaan, painaa ${weight} ja kantaa tarttuvaa intohimoa, joka uhmaa sen kokoa. Täysin omistautunut ${food}, ${name} tekee jokaisesta loikasta ilon julistuksen, jokaisesta näykkäisystä seikkailun.",
+
+		description_hen_unnamed = "${gender} kana, ${age} vuotta vanha ja tepastelee ${weight}, liikkuu maatilan filosofin itsevarmuudella. Odottamaton himo ${food} ajaa tätä höyhenistä ystävää muuttamaan arkipäiväiset hetket kuvaaviksi tarinoiksi siipikarjan voimasta.",
+		description_hen_named = "${name}, ${age} viisas ja painoltaan ${weight} kiloa oleva kana, kujertaa kuin kokenut tarinankertoja. Pakkomielteinen ruoastaan ja odottamattomien asioiden mestari, ${name} todistaa, että todellinen karisma ei tunne lajirajoja.",
+
+		description_rat_unnamed = "Tämä seikkailunhaluinen ${gender} rotta, ${age} ja painoltaan ${weight} kiloa, navigoi maailmaa terävällä älykkyydellä ja odottamattomalla viehätyksellä. Täysin omistautunut ruoalleen, rotta tekee jokaisesta nurkasta potentiaalisen löydön, jokaisesta varjosta leikkikentän.",
+		description_rat_named = "${name}, ${gender} rotta, joka on ${age} ja joka on heittäytynyt elämän suureen kokeiluun, painaen ${weight} ja puhjeten persoonallisuudesta. Tekemätön side ${food}:iin, ${name} henkii uteliaisuuden henkeä—pieni kooltaan, loputtoman suuri hengeltään.",
+
+		pick_up_named = "[${SeatEjectKey}] Nosta ${name}",
+		pick_up_cat = "[${SeatEjectKey}] Nosta kissa",
+		pick_up_dog = "[${SeatEjectKey}] Nosta koira",
+		pick_up_hen = "[${SeatEjectKey}] Nosta kana",
+		pick_up_rabbit = "[${SeatEjectKey}] Nosta kani",
+		pick_up_rat = "[${SeatEjectKey}] Nosta rotta",
+
+		failed_pickup_cat = "Kissan nostaminen epäonnistui.",
+		failed_pickup_dog = "Koiran nostaminen epäonnistui.",
+		failed_pickup_hen = "Kanan nostaminen epäonnistui.",
+		failed_pickup_rabbit = "Jäniksen nostaminen epäonnistui.",
+		failed_pickup_rat = "Rottaan nostaminen epäonnistui.",
+
+		failed_place_cat = "Kissan sijoittaminen epäonnistui.",
+		failed_place_dog = "Koiran sijoittaminen epäonnistui.",
+		failed_place_hen = "Kanan sijoittaminen epäonnistui.",
+		failed_place_rabbit = "Jäniksen sijoittaminen epäonnistui.",
+		failed_place_rat = "Rotan sijoittaminen epäonnistui."
 	},
 
 	arcade = {
@@ -4691,8 +4784,28 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		deposit = "Talleta",
 		balance = "Saldo",
 		transfer = "Siirrä",
+		deposit_coins = "Talleta kolikoita",
 		savings_bonds = "Failed to automatically generate translation.",
 		back = "Takaisin",
+
+		condition_pristine = "erinomaisessa kunnossa",
+		condition_mint = "lähes uudenveroisessa kunnossa",
+		condition_slight_worn = "lievästi kulunut",
+		condition_worn = "kulunut",
+		condition_heavy_worn = "voimakkaasti kulunut",
+		condition_corroded = "syöpynyt",
+		condition_damaged = "vaurioitunut",
+		condition_unrecognizable = "tuntematon",
+
+		mint_p = "Philadelphia (P)",
+		mint_d = "Denver (D)",
+		mint_s = "San Francisco (S)",
+		mint_w = "West Point (W)",
+		mint_cc = "Carson City (CC)",
+		mint_o = "New Orleans (O)",
+		mint_none = "tuntematon sijainti (ei lyöntimerkkiä)",
+
+		coin_metadata = "Lyöty ${minted}, tämä kolikko on tuotettu leimalla ${mark} ja on ${condition}.",
 
 		amount = "Summa",
 		target = "Määränpää",
@@ -4706,6 +4819,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		failed_withdraw = "Rahan nostaminen epäonnistui",
 		failed_transfer = "Rahan siirtäminen epäonnistui",
 		failed_deposit_bonds = "Failed to automatically generate translation.",
+		failed_deposit_coins = "Kolikoiden talletus epäonnistui",
 
 		processing = "Käsitellään...",
 		counting_bills = "Lasketaan setelit...",
@@ -4713,22 +4827,29 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		something_went_wrong = "Jotain meni vikaan.",
 		error_not_online = "Kohteelle ei saada yhteyttä.",
 		error_not_enough_money = "Ei tarpeeksi rahaa.",
-		deposit_amount_big = "Automaattipanostukset ovat rajoitettu $4,000:een.",
-		withdraw_amount_big = "Automaattinostot ovat rajoitettu $6,000:een.",
+		deposit_amount_big = "Automaattitalletukset rajoittuvat 5 000 dollariin.",
+		withdraw_amount_big = "Automattinostot rajoittuvat 10 000 dollariin.",
+		bond_fee_details = "2 % käsittelymaksu säästöobligaatiosta.",
+		atm_fee_details = "1.5 % käsittelymaksu automaatinostoista.",
 
 		retrieving_card = "Korttia haetaan",
 		atm_damaged = "Tämä pankkiautomaatti on vaurioitunut",
 
 		press_to_use = "Paina ~g~${InteractionKey} ~w~käyttääksesi pankkiautomaattia",
 		press_to_interact_bank = "Paina ~g~${InteractionKey} ~w~käyttääksesi pankkia",
+		fee_label = "maksulla $${fee}",
+		no_fee_label = "ilman maksua",
 
 		deposit_log_bank_title = "Pankkitalletus",
 		deposit_log_atm_title = "Automaattitalletus",
 		deposit_log = "${consoleName} talletti $${amount}.",
 
+		deposit_coins_log_title = "Kolikon talletus",
+		deposit_coins_log = "${consoleName} talletti ${coins} arvosta $${amount}.",
+
 		withdraw_log_bank_title = "Pankkinoikeus",
 		withdraw_log_atm_title = "Automaattinoikeus",
-		withdraw_log = "${consoleName} nosti $${amount}.",
+		withdraw_log = "${consoleName} nosti $${amount} ${fee}.",
 		withdraw_log_bonds_title = "Pankin nosto (Joukkovelkakirjat)",
 		withdraw_log_bonds = "${consoleName} nosti $${amount} säästöjoukkovelkakirjoista (${bonds}).",
 
@@ -4736,7 +4857,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		transfer_log = "${consoleName} (#${characterId}) siirsi $${amount} käyttäjälle ${targetConsoleName} (#${targetCharacterId}).",
 
 		deposit_log_bonds_title = "Failed to automatically generate translation.",
-		deposit_bonds_log = "Failed to automatically generate translation."
+		deposit_bonds_log = "${consoleName} talletti ${bonds} arvosta $${totalMoney} $${fee} maksun kanssa (=$${amount})."
 	},
 
 	attachments = {
@@ -5598,13 +5719,15 @@ OP.Global.Locales.Languages["fi-FI"] = {
 	},
 
 	containers = {
-		drill_container = "Paina ~INPUT_CONTEXT~, jotta poraat säiliön auki.",
-		drilling_container = "Porauksen säiliö",
-		failed_drill = "Säiliön poraus epäonnistui.",
-		drill_success = "Säiliö onnistuneesti avattu poraamalla.",
+		drill_container = "Paina ~INPUT_CONTEXT~, jotta voit porata auki säiliön lukon.",
+		drill_warehouse = "Paina ~INPUT_CONTEXT~, jotta voit porata auki varaston lukon.",
+		drilling_lock = "Porauksen lukitus",
+		failed_drill = "Epäonnistui avaamaan lukkoa porauksella.",
+		drill_success = "Onnistui poraamaan lukon auki.",
 
-		containers_due_soon = "Säilytyskonttisi, ${count} kappaletta, ovat pian erääntyneet.",
-		container_blip = "Säiliö"
+		containers_due_soon = "Sinulla on pian erääntyviä säilytysastioita/varastoja: ${count} kpl.",
+		container_blip = "Säiliö",
+		warehouse_blip = "Varasto"
 	},
 
 	crafting = {
@@ -6211,6 +6334,29 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		crafted_bacon = "Valmistettu pekonia.",
 		failed_craft_bacon = "Pekonin valmistaminen epäonnistui.",
 
+		make_mochi = "Valmista Mochi",
+		press_to_make_mochi = "[${SeatEjectKey}] Valmista Mochi",
+
+		mochi_mango_recipe = "Mango Mochi",
+		making_mochi_mango = "Valmistetaan Mango Mochi",
+		made_mochi_mango = "Valmistettu mango mochi.",
+		failed_make_mochi_mango = "Mangomochin valmistus epäonnistui.",
+
+		mochi_strawberry_recipe = "Mansikka Mochi",
+		making_mochi_strawberry = "Valmistetaan Mansikka Mochi",
+		made_mochi_strawberry = "Valmistettu mansikkamochi.",
+		failed_make_mochi_strawberry = "Mansikkamochin valmistus epäonnistui.",
+
+		mochi_green_tea_recipe = "Vihreä Tee Mochi",
+		making_mochi_green_tea = "Valmistetaan vihreän teen mochi",
+		made_mochi_green_tea = "Vihreä tee mochi valmistettu.",
+		failed_make_mochi_green_tea = "Vihreän teen mochin valmistus epäonnistui.",
+
+		mochi_chocolate_recipe = "Suklaa Mochi",
+		making_mochi_chocolate = "Valmistetaan suklaa mochi",
+		made_mochi_chocolate = "Suklaa mochi valmistettu.",
+		failed_make_mochi_chocolate = "Suklaa mochin valmistus epäonnistui.",
+
 		cook_food = "Valmista ruokaa",
 		press_to_cook_food = "[${SeatEjectKey}] Valmista ruokaa",
 
@@ -6233,6 +6379,11 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		cooking_spicy_ramen = "Tulisen ramenin valmistus",
 		cooked_spicy_ramen = "Valmistettu tulinen ramen.",
 		failed_cook_spicy_ramen = "Tulisen ramenin valmistaminen epäonnistui.",
+
+		green_tea_recipe = "Vihreä tee",
+		brewing_green_tea = "Vihreän teen hauduttaminen",
+		brewed_green_tea = "Vihreä tee haudutettu.",
+		failed_brew_green_tea = "Vihreän teen hauduttaminen epäonnistui.",
 
 		cut_ingridients = "Leikkaa Raaka-aineet",
 		press_to_cut_ingridients = "[${SeatEjectKey}] Leikkaa Raaka-aineet",
@@ -6385,6 +6536,30 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		baking_chocolate_cake = "Paistetaan Suklaakakkua",
 		baked_chocolate_cake = "Paistettu suklaakakku.",
 		failed_baking_chocolate_cake = "Suklaakakun paisto epäonnistui.",
+
+		make_coffee = "Valmista kahvia",
+		press_to_make_coffee = "[${SeatEjectKey}] Valmista kahvia",
+
+		bean_coffee_recipe = "Papukahvi",
+		espresso_recipe = "Espresso",
+		cappuccino_regular_recipe = "Cappuccino (Lehmänmaito)",
+		cappuccino_almond_recipe = "Cappuccino (Mantelimaito)",
+		cappuccino_pigeon_recipe = "Cappuccino (Kyyhkysmaito)",
+		iced_latte_regular_recipe = "Jäähdytetty latte (Lehmänmaito)",
+		iced_latte_almond_recipe = "Jäähdytetty latte (Mantelimaito)",
+		iced_latte_pigeon_recipe = "Jäähdytetty latte (Kyyhkysmaito)",
+
+		brewing_coffee = "Kahvin keittäminen",
+		brewed_coffee = "Suodatinkahvia.",
+		failed_brewing_coffee = "Kahvinkeittäminen epäonnistui.",
+
+		hot_chocolate_regular_recipe = "Kuuma Kaakao (Lehmänmaito)",
+		hot_chocolate_pigeon_recipe = "Kuuma Kaakao (Mantelimaito)",
+		hot_chocolate_almond_recipe = "Kuuma Kaakao (Kyyhkysmaito)",
+
+		making_hot_chocolate = "Valmistetaan kuumaa kaakaota",
+		made_hot_chocolate = "Valmistettu kuuma kaakao.",
+		failed_make_hot_chocolate = "Kuumaa kaakaota ei voitu valmistaa.",
 
 		no_required_items = "Sinulla ei ole kaikkia tarvittavia esineitä.",
 
@@ -6672,22 +6847,29 @@ OP.Global.Locales.Languages["fi-FI"] = {
 	},
 
 	container_storage = {
-		rent_container = "[${InteractionKey}] Vuokraa #${id} ($${price} viikossa)",
+		rent_container = "[${InteractionKey}] Vuokraa C-${id} ($${price} viikossa)",
+		rent_warehouse = "[${InteractionKey}] Vuokraa W-${id} ($${price} viikossa)",
 		renting_container = "Vuokraa kontti",
+		renting_warehouse = "Varaston vuokraaminen",
 		failed_rent_container = "Kontin vuokraaminen epäonnistui.",
+		failed_rent_warehouse = "Varaston vuokraaminen epäonnistui.",
 		rent_container_success = "Kontin #${id} vuokraaminen onnistui. Voit hallita konttejasi käyttämällä `/containers`-komentoa.",
-		access_container = "[${InteractionKey}] Pääsy #${id}",
-		container_id = "#${id}",
+		rent_warehouse_success = "Varaston vuokraaminen onnistui #${id}. Voit hallita varastoja käyttäen `/warehouses` komentoa.",
+		access_container = "[${InteractionKey}] Pääsy C-${id}",
+		access_warehouse = "[${InteractionKey}] Pääsy W-${id}",
+		container_id = "C-${id}",
+		warehouse_id = "W-${id}",
 
-		storage_containers = "Säilytyskontit",
+		storage_containers = "Säilytyskontit/Varastot",
 		container = "Kontti",
+		warehouse = "Varasto",
 		loading = "Ladataan...",
 		failed_remove_access = "Pääsyn poistaminen epäonnistui.",
 		failed_add_access = "Ei onnistunut lisätä pääsyä.",
 		access = "Pääsy",
 		add_cid = "Lisää CID",
-		no_containers = "Sinulla ei ole omistettuna tai pääsyä säilytysastioihin.",
-		no_access = "Vain sinulla on pääsy tähän säiliöön.",
+		no_containers = "Sinulla ei ole omia tai pääsyä mihinkään varastokonteihin/varastoihin.",
+		no_access = "Vain sinulla on pääsy tähän säiliöön/varastoon.",
 		back = "Takaisin",
 		close = "Sulje",
 		character_not_exist = "Hahmoa ei ole olemassa.",
@@ -6697,14 +6879,14 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		not_enough_money = "Sinulla ei ole tarpeeksi rahaa.",
 		failed_pay_rent = "Vuokran maksu epäonnistui.",
 		mark_gps = "Merkitse GPS",
-		container_alert = "Säiliösi #${containerId} kanssa tehdään ilkivaltaa.",
+		container_alert = "Säiliöösi/varastoosi #${containerId} kajoillaan.",
 
 		rented_container_logs_title = "Vuokrattu kontti",
-		rented_container_logs_details = "${consoleName} vuokrasi kontin nro ${containerId} hintaan $${price}.",
+		rented_container_logs_details = "${consoleName} vuokrasi ${type} #${containerId} hintaan $${price}.",
 		paid_rent_logs_title = "Maksettu kontin vuokra",
-		paid_rent_logs_details = "${consoleName} maksoi $${price} vuokraa kontista nro ${containerId}.",
+		paid_rent_logs_details = "${consoleName} maksoi $${price} vuokraa säiliöön/varastoon #${containerId} (maksettu asti `${till} UTC`).",
 		lockpicked_container_logs_title = "Avattu lukittu kontti",
-		lockpicked_container_logs_details = "${consoleName} avasi lukitun kontin nro ${containerId}."
+		lockpicked_container_logs_details = "${consoleName} murti lukon ${type} #${containerId}."
 	},
 
 	courthouse = {
@@ -6865,6 +7047,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		coords = "Koordinaatit: ${coords}",
 		rotation = "Kierto: ${rotation}",
 		normal = "Pinta: ${normal}",
+		surface_heading = "Pinta: ${heading}",
 		velocity = "Nopeus: ${velocity}",
 		ground_material = "Maatyyppi: ${material}",
 		debug_print_f8 = "Vianetsintätiedot on tulostettu F8-konsoliin.",
@@ -6878,6 +7061,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		copied_model_name = "Kopioitu mallin nimi.",
 		copied_entity_id = "Kopioitu entiteetin tunniste.",
 		copied_hit_coords = "Kopioitu osumakoordinaatit.",
+		copied_surface_heading = "Pinnan otsake kopioitu.",
 
 		distance = "Etäisyys: ${distance}m",
 		distance_first = "Tallennettiin ensimmäinen sijainti.",
@@ -6913,12 +7097,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		model_view_disabled = "Mallinäkymä poistettu käytöstä.",
 		invalid_component = "Virheellinen osa `${componentName}`.",
 
-		animation_currently_playing = "Toistetaan tällä hetkellä animaatiota.",
 		invalid_or_missing_animation_dict = "Virheellinen tai puuttuva animaatiolistaus `${animationDict}`.",
-		missing_animation_name = "Virheellinen tai puuttuva animaation nimi `${animationName}`.",
+		missing_animation_name = "Virheellinen tai puuttuva animaation nimi.",
 		invalid_animation_flags = "Virheelliset animaation liput.",
-		animation_played = "Toistetaan `${animationDict}` `${animationName}` (liput: ${flags}).",
-		no_flags = "Ei saatavilla",
 
 		invalid_coordinates = "Virheelliset koordinaatit.",
 		added_coordinates_draw = "Lisättiin koordinaatit `x: ${x}, y: ${y}, z: ${z}` piirustuslistalle ID:llä `${drawId}`.",
@@ -7703,6 +7884,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		fps_unit = "fps",
 		ping_unit = "ms",
 		tps_unit = "tps",
+		fps_1percent_unit = "ruutua sekunnissa 1 %",
 
 		smart_warnings = "Varoitus: ${warnings}!",
 		dehydrated = "kuivumassa",
@@ -7990,7 +8172,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		prison_store = "Vankilakauppa",
 		fruit_vendor = "Hedelmämyyjä",
 		fruit_market = "Alamo Hedelmätori",
-		food_market = "Elintarvikemarketti",
+		super_market = "Supermarket",
 		island_store = "Saarikauppa",
 		travel_agency = "Matkatoimisto",
 		island_bar = "Saaribaari",
@@ -8024,7 +8206,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		ems_badge_store = "EMS-tunnusliput",
 		doj_badge_store = "DOJ-tunnusliput",
 		state_store = "Valtion kauppa",
-		pharmacy = "Apteekki",
+		pharmacy_store = "Apteekki",
 		chop_shop = "Purkamokauppa",
 		courthouse = "Oikeustalo",
 		burger_shot = "Burger Shot",
@@ -8035,13 +8217,13 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		bean_machine_fridge = "Bean Machine -jääkaappi",
 		hunting_store = "Metsästyskauppa",
 		fishing_store = "Kalastuskauppa",
+		furniture_store = "Huonekaluliike",
 		los_santos_golf_club = "Los Santos Golf Club",
 		arcade_bar = "Pelihalli",
 		japanese_restaurant = "Japanilainen ravintola",
 		japanese_restaurant_kitchen = "Japanilainen ravintolan keittiö",
 		pizza_restaurant = "Pizzeria",
 		["945_studios"] = "945 Studios",
-		grain_mill = "Viljamylly",
 		pd_prefix = "LUP",
 		ems_prefix = "EMS",
 		government_prefix = "Valtio",
@@ -8105,6 +8287,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		underground_bar_counter = "Maanalaisen baarin tiski",
 		pizza_this_counter = "Pizza Tämä -tiski",
 		yellow_jack_counter = "Yellow Jack -tiski",
+		bean_machine_counter = "Bean Machine -tiski",
 
 		inventory_name_missing = "Puuttuva varaston nimi parametri.",
 
@@ -8131,6 +8314,14 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		craft_combine = "Valmista <i>${output}</i>",
 		combining = "Valmistetaan",
+
+		inspect = "Tarkasta",
+		attachments = "Liitteet",
+		fill_paper_bag = "Täytä paperikassi",
+		rename = "Nimeä uudelleen",
+
+		item_renamed = "Kohde nimetty uudelleen onnistuneesti.",
+		item_failed_rename = "Kohteen nimeäminen uudelleen epäonnistui.",
 
 		file_serial = "Una pinta de la mejor cerveza irlandesa del mundo.",
 		filing_off_serial_number = "Jameson",
@@ -8414,6 +8605,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		paper_bag = "Paperipussi",
 		paper_bag_description = "Ihanteellinen ruokakauppatavaran säilyttämiseen tai ehkä jonkun pään, elävän tai kuolleen, säilyttämiseen.",
+		closed_paper_bag = "Suljettu paperikassi",
+		closed_paper_bag_description = "Perinteinen ruskea pussi, joka kätki sisälleen mysteereitä. Onko se lounas? Salainen aarre? Ainoa tapa selvittää on repiä se auki ja nähdä, mitä sisällä on!",
 		burger_shot_delivery = "Burger Shot -ateria",
 		burger_shot_delivery_description = "Ihana kokoelma kaikista lihamäristä herkuista, joita he tarjoavat.",
 		bean_machine_delivery = "Bean Machine -jälkiruoka",
@@ -8424,6 +8617,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		green_wonderland_delivery_description = "Laukku täynnä lempivihreitä herkkuja. #420blazeit",
 		pizza_this_delivery = "Pizza Tämä Laatikko",
 		pizza_this_delivery_description = "Kuljeta kuuma ja herkullinen pizza tyylillä Pizza Tämä -toimituslaatikossa, varmistaen että jokainen siivu saapuu yhtä täydellisenä kuin se lähti uunista.",
+
+		lunch_box = "Eväsrasia",
+		lunch_box_description = "Tukeva rasia, joka pitää sisällään toiveesi, unelmasi ja eilisen jämät. Täydellinen paikka pitää välipalasi turvassa, voileipäsi litistymättömänä ja sipsisi hieman vähemmän murskautuneina kuin tavallisesti. Varoitus: Ei takaa parantunutta lounasaikaisia sosiaalista statusta.",
 
 		empty_box = "Tyhjä laatikko",
 		empty_box_description = "Aloita tästä yksinkertaisesta, tukevasta laatikosta luodaksesi henkilökohtaisen lahjan. Täytä se ei-pilaantuvilla aarteilla, ja se on valmis muuttumaan ajatuksekkaaksi lahjaksi. Ihanteellinen kaiken pakkaamiseen, mikä symboloi kiintymystä, lukuun ottamatta pilaantuvia elintarvikkeita ja aseita.",
@@ -8485,6 +8681,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		keys = "Avaimet",
 		keys_description = "Parin avaimia joihinkin oviin jossain.",
+		car_keys = "Auton avaimet",
+		car_keys_description = "Taianomainen avainnippu, joka voi avata ovia, käynnistää moottoreita ja saada sinut tuntemaan kuin omistaisit tien. Ei kaksi avainta näytä aivan samalta, mutta niillä kaikilla on yksi tarkoitus - antaa sinulle pääsy siihen hienoon kulkupeliin, josta ne ovat peräisin. Älä kuitenkaan tiputa niitä viemäriin tai lainaa niitä \"ystävälle\".",
 
 		raw_diamond = "Raaka timantti",
 		raw_diamond_description = "Harvinainen ja käsittelemätön timantti, joka odottaa mestarityön tuloksia paljastaen täyden loistonsa. Täydellinen niille, jotka näkevät kauneutta raakana potentiaalina, tämä jalokivi kaipaa mestarin kosketusta saadakseen loistonsa esiin.",
@@ -9061,6 +9259,34 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		plush_wasabi = "Wasabi-velho",
 		plush_wasabi_description = "Tämä pieni yksilö on todellinen harvinaisuus, juuri kuin tuore wasabin purskahdus! Heidän häikäisevän vihreä turkkinsa varmasti kääntää päitä. Älä aliarvioi heidän pientä kokoaan - he ovat täynnä persoonallisuutta ja aina valmiina uusiin seikkailuihin.",
 
+		cat_0 = "Raidallinen kissa",
+		cat_0_description = "Tämä raitainen pikku kavaltaja on aina jossain menossa, olipa kyseessä sitten hiipiminen syliisi tai maailmanvalloituksen suunnittelu päiväunien avulla. Se kävelee itsevarmasti kuin kissa, joka tietää olevansa päähenkilö.",
+		cat_1 = "Musta kissa",
+		cat_1_description = "Elegantti, varjoinen ja ehkä taianomainen, tämä mustaturkkinen kissa tietää, miten varastaa huomio - tai herkkusi. Se on yhtä cool kuin hellä, ja sillä on taipumus teatraalisiin sisääntuloihin ja pitkiin, tuomitseviin tuijotuksiin.",
+		cat_2 = "Ruskea kissa",
+		cat_2_description = "Lämmin ja maanläheinen, tämä ruskea kaunotar on kuin kupillinen kuumaa kaakaota kissan muodossa - joskus kaakao satunnaisesti työntäisi asioita pois työpöydältäsi. Se on rento, hellyyttävä ja yllättävän hyvä ohittamaan sinun huutosi.",
+
+		dog_0 = "Westien terrieri",
+		dog_0_description = "Tämä karvainen pikku pallero on yhtä lailla uskollinen seuralainen kuin kävelevä moppi. Aina valmis seikkailuun, vaikka se tarkoittaisikin vain oman hännän jahtaamista tuntikausia. Loistava halailija, kyseenalainen puhtaana pysyjä.",
+		dog_1 = "Mopsi",
+		dog_1_description = "Ylpeä mopsi, jonka naamaan vain äiti - tai itse asiassa kuka tahansa - voisi rakastua. Lyhyet jalat mutta suuri persoonallisuus, tämä tanakka kaveri löytää tiensä sydämeesi ja todennäköisesti myös herkkuihisi.",
+		dog_2 = "Villakoira",
+		dog_2_description = "Täydellisesti laitettu villakoira, joka tietää olevansa hienoin koira huoneessa. Majesteettinen, elegantti ja silloin tällöin täydellinen draamakuningatar, he tuovat glamouria mihin tahansa ympäristöön - olipa kyseessä sitten punainen matto tai olohuoneesi.",
+
+		hen_0 = "Kana",
+		hen_0_description = "Tempperamenttinen kana, joka kävelee ympäriinsä kuin omistaisi koko kanalan - ja rehellisesti sanottuna, hän todennäköisesti omistaa sen. Aina nokkien, kiekuen ja antaen sinulle sen sivusilmäkatseen, tämä höyheninen diiva on yhtä aikaa hurmaava ja lievästi pelottava.",
+		rat_0 = "Rotta",
+		rat_0_description = "Solkkuinen pieni jyrsijä, jolla on kadun viisautta ja taito löytää herkut sieltä, missä vähiten odottaisit. Olipa kyseessä sitten saalistaa murusia tai suunnitella maailmanvalloitusta, tämä rotta on aina jossain tekemässä jotain.",
+
+		rabbit_0 = "Tummanruskea kani",
+		rabbit_0_description = "Rikas, tummanruskea kani, jonka energiataso vastaa sen nimeä. Aina valppaana, aina valmiina spurttiin ja todennäköisesti tuomitsee sinua hitaudestasi.",
+		rabbit_1 = "Vaaleanruskea kani",
+		rabbit_1_description = "Vaaleanruskea kani, joka näyttää pompanneen suoraan leipomosta. Makea, murisevaa mieltä, juuri sopivasti kaaosta päivääsi.",
+		rabbit_2 = "Beige kani",
+		rabbit_2_description = "Beige kani, jolla on voi- sileä turkki ja taipumus pomppia kaikkein epäkäytännöllisimpiin paikkoihin. Yhtä paljon ihastuttavaa kuin lievästi ärsyttävää.",
+		rabbit_3 = "Harmaa kani",
+		rabbit_3_description = "Siro harmaa kani, joka liikkuu kuin tuulen pyyhkäisy. Vilkaise pois, ja se on kadonnut – mutta ei ennen kuin se varasti sydämesi (ja ehkä lehtesi).",
+
 		boxing_gloves = "Nyrkkeilyhanskat",
 		boxing_gloves_description = "Muuttaa sinut Rockyksi, mutta et ehkä saa jatko-osaa...",
 		leash = "Hihna",
@@ -9190,6 +9416,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		evidence_bag_empty_description = "Voitko parantaa sitä?",
 		evidence_bag = "Todistuspussi",
 		evidence_bag_description = "Suljetut rikokset pussissa myöhempää käyttöä varten.",
+		evidence_box = "Näyttölaatikko",
+		evidence_box_description = "Oikeuden unsung sankari, varmistaa kaikki vihjeet, sormenjäljet ja kyseenalaiset tavarat tarvitaan ratkaista tapaus. Karkkipapereista rikospaikan välineisiin, se on kuin aarrearkkuetsiville – ilman kultaa, mutta runsaasti paperityötä.",
 		fingerprint_evidence = "Sormenjälkitodiste",
 		fingerprint_evidence_description = "Auttavat sinua saamaan kiinni ne rikolliset sälät.",
 		device_printout = "Laitteen tuloste",
@@ -9239,6 +9467,19 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		savings_bond_1000_description = "1 000 dollarin säästöobligaatio, todiste omistautumisestasi varallisuuden kasvattamiseen. Säilytä tämä obligaatio turvassa, kunnes olet valmis lunastamaan sen pankissa, jolloin se tarjoaa sinulle merkittävää taloudellista tukea.",
 		savings_bond_2000 = "$2,000 säästöobligaatio",
 		savings_bond_2000_description = "2 000 dollarin säästöobligaatio, merkittävä sijoitus taloudelliseen tulevaisuuteesi. Pidä tästä obligaatiosta kiinni, kunnes aika on oikea, ja lunasta se sitten pankissa täyden arvonsa paljastamiseksi, auttaen sinua saavuttamaan taloudelliset unelmasi.",
+
+		cent_1 = "Sentti",
+		cent_1_description = "Vaatimaton penny on Amerikan ylioppilas kuparinvärinen sankari. Arvoltaan vain sentti, mutta sitä löytyy usein urheasti tukkimassa suihkulähde-toiveita tai piilossa sohvapatjojen alla. Se on käytännössä pienen mutta mahtavan kolikon versio.",
+		cent_5 = "Nikkelikolikko",
+		cent_5_description = "Nikkelikolikko on tukevampi, hopeanvärisempi päivitys pennystä, ja sillä on viisinkertainen ostovoima, mikä ei silti ole paljoa. Uskollinen kumppani myyntiautomaateille ja pelikoneille, vaikka sen arvo saattaa joskus jäädä huomaamatta.",
+		cent_10 = "Kymmenen senttiä",
+		cent_10_description = "Kymmenen sentin kolikko on pikkuruinen mutta kiiltävä suorittaja, joka pakkaa 10 sentin arvon taskukokoiseen muotoiluunsa. Tarpeeksi pieni häviämään farkkujesi uumeniin, mutta silti tarpeeksi arvokas muistuttamaan sinua, että se on tuplasti nikkelin arvoinen vaiva.",
+		cent_25 = "Neljännesdollarin kolikko",
+		cent_25_description = "Neljännesdollarin kolikko on parkkimittareiden ja purukoneiden kuningas. Sen vaikuttava paino ja 25 sentin arvo tekevät tästä hopeisesta gladiaattorista usein johtajan kolikkoviejäreissäsi kohti loistavia kahvi- ja pelivoittoja.",
+		cent_50 = "Puolidollari",
+		cent_50_description = "Puolikko on harvoin nähty painava vehje Yhdysvaltain valuutassa. Se on kuin siistimpi, mystisempi isoveli neljännesdollarille. Kaksinkertainen arvo, kaksinkertainen koko, ja jotenkin aina vaikuttavan kiiltävä.",
+		coin_bag = "Rahapussi",
+		coin_bag_description = "Luotettava pikkulaukku, suunniteltu pitämään irtonaiset kolikot kolinasta ojossa. Pieni, huomaamaton ja täydellinen niille, jotka haluavat kantaa vaurauttaan tyylikkäästi—olettaen, että \"vaurautesi\" mitataan neljännes- ja kymmenentenäosadollareissa.",
 
 		weather_spell_snow = "Sääloitsu (Lumi)",
 		weather_spell_snow_description = "Tämän esineen käyttö tuo tilapäisesti hallinnan säätä ja saa lumen sataa! Sitä voi käyttää vain kerran, joten käytä varoen. Jos käytät kahta säätrolleja samanaikaisesti, toinen laitetaan vain jonoon.",
@@ -9430,6 +9671,12 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		fishing_chair_description = "Tämä kalastajatuoli on suunniteltu mukavuutta ajatellen pitkiin odotuksiin. Tuoli yhdistää kestävyyden ja kätevyyden, siinä on sisäänrakennettu vapa-aparaatti niille rauhallisille järvenrantaaamujen kalastushetkille. Voidaan sijoittaa minne tahansa maailmassa.",
 		sleeping_bag = "Makuupussi",
 		sleeping_bag_description = "Kääri itsesi lämpöön tässä makuupussissa, joka on suunniteltu vilpoisiin öihin tähtien alla. Sen kompakti muotoilu tekee siitä helposti kannettavan, tarjoten mukavuutta minne tahansa pääsi kallistatkin.",
+		red_pillow = "Punainen tyyny",
+		red_pillow_description = "Monipuolinen punainen tyyny, joka muuttaa kovan maan mukavuuden valtaistuimeksi. Olitpa sitten meditoimassa, tarkkailemassa ihmisiä tai yrität välttää istumista tuntemattomilla tahroilla, tämä tyyny tukee sinua - tai oikeastaan takapuoltasi!",
+		spotlight = "Valokeila",
+		spotlight_description = "Valokeila, joka on valmis tekemään mistä tahansa tai kenestä tahansa show'n tähten. Täydellinen ammattimaisiin valokuviin, dramaattiseen valaistukseen tai vain tunne siitä, että olet elokuvatähti olohuoneessasi. Se on kirkas, luotettava ja aina varastaa shown.",
+		tube_light = "Putkivalaisin",
+		tube_light_description = "Elegantti ja minimalistinen putkivalaisin, joka panostaa tyyliin kirkkauden sijasta, luoden pehmeän valaistuksen ilman huoneen ylivaltaamista. Täydellinen tunnelman luomiseen, se on hienovarainen päivitys, joka näyttää paljon siistimmältä kuin massiivisemmat vastineensa.",
 		yoga_mat = "Joogamatto",
 		yoga_mat_description = "Tämä kannettava joogamatto on perustasi rentoutumiseen ja ulkoilmaharjoituksiin. Levitä se etsiäksesi zenisi tai venyttele sen päällä reippaan vaelluksen jälkeen. Voidaan sijoittaa minne tahansa maailmassa.",
 		cooler_box = "Jäähdytyslaatikko",
@@ -9466,6 +9713,12 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		spike_strips_large_description = "undefined",
 		stop_sticks = "undefined",
 		stop_sticks_description = "undefined",
+		speed_bump = "Nopeuskynnys",
+		speed_bump_description = "Viimeisin työkalu nopeusrajoitusten valvontaan ja auton jousituksen testaamiseen. Aseta tämä kannettava este ja katso nopean ajon mestarien miettivän elämänvalintojaan - täydellinen tavallaan muuttaa takaa-ajot hidastetuiksi kulkueiksi.",
+		speed_sign = "Nopeusrajoitusmerkki",
+		speed_sign_description = "Ystävällinen muistutus siitä, että jalkasi tarvitsee tauon. Pysy rajoituksissa, tai kohtaa nopeuskumpien ja tutkien viha.",
+		bumps_sign = "Töyssyt Merkki",
+		bumps_sign_description = "Kohtelias varoitus siitä, että autosi jousitus on pian kovilla. Ajaa varovasti, tai valmistaudu töyssyiselle matkalle!",
 		floodlight = "Tulvavalo",
 		floodlight_description = "undefined",
 		left_diversion_sign = "Vasen Poikkeusmerkki",
@@ -9514,6 +9767,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		claymore = "Saviainen",
 		claymore_description = "undefined",
+		mine = "Miina",
+		mine_description = "Kun tarvitset lisää 'tervetulomattoa', jos ATF päättää kolkuttaa oveasi. Aseta, aktivoi ja katso, kuinka ei-toivotuista vieraista tulee hieno punainen sumu.",
 
 		tv_stand = "TV-teline",
 		tv_stand_description = "Päivitä maratoonarilaitteesi tämän tyylikkään TV-telineen avulla. Se pitää television täydellisellä silmätasolla ja siinä on tilaa kaikille satunnaisille laitteillesi. Se on kuin valtaistuin näytöllesi.",
@@ -9566,6 +9821,16 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		pink_dildo = "Vaaleanpunainen dildo",
 		pink_dildo_description = "Käsintehty, veistetty ja testattu Bugsy Middlemanin toimesta.",
 
+		cappuccino_regular = "Cappuccino (Lehmänmaito)",
+		cappuccino_almond = "Cappuccino (Mantelimaito)",
+		cappuccino_pigeon = "Cappuccino (Kyyhkynmaito)",
+		iced_latte_regular = "Jäälatte (Lehmänmaito)",
+		iced_latte_almond = "Jäälatte (Mantelimaito)",
+		iced_latte_pigeon = "Jäälatte (Kyyhkynmaito)",
+		hot_chocolate_regular = "Kaakao (Lehmänmaito)",
+		hot_chocolate_almond = "Kaakao (Mantelimaito)",
+		hot_chocolate_pigeon = "Kaakao (Kyyhkynmaito)",
+
 		bean_coffee = "Papukahvi",
 		bean_coffee_description = "Papujen vettä... siinä kaikki mitä se oikeastaan on.",
 		cappuccino = "Cappuccino",
@@ -9582,6 +9847,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		pink_lemonade_description = "Ei millään tavalla tavallista sitruunamehua, joka on vain värjätty vaaleanpunaiseksi, jotta voimme veloittaa sinulta kaksi kertaa enemmän...",
 		iced_latte = "Jäälatte",
 		iced_latte_description = "Virkistävä jääkahvi, täydellinen kuumaan päivään.",
+		coffee_beans = "Kahvipavut",
+		coffee_beans_description = "Pussillinen rikkaita, aromikkaita kahvipapuja valmiina muuttumaan polttoaineeksi, joka antaa virtaa aamuille ja myöhäisille ideamaratoneille. Olitpa sitten seikkailunhaluinen, pehmeän makuinen tai jossain näiden välillä, nämä pavut ovat lippusi täydelliseen kupilliseen kofeiinilla höystettyä autuutta.",
 
 		berry_cake = "Marjapiirakka",
 		berry_cake_description = "Ihana marjapiirakka, joka tulvii tuoreista marjoista ja makeasta marjahillosta. Tämä piirakka on täydellinen herkku marjan ystäville, tarjoten tasapainoisen sekoituksen kirpeitä ja makeita makuja jokaisella suupalalla.",
@@ -9755,9 +10022,21 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		spicy_ramen_description = "Niille, jotka haluavat elää reunalla, Mausteinen Ramen tuo kuumuuden! Sukella tuliseen liemeen nuudeleiden ja mausteisten täytteiden kanssa, jotka saavat makunystyräsi tanssimaan. Pystytkö hallitsemaan sen?",
 		bento_box = "Bento-laatikko",
 		bento_box_description = "Ihastuttava sekoitus makuja ja rakenteita, tämä Bento-laatikko on valintasi tasapainoiseen ateriaan. Täynnä erilaisia herkkuja, se on kuin piknik laatikossa. Täydellinen lounaalle tai kevyelle illalliselle!",
+		mochi_mango = "Mango Mochi",
+		mochi_mango_description = "Trooppinen mangomochi, joka pursuaa kypsien mangojen makeaa ja mehevää makua. Käärittynä pehmeään, tahmeaan kuoreen se tarjoaa makunystyröillesi pienen loman.",
+		mochi_strawberry = "Mansikka Mochi",
+		mochi_strawberry_description = "Ihana mansikka mochi, joka yhdistää hedelmäisen, marjaisen makeuden pehmeään, venyvään kuoreen. Kuin puremalla pieni pilvi auringonpaistetta ja makeutta.",
+		mochi_green_tea = "Vihreä tee Mochi",
+		mochi_green_tea_description = "Virkistävä vihreän teen mochi, joka yhdistää maanläheisen matchan maun pehmeään, sitkeään koostumukseen. Ihanteellinen zenmäiseen jälkiruoka kokemukseen juuri oikealla makeuden ja kitkeryyden tasapainolla.",
+		mochi_chocolate = "Suklaa Mochi",
+		mochi_chocolate_description = "Ylellinen suklaamochi, joka käärii joustavan, pehmeän ulkokuoren ympärilleen rikkaan, kaakaotäytteisen keskustan. Täydellinen makeanhimon tyydyttämiseen hitusella tahmeaa ylellisyyttä.",
+		green_tea_bag = "Vihreä tee",
+		green_tea_bag_description = "Pussillinen laadukkaita irtoteenlehtiä, valmiina upottamaan sinut maanläheiseen, virkistävään makuun. Täydellinen valinta teeharrastajille, jotka arvostavat teen valmistustaidetta enemmän kuin valmiiksi pakattua pussiteetä. Kun otat siemauksen tätä, maistat rauhan.",
 
 		asahi_beer = "Asahi-olut",
 		asahi_beer_description = "Nauti Asahi-oluen raikkaasta, puhtaasta mausta. Tämä korkealaatuinen japanilainen lager tunnetaan pehmeästä ja virkistävästä maustaan. Tämä kultainen juoma on taitavasti valmistettu nostamaan esiin minkä tahansa tilaisuuden, mikä tekee siitä täydellisen valinnan niin rentoon hörppimiseen kuin hienoon ruokailuun.",
+		green_tea = "Vihreä tee",
+		green_tea_description = "Lämmin, rauhoittava kuppi vastakeitettyä vihreää teetä, joka kietoo sinut maanläheiseen tuoksuunsa ja herkkään makuunsa. Täydellinen hetkiin, jolloin kaipaat rauhaa tai kevyttä piristystä, se on kuin halaus mukissa sielullesi.",
 
 		golf_ball = "Golfpallo",
 		golf_ball_description = "Käytetään golfin pelaamiseen.",
@@ -9947,6 +10226,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		weapon_poolcue = "Biljardikeppi",
 		weapon_stone_hatchet = "Kivikirves",
 		weapon_candycane = "Karkkipuikko",
+		weapon_stunrod = "Sähkökeppi",
 
 		weapon_pistol = "Pistooli",
 		weapon_pistol_mk2 = "Pistooli Mk II",
@@ -10076,6 +10356,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		weapon_poolcue_description = "Ah, mikään ei ole yhtä tyydyttävää kuin täydellinen murto, etenkin kun se tapahtuu vastapuolen selkärankaan.",
 		weapon_stone_hatchet_description = "2,5 miljoonaa vuotta tutkimusta ja kehitelyä ja me olemme yhä täällä.",
 		weapon_candycane_description = "Jouluinen karkkipuikko. Hieman tahmea.",
+		weapon_stunrod_description = "Kun tylsä voimakas isku ei riitä, harkitse lähestymistapasi monipuolistamista pahoinpitelyyn annoksella 30 000 volttia.",
 
 		weapon_pistol_description = "Vakio käsiase. .45 kaliiperinen taistelupistooli, jossa on 12 patruunan lippa, jonka voi pidentää 16 patruunaan.",
 		weapon_pistol_mk2_description = "Tasapaino, yksinkertaisuus ja tarkkuus: ei mikään toimi yhtä hyvin kuin pidennetty piippu vastustajan suussa.",
@@ -10311,7 +10592,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		weapon_addon_multitool_description = "Kuten tavallinen monitoimityökalu, mutta ilman hienouksia.",
 
 		weapon_addon_ar15 = "AR-15",
-		weapon_addon_ar15_description = "Tutustu AR-15:een, kiväärien luotettavaan aliarvostettuun versioon. Se on kuin carbineriflen omapäinen serkku—samat sisuskalut, erilainen maku. Täydellinen vaihtoehto, kun haluat vaihtelua ilman turhia hienouksia. Luotettava, tarkka ja juuri sopivasti \"pew pew\" matalan profiilin tilanteisiin."
+		weapon_addon_ar15_description = "Tutustu AR-15:een, kiväärien luotettavaan aliarvostettuun versioon. Se on kuin carbineriflen omapäinen serkku—samat sisuskalut, erilainen maku. Täydellinen vaihtoehto, kun haluat vaihtelua ilman turhia hienouksia. Luotettava, tarkka ja juuri sopivasti \"pew pew\" matalan profiilin tilanteisiin.",
+
+		weapon_addon_tennisball = "Tennispallo",
+		weapon_addon_tennisball_description = "Täydellinen nopeaan peliin, koiran häiritsemiseen tai kaaoksen aiheuttavaan heittoon huoneen poikki. Tähtää, heitä ja katso sen pomppivan villisti – bonusta, jos se ei palaa takaisin!"
 	},
 
 	invisibility = {
@@ -10403,7 +10687,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		failed_kissaki_delivery = "Ei onnistunut avata kissaki -annosta.",
 		failed_green_wonderland_delivery = "Ei onnistunut avaamaan vihreää ihmemaailma-pussia.",
 		failed_pizza_this_delivery = "Pizzalaatikon avaaminen epäonnistui.",
+		failed_closed_paper_bag = "Ei onnistunut avaamaan paperipussia.",
 
+		closed_paper_bag_empty = "Tämä paperipussi on tyhjä.",
 		burger_shot_delivery_empty = "Se burgershot-ateria näytti olevan tyhjä.",
 		bean_machine_delivery_empty = "Se bean machine -toimitus näytti olevan tyhjä.",
 		kissaki_delivery_empty = "Se kissaki-ateria näytti olevan tyhjä.",
@@ -10539,7 +10825,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		modify_jail_logs_title = "Muutettu vankila-aika",
 		modify_jail_logs_details = "${consoleName} muutti vankilan aikaa henkilölle ${targetCharacter} #${targetCharacterId} (${operation} ${amount} kuukautta) kohteeksi ${after}.",
 		triggered_lockdown_logs_title = "Käynnistetty Turvalukko",
-		triggered_lockdown_logs_details = "${consoleName} käynnisti vankilan turvalukon."
+		triggered_lockdown_logs_details = "${consoleName} käynnisti vankilan turvalukon.",
+		mission_reward_logs_title = "Vankilatehtävän Palkkio",
+		mission_reward_cash_logs_details = "${consoleName} sai $${amount} käteistä suoritettuaan vankilatehtävän.",
+		mission_reward_item_logs_details = "${consoleName} sai 1x ${itemName} suoritettuaan vankilatehtävän."
 	},
 
 	kiosks = {
@@ -10968,7 +11257,21 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		no_nearby_vehicle = "Lähistöllä ei ole ajoneuvoa.",
 		already_checking_upgrades = "Tarkistat jo ajoneuvon virityksiä.",
-		engine_is_running = "Ajoneuvon moottori on käynnissä."
+		engine_is_running = "Ajoneuvon moottori on käynnissä.",
+
+		press_open_shop = "Paina ~INPUT_FRONTEND_RDOWN~, jotta voit avata mekaanikon kaupan.",
+		press_close_shop = "Paina ~INPUT_FRONTEND_RDOWN~, jotta voit sulkea mekaanikon kaupan.",
+		opening_shop = "${time}s avautuu mekaniikkaliike.",
+		closing_shop = "${time}s sulkeutuu mekaniikkaliike.",
+		shop_closed = "Mekaniikkaliike suljettu onnistuneesti.",
+		shop_opened = "Mekaniikkaliike avattu onnistuneesti.",
+		failed_shop_closed = "Mekaniikkaliikkeen sulkeminen epäonnistui.",
+		failed_shop_opened = "Mekaniikkaliikkeen avaaminen epäonnistui.",
+
+		opened_shop_logs_title = "Avaus mekaniikkaliike",
+		opened_shop_logs_details = "${consoleName} avasi mekaniikkaliikkeen `${label}`.",
+		closed_shop_logs_title = "Sulkeminen mekaniikkaliike",
+		closed_shop_logs_details = "${consoleName} sulki mekaniikkaliikkeen `${label}`."
 	},
 
 	meow = {
@@ -11011,6 +11314,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		success_wipe_blocks = "Onnistuneesti poistettiin ${count} lohkoa ${radius}m säteellä.",
 		failed_wipe_blocks = "Palikoiden pyyhkiminen epäonnistui.",
 		press_to_use_jukebox = "Paina ~INPUT_CONTEXT~, jotta voit käyttää jukeboxia."
+	},
+
+	minigames = {
+		skipping_minigame = "Minipelin ohittaminen"
 	},
 
 	mining = {
@@ -11118,6 +11425,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		bad_ooc_message = "Yritettiin lähettää mahdollisesti huono viesti OOC-chatissa: \"${oocMessage}\"",
 		bad_ped_message = "Yritettiin luoda mahdollisesti virheellinen hahmomuistio: \"${pedMessage}\"",
 		bad_twitter_post = "Yritettiin luoda mahdollisesti virheellinen Twitter-viesti: \"${twitterPost}\"",
+		bad_twitter_account = "Yritettiin luoda mahdollisesti huono Twitter-tili: \"${username}\"",
 		bad_phone_message = "Yritettiin luoda mahdollisesti virheellinen puhelinviesti: \"${message}\"",
 		user_not_found = "Käyttäjää ei löytynyt palvelin tunnuksella `${serverId}`.",
 		player_already_muted = "${consoleName} on jo mykistetty.",
@@ -11125,6 +11433,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		player_has_been_muted = "${consoleName} on nyt mykistetty syynä `${reason}`.",
 		player_not_muted = "${consoleName} ei ole mykistetty.",
 		player_has_been_unmuted = "${consoleName} on nyt poistettu mykistyksistä.",
+		just_been_muted = "Olet juuri saanut mykkäyksen /ooc ja /report kanaville syystä `${reason}`.",
+		just_been_muted_no_reason = "Olet juuri saanut mykkäyksen /ooc ja /report kanaville ilman erityisesti ilmoitettua syytä.",
 		ooc_clear_chat_title = "Keskustelu Tyhjennetty",
 		ooc_clear_chat_details = "${consoleName} tyhjensi keskustelun kaikilta.",
 		muted_player = "Mykistetty Pelaaja",
@@ -12127,7 +12437,34 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		disabled_generators = "Kytkettiin pois päältä ${disabledGeneratorsCount} generaattoria.",
 
 		drill_drilling = "Porataan (${remainingSeconds} s)",
-		drill_jammed = "[${InteractionKey}] Porakone jumissa (${remainingSeconds} s)"
+		drill_jammed = "[${InteractionKey}] Porakone jumissa (${remainingSeconds} s)",
+		search_safe = "[${InteractionKey}] Etsi turvallinen",
+		searching_safe = "Etsitään turvallista",
+
+		close_up_bank = "Sulje pankki",
+		press_to_close_up_bank = "[${InteractionKey}] Sulje pankki",
+		closing_up_bank = "Pankki suljetaan",
+
+		not_enough_police = "Poliiseja ei ole tarpeeksi aloittamaan ryöstöä.",
+
+		dispatch = "[Hätäkeskus]",
+		alarm_triggered = "10-90: hälytys on lauennut Pacific Bankissa.",
+		pacific_bank_alarm = "Pacific Bankin hälytys",
+
+		press_to_search = "[${InteractionKey}] Etsi",
+		search = "Etsi",
+		searching = "Etsitään",
+		found_nothing = "Ei löytynyt mitään.",
+
+		power_generator_disabled_title = "Virranjakaja poistettu käytöstä",
+		power_generator_disabled_details = "${consoleName} poisti virranjakajan nimeltä '${powerGeneratorName}'.",
+
+		pacific_bank_robbery_started_title = "Tyynen valtameren pankkiryöstö alkanut",
+		pacific_bank_robbery_started_details = "${consoleName} aloitti Tyynen valtameren pankkiryöstön.",
+
+		pacific_bank_reward_logs_title = "Tyynen valtameren pankin palkkio",
+		pacific_bank_reward_saving_bonds_logs_details = "${consoleName} tutki tallelokeroa ja sai säästöobligaatioita, joiden arvo oli $${amount}.",
+		pacific_bank_reward_items_logs_details = "${consoleName} tutki tallelokeroa ja sai ${amount} kpl tavaroita."
 	},
 
 	panel = {
@@ -12187,14 +12524,20 @@ OP.Global.Locales.Languages["fi-FI"] = {
 	},
 
 	paper_bags = {
-		fill_bag = "Teleportuoja žaidėją pas jus.",
-		no_bags = "serverio id",
-		no_bag_items = "Žaidėjo, kurį norite teleportuoti, serverio id.",
-		close_bag = "Sulje laukku",
-		cancel_bag = "Peruuta",
-		title = "Paperipussi",
+		paper_bag_brand = "Tässä paperipussissa on <b>${brand}</b>-logo.",
+		paper_bag_no_brand = "Tämä on tavallinen paperipussi.",
+
+		burger_shot_delivery = "Burger Shot",
+		bean_machine_delivery = "Bean Machine",
+		kissaki_delivery = "Kissaki",
+		green_wonderland_delivery = "Green Wonderland",
+		pizza_this_delivery = "Pizza This",
+
 		failed_fill = "Paperikassin täyttö epäonnistui.",
-		filled_bag = "Paperikassi täytetty onnistuneesti."
+		filled_bag = "Paperikassi täytetty onnistuneesti.",
+
+		filled_bag_log_title = "Täytetty paperipussi",
+		filled_bag_log_details = "${consoleName} täytti paperipussin kohteella ${contents}."
 	},
 
 	parking_meters = {
@@ -12203,7 +12546,13 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		no_cash = "Sinulla ei ole $4 käteistä.",
 		max_time = "Tämä pysäköintimittari on jo maksimissaan.",
-		failed_pay = "Pysäköintimittarin maksu epäonnistui."
+		failed_pay = "Pysäköintimittarin maksu epäonnistui.",
+
+		failed_lockpick = "Epäonnistui parkkimittarin lukon murtamisessa.",
+		already_lockpicked = "Tämä parkkimittari on jo aikaisemmin murrettu.",
+
+		lockpicked_meter_logs_title = "Murtautunut parkkimittari",
+		lockpicked_meter_logs_details = "${consoleName} murti pysäköintimittarin ja sai ${items} ja $${money} käteisenä."
 	},
 
 	pause_menu = {
@@ -12296,6 +12645,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		ped_failed_task = "Yritettiin antaa `${task}` tehtävää luoduille NPC-hahmoille, mutta epäonnistuttiin.",
 		invalid_target = "Virheellinen kohdepalvelun ID.",
 		invalid_task = "Virheellinen tai puuttuva NPC-tehtävä.",
+		no_nearby_ped = "Lähellä ei ole patsaita.",
+		ped_attack_success = "Onnistuneesti pakoitettiin patsas `${networkId}` hyökkäämään ${target}.",
+		ped_failed_attack = "Patsaan `${networkId}` hyökkäykseen epäonnistui ${target}.",
 		ped_emote_success = "Luoduille NPC-hahmoille asetettu onnistuneesti `${emote}` ele.",
 		ped_failed_emote = "Yritettiin asettaa luoduille NPC-hahmoille `${emote}` ele, mutta epäonnistuttiin.",
 		invalid_emote = "Virheellinen ele ${emote}.",
@@ -12509,7 +12861,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		invalid_prop_id = "Virheellinen esineen tunniste.",
 		prop_deleted = "Esine tunnisteella ${propId} poistettiin.",
 
-		invalid_wipe_radius = "Virheellinen pyyhkimisalue (1:n ja 100:n välillä).",
+		invalid_wipe_radius = "Virheellinen pyyhimis-säde (1 ja 500 välillä).",
 		wipe_successful = "Esineiden pyyhkiminen onnistui ${amount} kpl.",
 		wipe_failed = "Esineiden pyyhkiminen epäonnistui.",
 
@@ -12764,6 +13116,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		logs = "Tapahtumalokit",
 		no_logs = "Ei tapahtumalokimerkintöjä.",
 		summary = "undefined",
+		summary_description = "Yhteenveto kaikista tilitapahtumista viimeisen 90 päivän ajalta tälle tilille.",
 		name = "undefined",
 		transactions = "undefined",
 		withdrawn = "undefined",
@@ -12827,7 +13180,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		scrapyard = "Romuttamo",
 		cant_scrap_vehicle = "Anteeksi kumppani, mutta tuossa autossa on enemmän punaisia liput kuin rodeossa. En voi ottaa sitä vastaan!",
 		failed_scrap_vehicle = "Näyttää siltä, että romuttamollamme on jonkinlainen hikka. Yritä romuttaa ajoneuvo uudelleen myöhemmin, kumppani!",
-		scrap_confirm = "Haluatko varmasti romuttaa tämän ajoneuvon? Tämä poistaa ${name} pysyvästi autotallistasi ja saat 12-16 prosenttia sen alkuperäisestä hinnasta käteisenä ja kultahippuja.",
+		scrap_confirm = "Haluatko varmasti romuttaa tämän ajoneuvon? Tämä poistaa ${name} pysyvästi tallistasi ja saat 16-20% alkuperäisestä hinnasta käteisenä ja kultahipuina.",
 		scrap_success = "No, ihmeiden aika ei ollut ohi. Vaihdoimme sen käsittömäksi aarteeksi. Näytti siltä, että oli aika sanoa hyvästit, kumppani!",
 		scrapped_vehicle_logs_title = "Kierrätetty ajoneuvo",
 		scrapped_vehicle_logs_details = "${consoleName} kierrätti ajoneuvonsa (${modelName} #${vehicleId}) ja sai vastineeksi ${gold} kultaharkkoa ja $${cash} käteisenä (${percentage}% alkuperäisestä hinnasta)."
@@ -13386,6 +13739,15 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		teleport_player_player_logs_details = "${consoleName} teleporttasi pelaajan ${sourceConsoleName} pelaajalle ${targetConsoleName}."
 	},
 
+	taxes = {
+		taxes_collected = "Kerätyt verot. Määrät ovat seuraavat.\n- Käteinen: $${cash}\n- Pankki: $${bank}\n- Osakkeet: $${stocks}\n- Säästöt: $${savings}\n- Yhteiset tilit: $${sharedAccounts}",
+		taxes = "Verot",
+		transaction_logs = "Tapahtumalokit",
+		paid_taxes = "Maksat veroina ${amount}.",
+		no_logs = "Ei tapahtumalokeja.",
+		close = "Sulje"
+	},
+
 	teleporters = {
 		area_not_clear = "Kohde on estetty ajoneuvolla.",
 
@@ -13634,6 +13996,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		department_police_undercover = "Salainen poliisi",
 
+		department_doc_training = "DOC-koulutus",
 		department_police_training = "Polisiikoulutus",
 		department_medical_training = "EMS Koulutus",
 		department_bcfd_training = "BCFD Koulutus"
@@ -14284,6 +14647,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		no_nearby_vehicle = "Ei lähistöllä olevaa ajoneuvoa.",
 		no_nearby_vehicle_door = "Ei lähellä ajoneuvon ovea.",
 		removing_door = "Oven Poisto",
+		cleaning_up_body = "Ruumiin siivous",
+		destroying_spikes = "Nastojen tuhoaminen",
 		failed_remove_door = "Ajoneuvon oven poisto epäonnistui.",
 		invalid_clothing_type = "Virheellinen vaatetyyppi.",
 		no_nearby_player = "Lähellä ei ole kahlittua tai maassa olevaa pelaajaa.",
@@ -14379,7 +14744,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		none = "Ei mitään",
 		active = "Aktiivinen",
 		not_active = "Ei aktiivinen",
-		active_robberies = "\nAktiivinen kauppa: ${store}.\nAktiivinen pankki: ${bank}\nAktiivinen korukauppa: ${jewelry}",
+		active_robberies = "\nAktiivinen kauppa: ${store}.\nAktiivinen pankki: ${bank}\nAktiivinen jalokivi: ${jewelry}\nTyynen valtameren pankki: ${pacificBank}",
 
 		failed_dispatch = "Hälytyksen lähettäminen epäonnistui.",
 		dispatch_title = "[Hälytys]",
@@ -14472,6 +14837,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		on_floor = "Kerroksessa ${floor}.",
 		ground_floor = "Alakerta",
 		second_floor = "Toinen kerros",
+		third_floor = "Kolmas kerros",
 		icu_floor = "TEHO-osasto",
 		surgery_floor = "Leikkausosasto",
 
@@ -14513,7 +14879,55 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		task_disinfect_table = "Desinfioi toimenpidepöytä.",
 		task_disinfect_table_near = "Paina ~INPUT_DETONATE~, jotta voit desinfioida toimenpidepöydän.",
-		task_disinfect_table_active = "Pöydän desinfiointi käynnissä"
+		task_disinfect_table_active = "Pöydän desinfiointi käynnissä",
+
+		task_wipe_table = "Pyyhi pöytä.",
+		task_wipe_table_near = "Paina ~INPUT_DETONATE~, jotta voit pyyhkiä pöytää.",
+		task_wipe_table_active = "Pöydän pyyhkiminen",
+
+		task_wash_dishes = "Pese astiat.",
+		task_wash_dishes_near = "Paina ~INPUT_DETONATE~, jotta voit pestä astioita.",
+		task_wash_dishes_active = "Astioiden pesu",
+
+		task_restock_drink_dispenser = "Täytä juoma-automaatti.",
+		task_restock_drink_dispenser_near = "Paina ~INPUT_DETONATE~, jotta voit täyttää juoma-automaatin.",
+		task_restock_drink_dispenser_active = "Juoma-automaatin täyttö",
+
+		task_restock_ingredients = "Täydennä ainekset.",
+		task_restock_ingredients_near = "Paina ~INPUT_DETONATE~, jotta voit täydentää ainekset.",
+		task_restock_ingredients_active = "Täydennetään aineksia",
+
+		task_organize_shelf = "Järjestä hylly.",
+		task_organize_shelf_near = "Paina ~INPUT_DETONATE~, jotta voit järjestää hyllyn.",
+		task_organize_shelf_active = "Järjestetään hyllyä",
+
+		task_clean_countertop = "Puhdista työtaso.",
+		task_clean_countertop_near = "Paina ~INPUT_DETONATE~, jotta voit puhdistaa työtason.",
+		task_clean_countertop_active = "Puhdistetaan työtasoa",
+
+		task_file_taxes = "Tee veroilmoitus.",
+		task_file_taxes_near = "Paina ~INPUT_DETONATE~, jotta voit tehdä veroilmoituksen.",
+		task_file_taxes_active = "Veroilmoitusta tehdään",
+
+		task_refill_napkins = "Täytä servetit.",
+		task_refill_napkins_near = "Paina ~INPUT_DETONATE~, jotta voit täyttää servetit.",
+		task_refill_napkins_active = "Servettejä täytetään",
+
+		task_refill_water = "Täytä vesiautomaatti.",
+		task_refill_water_near = "Paina ~INPUT_DETONATE~, jotta voit täyttää vesiautomaatin.",
+		task_refill_water_active = "Vesiautomaattia täytetään",
+
+		task_clean_windows = "Pese ikkunat.",
+		task_clean_windows_near = "Paina ~INPUT_DETONATE~, jotta siivoat ikkunat.",
+		task_clean_windows_active = "Siivoamassa ikkunoita",
+
+		task_clean_oven = "Puhdista uuni.",
+		task_clean_oven_near = "Paina ~INPUT_DETONATE~, jotta puhdistat uunin.",
+		task_clean_oven_active = "Puhdistamassa uunia",
+
+		task_take_nap = "Nuku päiväunet.",
+		task_take_nap_near = "Paina ~INPUT_DETONATE~, jotta otat päiväunet.",
+		task_take_nap_active = "Nukkumassa päiväunia"
 	},
 
 	tow = {
@@ -14679,6 +15093,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		fuel_level_set_to = "Polttoainetason on asetettu arvoon `${fuelLevel}`.",
 		not_in_a_vehicle = "Et ole ajoneuvossa.",
 		vehicle_engine_on = "Moottori on yhä päällä.",
+
+		fuel_debug_enabled = "Ominaisuus polttoainedebugille on käytössä.",
+		fuel_debug_disabled = "Ominaisuus polttoainedebugille on poissa käytöstä.",
 
 		vehicle_exploded_logs_title = "Ajoneuvo räjähti",
 		vehicle_exploded_logs_details = "${consoleName} tankkasi ajoneuvon ja aiheutti räjähdyksen, koska moottori oli päällä."
@@ -14846,12 +15263,22 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		gave_keys_success = "${displayName} sai avaimet ajoneuvoonsa onnistuneesti.",
 		gave_keys_failure = "Epäonnistuttiin antamaan avaimet ajoneuvoon ${displayName}:lle.",
 
+		car_keys_label = "Avaimet ${plate} ajoneuvoon",
+		something_went_wrong = "Jotain meni pieleen.",
+		keys_no_longer_work = "Nämä avaimet eivät enää toimi.",
+		success_use_keys = "Sinulla on nyt avaimet kohteelle `${plate}`.",
+
 		no_nearby_vehicle = "Ei lähistöllä olevaa ajoneuvoa.",
 		there_is_someone_in_the_driver_seat = "Kuskin paikalla on joku.",
 		the_driver_door_is_closed = "Kuljettajan ovi on suljettu.",
 		checking_ignition = "Tarkistetaan sytytys",
 		ignition_tampered_with = "Sytytystä on manipuloitu.",
-		ignition_not_tampered_with = "Sytytystä ei ole manipuloitu."
+		ignition_not_tampered_with = "Sytytystä ei ole manipuloitu.",
+
+		used_car_keys_logs_title = "Käytetyt Auton Avaimet",
+		used_car_keys_logs_details = "${consoleName} käytti auton avaimia ajoneuvolle, jonka rekisterinumero on `${plate}` (N-${networkId}).",
+		grabbed_car_keys_logs_title = "Auton Avaimet Napattu",
+		grabbed_car_keys_logs_details = "${consoleName} nappasi auton avaimet ajoneuvolle, jonka rekisterinumero on `${plate}` (N-${networkId})."
 	},
 
 	modifications = {
@@ -14905,7 +15332,11 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 	sirens = {
 		sirens_muted_on = "Kaikki sireenit on nyt mykistetty.",
-		sirens_muted_off = "Kaikki sireenit on nyt avattu."
+		sirens_muted_off = "Kaikki sireenit on nyt avattu.",
+
+		lights_on = "Valot: ${count}",
+		sirens_on = "Hälytysajoneuvojen sireenit: ${count}",
+		horns_on = "Äänitorvet: ${count}"
 	},
 
 	spawner = {

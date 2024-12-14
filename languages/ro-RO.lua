@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 34 (do not change)
+-- AUTO LOCALES: 35 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -83,7 +83,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 	ledges = {
 		no_ledge = "Nu te afli lângă o margine.",
-		invalid_variation = "Varianta invalidă.",
+		invalid_variation = "Varianta invalidă (1 - 13).",
 		press_x_to_stop = "Apăsați ~INPUT_VEH_DUCK~ pentru a vă opri din ședere."
 	},
 
@@ -872,7 +872,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		sit_ledge_command = "stai_platăo",
 		sit_ledge_command_help = "Stai pe o plătou dacă te afli în fața unuia. Trebuie să fii cu fața către plătou.",
 		sit_ledge_command_parameter_variation = "variație",
-		sit_ledge_command_parameter_variation_help = "Ce animație de ședere să se redea (1 - 4).",
+		sit_ledge_command_parameter_variation_help = "Ce animație de așezat să se redă (1 - 13).",
 		sit_ledge_command_substitutes = "plătou",
 
 		-- animations/walkstyles
@@ -899,7 +899,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		staff_pm_command_parameter_server_id_help = "ID-ul serverului jucătorului pe care încerci să îi trimiți un mesaj.",
 		staff_pm_command_parameter_message = "mesaj",
 		staff_pm_command_parameter_message_help = "Mesajul pe care dorești să îl trimiți.",
-		staff_pm_command_substitutes = "staffpm",
+		staff_pm_command_substitutes = "staffpm, message, pm, msg",
 
 		important_staff_pm_command = "important_staff_pm",
 		important_staff_pm_command_help = "Trimite un mesaj important către un jucător în calitate de membru al personalului.",
@@ -907,7 +907,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		important_staff_pm_command_parameter_server_id_help = "Server ID-ul jucătorului căruia dorești să-i trimiți un mesaj.",
 		important_staff_pm_command_parameter_message = "mesaj",
 		important_staff_pm_command_parameter_message_help = "Mesajul important pe care dorești să-l trimiți.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
 
 		reply_pm_command = "răspuns_pm",
 		reply_pm_command_help = "Răspunde la ultimul mesaj de la staff pe care l-ai primit.",
@@ -1304,7 +1304,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		register_weapon_command_substitutes = "",
 
 		advanced_metagame_command = "metajoc_avansat",
-		advanced_metagame_command_help = "Comanda pentru superadmini care te ajuta sa imbunatatesti metajocul.",
+		advanced_metagame_command_help = "Comandă pentru a te ajuta să-ți duci metagaming-ul la nivelul următor.",
+		advanced_metagame_command_parameter_use_characters = "folosește caractere",
+		advanced_metagame_command_parameter_use_characters_help = "Folosește numele personajelor în loc de numele jucătorilor.",
 		advanced_metagame_command_substitutes = "ma",
 
 		list_weapon_attachments_command = "listare_atasamente_arme",
@@ -1479,6 +1481,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		leaderboard_command_parameter_total_playtime_help = "În mod implicit, timpul petrecut efectiv pe personaje va fi utilizat. Setează acest lucru la `y` pentru a folosi timpul total petrecut în server în schimb.",
 		leaderboard_command_substitutes = "",
 
+		economy_leaderboard_command = "clasament_economic",
+		economy_leaderboard_command_help = "Verificați clasamentul economic.",
+		economy_leaderboard_command_substitutes = "ceconomic",
+
 		package_command = "pachet",
 		package_command_help = "Verifică și reîmprospătează pachetul tău.",
 		package_command_substitutes = "reimprospatare_pachet",
@@ -1589,12 +1595,16 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		-- game/battle_royale
 		battle_royale_toggle_command = "battle_royale_toggle",
 		battle_royale_toggle_command_help = "Activează sau dezactivează funcția Battle Royale.",
+		battle_royale_toggle_command_parameter_max_teammates = "max colegi",
+		battle_royale_toggle_command_parameter_max_teammates_help = "Numărul maxim de colegi permis pe echipă. Implicit este 4. Minim este 1 și maxim este 10.",
 		battle_royale_toggle_command_substitutes = "br_act_dez",
 
 		battle_royale_start_command = "start_battle_royale",
 		battle_royale_start_command_help = "Începe o rundă de Battle Royale.",
 		battle_royale_start_command_parameter_no_vehicles = "fără vehicule",
 		battle_royale_start_command_parameter_no_vehicles_help = "Creează o rundă fără vehicule.",
+		battle_royale_start_command_parameter_new_inventories = "inventare noi",
+		battle_royale_start_command_parameter_new_inventories_help = "Creează un meci în care fiecare are un inventar temporar gol.",
 		battle_royale_start_command_substitutes = "br_incepe",
 
 		battle_royale_invite_command = "invita_battle_royale",
@@ -1810,7 +1820,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		-- game/container_storage
 		containers_command = "containere",
 		containers_command_help = "Vizualizează și gestionează containerele tale închiriate pentru depozitare.",
-		containers_command_substitutes = "",
+		containers_command_substitutes = "depouri",
+
+		-- game/containers
+		containers_debug_command = "depouri_debug",
+		containers_debug_command_help = "Desenați toate containerele din apropiere.",
+		containers_debug_command_substitutes = "",
 
 		-- game/crafting
 		crafting_debug_command = "debug_crafting",
@@ -2121,6 +2136,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		random_position_command = "pozitie_aleatorie",
 		random_position_command_help = "Teleportează-te la o poziție aleatorie pe insula principală. (De asemenea, te face invizibil)",
+		random_position_command_parameter_server_id = "id_server",
+		random_position_command_parameter_server_id_help = "Id-ul serverului jucătorului pe care doriți să-l teleportezi.",
 		random_position_command_substitutes = "aleatoriu",
 
 		crash_ui_command = "crash_ui",
@@ -2153,7 +2170,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		-- game/development
 		toggle_developer_ambience_command = "Pomyślnie włączono odbicia.",
 		toggle_developer_ambience_command_help = "Activează/dezactivează ambianța dezvoltatorului.",
-		toggle_developer_ambience_command_substitutes = "",
+		toggle_developer_ambience_command_substitutes = "developer_ambience, ambianta",
 
 		-- game/dna_evidence
 		take_dna_sample_command = "preia_probe_adn",
@@ -2714,6 +2731,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		minecraft_wipe_command_parameter_radius_help = "Raza în care dorești să ștergi blocurile. (0 = toate blocurile, maxim 5000)",
 		minecraft_wipe_command_substitutes = "",
 
+		-- game/minigames
+		skip_minigames_command = "sari_minijocuri",
+		skip_minigames_command_help = "Comutare pentru a sari peste minijocuri.",
+		skip_minigames_command_substitutes = "",
+
 		-- game/mining
 		mining_debug_command = "mining_debug",
 		mining_debug_command_help = "Comutați debug-ul recoltării.",
@@ -2841,6 +2863,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		model_view_command_parameter_model_help = "Numele sau hash-ul modelului pe care dorești să-l vezi.",
 		model_view_command_parameter_no_blocker = "fără blocare",
 		model_view_command_parameter_no_blocker_help = "Dezactivează blocarea umbrei (implicit: nu).",
+		model_view_command_parameter_clamp = "limita",
+		model_view_command_parameter_clamp_help = "Limitați dimensiunea să fie întotdeauna mai mare de 0.25 (ajută cu modelele mici).",
 		model_view_command_parameter_components = "componente",
 		model_view_command_parameter_components_help = "Componentele armelor (separate prin virgulă).",
 		model_view_command_substitutes = "model, view",
@@ -3026,6 +3050,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		ped_remove_command = "stergepeduri",
 		ped_remove_command_help = "Elimina toate ped-urile spațiate de tine.",
 		ped_remove_command_substitutes = "",
+
+		ped_attack_command = "ped_atac",
+		ped_attack_command_help = "Face ca cel mai apropiat ped să atace un anumit jucător.",
+		ped_attack_command_parameter_target = "țintă",
+		ped_attack_command_parameter_target_help = "Jucătorul pe care doriți ca cel mai apropiat ped să-l atace.",
+		ped_attack_command_substitutes = "",
 
 		list_ped_emotes_command = "listare_emoticoane_ped",
 		list_ped_emotes_command_help = "Listează toate emoticoanele disponibile pentru ped.",
@@ -3461,6 +3491,17 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		tablet_command = "tableta",
 		tablet_command_help = "Deschide UI-ul tabletei (daca ai o tableta).",
 		tablet_command_substitutes = "",
+
+		-- game/taxes
+		tax_collection_command = "colectare_taxe",
+		tax_collection_command_help = "Declanșează o colectare manuală a taxelor.",
+		tax_collection_command_parameter_percentage = "procentaj",
+		tax_collection_command_parameter_percentage_help = "Procentul pe care doriți să-l taxați din averea jucătorilor. Va taxa și jucătorii offline. Un număr normal ar putea fi 0.1 (0.1%).",
+		tax_collection_command_substitutes = "",
+
+		taxes_command = "taxe",
+		taxes_command_help = "Afișează taxele tale.",
+		taxes_command_substitutes = "",
 
 		-- game/teleporting
 		tp_back_command = "tp_back",
@@ -3965,6 +4006,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		set_fuel_command_parameter_server_id_help = "Dacă doriți să setați combustibilul pentru un alt jucător. Lăsarea necompletată va selecta automat propriul cont.",
 		set_fuel_command_substitutes = "set_combustibil",
 
+		fuel_debug_command = "fuel_debug",
+		fuel_debug_command_help = "Afișează schimbările nivelului de combustibil al vehiculului în consolă.",
+		fuel_debug_command_substitutes = "",
+
 		-- vehicles/garage_access
 		manage_garage_command = "gestionează_garaj",
 		manage_garage_command_help = "Gestionează-ți garajul și cine are acces la el.",
@@ -4019,6 +4064,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		pickup_keys_command = "aduna_cheile",
 		pickup_keys_command_help = "Te face sa aduni cheile vehiculului cel mai apropiat.",
 		pickup_keys_command_substitutes = "",
+
+		grab_keys_command = "grab_keys",
+		grab_keys_command_help = "Ia cheile de la vehiculul pe care-l conduci în prezent.",
+		grab_keys_command_substitutes = "",
 
 		keys_command = "chei",
 		keys_command_help = "Obtine cheile masinii in care te afli.",
@@ -4086,6 +4135,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		mute_sirens_command = "muted_sirene",
 		mute_sirens_command_help = "Oprire sunete si claxoane.",
 		mute_sirens_command_substitutes = "",
+
+		sirens_debug_command = "sirens_debug",
+		sirens_debug_command_help = "Desenează toate semnalele acustice, claxoanele și luminițele.",
+		sirens_debug_command_substitutes = "",
 
 		-- vehicles/trailers
 		toggle_trailer_command = "comută_remorcă",
@@ -4370,6 +4423,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		player_playtime = "${playerName} (Pozitie ${position})\nTimp total jucat: ${totalPlaytime}\nTimp jucat in sesiune: ${sessionPlaytime}",
 		leaderboard = "Clasament",
 		leaderboard_total = "Clasament (Timp total de joc)",
+		leaderboard_economy = "Clasament (Economie)",
 		your_position = "Poziția ta",
 		leaderboard_loading = "Clasamentul este încă în curs de încărcare.",
 		logs_user_reject_connection_title = "Conexiune Refuzată",
@@ -4491,7 +4545,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		fake_disconnect_feature = "Deconectare falsă",
 		brighter_nights_feature = "Nopți mai luminoase",
 		ridealong_feature = "Însoțire",
-		broadcast_all_feature = "Transmite tuturor"
+		broadcast_all_feature = "Transmite tuturor",
+		skip_minigames_feature = "Ocolire Minijocuri"
 	},
 
 	admin_menu = {
@@ -4568,7 +4623,45 @@ OP.Global.Locales.Languages["ro-RO"] = {
 	},
 
 	animals = {
-		invalid_sound = "Sunet invalid."
+		invalid_sound = "Sunet invalid.",
+		not_enough_space = "Nu ai suficient spațiu pentru a ridica acest animal.",
+
+		male = "masculin",
+		female = "feminin",
+
+		description_cat_unnamed = "Un felin ${gender} care umblă prin viață cu un aer de mister, ${age} de ani și cântărind ${weight}. Cu o slăbiciune de nepotolit pentru ${food}, acest rătăcit mustăcios s-ar putea să complota pentru dominarea lumii într-un moment și să se culce la o siestă în următorul. Fiecare mustățic spune o poveste, fiecare privire ascunde un secret.",
+		description_cat_named = "${name}, pisica ${gender}, este un companion în vârstă de ${age} ani care poartă înțelepciunea a numeroase somnuri însorite și aventuri de la miezul nopții. Cu o greutate de ${weight} și o pasiune de neclintit pentru ${food}, ${name} se mișcă prin lume ca un enigmă vie - parte demnitar regal, parte filozof stradal ștrengar.",
+
+		description_dog_unnamed = "Un câine ${gender}, în vârstă de ${age} ani și cu o greutate de ${weight}, cu un spirit la fel de vast ca orizontul. Complet devotat ${food} și purtând un suflet plin de entuziasm nestăpânit, acest companion blănos transformă fiecare moment într-o potențială aventură, fiecare plimbare într-o călătorie epică.",
+		description_dog_named = "${name}, câinele ${gender}, ${age} în această poveste mare de prietenie, cântărind ${weight} și radiază o energie care ar putea lumina cea mai întunecată cameră. Complet îndrăgostit de ${food}, ${name} trăiește după un crez simplu: fiecare zi este un dar, fiecare prieten o comoară, fiecare moment o oportunitate pentru bucurie.",
+
+		description_rabbit_unnamed = "Această iepurașă ${gender}, ${age} tânără și cântărind ${weight}, sări prin viață cu entuziasmul unui explorator născut. Conduită de o iubire neașteptată pentru ${food}, urechile îi sunt mereu alerte, spiritul său vibrant, inimos pulsând cu o curiozitate nemărginită.",
+		description_rabbit_named = "${name}, un iepure ${gender} de ${age} ani în această călătorie sălbatică a vieții, cântărește ${weight} și emană un entuziasm molipsitor care sfidează dimensiunile sale. Total devotat(ă) ${food}, ${name} transformă fiecare hopsită într-o declarație de bucurie, fiecare ciufulitură într-o aventură.",
+
+		description_hen_unnamed = "O găină ${gender}, de ${age} ani și sprintenă cu ${weight}, care se deplasează cu încrederea unui filozof al fermei. Alimentată de o dorință neașteptată pentru ${food}, acest prieten cu pene transformă momentele obișnuite în narative epice ale măiestriei păsărelelor.",
+		description_hen_named = "${name}, găina ${gender}, înțeleaptă de ${age} ani și cântărind ${weight}, clămpăne cu autoritatea unui povestitor experimentat. Obsedată de ${food} și stăpână a neașteptatului, ${name} demonstrează că adevărata carismă nu ține cont de specie.",
+
+		description_rat_unnamed = "Această șobolană ${gender}, ${age} aventuroasă și cântărind ${weight}, navighează în lume cu o inteligență ascuțită și șarm neașteptat. Condusă de o devotare absolută față de ${food}, transformă fiecare colț într-o posibilă descoperire, fiecare umbră într-un loc de joacă.",
+		description_rat_named = "${name}, o șobolană ${gender} de ${age} ani, implicată în marea experiență a vieții, cântărind ${weight} și plină de personalitate. Cu o legătură indestructibilă cu ${food}, ${name} întruchipează spiritul curiozității - mică în dimensiune, infinită în spirit.",
+
+		pick_up_named = "[${SeatEjectKey}] Ridică ${name}",
+		pick_up_cat = "[${SeatEjectKey}] Ridică Pisica",
+		pick_up_dog = "[${SeatEjectKey}] Ridică Câinele",
+		pick_up_hen = "[${SeatEjectKey}] Ridică Găina",
+		pick_up_rabbit = "[${SeatEjectKey}] Ridică Iepurele",
+		pick_up_rat = "[${SeatEjectKey}] Ridică Șobolanul",
+
+		failed_pickup_cat = "Nu s-a putut ridica pisica.",
+		failed_pickup_dog = "Nu s-a putut ridica câinele.",
+		failed_pickup_hen = "Nu s-a putut ridica găina.",
+		failed_pickup_rabbit = "Nu s-a putut ridica iepurele.",
+		failed_pickup_rat = "Nu s-a putut ridica șobolanul.",
+
+		failed_place_cat = "Nu s-a putut plasa pisica.",
+		failed_place_dog = "Nu s-a putut plasa câinele.",
+		failed_place_hen = "Nu s-a putut plasa găina.",
+		failed_place_rabbit = "Nu s-a putut plasa iepurele.",
+		failed_place_rat = "Nu s-a putut plasa șobolanul."
 	},
 
 	arcade = {
@@ -4691,8 +4784,28 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		deposit = "Depunere",
 		balance = "Sold",
 		transfer = "Transfer",
+		deposit_coins = "Depuneți monede",
 		savings_bonds = "Nie udało się wpłacić środków.",
 		back = "Înapoi",
+
+		condition_pristine = "în stare impecabilă",
+		condition_mint = "în stare aproape impecabilă",
+		condition_slight_worn = "ușor purtat",
+		condition_worn = "puratat",
+		condition_heavy_worn = "puternic purtat",
+		condition_corroded = "corodat",
+		condition_damaged = "deteriorat",
+		condition_unrecognizable = "nerecunoscut",
+
+		mint_p = "Philadelphia (P)",
+		mint_d = "Denver (D)",
+		mint_s = "San Francisco (S)",
+		mint_w = "West Point (W)",
+		mint_cc = "Carson City (CC)",
+		mint_o = "New Orleans (O)",
+		mint_none = "o locație necunoscută (fără indicativ de fabrică)",
+
+		coin_metadata = "Bătută în ${minted}, această monedă a fost produsă la ${mark} și este ${condition}.",
 
 		amount = "Sumă",
 		target = "Destinatar",
@@ -4706,6 +4819,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		failed_withdraw = "Nu s-a reușit retragerea de bani",
 		failed_transfer = "Nu s-a reușit transferul de bani",
 		failed_deposit_bonds = "Nie udało się usunąć konta oszczędnościowego.",
+		failed_deposit_coins = "Depunerea monedelor a eșuat",
 
 		processing = "Se procesează...",
 		counting_bills = "Se numără bancnotele...",
@@ -4713,22 +4827,29 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		something_went_wrong = "Ceva nu a mers bine.",
 		error_not_online = "Destinatarul tău nu este conectat.",
 		error_not_enough_money = "Fonduri insuficiente.",
-		deposit_amount_big = "Depozitele la ATM sunt limitate la $4,000.",
-		withdraw_amount_big = "Retragerile la ATM sunt limitate la $6,000.",
+		deposit_amount_big = "Depunerile la ATM sunt limitate la $5,000.",
+		withdraw_amount_big = "Retragerile de la ATM sunt limitate la $10,000.",
+		bond_fee_details = "Taxă de procesare de 2% pentru obligațiuni de economii.",
+		atm_fee_details = "Taxă de procesare de 1.5% pentru retrageri de la ATM.",
 
 		retrieving_card = "Se preia cardul",
 		atm_damaged = "ATM-ul este deteriorat.",
 
 		press_to_use = "Apasă ~g~${InteractionKey} ~w~pentru a utiliza ATM-ul",
 		press_to_interact_bank = "Apasă ~g~${InteractionKey} ~w~pentru a interacționa cu Banca.",
+		fee_label = "cu o taxă de $${fee}",
+		no_fee_label = "fără taxă",
 
 		deposit_log_bank_title = "Depunere bancară",
 		deposit_log_atm_title = "Depunere ATM",
 		deposit_log = "${consoleName} a depus $${amount}.",
 
+		deposit_coins_log_title = "Depunere monede",
+		deposit_coins_log = "${consoleName} a depus ${coins} în valoare de $${amount}.",
+
 		withdraw_log_bank_title = "Retragere bancară",
 		withdraw_log_atm_title = "Retragere ATM",
-		withdraw_log = "${consoleName} a retras $${amount}.",
+		withdraw_log = "${consoleName} a retras $${amount} ${fee}.",
 		withdraw_log_bonds_title = "Retragere bancară (Obligațiuni)",
 		withdraw_log_bonds = "${consoleName} a retras $${amount} în obligațiuni de economisire (${bonds}).",
 
@@ -4736,7 +4857,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		transfer_log = "${consoleName} (#${characterId}) a transferat $${amount} către ${targetConsoleName} (#${targetCharacterId}).",
 
 		deposit_log_bonds_title = "Saldo konta jest niewystarczające.",
-		deposit_bonds_log = "Twoje saldo bankowe jest niewystarczające."
+		deposit_bonds_log = "${consoleName} a depus ${bonds} în valoare de $${totalMoney} cu o taxă de $${fee} (=$${amount})."
 	},
 
 	attachments = {
@@ -5598,13 +5719,15 @@ OP.Global.Locales.Languages["ro-RO"] = {
 	},
 
 	containers = {
-		drill_container = "Apăsați ~INPUT_CONTEXT~ pentru a defini containerul.",
-		drilling_container = "Container de foraj",
-		failed_drill = "Nu s-a putut deschide containerul prin foraj.",
-		drill_success = "Containerul a fost deschis cu succes prin foraj.",
+		drill_container = "Apasă ~INPUT_CONTEXT~ pentru a deschide lacătul containerului cu un burghiu.",
+		drill_warehouse = "Apasă ~INPUT_CONTEXT~ pentru a deschide lacătul depozitului cu un burghiu.",
+		drilling_lock = "Deschidere Lacăt",
+		failed_drill = "Nu s-a reușit deschiderea lacătului.",
+		drill_success = "Deschiderea lacătului s-a efectuat cu succes.",
 
-		containers_due_soon = "${count} dintre containerele tale de stocare sunt scadente în curând.",
-		container_blip = "Container"
+		containers_due_soon = "${count} din containerele/depozitele tale sunt aproape de termenul limită.",
+		container_blip = "Container",
+		warehouse_blip = "Depozit"
 	},
 
 	crafting = {
@@ -6211,6 +6334,29 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		crafted_bacon = "Slănină confecționată.",
 		failed_craft_bacon = "Nu s-a putut confecționa slănină.",
 
+		make_mochi = "Prepară Mochi",
+		press_to_make_mochi = "[${SeatEjectKey}] Prepară Mochi",
+
+		mochi_mango_recipe = "Mochi cu Mango",
+		making_mochi_mango = "Se prepară Mochi cu Mango",
+		made_mochi_mango = "Mochi cu mango făcut.",
+		failed_make_mochi_mango = "Nu s-a reușit prepararea mochi cu mango.",
+
+		mochi_strawberry_recipe = "Mochi cu Căpșuni",
+		making_mochi_strawberry = "Se prepară Mochi cu Căpșuni",
+		made_mochi_strawberry = "Mochi cu căpșuni făcut.",
+		failed_make_mochi_strawberry = "Nu s-a reușit prepararea mochi cu căpșuni.",
+
+		mochi_green_tea_recipe = "Mochi cu Ceai Verde",
+		making_mochi_green_tea = "Preparare Mochi cu Ceai Verde",
+		made_mochi_green_tea = "Mochi cu ceai verde făcut.",
+		failed_make_mochi_green_tea = "Nu s-a reușit prepararea mochi cu ceai verde.",
+
+		mochi_chocolate_recipe = "Mochi de Ciocolată",
+		making_mochi_chocolate = "Preparare Mochi de Ciocolată",
+		made_mochi_chocolate = "Mochi de ciocolată făcut.",
+		failed_make_mochi_chocolate = "Nu s-a reușit prepararea mochi de ciocolată.",
+
 		cook_food = "Gătire Mâncare",
 		press_to_cook_food = "[${SeatEjectKey}] Gătire Mâncare",
 
@@ -6233,6 +6379,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		cooking_spicy_ramen = "Se gătește Ramen Condimentat",
 		cooked_spicy_ramen = "Ramen condimentat gătit.",
 		failed_cook_spicy_ramen = "Nu s-a reușit gătirea ramenului condimentat.",
+
+		green_tea_recipe = "Ceai Verde",
+		brewing_green_tea = "Preparare Ceai Verde",
+		brewed_green_tea = "Ceai verde preparat.",
+		failed_brew_green_tea = "Nu s-a reușit prepararea ceaiului verde.",
 
 		cut_ingridients = "Tăiere Ingrediente",
 		press_to_cut_ingridients = "[${SeatEjectKey}] Tăiere Ingrediente",
@@ -6385,6 +6536,30 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		baking_chocolate_cake = "Se coace Tortul de ciocolată",
 		baked_chocolate_cake = "Tort de ciocolată copt.",
 		failed_baking_chocolate_cake = "Nu s-a reușit coacerea tortului de ciocolată.",
+
+		make_coffee = "Prepară Cafea",
+		press_to_make_coffee = "[${SeatEjectKey}] Prepară Cafea",
+
+		bean_coffee_recipe = "Cafea din Boabe",
+		espresso_recipe = "Espresso",
+		cappuccino_regular_recipe = "Cappuccino (Lapte de Vacă)",
+		cappuccino_almond_recipe = "Cappuccino (Lapte de Migdale)",
+		cappuccino_pigeon_recipe = "Cappuccino (Lapte de Porumbel)",
+		iced_latte_regular_recipe = "Iced Latte (Lapte de Vacă)",
+		iced_latte_almond_recipe = "Iced Latte (Lapte de Migdale)",
+		iced_latte_pigeon_recipe = "Iced Latte (Lapte de Porumbel)",
+
+		brewing_coffee = "Preparare Cafea",
+		brewed_coffee = "Café la ibric.",
+		failed_brewing_coffee = "Eșec la prepararea cafelei.",
+
+		hot_chocolate_regular_recipe = "Ciocolată caldă (lapte de vacă)",
+		hot_chocolate_pigeon_recipe = "Ciocolată caldă (lapte de migdală)",
+		hot_chocolate_almond_recipe = "Ciocolată caldă (lapte de porumbel)",
+
+		making_hot_chocolate = "Preparare ciocolată caldă",
+		made_hot_chocolate = "Ciocolată caldă pregătită.",
+		failed_make_hot_chocolate = "Eșec la prepararea ciocolatei calde.",
 
 		no_required_items = "Nu ai toate obiectele necesare.",
 
@@ -6672,22 +6847,29 @@ OP.Global.Locales.Languages["ro-RO"] = {
 	},
 
 	container_storage = {
-		rent_container = "[${InteractionKey}] Închiriază #${id} (${price} pe săptămână)",
+		rent_container = "[${InteractionKey}] Închiriază C-${id} ($${price} pe săptămână)",
+		rent_warehouse = "[${InteractionKey}] Închiriază W-${id} ($${price} pe săptămână)",
 		renting_container = "Închiriere container",
+		renting_warehouse = "Închiriere depozit",
 		failed_rent_container = "Nu s-a putut închiria containerul.",
+		failed_rent_warehouse = "Nu s-a putut închiria depozitul.",
 		rent_container_success = "Ai închiriat cu succes containerul #${id}. Poți gestiona containerele tale folosind comanda `/containere`.",
-		access_container = "[${InteractionKey}] Accesează #${id}",
-		container_id = "#${id}",
+		rent_warehouse_success = "Depozitul #${id} a fost închiriat cu succes. Puteți gestiona depozitele folosind `/warehouses`.",
+		access_container = "[${InteractionKey}] Acces C-${id}",
+		access_warehouse = "[${InteractionKey}] Acces W-${id}",
+		container_id = "C-${id}",
+		warehouse_id = "W-${id}",
 
-		storage_containers = "Containere de depozitare",
+		storage_containers = "Containere de stocare/Depozite",
 		container = "Container",
+		warehouse = "Depozit",
 		loading = "Se încarcă...",
 		failed_remove_access = "Nu s-a putut elimina accesul.",
 		failed_add_access = "Nu s-a putut adăuga accesul.",
 		access = "Acces",
 		add_cid = "Adaugă CID",
-		no_containers = "Nu deții sau nu ai acces la niciun container de depozitare.",
-		no_access = "Nimeni în afară de tine nu are acces la acest container.",
+		no_containers = "Nu dețineți sau nu aveți acces la niciun container de stocare/depou.",
+		no_access = "Nimeni în afară de tine nu are acces la acest container/depozit.",
 		back = "Înapoi",
 		close = "Închide",
 		character_not_exist = "Personajul nu există.",
@@ -6697,14 +6879,14 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		not_enough_money = "Nu ai destui bani.",
 		failed_pay_rent = "Nu s-a putut plăti chiria.",
 		mark_gps = "Marchează GPS-ul",
-		container_alert = "Containerul tău #${containerId} este modificat ilegal.",
+		container_alert = "Containerul/depozitul dvs. #${containerId} este modificat.",
 
 		rented_container_logs_title = "Container Închiriat",
-		rented_container_logs_details = "${consoleName} a închiriat containerul #${containerId} pentru $${price}.",
+		rented_container_logs_details = "${consoleName} a închiriat ${type} #${containerId} pentru $${price}.",
 		paid_rent_logs_title = "Plată Chirie Container",
-		paid_rent_logs_details = "${consoleName} a plătit $${price} chirie pentru containerul #${containerId}.",
+		paid_rent_logs_details = "${consoleName} a plătit $${price} chirie pentru ${type} #${containerId} (plătit până la `${till} UTC`).",
 		lockpicked_container_logs_title = "Container Deschis cu Lacătul",
-		lockpicked_container_logs_details = "${consoleName} a deschis cu lacătul containerul #${containerId}."
+		lockpicked_container_logs_details = "${consoleName} a deschis cu lacătul ${type} #${containerId}."
 	},
 
 	courthouse = {
@@ -6865,6 +7047,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		coords = "Coordonate: ${coords}",
 		rotation = "Rotatie: ${rotation}",
 		normal = "Suprafață: ${normal}",
+		surface_heading = "Suprafață: ${heading}",
 		velocity = "Viteza: ${velocity}",
 		ground_material = "Material sol: ${material}",
 		debug_print_f8 = "Informatiile de depanare au fost printate in consola F8.",
@@ -6878,6 +7061,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		copied_model_name = "Numele modelului copiat.",
 		copied_entity_id = "ID-ul entității copiate.",
 		copied_hit_coords = "Coordonatele de atingere copiate.",
+		copied_surface_heading = "Capișonul suprafeței copiat.",
 
 		distance = "Distanta: ${distance}m",
 		distance_first = "Prima pozitie a fost salvata.",
@@ -6913,12 +7097,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		model_view_disabled = "Vizualizarea modelului este dezactivată.",
 		invalid_component = "Componentă invalidă `${componentName}`.",
 
-		animation_currently_playing = "Se redă în prezent o animație.",
 		invalid_or_missing_animation_dict = "Dicționarul de animație `${animationDict}` este invalid sau lipsește.",
-		missing_animation_name = "Numele animației `${animationName}` este invalid sau lipsește.",
+		missing_animation_name = "Nume de animație invalid sau lipsă.",
 		invalid_animation_flags = "Steaguri de animație invalide.",
-		animation_played = "Se redă animația `${animationDict}` `${animationName}` (steaguri: ${flags}).",
-		no_flags = "N/A",
 
 		invalid_coordinates = "Coordonate invalide.",
 		added_coordinates_draw = "Coordonatele `x: ${x}, y: ${y}, z: ${z}` au fost adăugate la lista de afișare cu ID-ul `${drawId}`.",
@@ -7703,6 +7884,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		fps_unit = "fps",
 		ping_unit = "ms",
 		tps_unit = "tps",
+		fps_1percent_unit = "cadre pe secundă 1%",
 
 		smart_warnings = "Atenție: ${warnings}!",
 		dehydrated = "deshidratat",
@@ -7990,7 +8172,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		prison_store = "Magazin inchisoare",
 		fruit_vendor = "Vanzator fructe",
 		fruit_market = "Piața de fructe Alamo",
-		food_market = "Piață alimentară",
+		super_market = "Supermarket",
 		island_store = "Magazin Insula",
 		travel_agency = "Agentie de Turism",
 		island_bar = "Bar Insula",
@@ -8024,7 +8206,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		ems_badge_store = "Biroul de plasare a insignelor de ambulanță",
 		doj_badge_store = "Biroul de plasare a insignelor DOJ",
 		state_store = "Magazin Statal",
-		pharmacy = "Farmacie",
+		pharmacy_store = "Farmacie",
 		chop_shop = "Atelier de tăiat mașini",
 		courthouse = "Tribunal",
 		burger_shot = "Burger Shot",
@@ -8035,13 +8217,13 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		bean_machine_fridge = "Frigider Bean Machine",
 		hunting_store = "Magazin de vânătoare",
 		fishing_store = "Magazin de pescuit",
+		furniture_store = "Magazin de mobilă",
 		los_santos_golf_club = "Club de golf Los Santos",
 		arcade_bar = "Bar Arcade",
 		japanese_restaurant = "Restaurant Japonez",
 		japanese_restaurant_kitchen = "Bucătărie restaurant japoneză",
 		pizza_restaurant = "Restaurant Pizza",
 		["945_studios"] = "945 Studios",
-		grain_mill = "Fabrică de cereale",
 		pd_prefix = "Pol",
 		ems_prefix = "Serv",
 		government_prefix = "Guvern",
@@ -8105,6 +8287,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		underground_bar_counter = "Ghișeu Bar subteran",
 		pizza_this_counter = "Ghișeu Pizza This",
 		yellow_jack_counter = "Ghișeu Yellow Jack",
+		bean_machine_counter = "Platou automat de cafea",
 
 		inventory_name_missing = "Lipsește parametrul nume inventar.",
 
@@ -8131,6 +8314,14 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		craft_combine = "Confecționează <i>${output}</i>",
 		combining = "Confecționare",
+
+		inspect = "Inspectează",
+		attachments = "Accesorii",
+		fill_paper_bag = "Umple sac de hârtie",
+		rename = "Redenumește",
+
+		item_renamed = "Element redenumit cu succes.",
+		item_failed_rename = "Nu s-a putut redenumi elementul.",
 
 		file_serial = "Wklejone dane pojazdu.",
 		filing_off_serial_number = "[${InteractionKey}] Przytrzymaj, aby podciąć",
@@ -8414,6 +8605,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		paper_bag = "Saca de hârtie",
 		paper_bag_description = "Perfectă pentru depozitarea alimentelor sau poate a capului cuiva, mort sau viu.",
+		closed_paper_bag = "Săculeț de hârtie închis",
+		closed_paper_bag_description = "Un sac de hârtie maro clasic ascunde misterele conținutului său. Este prânzul? Un depozit secret? Doar o singură modalitate de a afla - rupți-l și vezi ce este înăuntru!",
 		burger_shot_delivery = "Comanda Burger Shot",
 		burger_shot_delivery_description = "O colecție minunată de toate deliciile servite acolo.",
 		bean_machine_delivery = "Comanda Bean Machine",
@@ -8424,6 +8617,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		green_wonderland_delivery_description = "O pungă plină cu produse verzi preferate. #420blazeit",
 		pizza_this_delivery = "Cutie Pizza This",
 		pizza_this_delivery_description = "Transportă-ți pizza caldă și delicioasă cu stil cu cutia de livrare Pizza This, asigurându-te că fiecare felie ajunge la destinație la fel de perfectă precum a ieșit din cuptor.",
+
+		lunch_box = "Cutișor de Prânz",
+		lunch_box_description = "Un mic și robust cutișor care îți ține speranțele, visurile și resturile de ieri. Perfect pentru a-ți păstra gustările în siguranță, sandwich-ul nezdrobit și chipsurile ușor mai puțin sfărâmate decât de obicei. Atenție: Nu garantează îmbunătățirea statusului social la prânz.",
 
 		empty_box = "Cutie goală",
 		empty_box_description = "Începeți cu această cutie simplă și robustă pentru a crea un cadou personalizat. Umpleți-o cu comori neperecibile și este gata să fie transformată într-un cadou plin de grijă. Ideal pentru a ambala tot ceea ce simbolizează afecțiunea, cu excepția produselor perisabile și a armelor.",
@@ -8485,6 +8681,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		keys = "Chei",
 		keys_description = "Un set de chei pentru unele uși undeva.",
+		car_keys = "Cheile mașinii",
+		car_keys_description = "Un set magic de chei care pot debloca uși, porni motoare și te fac să te simți instantaneu ca și cum ai deveni stăpânul drumului. Nicio două chei nu arată exact la fel, dar toate au un singur scop - să-ți ofere acces la mașina minunată de unde provin. Doar nu le arunca în canalizare sau să le împrumuți unui „prieten”.",
 
 		raw_diamond = "Diamant Brut",
 		raw_diamond_description = "undefined",
@@ -9061,6 +9259,34 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		plush_wasabi = "Wasabi Minune",
 		plush_wasabi_description = "Micuțul acesta este o adevărată raritate, asemenea unui strop proaspăt de Wasabi! Haina lor verde sclipitoare cu siguranță va atrage atenția. Nu subestimați dimensiunea lor mică - sunt pline de personalitate și mereu dornice de acțiune.",
 
+		cat_0 = "Miau Cat",
+		cat_0_description = "Acest mic războinic cu dungi este întotdeauna ocupat cu ceva, fie că se strecoară în poala ta sau plănuiește să domine lumea unui somn la un moment dat. Merge cu încrederea unui motan care știe că el este personajul principal.",
+		cat_1 = "Motan Negru",
+		cat_1_description = "Elegant, umbrit și posibil magic, acest felin cu blană neagră știe cum să capteze atenția - sau să-ți fure gustările. Este la fel de cool și pufos, cu un talent pentru intrările dramatice și priviri lungi și judecătorești.",
+		cat_2 = "Motan Maro",
+		cat_2_description = "Călduros și pământesc, această frumusețe maro este ca o ceașcă de ciocolată caldă în formă de pisică - dacă ciocolata caldă ar mai dărâma din când în când lucruri de pe birou. Este calm, afectuos și surprinzător de bun la a-ți ignora apelurile.",
+
+		dog_0 = "Terrier West Highland",
+		dog_0_description = "Această minge pufoasă este o combinație de companion loial și mătură ambulantă. Mereu pregătit pentru o aventură, chiar și dacă asta înseamnă să-și urmărească propriul coadă ore în șir. Excelent la îmbrățișări, discutabil la menținerea curățeniei.",
+		dog_1 = "Carlin",
+		dog_1_description = "Un carlin mândru cu o față pe care doar o mamă — sau oricine, cu adevărat — ar putea iubi. Scurt pe picioare, dar mare pe personalitate, acest prieten robust își va face loc în inima ta și, probabil, în gustările tale.",
+		dog_2 = "Pudel",
+		dog_2_description = "Un caniche perfect aranjat care știe că este cel mai sofisticat câine din cameră. Regal, elegant și uneori o adevărată regină a dramei, aduce glamour oricărui mediu - fie că este vorba de un covor roșu sau de sufrageria ta.",
+
+		hen_0 = "Pui de găină",
+		hen_0_description = "O găină sornionață care se plimbă în jur ca și cum i-ar aparține grajdului - și sincer vorbind, probabil că da. Mereu ciugulind, cotcodăcind și privindu-te dintr-un colțișor al ochilor, această divă pufosă este în egală măsură adorabilă și ușor intimidantă.",
+		rat_0 = "Șobolan",
+		rat_0_description = "Un mic șobolan șmecher cu istețime și talent pentru a găsi gustări acolo unde te aștepți cel mai puțin. Fie că caută firimituri sau pune la cale dominația lumii, acest șobolan este mereu la ceva.",
+
+		rabbit_0 = "Iepure Maro Închis",
+		rabbit_0_description = "Un iepure maro închis cu un nivel de energie care se potrivește cu numele său. Întotdeauna este atent, întotdeauna pregătit să fugă și probabil că te judecă pentru că ești mai lent decât el.",
+		rabbit_1 = "Iepure Maro Deschis",
+		rabbit_1_description = "Un iepure maro deschis care pare că a sărit direct dintr-o cofetărie. Dulce, fragil în spirit și exact atât de haotic pe cât ai nevoie pentru ziua ta.",
+		rabbit_2 = "Iepure Bej",
+		rabbit_2_description = "Un iepure bej cu un blănos matasos și iscusință în a sări în cele mai incomode locuri. Este o combinație egală de adorabil și ușor infuriant.",
+		rabbit_3 = "Iepure Gri",
+		rabbit_3_description = "Un iepure gri lucios care se deplasează ca un nor de fum în vânt. Clipiți și a dispărut - dar nu înainte de a vă fura inima (și, poate, salata dumneavoastră).",
+
 		boxing_gloves = "Mănuși de box",
 		boxing_gloves_description = "Te transformă în Rocky, dar probabil nu vei primi o continuare...",
 		leash = "Lesă",
@@ -9190,6 +9416,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		evidence_bag_empty_description = "Poți să o îmbunătățești?",
 		evidence_bag = "Punga de Probe",
 		evidence_bag_description = "Incriminează-o într-o pungă pentru a fi folosită mai târziu.",
+		evidence_box = "Cutie de Probe",
+		evidence_box_description = "Eroul nemenționat al justiției, păzind toate indiciile, amprentele și obiectele discutabile necesare pentru rezolvarea unui caz. De la ambalajele dulciurilor la uneltele de la locul crimei, este ca o comoară pentru detectivi - fără aur, dar cu multe documente.",
 		fingerprint_evidence = "Dovezi de Amprentă",
 		fingerprint_evidence_description = "Te ajută să îi prinzi pe acei infractori.",
 		device_printout = "Tirajul dispozitivului",
@@ -9239,6 +9467,19 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		savings_bond_1000_description = "Failed to automatically generate translation.",
 		savings_bond_2000 = "Failed to automatically generate translation.",
 		savings_bond_2000_description = "Failed to automatically generate translation.",
+
+		cent_1 = "Ban",
+		cent_1_description = "Centul umil este eroul de culoare cupru din America, care face exces de zel. Are o valoare de doar un cent, dar poate fi găsit curajos blocând dorințele fântânilor sau ascunzându-se sub pernele canapelei. Practic, este versiunea sub formă de monedă a micului, dar puternicului erou.",
+		cent_5 = "Nikel",
+		cent_5_description = "Nikelul este o actualizare mai masivă și de culoare argintie față de cent, cu cinci ori puterea de cumpărare, care totuși nu este foarte mare. Un companion loial pentru aparatele de vending și jocurile de pe arcade, chiar dacă uneori valoarea sa este trecută cu vederea.",
+		cent_10 = "Dime",
+		cent_10_description = "Dima este o monedă mică, dar strălucitoare, ambalând 10 cenți de valoare în designul său de dimensiunea unui buzunar. Suficient de mică pentru a se pierde în blugii tăi, dar totuși destul de bogată pentru a-ți reaminti că merită dublul efortului unui nickel.",
+		cent_25 = "25 de cenți",
+		cent_25_description = "Moneda de 25 de cenți este regele parcometrelor și al aparatelor de gumă de mestecat. Cu greutatea sa impresionantă și valoarea de 25 de cenți, acest gladiator de argint adesea conduce armata ta de monede către victorii glorioase în cafele și arcade.",
+		cent_50 = "Jumătate de Dolar",
+		cent_50_description = "Jumătatea de dolar este o importantă monedă americană rar întâlnită. Este ca și cum ar fi fratele mai cool, mai misterios al monedei de 25 de cenți. De două ori mai valoroasă, dublul dimensiunii și mereu impresionant de strălucitoare.",
+		coin_bag = "Pungă de Monezi",
+		coin_bag_description = "O pungă de încredere concepută pentru a-ți păstra monedele laolaltă fără să facă zgomot. Mică, discretă și perfectă pentru cei care vor să-și poarte averea cu stil - presupunând că \"averile\" tale sunt măsurate în monede de 25 de cenți și de zece cenți.",
 
 		weather_spell_snow = "Farmec de vreme (Zăpadă)",
 		weather_spell_snow_description = "Folosind acest obiect te lasă să controlezi temporar vremea și să faci zăpadă! Este cu o singură utilizare, deci folosește cu grijă. Dacă folosești două farmece de vreme simultan, al doilea va fi pur și simplu în așteptare.",
@@ -9430,6 +9671,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		fishing_chair_description = "Proiectat pentru confort în timpul așteptărilor lungi, acest scaun de pescuit combină durabilitatea cu comoditatea, având un suport integrat pentru undiță pentru acele dimineți liniștite la marginea lacului. Poate fi plasat oriunde în lume.",
 		sleeping_bag = "Sac de dormit",
 		sleeping_bag_description = "Învelește-te în căldura acestui sac de dormit, conceput pentru nopți reci sub cerul liber. Design-ul compact îl face ușor de purtat, oferind confort oriunde îți așezi capul.",
+		red_pillow = "Perne roșii",
+		red_pillow_description = "O pernă roșie versatilă care transformă solul dur într-un tron al confortului. Fie că meditezi, privești oamenii sau incerci doar să eviți să stai pe pete misterioase, această pernă îți susține spatele - sau mai bine zis, fundul!",
+		spotlight = "Faro",
+		spotlight_description = "Un far care este gata să facă orice sau pe oricine vedeta spectacolului. Perfect pentru fotografii profesionale, iluminare dramatică sau pur și simplu pentru a te simți ca o vedetă de cinema în camera ta de zi. Este luminos, fiabil și întotdeauna atrage atenția.",
+		tube_light = "Lumina tubulară",
+		tube_light_description = "O lampă tubulară elegantă și minimalistă care renunță la luminozitate în favoarea stilului, adăugând o lumină difuză fără a acapara camera. Perfectă pentru crearea unei ambianțe cozy, este o îmbunătățire subtilă care arată mult mai cool decât contrapartidele sale mai voluminoase.",
 		yoga_mat = "Saltea de yoga",
 		yoga_mat_description = "Această saltea de yoga portabilă este fundația ta pentru relaxare și exerciții în aer liber. Dezvolt-o pentru a regăsi starea de zen sau pentru a te întinde după o drumeție vigorousă. Poate fi plasat oriunde în lume.",
 		cooler_box = "Cutie frigorifică",
@@ -9466,6 +9713,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		spike_strips_large_description = "Acesta este pentru prinderea peștilor mari sau atunci când trebuie să acoperi mai mult asfalt. Este ca și cum ai așeza covorul roșu, doar că nu pentru V.I.P-uri, ci pentru a sparge anvelope. Pot fi plasate oriunde în lume.",
 		stop_sticks = "Bâte de oprire",
 		stop_sticks_description = "Gândește-te la acestea ca la obiectul imobilizabil întâlnind forța de neoprit. Bâtele de oprire nu perforă anvelopele, ele opresc vehiculele pe loc. Ideal pentru a stabili puncte de „verificare a vitezei tale” pe loc. Pot fi plasate oriunde în lume.",
+		speed_bump = "Denivelare de viteză",
+		speed_bump_description = "Instrumentul suprem pentru impunerea încetinirilor și testarea suspensiei unei mașini. Folosiți această amenințare portabilă și urmăriți demonii vitezei cum își reevaluează alegerile de viață - perfect pentru transformarea urmăririlor în parade încetinite.",
+		speed_sign = "Semn de Limită de Viteză",
+		speed_sign_description = "Un reminder prietenos că accelerația ta are nevoie de o pauză. Respectă limita, sau riști să întâlnești furia gropilor și radarului.",
+		bumps_sign = "Semn Gropi",
+		bumps_sign_description = "Un avertisment politicos că suspensia mașinii tale se pregătește să întâlnească un adversar puternic. Circulă cu grijă, sau pregătește-te pentru o călătorie cu denivelări!",
 		floodlight = "Proiector",
 		floodlight_description = "Transformă noaptea în zi atunci când ești în vânătoare. Excelent pentru a găsi cheile pierdute sau pentru a ilumina suspecții care încearcă să se joace de-a v-ați ascunselea. Poate fi plasat oriunde în lume.",
 		left_diversion_sign = "Indicator de schimbare stânga",
@@ -9514,6 +9767,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		claymore = "Mina claymore",
 		claymore_description = "Această mină Claymore letală este un instrument defensiv puternic conceput pentru a proteja și securiza zonele cu precizie. Odată armată, va detona exploziv când un intrus îi traversează calea, asigurând un control solid al perimetrului. Exersează precauție la plasare și manipulare pentru a evita consecințele nedorite.",
+		mine = "Mina",
+		mine_description = "Pentru când ai nevoie de un „covor de bun venit” în caz că ATF bate la ușă. Plasează, activează și privește cum orice „invitat” nepoftit se transformă în ceață roșie fină.",
 
 		tv_stand = "Suport TV",
 		tv_stand_description = "Îmbunătățește-ți configurarea pentru maratoanele de vizionare cu acest stand TV stilat. Păstrează-ți televizorul la nivelul ochilor și are spațiu pentru toate gadgeturile tale aleatoare. Este ca tronul pentru ecranul tău.",
@@ -9566,6 +9821,16 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		pink_dildo = "Dildou Roz",
 		pink_dildo_description = "Făcut manual, sculptat și testat de Bugsy Middleman.",
 
+		cappuccino_regular = "Cappuccino (Lapte de vacă)",
+		cappuccino_almond = "Cappuccino (Lapte de migdale)",
+		cappuccino_pigeon = "Cappuccino (Lapte de porumbel)",
+		iced_latte_regular = "Cafea cu lapte rece (Lapte de vacă)",
+		iced_latte_almond = "Cafea cu lapte rece (Lapte de migdale)",
+		iced_latte_pigeon = "Cafea cu lapte rece (Lapte de porumbel)",
+		hot_chocolate_regular = "Ciocolată caldă (Lapte de vacă)",
+		hot_chocolate_almond = "Ciocolată caldă (Lapte de migdale)",
+		hot_chocolate_pigeon = "Ciocolată caldă (Lapte de porumbel)",
+
 		bean_coffee = "Cafea din boabe",
 		bean_coffee_description = "Apă de boabe... cam asta este.",
 		cappuccino = "Cappuccino",
@@ -9582,6 +9847,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		pink_lemonade_description = "Absolut nu doar o limonadă obișnuită vopsită în roz pentru a vă taxa de două ori mai mult...",
 		iced_latte = "Cafea Cu Gheață",
 		iced_latte_description = "O cafea cu gheață răcoritoare, perfectă pentru o zi caldă.",
+		coffee_beans = "Boabe de cafea",
+		coffee_beans_description = "Un sac de boabe de cafea bogate și aromate gata să se transforme în combustibilul care îți energizează diminețile și brainstorming-urile din miezul nopții. Indiferent dacă îți place puternică, cremoasă sau undeva la mijloc, aceste boabe sunt biletul tău către o ceașcă perfectă de bucurie cafeinizată.",
 
 		berry_cake = "Tort cu fructe de padure",
 		berry_cake_description = "Un delicios tort cu fructe de padure, plin de fructe proaspete si straturi de gem dulce de fructe de padure. Acest tort este tratamentul perfect pentru iubitorii de fructe de padure, oferind o combinatie armonioasa de arome acrisoare si dulci in fiecare imbucatura.",
@@ -9755,9 +10022,21 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		spicy_ramen_description = "Pentru cei care iubesc senzațiile tari, Ramenul picant aduce căldură! Încearcă o supă plină de foc cu tăiței și ingrediente picante care îți vor face papilele gustative să danseze. Poți rezista?",
 		bento_box = "Cutie Bento",
 		bento_box_description = "O combinație delicioasă de arome și texturi, această Cutie Bento este alegerea ta pentru o masă echilibrată. Plină cu o varietate de bunătăți, este ca un picnic într-o cutie. Perfectă pentru prânz sau o cină ușoară!",
+		mochi_mango = "Mochi de Mango",
+		mochi_mango_description = "Un mochi tropical cu mango, plin de aroma dulce și suculentă a mango-urilor coapte. Înfășurat într-o coajă moale și lipicioasă, este o mini-vacanță pentru papilele gustative.",
+		mochi_strawberry = "Mochi cu Căpșuni",
+		mochi_strawberry_description = "Un mochi delicios cu căpșuni care combină un umplutură dulce și fructată cu un exterior moale și elastic. Ca și cum ai mușca dintr-un nor mic de soare și dulceață.",
+		mochi_green_tea = "Mochi cu Ceai Verde",
+		mochi_green_tea_description = "Un mochi revigorant cu ceai verde care amestecă aroma de matcha pământie cu o textură moale și elastică. Ideal pentru o experiență de desert zen cu echilibrul perfect între dulceață și amărăciune.",
+		mochi_chocolate = "Mochi cu ciocolată",
+		mochi_chocolate_description = "Un mochi decadent cu ciocolată care învelește o parte exterioară chewy și pufoasă în jurul unui centru bogat în cacao. Perfect pentru a satisface pofta de dulce cu un strop de indulgență vâscoasă.",
+		green_tea_bag = "Ceai verde",
+		green_tea_bag_description = "Un plic de frunze de ceai verde premium, gata să te înmoaie într-o lume a unui gust pământesc și revigorant. Perfect pentru iubitorii de ceai care preferă arta preparării față de conveniența unui plic pre-făcut. O înghițitură din acesta, și vei simți liniștea.",
 
 		asahi_beer = "Asahi Beer",
 		asahi_beer_description = "Bucurați-vă de gustul proaspăt și curat al berii Asahi, o bere japoneză premium cunoscută pentru gustul său fin și revigorant. Această bere aurie este expert lucrată pentru a eleva orice ocazie, făcând-o o alegere perfectă atât pentru degustare în timpul liber, cât și pentru dining select.",
+		green_tea = "Ceai Verde",
+		green_tea_description = "O cană caldă și liniștitoare de ceai verde proaspăt preparat care te învăluie în aroma sa pământească și gustul delicat. Perfect pentru momentele de liniște sau pentru a-ți ridica ușor moralul, este ca o îmbrățișare într-o ceașcă pentru sufletul tău.",
 
 		golf_ball = "Minge de golf",
 		golf_ball_description = "Folosită pentru golf.",
@@ -9947,6 +10226,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		weapon_poolcue = "Tacă de biliard",
 		weapon_stone_hatchet = "Topor de piatră",
 		weapon_candycane = "Baston de zahăr",
+		weapon_stunrod = "Șocantul",
 
 		weapon_pistol = "Pistol",
 		weapon_pistol_mk2 = "Pistol Mk II",
@@ -10076,6 +10356,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		weapon_poolcue_description = "Ah, nu există niciun sunet atât de satisfăcător ca cel al unei lovituri perfecte, mai ales când coloana vertebrală a celuiălalt a cedat.",
 		weapon_stone_hatchet_description = "2.5 milioane de ani de cercetare și dezvoltare și încă suntem aici.",
 		weapon_candycane_description = "O bețeală dulce de Crăciun. Este un pic lipicioasă.",
+		weapon_stunrod_description = "Când traumatismul prin forță contondentă nu este suficient, ia în considerare diversificarea abordării tale la agresiunea încrâncenată cu o doză de 30.000 de volți.",
 
 		weapon_pistol_description = "Pistol standard. Un pistol de luptă de calibru .45 cu o capacitate de încărcător de 12 cartușe, care poate fi extinsă la 16.",
 		weapon_pistol_mk2_description = "Balans, simplitate, precizie: nimic nu menține pacea ca un tub de prelungire în gura celuilalt.",
@@ -10311,7 +10592,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		weapon_addon_multitool_description = "La fel ca scula multiplă normală, dar fără lucruri extravagante.",
 
 		weapon_addon_ar15 = "AR-15",
-		weapon_addon_ar15_description = "Întâlniți AR-15, creierul de încredere al puștilor. Este ca și cum ar fi vărul ciudat al carabinerifle-ului - aceleași componente, alt gust. Perfect când vrei să schimbi lucrurile fără a deveni prea extravagant. Fiabil, precis și doar cantitatea potrivită de \"pew pew\" pentru orice situație low-key."
+		weapon_addon_ar15_description = "Întâlniți AR-15, creierul de încredere al puștilor. Este ca și cum ar fi vărul ciudat al carabinerifle-ului - aceleași componente, alt gust. Perfect când vrei să schimbi lucrurile fără a deveni prea extravagant. Fiabil, precis și doar cantitatea potrivită de \"pew pew\" pentru orice situație low-key.",
+
+		weapon_addon_tennisball = "Minge de Tenis",
+		weapon_addon_tennisball_description = "Perfectă pentru un joc rapid, pentru distracția unui câine sau pentru o aruncare haotică prin cameră. Atinge-ți ținta, aruncă și privește-o sări haotic - puncte bonus dacă nu se întoarce înapoi!"
 	},
 
 	invisibility = {
@@ -10403,7 +10687,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		failed_kissaki_delivery = "Nu s-a putut deschide comanda de mâncare kissaki.",
 		failed_green_wonderland_delivery = "Nu s-a reușit deschiderea pungii verzi Wonderland.",
 		failed_pizza_this_delivery = "Nu s-a reușit deschiderea cutiei de pizza.",
+		failed_closed_paper_bag = "Nu s-a putut deschide punga de hârtie.",
 
+		closed_paper_bag_empty = "Această pungă de hârtie este goală.",
 		burger_shot_delivery_empty = "Se pare că pachetul de la Burger Shot este gol.",
 		bean_machine_delivery_empty = "Se pare că pachetul de la Bean Machine este gol.",
 		kissaki_delivery_empty = "Aceea comandă de mâncare kissaki pare să fie goală.",
@@ -10539,7 +10825,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		modify_jail_logs_title = "Timpul de inchisoare modificat",
 		modify_jail_logs_details = "${consoleName} a modificat timpul de inchisoare pentru ${targetCharacter} #${targetCharacterId} (${operation} ${amount} luni) la ${after}.",
 		triggered_lockdown_logs_title = "Declansata Inchisoare",
-		triggered_lockdown_logs_details = "${consoleName} a declansat un lockdown al inchisorii."
+		triggered_lockdown_logs_details = "${consoleName} a declansat un lockdown al inchisorii.",
+		mission_reward_logs_title = "Recompensă Misiune în Închisoare",
+		mission_reward_cash_logs_details = "${consoleName} a primit $${amount} bani pentru finalizarea unei misiuni în închisoare.",
+		mission_reward_item_logs_details = "${consoleName} a primit 1x ${itemName} pentru finalizarea unei misiuni în închisoare."
 	},
 
 	kiosks = {
@@ -10968,7 +11257,21 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		no_nearby_vehicle = "Niciun vehicul aproape.",
 		already_checking_upgrades = "Deja verifici îmbunătățirile unui vehicul.",
-		engine_is_running = "Motorul vehiculului este pornit."
+		engine_is_running = "Motorul vehiculului este pornit.",
+
+		press_open_shop = "Apasă și ține apăsat butonul ~INPUT_FRONTEND_RDOWN~ pentru a deschide magazinul mecanicului.",
+		press_close_shop = "Apasă și ține apăsat butonul ~INPUT_FRONTEND_RDOWN~ pentru a închide magazinul mecanicului.",
+		opening_shop = "${time} secunde deschidere magazin mecanic.",
+		closing_shop = "${time} secunde închidere magazin mecanic.",
+		shop_closed = "Magazinul mecanic a fost închis cu succes.",
+		shop_opened = "Magazinul mecanic a fost deschis cu succes.",
+		failed_shop_closed = "Eșuare la închiderea magazinului mecanic.",
+		failed_shop_opened = "Eșuare la deschiderea magazinului mecanic.",
+
+		opened_shop_logs_title = "Magazin Mecanic Deschis",
+		opened_shop_logs_details = "${consoleName} a deschis magazinul mecanic „${label}”.",
+		closed_shop_logs_title = "Magazin Mecanic Închis",
+		closed_shop_logs_details = "${consoleName} a închis magazinul mecanic „${label}”."
 	},
 
 	meow = {
@@ -11011,6 +11314,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		success_wipe_blocks = "Bloc(uri) șterse cu succes ${count} într-un rază de ${radius}m.",
 		failed_wipe_blocks = "Ștergerea blocurilor a eșuat.",
 		press_to_use_jukebox = "Apasă ~INPUT_CONTEXT~ pentru a folosi jukebox-ul."
+	},
+
+	minigames = {
+		skipping_minigame = "Se Sare Peste Minijoc"
 	},
 
 	mining = {
@@ -11118,6 +11425,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		bad_ooc_message = "Încercare de a posta un mesaj posibil neadecvat în chatul OOC: \"${oocMessage}\"",
 		bad_ped_message = "Încercare de a crea un mesaj posibil neadecvat pentru pieton: \"${pedMessage}\"",
 		bad_twitter_post = "Încercare de a crea un post posibil neadecvat pe Twitter: \"${twitterPost}\"",
+		bad_twitter_account = "S-a încercat crearea unui cont de Twitter posibil rău: \"${username}\"",
 		bad_phone_message = "S-a încercat crearea unui post Twitter potențial rău: „${message}”",
 		user_not_found = "Nu am putut găsi un utilizator cu ID-ul serverului `${serverId}`.",
 		player_already_muted = "${consoleName} a fost deja mutat.",
@@ -11125,6 +11433,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		player_has_been_muted = "${consoleName} a fost mutat acum cu motivul: `${reason}`.",
 		player_not_muted = "${consoleName} nu este înțepat.",
 		player_has_been_unmuted = "${consoleName} a fost nemutat acum.",
+		just_been_muted = "Ai fost mutat recent din /ooc și /raport pentru motivul `${reason}`.",
+		just_been_muted_no_reason = "Ai fost mutat recent din /ooc și /raport fără un motiv specificat.",
 		ooc_clear_chat_title = "Chat șters",
 		ooc_clear_chat_details = "${consoleName} a șters chat-ul pentru toată lumea.",
 		muted_player = "Jucător înțepat",
@@ -12127,7 +12437,34 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		disabled_generators = "Generatoare dezactivate: ${disabledGeneratorsCount}.",
 
 		drill_drilling = "Foraj (${remainingSeconds}s)",
-		drill_jammed = "[${InteractionKey}] Foraj Blocat (${remainingSeconds}s)"
+		drill_jammed = "[${InteractionKey}] Foraj Blocat (${remainingSeconds}s)",
+		search_safe = "[${InteractionKey}] Caută în Siguranță",
+		searching_safe = "Se Caută în Siguranță",
+
+		close_up_bank = "Închide Banca",
+		press_to_close_up_bank = "[${InteractionKey}] Închide Banca",
+		closing_up_bank = "Închidere Bancă",
+
+		not_enough_police = "Nu sunt suficienți polițiști activi pentru a începe jaf.",
+
+		dispatch = "[Dispecerat]",
+		alarm_triggered = "10-90: A fost declanșat un alarmă la Pacific Bank.",
+		pacific_bank_alarm = "Alarmă la Pacific Bank",
+
+		press_to_search = "[${InteractionKey}] Caută",
+		search = "Caută",
+		searching = "Se caută",
+		found_nothing = "Nimic găsit.",
+
+		power_generator_disabled_title = "Generator de Energie Dezactivat",
+		power_generator_disabled_details = "${consoleName} a dezactivat generatorul de energie cu numele '${powerGeneratorName}'.",
+
+		pacific_bank_robbery_started_title = "A început jaf la Banca Pacific",
+		pacific_bank_robbery_started_details = "${consoleName} a început jaf la Banca Pacific.",
+
+		pacific_bank_reward_logs_title = "Recompensă la Banca Pacific",
+		pacific_bank_reward_saving_bonds_logs_details = "${consoleName} a căutat într-un seif și a primit oblițiuni de economisire în valoare de $${amount}.",
+		pacific_bank_reward_items_logs_details = "${consoleName} a căutat într-un seif și a primit ${amount}x obiecte."
 	},
 
 	panel = {
@@ -12187,14 +12524,20 @@ OP.Global.Locales.Languages["ro-RO"] = {
 	},
 
 	paper_bags = {
-		fill_bag = "[${SeatEjectKey}] Umple sacul de hârtie",
-		no_bags = "Nu aveți niciun sac de hârtie.",
-		no_bag_items = "Nu aveți niciun element pe care l-ați putea pune într-un sac de hârtie.",
-		close_bag = "Închideți Punga",
-		cancel_bag = "Anulare",
-		title = "Pungă de hârtie",
+		paper_bag_brand = "Acest sac de hârtie are un logo <b>${brand}</b> pe el.",
+		paper_bag_no_brand = "Acesta este un sac de hârtie simplu.",
+
+		burger_shot_delivery = "Burger Shot",
+		bean_machine_delivery = "Bean Machine",
+		kissaki_delivery = "Kissaki",
+		green_wonderland_delivery = "Green Wonderland",
+		pizza_this_delivery = "Pizza This",
+
 		failed_fill = "Nu s-a putut umple punga de hârtie.",
-		filled_bag = "Punga de hârtie a fost umplută cu succes."
+		filled_bag = "Punga de hârtie a fost umplută cu succes.",
+
+		filled_bag_log_title = "Sac de Hârtie Umplut",
+		filled_bag_log_details = "${consoleName} a umplut un sac de hârtie cu ${contents}."
 	},
 
 	parking_meters = {
@@ -12203,7 +12546,13 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		no_cash = "Nu aveți $4 în numerar.",
 		max_time = "Această parcometru este deja maximizată.",
-		failed_pay = "Nu s-a putut plăti parcometrul."
+		failed_pay = "Nu s-a putut plăti parcometrul.",
+
+		failed_lockpick = "Nu s-a reușit deschiderea forțată a parcometrului.",
+		already_lockpicked = "Acest parcometru a fost deja deschis forțat.",
+
+		lockpicked_meter_logs_title = "Parcometru Deschis Forțat",
+		lockpicked_meter_logs_details = "${consoleName} a deschis cu forța un parcometru și a primit ${items} și $${money} în numerar."
 	},
 
 	pause_menu = {
@@ -12296,6 +12645,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		ped_failed_task = "Nu s-a reușit asignarea sarcinii `${task}` personajelor generate.",
 		invalid_target = "ID server invalid.",
 		invalid_task = "Sarcină de personaj invalidă sau lipsă.",
+		no_nearby_ped = "Nu există pietoni în apropiere.",
+		ped_attack_success = "S-a reușit ordinul dat pietonului `${networkId}` să atace ${target}.",
+		ped_failed_attack = "Nu s-a reușit să se ordone pietonului `${networkId}` să atace ${target}.",
 		ped_emote_success = "S-a reușit ca personajele generate să interpreteze emote-ul `${emote}`.",
 		ped_failed_emote = "Nu s-a reușit ca personajele generate să interpreteze emote-ul `${emote}`.",
 		invalid_emote = "Emoție nevalidă `${emote}`.",
@@ -12509,7 +12861,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		invalid_prop_id = "ID-ul obiectului este invalid.",
 		prop_deleted = "Obiectul cu ID-ul ${propId} a fost șters.",
 
-		invalid_wipe_radius = "Raza de ștergere este invalidă (între 1 și 100).",
+		invalid_wipe_radius = "Raza de ștergere invalidă (între 1 și 500).",
 		wipe_successful = "Ștergere cu succes a ${amount} obiect(e).",
 		wipe_failed = "Ștergerea obiectelor a eșuat.",
 
@@ -12764,6 +13116,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		logs = "Logi transakcji",
 		no_logs = "Brak logów transakcji.",
 		summary = "Rezumat",
+		summary_description = "Rezumat al tuturor tranzacțiilor din ultimele 90 de zile pentru acest cont.",
 		name = "Nume",
 		transactions = "Tranzacții",
 		withdrawn = "Retras",
@@ -12827,7 +13180,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		scrapyard = "Grădina de fier vechi",
 		cant_scrap_vehicle = "Scuze, partenerule, dar mașina aceasta ridică mai multe semne de întrebare decât un rodeo. Nu o putem lua de la tine!",
 		failed_scrap_vehicle = "Se pare că grădina noastră de fier vechi are unele hibe. Încearcă să dezmembrezi mașina din nou mai târziu, partenerule!",
-		scrap_confirm = "Ești sigur că vrei să dezmembrezi acest vehicul? Acest lucru va șterge ÎN MOD PERMANENT ${name} din garajul tău și vei primi cash și bare de aur în valoare de 12-16% din prețul său original.",
+		scrap_confirm = "Ești sigur că vrei să jefuiești acest vehicul? Acesta va fi ÎNTERINIC șters din garajul tău și vei primi 16-20% din prețul original în numerar și lingouri de aur.",
 		scrap_success = "Ei bine, am transformat acea fițuică în comoară. Cred că era timpul să-i spunem la revedere oricum, partenerule!",
 		scrapped_vehicle_logs_title = "Vehicul Distrus",
 		scrapped_vehicle_logs_details = "${consoleName} și-a distrus vehiculul (${modelName} #${vehicleId}) și a primit ${gold}x Bară(e) de Aur și $${cash} în bani (${percentage}% din prețul original)."
@@ -13386,6 +13739,15 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		teleport_player_player_logs_details = "${consoleName} a teleportat ${sourceConsoleName} la ${targetConsoleName}."
 	},
 
+	taxes = {
+		taxes_collected = "Impozite colectate. Suma este următoarea:\n- Numerar: $${cash}\n- Bancă: $${bank}\n- Acțiuni: $${stocks}\n- Economii: $${savings}\n- Conturi comune: $${sharedAccounts}",
+		taxes = "Impozite",
+		transaction_logs = "Jurnale de tranzacții",
+		paid_taxes = "Ai plătit ${amount} în impozite.",
+		no_logs = "Niciun jurnal de tranzacții.",
+		close = "Închide"
+	},
+
 	teleporters = {
 		area_not_clear = "Destinația este blocată de un vehicul.",
 
@@ -13634,6 +13996,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		department_police_undercover = "Poliție sub acoperire",
 
+		department_doc_training = "Instruire DOC",
 		department_police_training = "Poliție în formare",
 		department_medical_training = "Training SMURD",
 		department_bcfd_training = "Training BCFD"
@@ -14284,6 +14647,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		no_nearby_vehicle = "Niciun vehicul în apropiere.",
 		no_nearby_vehicle_door = "Nu ești lângă o ușă de vehicul.",
 		removing_door = "Se Înlătură Ușa",
+		cleaning_up_body = "Curățarea cadavrului",
+		destroying_spikes = "Distrugerea cuieților",
 		failed_remove_door = "Nu s-a putut înlătura ușa vehiculului.",
 		invalid_clothing_type = "Tip de îmbrăcăminte invalid.",
 		no_nearby_player = "Niciun jucător arestt sau căzut în apropiere.",
@@ -14379,7 +14744,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		none = "Nimic",
 		active = "Activ",
 		not_active = "Inactiv",
-		active_robberies = "\nMagazin Activ: ${store}.\nBanca Activă: ${bank}\nBijuterii Activ: ${jewelry}",
+		active_robberies = "\nMagazin activ: ${store}.\nBancă activă: ${bank}\nBijuterie activă: ${jewelry}\nBancă Pacific: ${pacificBank}",
 
 		failed_dispatch = "Nu s-a putut trimite mesajul de dispecerat.",
 		dispatch_title = "[Dispecerat]",
@@ -14472,6 +14837,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		on_floor = "Pe etajul ${floor}.",
 		ground_floor = "Parter",
 		second_floor = "Etajul 2",
+		third_floor = "Etajul 3",
 		icu_floor = "Etajul de ATI",
 		surgery_floor = "Etajul de Chirurgie",
 
@@ -14513,7 +14879,55 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		task_disinfect_table = "Dezinfectați masa de operații.",
 		task_disinfect_table_near = "Apăsați ~INPUT_DETONATE~ pentru a dezinfecta masa de operații.",
-		task_disinfect_table_active = "Dezinfectare masă"
+		task_disinfect_table_active = "Dezinfectare masă",
+
+		task_wipe_table = "Ștergeți masa.",
+		task_wipe_table_near = "Apăsați ~INPUT_DETONATE~ pentru a șterge masa.",
+		task_wipe_table_active = "Se șterge masa",
+
+		task_wash_dishes = "Spălați vasele.",
+		task_wash_dishes_near = "Apăsați ~INPUT_DETONATE~ pentru a spăla vasele.",
+		task_wash_dishes_active = "Se spală vasele",
+
+		task_restock_drink_dispenser = "Reumpleți distribuitorul de băuturi răcoritoare.",
+		task_restock_drink_dispenser_near = "Apăsați ~INPUT_DETONATE~ pentru a reumple distribuitorul de băuturi răcoritoare.",
+		task_restock_drink_dispenser_active = "Se reumple distribuitorul de băuturi răcoritoare",
+
+		task_restock_ingredients = "Reîncărcați ingredientele.",
+		task_restock_ingredients_near = "Apăsați ~INPUT_DETONATE~ pentru a reîncărca ingredientele.",
+		task_restock_ingredients_active = "Se reîncarcă ingredientele",
+
+		task_organize_shelf = "Organizați raftul.",
+		task_organize_shelf_near = "Apăsați ~INPUT_DETONATE~ pentru a organiza raftul.",
+		task_organize_shelf_active = "Se organizează raftul",
+
+		task_clean_countertop = "Curățați blatul.",
+		task_clean_countertop_near = "Apăsați ~INPUT_DETONATE~ pentru a curăța blatul.",
+		task_clean_countertop_active = "Se curăță blatul",
+
+		task_file_taxes = "Depuneți impozitele.",
+		task_file_taxes_near = "Apăsați ~INPUT_DETONATE~ pentru a depune impozitele.",
+		task_file_taxes_active = "Depunere Impozite",
+
+		task_refill_napkins = "Reumpleți servetelele.",
+		task_refill_napkins_near = "Apăsați ~INPUT_DETONATE~ pentru a reumple servetelele.",
+		task_refill_napkins_active = "Reumplere Servetele",
+
+		task_refill_water = "Reumpleți distribuitorul de apă.",
+		task_refill_water_near = "Apăsați ~INPUT_DETONATE~ pentru a reumple distribuitorul de apă.",
+		task_refill_water_active = "Reumplere Distribuitor de Apă",
+
+		task_clean_windows = "Curățați ferestrele.",
+		task_clean_windows_near = "Apasă ~INPUT_DETONATE~ pentru a curăța geamurile.",
+		task_clean_windows_active = "Curățare Geamuri",
+
+		task_clean_oven = "Curăță cuptorul.",
+		task_clean_oven_near = "Apasă ~INPUT_DETONATE~ pentru a curăța cuptorul.",
+		task_clean_oven_active = "Curățare Cuptor",
+
+		task_take_nap = "Fă o siestă.",
+		task_take_nap_near = "Apasă ~INPUT_DETONATE~ pentru a face o siestă.",
+		task_take_nap_active = "Siestă în Curs"
 	},
 
 	tow = {
@@ -14679,6 +15093,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		fuel_level_set_to = "Nivelul de combustibil a fost setat la `${fuelLevel}`.",
 		not_in_a_vehicle = "Nu ești într-un vehicul.",
 		vehicle_engine_on = "Motorul este încă în funcțiune.",
+
+		fuel_debug_enabled = "Activat modul depanare combustibil.",
+		fuel_debug_disabled = "Dezactivat modul depanare combustibil.",
 
 		vehicle_exploded_logs_title = "Vehicul Explodat",
 		vehicle_exploded_logs_details = "${consoleName} a alimentat un vehicul și a declanșat o explozie din cauza unui motor care funcționa."
@@ -14846,12 +15263,22 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		gave_keys_success = "Le-ați dat cu succes cheile mașinii lui ${displayName}.",
 		gave_keys_failure = "Nu s-a putut da cheile lui ${displayName} pentru vehiculul lor.",
 
+		car_keys_label = "Cheile pentru ${plate}",
+		something_went_wrong = "Ceva nu a mers bine.",
+		keys_no_longer_work = "Aceste chei nu mai funcționează.",
+		success_use_keys = "Acum ai cheile pentru `${plate}`.",
+
 		no_nearby_vehicle = "Niciun vehicul în apropiere.",
 		there_is_someone_in_the_driver_seat = "Există cineva în șezutul șoferului.",
 		the_driver_door_is_closed = "Ușa șoferului este închisă.",
 		checking_ignition = "Verificare aprindere",
 		ignition_tampered_with = "Aprinderea a fost manipulată.",
-		ignition_not_tampered_with = "Aprinderea nu a fost manipulată."
+		ignition_not_tampered_with = "Aprinderea nu a fost manipulată.",
+
+		used_car_keys_logs_title = "Chei de mașină utilizate",
+		used_car_keys_logs_details = "${consoleName} a folosit cheile pentru mașina cu numărul de înmatriculare `${plate}` (N-${networkId}).",
+		grabbed_car_keys_logs_title = "Chei de mașină obținute",
+		grabbed_car_keys_logs_details = "${consoleName} a obținut cheile pentru mașina cu numărul de înmatriculare `${plate}` (N-${networkId})."
 	},
 
 	modifications = {
@@ -14905,7 +15332,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 	sirens = {
 		sirens_muted_on = "Toate sirenele sunt acum dezactivate.",
-		sirens_muted_off = "Toate sirenele sunt acum activate."
+		sirens_muted_off = "Toate sirenele sunt acum activate.",
+
+		lights_on = "Luminile: ${count}",
+		sirens_on = "Sirene: ${count}",
+		horns_on = "Claxoane: ${count}"
 	},
 
 	spawner = {
