@@ -24,11 +24,11 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		no = "Не",
 		n_a = "N/A",
 		invalid_server_id = "Невалиден сървър ID.",
-		appreciated_tier = "Оценен клас",
-		respected_tier = "Уважаван клас",
-		heroic_tier = "Хероичен клас",
-		legendary_tier = "Легендарен клас",
-		god_tier = "Божествен клас"
+		appreciated_tier = "Appreciated Tier",
+		respected_tier = "Respected Tier",
+		heroic_tier = "Heroic Tier",
+		legendary_tier = "Legendary Tier",
+		god_tier = "God Tier"
 	},
 
 	-- animations/*
@@ -969,7 +969,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		kick_command_parameter_reason_help = "Причината за изгонването на играча. Това може да бъде оставено празно.",
 		kick_command_substitutes = "",
 
-		ban_command = "бан",
+		ban_command = "ban",
 		ban_command_help = "Забрани играч от сървъра.",
 		ban_command_parameter_server_id = "server id",
 		ban_command_parameter_server_id_help = "Идентификаторът на играча, когото искате да забраните.",
@@ -1105,7 +1105,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		speed_up_progress_bar_command_parameter_server_id_help = "Ако искате да включите/изключите 'Ускорете прогреса на лентата' за някой друг, въведете техния идентификатор на сървъра тук.",
 		speed_up_progress_bar_command_substitutes = "ускори",
 
-		add_cash_command = "добави_пари",
+		add_cash_command = "add_cash",
 		add_cash_command_help = "Добавете пари към персонажа на някого.",
 		add_cash_command_parameter_amount = "сума",
 		add_cash_command_parameter_amount_help = "Сумата пари, които искате да дадете на играча.",
@@ -4568,7 +4568,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 
 	airports = {
 		airport = "Летище",
-		press_to_access_spawner = "Натиснете ~INPUT_CONTEXT~ за достъп до спавнера на превозни средства.",
+		press_to_access_spawner = "Натиснете ~INPUT_CONTEXT~ за достъп до спаунера на превозни средства.",
 		no_spawner_licenses = "Нямате разрешения за този спавнер на превозни средства.",
 		vehicle_lists = "Списъци с превозни средства",
 		parked_vehicle = "Паркирано превозно средство.",
@@ -7869,8 +7869,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		rpm = "обороти в минута",
 		degrees = "°C",
 		degrees_f = "°F",
-		npc_kills = "${kills} местни хора убити ~r~/~w~ ${ranOver} наредени",
-		steps_walked_deaths = "Дължина на стъпките: ${stepsWalked} ~t~/~w~ Загиналита: ${deaths}",
+		npc_kills = "${kills} местни граждани убити ~r~/~w~ ${ranOver} наредени",
+		steps_walked_deaths = "Крачки: ${stepsWalked} ~t~/~w~ Жертви: ${deaths}",
 		altitude_temperature = "Височина: ${altitude} ${unit} ~t~/~w~ Температура: ${temperature}${degrees}",
 		scuba_timer = "Оставащ кислород: ${timer}",
 
@@ -7893,7 +7893,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		seriously_injured = "сериозно ранен",
 		how_are_you_alive = "брат, как кът кокошката все още си жив?",
 		incapacitated = "дезориентиран",
-		stressed = "стресиран",
+		stressed = "Стресиран",
 
 		and_seperator = "и",
 
@@ -12508,7 +12508,7 @@ OP.Global.Locales.Languages["bg-BG"] = {
 	},
 
 	panic = {
-		press_panic_button = "Имате 6 секунди да натиснете бутона за паника (X).",
+		press_panic_button = "Имате 6 секунди да натиснете паник бутона (X).",
 		panic_button_timeout = "Не успяхте да натиснете паниковия бутон навреме.",
 
 		panic_button_title = "[Диспечър]",
@@ -14441,8 +14441,8 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		failed_to_find_ground = "Неуспешно намерихме земя, те пренасочихме към най-близка улица.",
 
 		knots = "възли",
-		mph = "мпч",
-		kmh = "км/ч"
+		mph = "MP/H",
+		kmh = "KM/H"
 	},
 
 	locales = {
@@ -15606,10 +15606,10 @@ OP.Global.Locales.Languages["bg-BG"] = {
 		second = "секунда",
 		seconds = "секунди",
 		kurwa_and = "и",
-		wait_for_paramedic = "Моля изчакайте медицинската помощ да пристигне или изчакайте ${time} за да се появите наново",
-		cannot_respawn_currently = "Не можеш да се оживиш в момента",
-		hold_to_respawn = "Натисни и задръж ~b~ENTER ~w~, за да се оживиш или изчакай медицинска помощ",
-		hold_to_respawn_secondslol = "Натисни и задръж ~b~ENTER (${seconds}) ~w~, за да се оживиш или изчакай медицинска помощ",
+		wait_for_paramedic = "изчакай EMS или ${time} за да се съживите наново",
+		cannot_respawn_currently = "Не можеш да се съживиш в момента",
+		hold_to_respawn = "Натисни и задръж ~b~ENTER ~w~, за да се съживиш или изчакай медицинска помощ",
+		hold_to_respawn_secondslol = "Натисни и задръж ~b~ENTER (${seconds}) ~w~, за да се съживиш или изчакай медицинска помощ",
 		respawn_warning = "Не спаунвайте, ако все още участвате в активен сценарий на ролева игра.",
 		passed_out = "Загуби съзнание",
 		light = "Лека",
