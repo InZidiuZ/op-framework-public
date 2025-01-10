@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 35 (do not change)
+-- AUTO LOCALES: 36 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -202,10 +202,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		spawned_item_for_everyone_title = "Obiect generat pentru toți jucătorii",
 		spawned_item_for_everyone_details = "${consoleName} a generat ${amount}x obiectul `${itemName}` pentru toți jucătorii.",
 
-		report_title = "RAPORT-${reportId} ${reporterName}",
-		report_logs_title = "Raport",
-		report_logs_details = "${consoleName} a creat un raport cu numărul ${reportId} cu mesajul următor: `${reportMessage}`",
-
 		announcement_staff_title = "Anunț al Staff-ului",
 		announcement_server_title = "Anunț al Server-ului",
 
@@ -220,47 +216,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		failed_to_post_announcement = "Nu s-a putut posta mesajul de anunț pentru că nu a fost adăugat niciun mesaj.",
 		failed_to_post_announcement_locale = "Nu s-a putut posta mesajul de anunț pentru că locale-ul adăugat nu este acceptat.",
 
-		staff_title = "STAFF ${staffName}",
-		staff_message_logs_title = "Jurnalul mesajelor de personal.",
-		staff_message_logs_details = "${consoleName} a trimis următorul mesaj în chat-ul de staff: `${staffMessage}`",
-		local_staff_title = "ECHIPĂ LOCALĂ ${staffName}",
-		local_staff_message_logs_title = "Jurnalul de Mesaje al Echipei Locale",
-		local_staff_message_logs_details = "${consoleName} a trimis următorul mesaj în chat-ul echipei locale: `${staffMessage}`",
-
-		staff_pm_title = "MESAJ STAFF ${transmissionTitle}",
-		staff_pm_logs_title = "Mesaj Staff",
-		staff_pm_logs_details = "${senderConsoleName} a trimis următorul mesaj către ${recipientConsoleName}: `${staffPrivateMessage}`",
-		staff_pm_not_logged_in = "Nu ești autentificat.",
-		staff_pm_not_user_not_found = "Utilizatorul cu ID-ul de server ${serverId} nu a fost găsit.",
-		staff_pm_not_recipient_not_staff = "Jucătorul către care încerci să trimiți un mesaj nu este un membru al echipei staff.",
-		staff_pm_unable_to_message_self = "Nu poți să îți trimiți un mesaj ție însuți.",
-		staff_pm_warning = "Avertisment staff PM",
-		staff_pm_first_time = "Observăm că nu ai folosit niciodată mesajele private pentru personalul de suport. Pentru a răspunde la un mesaj privat pentru personalul de suport, folosește `/staffpm` urmat de ID-ul destinatarului. Pentru ușurință, poți folosi `/reply` pentru a răspunde la ultimul mesaj privat pentru personalul de suport pe care l-ai primit.",
-		reply_pm_not_found = "Nu există niciun mesaj privat pentru personalul de suport la care să răspunzi.",
-
-		important_staff_pm_title = "!MESAJ IMPORTANȚĂ STAFF De la tine -> ${recipient}",
-		close_staffpm = "Închide",
-		staffpm_from = "Mesaj de la Staff de la <i>${from}</i>",
-		important_staff_pm_logs_title = "Mesaj Important de la Staff",
-		important_staff_pm_logs_details = "${senderConsoleName} a trimis următorul mesaj important către ${recipientConsoleName}: `${message}`",
-
-		external_staff_message = "Mesaj de la staff extern",
-		external_staff_message_from_player = "Mesaj de la staff extern de la ${playerName}",
-		external_staff_message_content = "${staffMessage} (Nu poți să răspunzi la acest mesaj.)",
-
-		unable_to_staff_message_yourself = "Nu poți trimite un mesaj personal către tine însuți.",
-		message_sent = "Mesajul a fost trimis.",
-		player_not_found = "Jucătorul nu a fost găsit.",
-		missing_valid_target_source_parameter = "Lipsește un parametru 'target source' valid.",
-		missing_valid_message_parameter = "Lipsește un parametru de mesaj valid.",
-
 		invalid_coordinates = "Coordonatele x, y, z sau w introduse sunt invalide.",
 		player_not_loaded_character = "Jucătorul nu are un personaj încărcat.",
 		teleport_successful = "Teleportarea jucătorului s-a realizat cu succes.",
 
 		player_revived_success = "Jucătorul a fost reînviat cu succes.",
-
-		missing_valid_license_identifier_parameter = "Este necesar un parametru valid 'licenseIdentifier'.",
 
 		wipe_broken = "broken - Obiecte Deteriorate/Fragmentate",
 		wipe_npcs = "npcs - NPC-uri și vehiculele acestora.",
@@ -376,12 +336,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		report_muted_no_reason = "Ai fost mutat de la comanda de raport fără un motiv specificat.",
 		report_muted = "Ai fost mutat de la comanda de raport pentru motivul `${reason}`.",
-
-		already_sending_report = "Deja trimiteți un raport. Vă rugăm să așteptați.",
-		unable_to_send_identical_report = "Nu puteți trimite două rapoarte identice unul după altul.",
-
-		already_sending_staff_message = "Deja trimiteți un mesaj la echipa de personal. Vă rugăm să așteptați.",
-		unable_to_send_identical_staff_message = "Nu puteți trimite două mesaje identice la echipa de personal unul după altul în decurs de 30 de secunde.",
 
 		population_density_set_to = "Multiplicatorul densității populației a fost setat la ${multiplierLabel}%. ",
 		population_density_set_off = "Suprascrierea multiplicatorului de densitate a populației a fost dezactivată.",
@@ -881,51 +835,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		marathon_command_substitutes = "",
 
 		-- base/admin
-		report_command = "report",
-		report_command_help = "Trimite un mesaj tuturor membrilor staff activi.",
-		report_command_parameter_message = "mesaj",
-		report_command_parameter_message_help = "A mensagem que você gostaria de enviar. Um breve resumo do que você está relatando (Exemplo: \"Acabei de ser VDMed, a ID deles era...\").",
-		report_command_substitutes = "Failed to automatically generate translation.",
-
 		announce_command = "anunta",
 		announce_command_help = "Transmite un anunt tuturor jucatorilor.",
 		announce_command_parameter_message = "mesaj",
 		announce_command_parameter_message_help = "Mesajul pe care doresti sa il transmiti.",
 		announce_command_substitutes = "",
-
-		staff_pm_command = "staff_pm",
-		staff_pm_command_help = "Trimite un mesaj unui membru staff sau unui jucător ca membru staff.",
-		staff_pm_command_parameter_server_id = "id server",
-		staff_pm_command_parameter_server_id_help = "ID-ul serverului jucătorului pe care încerci să îi trimiți un mesaj.",
-		staff_pm_command_parameter_message = "mesaj",
-		staff_pm_command_parameter_message_help = "Mesajul pe care dorești să îl trimiți.",
-		staff_pm_command_substitutes = "staffpm, message, pm, msg",
-
-		important_staff_pm_command = "important_staff_pm",
-		important_staff_pm_command_help = "Trimite un mesaj important către un jucător în calitate de membru al personalului.",
-		important_staff_pm_command_parameter_server_id = "id server",
-		important_staff_pm_command_parameter_server_id_help = "Server ID-ul jucătorului căruia dorești să-i trimiți un mesaj.",
-		important_staff_pm_command_parameter_message = "mesaj",
-		important_staff_pm_command_parameter_message_help = "Mesajul important pe care dorești să-l trimiți.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
-
-		reply_pm_command = "răspuns_pm",
-		reply_pm_command_help = "Răspunde la ultimul mesaj de la staff pe care l-ai primit.",
-		reply_pm_command_parameter_message = "mesaj",
-		reply_pm_command_parameter_message_help = "Mesajul pe care dorești să-l trimiți.",
-		reply_pm_command_substitutes = "raspunde",
-
-		staff_command = "staff",
-		staff_command_help = "Transmite un mesaj tuturor membrii staff-ului activi.",
-		staff_command_parameter_message = "mesaj",
-		staff_command_parameter_message_help = "Mesajul pe care doriți să îl trimiteți.",
-		staff_command_substitutes = "",
-
-		local_staff_command = "staff_local",
-		local_staff_command_help = "Transmite un mesaj tuturor membrilor activi ai personalului într-un rază de 25m.",
-		local_staff_command_parameter_message = "mesaj",
-		local_staff_command_parameter_message_help = "Mesajul pe care dorești să-l trimiți.",
-		local_staff_command_substitutes = "lstaff",
 
 		wipe_command = "șterge",
 		wipe_command_help = "Ștergeți entitățile nedorite de pe hartă.",
@@ -1437,11 +1351,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		emojis_refresh_command_help = "Actualizează emoji-urile disponibile. Acesta va prelua lista cea mai recentă de pe discords.guild.",
 		emojis_refresh_command_substitutes = "",
 
-		-- base/ping
-		get_pings_command = "pinguri",
-		get_pings_command_help = "Obțineți ping-ul mediu către diferite gazde din întreaga lume pentru a găsi cea mai potrivită locație de gazdă pentru jucătorii actuali ai acestui server.",
-		get_pings_command_substitutes = "",
-
 		-- base/points
 		points_command = "puncte",
 		points_command_help = "Arată numărul de puncte OP pe care le ai.",
@@ -1465,6 +1374,47 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		remove_twitch_ban_exception_command_parameter_server_id = "Nie udało się dodać dostępu.",
 		remove_twitch_ban_exception_command_parameter_server_id_help = "Nieprawidłowe lub nieznane ID postaci.",
 		remove_twitch_ban_exception_command_substitutes = "",
+
+		-- base/staff_pm
+		report_command = "report",
+		report_command_help = "Trimite un mesaj tuturor membrilor staff activi.",
+		report_command_parameter_message = "mesaj",
+		report_command_parameter_message_help = "A mensagem que você gostaria de enviar. Um breve resumo do que você está relatando (Exemplo: \"Acabei de ser VDMed, a ID deles era...\").",
+		report_command_substitutes = "calladmin, wallop, modreq, helpme",
+
+		claim_report_command = "claim_report",
+		claim_report_command_help = "Revendică un raport specific.",
+		claim_report_command_parameter_report_id = "id raport",
+		claim_report_command_parameter_report_id_help = "Id-ul raportului pe care dorești să-l revendici.",
+		claim_report_command_substitutes = "claim, cr, claimreport",
+
+		staff_pm_command = "staff_pm",
+		staff_pm_command_help = "Trimite un mesaj unui membru staff sau unui jucător ca membru staff.",
+		staff_pm_command_parameter_server_id = "id server",
+		staff_pm_command_parameter_server_id_help = "ID-ul serverului jucătorului pe care încerci să îi trimiți un mesaj.",
+		staff_pm_command_parameter_message = "mesaj",
+		staff_pm_command_parameter_message_help = "Mesajul pe care dorești să îl trimiți.",
+		staff_pm_command_substitutes = "staffpm, message, pm, msg, reply, replypm, reply_pm",
+
+		important_staff_pm_command = "important_staff_pm",
+		important_staff_pm_command_help = "Trimite un mesaj important către un jucător în calitate de membru al personalului.",
+		important_staff_pm_command_parameter_server_id = "id server",
+		important_staff_pm_command_parameter_server_id_help = "Server ID-ul jucătorului căruia dorești să-i trimiți un mesaj.",
+		important_staff_pm_command_parameter_message = "mesaj",
+		important_staff_pm_command_parameter_message_help = "Mesajul important pe care dorești să-l trimiți.",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
+
+		staff_command = "staff",
+		staff_command_help = "Transmite un mesaj tuturor membrii staff-ului activi.",
+		staff_command_parameter_message = "mesaj",
+		staff_command_parameter_message_help = "Mesajul pe care doriți să îl trimiteți.",
+		staff_command_substitutes = "",
+
+		local_staff_command = "staff_local",
+		local_staff_command_help = "Transmite un mesaj tuturor membrilor activi ai personalului într-un rază de 25m.",
+		local_staff_command_parameter_message = "mesaj",
+		local_staff_command_parameter_message_help = "Mesajul pe care dorești să-l trimiți.",
+		local_staff_command_substitutes = "lstaff",
 
 		-- base/users
 		playtime_command = "playtime",
@@ -1582,11 +1532,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		play_audio_command_parameter_server_id_help = "ID-ul serverului jucătorului la care dorești să redai acest audio. Poți folosi `-1` pentru a reda audio-ul pentru toți jucătorii.",
 		play_audio_command_substitutes = "",
 
-		-- game/audio_emitters
-		toggle_audio_emitters_command = "toggle_audio_emitters",
-		toggle_audio_emitters_command_help = "Activați/dezactivați emițătoarele audio native.",
-		toggle_audio_emitters_command_substitutes = "",
-
 		-- game/bandaids
 		random_bandaid_command = "bandaj_aleatoriu",
 		random_bandaid_command_help = "Vă oferă un pansament aleatoriu. :)",
@@ -1683,17 +1628,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		buddy_pass_command = "buddy_pass",
 		buddy_pass_command_help = "Deschide interfața Buddy Pass.",
 		buddy_pass_command_substitutes = "",
-
-		-- game/cache
-		cache_assets_command = "cacheaza_asset-uri",
-		cache_assets_command_help = "Solicitați și descărcați forcibil cele mai utilizate asset-uri (vehicule, obiecte și îmbrăcăminte). Nu este recomandat decât dacă aveți o conexiune lentă și asset-urile nu sunt descărcate destul de rapid pentru ca experiența să fie fără probleme. Acest lucru poate cauza, de asemenea, blocări ale clientului în timpul acțiunii.",
-		cache_assets_command_parameter_slow_download = "descărcare lentă",
-		cache_assets_command_parameter_slow_download_help = "Doriți să preîncărcați resursele lent? Această opțiune va face să dureze mult mai mult, dar va reduce și riscul de blocare.",
-		cache_assets_command_substitutes = "descarcare_cache, preincarcare_cache, incarcare_cache",
-
-		cache_join_toggle_command = "cache_join_toggle",
-		cache_join_toggle_command_help = "Activează/dezactivează salvarea în cache automată a unor resurse atunci când te conectezi la server.",
-		cache_join_toggle_command_substitutes = "",
 
 		-- game/camera
 		stable_cam_command = "camera_stabilă",
@@ -3735,10 +3669,14 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		ped_reverse_command = "ped_reverse",
 		ped_reverse_command_help = "Face ped-ul cel mai apropiat într-un vehicul să meargă cu spatele.",
+		ped_reverse_command_parameter_duration = "durată",
+		ped_reverse_command_parameter_duration_help = "Durata mersului înapoi în secunde (1s - 20s, implicit este 4s).",
 		ped_reverse_command_substitutes = "",
 
 		ped_forwards_command = "ped_forward",
 		ped_forwards_command_help = "Face ca ped-ul cel mai apropiat dintr-un vehicul să meargă înainte.",
+		ped_forwards_command_parameter_duration = "durată",
+		ped_forwards_command_parameter_duration_help = "Durata de deplasare înainte în secunde (1s - 20s, implicit este 4s).",
 		ped_forwards_command_substitutes = "",
 
 		vehicle_flip_command = "răsturnare_vehicul",
@@ -3787,6 +3725,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		polygon_command = "Nie udało się usunąć dostępu.",
 		polygon_command_help = "Definește un poligon 2D.",
 		polygon_command_substitutes = "Nie udało się wpłacić środków.",
+
+		box_command = "cutie",
+		box_command_help = "Definesc o cutie 3D.",
+		box_command_substitutes = "",
 
 		-- global/states
 		entity_states_command = "stări_entități",
@@ -3969,6 +3911,27 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		tasks_debug_command_parameter_area_id_help = "ID-ul zonei sarcinii pe care dorești să o depanezi. Lasă gol pentru a afișa toate zonele.",
 		tasks_debug_command_substitutes = "",
 
+		-- jobs/taxi
+		taxi_display_command = "afisare_taxi",
+		taxi_display_command_help = "Comută afișajul taxiului tău.",
+		taxi_display_command_substitutes = "afisaretaxi, taxi",
+
+		taxi_hire_command = "inchiriaza_taxi",
+		taxi_hire_command_help = "Activează/dezactivează închirierea taxiului tău.",
+		taxi_hire_command_substitutes = "inchiriataxi",
+
+		taxi_reset_command = "resetare_taxi",
+		taxi_reset_command_help = "Resetează contorul taxiului tău.",
+		taxi_reset_command_substitutes = "resetaretaxi",
+
+		taxi_fare_command = "tarif_taxi",
+		taxi_fare_command_help = "Setează tariful pentru taxiul tău.",
+		taxi_fare_command_parameter_type = "tipul",
+		taxi_fare_command_parameter_type_help = "Tipul de tarif pe care dorești să-l setezi (ajutor, afișare, initial, kilometru sau minut).",
+		taxi_fare_command_parameter_amount = "suma",
+		taxi_fare_command_parameter_amount_help = "Suma pe care doriți să o setați pentru tarif.",
+		taxi_fare_command_substitutes = "taxifare",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "toggle_mesaje_mecanic",
 		toggle_mechanic_messages_command_help = "Comută dacă primiți sau nu mesaje de la mecanicieni.",
@@ -4088,13 +4051,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		wheel_offset_command_parameter_value_help = "Valoarea cu care dorești să o modifici. Aceasta poate fi oriunde între -0,15 și 0,2, 0 fiind implicită.",
 		wheel_offset_command_substitutes = "",
 
-		wheel_rotation_command = "rotație_roți",
-		wheel_rotation_command_help = "Modifică rotația roților unei mașini.",
-		wheel_rotation_command_parameter_wheels = "față/spate",
-		wheel_rotation_command_parameter_wheels_help = "Ce roți doriți să modificați?",
-		wheel_rotation_command_parameter_value = "valoare",
-		wheel_rotation_command_parameter_value_help = "Cât doriți să modificați. Valoarea poate fi între -0,5 și 0,5, 0 fiind valoarea implicită.",
-		wheel_rotation_command_substitutes = "",
+		suspension_height_command = "inaltime_suspendare",
+		suspension_height_command_help = "Modifică înălțimea vizuală a suspensiei unui vehicul.",
+		suspension_height_command_parameter_value = "valoare",
+		suspension_height_command_parameter_value_help = "Suma cu care doriți să fie modificată. Aceasta poate fi oriunde între -0.15 și 0.1, 0 reprezentând valoarea implicită.",
+		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
 		oil_level_command = "nivel_ulei",
@@ -4258,6 +4219,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		throw_weapon_command_help = "Arunca arma pe care o ai echipata momentan.",
 		throw_weapon_command_substitutes = "yeet, arunca",
 
+		wipe_throwables_command = "șterge_proiectile",
+		wipe_throwables_command_help = "Șterge toate armele aruncate într-un anumit raza specificată.",
+		wipe_throwables_command_parameter_radius = "rază",
+		wipe_throwables_command_parameter_radius_help = "Raza în care să fie șterse armele aruncate (implicit: 5).",
+		wipe_throwables_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "verifică_muniția",
 		check_ammo_command_help = "Verifică câtă muniție ai în total.",
@@ -4344,12 +4311,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		local_firewall_blocked = "Firewall Local: Blocat ${playerName} (${licenseIdentifier})"
 	},
 
-	ping = {
-		getting_pings = "Se obțin ping-urile de la toți jucătorii. Aceasta poate dura câteva secunde.",
-		host_data = "${position}. ${location} - ${averagePing} Ping mediu (bazat pe ${totalPings} clienți), 10% Sub: ${averagePingLow}, 10% Peste: ${averagePingHigh}",
-		list_hosts = "${listHosts}"
-	},
-
 	points = {
 		you_have_points = "Ai ${frameworkPoints} Punct(e) OP.",
 		used_points = "Ai folosit ${amount} Punct(e) OP sub eticheta `${label}`.",
@@ -4362,11 +4323,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 	profile = {
 		profile_debug_enabled = "Debogarea profilului a fost activată. Verificați consola F8 pentru ieșire.",
 		profile_debug_disabled = "Debogarea profilului a fost dezactivată."
-	},
-
-	proxy = {
-		proxied_via_logs_title = "Proxat prin",
-		proxied_via_logs_details = "${consoleName} a fost proxat prin `${serverName}`."
 	},
 
 	restart = {
@@ -4511,6 +4467,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		ping_stable = "Ping-ul tău este acum stabil din nou."
 	},
 
+	vpn = {
+		vpn_not_allowed_for_new_players = "Utilizarea unui VPN nu este permisă pentru jucătorii cu mai puțin de 24 de ore de joc."
+	},
+
 	whitelist = {
 		not_whitelisted = "Nu ești pe lista albă a acestui server.\n\nAlătură-te comunității noastre de Discord pentru informații despre cum să aplici la ${communityDiscord}."
 	},
@@ -4644,12 +4604,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		description_rat_unnamed = "Această șobolană ${gender}, ${age} aventuroasă și cântărind ${weight}, navighează în lume cu o inteligență ascuțită și șarm neașteptat. Condusă de o devotare absolută față de ${food}, transformă fiecare colț într-o posibilă descoperire, fiecare umbră într-un loc de joacă.",
 		description_rat_named = "${name}, o șobolană ${gender} de ${age} ani, implicată în marea experiență a vieții, cântărind ${weight} și plină de personalitate. Cu o legătură indestructibilă cu ${food}, ${name} întruchipează spiritul curiozității - mică în dimensiune, infinită în spirit.",
 
+		pick_up = "[${SeatEjectKey}] Ridică",
 		pick_up_named = "[${SeatEjectKey}] Ridică ${name}",
-		pick_up_cat = "[${SeatEjectKey}] Ridică Pisica",
-		pick_up_dog = "[${SeatEjectKey}] Ridică Câinele",
-		pick_up_hen = "[${SeatEjectKey}] Ridică Găina",
-		pick_up_rabbit = "[${SeatEjectKey}] Ridică Iepurele",
-		pick_up_rat = "[${SeatEjectKey}] Ridică Șobolanul",
 
 		failed_pickup_cat = "Nu s-a putut ridica pisica.",
 		failed_pickup_dog = "Nu s-a putut ridica câinele.",
@@ -4996,11 +4952,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} a redat un efect audio pentru toți. Efectul audio avea URL-ul `${url}` și a fost setat să redați la nivelul de volum `${volume}`.",
 		played_audio_effect_for_player_title = "Sunetul de efect redat pentru jucător",
 		played_audio_effect_for_player_details = "${consoleName} a redat un efect audio pentru ${targetConsoleName}. Efectul audio a avut URL-ul `${url}` și a fost setat să se joace la nivelul de volum `${volume}`."
-	},
-
-	audio_emitters = {
-		audio_emitters_disabled = "Emițătoarele audio au fost dezactivate.",
-		audio_emitters_enabled = "Emițătoarele audio au fost activate."
 	},
 
 	balls = {
@@ -5401,15 +5352,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 	bus_map = {
 		bus_tracker = "Autobuz"
-	},
-
-	cache = {
-		download_progress = "Progresul descărcării:\n- Vehicule: ${vehiclesDone}/${vehiclesTotal}\n- Obiecte: ${objectsDone}/${objectsTotal}\n- Peds: ${pedsDone}/${pedsTotal}\n- Îmbrăcăminte: ${clothingRequested}/${clothingTotal}",
-		slow_download_enabled = "Descărcarea lentă a fost activată.",
-		slow_download_disabled = "Descărcarea lentă a fost dezactivată.",
-
-		join_cache_disabled = "Memoria cache pentru conectare dezactivată.",
-		join_cache_enable = "Memoria cache pentru conectare activată."
 	},
 
 	caffeine = {
@@ -6307,6 +6249,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		crafting_ammo = "Confecționare Muniție",
 		crafted_ammo = "Muniție confecționată.",
 		failed_craft_ammo = "Nu s-a reușit fabricarea muniției.",
+
+		gift_box_bomb_recipe = "Cutie cadou specială",
+		crafting_gift = "Confecționarea unei cutii cadou",
+		crafted_gift = "Cutie cadou confecționată.",
+		failed_craft_gift = "Nu s-a putut crea cutia de cadouri.",
 
 		process_weed = "Procesează Iarba",
 		press_to_process_weed = "[${SeatEjectKey}] Procesează Iarba",
@@ -8195,6 +8142,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		cinema = "Cinema",
 		strip_club = "Club de striptease",
 		police_store = "Magazinul de echipament de poliție",
+		utility_crate = "Cufăr de utilități",
 		fib_store = "Magazinul FIB",
 		deputy_madison = "Subofițerul Madison",
 		sergeant_harris = "Sergentul Harris",
@@ -8246,11 +8194,17 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		target_inventory_full = "Numer seryjny wydaje się być Zadrapany lub Nieczytelny.",
 		received_item = "wyłączone",
 
+		inspecting_item = "Inspectând obiectul",
+
 		inspect_weapon = "Numărul de serie al acestei ${itemName} pare să fie `${itemId}`.",
 		inspect_weapon_broken = "Numărul de serie al acestei ${itemName} pare să fie `${itemId}` și pare complet deteriorată.",
 		inspect_bank_property = "Nie skopiowano żadnych danych pojazdu.",
 		inspect_bank_property_cid = "Acest ${item} este marcat ca fiind proprietatea băncii ${bank}. A fost retras de la numărul de cont #${characterId}.",
 		inspect_no_property = "Skopiowane dane pojazdu.",
+
+		gift_box_normal = "Această cutie de cadouri arată complet normală.",
+		gift_box_suspicious = "Această cutie de cadouri pare puțin suspectă.",
+		gift_box_residue = "Această cutie de cadouri are puțin reziduuri de pulbere cenușie.",
 
 		searching_dumpster = "Căutând gunoiul",
 		searching_homeless_tent = "Se caută în cortul oamenilor fără adăpost",
@@ -8625,6 +8579,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		empty_box_description = "Începeți cu această cutie simplă și robustă pentru a crea un cadou personalizat. Umpleți-o cu comori neperecibile și este gata să fie transformată într-un cadou plin de grijă. Ideal pentru a ambala tot ceea ce simbolizează afecțiunea, cu excepția produselor perisabile și a armelor.",
 		gift_box = "Cutie cadou",
 		gift_box_description = "Această cutie cadou elegantă și sigilată, împodobită cu o fundă festivă, este o modalitate frumoasă de a prezenta articolele alese cu grijă. Perfectă pentru ocazii speciale, transmite căldură și atenție, asigurându-vă că gestul dvs. de dăruire este la fel de plăcut precum cadoul din interior.",
+		gift_box_bomb = "Cutie de cadouri",
+		gift_box_bomb_description = "Această cutie de cadouri elegant sigilată, ornamentată cu un fundiță festivă, este o modalitate frumoasă de a prezenta obiectele alese cu grijă. Perfectă pentru ocazii speciale, transmite căldură și gânduri bune, asigurându-se că gestul tău de dăruire lasă o impresie durabilă.",
 
 		ear_defenders = "Protecțiile de urechi",
 		ear_defenders_description = "Folosite pentru a-ți proteja urechile de zgomote puternice.",
@@ -9234,6 +9190,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		pet_snowman_description = "O jogador-alvo não tem um personagem carregado.",
 		pet_owl = "Hooty",
 		pet_owl_description = "Hooty, companionul tău înțelept și vigilent, se așează elegant pe umărul tău. Cu ochii săi ageri și penele moi, această bufniță fermecătoare adaugă o notă de magie aventurilor tale. Întotdeauna gata să ofere un hohot de înțelepciune, Hooty este partenerul perfect pentru orice călătorie.",
+		pet_pig = "Șoricioaica",
+		pet_pig_description = "Un porc mic cu o personalitate mare, așezat fericit pe umărul tău. Întotdeauna gata să încurajeze cu un snort sau să-ți judece alegerile de viață cu un ochi admirativ adorabil. Indiferent dacă te aventura sau doar te plimbi, acest companion de dimensiuni mici este combinația perfectă între farmec și aroganță.",
 
 		hotwheels_mcqueen = "Fulgur, mașina roșie",
 		hotwheels_mcqueen_description = "Viteza, asta sunt eu! Floating ca un Cadillac, picioare ca un BMW. KATCHOW KATCHOW KATCHOW",
@@ -9549,6 +9507,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		wires = "Fire",
 		wires_description = "ținând totul împreună.",
 
+		microcontroller = "Microcontroler",
+		microcontroller_description = "Un creier mic dar puternic pentru toate creațiile tale electronice, capabil să dea viață ideilor complexe cu doar câteva linii de cod. Este eroul necunoscut al inovației, orchestrând în tăcere magia din culise.",
+
 		note = "Notiță",
 		note_description = "Câteva note, nu știu omule.",
 
@@ -9743,6 +9704,17 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		wheel_clamp_description = "Aici nu există mașini de evadare! Cleștele pentru roți face afaceri, fixând vehicule ferm în loc și punând capăt mișcării neautorizate. Această dispozitivă robustă este un executor tăcut, asigurându-se că regulile de parcare sunt respectate și urmate.",
 		old_rug = "Covor Vechi",
 		old_rug_description = "Așază acest covor confortabil pentru următoarea ta întâlnire în aer liber și menține lucrurile confortabile! Este perfect pentru relaxare în iarbă fără a avea acele pete verzi enervante pe pantaloni. Întinde-l, relaxează-te și bucură-te de împrejurimile tale cu stil și confort.",
+
+		evidence_marker_1 = "Marcaj 1",
+		evidence_marker_1_description = "Punctul de pornire al misterului, marcând primul indiciu pentru a dezlega adevărul.",
+		evidence_marker_2 = "Marcaj 2",
+		evidence_marker_2_description = "Un indiciu de urmărire, care îndrumă investigatorii mai aproape de imaginea de ansamblu.",
+		evidence_marker_3 = "Marcaj 3",
+		evidence_marker_3_description = "Detaliul care ar putea face sau rupe cazul - nu-l subestimați.",
+		evidence_marker_4 = "Marcaj 4",
+		evidence_marker_4_description = "O piesă critică a puzzle-ului, așteptând liniștită să fie observată.",
+		evidence_marker_5 = "Semn de probă 5",
+		evidence_marker_5_description = "Ultimul semn de probă, care leagă totul sau lasă mai multe întrebări decât răspunsuri.",
 
 		bandit_1 = "Bandit 1",
 		bandit_1_description = "Persoana la care apelați pentru scenarii de antrenament, întotdeauna gata să joace rolul antagonistului fără a se plânge de orele lungi sau lipsa scenariului. Poate fi plasat oriunde în lume.",
@@ -10604,6 +10576,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		invalid_invisibility_mode = "Mod invizibilitate invalid. Trebuie să fie 'complet' sau 'normal'.",
 		invisibility_mode_full = "Modul de invizibilitate setat pe 'complet'. Membrii obișnuiți ai staff-ului nu te pot vedea.",
 		invisibility_mode_normal = "Modul de invizibilitate setat pe 'normal'. Membrii obișnuiți ai staff-ului te pot vedea acum.",
+		current_invisibility_mode = "Modul curent de invizibilitate este setat la '${mode}'.",
 
 		toggled_invisibility = "Ai activat cu succes invizibilitatea lui ${displayName}.",
 		failed_invisibility = "Nu s-a putut activa invizibilitatea lui ${displayName}.",
@@ -10699,6 +10672,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		logs_used_weather_spell_title = "Vrajă de schimbare a vremii utilizată",
 		logs_used_weather_spell_details = "${consoleName} a folosit vraja de schimbare a vremii `${itemName}`.",
 
+		gift_box_bomb_logs_title = "Cutie cadou explozivă deschisă",
+		gift_box_bomb_logs_details = "${consoleName} a deschis o cutie cadou explozivă.",
+
 		you_have_used_jail_card = "Ai folosit o carte 'Ieșire din închisoare'!",
 		you_are_not_in_jail = "Nu ești în închisoare.",
 
@@ -10791,9 +10767,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		sentence_reduced = "Sentința ta a fost redusă cu ${amount} luni, mai ai ${remaining} luni rămase.",
 		sentence_increased = "Timpul tău de închisoare a fost crescut cu ${amount} luni, ai ${remaining} luni rămase.",
 		sentence_over = "Sentința ta s-a terminat.",
-		remaining_time_fmt = "${months} luni (*${display}*)",
+		remaining_time_fmt = "${months} luni (${display})",
 		remaining_time = "Timp Ramas: ${remaining}.",
-		jailed = "Ai fost inchis pentru ${amount}.",
+		jailed = "Ai fost închis pentru ${amount} luni.",
 
 		mission_help_1 = "Apasă ~INPUT_CONTEXT~ pentru a curăța podeaua.",
 		mission_help_2 = "Apasă ~INPUT_CONTEXT~ pentru a mânca ceva.",
@@ -10970,17 +10946,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		back = "Înapoi",
 		copy_license = "ID-ul permisului",
 		copy_license_success = "Copiat!",
-		cache_assets = "Cache Assets",
-		download_assets = "Doriți să descărcați și să salvați în cache cele mai multe active ale serverului? Iată avantajele și considerațiile:",
-		cache_assets_performance = "Bucurați-vă de un FPS mai bun și de mai puține întreruperi de ping în timpul jocului, în special dacă aveți hardware mai slab sau o conexiune mai lentă.",
-		cache_assets_crashes = "Jocul s-ar putea să se închidă pe parcursul procesului. Dacă acest lucru se întâmplă, folosiți opțiunea 'descărcare lentă' în schimb.",
-		cache_assets_restart = "După ce ați terminat descărcarea, reporniți jocul pentru a preveni lag-ul în această sesiune.",
-		cache_assets_disk = "Acest lucru va folosi spațiu pe disc, deci asigurați-vă că aveți suficient spațiu disponibil.",
-		cache_assets_no_repeat = "Nu va trebui să faceți acest lucru pentru fiecare actualizare, deoarece doar câteva fișiere se vor schimba.",
-		vehicles = "Vehicule",
-		objects = "Obiecte",
-		peds = "NPC-uri",
-		clothing = "Haine",
 		main_menu = "Meniul Principal",
 		gta_settings = "Setări GTA",
 		discord = "Discord",
@@ -11132,8 +11097,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 	lottery = {
 		lottery_announcement = "Anunț Loterie",
-		lottery_about_to_roll = "Un câștigător va fi extras în 5 minute pentru loteria de azi. Fondul total este în prezent de $${totalAmount}, la care ai contribuit cu $${betAmount}. Șansa ta de a câștiga este de ${odds}%.",
-		current_lottery_pot = "Fondul total este în prezent de $${totalAmount}, la care ai contribuit cu $${betAmount}. Șansa ta de a câștiga este de ${odds}%.",
+		lottery_about_to_roll = "Un câștigător va fi desemnat în 5 minute la loteria de astăzi. Fondul total este în prezent de $${totalAmount}, iar tu ai investit $${betAmount}. Șansele tale de câștig sunt de ${odds}%. Impozitul este ${tax}%.",
+		current_lottery_pot = "Fondul total este în prezent de $${totalAmount}, unde ai pariat $${betAmount}. Șansa ta de a câștiga este de ${odds}%. Taxa este de ${tax}%.",
 		drew_a_lottery_winner = "Un câștigător al loteriei a fost extras.",
 		winner_has_been_picked = "${fullName} a câștigat potul la loterie în valoare de $${totalAmount}! Au pariat $${betAmount} și șansa lor de a câștiga a fost de ${odds}%.",
 		claimed_lottery_winnings = "S-au revendicat toate câștigurile la loterie.",
@@ -11744,6 +11709,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		hatch_claim = "RECLAMĂ",
 		hatch_opened = "RECLAMAT",
 		hatch_waiting = "AȘTEPTARE",
+		hatch_too_late = "PREA TÂRZIU",
 
 		about_advent_calendar_title = "Despre Calendarul de Advent",
 
@@ -11755,7 +11721,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 			<br><br>
 			Next hatch unlocks in ${time}.
 			<br><br>
-			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 26th.)
+			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 31st.)
 			<br><br>
 			<div class="bonusPoints">
 				<div>Bonus Points: ${bonusPoints}/22</div>
@@ -13570,6 +13536,59 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		used_bug_logs_details = "${consoleName} a folosit un bug de microfon pe ${identifier}."
 	},
 
+	staff_pm = {
+		something_went_wrong = "Ceva nu a mers bine la trimiterea mesajului.",
+		reports_too_fast = "Trimiteți rapoartele prea repede, încetiniți.",
+		no_report_message = "Trebuie să includeți un mesaj în raportul dvs.",
+		same_report = "Nu puteți trimite același raport de două ori.",
+		report_muted = "Sunteți mutat din a trimite rapoarte pentru: `${reason}`.",
+		report_muted_no_reason = "Ești mutat și nu poți trimite rapoarte.",
+
+		report_title = "RAPORT-${reportId} ${displayName}",
+		report_logs_title = "Raport",
+		report_logs_details = "${consoleName} a creat raportul ${reportId} cu următorul mesaj: `${message}`",
+
+		invalid_server_id = "ID-ul serverului țintă este invalid.",
+		no_staff_pm_message = "Trebuie să incluzi un mesaj în mesajul tău privat.",
+		user_not_staff = "Utilizatorul nu este membru al personalului.",
+		staff_pm_warning = "Avertizare PM personal",
+		staff_pm_first_time = "Vedem că nu ai folosit niciodată PM-urile pentru personal înainte. Pentru a răspunde la un PM pentru personal, folosește `/staffpm` urmat de id-ul destinatarului. Pentru a răspunde mai ușor la ultimul PM pentru personal pe care l-ai primit, poți folosi `/reply`.",
+
+		staff_pm_title = "STAFF PM ${from} -> ${to}",
+		staff_pm_title_external = "STAFF PM EXTERN ${from} -> ${to}",
+		close_staff_pm = "Închide",
+		staff_pm_from = "StaffPM de la <i>${from}</i>",
+		staff_pm_logs_title = "Staff PM",
+		staff_pm_logs_details = "${senderConsoleName} a trimis un mesaj privat de la staff către ${recipientConsoleName}: `${message}`",
+		important_staff_pm_logs_title = "Staff PM Important",
+		important_staff_pm_logs_details = "${senderConsoleName} a trimis un mesaj privat important de la staff către ${recipientConsoleName}: `${message}`",
+
+		staff_toggled = "Starea ta de personal este dezactivată.",
+		no_staff_message = "Trebuie să incluzi un mesaj în chat-ul pentru personal.",
+		same_staff_message = "Nu poți trimite același mesaj pentru personal de două ori.",
+
+		staff_message_title = "PERSONAL ${playerName}",
+		local_staff_message_title = "PERSONAL LOCAL ${playerName}",
+		staff_message_logs_title = "Mesaj pentru personal",
+		staff_message_logs_details = "${consoleName} a trimis următorul mesaj în chat-ul pentru personal: `${message}`",
+		local_staff_message_logs_title = "Mesaj pentru personal local",
+		local_staff_message_logs_details = "${consoleName} a trimis următorul mesaj în chat-ul pentru personal local: `${message}`",
+
+		message_sent = "Mesaj trimis.",
+		cannot_send_private_message_to_yourself = "Nu poți trimite un mesaj privat către tine însuți.",
+		missing_valid_message_parameter = "Parametrul 'mesaj' lipsește sau nu este valid.",
+		missing_valid_license_identifier_parameter = "Parametrul 'licenseIdentifier' lipsește sau nu este valid.",
+		missing_valid_target_source_parameter = "Parametrul 'targetSource' lipsește sau nu este valid.",
+
+		invalid_report_id = "ID-ul raportului este invalid.",
+		report_already_claimed = "Acel raport a fost deja revendicat de către *${playerName}*.",
+		report_same_creator = "Nu poți revendica propriile tale rapoarte.",
+		failed_claim_report = "Nu s-a putut revendica raportul.",
+		report_claimed = "Raportul **${reportId}** a fost revendicat de *${playerName}*.",
+		claim_report_logs_title = "Raport Revendicat",
+		claim_report_logs_details = "${consoleName} a revendicat raportul ${reportId}."
+	},
+
 	starter_car = {
 		follow_the_checkpoints = "Mașina personală este parcată în apropiere. Urmați punctele de verificare pentru a o găsi.",
 
@@ -13928,6 +13947,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		tp_cayo = "Insula Cayo Perico",
 
 		actions = "Acțiuni",
+		jail_self = "Închideți-vă în închisoare",
+		unjail_self = "Eliberați-vă din închisoare",
 		wander_around = "Hoinăriți în jur",
 		speed_around = "Deplasare rapidă",
 		clear_tasks = "Curățare sarcini",
@@ -14114,7 +14135,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		no_maps_to_combine = "Nu ai hărți de combinat.",
 
 		treasure_map_dug_up_logs_title = "Hartă comori săpată",
-		treasure_map_dug_up_logs_details = "${consoleName} a săpat o hartă comori de nivel ${mapTier} și a primit drop ID ${dropId}."
+		treasure_map_dug_up_logs_details = "${consoleName} a săpat o hartă comori de nivel ${mapTier} și a primit drop ID ${dropId}.",
+
+		treasure_map_piece_spawned_logs_title = "Fragment de hartă a comorii generat",
+		treasure_map_piece_spawned_logs_details = "${consoleName} a generat fragmentul de hartă a comorii ${pieceNumber} de nivel ${mapTier}."
 	},
 
 	tsunami = {
@@ -14335,14 +14359,24 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 	weed = {
 		strain_default = "Haze Sălbatic",
-		strain_lemon = "Haze de Lămâie",
+		strain_bubble = "Bubble Berry",
 		strain_northern = "Luminile Nordului",
 		strain_kush = "OG Kush",
+		strain_diesel = "Sour Diesel",
+		strain_ak47 = "AK-47",
+		strain_dream = "Blue Dream",
+		strain_trainwreck = "Trainwreck",
+		strain_gorilla = "Gorilla Glue",
 
 		default_emoji = "🥦",
-		lemon_emoji = "🏃",
+		bubble_emoji = "🫧",
 		northern_emoji = "🛡️",
 		kush_emoji = "🦁",
+		diesel_emoji = "😌",
+		ak47_emoji = "🔫",
+		dream_emoji = "🪶",
+		trainwreck_emoji = "👊",
+		gorilla_emoji = "🦍",
 
 		strain_description = "<b>Tulpină:</b> <i>${strain}</i> ${emoji}"
 	},
@@ -14392,6 +14426,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		run_as_failed = "Nu am reușit să rulez comanda ca ${consoleName}.",
 
 		no_nearby_vehicle = "Niciun vehicul in apropiere.",
+		invalid_duration = "Durată invalidă (1s - 20s).",
 		reversing_failed = "Nu am reușit să fac npc-ul să meargă înapoi.",
 		driving_forwards_failed = "Nu am reușit să fac npc-ul să meargă înainte.",
 		reversing_success = "Am reușit să fac npc-ul să meargă înapoi cu succes.",
@@ -14927,7 +14962,16 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		task_take_nap = "Fă o siestă.",
 		task_take_nap_near = "Apasă ~INPUT_DETONATE~ pentru a face o siestă.",
-		task_take_nap_active = "Siestă în Curs"
+		task_take_nap_active = "Siestă în Curs",
+
+		task_water_plants = "Udați plantele.",
+		task_water_plants_near = "Apăsați ~INPUT_DETONATE~ pentru a uda plantele.",
+		task_water_plants_active = "Plantele sunt udate"
+	},
+
+	taxi = {
+		help_text = "`initial` este tariful de pornire de bază (implicit: $10), `mile` este tariful per milă condusă (implicit: $5), `minute` este tariful per minut în timp ce contorul este pornit (implicit: $15), `show` va afișa setările actuale.",
+		invalid_typ = "Tip invalid."
 	},
 
 	tow = {
@@ -15287,8 +15331,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		wheels_modified = "Roțile au fost modificate.",
 		wheels_none_specified = "Nicio roată specificată.",
 		wheels_none_valid_specified = "Nicio roată validă specificată.",
-		not_in_a_car = "Nu ești într-un mașină.",
-		invalid_value = "Valoare invalidă."
+		not_in_a_car = "Nu conduci o mașină.",
+		invalid_value = "Valoare invalidă.",
+		suspension_height = "Înălțimea curentă a suspensiei este setată la ${height}.",
+		suspension_height_set = "Înălțimea suspensiei a fost setată la ${height}."
 	},
 
 	oil = {
@@ -15496,6 +15542,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 	throwables = {
 		pick_up_weapon = "[${InteractionKey}] Ridică",
+		throwables_wiped = "Șters ${amount} aruncate.",
 
 		no_weapon_equipped = "Nu ai nicio armă echipată.",
 		cant_throw_weapon = "Nu poți arunca această armă.",

@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 35 (do not change)
+-- AUTO LOCALES: 36 (do not change)
 
 OP.Global.Locales.Languages["zh-CN"] = {
 	-- configuration settings for language
@@ -202,10 +202,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		spawned_item_for_everyone_title = "为所有人生成物品",
 		spawned_item_for_everyone_details = "${consoleName} 为所有人生成了 ${amount} 个 `${itemName}`。",
 
-		report_title = "报告-${reportId} 由 ${reporterName} 提交",
-		report_logs_title = "报告",
-		report_logs_details = "${consoleName} 创建了报告 ${reportId}，内容如下：`${reportMessage}`",
-
 		announcement_staff_title = "员工通告",
 		announcement_server_title = "服务器公告",
 
@@ -220,47 +216,11 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		failed_to_post_announcement = "未能发布公告消息，因为未添加任何消息。",
 		failed_to_post_announcement_locale = "未能发布公告消息，因为不支持添加的公告语言。",
 
-		staff_title = "工作人员 ${staffName}",
-		staff_message_logs_title = "工作人员消息",
-		staff_message_logs_details = "${consoleName} 在工作人员聊天中发送了以下消息: `${staffMessage}`",
-		local_staff_title = "本地工作人员 ${staffName}",
-		local_staff_message_logs_title = "本地工作人员消息记录",
-		local_staff_message_logs_details = "${consoleName}在本地工作人员聊天中发送了以下消息：`${staffMessage}`",
-
-		staff_pm_title = "工作人员私信 ${transmissionTitle}",
-		staff_pm_logs_title = "工作人员私信",
-		staff_pm_logs_details = "${senderConsoleName} 向 ${recipientConsoleName} 发送了以下消息: `${staffPrivateMessage}`",
-		staff_pm_not_logged_in = "您未登录。",
-		staff_pm_not_user_not_found = "未找到服务器ID为${serverId}的用户。",
-		staff_pm_not_recipient_not_staff = "您要发送消息的玩家不是工作人员。",
-		staff_pm_unable_to_message_self = "您无法给自己发送消息。",
-		staff_pm_warning = "工作人员私信警告",
-		staff_pm_first_time = "我们注意到您以前从未使用过员工私信。要回复员工私信，请使用“/staffpm”后跟收件人的 id。为了方便起见，您可以使用“/reply”来回复您收到的最后一条员工私信。",
-		reply_pm_not_found = "没有要回复的员工消息。",
-
-		important_staff_pm_title = "!工作人员私信 您 -> ${recipient}",
-		close_staffpm = "关闭",
-		staffpm_from = "来自 <i>${from}</i> 的工作人员私信",
-		important_staff_pm_logs_title = "重要工作人员私信",
-		important_staff_pm_logs_details = "${senderConsoleName} 给 ${recipientConsoleName} 发送了以下重要信息：`${message}`",
-
-		external_staff_message = "来自外部员工的信息",
-		external_staff_message_from_player = "${playerName} 发来了外部员工信息",
-		external_staff_message_content = "${staffMessage}（您无法回复此消息。）",
-
-		unable_to_staff_message_yourself = "无法向自己发送员工信息。",
-		message_sent = "信息已发送。",
-		player_not_found = "未找到玩家。",
-		missing_valid_target_source_parameter = "缺少有效的 '目标来源' 参数。",
-		missing_valid_message_parameter = "缺少有效的 '消息' 参数。",
-
 		invalid_coordinates = "提交的 x、y、z 或 w 坐标无效。",
 		player_not_loaded_character = "玩家未加载角色。",
 		teleport_successful = "成功传送玩家。",
 
 		player_revived_success = "成功复活玩家。",
-
-		missing_valid_license_identifier_parameter = "缺少有效的 '许可证标识符' 参数。",
 
 		wipe_broken = "broken - 损坏/碎片化的物体",
 		wipe_npcs = "npcs - NPC 及其车辆。",
@@ -376,12 +336,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 		report_muted_no_reason = "你已被禁言，无指定原因。",
 		report_muted = "你因为 `${reason}` 被禁言。",
-
-		already_sending_report = "你正在发送一个举报。请等待。",
-		unable_to_send_identical_report = "连续发送相同的举报是无效的。",
-
-		already_sending_staff_message = "您正在发送一个工作人员消息。请稍等。",
-		unable_to_send_identical_staff_message = "连续发送相同的工作人员消息是无效的，请在30秒内等待。",
 
 		population_density_set_to = "人口密度倍数已设置为 ${multiplierLabel}%。",
 		population_density_set_off = "人口密度已关闭。",
@@ -881,51 +835,11 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		marathon_command_substitutes = "",
 
 		-- base/admin
-		report_command = "举报",
-		report_command_help = "向所有在线管理员发送信息。",
-		report_command_parameter_message = "信息",
-		report_command_parameter_message_help = "Geleceğinize ciddi bir yatırım olan 500 TL birikim bonosu. Zamanı geldiğinde bankada bozdurarak tam değerini alabilir ve finansal hedeflerinize önemli bir adım atabilirsiniz.",
-		report_command_substitutes = "calladmin",
-
 		announce_command = "公告",
 		announce_command_help = "向所有玩家广播公告信息。",
 		announce_command_parameter_message = "信息",
 		announce_command_parameter_message_help = "您想要广播的信息。",
 		announce_command_substitutes = "",
-
-		staff_pm_command = "工作人员私信",
-		staff_pm_command_help = "向工作人员或玩家作为工作人员发送私信。",
-		staff_pm_command_parameter_server_id = "服务器ID",
-		staff_pm_command_parameter_server_id_help = "您要发送消息的玩家的服务器ID。",
-		staff_pm_command_parameter_message = "消息",
-		staff_pm_command_parameter_message_help = "您想要发送的消息。",
-		staff_pm_command_substitutes = "staffpm，message，pm，msg",
-
-		important_staff_pm_command = "重要_staff_pm",
-		important_staff_pm_command_help = "作为工作人员向玩家发送重要消息。",
-		important_staff_pm_command_parameter_server_id = "服务器 ID",
-		important_staff_pm_command_parameter_server_id_help = "您要联系的玩家的服务器 ID。",
-		important_staff_pm_command_parameter_message = "消息",
-		important_staff_pm_command_parameter_message_help = "您想发送的重要信息。",
-		important_staff_pm_command_substitutes = "!staffpm，!staff_pm，!pm",
-
-		reply_pm_command = "回复私信",
-		reply_pm_command_help = "回复您收到的最后一条员工消息。",
-		reply_pm_command_parameter_message = "消息",
-		reply_pm_command_parameter_message_help = "您希望发送的消息。",
-		reply_pm_command_substitutes = "回复",
-
-		staff_command = "staff",
-		staff_command_help = "向所有活跃的工作人员广播消息。",
-		staff_command_parameter_message = "消息",
-		staff_command_parameter_message_help = "您想发送的消息。",
-		staff_command_substitutes = "",
-
-		local_staff_command = "本地员工",
-		local_staff_command_help = "向半径25米内所有活跃员工广播信息。",
-		local_staff_command_parameter_message = "信息",
-		local_staff_command_parameter_message_help = "您想发送的信息。",
-		local_staff_command_substitutes = "本地员工",
 
 		wipe_command = "wipe",
 		wipe_command_help = "从地图中清除不需要的实体。",
@@ -1437,11 +1351,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		emojis_refresh_command_help = "刷新可用表情符号。这将从 Discord 服务器获取最新的列表。",
 		emojis_refresh_command_substitutes = "",
 
-		-- base/ping
-		get_pings_command = "get_pings",
-		get_pings_command_help = "获取连接到世界各地的各个主机的平均延迟，以找到适合当前服务器玩家的最合适的主机位置。",
-		get_pings_command_substitutes = "",
-
 		-- base/points
 		points_command = "points",
 		points_command_help = "显示您拥有的OP积分数量。",
@@ -1465,6 +1374,47 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		remove_twitch_ban_exception_command_parameter_server_id = "服务器 ID",
 		remove_twitch_ban_exception_command_parameter_server_id_help = "您要从中删除例外的玩家的服务器 ID。",
 		remove_twitch_ban_exception_command_substitutes = "",
+
+		-- base/staff_pm
+		report_command = "举报",
+		report_command_help = "向所有在线管理员发送信息。",
+		report_command_parameter_message = "信息",
+		report_command_parameter_message_help = "Geleceğinize ciddi bir yatırım olan 500 TL birikim bonosu. Zamanı geldiğinde bankada bozdurarak tam değerini alabilir ve finansal hedeflerinize önemli bir adım atabilirsiniz.",
+		report_command_substitutes = "calladmin, wallop, modreq, helpme",
+
+		claim_report_command = "claim_report",
+		claim_report_command_help = "声明特定报告。",
+		claim_report_command_parameter_report_id = "报告ID",
+		claim_report_command_parameter_report_id_help = "您要声明的报告的ID。",
+		claim_report_command_substitutes = "claim, cr, claimreport",
+
+		staff_pm_command = "工作人员私信",
+		staff_pm_command_help = "向工作人员或玩家作为工作人员发送私信。",
+		staff_pm_command_parameter_server_id = "服务器ID",
+		staff_pm_command_parameter_server_id_help = "您要发送消息的玩家的服务器ID。",
+		staff_pm_command_parameter_message = "消息",
+		staff_pm_command_parameter_message_help = "您想要发送的消息。",
+		staff_pm_command_substitutes = "staffpm, message, pm, msg, reply, replypm, reply_pm",
+
+		important_staff_pm_command = "重要_staff_pm",
+		important_staff_pm_command_help = "作为工作人员向玩家发送重要消息。",
+		important_staff_pm_command_parameter_server_id = "服务器 ID",
+		important_staff_pm_command_parameter_server_id_help = "您要联系的玩家的服务器 ID。",
+		important_staff_pm_command_parameter_message = "消息",
+		important_staff_pm_command_parameter_message_help = "您想发送的重要信息。",
+		important_staff_pm_command_substitutes = "!staffpm，!staff_pm，!pm",
+
+		staff_command = "staff",
+		staff_command_help = "向所有活跃的工作人员广播消息。",
+		staff_command_parameter_message = "消息",
+		staff_command_parameter_message_help = "您想发送的消息。",
+		staff_command_substitutes = "",
+
+		local_staff_command = "本地员工",
+		local_staff_command_help = "向半径25米内所有活跃员工广播信息。",
+		local_staff_command_parameter_message = "信息",
+		local_staff_command_parameter_message_help = "您想发送的信息。",
+		local_staff_command_substitutes = "本地员工",
 
 		-- base/users
 		playtime_command = "playtime",
@@ -1582,11 +1532,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		play_audio_command_parameter_server_id_help = "要为其播放此音频的玩家的服务器ID。您可以使用`-1`选择所有玩家。",
 		play_audio_command_substitutes = "",
 
-		-- game/audio_emitters
-		toggle_audio_emitters_command = "toggle_audio_emitters",
-		toggle_audio_emitters_command_help = "切换本地音频发射器。",
-		toggle_audio_emitters_command_substitutes = "",
-
 		-- game/bandaids
 		random_bandaid_command = "随机创可贴",
 		random_bandaid_command_help = "给予你一个随机的创可贴。:)",
@@ -1683,17 +1628,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		buddy_pass_command = "buddy_pass",
 		buddy_pass_command_help = "打开好友通行证界面。",
 		buddy_pass_command_substitutes = "",
-
-		-- game/cache
-		cache_assets_command = "cache_assets",
-		cache_assets_command_help = "强制请求和下载大多数流媒体资源（车辆、物体和服装）。除非您的连接速度很慢且资源无法按需快速下载以实现无缝切换，否则不建议使用此功能。这也可能导致客户端在此过程中崩溃。",
-		cache_assets_command_parameter_slow_download = "慢速下载",
-		cache_assets_command_parameter_slow_download_help = "您是否希望慢速缓存资源？这将花费更长时间，但也会减少崩溃的可能性。",
-		cache_assets_command_substitutes = "download_cache, preload_cache, load_cache",
-
-		cache_join_toggle_command = "cache_join_toggle",
-		cache_join_toggle_command_help = "每次加入服务器时自动切换某些资源的缓存。",
-		cache_join_toggle_command_substitutes = "",
 
 		-- game/camera
 		stable_cam_command = "stable_cam",
@@ -3735,10 +3669,14 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 		ped_reverse_command = "ped_reverse",
 		ped_reverse_command_help = "让最近的 NPC 在车辆中倒车。",
+		ped_reverse_command_parameter_duration = "持续时间",
+		ped_reverse_command_parameter_duration_help = "倒车持续时间（秒）（1秒 - 20秒， 默认值为4秒）。",
 		ped_reverse_command_substitutes = "",
 
 		ped_forwards_command = "ped_forwards",
 		ped_forwards_command_help = "让最近的 NPC 在车辆中前进。",
+		ped_forwards_command_parameter_duration = "持续时间",
+		ped_forwards_command_parameter_duration_help = "向前行驶的持续时间（秒）（1秒 - 20秒， 默认值为4秒）。",
 		ped_forwards_command_substitutes = "",
 
 		vehicle_flip_command = "vehicle_flip",
@@ -3787,6 +3725,10 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		polygon_command = "多边形",
 		polygon_command_help = "定义一个2D多边形。",
 		polygon_command_substitutes = "poly",
+
+		box_command = "box",
+		box_command_help = "定义一个3D盒子。",
+		box_command_substitutes = "",
 
 		-- global/states
 		entity_states_command = "实体状态",
@@ -3969,6 +3911,27 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		tasks_debug_command_parameter_area_id_help = "要调试的任务的区域ID。留空以打印所有区域。",
 		tasks_debug_command_substitutes = "",
 
+		-- jobs/taxi
+		taxi_display_command = "taxi_display",
+		taxi_display_command_help = "切换出租车显示。",
+		taxi_display_command_substitutes = "taxidisplay, taxi",
+
+		taxi_hire_command = "雇佣出租车",
+		taxi_hire_command_help = "切换雇佣出租车状态。",
+		taxi_hire_command_substitutes = "雇佣出租车",
+
+		taxi_reset_command = "重置出租车计价器",
+		taxi_reset_command_help = "重置您的出租车计价器。",
+		taxi_reset_command_substitutes = "重置出租车",
+
+		taxi_fare_command = "出租车费用",
+		taxi_fare_command_help = "设置您的出租车费用。",
+		taxi_fare_command_parameter_type = "金额",
+		taxi_fare_command_parameter_type_help = "您要设置的出租车费用类型 (帮助，显示，初始，里程或分钟)。",
+		taxi_fare_command_parameter_amount = "金额",
+		taxi_fare_command_parameter_amount_help = "您想设置的费用金额。",
+		taxi_fare_command_substitutes = "taxifare",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "toggle_mechanic_messages",
 		toggle_mechanic_messages_command_help = "切换是否接收修理员信息。",
@@ -4088,13 +4051,11 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		wheel_offset_command_parameter_value_help = "您想要修改的量。可以在-0.15到0.2之间任意选择，0为默认值。",
 		wheel_offset_command_substitutes = "",
 
-		wheel_rotation_command = "wheel_rotation",
-		wheel_rotation_command_help = "修改车辆轮子的旋转。",
-		wheel_rotation_command_parameter_wheels = "前/后",
-		wheel_rotation_command_parameter_wheels_help = "您想要修改哪些车轮？",
-		wheel_rotation_command_parameter_value = "数值",
-		wheel_rotation_command_parameter_value_help = "您想要修改的数值。范围是-0.5到0.5，0为默认。",
-		wheel_rotation_command_substitutes = "",
+		suspension_height_command = "悬架高度",
+		suspension_height_command_help = "修改车辆的可视悬架高度。",
+		suspension_height_command_parameter_value = "数值",
+		suspension_height_command_parameter_value_help = "您希望将其修改的数量。 这可以是从-0.15到0.1的任何值，0代表默认值。",
+		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
 		oil_level_command = "油量",
@@ -4258,6 +4219,12 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		throw_weapon_command_help = "扔掉当前装备的武器。",
 		throw_weapon_command_substitutes = "扔, 扔掉",
 
+		wipe_throwables_command = "清除可扔物品",
+		wipe_throwables_command_help = "清除指定半径内的所有投掷武器。",
+		wipe_throwables_command_parameter_radius = "半径",
+		wipe_throwables_command_parameter_radius_help = "清除投掷武器的半径（默认值：5）。",
+		wipe_throwables_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "查看弹药",
 		check_ammo_command_help = "查看您的总弹药数量。",
@@ -4344,12 +4311,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		local_firewall_blocked = "本地防火墙：已封锁 ${playerName} (${licenseIdentifier})"
 	},
 
-	ping = {
-		getting_pings = "正在获取所有玩家的ping。此过程可能需要几秒钟。",
-		host_data = "${position}，${location} - 平均Ping值：${averagePing}（基于${totalPings}个客户端），前10%低：${averagePingLow}，前10%高：${averagePingHigh}",
-		list_hosts = "${listHosts}"
-	},
-
 	points = {
 		you_have_points = "您拥有 ${frameworkPoints} OP 点。",
 		used_points = "使用了 ${amount} 个标签为 `${label}` 的 OP 点。",
@@ -4362,11 +4323,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 	profile = {
 		profile_debug_enabled = "The profile debugger has been enabled. Check the F8 console for output.",
 		profile_debug_disabled = "The profile debugger has been disabled."
-	},
-
-	proxy = {
-		proxied_via_logs_title = "Proxied Via",
-		proxied_via_logs_details = "${consoleName} was proxied via `${serverName}`."
 	},
 
 	restart = {
@@ -4511,6 +4467,10 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		ping_stable = "undefined"
 	},
 
+	vpn = {
+		vpn_not_allowed_for_new_players = "新玩家游戏时间不足 24 小时，不允许使用 VPN。"
+	},
+
 	whitelist = {
 		not_whitelisted = "你没有被加入到服务器的白名单中。\n\n加入我们的Discord服务器获取如何申请加入的信息：${communityDiscord}"
 	},
@@ -4644,12 +4604,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		description_rat_unnamed = "这只${gender}老鼠，年龄${age}，体重${weight}，以刀锋般的智慧和出乎意料的魅力驰骋于世界之中。出于对${food}的绝对忠诚，它将每个角落都视为潜在的发现，每个阴影都视为嬉戏的乐园。",
 		description_rat_named = "${name}，一只${gender}老鼠，${age}岁，热爱探索生活的伟大实验，体重${weight}，充满个性。与${food}之间有着牢不可破的联系，${name}体现了好奇精神的本质——虽小，其精神却无限。",
 
+		pick_up = "[${SeatEjectKey}] 拾取",
 		pick_up_named = "[${SeatEjectKey}] 捡起${name}",
-		pick_up_cat = "[${SeatEjectKey}] 捡起猫",
-		pick_up_dog = "[${SeatEjectKey}] 捡起狗",
-		pick_up_hen = "[${SeatEjectKey}] 捡起母鸡",
-		pick_up_rabbit = "[${SeatEjectKey}] 捡起兔子",
-		pick_up_rat = "[${SeatEjectKey}] 捡起老鼠",
 
 		failed_pickup_cat = "未能捡起猫。",
 		failed_pickup_dog = "未能捡起狗。",
@@ -4996,11 +4952,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} 为每个人播放了音效。音效的URL是`${url}`，音量设置为`${volume}`。",
 		played_audio_effect_for_player_title = "为玩家播放音效",
 		played_audio_effect_for_player_details = "${consoleName} 为${targetConsoleName}播放了音效。音效的URL是`${url}`，音量设置为`${volume}`。"
-	},
-
-	audio_emitters = {
-		audio_emitters_disabled = "音频发射器已被禁用。",
-		audio_emitters_enabled = "音频发射器已被启用。"
 	},
 
 	balls = {
@@ -5401,15 +5352,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 	bus_map = {
 		bus_tracker = "undefined"
-	},
-
-	cache = {
-		download_progress = "下载进度：\n- 车辆：${vehiclesDone}/${vehiclesTotal}\n- 物体：${objectsDone}/${objectsTotal}\n- 行人：${pedsDone}/${pedsTotal}\n- 服装：${clothingRequested}/${clothingTotal}",
-		slow_download_enabled = "已启用慢速下载。",
-		slow_download_disabled = "已禁用慢速下载。",
-
-		join_cache_disabled = "已禁用加入缓存。",
-		join_cache_enable = "加入缓存已启用。"
 	},
 
 	caffeine = {
@@ -6307,6 +6249,11 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		crafting_ammo = "制作弹药",
 		crafted_ammo = "已制作弹药。",
 		failed_craft_ammo = "无法制作弹药。",
+
+		gift_box_bomb_recipe = "特殊礼品盒",
+		crafting_gift = "制作礼品盒",
+		crafted_gift = "制作的礼品盒。",
+		failed_craft_gift = "无法制作礼品盒。",
 
 		process_weed = "undefined",
 		press_to_process_weed = "undefined",
@@ -8195,6 +8142,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		cinema = "电影院",
 		strip_club = "色情俱乐部",
 		police_store = "警察商店",
+		utility_crate = "实用储物箱",
 		fib_store = "FIB 商店",
 		deputy_madison = "麦迪逊副警长",
 		sergeant_harris = "哈里斯中士",
@@ -8246,11 +8194,17 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		target_inventory_full = "玩家的背包已满。",
 		received_item = "${displayName} 给了你 ${amount}x ${item}。",
 
+		inspecting_item = "检查物品",
+
 		inspect_weapon = "这把${itemName}的序列号似乎是`${itemId}`。",
 		inspect_weapon_broken = "这把${itemName}的序列号似乎是`${itemId}`，也似乎完全损坏了。",
 		inspect_bank_property = "该 ${item} 标记为 ${bank} 银行的财产。",
 		inspect_bank_property_cid = "这个${item}标明是${bank}银行的财产。它是通过账户号码#${characterId}提取的。",
 		inspect_no_property = "该 ${item} 上似乎没有任何财产标记。",
+
+		gift_box_normal = "这个礼品盒看起来完全正常。",
+		gift_box_suspicious = "这个礼品盒看起来有点可疑。",
+		gift_box_residue = "这个礼品盒上有一些灰色的粉末残留。",
 
 		searching_dumpster = "搜索垃圾箱",
 		searching_homeless_tent = "搜查无家可归者帐篷",
@@ -8625,6 +8579,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		empty_box_description = "从这个简单而坚固的盒子开始创建一个个性化的礼物。用不易腐烂的宝藏填满它，便可以变成一个体贴的礼物。适合装入所有象征情感的东西，除了易腐烂和武器。",
 		gift_box = "礼品盒",
 		gift_box_description = "这个优雅封闭的礼品盒，装饰有节日彩带，是呈现精心挑选物品的美丽方式。完美适用于特殊场合，传达温暖和体贴，确保您的赠送之礼与盒内礼物一样令人愉悦。",
+		gift_box_bomb = "炸弹礼品盒",
+		gift_box_bomb_description = "这个用节日彩带装饰的优雅封箱礼品盒是展示您精心挑选物品的绝佳方式。非常适合特殊场合，传达温暖和体贴，确保您的赠送举动会留下持久印象。",
 
 		ear_defenders = "耳保护器",
 		ear_defenders_description = "用于保护耳朵免受噪音的干扰。",
@@ -9234,6 +9190,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		pet_snowman_description = "${type} Lookup (\"${search}\")",
 		pet_owl = "普嗲",
 		pet_owl_description = "普嗲，你聪慧而警惕的伙伴，优雅地栖息在你的肩膀上。凭借敏锐的眼睛和柔软的羽毛，这只迷人的猫头鹰为你的冒险增添了一丝魔力。普嗲随时准备提供智慧的叫声，是任何旅程的完美搭档。",
+		pet_pig = "猪排",
+		pet_pig_description = "一只带有强烈个性的小猪宝宝，开心地栖息在你的肩膀上。总是随时准备发出鼻音鼓励或用可爱的侧眼来评判你的人生选择。无论你是在冒险还是漫步，这只袖珍伙伴都是魅力和魅力的完美结合。",
 
 		hotwheels_mcqueen = "闪电麦昆",
 		hotwheels_mcqueen_description = "速度，我就是速度，像一辆凯迪拉克漂浮，像一辆宝马刺。咔唰咔唰咔唰",
@@ -9549,6 +9507,9 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		wires = "电线",
 		wires_description = "将一切连接在一起。",
 
+		microcontroller = "微控制器",
+		microcontroller_description = "你所有电子创作的强大微脑，能够用极少的代码实现复杂的想法。它是创新的无名英雄，默默地在幕后编排着魔法。",
+
 		note = "注释",
 		note_description = "一些注释，我不知道朋友。",
 
@@ -9743,6 +9704,17 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		wheel_clamp_description = "这可不是用来逃跑的！车轮夹是认真的，将车辆牢牢固定在原地，结束未经授权的移动。这个重型装置是一种无声的执行者，确保停车规则得到尊重和遵守。",
 		old_rug = "旧地毯",
 		old_rug_description = "铺上这条舒适的地毯，让您的户外聚会变得更加舒适！它非常适合在草地上休息，而且不用担心裤子会沾上那些讨厌的绿色污渍。铺开它，躺下来，以时尚和舒适的方式享受周围环境。",
+
+		evidence_marker_1 = "标记 1",
+		evidence_marker_1_description = "谜团的起点，标志着揭示真相的第一个线索。",
+		evidence_marker_2 = "标记 2",
+		evidence_marker_2_description = "后续线索，将调查人员引向更大的画面。",
+		evidence_marker_3 = "标记 3",
+		evidence_marker_3_description = "可能是决定案情成败的细节，请不要忽视它。",
+		evidence_marker_4 = "标记 4",
+		evidence_marker_4_description = "拼图的关键一部分，静静地等待着被注意到。",
+		evidence_marker_5 = "标记 5",
+		evidence_marker_5_description = "最终的标记，将所有事物联系在一起，或留下更多问题而非答案。",
 
 		bandit_1 = "强盗 1",
 		bandit_1_description = "undefined",
@@ -10604,6 +10576,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		invalid_invisibility_mode = "无效的隐形模式。必须是'full'或'normal'。",
 		invisibility_mode_full = "隐身模式已设置为'全隐身'。普通工作人员无法看到你。",
 		invisibility_mode_normal = "隐身模式已设置为'正常'。普通工作人员现在可以看到你。",
+		current_invisibility_mode = "当前隐身模式设定为'${mode}'。",
 
 		toggled_invisibility = "成功切换 ${displayName} 的隐身状态。",
 		failed_invisibility = "无法切换 ${displayName} 的隐身状态。",
@@ -10699,6 +10672,9 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		logs_used_weather_spell_title = "使用了天气魔法",
 		logs_used_weather_spell_details = "${consoleName} 使用了天气魔法 `${itemName}`。",
 
+		gift_box_bomb_logs_title = "打开爆炸性礼盒",
+		gift_box_bomb_logs_details = "${consoleName} 打开了一个爆炸性礼盒。",
+
 		you_have_used_jail_card = "你使用了一张 '出狱卡'！",
 		you_are_not_in_jail = "你不在监狱里。",
 
@@ -10791,9 +10767,9 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		sentence_reduced = "您的刑期被减少了 ${amount} 个月，还剩余 ${remaining} 个月。",
 		sentence_increased = "undefined",
 		sentence_over = "您的刑期已结束。",
-		remaining_time_fmt = "undefined",
+		remaining_time_fmt = "${months} 个月（${display}）",
 		remaining_time = "undefined",
-		jailed = "undefined",
+		jailed = "您已被监禁${amount}个月。",
 
 		mission_help_1 = "按下 ~INPUT_CONTEXT~ 清理地板。",
 		mission_help_2 = "按下 ~INPUT_CONTEXT~ 进食。",
@@ -10970,17 +10946,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		back = "返回",
 		copy_license = "许可证ID",
 		copy_license_success = "已复制！",
-		cache_assets = "缓存资源",
-		download_assets = "您想下载并缓存服务器的大部分资源吗？以下是其中的好处和注意事项：",
-		cache_assets_performance = "享受更好的FPS和游戏过程中更少的ping波动，尤其是如果您使用低端硬件或较慢的连接。",
-		cache_assets_crashes = "在这个过程中游戏可能会崩溃。如果发生这种情况，请改用“慢速下载”选项。",
-		cache_assets_restart = "完成下载后，请重新启动游戏以防止本次游戏中的延迟。",
-		cache_assets_disk = "这将占用一些磁盘空间，请确保您有足够的可用空间。",
-		cache_assets_no_repeat = "您不需要为每次更新执行此操作，因为只有少量文件会更改。",
-		vehicles = "车辆",
-		objects = "物件",
-		peds = "行人",
-		clothing = "服装",
 		main_menu = "主菜单",
 		gta_settings = "GTA 设置",
 		discord = "Discord",
@@ -11132,8 +11097,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 	lottery = {
 		lottery_announcement = "彩票公告",
-		lottery_about_to_roll = "undefined",
-		current_lottery_pot = "undefined",
+		lottery_about_to_roll = "今天的彩票将在5分钟内抽出获奖者。奖池总额目前为$${totalAmount}，您投入了$${betAmount}。您的中奖几率为${odds}%。税率为${tax}%。",
+		current_lottery_pot = "当前奖池总额为$${totalAmount}，您投入了$${betAmount}。您的中奖几率为${odds}%。税率为${tax}%。",
 		drew_a_lottery_winner = "彩票的获奖者已经产生。",
 		winner_has_been_picked = "undefined",
 		claimed_lottery_winnings = "已领取所有彩票奖金。",
@@ -11744,6 +11709,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		hatch_claim = "领取",
 		hatch_opened = "已领取",
 		hatch_waiting = "等待中",
+		hatch_too_late = "太晚了",
 
 		about_advent_calendar_title = "关于圣诞降临日历",
 
@@ -11755,7 +11721,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 			<br><br>
 			Next hatch unlocks in ${time}.
 			<br><br>
-			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 26th.)
+			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 31st.)
 			<br><br>
 			<div class="bonusPoints">
 				<div>Bonus Points: ${bonusPoints}/22</div>
@@ -13570,6 +13536,59 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		used_bug_logs_details = "${consoleName} 在 ${identifier} 上使用了麦克风bug。"
 	},
 
+	staff_pm = {
+		something_went_wrong = "发送消息时出现了问题。",
+		reports_too_fast = "您发送报告的速度太快了，请减慢速度。",
+		no_report_message = "您必须在报告中包含一条消息。",
+		same_report = "您不能发送相同的报告两次。",
+		report_muted = "您被禁止提交报告，原因为：`${reason}`。",
+		report_muted_no_reason = "您被禁言，无法发送举报。",
+
+		report_title = "举报-${reportId} ${displayName}",
+		report_logs_title = "举报",
+		report_logs_details = "${consoleName} 创建了举报 ${reportId}，内容如下：`${message}`",
+
+		invalid_server_id = "无效的目标服务器 ID。",
+		no_staff_pm_message = "您必须在私信中包含一条消息。",
+		user_not_staff = "该用户不是员工。",
+		staff_pm_warning = "员工私信警告",
+		staff_pm_first_time = "我们发现您从未使用过员工私信。要回复员工私信，请使用`/staffpm`，后跟接收者的 ID。您也可使用`/reply`来回复您最近收到的员工私信。",
+
+		staff_pm_title = "STAFF PM ${from} -> ${to}",
+		staff_pm_title_external = "EXTERNAL STAFF PM ${from} -> ${to}",
+		close_staff_pm = "Close",
+		staff_pm_from = "StaffPM from <i>${from}</i>",
+		staff_pm_logs_title = "Staff PM",
+		staff_pm_logs_details = "${senderConsoleName} sent a staff private message to ${recipientConsoleName}: `${message}`",
+		important_staff_pm_logs_title = "Important Staff PM",
+		important_staff_pm_logs_details = "${senderConsoleName} sent an important staff private message to ${recipientConsoleName}: `${message}`",
+
+		staff_toggled = "您的工作人员状态已关闭。",
+		no_staff_message = "您必须在工作人员聊天中包含一条消息。",
+		same_staff_message = "您不能连续发送相同的工作人员消息。",
+
+		staff_message_title = "工作人员 ${playerName}",
+		local_staff_message_title = "本地工作人员 ${playerName}",
+		staff_message_logs_title = "工作人员消息",
+		staff_message_logs_details = "${consoleName} 在工作人员聊天中发送了以下消息：`${message}`",
+		local_staff_message_logs_title = "本地工作人员消息",
+		local_staff_message_logs_details = "${consoleName} 在本地工作人员聊天中发送了以下消息：`${message}`",
+
+		message_sent = "消息已发送。",
+		cannot_send_private_message_to_yourself = "您不能给自己发送私信。",
+		missing_valid_message_parameter = "缺少有效的 'message' 参数。",
+		missing_valid_license_identifier_parameter = "缺少有效的 'licenseIdentifier' 参数。",
+		missing_valid_target_source_parameter = "缺少有效的 'targetSource' 参数。",
+
+		invalid_report_id = "无效的报告 ID。",
+		report_already_claimed = "该报告已被 *${playerName}* 领取。",
+		report_same_creator = "您不能领取自己的报告。",
+		failed_claim_report = "无法领取报告。",
+		report_claimed = "报告 **${reportId}** 已被 *${playerName}* 领取。",
+		claim_report_logs_title = "已领取报告",
+		claim_report_logs_details = "${consoleName} 领取了报告 ${reportId}。"
+	},
+
 	starter_car = {
 		follow_the_checkpoints = "您的私人车辆停在附近。跟随检查点找到它。",
 
@@ -13928,6 +13947,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		tp_cayo = "埃尔佩里科岛",
 
 		actions = "操作",
+		jail_self = "自己监禁",
+		unjail_self = "释放自己",
 		wander_around = "闲逛",
 		speed_around = "快速移动",
 		clear_tasks = "清空任务",
@@ -14114,7 +14135,10 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		no_maps_to_combine = "您没有需要合并的地图。",
 
 		treasure_map_dug_up_logs_title = "挖掘出的宝藏地图",
-		treasure_map_dug_up_logs_details = "${consoleName} 挖掘了一个等级为 ${mapTier} 的宝藏地图，并获得掉落ID ${dropId}。"
+		treasure_map_dug_up_logs_details = "${consoleName} 挖掘了一个等级为 ${mapTier} 的宝藏地图，并获得掉落ID ${dropId}。",
+
+		treasure_map_piece_spawned_logs_title = "宝藏地图碎片已生成",
+		treasure_map_piece_spawned_logs_details = "${consoleName} 已生成了等级为 ${mapTier} 的宝藏地图碎片 ${pieceNumber}。"
 	},
 
 	tsunami = {
@@ -14335,14 +14359,24 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 	weed = {
 		strain_default = "野生雾霾",
-		strain_lemon = "柠檬雾霾",
+		strain_bubble = "泡泡莓",
 		strain_northern = "北极光",
 		strain_kush = "OG Kush",
+		strain_diesel = "酸柴油",
+		strain_ak47 = "AK-47",
+		strain_dream = "蓝梦",
+		strain_trainwreck = "昆士兰火车失事",
+		strain_gorilla = "大猩猩胶",
 
 		default_emoji = "🥦",
-		lemon_emoji = "🏃",
+		bubble_emoji = "🫧",
 		northern_emoji = "🛡️",
 		kush_emoji = "🦁",
+		diesel_emoji = "😌",
+		ak47_emoji = "🔫",
+		dream_emoji = "🪶",
+		trainwreck_emoji = "👊",
+		gorilla_emoji = "🦍",
 
 		strain_description = "<b>品系:</b> <i>${strain}</i> ${emoji}"
 	},
@@ -14392,6 +14426,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		run_as_failed = "无法以${consoleName}的身份执行命令。",
 
 		no_nearby_vehicle = "附近没有车辆。",
+		invalid_duration = "无效时长（1秒至20秒）。",
 		reversing_failed = "无法使行人倒退。",
 		driving_forwards_failed = "无法使行人前进。",
 		reversing_success = "成功使行人倒退。",
@@ -14927,7 +14962,16 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 		task_take_nap = "小睡一会。",
 		task_take_nap_near = "按下 ~INPUT_DETONATE~ 键小睡一会。",
-		task_take_nap_active = "正在小睡"
+		task_take_nap_active = "正在小睡",
+
+		task_water_plants = "给植物浇水。",
+		task_water_plants_near = "按下~INPUT_DETONATE~键来给植物浇水。",
+		task_water_plants_active = "浇灌植物"
+	},
+
+	taxi = {
+		help_text = "`initial` 是起步价（默认：$10），`mile` 是每英里行驶的费率（默认：$5），`minute` 是计价器开启时每分钟的费率（默认：$15），`show` 将显示当前设置。",
+		invalid_typ = "类型无效。"
 	},
 
 	tow = {
@@ -15287,8 +15331,10 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		wheels_modified = "车轮已被修改。",
 		wheels_none_specified = "未指定车轮。",
 		wheels_none_valid_specified = "未指定有效车轮。",
-		not_in_a_car = "您不在车辆内。",
-		invalid_value = "无效的值。"
+		not_in_a_car = "您未驾驶汽车。",
+		invalid_value = "无效的值。",
+		suspension_height = "当前悬挂高度设置为 ${height}。",
+		suspension_height_set = "悬挂高度已设置为 ${height}。"
 	},
 
 	oil = {
@@ -15496,6 +15542,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 	throwables = {
 		pick_up_weapon = "[${InteractionKey}] 拾取",
+		throwables_wiped = "清除了 ${amount} 个可投掷物品。",
 
 		no_weapon_equipped = "你没有装备武器。",
 		cant_throw_weapon = "你不能扔掉这个武器。",

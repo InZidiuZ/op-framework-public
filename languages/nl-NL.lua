@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 35 (do not change)
+-- AUTO LOCALES: 36 (do not change)
 
 OP.Global.Locales.Languages["nl-NL"] = {
 	-- configuration settings for language
@@ -202,10 +202,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		spawned_item_for_everyone_title = "Item gespawnd voor iedereen",
 		spawned_item_for_everyone_details = "${consoleName} heeft ${amount}x `${itemName}` gespawnd voor iedereen.",
 
-		report_title = "MELDING-${reportId} ${reporterName}",
-		report_logs_title = "Melding",
-		report_logs_details = "${consoleName} heeft een melding gemaakt met de volgende boodschap: `${reportMessage}`",
-
 		announcement_staff_title = "Staff Aankondiging",
 		announcement_server_title = "Server Aankondiging",
 
@@ -220,47 +216,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		failed_to_post_announcement = "Kon kennisgevingsbericht niet plaatsen omdat er geen bericht was toegevoegd.",
 		failed_to_post_announcement_locale = "Kon kennisgevingsbericht niet plaatsen omdat de taal die werd toegevoegd niet wordt ondersteund.",
 
-		staff_title = "STAFF ${staffName}",
-		staff_message_logs_title = "Logboek van berichten van personeel",
-		staff_message_logs_details = "${consoleName} heeft het volgende bericht verstuurd in de staff chat: `${staffMessage}`",
-		local_staff_title = "LOKALE STAF ${staffName}",
-		local_staff_message_logs_title = "Lokale Staf Bericht",
-		local_staff_message_logs_details = "${consoleName} heeft het volgende bericht verstuurd in de lokale staf chat: `${staffMessage}`",
-
-		staff_pm_title = "STAFF PM ${transmissionTitle}",
-		staff_pm_logs_title = "Staff PM",
-		staff_pm_logs_details = "${senderConsoleName} heeft het volgende bericht verstuurd naar ${recipientConsoleName}: `${staffPrivateMessage}`",
-		staff_pm_not_logged_in = "Je bent niet ingelogd.",
-		staff_pm_not_user_not_found = "Gebruiker met server ID ${serverId} is niet gevonden.",
-		staff_pm_not_recipient_not_staff = "De speler aan wie je een bericht probeert te sturen is geen staflid.",
-		staff_pm_unable_to_message_self = "Je kunt geen bericht aan jezelf sturen.",
-		staff_pm_warning = "Waarschuwing voor staff-PM's",
-		staff_pm_first_time = "We zien dat je nog nooit staff PM's hebt gebruikt. Om te antwoorden op een staff PM, gebruik `/staffpm` gevolgd door het ID van de ontvanger. Voor gemak kun je `/reply` gebruiken om te antwoorden op de laatste staff PM die je hebt ontvangen.",
-		reply_pm_not_found = "Er is geen staffbericht om op te antwoorden.",
-
-		important_staff_pm_title = "!STAFF PM Jij -> ${recipient}",
-		close_staffpm = "Sluiten",
-		staffpm_from = "StaffPM van <i>${from}</i>",
-		important_staff_pm_logs_title = "Belangrijke Staff PM",
-		important_staff_pm_logs_details = "${senderConsoleName} heeft het volgende belangrijke bericht naar ${recipientConsoleName} gestuurd: `${message}`",
-
-		external_staff_message = "Extern staffbericht",
-		external_staff_message_from_player = "Extern staffbericht van ${playerName}",
-		external_staff_message_content = "${staffMessage} (Je kunt niet op dit bericht antwoorden.)",
-
-		unable_to_staff_message_yourself = "Je kunt geen bericht naar jezelf sturen als stafflid.",
-		message_sent = "Bericht verstuurd.",
-		player_not_found = "Speler niet gevonden.",
-		missing_valid_target_source_parameter = "Er ontbreekt een geldige 'target source' parameter.",
-		missing_valid_message_parameter = "Er ontbreekt een geldige 'message' parameter.",
-
 		invalid_coordinates = "Ongeldige x-, y-, z- of w-coördinaten ingevoerd.",
 		player_not_loaded_character = "De speler heeft geen personage geladen.",
 		teleport_successful = "Speler succesvol geteleporteerd.",
 
 		player_revived_success = "Speler succesvol gereanimeerd.",
-
-		missing_valid_license_identifier_parameter = "Ontbrekende geldige 'licenseIdentifier' parameter.",
 
 		wipe_broken = "broken - Kapotte/fragmentarische objecten",
 		wipe_npcs = "npcs - NPCs en hun voertuigen.",
@@ -376,12 +336,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		report_muted_no_reason = "Je bent gedempt van het report commando zonder opgave van reden.",
 		report_muted = "Je bent gedempt van het report commando met de reden `${reason}`.",
-
-		already_sending_report = "Je bent al een report aan het versturen. Wacht even.",
-		unable_to_send_identical_report = "Het is niet mogelijk om twee identieke meldingen na elkaar te versturen.",
-
-		already_sending_staff_message = "Je bent al bezig met het versturen van een bericht naar het personeel. Wacht even.",
-		unable_to_send_identical_staff_message = "Je kunt niet twee dezelfde berichten naar het personeel versturen binnen 30 seconden.",
 
 		population_density_set_to = "De populatiedichtheid is gewijzigd naar ${multiplierLabel}%.",
 		population_density_set_off = "Het overschrijven van de bevolkingsdichtheid vermenigvuldiger is uitgeschakeld.",
@@ -881,51 +835,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		marathon_command_substitutes = "",
 
 		-- base/admin
-		report_command = "rapport",
-		report_command_help = "Verstuur een bericht naar alle aanwezige medewerkers.",
-		report_command_parameter_message = "bericht",
-		report_command_parameter_message_help = "Verwijder een spelers Twitch ban-uitzondering.",
-		report_command_substitutes = "Enten nettverks-ID-en til personen, nettverks-ID-en til kjøretøyet (som personen kjører), eller la det stå tomt for å velge sjåføren av nåværende kjøretøy.",
-
 		announce_command = "aankondiging",
 		announce_command_help = "Verspreid een aankondiging naar alle spelers.",
 		announce_command_parameter_message = "bericht",
 		announce_command_parameter_message_help = "Het bericht dat je wilt verspreiden.",
 		announce_command_substitutes = "",
-
-		staff_pm_command = "personeel_pm",
-		staff_pm_command_help = "Stuur een bericht naar een stafmedewerker of naar een speler als stafmedewerker.",
-		staff_pm_command_parameter_server_id = "server id",
-		staff_pm_command_parameter_server_id_help = "De server ID van de speler die u wilt berichten.",
-		staff_pm_command_parameter_message = "bericht",
-		staff_pm_command_parameter_message_help = "Het bericht dat u wilt verzenden.",
-		staff_pm_command_substitutes = "staffpm, bericht, pm, msg",
-
-		important_staff_pm_command = "belangrijk_staff_pm",
-		important_staff_pm_command_help = "Stuur een belangrijk bericht naar een speler als stafflid.",
-		important_staff_pm_command_parameter_server_id = "server-id",
-		important_staff_pm_command_parameter_server_id_help = "Het server-ID van de speler die je wilt berichten.",
-		important_staff_pm_command_parameter_message = "bericht",
-		important_staff_pm_command_parameter_message_help = "Het belangrijke bericht dat je wilt versturen.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
-
-		reply_pm_command = "antwoord_pm",
-		reply_pm_command_help = "Antwoord op het laatste personeelsbericht dat je hebt ontvangen.",
-		reply_pm_command_parameter_message = "bericht",
-		reply_pm_command_parameter_message_help = "Het bericht dat je wilt versturen.",
-		reply_pm_command_substitutes = "antwoord",
-
-		staff_command = "staf",
-		staff_command_help = "Zend een bericht naar alle actieve stafleden.",
-		staff_command_parameter_message = "bericht",
-		staff_command_parameter_message_help = "Het bericht dat je wilt versturen.",
-		staff_command_substitutes = "",
-
-		local_staff_command = "lokaal_personeel",
-		local_staff_command_help = "Een bericht uitzenden naar alle actieve personeelsleden binnen een straal van 25m.",
-		local_staff_command_parameter_message = "bericht",
-		local_staff_command_parameter_message_help = "Het bericht dat je wilt versturen.",
-		local_staff_command_substitutes = "lpersoneel",
 
 		wipe_command = "veeg",
 		wipe_command_help = "Ongepaste objecten van de map verwijderen.",
@@ -1437,11 +1351,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		emojis_refresh_command_help = "Ververs de beschikbare emojis. Hiermee haalt u de nieuwste lijst op vanuit de discord-gilde.",
 		emojis_refresh_command_substitutes = "",
 
-		-- base/ping
-		get_pings_command = "ping_test",
-		get_pings_command_help = "Test de gemiddelde ping naar verschillende hosts over de hele wereld om de meest geschikte hostlocatie te vinden voor de huidige spelers van deze server.",
-		get_pings_command_substitutes = "",
-
 		-- base/points
 		points_command = "points",
 		points_command_help = "Toon het aantal OP-punten dat je hebt.",
@@ -1465,6 +1374,47 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		remove_twitch_ban_exception_command_parameter_server_id = "server id",
 		remove_twitch_ban_exception_command_parameter_server_id_help = "De server-ID van de speler waarvan je de uitzondering wilt verwijderen.",
 		remove_twitch_ban_exception_command_substitutes = "",
+
+		-- base/staff_pm
+		report_command = "rapport",
+		report_command_help = "Verstuur een bericht naar alle aanwezige medewerkers.",
+		report_command_parameter_message = "bericht",
+		report_command_parameter_message_help = "Verwijder een spelers Twitch ban-uitzondering.",
+		report_command_substitutes = "meldadmin, aanklagen, modverzoek, helpmij",
+
+		claim_report_command = "claim_melding",
+		claim_report_command_help = "Claim een specifieke melding.",
+		claim_report_command_parameter_report_id = "melding id",
+		claim_report_command_parameter_report_id_help = "Het id van de melding die je wilt claimen.",
+		claim_report_command_substitutes = "claim, cm, claimmelding",
+
+		staff_pm_command = "personeel_pm",
+		staff_pm_command_help = "Stuur een bericht naar een stafmedewerker of naar een speler als stafmedewerker.",
+		staff_pm_command_parameter_server_id = "server id",
+		staff_pm_command_parameter_server_id_help = "De server ID van de speler die u wilt berichten.",
+		staff_pm_command_parameter_message = "bericht",
+		staff_pm_command_parameter_message_help = "Het bericht dat u wilt verzenden.",
+		staff_pm_command_substitutes = "medewerkerpm, bericht, pm, msg, antwoord, antwoordpm, antwoord_pm",
+
+		important_staff_pm_command = "belangrijk_staff_pm",
+		important_staff_pm_command_help = "Stuur een belangrijk bericht naar een speler als stafflid.",
+		important_staff_pm_command_parameter_server_id = "server-id",
+		important_staff_pm_command_parameter_server_id_help = "Het server-ID van de speler die je wilt berichten.",
+		important_staff_pm_command_parameter_message = "bericht",
+		important_staff_pm_command_parameter_message_help = "Het belangrijke bericht dat je wilt versturen.",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
+
+		staff_command = "staf",
+		staff_command_help = "Zend een bericht naar alle actieve stafleden.",
+		staff_command_parameter_message = "bericht",
+		staff_command_parameter_message_help = "Het bericht dat je wilt versturen.",
+		staff_command_substitutes = "",
+
+		local_staff_command = "lokaal_personeel",
+		local_staff_command_help = "Een bericht uitzenden naar alle actieve personeelsleden binnen een straal van 25m.",
+		local_staff_command_parameter_message = "bericht",
+		local_staff_command_parameter_message_help = "Het bericht dat je wilt versturen.",
+		local_staff_command_substitutes = "lpersoneel",
 
 		-- base/users
 		playtime_command = "speeltijd",
@@ -1582,11 +1532,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		play_audio_command_parameter_server_id_help = "De server-ID van de speler waarvoor je deze audio wilt afspelen. Je kan `-1` gebruiken om het voor alle spelers af te spelen.",
 		play_audio_command_substitutes = "",
 
-		-- game/audio_emitters
-		toggle_audio_emitters_command = "toggle_audio_emitters",
-		toggle_audio_emitters_command_help = "Schakel native audioweergave in of uit.",
-		toggle_audio_emitters_command_substitutes = "",
-
 		-- game/bandaids
 		random_bandaid_command = "willekeurige_pleister",
 		random_bandaid_command_help = "Geeft je een willekeurig verband. :)",
@@ -1683,17 +1628,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		buddy_pass_command = "maatje_pas",
 		buddy_pass_command_help = "Open de maatje pas UI.",
 		buddy_pass_command_substitutes = "",
-
-		-- game/cache
-		cache_assets_command = "cache_assets",
-		cache_assets_command_help = "Dwingend verzoek en download meest gestreamde activa (voertuigen, objecten en kleding). Dit wordt niet aanbevolen tenzij u een trage verbinding hebt en activa niet snel genoeg kunt downloaden om naadloos te zijn. Dit kan er ook voor zorgen dat de client vastloopt terwijl het bezig is.",
-		cache_assets_command_parameter_slow_download = "langzaam downloaden",
-		cache_assets_command_parameter_slow_download_help = "Wil je de assets langzaam downloaden? Dit zal de download veel langer maken maar zal ook de kans op crashes verminderen.",
-		cache_assets_command_substitutes = "download_cache, preload_cache, load_cache",
-
-		cache_join_toggle_command = "cache_join_toggle",
-		cache_join_toggle_command_help = "Schakel het automatisch cachen van sommige assets in of uit wanneer je de server betreedt.",
-		cache_join_toggle_command_substitutes = "",
 
 		-- game/camera
 		stable_cam_command = "stabiele_cam",
@@ -3735,10 +3669,14 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		ped_reverse_command = "ped_reverse",
 		ped_reverse_command_help = "Laat de dichtstbijzijnde voetganger in een voertuig achteruit rijden.",
+		ped_reverse_command_parameter_duration = "duur",
+		ped_reverse_command_parameter_duration_help = "De duur van het achteruit rijden in seconden (1s - 20s, standaard is 4s).",
 		ped_reverse_command_substitutes = "",
 
 		ped_forwards_command = "ped_vooruit",
 		ped_forwards_command_help = "Laat de dichtstbijzijnde ped in een voertuig naar voren rijden.",
+		ped_forwards_command_parameter_duration = "duur",
+		ped_forwards_command_parameter_duration_help = "De duur van het vooruit rijden in seconden (1s - 20s, standaard is 4s).",
 		ped_forwards_command_substitutes = "",
 
 		vehicle_flip_command = "voertuig_flip",
@@ -3787,6 +3725,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		polygon_command = "polygon",
 		polygon_command_help = "Definieer een 2D veelhoek.",
 		polygon_command_substitutes = "poly",
+
+		box_command = "box",
+		box_command_help = "Definieer een 3D-box.",
+		box_command_substitutes = "",
 
 		-- global/states
 		entity_states_command = "entiteit_staten",
@@ -3969,6 +3911,27 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		tasks_debug_command_parameter_area_id_help = "Het gebieds-ID van de taak die je wilt debuggen. Laat leeg om alle gebieden af te drukken.",
 		tasks_debug_command_substitutes = "",
 
+		-- jobs/taxi
+		taxi_display_command = "taxi_display",
+		taxi_display_command_help = "Schakel uw taxidisplay in of uit.",
+		taxi_display_command_substitutes = "taxidisplay, taxi",
+
+		taxi_hire_command = "taxi_inhuren",
+		taxi_hire_command_help = "Schakel de huur van je taxi in of uit.",
+		taxi_hire_command_substitutes = "taxiinhuren",
+
+		taxi_reset_command = "taxi_resetten",
+		taxi_reset_command_help = "Reset je taximeter.",
+		taxi_reset_command_substitutes = "taxiresetten",
+
+		taxi_fare_command = "taxi_tarief",
+		taxi_fare_command_help = "Stel je taxi tarief in.",
+		taxi_fare_command_parameter_type = "bedrag",
+		taxi_fare_command_parameter_type_help = "Het type tarief dat je wilt instellen (help, weergeven, initiële, mijl of minuut).",
+		taxi_fare_command_parameter_amount = "bedrag",
+		taxi_fare_command_parameter_amount_help = "Het bedrag dat je wilt instellen als de vergoeding.",
+		taxi_fare_command_substitutes = "taxitarief",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "mechanici_meldingen",
 		toggle_mechanic_messages_command_help = "Schakelt het ontvangen van meldingen van monteurs in of uit.",
@@ -4088,13 +4051,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		wheel_offset_command_parameter_value_help = "Het bedrag dat u wilt wijzigen. Dit kan variëren van -0,15 tot 0,2, waarbij 0 de standaardinstelling is.",
 		wheel_offset_command_substitutes = "",
 
-		wheel_rotation_command = "wielrotatie",
-		wheel_rotation_command_help = "Verander de rotatie van de wielen van een voertuig.",
-		wheel_rotation_command_parameter_wheels = "voor/achter",
-		wheel_rotation_command_parameter_wheels_help = "Welke wielen wil je veranderen?",
-		wheel_rotation_command_parameter_value = "waarde",
-		wheel_rotation_command_parameter_value_help = "Het bedrag dat je wilt veranderen. Dit kan ergens tussen -0.5 en 0.5 zijn, 0 is de standaardwaarde.",
-		wheel_rotation_command_substitutes = "",
+		suspension_height_command = "vering_hoogte",
+		suspension_height_command_help = "Wijzig de visuele veringhoogte van een voertuig.",
+		suspension_height_command_parameter_value = "waarde",
+		suspension_height_command_parameter_value_help = "Het bedrag waarmee je het wilt aanpassen. Dit kan variëren van -0.15 tot 0.1, waarbij 0 de standaardwaarde is.",
+		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
 		oil_level_command = "olie_niveau",
@@ -4258,6 +4219,12 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		throw_weapon_command_help = "Gooi je momenteel uitgeruste wapen weg.",
 		throw_weapon_command_substitutes = "werpen, gooien",
 
+		wipe_throwables_command = "veeg_projectielen",
+		wipe_throwables_command_help = "Veegt alle gooibare wapens binnen de opgegeven straal weg.",
+		wipe_throwables_command_parameter_radius = "straal",
+		wipe_throwables_command_parameter_radius_help = "De straal om gooibare wapens in weg te vegen (standaard: 5).",
+		wipe_throwables_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "check_ammo",
 		check_ammo_command_help = "Controleer hoeveel munitie je in totaal hebt.",
@@ -4344,12 +4311,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		local_firewall_blocked = "Lokale firewall: Geblokkeerd ${playerName} (${licenseIdentifier})"
 	},
 
-	ping = {
-		getting_pings = "Pings ophalen van alle spelers. Dit kan enkele seconden duren.",
-		host_data = "${position}. ${location} - Gemiddelde Ping: ${averagePing} (gebaseerd op ${totalPings} spelers), 10% Low: ${averagePingLow}, 10% High: ${averagePingHigh}",
-		list_hosts = "${listHosts}"
-	},
-
 	points = {
 		you_have_points = "Je hebt ${frameworkPoints} OP Punt(en).",
 		used_points = "${amount} OP Punt(en) gebruikt onder de label `${label}`.",
@@ -4362,11 +4323,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 	profile = {
 		profile_debug_enabled = "De profileringsdebugger is ingeschakeld. Bekijk de F8-console voor de uitvoer.",
 		profile_debug_disabled = "De profileringsdebugger is uitgeschakeld."
-	},
-
-	proxy = {
-		proxied_via_logs_title = "Geproxied Via",
-		proxied_via_logs_details = "${consoleName} werd geproxied via `${serverName}`."
 	},
 
 	restart = {
@@ -4511,6 +4467,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		ping_stable = "Je ping is nu weer stabiel."
 	},
 
+	vpn = {
+		vpn_not_allowed_for_new_players = "Het gebruik van een VPN is niet toegestaan voor spelers met minder dan 24 uur speeltijd."
+	},
+
 	whitelist = {
 		not_whitelisted = "Je staat niet op de whitelist van deze server.\n\nKom naar onze Discord-groep voor informatie over hoe je kunt solliciteren op ${communityDiscord}."
 	},
@@ -4644,12 +4604,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		description_rat_unnamed = "Deze ${gender} rat, ${age} avontuurlijk en met een gewicht van ${weight} kilogram, navigeert de wereld met vlijmscherpe intelligentie en onverwachte charme. Gedreven door een absolute toewijding aan ${food}, verandert het elk hoekje in een mogelijke ontdekking, elke schaduw in een speeltuin.",
 		description_rat_named = "${name}, een ${gender} rat van ${leeftijd} die gek is op het grote experiment dat het leven is, weegt ${weight} en barst van de persoonlijkheid. Met een onverwoestbare band met ${food}, belichaamt ${name} de geest van nieuwsgierigheid - klein van formaat, oneindig van geest.",
 
+		pick_up = "[${SeatEjectKey}] Oppakken",
 		pick_up_named = "[${SeatEjectKey}] ${name} oppakken",
-		pick_up_cat = "[${SeatEjectKey}] Kat oppakken",
-		pick_up_dog = "[${SeatEjectKey}] Hond oppakken",
-		pick_up_hen = "[${SeatEjectKey}] Kip oppakken",
-		pick_up_rabbit = "[${SeatEjectKey}] Konijn oppakken",
-		pick_up_rat = "[${SeatEjectKey}] Rat oppakken",
 
 		failed_pickup_cat = "Niet gelukt om de kat op te pakken.",
 		failed_pickup_dog = "Niet gelukt om de hond op te pakken.",
@@ -4996,11 +4952,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} heeft een geluidseffect afgespeeld voor iedereen. Het geluidseffect had de URL `${url}` en speelde af met een volume van `${volume}`.",
 		played_audio_effect_for_player_title = "Geluidseffect afgespeeld voor speler",
 		played_audio_effect_for_player_details = "${consoleName} heeft een geluidseffect afgespeeld voor ${targetConsoleName}. Het geluidseffect had de URL `${url}` en speelde af met een volume van `${volume}`."
-	},
-
-	audio_emitters = {
-		audio_emitters_disabled = "Audiomodulen zijn uitgeschakeld.",
-		audio_emitters_enabled = "Audiomodulen zijn ingeschakeld."
 	},
 
 	balls = {
@@ -5401,15 +5352,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	bus_map = {
 		bus_tracker = "Bus"
-	},
-
-	cache = {
-		download_progress = "Downloadvoortgang:\n- Voertuigen: ${vehiclesDone}/${vehiclesTotal}\n- Objecten: ${objectsDone}/${objectsTotal}\n- Peds: ${pedsDone}/${pedsTotal}\n- Kleding: ${clothingRequested}/${clothingTotal}",
-		slow_download_enabled = "Langzame download is ingeschakeld.",
-		slow_download_disabled = "Langzame download is uitgeschakeld.",
-
-		join_cache_disabled = "Join-cache uitgeschakeld.",
-		join_cache_enable = "Join-cache ingeschakeld."
 	},
 
 	caffeine = {
@@ -6307,6 +6249,11 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		crafting_ammo = "Ammunitie Maken",
 		crafted_ammo = "Ammunitie is gemaakt.",
 		failed_craft_ammo = "Ammo kon niet worden gecreëerd.",
+
+		gift_box_bomb_recipe = "Speciale Cadeaubox",
+		crafting_gift = "Craften Cadeaubox",
+		crafted_gift = "Gecrafte cadeaubox.",
+		failed_craft_gift = "Kan geschenkdoos niet maken.",
 
 		process_weed = "Verwerk Wiet",
 		press_to_process_weed = "[${SeatEjectKey}] Verwerk Wiet",
@@ -8195,6 +8142,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		cinema = "Bioscoop",
 		strip_club = "Stripclub",
 		police_store = "Politie winkel",
+		utility_crate = "Hulpmiddelenkist",
 		fib_store = "FIB winkel",
 		deputy_madison = "Agent Madison",
 		sergeant_harris = "Sergeant Harris",
@@ -8246,11 +8194,17 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		target_inventory_full = "글록 18C",
 		received_item = "마이크 스탠드",
 
+		inspecting_item = "Item inspecteren",
+
 		inspect_weapon = "Het serienummer van deze ${itemName} lijkt te zijn `${itemId}`.",
 		inspect_weapon_broken = "Het serienummer van deze ${itemName} lijkt te zijn `${itemId}`, het lijkt ook volledig kapot te zijn.",
 		inspect_bank_property = "마이크 스탠드로 음성의 범위를 확장시켜 보세요. 메시지를 멀리서 널리 들을 수 있습니다!",
 		inspect_bank_property_cid = "Dit ${item} is eigendom van de ${bank} Bank. Het is opgenomen door rekeningnummer #${characterId}.",
 		inspect_no_property = "기네스 맥주",
+
+		gift_box_normal = "Deze cadeaubox ziet er helemaal normaal uit.",
+		gift_box_suspicious = "Deze cadeaubox ziet er een beetje verdacht uit.",
+		gift_box_residue = "Deze cadeaubox heeft wat grijzig poederresidu erop.",
 
 		searching_dumpster = "Afvalbak doorzoeken",
 		searching_homeless_tent = "Doorzoeken Daklozentent",
@@ -8625,6 +8579,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		empty_box_description = "Begin met deze eenvoudige, stevige doos om een gepersonaliseerd cadeau te maken. Vul het met niet-bederfelijke schatten, en het is klaar om getransformeerd te worden tot een attent cadeau. Ideaal voor het inpakken van alles wat genegenheid symboliseert, behalve bederfelijke waren en wapens.",
 		gift_box = "Cadeaudoos",
 		gift_box_description = "Deze elegant verzegelde cadeaudoos, versierd met een feestelijk lint, is een prachtige manier om je zorgvuldig gekozen items te presenteren. Perfect voor speciale gelegenheden, straalt het warmte en bedachtzaamheid uit, waardoor je gebaar van geven net zo verrukkelijk is als het cadeau erin.",
+		gift_box_bomb = "Cadeaubox",
+		gift_box_bomb_description = "Deze elegant verzegelde cadeaubox, versierd met een feestelijk lint, is een prachtige manier om uw zorgvuldig gekozen items te presenteren. Perfect voor speciale gelegenheden, straalt het warmte en doordachtheid uit, waardoor uw gebaar van geven een blijvende indruk achterlaat.",
 
 		ear_defenders = "Oorbeschermers",
 		ear_defenders_description = "Gebruikt om uw oren te beschermen tegen harde geluiden.",
@@ -9234,6 +9190,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		pet_snowman_description = "Krijg een frosty met je eigen sneeuwpop op je schouder! Deze kleine, koude metgezel voegt een vleugje winterse verwondering toe aan je stijl, waardoor het perfect is voor sneeuwavonturen en het verspreiden van frosty vreugde.",
 		pet_owl = "Hooty",
 		pet_owl_description = "Hooty, je wijze en oplettende metgezel, zit elegant op je schouder. Met zijn scherpe ogen en zachte veren voegt deze betoverende uil een vleugje magie toe aan je avonturen. Altijd klaar om een ​​hoot van wijsheid te bieden, is Hooty de perfecte hulp voor elke reis.",
+		pet_pig = "Speklapje",
+		pet_pig_description = "Een klein biggetje met een grote persoonlijkheid, vrolijk op je schouder gezeten. Altijd klaar om aanmoedigend te knorren of je levenskeuzes te beoordelen met een schattige zijblik. Of je nu aan het avonturieren bent of gewoon aan het wandelen, dit formaatgezel is de perfecte mix van charme en branie.",
 
 		hotwheels_mcqueen = "Bliksem McQueen",
 		hotwheels_mcqueen_description = "Snelheid Ik ben Snelheid, zweef als een Cadillac prik als een Beemer. KATCHOW KATCHOW KATCHOW",
@@ -9549,6 +9507,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		wires = "Draden",
 		wires_description = "Houdt alles bij elkaar.",
 
+		microcontroller = "Microcontroller",
+		microcontroller_description = "Een kleine maar krachtige 'hersenen' voor al je elektronische creaties, in staat om complexe ideeën tot leven te brengen met slechts een paar regels code. Het is de onbekende held van innovatie, geruisloos de magie achter de schermen orkestrerend.",
+
 		note = "Notitie",
 		note_description = "Een of andere notitie.",
 
@@ -9743,6 +9704,17 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		wheel_clamp_description = "Geen ontsnappingsauto's hier! De wielklem betekent zaken, waardoor voertuigen stevig op hun plaats worden gehouden en ongeoorloofde bewegingen worden stopgezet. Dit zware apparaat is een stille handhaver, zorgt ervoor dat parkeerregels worden gerespecteerd en gevolgd.",
 		old_rug = "Oud Tapijt",
 		old_rug_description = "Leg dit gezellige tapijt neer voor je volgende buitenhangplek en houd het comfortabel! Het is perfect om te loungen in het gras zonder die vervelende groene vlekken op je broek te krijgen. Spreid het uit, leun achterover en geniet in stijl en comfort van je omgeving.",
+
+		evidence_marker_1 = "Markering 1",
+		evidence_marker_1_description = "Het startpunt van het mysterie, waarbij het eerste aanwijzing is om de waarheid te ontrafelen.",
+		evidence_marker_2 = "Markering 2",
+		evidence_marker_2_description = "Een opvolgende aanwijzing, die onderzoekers dichter bij het grotere plaatje brengt.",
+		evidence_marker_3 = "Markering 3",
+		evidence_marker_3_description = "Het detail dat de zaak zou kunnen maken of breken - vergeet het niet te bekijken.",
+		evidence_marker_4 = "Markering 4",
+		evidence_marker_4_description = "Een kritiek stuk van de puzzel, rustig wachtend om opgemerkt te worden.",
+		evidence_marker_5 = "Marker 5",
+		evidence_marker_5_description = "De laatste marker, die alles samenbrengt of meer vragen oproept dan antwoorden geeft.",
 
 		bandit_1 = "Bandiet 1",
 		bandit_1_description = "undefined",
@@ -10604,6 +10576,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		invalid_invisibility_mode = "Ongeldige onzichtbaarheidsmodus. Moet 'volledig' of 'normaal' zijn.",
 		invisibility_mode_full = "Onzichtbaarheidsmodus ingesteld op 'volledig'. Gewone medewerkers kunnen je niet zien.",
 		invisibility_mode_normal = "Onzichtbaarheidsmodus ingesteld op 'normaal'. Gewone medewerkers kunnen je nu zien.",
+		current_invisibility_mode = "Huidige onzichtbaarheidsmodus staat ingesteld op '${mode}'.",
 
 		toggled_invisibility = "Invisibility succesvol aan/uit gezet voor ${displayName}.",
 		failed_invisibility = "Invisibility aan/uit zetten voor ${displayName} mislukt.",
@@ -10699,6 +10672,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		logs_used_weather_spell_title = "Weerspreuk gebruikt",
 		logs_used_weather_spell_details = "${consoleName} heeft de weerspreuk `${itemName}` gebruikt.",
 
+		gift_box_bomb_logs_title = "Geopende Explosieve Cadeaubox",
+		gift_box_bomb_logs_details = "${consoleName} opende een explosieve cadeaubox.",
+
 		you_have_used_jail_card = "Je hebt een 'ontsnappingskaart uit de gevangenis' gebruikt!",
 		you_are_not_in_jail = "Je zit niet in de gevangenis.",
 
@@ -10791,9 +10767,9 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		sentence_reduced = "Je straf is verminderd met ${amount} maanden, je hebt nog ${remaining} maanden te gaan.",
 		sentence_increased = "Uw straf is met ${amount} maanden verhoogd, u heeft nog ${remaining} maanden over.",
 		sentence_over = "Uw zin is afgelopen.",
-		remaining_time_fmt = "${months} maanden (*${display}*)",
+		remaining_time_fmt = "${months} maanden (${display})",
 		remaining_time = "Resterende tijd: ${remaining}.",
-		jailed = "Je bent opgesloten voor ${amount}.",
+		jailed = "Je bent opgesloten voor ${amount} maanden.",
 
 		mission_help_1 = "Druk op ~INPUT_CONTEXT~ om de vloer schoon te maken.",
 		mission_help_2 = "Druk op ~INPUT_CONTEXT~ om iets te eten.",
@@ -10970,17 +10946,6 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		back = "Terug",
 		copy_license = "Licentie ID",
 		copy_license_success = "Gekopieerd!",
-		cache_assets = "Cache Assets",
-		download_assets = "Wil je de meeste assets van de server downloaden en cachen? Hier zijn de voordelen en overwegingen:",
-		cache_assets_performance = "Geniet van een betere FPS en minder ping spikes tijdens het spelen, vooral als je minder krachtige hardware hebt of een langzamere verbinding.",
-		cache_assets_crashes = "Het spel kan vastlopen tijdens het proces. Als dit gebeurt, gebruik dan de optie 'langzame download' in plaats daarvan.",
-		cache_assets_restart = "Na het voltooien van de download, herstart je spel om vertraging tijdens deze sessie te voorkomen.",
-		cache_assets_disk = "Dit zal wat schijfruimte gebruiken, zorg ervoor dat je voldoende beschikbaar hebt.",
-		cache_assets_no_repeat = "Je hoeft dit niet voor elke update te doen, aangezien slechts een paar bestanden zullen veranderen.",
-		vehicles = "Voertuigen",
-		objects = "Objecten",
-		peds = "Personages",
-		clothing = "Kleding",
 		main_menu = "Hoofdmenu",
 		gta_settings = "GTA-instellingen",
 		discord = "Discord",
@@ -11132,8 +11097,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	lottery = {
 		lottery_announcement = "Lotterij aankondiging",
-		lottery_about_to_roll = "Over 5 minuten wordt er een winnaar getrokken voor de loterij van vandaag. De totale pot staat momenteel op $${totalAmount} waar jij $${betAmount} hebt ingezet. Jouw kans om te winnen is ${odds}%",
-		current_lottery_pot = "De totale pot staat momenteel op $${totalAmount} waar jij $${betAmount} hebt ingezet. Jouw kans om te winnen is ${odds}%.",
+		lottery_about_to_roll = "Over 5 minuten wordt de winnaar getrokken voor de loterij van vandaag. De totale pot staat momenteel op $${totalAmount} waarin je $${betAmount} hebt ingezet. Je kans om te winnen is ${odds}%. De belasting bedraagt ${tax}%.",
+		current_lottery_pot = "Het totale pot is momenteel op $${totalAmount} waarbij jij $${betAmount} hebt ingezet. Jouw kans om te winnen is ${odds}%. De belasting bedraagt ${tax}%.",
 		drew_a_lottery_winner = "Er is een winnaar getrokken voor de loterij.",
 		winner_has_been_picked = "${fullName} heeft de loterijpot van $${totalAmount} gewonnen! Ze hebben $${betAmount} ingezet en hun kans om te winnen was ${odds}%.",
 		claimed_lottery_winnings = "Alle loterijwinsten zijn geclaimd.",
@@ -11744,6 +11709,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		hatch_claim = "CLAIMEN",
 		hatch_opened = "GECLAIMD",
 		hatch_waiting = "WACHTEN",
+		hatch_too_late = "TE LAAT",
 
 		about_advent_calendar_title = "Over De Adventskalender",
 
@@ -11755,7 +11721,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 			<br><br>
 			Next hatch unlocks in ${time}.
 			<br><br>
-			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 26th.)
+			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 31st.)
 			<br><br>
 			<div class="bonusPoints">
 				<div>Bonus Points: ${bonusPoints}/22</div>
@@ -13570,6 +13536,59 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		used_bug_logs_details = "${consoleName} gebruikte een microfoonbug op ${identifier}."
 	},
 
+	staff_pm = {
+		something_went_wrong = "Er is iets misgegaan bij het versturen van het bericht.",
+		reports_too_fast = "Je bent te snel met het versturen van rapporten, vertraag wat.",
+		no_report_message = "Je moet een bericht toevoegen aan je rapport.",
+		same_report = "Je kan niet tweemaal hetzelfde rapport versturen.",
+		report_muted = "Je bent gedempt voor het indienen van rapporten voor: `${reason}`.",
+		report_muted_no_reason = "Je bent gedempt en kunt geen reports versturen.",
+
+		report_title = "REPORT-${reportId} ${displayName}",
+		report_logs_title = "Rapport",
+		report_logs_details = "${consoleName} heeft rapport ${reportId} aangemaakt met het volgende bericht: `${message}`",
+
+		invalid_server_id = "Ongeldige doelserver-id.",
+		no_staff_pm_message = "Je moet een bericht toevoegen aan je privébericht.",
+		user_not_staff = "De gebruiker is geen medewerker.",
+		staff_pm_warning = "Privébericht voor medewerkers",
+		staff_pm_first_time = "We zien dat je nog nooit eerder medewerkers-privéberichten hebt gebruikt. Om te reageren op een medewerkers-privébericht, gebruik `/staffpm` gevolgd door het id van de ontvanger. Voor het gemak kun je `/reply` gebruiken om te reageren op het laatste medewerkers-privébericht dat je hebt ontvangen.",
+
+		staff_pm_title = "STAFF PM ${from} -> ${to}",
+		staff_pm_title_external = "EXTERN STAFF PM ${from} -> ${to}",
+		close_staff_pm = "Sluiten",
+		staff_pm_from = "Personeels-PM van <i>${from}</i>",
+		staff_pm_logs_title = "Personeels-PM",
+		staff_pm_logs_details = "${senderConsoleName} heeft een privébericht van het personeel gestuurd naar ${recipientConsoleName}: `${message}`",
+		important_staff_pm_logs_title = "Belangrijk Personeels-PM",
+		important_staff_pm_logs_details = "${senderConsoleName} heeft een belangrijk privébericht van het personeel gestuurd naar ${recipientConsoleName}: `${message}`",
+
+		staff_toggled = "Uw personeelsstatus is uitgeschakeld.",
+		no_staff_message = "U moet een bericht opnemen in uw personeelschat.",
+		same_staff_message = "U kunt niet twee keer hetzelfde personeelsbericht verzenden.",
+
+		staff_message_title = "PERSONEEL ${playerName}",
+		local_staff_message_title = "LOKAAL PERSONEEL ${playerName}",
+		staff_message_logs_title = "Personeelsbericht",
+		staff_message_logs_details = "${consoleName} verstuurde het volgende bericht in de personeelschat: `${message}`",
+		local_staff_message_logs_title = "Lokaal Personeelsbericht",
+		local_staff_message_logs_details = "${consoleName} verstuurde het volgende bericht in de lokale personeelschat: `${message}`",
+
+		message_sent = "Bericht verzonden.",
+		cannot_send_private_message_to_yourself = "Je kunt geen privébericht naar jezelf sturen.",
+		missing_valid_message_parameter = "Ontbrekende geldige parameter 'bericht'.",
+		missing_valid_license_identifier_parameter = "Ontbrekende geldige parameter 'licenseIdentifier'.",
+		missing_valid_target_source_parameter = "Ontbrekende geldige parameter 'targetSource'.",
+
+		invalid_report_id = "Ongeldige rapport-id.",
+		report_already_claimed = "Dat rapport is al geclaimd door *${playerName}*.",
+		report_same_creator = "Je kunt je eigen rapporten niet claimen.",
+		failed_claim_report = "Mislukt om rapport te claimen.",
+		report_claimed = "Rapport **${reportId}** is geclaimd door *${playerName}*.",
+		claim_report_logs_title = "Geclaimd Rapport",
+		claim_report_logs_details = "${consoleName} heeft rapport ${reportId} geclaimd."
+	},
+
 	starter_car = {
 		follow_the_checkpoints = "Je persoonlijke voertuig staat in de buurt geparkeerd. Volg de checkpoints om deze te vinden.",
 
@@ -13928,6 +13947,8 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		tp_cayo = "Cayo Perico",
 
 		actions = "Acties",
+		jail_self = "Jezelf Gevangen Zetten",
+		unjail_self = "Jezelf Vrijlaten",
 		wander_around = "Rondlopen",
 		speed_around = "Snel rondrijden",
 		clear_tasks = "Taken wissen",
@@ -14114,7 +14135,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		no_maps_to_combine = "Je hebt geen kaarten om te combineren.",
 
 		treasure_map_dug_up_logs_title = "Opsgraven van schatkaart",
-		treasure_map_dug_up_logs_details = "${consoleName} heeft een schatkaart van tier ${mapTier} opgegraven en drop ID ${dropId} ontvangen."
+		treasure_map_dug_up_logs_details = "${consoleName} heeft een schatkaart van tier ${mapTier} opgegraven en drop ID ${dropId} ontvangen.",
+
+		treasure_map_piece_spawned_logs_title = "Schatkaartstuk Gespawned",
+		treasure_map_piece_spawned_logs_details = "${consoleName} heeft schatkaartstuk ${pieceNumber} gespawned van niveau ${mapTier}."
 	},
 
 	tsunami = {
@@ -14335,14 +14359,24 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	weed = {
 		strain_default = "Wild Haze",
-		strain_lemon = "Lemon Haze",
+		strain_bubble = "Bubbelbes",
 		strain_northern = "Northern Lights",
 		strain_kush = "OG Kush",
+		strain_diesel = "Sour Diesel",
+		strain_ak47 = "AK-47",
+		strain_dream = "Blue Dream",
+		strain_trainwreck = "Trainwreck",
+		strain_gorilla = "Gorilla Glue",
 
 		default_emoji = "🥦",
-		lemon_emoji = "🏃",
+		bubble_emoji = "🫧",
 		northern_emoji = "🛡️",
 		kush_emoji = "🦁",
+		diesel_emoji = "😌",
+		ak47_emoji = "🔫",
+		dream_emoji = "🪶",
+		trainwreck_emoji = "👊",
+		gorilla_emoji = "🦍",
 
 		strain_description = "<b>Soort:</b> <i>${strain}</i> ${emoji}"
 	},
@@ -14392,6 +14426,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		run_as_failed = "Opdracht kon niet worden uitgevoerd als ${consoleName}.",
 
 		no_nearby_vehicle = "Geen voertuig in de buurt.",
+		invalid_duration = "Ongeldige duur (1s - 20s).",
 		reversing_failed = "Kon ped niet achteruit laten rijden.",
 		driving_forwards_failed = "Kon ped niet vooruit laten rijden.",
 		reversing_success = "Ped succesvol achteruit laten rijden.",
@@ -14927,7 +14962,16 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 		task_take_nap = "Doe een dutje.",
 		task_take_nap_near = "Druk op ~INPUT_DETONATE~ om een dutje te doen.",
-		task_take_nap_active = "Dutje Doen"
+		task_take_nap_active = "Dutje Doen",
+
+		task_water_plants = "Geef de planten water.",
+		task_water_plants_near = "Druk op ~INPUT_DETONATE~ om de planten water te geven.",
+		task_water_plants_active = "Planten water geven"
+	},
+
+	taxi = {
+		help_text = "`initial` is het basistarief (standaard: $10), `mile` is het tarief per gereden mijl (standaard: $5), `minute` is het tarief per minuut terwijl de meter aan staat (standaard: $15), `show` laat je huidige instellingen zien.",
+		invalid_typ = "Ongeldig type."
 	},
 
 	tow = {
@@ -15287,8 +15331,10 @@ OP.Global.Locales.Languages["nl-NL"] = {
 		wheels_modified = "De wielen zijn aangepast.",
 		wheels_none_specified = "Geen wielen gespecificeerd.",
 		wheels_none_valid_specified = "Geen geldige wielen gespecificeerd.",
-		not_in_a_car = "Je zit niet in een auto.",
-		invalid_value = "Ongeldige waarde."
+		not_in_a_car = "Je rijdt niet in een auto.",
+		invalid_value = "Ongeldige waarde.",
+		suspension_height = "Huidige hoogte van de ophanging is ingesteld op ${height}.",
+		suspension_height_set = "De hoogte van de ophanging is ingesteld op ${height}."
 	},
 
 	oil = {
@@ -15496,6 +15542,7 @@ OP.Global.Locales.Languages["nl-NL"] = {
 
 	throwables = {
 		pick_up_weapon = "[${InteractionKey}] Oprapen",
+		throwables_wiped = "${amount} projectielen weggeveegd.",
 
 		no_weapon_equipped = "Je hebt geen wapen uitgerust.",
 		cant_throw_weapon = "Je kunt dit wapen niet gooien.",

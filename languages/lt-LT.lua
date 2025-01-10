@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 35 (do not change)
+-- AUTO LOCALES: 36 (do not change)
 
 OP.Global.Locales.Languages["lt-LT"] = {
 	-- configuration settings for language
@@ -202,10 +202,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		spawned_item_for_everyone_title = "Visiems išspawnojamas daiktas",
 		spawned_item_for_everyone_details = "${consoleName} išspawnojo ${amount}x `${itemName}` visiems.",
 
-		report_title = "PRANEŠIMAS-${reportId} ${reporterName}",
-		report_logs_title = "Pranešimo žurnalas",
-		report_logs_details = "${consoleName} sukūrė pranešimą ${reportId} su šia žinute: `${reportMessage}`",
-
 		announcement_staff_title = "Darbuotojų pranešimas",
 		announcement_server_title = "Serverio Pranešimas",
 
@@ -220,47 +216,11 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		failed_to_post_announcement = "Nepavyko paskelbti pranešimo žinutės, nes nebuvo įvesta žinutė.",
 		failed_to_post_announcement_locale = "Nepavyko paskelbti pranešimo žinutės, nes pridėta neleistina pranešimo vietovė.",
 
-		staff_title = "PERSONALAS ${staffName}",
-		staff_message_logs_title = "Personalų Žinutė",
-		staff_message_logs_details = "${consoleName} išsiuntė šį pranešimą personalųjį pokalbį: `${staffMessage}`",
-		local_staff_title = "VIETINIS PERSONALAS ${staffName}",
-		local_staff_message_logs_title = "Vietinio personalo žinutė",
-		local_staff_message_logs_details = "${consoleName} siunčia tokią žinutę vietinio personako pokalbyje: `${staffMessage}`",
-
-		staff_pm_title = "PERSONALO PM ${transmissionTitle}",
-		staff_pm_logs_title = "Personalų PM",
-		staff_pm_logs_details = "${senderConsoleName} išsiuntė šį pranešimą ${recipientConsoleName}: `${staffPrivateMessage}`",
-		staff_pm_not_logged_in = "Jūs neprisijungęs.",
-		staff_pm_not_user_not_found = "Naudotojas su serverio ID ${serverId} nerastas.",
-		staff_pm_not_recipient_not_staff = "Žaidėjas, kuriam bandote siųsti žinutę, nėra personalo narys.",
-		staff_pm_unable_to_message_self = "Jūs negalite siųsti žinutės sau.",
-		staff_pm_warning = "Personalas PM Įspėjimas",
-		staff_pm_first_time = "Pastebime, kad jūs dar niekada nenaudojote personalo pranešimų. Norėdami atsakyti į personalo pranešimą, naudokite `/staffpm`, po kurio rašykite gavėjo ID. Norėdami patogiai atsakyti į paskutinį gautą personalo pranešimą, galite naudoti `/reply` komandą.",
-		reply_pm_not_found = "Nerasta personalo pranešimo, į kurį galėtumėte atsakyti.",
-
-		important_staff_pm_title = "!PERSONALAS PM Jūs -> ${recipient}",
-		close_staffpm = "Uždaryti",
-		staffpm_from = "Personalo PM iš <i>${from}</i>",
-		important_staff_pm_logs_title = "Svarbios personalo PM žinutės",
-		important_staff_pm_logs_details = "${senderConsoleName} išsiuntė svarbų pranešimą ${recipientConsoleName}: `${message}`",
-
-		external_staff_message = "Išorinis Personalas Pranešimas",
-		external_staff_message_from_player = "Išorinis Personalas Pranešimas iš ${playerName}",
-		external_staff_message_content = "${staffMessage} (Jūs negalite atsakyti į šį pranešimą.)",
-
-		unable_to_staff_message_yourself = "Negalima išsiųsti pranešimo sau.",
-		message_sent = "Pranešimas išsiųstas.",
-		player_not_found = "Žaidėjas nerastas.",
-		missing_valid_target_source_parameter = "Trūksta galiojančio 'target source' parametro.",
-		missing_valid_message_parameter = "Trūksta galiojančio 'message' parametro.",
-
 		invalid_coordinates = "Įvestos netinkamos x, y, z arba w koordinatės.",
 		player_not_loaded_character = "Žaidėjas neturi užkrautos veikėjo informacijos.",
 		teleport_successful = "Žaidėjas sėkmingai teleportuotas.",
 
 		player_revived_success = "Žaidėjas sėkmingai atgaivintas.",
-
-		missing_valid_license_identifier_parameter = "Trūksta galiojančio 'licenseIdentifier' parametro.",
 
 		wipe_broken = "sugadinti - Sugadinti/Lūžę objektai",
 		wipe_npcs = "npcs - NPC ir jų transporto priemonės",
@@ -376,12 +336,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 
 		report_muted_no_reason = "Jūs esate pašalinimas iš pranešimo komandos be nurodyto priežasties.",
 		report_muted = "Jūs esate pašalinimas iš pranešimo komandos dėl priežasties `${reason}`.",
-
-		already_sending_report = "Jūs jau siunčiate pranešimą. Prašome palaukti.",
-		unable_to_send_identical_report = "Jūs negalite siųsti dviejų identiškų ataskaitų vienas po kito.",
-
-		already_sending_staff_message = "Jau siunčiate personalo žinutę. Prašome palaukti.",
-		unable_to_send_identical_staff_message = "Negalite siųsti dviejų identiškų personalo žinučių viena po kitos per 30 sekundžių.",
 
 		population_density_set_to = "Gyventojų tankio daugiklio pakeitimas į ${multiplierLabel}% įjungtas.",
 		population_density_set_off = "Gyventojų tankumo dauginimo veiksmas išjungtas.",
@@ -881,51 +835,11 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		marathon_command_substitutes = "",
 
 		-- base/admin
-		report_command = "pranešimas",
-		report_command_help = "Siųsti žinutę visiems prisijungusiems personalo nariams.",
-		report_command_parameter_message = "žinutė",
-		report_command_parameter_message_help = "TP Čia Visi",
-		report_command_substitutes = "Tambahkan Akses Penyimpanan",
-
 		announce_command = "skelbti",
 		announce_command_help = "Transmituokite pranešimą visiems žaidėjams.",
 		announce_command_parameter_message = "žinutė",
 		announce_command_parameter_message_help = "Žinutė, kurią norite transliuoti.",
 		announce_command_substitutes = "",
-
-		staff_pm_command = "personalas_pm",
-		staff_pm_command_help = "Siųskite pranešimą arba darbuotojui, arba žaidėjui kaip darbuotojas.",
-		staff_pm_command_parameter_server_id = "serverio id",
-		staff_pm_command_parameter_server_id_help = "Žaidėjo, kuriam norite parašyti, serverio ID.",
-		staff_pm_command_parameter_message = "žinutė",
-		staff_pm_command_parameter_message_help = "Žinutė, kurią norite išsiųsti.",
-		staff_pm_command_substitutes = "staffpm, žinutė, pm, msg",
-
-		important_staff_pm_command = "important_staff_pm",
-		important_staff_pm_command_help = "Siųsti svarbią žinutę žaidėjui kaip personalui.",
-		important_staff_pm_command_parameter_server_id = "serverio ID",
-		important_staff_pm_command_parameter_server_id_help = "Žaidėjo serverio ID, kuriam bandoma parašyti žinutę.",
-		important_staff_pm_command_parameter_message = "žinutė",
-		important_staff_pm_command_parameter_message_help = "Svarbus pranešimas, kurį norite išsiųsti.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
-
-		reply_pm_command = "atsakyti_pm",
-		reply_pm_command_help = "Atsakyti į paskutinį gautą personalinį pranešimą iš personalo.",
-		reply_pm_command_parameter_message = "pranešimas",
-		reply_pm_command_parameter_message_help = "Pranešimas, kurį norite išsiųsti.",
-		reply_pm_command_substitutes = "atsakyti",
-
-		staff_command = "darbuotojai",
-		staff_command_help = "Transliuokite pranešimą visiems aktyviems darbuotojams.",
-		staff_command_parameter_message = "pranešimas",
-		staff_command_parameter_message_help = "Pranešimas, kurį norite išsiųsti.",
-		staff_command_substitutes = "",
-
-		local_staff_command = "vietinis_personalas",
-		local_staff_command_help = "Transliuoti pranešimą visiems aktyviems personalo nariams 25 m spinduliu.",
-		local_staff_command_parameter_message = "pranešimas",
-		local_staff_command_parameter_message_help = "Pranešimas, kurį norite išsiųsti.",
-		local_staff_command_substitutes = "lpersonalas",
 
 		wipe_command = "valyti",
 		wipe_command_help = "Pašalinkite nepageidaujamus elementus iš žemėlapio.",
@@ -1437,11 +1351,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		emojis_refresh_command_help = "Atnaujinti prieinamus emojius. Tai parsiųs naujausią sąrašą iš Discordio serverio.",
 		emojis_refresh_command_substitutes = "",
 
-		-- base/ping
-		get_pings_command = "gauti_pingai",
-		get_pings_command_help = "Gauti vidutinį pingą į įvairius serverius visame pasaulyje, norint rasti tinkamiausią vietą šio serverio dabartiniams žaidėjams.",
-		get_pings_command_substitutes = "",
-
 		-- base/points
 		points_command = "taškai",
 		points_command_help = "Rodo, kiek OP Taškų turite.",
@@ -1465,6 +1374,47 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		remove_twitch_ban_exception_command_parameter_server_id = "Aggiornamento dell'adesione",
 		remove_twitch_ban_exception_command_parameter_server_id_help = "Aggiornamenti disponibili",
 		remove_twitch_ban_exception_command_substitutes = "",
+
+		-- base/staff_pm
+		report_command = "pranešimas",
+		report_command_help = "Siųsti žinutę visiems prisijungusiems personalo nariams.",
+		report_command_parameter_message = "žinutė",
+		report_command_parameter_message_help = "TP Čia Visi",
+		report_command_substitutes = "pranešti_adminui, paspausti, moderatorių_pagalba, pagalba",
+
+		claim_report_command = "priskirti_pranešimą",
+		claim_report_command_help = "Priskirti konkretų pranešimą.",
+		claim_report_command_parameter_report_id = "pranešimo id",
+		claim_report_command_parameter_report_id_help = "Norimo priskirti pranešimo id.",
+		claim_report_command_substitutes = "priskirti, pp, priskirti_pranešimą",
+
+		staff_pm_command = "personalas_pm",
+		staff_pm_command_help = "Siųskite pranešimą arba darbuotojui, arba žaidėjui kaip darbuotojas.",
+		staff_pm_command_parameter_server_id = "serverio id",
+		staff_pm_command_parameter_server_id_help = "Žaidėjo, kuriam norite parašyti, serverio ID.",
+		staff_pm_command_parameter_message = "žinutė",
+		staff_pm_command_parameter_message_help = "Žinutė, kurią norite išsiųsti.",
+		staff_pm_command_substitutes = "darbuotojams_pm, pranešimas, pm, žinutė, atsakyti, atsakyti_pm, atsakyti_pm",
+
+		important_staff_pm_command = "important_staff_pm",
+		important_staff_pm_command_help = "Siųsti svarbią žinutę žaidėjui kaip personalui.",
+		important_staff_pm_command_parameter_server_id = "serverio ID",
+		important_staff_pm_command_parameter_server_id_help = "Žaidėjo serverio ID, kuriam bandoma parašyti žinutę.",
+		important_staff_pm_command_parameter_message = "žinutė",
+		important_staff_pm_command_parameter_message_help = "Svarbus pranešimas, kurį norite išsiųsti.",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
+
+		staff_command = "darbuotojai",
+		staff_command_help = "Transliuokite pranešimą visiems aktyviems darbuotojams.",
+		staff_command_parameter_message = "pranešimas",
+		staff_command_parameter_message_help = "Pranešimas, kurį norite išsiųsti.",
+		staff_command_substitutes = "",
+
+		local_staff_command = "vietinis_personalas",
+		local_staff_command_help = "Transliuoti pranešimą visiems aktyviems personalo nariams 25 m spinduliu.",
+		local_staff_command_parameter_message = "pranešimas",
+		local_staff_command_parameter_message_help = "Pranešimas, kurį norite išsiųsti.",
+		local_staff_command_substitutes = "lpersonalas",
 
 		-- base/users
 		playtime_command = "žaidimo_laikas",
@@ -1582,11 +1532,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		play_audio_command_parameter_server_id_help = "Žaidėjo serverio ID, kuriam norite paleisti šį garsą. Galite naudoti `-1` visiems žaidėjams.",
 		play_audio_command_substitutes = "",
 
-		-- game/audio_emitters
-		toggle_audio_emitters_command = "toggle_audio_emitters",
-		toggle_audio_emitters_command_help = "Perjungti natyvius garso išsiuntėjus.",
-		toggle_audio_emitters_command_substitutes = "",
-
 		-- game/bandaids
 		random_bandaid_command = "atsitiktinis_plastaras",
 		random_bandaid_command_help = "Suteikia jums atsitiktinį plastą. :)",
@@ -1683,17 +1628,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		buddy_pass_command = "draugo_prašymas",
 		buddy_pass_command_help = "Atidaryti draugo pasąsos sąsają.",
 		buddy_pass_command_substitutes = "",
-
-		-- game/cache
-		cache_assets_command = "talpyklos_turtas",
-		cache_assets_command_help = "Priversti gauti ir atsisiųsti didžiają dalį srautinių turtų (automobilių, objektų ir drabužių). Tai nerekomenduojama, nebent turite lėtą ryšį ir turtai neužsikrauna pakankamai greitai, kad būtų sklandus. Tai taip pat gali sukelti kliento sutrikimus veikimo metu.",
-		cache_assets_command_parameter_slow_download = "lėtas atsisiuntimas",
-		cache_assets_command_parameter_slow_download_help = "Ar norite lėtai atsisiųsti išteklius? Tai užtruks daug ilgiau, tačiau sumažins galimybę susidurti su įstrigimais.",
-		cache_assets_command_substitutes = "atsisiuntimo _cache, užkrautos _cache, apkrautos _cache",
-
-		cache_join_toggle_command = "cache_join_toggle",
-		cache_join_toggle_command_help = "Įjungti / išjungti kai kurių išteklių automatinį kešavimą, kai prisijungiate prie serverio.",
-		cache_join_toggle_command_substitutes = "",
 
 		-- game/camera
 		stable_cam_command = "stabilus_kamera",
@@ -3735,10 +3669,14 @@ OP.Global.Locales.Languages["lt-LT"] = {
 
 		ped_reverse_command = "ped_reverse",
 		ped_reverse_command_help = "Leidžia artimiausiam pėščiam atbulai judėti transporto priemonėje.",
+		ped_reverse_command_parameter_duration = "trukmė",
+		ped_reverse_command_parameter_duration_help = "Atbulinio judėjimo trukmė sekundėmis (1s - 20s, numatyta 4s).",
 		ped_reverse_command_substitutes = "",
 
 		ped_forwards_command = "ped_forwards",
 		ped_forwards_command_help = "Leidžia artimiausiam pėščiam vairuoti transporto priemonę į priekį.",
+		ped_forwards_command_parameter_duration = "trukmė",
+		ped_forwards_command_parameter_duration_help = "Pirmyn važiavimo trukmė sekundėmis (1s - 20s, numatyta 4s).",
 		ped_forwards_command_substitutes = "",
 
 		vehicle_flip_command = "automobilio_paversti",
@@ -3787,6 +3725,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		polygon_command = "${cost} punti",
 		polygon_command_help = "Apibrėžti 2D daugiakampį.",
 		polygon_command_substitutes = "Conferma l'aggiornamento dell'adesione",
+
+		box_command = "dėžė",
+		box_command_help = "Apibrėžti 3D dėžę.",
+		box_command_substitutes = "",
 
 		-- global/states
 		entity_states_command = "entitijų būsenos",
@@ -3969,6 +3911,27 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		tasks_debug_command_parameter_area_id_help = "Užduoties teritorijos ID, kurį norite analizuoti. Palikite tuščią, jei norite spausdinti visus teritorijas.",
 		tasks_debug_command_substitutes = "",
 
+		-- jobs/taxi
+		taxi_display_command = "taksi_ekranas",
+		taxi_display_command_help = "Įjungti/išjungti taksi ekraną.",
+		taxi_display_command_substitutes = "taksi_ekr, taksi",
+
+		taxi_hire_command = "nuomuoti_taksi",
+		taxi_hire_command_help = "Perjungti savo taksi nuomą.",
+		taxi_hire_command_substitutes = "taxiskambutis",
+
+		taxi_reset_command = "nustatyti_taksi_nuliniai",
+		taxi_reset_command_help = "Nustatyti taksi matavimo prietaisą iš naujo.",
+		taxi_reset_command_substitutes = "nustatytinulini",
+
+		taxi_fare_command = "takso_kaina",
+		taxi_fare_command_help = "Nustatyti takso kainą.",
+		taxi_fare_command_parameter_type = "suma",
+		taxi_fare_command_parameter_type_help = "Tipas, kurį norite nustatyti (pagalba, parodyti, pradinis, myli ar minutė).",
+		taxi_fare_command_parameter_amount = "suma",
+		taxi_fare_command_parameter_amount_help = "Nurodykite sumą, kuria norite nustatyti mokestį.",
+		taxi_fare_command_substitutes = "taxifare",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "išjungti_mechaniko_pranešimus",
 		toggle_mechanic_messages_command_help = "Persijungia ar gausite mechaniko pranešimus.",
@@ -4088,13 +4051,11 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		wheel_offset_command_parameter_value_help = "Kiek norite jį pakeisti. Tai gali būti nuo -0.15 iki 0.2, kur 0 yra numatytasis.",
 		wheel_offset_command_substitutes = "",
 
-		wheel_rotation_command = "ratų_pasisukimas",
-		wheel_rotation_command_help = "Redaguoti automobilio ratų pasisukimą.",
-		wheel_rotation_command_parameter_wheels = "priekiniai/galiniai",
-		wheel_rotation_command_parameter_wheels_help = "Kuriuos ratus norite modifikuoti?",
-		wheel_rotation_command_parameter_value = "reikšmė",
-		wheel_rotation_command_parameter_value_help = "Suma, kur norite jį modifikuoti. Tai gali būti nuo -0.5 iki 0.5, 0 atitinka numatytąją reikšmę.",
-		wheel_rotation_command_substitutes = "",
+		suspension_height_command = "pakabos_aukstis",
+		suspension_height_command_help = "Pakeisti transporto priemonės vizualų pakabos aukštį.",
+		suspension_height_command_parameter_value = "verte",
+		suspension_height_command_parameter_value_help = "Nurodykite sumą, kuria norite pakeisti. Tai gali būti nuo -0.15 iki 0.1, 0 reiškia numatytąją reikšmę.",
+		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
 		oil_level_command = "alyvinis_lygis",
@@ -4258,6 +4219,12 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		throw_weapon_command_help = "Metate savo šiuo metu įrengtą ginklą.",
 		throw_weapon_command_substitutes = "mesti, išmeta",
 
+		wipe_throwables_command = "isvalyti_metamus_objektus",
+		wipe_throwables_command_help = "Ištrina visus išmestus ginklus nurodytame spinduliuje.",
+		wipe_throwables_command_parameter_radius = "spindulys",
+		wipe_throwables_command_parameter_radius_help = "Spindulys, kuriame ištrinti išmesti ginklai (numatyta: 5).",
+		wipe_throwables_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "patikrinti_amžius",
 		check_ammo_command_help = "Patikrina, kiek visoje amunicijoje turite.",
@@ -4344,12 +4311,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		local_firewall_blocked = "Vietinė ugniasiena: Blokuotas ${playerName} (${licenseIdentifier})"
 	},
 
-	ping = {
-		getting_pings = "Gaunamos žaidėjų atsakymo vėlinimai. Tai gali užtrukti kelias sekundes.",
-		host_data = "${position}. ${location} - Vidutinis vėlinimų rodiklis: ${averagePing} (remiantis ${totalPings} prisijungusiais klientais), 10% žemos: ${averagePingLow}, 10% aukštos: ${averagePingHigh}",
-		list_hosts = "${listHosts}"
-	},
-
 	points = {
 		you_have_points = "Jūs turite ${frameworkPoints} OP taškų.",
 		used_points = "Naudoti ${amount} OP taškai(-ų) pagal žymę `${label}`.",
@@ -4362,11 +4323,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 	profile = {
 		profile_debug_enabled = "Profilio derinimo įrankis įjungtas. Išvestį galite peržiūrėti naudojant F8 konsolę.",
 		profile_debug_disabled = "Profilio derinimo įrankis išjungtas."
-	},
-
-	proxy = {
-		proxied_via_logs_title = "Tarpininkaujama per",
-		proxied_via_logs_details = "${consoleName} buvo tarpininkaujama per \"${serverName}\"."
 	},
 
 	restart = {
@@ -4511,6 +4467,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		ping_stable = "Failed to automatically generate translation."
 	},
 
+	vpn = {
+		vpn_not_allowed_for_new_players = "Naujiems žaidėjams su mažiau nei 24 valandomis žaidimo laiko draudžiama naudoti VPN."
+	},
+
 	whitelist = {
 		not_whitelisted = "Jūsų nepakrauta šiame serveryje.\n\nPrisijunkite prie mūsų Discord bendruomenės, kad sužinotumėte, kaip galite pateikti paraišką ${communityDiscord}"
 	},
@@ -4644,12 +4604,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		description_rat_unnamed = "Ši ${gender} žiurkė, ${age} nuotykiška ir sverianti ${weight}, narplioja pasaulį aštriais protiniais sugebėjimais ir netikėta šarmu. Varoma absoliučios paskirties valgyti ${food}, ji kas kiekvieną kampą virsta potencialiu atradimu, kiekvieną šešėlį - žaidynių aikštele.",
 		description_rat_named = "${name}, ${age} metų ${gender} pelė įsitraukiama į gyvenimo didelį eksperimentą, sverianti ${weight} ir pilna asmenybės. Turinti neatšaukiamą ryšį su ${food}, ${name} įkūnija smalsumo dvasią – maža dydžiu, begalinė dvasia.",
 
+		pick_up = "[${SeatEjectKey}] Paimti",
 		pick_up_named = "[${SeatEjectKey}] Paimti ${name}",
-		pick_up_cat = "[${SeatEjectKey}] Paimti katę",
-		pick_up_dog = "[${SeatEjectKey}] Paimti šunį",
-		pick_up_hen = "[${SeatEjectKey}] Paimti vištą",
-		pick_up_rabbit = "[${SeatEjectKey}] Paimti triušį",
-		pick_up_rat = "[${SeatEjectKey}] Paimti pelę",
 
 		failed_pickup_cat = "Nepavyko paėmė katiną.",
 		failed_pickup_dog = "Nepavyko paėmė šunį.",
@@ -4996,11 +4952,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} paleido garso efektą visiems. Garso efektas buvo URL `${url}` ir buvo nustatytas groti garso lygyje `${volume}`.",
 		played_audio_effect_for_player_title = "Paleistas garso efektas žaidėjui",
 		played_audio_effect_for_player_details = "${consoleName} paleido garso efektą ${targetConsoleName}. Garso efektas buvo URL `${url}` ir buvo nustatytas groti garso lygyje `${volume}`."
-	},
-
-	audio_emitters = {
-		audio_emitters_disabled = "Garso sklaidytuvai išjungti.",
-		audio_emitters_enabled = "Garso sklaidytuvai įjungti."
 	},
 
 	balls = {
@@ -5401,15 +5352,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 
 	bus_map = {
 		bus_tracker = "Failed to automatically generate translation."
-	},
-
-	cache = {
-		download_progress = "Atsisiuntimo progresas:\n- Transporto priemonės: ${vehiclesDone}/${vehiclesTotal}\n- Objektai: ${objectsDone}/${objectsTotal}\n- NPC: ${pedsDone}/${pedsTotal}\n- Apranga: ${clothingRequested}/${clothingTotal}",
-		slow_download_enabled = "Lėtas atsisiuntimas įjungtas.",
-		slow_download_disabled = "Lėtas atsisiuntimas išjungtas.",
-
-		join_cache_disabled = "Prisijungimo talpykla išjungta.",
-		join_cache_enable = "Prisijungimo talpykla įgalinta."
 	},
 
 	caffeine = {
@@ -6307,6 +6249,11 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		crafting_ammo = "Šovinių gamyba",
 		crafted_ammo = "Pagaminti šoviniai.",
 		failed_craft_ammo = "Nepavyko pagaminti šovinių.",
+
+		gift_box_bomb_recipe = "Specialus Dovanų dėžės Receptas",
+		crafting_gift = "Dovanų dėžės Kūrimas",
+		crafted_gift = "Sukurta dovanų dėžė.",
+		failed_craft_gift = "Nepavyko pagaminti dovanų dėžutės.",
 
 		process_weed = "Failed to automatically generate translation.",
 		press_to_process_weed = "Failed to automatically generate translation.",
@@ -8195,6 +8142,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		cinema = "Kinas",
 		strip_club = "Striptiz klubas",
 		police_store = "Policijos parduotuvė",
+		utility_crate = "Naudingas dėžutė",
 		fib_store = "FIB parduotuvė",
 		deputy_madison = "Deputatas Madison",
 		sergeant_harris = "Seržantas Harris",
@@ -8246,11 +8194,17 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		target_inventory_full = "일련번호가 제거되었거나 긁혀 빠져 있습니다.",
 		received_item = "끄기",
 
+		inspecting_item = "Tiriamas daiktas",
+
 		inspect_weapon = "Šio ${itemName} serijos numeris atrodo kaip `${itemId}`.",
 		inspect_weapon_broken = "Šio ${itemName} serijos numeris atrodo kaip `${itemId}`, taip pat atrodo, kad jis visiškai sugadintas.",
 		inspect_bank_property = "복사된 차량 데이터가 없습니다.",
 		inspect_bank_property_cid = "Šis ${item} yra žymėtas kaip ${bank} banko nuosavybė. Jį išėmė sąskaitos numeris #${characterId}.",
 		inspect_no_property = "차량 데이터가 복사되었습니다.",
+
+		gift_box_normal = "Ši dovanų dėžutė atrodo visiškai normali.",
+		gift_box_suspicious = "Ši dovanų dėžutė atrodo šiek tiek įtartinai.",
+		gift_box_residue = "Šioje dovanų dėžutėje yra kažkiek pilka miltelių likučių.",
 
 		searching_dumpster = "Ieškoma šiukšlių konteinerio",
 		searching_homeless_tent = "Ieškant Nerdomojo Palapinės",
@@ -8625,6 +8579,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		empty_box_description = "Pradėkite su šia paprasta, tvirta dėže, kad sukurtumėte asmenišką dovaną. Užpildykite ją negesinančiais lobynais, ir ji bus pasiruošusi būti pavertiama į apgalvotą dovaną. Ideali dėžute viskam, kas simbolizuoja meilę, išskyrus greitai sugedančius produktus ar ginklus.",
 		gift_box = "Dovanų Dėžutė",
 		gift_box_description = "Ši elegantiškai uždaryta dovanų dėžutė, papuošta šventiniu kaspinu, yra gražus būdas pristatyti jūsų kruopščiai parinktus daiktus. Puikiai tinka ypatingoms progoms, ji perduoda šilumą ir rūpestį, užtikrindama, kad jūsų dovanos gestas būtų tokį malonus kaip dovanos vidaus turinys.",
+		gift_box_bomb = "Dovanų dėžutė",
+		gift_box_bomb_description = "Ši elegantiškai uždaryta dovanų dėžutė, puošta šventiniu kaspinu, yra gražus būdas pristatyti jūsų kruopščiai parinktus daiktus. Puikiai tinka ypatingoms progoms, ji perduoda šilumą ir pagarbą, užtikrindama, kad jūsų dovanos gestas palieka ilgalaikį įspūdį.",
 
 		ear_defenders = "Akių Gynėjai",
 		ear_defenders_description = "Naudojami apsaugoti ausis nuo garsaus triukšmo.",
@@ -9234,6 +9190,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		pet_snowman_description = "TP Čia",
 		pet_owl = "Hooty",
 		pet_owl_description = "Hooty, jūsų išmintingas ir budrus draugas, elegantiškai prisikabina ant jūsų peties. Su savo griežtais akimis ir minkštais plunksnais, šis žavus pelėdas suteikia Jūsų nuotykiams švelnumo prieskonį. Visada pasiruošęs suteikti gabalą išminties, Hooty yra puikus partneris bet kokiai kelionei.",
+		pet_pig = "Šonkaulis",
+		pet_pig_description = "Mažytis kiauliukas su dideliu charakteriu, laimingai atsisėdęs ant tavo peties. Visada pasiruošęs snorti skatinimu ar vertinti tavo gyvenimo pasirinkimus mielu šoniniu žvilgsniu. Nuo nuotykių iki paprasto pasivaikščiojimo, šis mažasis draugas yra puiki mišri žavesio ir grumtynių dermė.",
 
 		hotwheels_mcqueen = "Šviesos Greitis",
 		hotwheels_mcqueen_description = "Greitis, Aš esu Greitis, Plūstu kaip Cadillacas, Piktužėlis kaip Beemeris. KATCHOW KATCHOW KATCHOW",
@@ -9549,6 +9507,9 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		wires = "Kabeliai",
 		wires_description = "Viską laiko kartu.",
 
+		microcontroller = "Mikrovaldiklis",
+		microcontroller_description = "Mažytis, bet galingas smegenys visoms tavo elektroninėms kūryboms, galintis paversti kompleksinius idėjas į gyvenimą tik keliais programavimo eilutėmis. Tai nepastebimas inovacijų herojus, tyliai organizuojantis magiją užkulisiuose.",
+
 		note = "Užrašas",
 		note_description = "Kažkoks užrašas nežinau žmogau.",
 
@@ -9743,6 +9704,17 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		wheel_clamp_description = "Čia jokių pabėgimo automobilių! Ratų įtampa rimtai saugo automobilius ir baigia neautorizuotą judėjimą. Šis sunkus įtaisas yra nebylus vykdytojas, užtikrinantis, kad automobilių stovėjimo taisyklės būtų gerbiamos ir laikomos.",
 		old_rug = "Senas kilimas",
 		old_rug_description = "Išskleiskite šį jaukų kilimą savo kitam lauko pasibuvimui ir išlaikykite jaukumą! Tai puikiai tinka atsigulti ant žolės, nesigestant žalios dėmės ant kelnių. Ištieskite jį, pailsėkite ir mėgaukitės savo aplinka stiliaus ir komforto sąlygomis.",
+
+		evidence_marker_1 = "Žymeklis 1",
+		evidence_marker_1_description = "Paslapties pradžios taškas, pažymintis pirmą užuominą, kad išspręstumėte tiesą.",
+		evidence_marker_2 = "Žymeklis 2",
+		evidence_marker_2_description = "Papildoma užuomina, vedanti tyrinėtojus arčiau didesnio vaizdo.",
+		evidence_marker_3 = "Žymeklis 3",
+		evidence_marker_3_description = "Detalis, kuri gali nulemti bylą - jos nepasimesti.",
+		evidence_marker_4 = "Žymeklis 4",
+		evidence_marker_4_description = "Kritinė dėlionės dalis, ramiai laukianti pastebėjimo.",
+		evidence_marker_5 = "Žymeklis 5",
+		evidence_marker_5_description = "Paskutinis žymeklis, kuris viską susieja arba palieka daugiau klausimų nei atsakymų.",
 
 		bandit_1 = "Vagis 1",
 		bandit_1_description = "Jūsų pagrindinis žmogus mokymo scenarijams, visada pasirengęs vaidinti blogį be skundų dėl ilgų valandų ar trūkstamo scenarijaus. Gali būti dedamas bet kur pasaulyje.",
@@ -10604,6 +10576,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		invalid_invisibility_mode = "Neteisingas nematomumo režimas. Turi būti 'pilnas' arba 'įprastas'.",
 		invisibility_mode_full = "Nematomumo režimas nustatytas kaip 'pilnas'. Paprasti personalo nariai tavęs nematys.",
 		invisibility_mode_normal = "Nematomumo režimas nustatytas kaip 'normalus'. Paprasti personalo nariai dabar tavęs mato.",
+		current_invisibility_mode = "Dabartinis nematymo režimas nustatytas kaip '${mode}'.",
 
 		toggled_invisibility = "Sėkmingai perkeltas ${displayName} nematomumas.",
 		failed_invisibility = "Nepavyko perkelti ${displayName} nematomumo.",
@@ -10699,6 +10672,9 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		logs_used_weather_spell_title = "Naudotas orų burtas",
 		logs_used_weather_spell_details = "${consoleName} naudojo orų burto burtą `${itemName}`.",
 
+		gift_box_bomb_logs_title = "Atidaryta sproginė dovanų dėžutė",
+		gift_box_bomb_logs_details = "${consoleName} atidarė sproginę dovanų dėžutę.",
+
 		you_have_used_jail_card = "Jūs naudojote „ištrūkimo iš kalėjimo kortelė“!",
 		you_are_not_in_jail = "Jūs nesate kalinys.",
 
@@ -10791,9 +10767,9 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		sentence_reduced = "Jūsų bausmė sumažinta ${amount} mėnesių, liko ${remaining} mėnesiai.",
 		sentence_increased = "Failed to automatically generate translation.",
 		sentence_over = "Jūsų bausmė baigėsi.",
-		remaining_time_fmt = "Failed to automatically generate translation.",
+		remaining_time_fmt = "${months} mėnesiai (${display})",
 		remaining_time = "Failed to automatically generate translation.",
-		jailed = "Failed to automatically generate translation.",
+		jailed = "Jūs esate įkalintas ${amount} mėnesių.",
 
 		mission_help_1 = "Spustelėkite ~INPUT_CONTEXT~, norėdami išvalyti grindis.",
 		mission_help_2 = "Spustelėkite ~INPUT_CONTEXT~, norėdami pavalgyti.",
@@ -10970,17 +10946,6 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		back = "Atgal",
 		copy_license = "Licencijos ID",
 		copy_license_success = "Nukopijuota!",
-		cache_assets = "Kaupi failus talpykloje",
-		download_assets = "Ar norėtumėte atsisiųsti ir kaškuoti daugumą serverio turimų variklių? Čia yra naudos ir apsvarstymų:",
-		cache_assets_performance = "Mėgaukitės geresniu kadru/sek. ir mažesniais pingų šuoliais žaidimo metu, ypač jei naudojate senesnę įrangą ar lėtesnį ryšį.",
-		cache_assets_crashes = "Žaidimas gali išsikraustyti proceso metu. Jei tai nutinka, naudokite 'lėto atsisiuntimo' parinktį vietoje.",
-		cache_assets_restart = "Baigę atsisiuntimą, paleiskite žaidimą iš naujo, kad išvengtumėte trukdžių šioje sesijoje.",
-		cache_assets_disk = "Tai užims šiek tiek disko vietos, todėl įsitikinkite, kad turite pakankamai laisvos vietos.",
-		cache_assets_no_repeat = "Jums nereikės tai daryti kiekvienam atnaujinimui, nes keisis tik keli failai.",
-		vehicles = "Transporto priemonės",
-		objects = "Objektai",
-		peds = "NPC",
-		clothing = "Drabužiai",
 		main_menu = "Pagrindinis meniu",
 		gta_settings = "GTA nustatymai",
 		discord = "Discord",
@@ -11132,8 +11097,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 
 	lottery = {
 		lottery_announcement = "Loterijos pranešimas",
-		lottery_about_to_roll = "Failed to automatically generate translation.",
-		current_lottery_pot = "Failed to automatically generate translation.",
+		lottery_about_to_roll = "Per 5 minutes bus atrinktas nugalėtojas šiandienos loterijoje. Dabar galiojanti laimėjimo suma yra $${totalAmount}, jūs pastatėte $${betAmount}. Jūsų laimėjimo tikimybė yra ${odds}%. Mokestis yra ${tax}%.",
+		current_lottery_pot = "Dabartinis prizinis fondas yra $${totalAmount}, į kurį įdėjote $${betAmount}. Jūsų laimėjimo tikimybė yra ${odds}%. Mokestis yra ${tax}%.",
 		drew_a_lottery_winner = "Loterijoje ištrauktas laimėtojas.",
 		winner_has_been_picked = "Failed to automatically generate translation.",
 		claimed_lottery_winnings = "Paimtas visų loterijos laimėjimų.",
@@ -11744,6 +11709,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		hatch_claim = "PRISIJUNGTI",
 		hatch_opened = "PRISIJUNGTA",
 		hatch_waiting = "LAUKIAMA",
+		hatch_too_late = "PER VĖLU",
 
 		about_advent_calendar_title = "Apie Advento Kalendorių",
 
@@ -11755,7 +11721,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 			<br><br>
 			Next hatch unlocks in ${time}.
 			<br><br>
-			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 26th.)
+			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 31st.)
 			<br><br>
 			<div class="bonusPoints">
 				<div>Bonus Points: ${bonusPoints}/22</div>
@@ -13570,6 +13536,59 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		used_bug_logs_details = "${consoleName}"
 	},
 
+	staff_pm = {
+		something_went_wrong = "Kai siunčiate žinutę, įvyko klaida.",
+		reports_too_fast = "Jūs pateikiate pranešimus per greitai, lėtinkite.",
+		no_report_message = "Jūs turite įtraukti pranešimą į savo pranešimą.",
+		same_report = "Negalite siųsti to paties pranešimo du kartus.",
+		report_muted = "Jūs esate tylėjęs nuo pranešimų siuntimo dėl: `${reason}`.",
+		report_muted_no_reason = "Jūs negalite siųsti pranešimų, nes esate nutildytas.",
+
+		report_title = "PRANEŠIMAS-${reportId} ${displayName}",
+		report_logs_title = "Pranešimas",
+		report_logs_details = "${consoleName} sukūrė pranešimą ${reportId} su šiuo pranešimu: `${message}`",
+
+		invalid_server_id = "Neteisingas tikslinio serverio ID.",
+		no_staff_pm_message = "Turite įtraukti žinutę į savo privačią žinutę.",
+		user_not_staff = "Šis vartotojas nėra personalo narys.",
+		staff_pm_warning = "Personalas Perspėjimas",
+		staff_pm_first_time = "Pastebime, kad niekada nesate naudoję personalo privačių žinučių. Norėdami atsakyti į personalo PM, naudokite `/staffpm`, po kurio seka gavėjo ID. Kad patogiau būtų atsakyti į paskutinę gautą personalo PM žinutę, galite naudoti `/reply`.",
+
+		staff_pm_title = "PERSONALAS PRANEŠIMĄ DARBUOTOJAMS ${from} -> ${to}",
+		staff_pm_title_external = "IŠORINIS ASMUO PRANEŠIMĄ DARBUOTOJAMS ${from} -> ${to}",
+		close_staff_pm = "Uždaryti",
+		staff_pm_from = "Darbuotojo pranešimas nuo <i>${from}</i>",
+		staff_pm_logs_title = "Darbuotojų pranešimai",
+		staff_pm_logs_details = "${senderConsoleName} išsiuntė asmeninį darbuotojo pranešimą gavėjui ${recipientConsoleName}: `${message}`",
+		important_staff_pm_logs_title = "Svarbus darbuotojų pranešimas",
+		important_staff_pm_logs_details = "${senderConsoleName} išsiuntė svarbų darbuotojo pranešimą gavėjui ${recipientConsoleName}: `${message}`",
+
+		staff_toggled = "Jūsų personalo statusas išjungtas.",
+		no_staff_message = "Jūs privalote įtraukti žinutę į savo personalo pokalbį.",
+		same_staff_message = "Negalite siųsti tos pačios personalo žinutės antrą kartą.",
+
+		staff_message_title = "PERSONALAS ${playerName}",
+		local_staff_message_title = "VIETINIS PERSONALAS ${playerName}",
+		staff_message_logs_title = "Personalo žinutė",
+		staff_message_logs_details = "${consoleName} išsiuntė šią žinutę personalo pokalbyje: `${message}`",
+		local_staff_message_logs_title = "Vietinės personalo žinutės",
+		local_staff_message_logs_details = "${consoleName} išsiuntė šią žinutę vietiniame personalo pokalbyje: `${message}`",
+
+		message_sent = "Žinutė išsiųsta.",
+		cannot_send_private_message_to_yourself = "Negalite siųsti privačios žinutės sau pačiam.",
+		missing_valid_message_parameter = "Trūksta galiojančio parametro „message“.",
+		missing_valid_license_identifier_parameter = "Trūksta galiojančio parametro „licenseIdentifier“.",
+		missing_valid_target_source_parameter = "Trūksta galiojančio parametro „targetSource“.",
+
+		invalid_report_id = "Netinkamas ataskaitos ID.",
+		report_already_claimed = "Ši ataskaita jau užregistruota *${playerName}*.",
+		report_same_creator = "Negalite registruoti savo ataskaitų.",
+		failed_claim_report = "Nepavyko pareiškimo priskirti.",
+		report_claimed = "Pareiškimas **${reportId}** buvo priskirtas *${playerName}*.",
+		claim_report_logs_title = "Priskirtas pareiškimas",
+		claim_report_logs_details = "${consoleName} priskyrė pareiškimą ${reportId}."
+	},
+
 	starter_car = {
 		follow_the_checkpoints = "Tavo asmeninis transporto priemonė yra netoli. Sek paskirties ženklų, kad ją surastum.",
 
@@ -13928,6 +13947,8 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		tp_cayo = "Kajo Periko",
 
 		actions = "Veiksmai",
+		jail_self = "Įkalinti save",
+		unjail_self = "Išlaisvinti save",
 		wander_around = "Klajoti",
 		speed_around = "Greitai judėti",
 		clear_tasks = "Valyti užduotis",
@@ -14114,7 +14135,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		no_maps_to_combine = "Neturite žemėlapių, kuriuos galima suderinti.",
 
 		treasure_map_dug_up_logs_title = "Lobio žemėlapis iškastas",
-		treasure_map_dug_up_logs_details = "${consoleName} iškopa lobio žemėlapį ${mapTier} lygio ir gauna daikto ID: ${dropId}."
+		treasure_map_dug_up_logs_details = "${consoleName} iškopa lobio žemėlapį ${mapTier} lygio ir gauna daikto ID: ${dropId}.",
+
+		treasure_map_piece_spawned_logs_title = "Pasirodė lobių žemėlapio gabalas",
+		treasure_map_piece_spawned_logs_details = "${consoleName} iššaukė lobių žemėlapio gabalą ${pieceNumber} iš rango ${mapTier}."
 	},
 
 	tsunami = {
@@ -14335,14 +14359,24 @@ OP.Global.Locales.Languages["lt-LT"] = {
 
 	weed = {
 		strain_default = "Failed to automatically generate translation.",
-		strain_lemon = "Failed to automatically generate translation.",
+		strain_bubble = "Burbulinis vaisius",
 		strain_northern = "Failed to automatically generate translation.",
 		strain_kush = "Failed to automatically generate translation.",
+		strain_diesel = "Rūgštus dyzelinas",
+		strain_ak47 = "AK-47",
+		strain_dream = "Mėlynas Sapnas",
+		strain_trainwreck = "Vagonų katastrofa",
+		strain_gorilla = "Gorilos klijai",
 
 		default_emoji = "Failed to automatically generate translation.",
-		lemon_emoji = "Failed to automatically generate translation.",
+		bubble_emoji = "🫧",
 		northern_emoji = "Failed to automatically generate translation.",
 		kush_emoji = "Failed to automatically generate translation.",
+		diesel_emoji = "😌",
+		ak47_emoji = "🔫",
+		dream_emoji = "🪶",
+		trainwreck_emoji = "👊",
+		gorilla_emoji = "🦍",
 
 		strain_description = "Failed to automatically generate translation."
 	},
@@ -14392,6 +14426,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		run_as_failed = "Nepavyko paleisti komandos kaip ${consoleName}.",
 
 		no_nearby_vehicle = "Netoli automobilio.",
+		invalid_duration = "Netinkama trukmė (1 s - 20 s).",
 		reversing_failed = "Nepavyko verčiant asmenį atbulomis.",
 		driving_forwards_failed = "Nepavyko verčiant asmenį pirmyn.",
 		reversing_success = "Sėkmingai verčiant asmenį atbulomis.",
@@ -14927,7 +14962,16 @@ OP.Global.Locales.Languages["lt-LT"] = {
 
 		task_take_nap = "Pailsėkite.",
 		task_take_nap_near = "Spauskite ~INPUT_DETONATE~, norėdami pailsėti.",
-		task_take_nap_active = "Pasilikimas"
+		task_take_nap_active = "Pasilikimas",
+
+		task_water_plants = "Laistyti augalus.",
+		task_water_plants_near = "Paspauskite ~INPUT_DETONATE~, kad laistyti augalus.",
+		task_water_plants_active = "Augalų laistymas"
+	},
+
+	taxi = {
+		help_text = "`pradinis` yra pradinis mokestis (numatytasis: $10), `mylia` yra mokestis už nuvažiuotą mylią (numatytasis: $5), `minutė` yra mokestis už minutę, kai taksometras įjungtas (numatytasis: $15), `rodyti` parodys jūsų dabartinius nustatymus.",
+		invalid_typ = "Netinkamas tipas."
 	},
 
 	tow = {
@@ -15287,8 +15331,10 @@ OP.Global.Locales.Languages["lt-LT"] = {
 		wheels_modified = "Ratai buvo pakeisti.",
 		wheels_none_specified = "Nenurodyti ratai.",
 		wheels_none_valid_specified = "Nenurodyti jokie tinkami ratai.",
-		not_in_a_car = "Jūs ne esate mašinoje.",
-		invalid_value = "Neteisinga reikšmė."
+		not_in_a_car = "Tu nevairuoji automobilio.",
+		invalid_value = "Neteisinga reikšmė.",
+		suspension_height = "Dabartinis pakabos aukštis nustatytas į ${height}.",
+		suspension_height_set = "Pakabos aukštis nustatytas į ${height}."
 	},
 
 	oil = {
@@ -15496,6 +15542,7 @@ OP.Global.Locales.Languages["lt-LT"] = {
 
 	throwables = {
 		pick_up_weapon = "[${InteractionKey}] Paimti",
+		throwables_wiped = "Ištrintos ${amount} mesti objektai.",
 
 		no_weapon_equipped = "Tu neturi ginklo įrengta.",
 		cant_throw_weapon = "Negali mesti šio ginklo.",

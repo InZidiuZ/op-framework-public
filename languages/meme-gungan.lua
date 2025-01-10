@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 35 (do not change)
+-- AUTO LOCALES: 36 (do not change)
 
 OP.Global.Locales.Languages["meme-gungan"] = {
 	-- configuration settings for language
@@ -202,10 +202,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		spawned_item_for_everyone_title = "Spawned Item For Everyone",
 		spawned_item_for_everyone_details = "${consoleName} spawned in ${amount}x `${itemName}` for everyone.",
 
-		report_title = "APPIPPE-${reportId} ${reporterName}",
-		report_logs_title = "Kweffa",
-		report_logs_details = "${consoleName} created report ${reportId} with the following message: `${reportMessage}`",
-
 		announcement_staff_title = "Meesa announcement for staff",
 		announcement_server_title = "Meesa announcement for server",
 
@@ -220,47 +216,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		failed_to_post_announcement = "Failed to post announcement message as no message was added.",
 		failed_to_post_announcement_locale = "Failed to post announcement message as the announcement locale added is not supported.",
 
-		staff_title = "STAFF ${staffName}",
-		staff_message_logs_title = "Staff Message",
-		staff_message_logs_details = "${consoleName} mesa-sent da mesa-age in da staff mesa-chat: `${staffMessage}`",
-		local_staff_title = "undefined",
-		local_staff_message_logs_title = "undefined",
-		local_staff_message_logs_details = "undefined",
-
-		staff_pm_title = "STAFF PM ${transmissionTitle}",
-		staff_pm_logs_title = "Staff PM",
-		staff_pm_logs_details = "${senderConsoleName} mesa-sent da mesa-message to ${recipientConsoleName}: `${staffPrivateMessage}`",
-		staff_pm_not_logged_in = "Yousa no be logged in.",
-		staff_pm_not_user_not_found = "Mesa no find user with server ID ${serverId}.",
-		staff_pm_not_recipient_not_staff = "Meesa sorrow, but da player yousa tryin to send mesa message to issa not a staff member.",
-		staff_pm_unable_to_message_self = "Yousa not able to mesaage yourself, okeday?",
-		staff_pm_warning = "Staff PM Warning",
-		staff_pm_first_time = "undefined",
-		reply_pm_not_found = "undefined",
-
-		important_staff_pm_title = "!STAFF PM You -> ${recipient}",
-		close_staffpm = "Clunk-clunk",
-		staffpm_from = "StaffPM from <i>${from}</i>",
-		important_staff_pm_logs_title = "Important Staff PM",
-		important_staff_pm_logs_details = "${senderConsoleName} sent the following important message to ${recipientConsoleName}: `${message}`",
-
-		external_staff_message = "External Staff Message",
-		external_staff_message_from_player = "External Staff Mesaage From ${playerName}",
-		external_staff_message_content = "${staffMessage} (Yousa can not respond to dissen message.)",
-
-		unable_to_staff_message_yourself = "Meesa unable to staff message mesa self.",
-		message_sent = "Message sent.",
-		player_not_found = "Player no bombad found.",
-		missing_valid_target_source_parameter = "Missing a valid 'target source' parameter.",
-		missing_valid_message_parameter = "Missing a valid 'message' parameter.",
-
 		invalid_coordinates = "Invalid x, y, z or w coordinates submitted.",
 		player_not_loaded_character = "Player does not have a character loaded.",
 		teleport_successful = "Teleported player successfully.",
 
 		player_revived_success = "Meesa revived player successfully.",
-
-		missing_valid_license_identifier_parameter = "Missing a valid 'licenseIdentifier' parameter.",
 
 		wipe_broken = "undefined",
 		wipe_npcs = "undefined",
@@ -376,12 +336,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		report_muted_no_reason = "Yousa been muted fromen da report commando withouten a specified reasoning.",
 		report_muted = "Yousa been muted fromen da report commando for reason ${reason}.",
-
-		already_sending_report = "Yousa already senden a reporten. Pleasesa waiten.",
-		unable_to_send_identical_report = "Mesa no kunne senda dosa sama raporta depoida unu altra.",
-
-		already_sending_staff_message = "Mesa alredi sendin' un mensa para alguien del staff. Por favor, espera.",
-		unable_to_send_identical_staff_message = "Mesa no kunne senda dosa sama mensas para alguien del staff depoida unu altra dentro de 30 segonds.",
 
 		population_density_set_to = "Da population density multiplier override has been set to ${multiplierLabel}%.",
 		population_density_set_off = "Da populashun density multipli'r overrida has beena turned off.",
@@ -881,51 +835,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		marathon_command_substitutes = "",
 
 		-- base/admin
-		report_command = "report",
-		report_command_help = "Mesa sending message to all active staff members.",
-		report_command_parameter_message = "message",
-		report_command_parameter_message_help = "Da message yousa would like to send. A short summary of what yousa are reporting (Example: \"Mesa just got vdmed, their id was...\").",
-		report_command_substitutes = "youseesaadmin",
-
 		announce_command = "announce",
 		announce_command_help = "Broadcasting an announcement to all playas.",
 		announce_command_parameter_message = "message",
 		announce_command_parameter_message_help = "Lissen up: da message un would lika to make sure eberyone hears.",
 		announce_command_substitutes = "",
-
-		staff_pm_command = "staff_pm",
-		staff_pm_command_help = "Mesa helpen senden tada either a staff member, oda to a playa as a staff member.",
-		staff_pm_command_parameter_server_id = "server id",
-		staff_pm_command_parameter_server_id_help = "Da playa's server ID yousa areen trying to mesa-jar-jar binks.",
-		staff_pm_command_parameter_message = "message",
-		staff_pm_command_parameter_message_help = "Da message yousa would liken to senden.",
-		staff_pm_command_substitutes = "staffpm, mesaaje, pm, msg",
-
-		important_staff_pm_command = "important_staff_pm",
-		important_staff_pm_command_help = "Send an important message to a player as a staff member.",
-		important_staff_pm_command_parameter_server_id = "server id",
-		important_staff_pm_command_parameter_server_id_help = "Da playa's server ID yousa are tryin' ta message.",
-		important_staff_pm_command_parameter_message = "message",
-		important_staff_pm_command_parameter_message_help = "Da important message yousa would like ta send.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
-
-		reply_pm_command = "undefined",
-		reply_pm_command_help = "undefined",
-		reply_pm_command_parameter_message = "undefined",
-		reply_pm_command_parameter_message_help = "undefined",
-		reply_pm_command_substitutes = "undefined",
-
-		staff_command = "staff",
-		staff_command_help = "Broadcast a message to all active staff members.",
-		staff_command_parameter_message = "messa",
-		staff_command_parameter_message_help = "Da messa wesa grand yousa wouldsa lika send.",
-		staff_command_substitutes = "",
-
-		local_staff_command = "undefined",
-		local_staff_command_help = "undefined",
-		local_staff_command_parameter_message = "undefined",
-		local_staff_command_parameter_message_help = "undefined",
-		local_staff_command_substitutes = "undefined",
 
 		wipe_command = "wipe",
 		wipe_command_help = "Wipe unwanted entities from da map.",
@@ -1437,11 +1351,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		emojis_refresh_command_help = "Refresh da available emojis. Dis gonna fetch da lates list from da discord guild.",
 		emojis_refresh_command_substitutes = "",
 
-		-- base/ping
-		get_pings_command = "get_pings",
-		get_pings_command_help = "Get average ping to various hosts around da world to find da mos suitable host location fo dis server's current players.",
-		get_pings_command_substitutes = "",
-
 		-- base/points
 		points_command = "undefined",
 		points_command_help = "undefined",
@@ -1465,6 +1374,47 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		remove_twitch_ban_exception_command_parameter_server_id = "server id",
 		remove_twitch_ban_exception_command_parameter_server_id_help = "The server ID of the player you want to remove the exception from.",
 		remove_twitch_ban_exception_command_substitutes = "",
+
+		-- base/staff_pm
+		report_command = "report",
+		report_command_help = "Mesa sending message to all active staff members.",
+		report_command_parameter_message = "message",
+		report_command_parameter_message_help = "Da message yousa would like to send. A short summary of what yousa are reporting (Example: \"Mesa just got vdmed, their id was...\").",
+		report_command_substitutes = "meesa_calladmin, wallop, modreq, helpme",
+
+		claim_report_command = "claim_report",
+		claim_report_command_help = "Claim a specific report.",
+		claim_report_command_parameter_report_id = "report id",
+		claim_report_command_parameter_report_id_help = "The id of the report yousa want to claim.",
+		claim_report_command_substitutes = "claim, cr, claimreport",
+
+		staff_pm_command = "staff_pm",
+		staff_pm_command_help = "Mesa helpen senden tada either a staff member, oda to a playa as a staff member.",
+		staff_pm_command_parameter_server_id = "server id",
+		staff_pm_command_parameter_server_id_help = "Da playa's server ID yousa areen trying to mesa-jar-jar binks.",
+		staff_pm_command_parameter_message = "message",
+		staff_pm_command_parameter_message_help = "Da message yousa would liken to senden.",
+		staff_pm_command_substitutes = "staffpm, message, pm, msg, reply, replypm, reply_pm",
+
+		important_staff_pm_command = "important_staff_pm",
+		important_staff_pm_command_help = "Send an important message to a player as a staff member.",
+		important_staff_pm_command_parameter_server_id = "server id",
+		important_staff_pm_command_parameter_server_id_help = "Da playa's server ID yousa are tryin' ta message.",
+		important_staff_pm_command_parameter_message = "message",
+		important_staff_pm_command_parameter_message_help = "Da important message yousa would like ta send.",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
+
+		staff_command = "staff",
+		staff_command_help = "Broadcast a message to all active staff members.",
+		staff_command_parameter_message = "messa",
+		staff_command_parameter_message_help = "Da messa wesa grand yousa wouldsa lika send.",
+		staff_command_substitutes = "",
+
+		local_staff_command = "undefined",
+		local_staff_command_help = "undefined",
+		local_staff_command_parameter_message = "undefined",
+		local_staff_command_parameter_message_help = "undefined",
+		local_staff_command_substitutes = "undefined",
 
 		-- base/users
 		playtime_command = "playtime",
@@ -1582,11 +1532,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		play_audio_command_parameter_server_id_help = "Da player's server ID yousa want to play dis audio for. Yousa can do `-1` for all players.",
 		play_audio_command_substitutes = "",
 
-		-- game/audio_emitters
-		toggle_audio_emitters_command = "toggle_audio_emitters",
-		toggle_audio_emitters_command_help = "Toggle native audio emitters.",
-		toggle_audio_emitters_command_substitutes = "",
-
 		-- game/bandaids
 		random_bandaid_command = "Random bandaid",
 		random_bandaid_command_help = "Gives you a random bandaid. :)",
@@ -1683,17 +1628,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		buddy_pass_command = "buddy_pass",
 		buddy_pass_command_help = "Open the buddy pass UI.",
 		buddy_pass_command_substitutes = "",
-
-		-- game/cache
-		cache_assets_command = "yousa_cache_assets",
-		cache_assets_command_help = "Forcefully request and download most streamed assets (yousa vehicles, objects, and clothing). This is not recommended unless yousa have a slow connection and assets don't download fast enough on demand to be seamless. This may also cause client crashes while it's in action. (Download and install most streamed assets)",
-		cache_assets_command_parameter_slow_download = "bongo slow download",
-		cache_assets_command_parameter_slow_download_help = "Mesa suggest yous cache the assets slowly? Doing that will make it take much longer, but will also reduce the chance of crashing.",
-		cache_assets_command_substitutes = "download_cache, preload_cache, load_cache",
-
-		cache_join_toggle_command = "gucha_join_toggle",
-		cache_join_toggle_command_help = "Gucha caching of some assets automatically whenever you join por server.",
-		cache_join_toggle_command_substitutes = "",
 
 		-- game/camera
 		stable_cam_command = "stable_cam",
@@ -3735,10 +3669,14 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		ped_reverse_command = "ped_reverse",
 		ped_reverse_command_help = "Makesa da nearest ped in a vehicle reverse.",
+		ped_reverse_command_parameter_duration = "duration",
+		ped_reverse_command_parameter_duration_help = "Yiben duration o the reverse in seconds (1s - 20s, default is 4s).",
 		ped_reverse_command_substitutes = "",
 
 		ped_forwards_command = "susa noga ped",
 		ped_forwards_command_help = "Ben ka sausa noga ped ljou in vehicellie tookee.",
+		ped_forwards_command_parameter_duration = "duration",
+		ped_forwards_command_parameter_duration_help = "Yiben duration o the drive forwards in seconds (1s - 20s, default is 4s).",
 		ped_forwards_command_substitutes = "",
 
 		vehicle_flip_command = "undefined",
@@ -3787,6 +3725,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		polygon_command = "mesa",
 		polygon_command_help = "Define a 2D polygon.",
 		polygon_command_substitutes = "mesa",
+
+		box_command = "gax",
+		box_command_help = "Meesa define a 3D gax.",
+		box_command_substitutes = "",
 
 		-- global/states
 		entity_states_command = "entity_states",
@@ -3969,6 +3911,27 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		tasks_debug_command_parameter_area_id_help = "undefined",
 		tasks_debug_command_substitutes = "",
 
+		-- jobs/taxi
+		taxi_display_command = "taxi_display",
+		taxi_display_command_help = "Toggle your taxi display.",
+		taxi_display_command_substitutes = "taxidisplay, taxi",
+
+		taxi_hire_command = "ruba_gacsa",
+		taxi_hire_command_help = "Din bamba ruba_gacsa.",
+		taxi_hire_command_substitutes = "rubagacsa",
+
+		taxi_reset_command = "ruba_reset",
+		taxi_reset_command_help = "Gasa bamba ruba'd meter.",
+		taxi_reset_command_substitutes = "rubareset",
+
+		taxi_fare_command = "ruba_dinul",
+		taxi_fare_command_help = "Din bamba ruba'd dinul.",
+		taxi_fare_command_parameter_type = "cresh",
+		taxi_fare_command_parameter_type_help = "Da cresh po ruba'd dinul ye set (assistance, show, nunga, mile o minite).",
+		taxi_fare_command_parameter_amount = "cresh",
+		taxi_fare_command_parameter_amount_help = "Yousa amount mesa want to set the fare to.",
+		taxi_fare_command_substitutes = "taxifare",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "toggle_mechanic_messages",
 		toggle_mechanic_messages_command_help = "Toggles whether or not you receive mechanic messages. Meega likeen disa or not?",
@@ -4088,13 +4051,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		wheel_offset_command_parameter_value_help = "Da amount yousa would like it to be modified. This can be anywhere from -0.15 to 0.2, 0 being default.",
 		wheel_offset_command_substitutes = "",
 
-		wheel_rotation_command = "sa wheel-o-rotation",
-		wheel_rotation_command_help = "Mesa modify der wheels' rotation of a vehicle.",
-		wheel_rotation_command_parameter_wheels = "front/back",
-		wheel_rotation_command_parameter_wheels_help = "Which wheels yousa wantin to modify?",
-		wheel_rotation_command_parameter_value = "value",
-		wheel_rotation_command_parameter_value_help = "Da amount yousa wantin to modify it. Dis can be anywhere from -0.5 to 0.5, 0 bein da default.",
-		wheel_rotation_command_substitutes = "",
+		suspension_height_command = "suspension_height",
+		suspension_height_command_help = "Modify a vehicle's visual suspension height.",
+		suspension_height_command_parameter_value = "value",
+		suspension_height_command_parameter_value_help = "Yousa amount yousa would liken it to be modified. Disen can be anywheren from -0.15 to 0.1, 0 being default.",
+		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
 		oil_level_command = "undefined",
@@ -4258,6 +4219,12 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		throw_weapon_command_help = "Throwen yousa currently equipped weapon.",
 		throw_weapon_command_substitutes = "yeet, throw",
 
+		wipe_throwables_command = "wipe_throwables",
+		wipe_throwables_command_help = "Mesa help yousa wipe all thrown weapons within da specified radius.",
+		wipe_throwables_command_parameter_radius = "radius",
+		wipe_throwables_command_parameter_radius_help = "Da radius to wipe thrown weapons in (default: 5).",
+		wipe_throwables_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "ahek agabu",
 		check_ammo_command_help = "Checkin how much ammo yousa have in total.",
@@ -4344,12 +4311,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		local_firewall_blocked = "Local Firewall: Blocked ${playerName} (${licenseIdentifier})"
 	},
 
-	ping = {
-		getting_pings = "Mesa gettin' pings from alla da playas. Dissen might take a few seconds.",
-		host_data = "${position}. ${location} - ${averagePing} Average Ping (based on ${totalPings} clients), 10% Low: ${averagePingLow}, 10% High: ${averagePingHigh}",
-		list_hosts = "${listHosts}"
-	},
-
 	points = {
 		you_have_points = "undefined",
 		used_points = "undefined",
@@ -4362,11 +4323,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 	profile = {
 		profile_debug_enabled = "Mesa enable da profile debugger. Check da F8 console for output, okeeday?",
 		profile_debug_disabled = "Mesa disable da profile debugger."
-	},
-
-	proxy = {
-		proxied_via_logs_title = "Gungan Bombad",
-		proxied_via_logs_details = "${consoleName} was proxied via `${serverName}`. Yousa can see them in da logs."
 	},
 
 	restart = {
@@ -4511,6 +4467,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		ping_stable = "undefined"
 	},
 
+	vpn = {
+		vpn_not_allowed_for_new_players = "Da use of a VPN is not allowed for players with less than 24 hours of playtime."
+	},
+
 	whitelist = {
 		not_whitelisted = "Yousa no in da good list on dis server.\n\nJoin our Discord guild for information on how to apply at ${communityDiscord}"
 	},
@@ -4644,12 +4604,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		description_rat_unnamed = "Dis ${gender} rat, ${age} adventurous and weighing ${weight}, navigates da world wit razor-sharp intelligence and unexpected charm. Driven by an absolute devotion to ${food}, it turns every corner into a potential discovery, every shadow into a playground.",
 		description_rat_named = "${name}, a ${gender} opee sea killer ${age} into life's grand experiment, weighing ${weight} and bursting with personality. With an unbreakable bond to ${food}, ${name} embodies the spirit of curiosity—small in size, infinite in spirit.",
 
+		pick_up = "[${SeatEjectKey}] Pick up",
 		pick_up_named = "[${SeatEjectKey}] Pick up ${name}",
-		pick_up_cat = "[${SeatEjectKey}] Pick Up Loth-cat",
-		pick_up_dog = "[${SeatEjectKey}] Pick Up Nuna",
-		pick_up_hen = "[${SeatEjectKey}] Pick Up Aiwha",
-		pick_up_rabbit = "[${SeatEjectKey}] Pick Up Shaak",
-		pick_up_rat = "[${SeatEjectKey}] Pick Up Opee",
 
 		failed_pickup_cat = "Meesa failed to pick up the cat.",
 		failed_pickup_dog = "Meesa failed to pick up the dog.",
@@ -4996,11 +4952,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} played a audio effect for everyones. The audio effect had URL `${url}` and was set to play at volume level `${volume}`.",
 		played_audio_effect_for_player_title = "Played Audio Effect For Players",
 		played_audio_effect_for_player_details = "${consoleName} playin ah audio effect fo ${targetConsoleName}. Da audio effect had URL `${url}` and wuz set ta play at volume level `${volume}`."
-	},
-
-	audio_emitters = {
-		audio_emitters_disabled = "Yousa Audio emitters been disabled.",
-		audio_emitters_enabled = "Yousa Audio emitters been enabled."
 	},
 
 	balls = {
@@ -5401,15 +5352,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 	bus_map = {
 		bus_tracker = "undefined"
-	},
-
-	cache = {
-		download_progress = "Download Progress:\n- Vehicleesa: ${vehiclesDone}/${vehiclesTotal}\n- Objectssa: ${objectsDone}/${objectsTotal}\n- Pedsssa: ${pedsDone}/${pedsTotal}\n- Clothingsa: ${clothingRequested}/${clothingTotal}",
-		slow_download_enabled = "Slow download has been enabled. Yousa gonna wait longer!",
-		slow_download_disabled = "Slow download has been disabled. Yousa gotta need for speed!",
-
-		join_cache_disabled = "Unjoin the cache.",
-		join_cache_enable = "Join the cache."
 	},
 
 	caffeine = {
@@ -6307,6 +6249,11 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		crafting_ammo = "Blagah Ammo",
 		crafted_ammo = "Blagah ammo.",
 		failed_craft_ammo = "Failed to craft ammo.",
+
+		gift_box_bomb_recipe = "Special Gift Box",
+		crafting_gift = "Crafting Gift Box",
+		crafted_gift = "Crafted gift box.",
+		failed_craft_gift = "Meesa failed to craft gift box.",
 
 		process_weed = "undefined",
 		press_to_process_weed = "undefined",
@@ -8195,6 +8142,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		cinema = "Screening Den",
 		strip_club = "Dancing Tarpals",
 		police_store = "Police Equipment Store",
+		utility_crate = "Utility Crate",
 		fib_store = "FIB Equipment Store",
 		deputy_madison = "undefined",
 		sergeant_harris = "undefined",
@@ -8246,11 +8194,17 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		target_inventory_full = "El player's inventory is muy full.",
 		received_item = "${displayName} giveesa yousa ${amount}x ${item}.",
 
+		inspecting_item = "Inspecting Item",
+
 		inspect_weapon = "Da serial number of this ${itemName} appears to be `${itemId}`.",
 		inspect_weapon_broken = "Da serial number of this ${itemName} appears to be `${itemId}`, issa also appears to be completely broken.",
 		inspect_bank_property = "Thissa ${item} issa marked praaaperty of the ${bank} Bank.",
 		inspect_bank_property_cid = "Disa ${item} is marked property of the ${bank} Bank. It was withdrawn by account number #${characterId}.",
 		inspect_no_property = "Thissa ${item} doesnta seem to hava any praaaperty markings on it.",
+
+		gift_box_normal = "Dis gift box lookin' completely normal.",
+		gift_box_suspicious = "Dis gift box lookin' a little suspicious.",
+		gift_box_residue = "Dis gift box gots some greyish powder residue on it.",
 
 		searching_dumpster = "Mesa searchin' dumpster",
 		searching_homeless_tent = "undefined",
@@ -8625,6 +8579,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		empty_box_description = "undefined",
 		gift_box = "undefined",
 		gift_box_description = "undefined",
+		gift_box_bomb = "Gift Box",
+		gift_box_bomb_description = "Dis elegantly sealed gift box, adorned with a festive ribbon, is a beautiful way to present your carefully chosen items. Perfect for special occasions, it conveys warmth and thoughtfulness, ensuring your gesture of giving leaves a lasting impression.",
 
 		ear_defenders = "Ear-jumpas",
 		ear_defenders_description = "Used to protect yosa ears from loud noises.",
@@ -9234,6 +9190,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		pet_snowman_description = "Get frosty wit' ya very own shoulder snowman! Dis tiny, chilly companion adds a touch o' winter wonders to ya style, makin' it perfect for snowy adventures an' spreadin' frosty cheer.",
 		pet_owl = "undefined",
 		pet_owl_description = "undefined",
+		pet_pig = "Olever",
+		pet_pig_description = "A tinka piglet wesa big personality, perched happysa on your shoulder. Always ready to snort encouragement or judges your life choices with an adorable side-eye. Whether you’re adventuring or strolling, this pint-sized companion is the perfect blend of charm and sass.",
 
 		hotwheels_mcqueen = "Lightnin' McQueen",
 		hotwheels_mcqueen_description = "Speed I am Speed, Float like a Cadillac sting Like a Beemer. KATCHOW KATCHOW KATCHOW",
@@ -9549,6 +9507,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		wires = "Wires",
 		wires_description = "Hold todogether.",
 
+		microcontroller = "Microcontroller",
+		microcontroller_description = "A tinka but powerful brain for all your electronic creations, capable of bringing complex ideas to life with just a few lines of code. It’s the unsung hero of innovation, silently orchestrating the magic behind the scenes.",
+
 		note = "Note",
 		note_description = "Some note mooey.",
 
@@ -9743,6 +9704,17 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		wheel_clamp_description = "No getaway cawa hewe! The Gweeno Clamp means bombad, secuwing vehicles firmly in place and putting an end to unauthorized movement. This heavy-duty contraption is a silent enforcer, ensuring that parking rules are respected and followed.",
 		old_rug = "undefined",
 		old_rug_description = "undefined",
+
+		evidence_marker_1 = "Oola 1",
+		evidence_marker_1_description = "Da startin' point of da mystery, markin' da first clue to unravel da truth.",
+		evidence_marker_2 = "Oola 2",
+		evidence_marker_2_description = "A follow-up clue, leadin' investigators closer to da bigga picture.",
+		evidence_marker_3 = "Oola 3",
+		evidence_marker_3_description = "Da detail dat might make or break da case—don't overlook it.",
+		evidence_marker_4 = "Oola 4",
+		evidence_marker_4_description = "A critical piece of da puzzle, quietly waitin' to be noticed.",
+		evidence_marker_5 = "Marker 5",
+		evidence_marker_5_description = "Da final marker, tyin' everythin' together o' leavin' more questions dan answers.",
 
 		bandit_1 = "Bàndit 1",
 		bandit_1_description = "Yousa go-to guy for training scenarios, always ready to play da villain without complaining about da long hours or lack of script. Can be placed anywhere in da world.",
@@ -10604,6 +10576,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		invalid_invisibility_mode = "Invalid invisibleness mode. Has to be 'full' or 'normal'.",
 		invisibility_mode_full = "Meesa set invisibility mode to 'full'. Regular staff members can't see yousa.",
 		invisibility_mode_normal = "Meesa set invisibility mode to 'normal'. Regular staff members can see yousa now.",
+		current_invisibility_mode = "Current invisibility mode is set to '${mode}'.",
 
 		toggled_invisibility = "Successaden toggledade ${displayName}'s insiwibility.",
 		failed_invisibility = "Failedade tooggledade ${displayName}'s insiwibility.",
@@ -10699,6 +10672,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		logs_used_weather_spell_title = "Used Weather Spell",
 		logs_used_weather_spell_details = "${consoleName} used weather spell `${itemName}`.",
 
+		gift_box_bomb_logs_title = "Opened Explosive Gift Box",
+		gift_box_bomb_logs_details = "${consoleName} opened an explosive gift box.",
+
 		you_have_used_jail_card = "Yousa have used a 'get out of jail card'!",
 		you_are_not_in_jail = "Mesa say un jail",
 
@@ -10791,9 +10767,9 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		sentence_reduced = "Jouw zin is vermindert door ${amount} maanden, je heb nog ${remaining} maanden over.",
 		sentence_increased = "undefined",
 		sentence_over = "Jouw zin is voorbij.",
-		remaining_time_fmt = "undefined",
+		remaining_time_fmt = "${months} months (${display})",
 		remaining_time = "undefined",
-		jailed = "undefined",
+		jailed = "Yousa been jailed for ${amount} months.",
 
 		mission_help_1 = "Druk op ~INPUT_CONTEXT~ om de vloer schoon te maken.",
 		mission_help_2 = "Druk op ~INPUT_CONTEXT~ om iets te eten.",
@@ -10970,17 +10946,6 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		back = "Ohh-nay",
 		copy_license = "License ID",
 		copy_license_success = "Meesa copied it!",
-		cache_assets = "Cache Assets",
-		download_assets = "undefined",
-		cache_assets_performance = "undefined",
-		cache_assets_crashes = "undefined",
-		cache_assets_restart = "undefined",
-		cache_assets_disk = "undefined",
-		cache_assets_no_repeat = "undefined",
-		vehicles = "Wheels",
-		objects = "Gessos",
-		peds = "Binks",
-		clothing = "Zabit",
 		main_menu = "Main Menu",
 		gta_settings = "GTA Settin's",
 		discord = "Disco",
@@ -11132,8 +11097,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 	lottery = {
 		lottery_announcement = "Lottere An-nounce-ment",
-		lottery_about_to_roll = "undefined",
-		current_lottery_pot = "undefined",
+		lottery_about_to_roll = "A winner will be drawn in 5 minutes for today's lottery. Da total pot is currently at $${totalAmount} where yousa put in $${betAmount}. Yousa chance of winning is ${odds}%. Da tax is ${tax}%.",
+		current_lottery_pot = "Da total pot is currently at $${totalAmount} wesa yousa put in $${betAmount}. Yousa chance of winning is ${odds}%. Da tax is ${tax}%.",
 		drew_a_lottery_winner = "Mesa picked a winner for da lottery!",
 		winner_has_been_picked = "undefined",
 		claimed_lottery_winnings = "Claimed all lottery winnings.",
@@ -11744,6 +11709,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		hatch_claim = "CLAYM",
 		hatch_opened = "CLAYMED",
 		hatch_waiting = "POOROP",
+		hatch_too_late = "TOO LATE",
 
 		about_advent_calendar_title = "ABOUT ADVENT CALENDAR",
 
@@ -11755,7 +11721,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 			<br><br>
 			Next hatch unlocks in ${time}.
 			<br><br>
-			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 26th.)
+			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 31st.)
 			<br><br>
 			<div class="bonusPoints">
 				<div>Bonus Points: ${bonusPoints}/22</div>
@@ -13570,6 +13536,59 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		used_bug_logs_details = "undefined"
 	},
 
+	staff_pm = {
+		something_went_wrong = "Something went wrong when sending da message.",
+		reports_too_fast = "Yousa sending reports too fast, slow down.",
+		no_report_message = "Yousa must include a message with yousa report.",
+		same_report = "Yousa cannot send da same report twice.",
+		report_muted = "Yousa are muted from submitting reports for: `${reason}`.",
+		report_muted_no_reason = "Yousa muted from sending reports.",
+
+		report_title = "REPORT-${reportId} ${displayName}",
+		report_logs_title = "Report",
+		report_logs_details = "${consoleName} created report ${reportId} with the following message: `${message}`",
+
+		invalid_server_id = "Invalid target server id.",
+		no_staff_pm_message = "Yousa must include a message in your private message.",
+		user_not_staff = "The user is not a staff member.",
+		staff_pm_warning = "Staff PM Warning",
+		staff_pm_first_time = "Wesa see yousa have never used staff PMs before. To respond to a staff PM, use `/staffpm` followed by the recipients id. For ease of use yousa can use `/reply` to respond to the last staff PM yousa received.",
+
+		staff_pm_title = "BOSSA PM ${from} -> ${to}",
+		staff_pm_title_external = "EXTERNAL BOSSA PM ${from} -> ${to}",
+		close_staff_pm = "Mooey",
+		staff_pm_from = "BossaPM from <i>${from}</i>",
+		staff_pm_logs_title = "Bossa PM",
+		staff_pm_logs_details = "${senderConsoleName} sent a bossa private message to ${recipientConsoleName}: `${message}`",
+		important_staff_pm_logs_title = "Mooiee Bossa PM",
+		important_staff_pm_logs_details = "${senderConsoleName} sent an importaant bossa private message to ${recipientConsoleName}: `${message}`",
+
+		staff_toggled = "Yousa staff status is toggled off.",
+		no_staff_message = "Yousa must include a message in yousa staff chat.",
+		same_staff_message = "Yousa cannot send da same staff message twice.",
+
+		staff_message_title = "STAFF ${playerName}",
+		local_staff_message_title = "LOCAL STAFF ${playerName}",
+		staff_message_logs_title = "Staff Message",
+		staff_message_logs_details = "${consoleName} sent da followin' message in da staff chat: `${message}`",
+		local_staff_message_logs_title = "Local Staff Message",
+		local_staff_message_logs_details = "${consoleName} sent da followin' message in da local staff chat: `${message}`",
+
+		message_sent = "Message sent.",
+		cannot_send_private_message_to_yourself = "Yousa cannot send a private message to yourself.",
+		missing_valid_message_parameter = "Missing a valid 'message' parameter.",
+		missing_valid_license_identifier_parameter = "Missing a valid 'licenseIdentifier' parameter.",
+		missing_valid_target_source_parameter = "Missing a valid 'targetSource' parameter.",
+
+		invalid_report_id = "Invalid report id.",
+		report_already_claimed = "Dat report was already claimed by *${playerName}*.",
+		report_same_creator = "Yousa cannot claim yousa own reports.",
+		failed_claim_report = "Mesa failed to claim report.",
+		report_claimed = "Report **${reportId}** was claimed by *${playerName}*.",
+		claim_report_logs_title = "Claimed Report",
+		claim_report_logs_details = "${consoleName} claimed report ${reportId}."
+	},
+
 	starter_car = {
 		follow_the_checkpoints = "Yousa personal vehicle issa parked nearby, follow da checkpoints to find it.",
 
@@ -13928,6 +13947,8 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		tp_cayo = "Cayo Perico",
 
 		actions = "Acitions",
+		jail_self = "Jail Yousa",
+		unjail_self = "Unjail Yousa",
 		wander_around = "Wanderin Around",
 		speed_around = "Speedin Around",
 		clear_tasks = "Clearin Tasks",
@@ -14114,7 +14135,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		no_maps_to_combine = "Dagowa mini nakani sahjokwa.",
 
 		treasure_map_dug_up_logs_title = "Sahjoka Ya Digisa",
-		treasure_map_dug_up_logs_details = "${consoleName} sahjoka yazum pedo nenakani ${mapTier} jadinesa drop ID ${dropId}."
+		treasure_map_dug_up_logs_details = "${consoleName} sahjoka yazum pedo nenakani ${mapTier} jadinesa drop ID ${dropId}.",
+
+		treasure_map_piece_spawned_logs_title = "Treasure Map Piece Spawned",
+		treasure_map_piece_spawned_logs_details = "${consoleName} has spawned treausre map piece ${pieceNumber} of tier ${mapTier}."
 	},
 
 	tsunami = {
@@ -14335,14 +14359,24 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 	weed = {
 		strain_default = "undefined",
-		strain_lemon = "undefined",
+		strain_bubble = "Gungan Berry",
 		strain_northern = "undefined",
 		strain_kush = "undefined",
+		strain_diesel = "Yub Nub Diesel",
+		strain_ak47 = "AK-47",
+		strain_dream = "Blue Dream",
+		strain_trainwreck = "Trainwreck",
+		strain_gorilla = "Gorilla Glue",
 
 		default_emoji = "undefined",
-		lemon_emoji = "undefined",
+		bubble_emoji = "🫧",
 		northern_emoji = "undefined",
 		kush_emoji = "undefined",
+		diesel_emoji = "😌",
+		ak47_emoji = "🔫",
+		dream_emoji = "🪶",
+		trainwreck_emoji = "👊",
+		gorilla_emoji = "🦍",
 
 		strain_description = "undefined"
 	},
@@ -14392,6 +14426,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		run_as_failed = "Mesa not able to run command as ${consoleName}.",
 
 		no_nearby_vehicle = "No vula-cra nearby.",
+		invalid_duration = "Meesa sorry, duration is invalid (1s - 20s).",
 		reversing_failed = "Mesa not able to makeped reverse.",
 		driving_forwards_failed = "Mesa not able to makeped drive through.",
 		reversing_success = "Yoosah mesa succesfully made ped reverse.",
@@ -14927,7 +14962,16 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 		task_take_nap = "Take a nap.",
 		task_take_nap_near = "Press ~INPUT_DETONATE~ to take a nap.",
-		task_take_nap_active = "Taking Nap"
+		task_take_nap_active = "Taking Nap",
+
+		task_water_plants = "Water da plants, okeyday.",
+		task_water_plants_near = "Press ~INPUT_DETONATE~ to water da plants.",
+		task_water_plants_active = "Watering Gar-Wooks"
+	},
+
+	taxi = {
+		help_text = "`initial` is da basic starting fare (default: $10), `mile` is da rate per mile driven (default: $5), `minute` is da rate per minute while da meter is on (default: $15), `show` will display your current settings.",
+		invalid_typ = "Yousa typen is invalid."
 	},
 
 	tow = {
@@ -15287,8 +15331,10 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 		wheels_modified = "Da wheels been modified.",
 		wheels_none_specified = "Yousa no wheels specified.",
 		wheels_none_valid_specified = "No valid wheels specified.",
-		not_in_a_car = "Yousa not in a car.",
-		invalid_value = "Invalid value."
+		not_in_a_car = "Yousa noten drivin a car.",
+		invalid_value = "Invalid value.",
+		suspension_height = "Current suspension height is setten to ${height}.",
+		suspension_height_set = "Da suspension height has been setten to ${height}."
 	},
 
 	oil = {
@@ -15496,6 +15542,7 @@ OP.Global.Locales.Languages["meme-gungan"] = {
 
 	throwables = {
 		pick_up_weapon = "[${InteractionKey}] Pick Up",
+		throwables_wiped = "Wiped ${amount} throwables.",
 
 		no_weapon_equipped = "Yousa don't haven a weapon equipped.",
 		cant_throw_weapon = "Yousa can't throw disa weapon.",

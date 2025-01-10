@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 35 (do not change)
+-- AUTO LOCALES: 36 (do not change)
 
 OP.Global.Locales.Languages["ne-NP"] = {
 	-- configuration settings for language
@@ -202,10 +202,6 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		spawned_item_for_everyone_title = "सबै लागि उत्पन्न भएको वस्तु",
 		spawned_item_for_everyone_details = "${consoleName} सबैको लागि ${itemName}को ${amount} बाटा खिलाइएको छन्।",
 
-		report_title = "रिपोर्ट-${reportId} ${reporterName}",
-		report_logs_title = "रिपोर्ट",
-		report_logs_details = "${consoleName} ने रिपोर्ट ${reportId} बनायो, जसमा यो सन्देश थियो: `${reportMessage}`",
-
 		announcement_staff_title = "कर्मचारी सूचना",
 		announcement_server_title = "सर्भर सूचना",
 
@@ -220,47 +216,11 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		failed_to_post_announcement = "सन्देश थपिएको छैन भनेर घोषणा सन्देश पठाउन सकिएन।",
 		failed_to_post_announcement_locale = "घोषणा सन्देशमा थपिएको स्थानिय भाषा समर्थित छैन भनेर घोषणा सन्देश पठाउन सकिएन।",
 
-		staff_title = "स्टाफ ${staffName}",
-		staff_message_logs_title = "स्टाफ सन्देशहरु",
-		staff_message_logs_details = "${consoleName} ने स्टाफ चैट में निम्नलिखित संदेश भेजा: `${staffMessage}`",
-		local_staff_title = "स्थानिय कर्मचारी ${staffName}",
-		local_staff_message_logs_title = "स्थानिय कर्मचारी संदेश लग्स",
-		local_staff_message_logs_details = "${consoleName}ले स्थानिय कर्मचारी च्याटमा निम्नलिखित सन्देश पठायो: `${staffMessage}`",
-
-		staff_pm_title = "स्टाफ पीएम ${transmissionTitle}",
-		staff_pm_logs_title = "स्टाफ पीएम",
-		staff_pm_logs_details = "${senderConsoleName} ने ${recipientConsoleName} को निम्नलिखित संदेश भेजा: `${staffPrivateMessage}`",
-		staff_pm_not_logged_in = "आप लॉग इन नहीं हैं।",
-		staff_pm_not_user_not_found = "सर्वर आईडी ${serverId} के साथ उपयोगकर्ता नहीं मिला।",
-		staff_pm_not_recipient_not_staff = "तपाईं संदेश पठाउन चाहनु भएको खेलाडी एक कर्मचारी होइन।",
-		staff_pm_unable_to_message_self = "तपाईं स्वयंलाई संदेश पठाउन सक्नुहुन्न।",
-		staff_pm_warning = "कार्यकर्ता पीएम चेतावनी",
-		staff_pm_first_time = "हामी देख्छौं कि तपाईंले स्टाफ पीएम पहिलो पटक प्रयोग गर्नुभएको छैन। स्टाफ पीएममा प्रतिकृया दिनका लागि, प्राप्तकर्ताको आईडी पछाडि `/staffpm` प्रयोग गर्नुहोस्। सजिलै प्रयोग गर्नका लागि, तपाईं `/reply` प्रयोग गर्न सक्नुहुनेछ जसले तपाईंले सोधिएको अन्तिम स्टाफ पीएममा प्रतिकृया दिनेछ।",
-		reply_pm_not_found = "प्रतिकृया दिने स्टाफ संदेश भेटिएन।",
-
-		important_staff_pm_title = "!कर्मचारी PM तपाईं -> ${recipient}",
-		close_staffpm = "बन्द गर्नुहोस्",
-		staffpm_from = "<i>${from}</i> बाट कर्मचारी PM",
-		important_staff_pm_logs_title = "महत्वपूर्ण कर्मचारी PM",
-		important_staff_pm_logs_details = "${senderConsoleName} ले ${recipientConsoleName} संग निम्नलिखित महत्वपूर्ण सन्देश पठाए: `${message}`",
-
-		external_staff_message = "बाह्य कार्यकर्ता संदेश",
-		external_staff_message_from_player = "${playerName}बाट बाह्य कार्यकर्ता संदेश",
-		external_staff_message_content = "${staffMessage} (तपाईं यस संदेशको जवाफ दिन सक्नुहुन्न।)",
-
-		unable_to_staff_message_yourself = "आफ्नो संदेश पठाउन सकिएन।",
-		message_sent = "संदेश पठाइयो।",
-		player_not_found = "खेलाडी भेटिएन।",
-		missing_valid_target_source_parameter = "मान्य 'टार्गेट स्रोत' पैरामिटर नभएको।",
-		missing_valid_message_parameter = "मान्य 'संदेश' पैरामिटर नभएको।",
-
 		invalid_coordinates = "अमान्य x, y, z वा w निर्देशांक पेश गरिएको।",
 		player_not_loaded_character = "खेलाडीले कुनै किर्तिमान लोड गरेको छैन।",
 		teleport_successful = "खेलाडीलाई सफलतापूर्वक टेलिपोर्ट गरियो।",
 
 		player_revived_success = "सफलतापूर्वक खेलाडीलाई जीवित गरिएको।",
-
-		missing_valid_license_identifier_parameter = " मान्य 'licenseIdentifier' विवरण पारित गर्नुपर्छ।",
 
 		wipe_broken = "broken - टुक्राएको/फ्रेगमेन्टेड वस्तुहरू",
 		wipe_npcs = "npcs - एनपीसीहरू र तिनीहरूका गाडीहरू।",
@@ -376,12 +336,6 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 		report_muted_no_reason = "कुनै निर्दिष्ट कारण नबोली साथ आफूलाई रिपोर्ट कमानबाट म्युट गरिएको छ।",
 		report_muted = "रिपोर्ट कमानबाट तपाईंलाई `${reason}` कारणले म्युट गरिएको छ।",
-
-		already_sending_report = "तपाईं पहिले नै एउटा रिपोर्ट पठाउँदै छन्। कृपया पर्खनुहोस्।",
-		unable_to_send_identical_report = "तपाईं पहिले भएको प्रतिवेदनलाई दोहोर्याई नभएसम्म पठाउन सक्नुहुन्न।",
-
-		already_sending_staff_message = "तपाईं स्टाफ सन्देश पठाउँदै छ्नुहुन्छ। कृपया पर्खनुहोस्।",
-		unable_to_send_identical_staff_message = "तपाईं ३० सेकेन्ड भित्र दुई एक जसो स्टाफ सन्देश पठाउन सक्नुहुन्न।",
 
 		population_density_set_to = "जनसङ्ख्या घनत्व बहुलक ओभरराइड ${multiplierLabel }% मा सेट गरिएको छ।",
 		population_density_set_off = "जनसङ्ख्या घनत्व मल्टीप्लायर ओभराइड बन्द गरिएको छ।",
@@ -881,51 +835,11 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		marathon_command_substitutes = "",
 
 		-- base/admin
-		report_command = "रिपोर्ट",
-		report_command_help = "सक्रिय स्टाफ सदस्यहरूमा सन्देश पठाउनुहोस्।",
-		report_command_parameter_message = "सन्देश",
-		report_command_parameter_message_help = "차량을 저장하기 전에 수리할 것인지 여부입니다.",
-		report_command_substitutes = "Enten nettverks-ID-en til personen, nettverks-ID-en til kjøretøyet (som personen kjører), eller la det stå tomt for å velge sjåføren av nåværende kjøretøy.",
-
 		announce_command = "सूचना",
 		announce_command_help = "सबै खिलाडीहरूमा एक सूचना प्रसारण गर्नुहोस्।",
 		announce_command_parameter_message = "सन्देश",
 		announce_command_parameter_message_help = "तपाईं प्रसारण गर्न चाहनुभएको सन्देश।",
 		announce_command_substitutes = "",
-
-		staff_pm_command = "स्टाफ_पीएम",
-		staff_pm_command_help = "कोई संचालक सदस्य या खिलाड़ी को संदेश भेजें।",
-		staff_pm_command_parameter_server_id = "सर्वर आईडी",
-		staff_pm_command_parameter_server_id_help = "आप संदेश भेजने की कोशिश कर रहे हैं उस खिलाड़ी का सर्वर ID।",
-		staff_pm_command_parameter_message = "संदेश",
-		staff_pm_command_parameter_message_help = "आप जो संदेश भेजना चाहते हैं।",
-		staff_pm_command_substitutes = "स्टाफपीएम, संदेश, पीएम, म्सग",
-
-		important_staff_pm_command = "महत्वपूर्ण कर्मचारी PM",
-		important_staff_pm_command_help = "स्टाफ सदस्यको रुपमा एक प्लेयरलाई महत्वपूर्ण सन्देश पठाउनुहोस्।",
-		important_staff_pm_command_parameter_server_id = "सर्भर ID",
-		important_staff_pm_command_parameter_server_id_help = "तपाईं सन्देश पठाउन चाहानु भएको खेलाडीको सर्भर आईडी।",
-		important_staff_pm_command_parameter_message = "सन्देश",
-		important_staff_pm_command_parameter_message_help = "तपाईंले पठाउन चाहानु भएको महत्त्वपूर्ण सन्देश।",
-		important_staff_pm_command_substitutes = "!स्टाफपीएम, !स्टाफ_पीएम, !पीएम",
-
-		reply_pm_command = "उत्तर_प्राइभेट_मेसेज",
-		reply_pm_command_help = "तपाईंले पटक सन्देश प्राप्त गर्नुभएको अन्तिम कर्मचारी सन्देशमा उत्तर दिनुहोस्।",
-		reply_pm_command_parameter_message = "सन्देश",
-		reply_pm_command_parameter_message_help = "तपाईंले पठाउन चाहानु भएको सन्देश।",
-		reply_pm_command_substitutes = "reply",
-
-		staff_command = "staff",
-		staff_command_help = "सभी सक्रिय स्टाफ सदस्यों को एक संदेश भेजें।",
-		staff_command_parameter_message = "सन्देश",
-		staff_command_parameter_message_help = "तपाईंले पठाउन चाहानुभएको सन्देश।",
-		staff_command_substitutes = "",
-
-		local_staff_command = "local_staff",
-		local_staff_command_help = "सबै सक्रिय कर्मचारीहरूमा संदेश प्रसारण गर्नुहोस् जसले 25m रेडियसको भित्तियोमा रहेका छन्।",
-		local_staff_command_parameter_message = "सन्देश",
-		local_staff_command_parameter_message_help = "तपाईंले पठाउन चाहानुभएको सन्देश।",
-		local_staff_command_substitutes = "lstaff",
 
 		wipe_command = "धुलो",
 		wipe_command_help = "नकारात्मक इकाइहरूलाई नकाल गर्नुहोस्।",
@@ -1437,11 +1351,6 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		emojis_refresh_command_help = "उपलब्ध इमोजीहरूलाई ताजा गर्नुहोस्। यो डिस्कोर्ड गिल्डबाट नविकरण गर्नेछ।",
 		emojis_refresh_command_substitutes = "",
 
-		-- base/ping
-		get_pings_command = "फल्ट_प्राप्त_गर्नुहोस्",
-		get_pings_command_help = "दुनियाभरका विभिन्न होस्टहरूमा सामान्य पिङ्ग प्राप्त गर्नुहोस् र यो सर्भरका वर्तमान खेलाडीहरुका लागि सबैभन्दा उपयुक्त होस्ट स्थान खोज्नुहोस्।",
-		get_pings_command_substitutes = "",
-
 		-- base/points
 		points_command = "points",
 		points_command_help = "तपाईंको छ ओपी प्वाइन्टको मात्रा देखाउँछ।",
@@ -1465,6 +1374,47 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		remove_twitch_ban_exception_command_parameter_server_id = "Failed to automatically generate translation.",
 		remove_twitch_ban_exception_command_parameter_server_id_help = "Failed to automatically generate translation.",
 		remove_twitch_ban_exception_command_substitutes = "",
+
+		-- base/staff_pm
+		report_command = "रिपोर्ट",
+		report_command_help = "सक्रिय स्टाफ सदस्यहरूमा सन्देश पठाउनुहोस्।",
+		report_command_parameter_message = "सन्देश",
+		report_command_parameter_message_help = "차량을 저장하기 전에 수리할 것인지 여부입니다.",
+		report_command_substitutes = "कॉलएडमिन, वॉलप, मॉडरेक्यु, हेल्पमी",
+
+		claim_report_command = "क्लेम_रिपोर्ट",
+		claim_report_command_help = "निश्चित रिपोर्ट क्लेम गर्नुहोस्।",
+		claim_report_command_parameter_report_id = "रिपोर्ट आइडी",
+		claim_report_command_parameter_report_id_help = "तपाईंले क्लेम गर्न चाहनु भएको रिपोर्टको आइडी।",
+		claim_report_command_substitutes = "क्लेम, सीआर, क्लेमरिपोर्ट",
+
+		staff_pm_command = "स्टाफ_पीएम",
+		staff_pm_command_help = "कोई संचालक सदस्य या खिलाड़ी को संदेश भेजें।",
+		staff_pm_command_parameter_server_id = "सर्वर आईडी",
+		staff_pm_command_parameter_server_id_help = "आप संदेश भेजने की कोशिश कर रहे हैं उस खिलाड़ी का सर्वर ID।",
+		staff_pm_command_parameter_message = "संदेश",
+		staff_pm_command_parameter_message_help = "आप जो संदेश भेजना चाहते हैं।",
+		staff_pm_command_substitutes = "स्टाफपीएम, संदेश, पीएम, मेसेज, जवाफ, उत्तरपीएम, उत्तर_पीएम",
+
+		important_staff_pm_command = "महत्वपूर्ण कर्मचारी PM",
+		important_staff_pm_command_help = "स्टाफ सदस्यको रुपमा एक प्लेयरलाई महत्वपूर्ण सन्देश पठाउनुहोस्।",
+		important_staff_pm_command_parameter_server_id = "सर्भर ID",
+		important_staff_pm_command_parameter_server_id_help = "तपाईं सन्देश पठाउन चाहानु भएको खेलाडीको सर्भर आईडी।",
+		important_staff_pm_command_parameter_message = "सन्देश",
+		important_staff_pm_command_parameter_message_help = "तपाईंले पठाउन चाहानु भएको महत्त्वपूर्ण सन्देश।",
+		important_staff_pm_command_substitutes = "!स्टाफपीएम, !स्टाफ_पीएम, !पीएम",
+
+		staff_command = "staff",
+		staff_command_help = "सभी सक्रिय स्टाफ सदस्यों को एक संदेश भेजें।",
+		staff_command_parameter_message = "सन्देश",
+		staff_command_parameter_message_help = "तपाईंले पठाउन चाहानुभएको सन्देश।",
+		staff_command_substitutes = "",
+
+		local_staff_command = "local_staff",
+		local_staff_command_help = "सबै सक्रिय कर्मचारीहरूमा संदेश प्रसारण गर्नुहोस् जसले 25m रेडियसको भित्तियोमा रहेका छन्।",
+		local_staff_command_parameter_message = "सन्देश",
+		local_staff_command_parameter_message_help = "तपाईंले पठाउन चाहानुभएको सन्देश।",
+		local_staff_command_substitutes = "lstaff",
 
 		-- base/users
 		playtime_command = "प्लेटाइम",
@@ -1582,11 +1532,6 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		play_audio_command_parameter_server_id_help = "तपाईं यो अडिओ बजाउन चाहानु भएको खेलाडीको सर्भर आईडी। तपाइँ सबै खेलाडीहरूको लागि `-1` गर्न सक्नुहुन्छ।",
 		play_audio_command_substitutes = "",
 
-		-- game/audio_emitters
-		toggle_audio_emitters_command = "toggle_audio_emitters",
-		toggle_audio_emitters_command_help = "स्थानीय ऑडियो इमिटरहरूलाई टगल गर्नुहोस्।",
-		toggle_audio_emitters_command_substitutes = "",
-
 		-- game/bandaids
 		random_bandaid_command = "क्रमिक बैंडएड",
 		random_bandaid_command_help = "एक यादृच्छिक बैण्डएड प्रदान गर्दछ। :)",
@@ -1683,17 +1628,6 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		buddy_pass_command = "बडी पास",
 		buddy_pass_command_help = "बडी पास यूआई खोल्नुहोस्।",
 		buddy_pass_command_substitutes = "",
-
-		-- game/cache
-		cache_assets_command = "एसेट क्यास गर्नुहोस्",
-		cache_assets_command_help = "नजिकैको ऑब्जेक्ट, वाहन र कपडाको विवरण खालीबाट अन्तःयनमा रहनु आवश्यक नभएमा यो बलियो अनुरोध गर्दछ (अनिवार्य छैन।)। यसले ग्राहकको क्र्यास गर्ने समय बढ़ाउन सक्छ र यो साथै क्यास ऐक्य असेटहरू कोड लोड गर्न सक्छ। यसले ग्राहक चलाउँदा क्षति हुन सक्छ र तपाईंले कुनै पनि गलती गरेर तपाईंको मूल्य सक्षम्ताको परिकल्पना गर्नु हुन सक्छ।",
-		cache_assets_command_parameter_slow_download = "धीमिलो डाउनलोड",
-		cache_assets_command_parameter_slow_download_help = "के तपाईं एसेटहरू स्लो रुपमा क्यास गर्न चाहनुहुन्छ? यसले काफी लामो समय लिन्छ, तर क्र्याश भएको चान्स पनि कम गर्दछ।",
-		cache_assets_command_substitutes = "download_cache, preload_cache, load_cache",
-
-		cache_join_toggle_command = "cache_join_toggle",
-		cache_join_toggle_command_help = "सर्भरमा जोडिनु अघिल्लोकै केहि संपत्तिहरूको कैशिङ्ग सक्रिय/निष्क्रिय गर्नुहोस्।",
-		cache_join_toggle_command_substitutes = "",
 
 		-- game/camera
 		stable_cam_command = "स्थिर क्याम",
@@ -3735,10 +3669,14 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 		ped_reverse_command = "ped_reverse",
 		ped_reverse_command_help = "गाडीमा हुने नजिकको पेडलाई पछाडि जाने गर्दछ।",
+		ped_reverse_command_parameter_duration = "अवधि",
+		ped_reverse_command_parameter_duration_help = "पालोमा उल्टी गर्ने समयकाल (1 सेकेण्ड - 20 सेकेण्ड, पूर्वनिर्धारित 4 सेकेण्ड)।",
 		ped_reverse_command_substitutes = "",
 
 		ped_forwards_command = "ped_forwards",
 		ped_forwards_command_help = "गाडीमा निकटतम पेडलाई अगाडि ड्राइभ गर्दछ।",
+		ped_forwards_command_parameter_duration = "समय",
+		ped_forwards_command_parameter_duration_help = "अगाडि राख्ने समयकाल (1 सेकेण्ड - 20 सेकेण्ड, पूर्वनिर्धारित 4 सेकेण्ड)।",
 		ped_forwards_command_substitutes = "",
 
 		vehicle_flip_command = "गाडी फ्लिप",
@@ -3787,6 +3725,10 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		polygon_command = "Failed to automatically generate translation.",
 		polygon_command_help = "२डी बहुभुज परिभाषित गर्नुहोस्।",
 		polygon_command_substitutes = "Failed to automatically generate translation.",
+
+		box_command = "बक्स",
+		box_command_help = "3डी बक्स परिभाषित गर्नुहोस्।",
+		box_command_substitutes = "",
 
 		-- global/states
 		entity_states_command = "entity_states",
@@ -3969,6 +3911,27 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		tasks_debug_command_parameter_area_id_help = "तपाईंले डिबग गर्न चाहानु भएको कामको क्षेत्र आईडी। सबै क्षेत्रहरू प्रिन्ट गर्न खाली राख्नुहोस्।",
 		tasks_debug_command_substitutes = "",
 
+		-- jobs/taxi
+		taxi_display_command = "ट्याक्सी_डिस्प्ले",
+		taxi_display_command_help = "तपाईंको ट्याक्सी डिस्प्ले टगल गर्नुहोस्।",
+		taxi_display_command_substitutes = "taxidisplay, taxi",
+
+		taxi_hire_command = "ट्याक्सी_हायर",
+		taxi_hire_command_help = "आफ्नो ट्याक्सी हायर टगल गर्नुहोस्।",
+		taxi_hire_command_substitutes = "ट्याक्सीहायर",
+
+		taxi_reset_command = "ट्याक्सी_रिसेट",
+		taxi_reset_command_help = "आफ्नो ट्याक्सी मिटर रिसेट गर्नुहोस्।",
+		taxi_reset_command_substitutes = "ट्याक्सीरिसेट",
+
+		taxi_fare_command = "ट्याक्सी_भाडा",
+		taxi_fare_command_help = "आफ्नो ट्याक्सी भाडा सेट गर्नुहोस्।",
+		taxi_fare_command_parameter_type = "रकम",
+		taxi_fare_command_parameter_type_help = "जुन भाडा तपाइँले सेट गर्न चाहानुहुन्छ (सहायता, देखा, प्राथमिक, माइल वा मिनेट)।",
+		taxi_fare_command_parameter_amount = "रकम",
+		taxi_fare_command_parameter_amount_help = "निर्धारित भाडाको मात्रा।",
+		taxi_fare_command_substitutes = "ट्याक्सीभाडा",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "toggle_mechanic_messages",
 		toggle_mechanic_messages_command_help = "यो टगल गर्नुहोस् कि तपाईंलाई कुलारपुर्ण सन्देशहरू प्राप्त हुनछ वा हुँदैन।",
@@ -4088,13 +4051,11 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		wheel_offset_command_parameter_value_help = "तपाईंले यसलाई सम्पादन गर्न चाहनुभएको मात्रै मात्रै रकम। यो -0.15 देखि 0.2 सम्म कहि पनि हुन सक्छ, 0 पूर्वनिर्धारित हो।",
 		wheel_offset_command_substitutes = "",
 
-		wheel_rotation_command = "चाकाहरुको_घुमाउने",
-		wheel_rotation_command_help = "एक गाडीको व्हीलहरुको घुमाउन कसरी बदल्ने.",
-		wheel_rotation_command_parameter_wheels = "फ्रन्ट/ब्याक",
-		wheel_rotation_command_parameter_wheels_help = "तपाईं कस्ता चाकाहरूलाई बदल्न चाहनुहुन्छ?",
-		wheel_rotation_command_parameter_value = "मान",
-		wheel_rotation_command_parameter_value_help = "तपाईं जुन परिमाणमा मोडिफाई गर्न चाहनुहुन्छ त्यो  -0.5 देखि 0.5 सम्म हुन सक्छ सामान्य अवस्थामा 0 हुन्छ.",
-		wheel_rotation_command_substitutes = "",
+		suspension_height_command = "सस्पेन्शन_उचाई",
+		suspension_height_command_help = "एक गाडीको दृश्य सस्पेन्शन उचाई परिसद्ध गर्नुहोस्।",
+		suspension_height_command_parameter_value = "मान",
+		suspension_height_command_parameter_value_help = "तपाईंले यसलाई परिवर्तन गर्न चाहनुहुन्छ। यो -0.15 देखि 0.1 सम्म हुन सक्छ, जसले डिफल्ट 0 हो।",
+		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
 		oil_level_command = "oil_level",
@@ -4258,6 +4219,12 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		throw_weapon_command_help = "तपाईंले हालको व्यवस्थित वापर दिएको हतियार फेक्नुहोस्।",
 		throw_weapon_command_substitutes = "यित, फेक्नु",
 
+		wipe_throwables_command = "wipe_throwables",
+		wipe_throwables_command_help = "निर्दिष्ट त्रिजट भित्र फाल्ने ठाउँमा सबै फेकिएका हथियारहरू हटाउँदछ।",
+		wipe_throwables_command_parameter_radius = "रेडियस",
+		wipe_throwables_command_parameter_radius_help = "फेकिएका हथियारहरू हटाउने रेडियस (पूर्वनिर्धारित: ५)।",
+		wipe_throwables_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "check_ammo",
 		check_ammo_command_help = "कति सारी गोलीहरू छ तपाइँको हेर्नुस",
@@ -4344,12 +4311,6 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		local_firewall_blocked = "स्थानीय फायरवाल: ${playerName} (${licenseIdentifier}) लाई ब्लक गरियो।"
 	},
 
-	ping = {
-		getting_pings = "सबै खेलाडीहरुबाट पिंगहरु प्राप्त गर्दै। यो केहि सेकेन्ड लाग्न सक्छ।",
-		host_data = "${position}. ${location} - ${totalPings} ग्राहकहरू आधारित ${averagePing} औसत पिंग, 10% कम: ${averagePingLow}, 10% उच्च: ${averagePingHigh}",
-		list_hosts = "${listHosts}"
-	},
-
 	points = {
 		you_have_points = "तपाईंको ${frameworkPoints} ओपी पोइन्ट(हरू) छन्।",
 		used_points = "${label} खाताको तहत ${amount} ओपी पोइन्ट(हरू) प्रयोग गरियो।",
@@ -4362,11 +4323,6 @@ OP.Global.Locales.Languages["ne-NP"] = {
 	profile = {
 		profile_debug_enabled = "प्रोफाइल डिबगर सक्षम गरिएको छ। F8 कन्सोललाई उत्पादनको लागि जाँच गर्नुहोस्।",
 		profile_debug_disabled = "प्रोफाइल डिबगर अक्षम गरिएको छ।"
-	},
-
-	proxy = {
-		proxied_via_logs_title = "प्रोक्सीदा संचार गरिएको",
-		proxied_via_logs_details = "${consoleName} लाई `${serverName}` मार्फत प्रोक्सीदा संचार गरियो।"
 	},
 
 	restart = {
@@ -4511,6 +4467,10 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		ping_stable = "तपाईंको पिङ अब पुनः स्थिर भयो।"
 	},
 
+	vpn = {
+		vpn_not_allowed_for_new_players = "न्यू क्वायरीहरूका लागि VPN को उपयोग अनुमति छैन जसमा २४ घण्टा भन्दा कम समय भएका खेलाडीहरू संगै।"
+	},
+
 	whitelist = {
 		not_whitelisted = "तपाईंलाई यस सर्भरमा व्हाइटलिस्टमा राखिएको छैन।\n\nअनुप्रयोग दिने अनुगमनमा जानकारीको लागि हाम्रो Discord गिल्डमा सामेल हुनुहोस्: ${communityDiscord}"
 	},
@@ -4644,12 +4604,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		description_rat_unnamed = "यो ${gender} चुहा, ${age} साहसिक र ${weight} तोलको, चाकु धारा बुद्धिमत्तासँग र अनपेक्षित कर्मशीलतासँग संसारमा भ्रमण गर्दछ। यो ${food} मा पूर्ण समर्पण लागि प्रेरित भएर, यो प्रत्येक कोनालाई संभावनाको खोजीमा, प्रत्येक छायामा एउटा मनोरञ्जन बनाउँछ।",
 		description_rat_named = "${name}, एक ${gender} चुहाँ ${age}, जीवनको महान प्रयोगमा समाहित, जन्मेको ${weight} तलको र व्यक्तित्वले भरपुर भएको। ${food} सँग सडक तोड्ने बंधन भए पनि, ${name} जिज्ञासाको आत्मा अभिव्यक्त गर्दछ—आकारमा सानो, आत्मा अनन्त।",
 
+		pick_up = "[${SeatEjectKey}] उठाउनुहोस्",
 		pick_up_named = "[${SeatEjectKey}] ${name} उठाउनुहोस्",
-		pick_up_cat = "[${SeatEjectKey}] बिरालो उठाउनुहोस्",
-		pick_up_dog = "[${SeatEjectKey}] कुकुर उठाउनुहोस्",
-		pick_up_hen = "[${SeatEjectKey}] कुखुरा उठाउनुहोस्",
-		pick_up_rabbit = "[${SeatEjectKey}] खरायो उठाउनुहोस्",
-		pick_up_rat = "[${SeatEjectKey}] चुहाँ उठाउनुहोस्",
 
 		failed_pickup_cat = "बिरालो उठाउन असफल भयो।",
 		failed_pickup_dog = "कुकुर उठाउन असफल भयो।",
@@ -4996,11 +4952,6 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} ने हरेेकको लागि एउटा आडियो प्रभाव खेल्‍यो। यो आडियो प्रभाव URL `${url}` मा थियो र यो `${volume}` भोल्‍युममा खेल्‍यो।",
 		played_audio_effect_for_player_title = "खिलाडीको लागि आडियो प्रभाव खेल्‍यो",
 		played_audio_effect_for_player_details = "${consoleName} ले ${targetConsoleName} को लागि एउटा आडियो प्रभाव खेल्‍यो। यो आडियो प्रभाव URL `${url}` मा थियो र यो `${volume}` भोल्‍युममा खेल्‍यो।"
-	},
-
-	audio_emitters = {
-		audio_emitters_disabled = "ध्वनि उत्सर्जकहरू अक्षम गरिएको छ।",
-		audio_emitters_enabled = "ध्वनि उत्सर्जकहरू सक्षम गरिएको छ।"
 	},
 
 	balls = {
@@ -5401,15 +5352,6 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 	bus_map = {
 		bus_tracker = "बस"
-	},
-
-	cache = {
-		download_progress = "डाउनलोड प्रगति:\n- गाडीहरु: ${vehiclesDone}/${vehiclesTotal}\n- वस्तुहरु: ${objectsDone}/${objectsTotal}\n- मानिसहरु: ${pedsDone}/${pedsTotal}\n- वस्त्रहरु: ${clothingRequested}/${clothingTotal}",
-		slow_download_enabled = "धीमै डाउनलोड सक्रिय गरिएको छ।",
-		slow_download_disabled = "धीमै डाउनलोड असक्रिय गरिएको छ।",
-
-		join_cache_disabled = "योगदान क्यास अक्षम गरियो।",
-		join_cache_enable = "योगदान क्यास सक्षम गरियो।"
 	},
 
 	caffeine = {
@@ -6307,6 +6249,11 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		crafting_ammo = "एम्मो बनाउँदै",
 		crafted_ammo = "एम्मो बनाईयो।",
 		failed_craft_ammo = "गोल्ला तयार गर्न असफल भयो।",
+
+		gift_box_bomb_recipe = "खास उपहार बक्सा",
+		crafting_gift = "क्राफ्टिंग उपहार बक्सा",
+		crafted_gift = "क्राफ्ट गरिएको उपहार बक्सा।",
+		failed_craft_gift = "उपहार बक्सा निर्माण गर्नमा असफल भयो।",
 
 		process_weed = "गाँजा प्रसंस्करण गर्नुहोस्",
 		press_to_process_weed = "[${SeatEjectKey}] गाँजा प्रसंस्करण गर्नुहोस्",
@@ -8195,6 +8142,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		cinema = "सिनेमा",
 		strip_club = "स्ट्रिप क्लब",
 		police_store = "पुलिस स्टोर",
+		utility_crate = "उपयोगी बाकस",
 		fib_store = "एफआईबी स्टोर",
 		deputy_madison = "उप प्रधानाध्यापक म्याडिसन",
 		sergeant_harris = "सार्जेन्ट हैरिस",
@@ -8246,11 +8194,17 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		target_inventory_full = "Il numero di serie sembra essere cancellato o graffiato.",
 		received_item = "${consoleName} 님이 ${inputs}을(를) 사용하여 ${amount}개의 ${output}을(를) 제작했습니다.",
 
+		inspecting_item = "वस्तु जाँच गर्दै",
+
 		inspect_weapon = "यो ${itemName}को सिरियल नम्बर `${itemId}` हो।",
 		inspect_weapon_broken = "यो ${itemName}को सिरियल नम्बर `${itemId}` हो र यो पूर्ण स्पष्ट तोड़ भएको छ।",
 		inspect_bank_property = "녹슨 칼",
 		inspect_bank_property_cid = "यो ${item} ले ${bank} बैंकको संपत्ति मार्क गरिएको छ। यसलाई विवरण अनुसार निकालिएको छ अकाउण्ट नम्बर #${characterId} ।",
 		inspect_no_property = "지갑",
+
+		gift_box_normal = "यो उपहार बक्स सम्पूर्ण शान्त देखिन्छ।",
+		gift_box_suspicious = "यो उपहार बक्स केही संदेश्वरी देखिन्छ।",
+		gift_box_residue = "यस गिफ्ट बक्स मा केही स्लाइट पाउडर कोट छ।",
 
 		searching_dumpster = "डम्पस्टर खोजी",
 		searching_homeless_tent = "भिक्षुक तिबार खोजी गर्दै",
@@ -8625,6 +8579,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		empty_box_description = "एक पर्याप्त, मजबूत बक्सासँग सुरु गर्नुहोस् र व्यक्तिगत उपहार बनाउनको लागि पुर्निर्माण गर्नुहोस्। यसलाई अवैध वस्तुहरूले भरिएर, यो विचारपूर्ण प्रेजेन्टमा परिवर्तन गर्न सजिलो बनाउन सकिन्छ। प्रेमको प्रतिनिधान गर्न उपयुक्त हो, केवल स्थायी भण्डारमा सबै कुराहरू भर्नका लागि, जस्तै विचारधारा र हत्यारहरू छोडेर।",
 		gift_box = "उपहार बक्स",
 		gift_box_description = "यो शानदार ढकिएको उपहार बक्स, पर्वीय पट्टीले सजिएको, तपाईंको सावधानी गरेर चयन गरिएका वस्तुहरू प्रस्तुत गर्नको लागि एक सुन्दर तरिका हो। विशेष अवसरको लागि सहकारी, यो तापन र मनोबौद्धिलाई संवेदनशीलताका रूपमा प्रकट गर्दछ, यि उपहारको भित्रको उपहार जस्तै, तपाईंको उडाउने अंश उपहार भइरहेको हो।",
+		gift_box_bomb = "उपहार बक्स",
+		gift_box_bomb_description = "यो भव्यताप्रण शील उपहार बक्स, मनोरंजनिक रिबनले सजिएको, तपाईको सावधानी र थाह ध्यानलाई प्रस्तुत गर्नको लागि एक सुन्दर तरीका हो। विशेष अवस्थाका लागि सहयोग, यो गर्माहवा र सोच हरितुलीयता सुनिश्चित गर्दछ, जसले तपाईंलाई दिने प्रस्तावलाई एक स्थायी प्रभाव छोड्ने आस गर्दछ।",
 
 		ear_defenders = "ईयर डिफेंडर",
 		ear_defenders_description = "जोरदार आवाज से अपने कानों की सुरक्षा के लिए इस्तेमाल किये जाते हैं।",
@@ -9234,6 +9190,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		pet_snowman_description = "차량보관",
 		pet_owl = "हूटी",
 		pet_owl_description = "हूटी, तपाइको बुद्धिमान र सावधानीपूर्ण साथी, तपाइको कन्धामा लण्ड्नुहुन्छ। यसको तीव्र आँखाहरू र मृत्यु स्पर्श गर्ने शैलीको सजिलो पंखहरूसँग, यो मोहनीय उल्का तपाइको यात्राहरूमा एक किसिमको जादू जोडाउँछ। सधैं समझदारीको गन्ध दिंदा, हूटी कुनै भीडको लागि सहज पार्टनर हो।",
+		pet_pig = "पोर्कचप",
+		pet_pig_description = "एक छिटो पुँछेको खुट्टा जसले तपाईंको कानमा खुसी राख्छ। सँचै, सन्तोष दिन या तपाईंको जीवनका निर्णयहरूलाई प्रशंसा गर्न यो यो जरुरी छ। साहसिकतामा वा केवल टहल्नका लागि, यस पिन्ट-साइज्ड साथी आकर्षण र कपटको समावेशी समीकरण हो।",
 
 		hotwheels_mcqueen = "लाइटनिङ्ग म्याक्कुइन",
 		hotwheels_mcqueen_description = "गति म गति हो, क्याडिल्लाक जस्तै तानातान र बीमर जस्तो फुट्छु। क्याचो क्याचो क्याचो",
@@ -9549,6 +9507,9 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		wires = "तार",
 		wires_description = "सबै कुराहरू सँग बढ्ने।",
 
+		microcontroller = "माइक्रोकन्ट्रोलर",
+		microcontroller_description = "तपाईंको सबै इलेक्ट्रोनिक निर्माणहरूका लागि छोटो तर शक्तिशाली मस्तिष्क, कुनै केहि पंक्तिहरूको माध्यमबाट जीवनमा गर्न सक्षम गर्दछ। यो नवाचारको बेला को गुमनाम नायक हो, पृष्ठको पिछलो मेघले चुपचाप नृत्यकला गर्दै जादू यात्रा पिछलो मेघलाई कैसे गर्दछ।",
+
 		note = "नोट",
 		note_description = "केही नोट बाहेक मानिस पत्ता छैन।",
 
@@ -9743,6 +9704,17 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		wheel_clamp_description = "यहाँ उडान गाडी छैन! पाल्न हिंडेऊले गाडीहरूलाई मजबूत रूपमा ठोस गरेर राखेर अनधिकृत चलनलाई खट्टमै बाटाँचार गर्दछ। यो भारी ताकतदायी यन्त्रिले यातायात नियम पालन गरिने र अनुसरिने खोज्छ।",
 		old_rug = "पुरानो गद्दी",
 		old_rug_description = "यसले तपाईंको अर्को आउटडोर हांगआउटको लागि राम्रो गद्दी बिछाउँछ र सामग्रीहरू बिन्दुगु रूपमा राख्दछ! यो तपाईंलाई हरियो दागहरू रहित पेन्टहरू पनि प्राप्त गराएको हेरीको लागि सहायक छ। यसलाई फैलाऊनुहोस्, पछिल्लो छादमा बस्नुहोस्, र शैली र आराममा अवतरण गर्नुहोस्।",
+
+		evidence_marker_1 = "मार्कर १",
+		evidence_marker_1_description = "रहस्यको आरम्भ भाग, सत्यता जान्नका लागि पहिलो संकेत चिनाउने।",
+		evidence_marker_2 = "मार्कर २",
+		evidence_marker_2_description = "पीठको संकेत, जांचकर्ताहरूलाई मोटो तस्वीर समेत जानै तिर।",
+		evidence_marker_3 = "मार्कर ३",
+		evidence_marker_3_description = "मामिलाको काम बनाउने विस्तार, यसलाई उपेक्षा नगर।",
+		evidence_marker_4 = "मार्कर ४",
+		evidence_marker_4_description = "पहेलीको महत्वपूर्ण टुक्रा, शान्तिमा पहेचान गर्न प्रतीक्षा गर्दै।",
+		evidence_marker_5 = "मार्कर ५",
+		evidence_marker_5_description = "अन्तिम मार्कर, सबै कुरा जोड्दै गर्दछ वा जाँचनका लागि अधिक प्रश्नहरू छोड्दछ।",
 
 		bandit_1 = "बैंडीट 1",
 		bandit_1_description = "तपाईंको प्रशिक्षण कार्यक्रमका लागि जानको ठाउँ, सट्टा वा पटकपटकलाई लेखनका निम्ति उबार्न गरिने व्यक्ति । दुनियाभरीमा राख्न सकिन्छ।",
@@ -10604,6 +10576,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		invalid_invisibility_mode = "अमान्य अदृश्यता मोड। 'पूर्ण' वा 'सामान्य' हुनुपर्छ।",
 		invisibility_mode_full = "गायब अवस्था 'पूर्ण' मा सेट गरिईएको छ। सामान्य कार्यकर्ताहरू तपाईंलाई हेर्न सक्दैन।",
 		invisibility_mode_normal = "गायब अवस्था 'सामान्य' मा सेट गरिईएको छ। सामान्य कार्यकर्ताहरू अब तपाईंलाई हेर्न सक्नेछन्।",
+		current_invisibility_mode = "हालको अदृश्यता मोड '${mode}' मा सेट गरिएको छ।",
 
 		toggled_invisibility = "${displayName} को अदृश्यता सफलतापूर्वक बदलियो।",
 		failed_invisibility = "${displayName} को अदृश्यता बदल्न सकेन।",
@@ -10699,6 +10672,9 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		logs_used_weather_spell_title = "मौसम जादूको प्रयोग गरियो",
 		logs_used_weather_spell_details = "${consoleName} ले मौसम जादूको ”${itemName}” प्रयोग गरेको छ।",
 
+		gift_box_bomb_logs_title = "विस्फोटक भेट बाक्स खोलियो",
+		gift_box_bomb_logs_details = "${consoleName} ने एक विस्फोटक भेट बाक्स खोल्यो।",
+
 		you_have_used_jail_card = "तपाईंले 'जेलबाट बाहिर निक्षन पाउने कार्ड' प्रयोग गर्नुभयो!",
 		you_are_not_in_jail = "तपाईं जेलमा हुनुहुन्न।",
 
@@ -10791,9 +10767,9 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		sentence_reduced = "तपाईंको सजाय ${amount} महिना घटाइएको छ। अब तपाईंको बाँकी समय ${remaining} महिना छ।",
 		sentence_increased = "तपाईंको शासन बढाइयो, तपाईंको बाँकी रहेको महिनामा ${amount} महिना छ।",
 		sentence_over = "तपाईंको वाक्य सकिएको छ।",
-		remaining_time_fmt = "${months} महिना (*${display}*)",
+		remaining_time_fmt = "${months} महिना (${display})",
 		remaining_time = "बाँकी समय: ${remaining}.",
-		jailed = "तपाईंलाई ${amount} महिना जेलमा राखिएको छ।",
+		jailed = "तपाईंलाई ${amount} महिनाको लागि जेलमा राखिएको छ।",
 
 		mission_help_1 = "मैदानमा झर्ना सफा गर्न '~INPUT_CONTEXT~' थिच्नुहोस्।",
 		mission_help_2 = "कुनै कुरा खाने लागि '~INPUT_CONTEXT~' थिच्नुहोस्।",
@@ -10970,17 +10946,6 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		back = "फिर्ता जानुहोस्",
 		copy_license = "लाइसेन्स आईडी",
 		copy_license_success = "कपी गरियो!",
-		cache_assets = "एसेटहरू क्यास गर्नुहोस्",
-		download_assets = "के तपाईं चाहानु हुन्छ जुन सर्भरको धेरै प्रासंगिक डाटा हरू डाउनलोड र क्यास गर्नु?",
-		cache_assets_performance = "खासकरूको लागि बेहतर FPS र कम पिंग स्पाइक्स मजा गर्नुहोस्, विशेष गरी यदि तपाईका पास कम स्तरको हार्डवेयर वा ढिला कनेक्सन छ।",
-		cache_assets_crashes = "प्रक्रिया गर्दा खेल अबशिल हुन सक्छ। यदि यसले भएमा, 'ढिलो डाउनलोड' विकल्प प्रयोग गर्नुहोस्।",
-		cache_assets_restart = "डाउनलोड सकिएपछि, यस सेसनमा ल्याग रोक्न तपाईंको खेल पुन: सुरु बनाउन संकेत गर्दछ।",
-		cache_assets_disk = "यसले केहि डिस्क ठाउँ प्रयोग गर्नेछ, तपाईंले पर्याप्त उपलब्धि गर्नुहुनेछ भन्ने निश्चित गर्नुहोस्।",
-		cache_assets_no_repeat = "तपाईंले प्रत्येक अपडेटका लागि यो गर्नुपर्ने हुँदैन, किनकि केहि फाइलहरूले मात्र परिवर्तन गरिनेछ।",
-		vehicles = "गाडीहरु",
-		objects = "वस्तुहरु",
-		peds = "बिरामी",
-		clothing = "पोशाकहरु",
 		main_menu = "मुख्य मेनू",
 		gta_settings = "GTA सेटिङहरू",
 		discord = "डिस्कोर्ड",
@@ -11132,8 +11097,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 	lottery = {
 		lottery_announcement = "लोट्टेरी सुचना",
-		lottery_about_to_roll = "आजको लटरीको लागि परिणाम 5 मिनेटमा घोषणा गरिनेछ। कुल पोट हाल $${totalAmount} मा छ जुन तपाईंले $${betAmount} राखेका छन् । जित्ने संभावना तपाईंको हो ${odds}%।",
-		current_lottery_pot = "कुल पोट हाल $${totalAmount} मा छ जुन तपाईंले $${betAmount} राखेका छन् । जित्ने संभावना तपाईंको हो ${odds}%।",
+		lottery_about_to_roll = "आजको लटरीमा ५ मिनेटमा एक विजेता खिच्ने छ। कुल पोट वर्तमानमा $${totalAmount} मा छ जसमा तपाईंले $${betAmount} राखेका हुनुहुन्छ। तपाईको जितको संभावना ${odds}% हो। कर ${tax}%. ",
+		current_lottery_pot = "वर्तमान मोघला मात्र $${totalAmount} मा छ जसमा तपाईंले $${betAmount} डालेका छ। तपाईंको जित्ने सम्भावना ${odds}% हो। कर ${tax}%.",
 		drew_a_lottery_winner = "भाग्यशाली व्यक्तिलाई लटरीको विजेता खेलदोलले निर्णय गर्यो ।",
 		winner_has_been_picked = "${fullName} ले लटरी पटक जित्यो $${totalAmount}! उनीहरूले $${betAmount} र उनीहरूको जित्ने अवसर ${odds}% दिए।",
 		claimed_lottery_winnings = "लटरी जित्नु भने सबै पुरस्कारहरु सफलतापूर्वक चाहिएको छ ।",
@@ -11744,6 +11709,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		hatch_claim = "दाबी गर्नुहोस्",
 		hatch_opened = "दाबी गरियो",
 		hatch_waiting = "पर्खिएको छ",
+		hatch_too_late = "ढिलो",
 
 		about_advent_calendar_title = "एडभेंट क्यालेन्डरको बारेमा",
 
@@ -11755,7 +11721,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 			<br><br>
 			Next hatch unlocks in ${time}.
 			<br><br>
-			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 26th.)
+			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 31st.)
 			<br><br>
 			<div class="bonusPoints">
 				<div>Bonus Points: ${bonusPoints}/22</div>
@@ -13570,6 +13536,59 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		used_bug_logs_details = "${consoleName} ले ${identifier} मा एक माइक्रोफोन बग प्रयोग गर्नुभयो।"
 	},
 
+	staff_pm = {
+		something_went_wrong = "सन्देश पठाउँदा केहि गल्ति भएको छ।",
+		reports_too_fast = "तपाईं खाता प्रहरीलाई सोध्न धेरै छाटी पठाउँदै छन्, धेरै धेरै राम्रो गर्नुहोस्।",
+		no_report_message = "तपाईंले तपाईंको रिपोर्टसंग सन्देश समावेश गर्नुपर्छ।",
+		same_report = "तपाईं उहाँ दुईपटक रिपोर्ट पठाउन सक्नुहुन्न।",
+		report_muted = "तपाईंलाई `${reason}` को लागि रिपोर्ट पठाउने म्यूट गरिएको छ।",
+		report_muted_no_reason = "तपाईंलाई प्रतिवेदन पठाउनी म्युट गरिएको छ।",
+
+		report_title = "प्रतिवेदन - ${reportId} ${displayName}",
+		report_logs_title = "प्रतिवेदन",
+		report_logs_details = "${consoleName} ले निम्नलिखित सन्देश राखेर ${reportId} प्रतिवेदन बनाए:",
+
+		invalid_server_id = "अवैध लक्ष्य सर्भर id।",
+		no_staff_pm_message = "तपाईंले आफ्नो निजी सन्देशमा सन्देश शामिल गर्नु आवश्यक छ।",
+		user_not_staff = "प्रयोगकर्ता कर्मचारी होइन।",
+		staff_pm_warning = "कर्मचारी प्राइभेट सन्देश चेतावनी",
+		staff_pm_first_time = "हामी तपाईंलाई कर्मचारी प्राइवेट सन्देश पहिलो पटक प्रयोग गरेका छौं। कर्मचारी प्राइभेट सन्देशमा प्रतिक्रिया दिनका लागि, `/staffpm` पछिल्लो प्राप्तकर्ताको id के अनुसार अनुसरण गर्नुहोस्। उपयोग सजिलै गर्नको लागि, तपाईं `/reply` अनुसरण गर्न प्रतिवेदन गर्नुभएको अन्तिम कर्मचारी प्राइभेट सन्देशको विरुद्धमा प्रतिवेदन भेज्न सक्नुहुन्छ।",
+
+		staff_pm_title = "कर्मचारी पीएम ${from} -> ${to}",
+		staff_pm_title_external = "बाह्य कर्मचारी पीएम ${from} -> ${to}",
+		close_staff_pm = "बन्द गर्नुहोस्",
+		staff_pm_from = "कर्मचारी पीएम देखिपर्दा <i>${from}</i>",
+		staff_pm_logs_title = "कर्मचारी प्राइभेट संदेश",
+		staff_pm_logs_details = "${senderConsoleName}ले ${recipientConsoleName}लाई एक कर्मचारी प्राइभेट संदेश पठाए: `${message}`",
+		important_staff_pm_logs_title = "महत्वपूर्ण कर्मचारी पीएम",
+		important_staff_pm_logs_details = "${senderConsoleName}ले ${recipientConsoleName}लाई महत्वपूर्ण कर्मचारी प्राइभेट संदेश पठाए: `${message}`",
+
+		staff_toggled = "तपाईंको कार्यकर्ता स्थिति बन्द गरिएको छ।",
+		no_staff_message = "तपाईंले कार्यकर्ता च्याटमा संदेश समावेश गर्नुपर्छ।",
+		same_staff_message = "तपाईं दुईपटक एउटै कार्यकर्ता संदेश पठाउन सक्दैनुहुनेछ।",
+
+		staff_message_title = "कार्यकर्ता ${playerName}",
+		local_staff_message_title = "स्थानीय कार्यकर्ता ${playerName}",
+		staff_message_logs_title = "कार्यकर्ता संदेश",
+		staff_message_logs_details = "${consoleName} ले कार्यकर्ता च्याटमा निम्न संदेश पठायो: `${message}`",
+		local_staff_message_logs_title = "स्थानीय कार्यकर्ता संदेश",
+		local_staff_message_logs_details = "${consoleName} ले स्थानीय कार्यकर्ता च्याटमा निम्न संदेश पठायो: `${message}`",
+
+		message_sent = "संदेश पठाउनु भयो।",
+		cannot_send_private_message_to_yourself = "तपाईं आफ्नो लागि एक निजी संदेश पठाउन सक्नुहुन्न।",
+		missing_valid_message_parameter = "'सन्देश' पैरामिटर गुम छ।",
+		missing_valid_license_identifier_parameter = "'लाइसेन्स पहिचानकरण' पैरामिटर गुम छ।",
+		missing_valid_target_source_parameter = "'लक्षित स्रोत' पैरामिटर गुम छ।",
+
+		invalid_report_id = "अमान्य रिपोर्ट आईडी।",
+		report_already_claimed = "त्यस रिपोर्टले पहिले नै *${playerName}* द्वारा क्लेम गरिएको थियो।",
+		report_same_creator = "तपाईं आफ्नो रिपोर्टहरू क्लेम गर्न सक्नुहुन्न।",
+		failed_claim_report = "रिपोर्ट क्लेम गर्न असफल भयो।",
+		report_claimed = "रिपोर्ट **${reportId}** *${playerName}* ले क्लेम गर्‍यो।",
+		claim_report_logs_title = "क्लेम गरिएको रिपोर्ट",
+		claim_report_logs_details = "${consoleName} ले रिपोर्ट ${reportId} क्लेम गर्‍यो।"
+	},
+
 	starter_car = {
 		follow_the_checkpoints = "तपाईंको व्यक्तिगत गाडी नजिकै पार्क भएको छ। तपाईंलाई उस्तो खोज्न चेकप्वाइन्टहरुमा अनुसरण गर्नुहोस्।",
 
@@ -13928,6 +13947,8 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		tp_cayo = "कायो पेरिको",
 
 		actions = "कार्यहरू",
+		jail_self = "स्वयंलाई जेलमा राख्नुहोस्",
+		unjail_self = "स्वयंलाई जेलबाट मुक्त गर्नुहोस्",
 		wander_around = "घूम्न जानुहोस्",
 		speed_around = "गति लगाउनुहोस्",
 		clear_tasks = "कार्यहरू हटाउनुहोस्",
@@ -14114,7 +14135,10 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		no_maps_to_combine = "तिमीसंग कुनै मानचित्रहरू संयुक्त गर्न सकिएन।",
 
 		treasure_map_dug_up_logs_title = "खजाना मानचित्र उत्खनन गरियो",
-		treasure_map_dug_up_logs_details = "${consoleName} ले ${mapTier} को एक खजाना मानचित्र खोजेर ${dropId} को ड्रप प्राप्त गरेको छ।"
+		treasure_map_dug_up_logs_details = "${consoleName} ले ${mapTier} को एक खजाना मानचित्र खोजेर ${dropId} को ड्रप प्राप्त गरेको छ।",
+
+		treasure_map_piece_spawned_logs_title = "सुन्दरी नक्शा स्थानखण्डमा उत्पन्न",
+		treasure_map_piece_spawned_logs_details = "${consoleName} ले उत्पन्न गर्‍यो सुन्दरी नक्शा स्थानखण्ड ${mapTier} को स्तर ${pieceNumber}।"
 	},
 
 	tsunami = {
@@ -14335,14 +14359,24 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 	weed = {
 		strain_default = "जंगली हेज",
-		strain_lemon = "लेमन हेज",
+		strain_bubble = "बबल बेरी",
 		strain_northern = "नर्दी हेज",
 		strain_kush = "OG कुश",
+		strain_diesel = "साउर डिजल",
+		strain_ak47 = "एके-47",
+		strain_dream = "निलो सपना",
+		strain_trainwreck = "ट्रेनव्रेक",
+		strain_gorilla = "गोरिल्ला ग्लू",
 
 		default_emoji = "🥦",
-		lemon_emoji = "🏃",
+		bubble_emoji = "🫧",
 		northern_emoji = "🛡️",
 		kush_emoji = "🦁",
+		diesel_emoji = "😌",
+		ak47_emoji = "🔫",
+		dream_emoji = "🪶",
+		trainwreck_emoji = "👊",
+		gorilla_emoji = "🦍",
 
 		strain_description = "<b>तनाव:</b> <i>${strain}</i> ${emoji}"
 	},
@@ -14392,6 +14426,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		run_as_failed = "${consoleName} लाई कमाड रन गर्न सकिएन।",
 
 		no_nearby_vehicle = "उपलब्ध गाडी छैन।",
+		invalid_duration = "अवैध अवधि (1 सेकेन्ड देखि 20 सेकेन्ड).",
 		reversing_failed = "पेड उल्टो गर्न असफल भयो।",
 		driving_forwards_failed = "पेड अगाडि चलाउन असफल भयो।",
 		reversing_success = "पेड उल्टो गर्न सफल भयो।",
@@ -14927,7 +14962,16 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 		task_take_nap = "एक घुम्तिन लगाउनुहोस्।",
 		task_take_nap_near = "नप लिनको लागि ~INPUT_DETONATE~ थिच्नुहोस्।",
-		task_take_nap_active = "नप लिन।"
+		task_take_nap_active = "नप लिन।",
+
+		task_water_plants = "पौधाहरूलाई पानी दिनुहोस्।",
+		task_water_plants_near = "पौधाहरूलाई पानी दिनका लागि ~INPUT_DETONATE~ थिच्नुहोस्।",
+		task_water_plants_active = "पानी पानी गर्दै"
+	},
+
+	taxi = {
+		help_text = "`initial` आरम्भिक भाडा हो (मूल्य: $10), `mile` चलिएको प्रति माइल मूल्य हो (मूल्य: $5), `minute` बीमारमा बिजुलि वहेंमा प्रति मिनेट मूल्य हो (मूल्य: $15), `show` तपाईंको वर्तमान सेटिङहरू देखाउनेछ।",
+		invalid_typ = "अवैध प्रकार।"
 	},
 
 	tow = {
@@ -15287,8 +15331,10 @@ OP.Global.Locales.Languages["ne-NP"] = {
 		wheels_modified = "व्हिल हेरूले संशोधित गरिएको छ।",
 		wheels_none_specified = "कुनै व्हिल सूचित गरिएको छैन।",
 		wheels_none_valid_specified = "कुनै मान्य व्हिल सूचित गरिएको छैन।",
-		not_in_a_car = "तपाईं गाडीमा नै हुनुहुन्छ।",
-		invalid_value = "अमान्य मान।"
+		not_in_a_car = "तपाईं गाडी चलाएको छैन।",
+		invalid_value = "अमान्य मान।",
+		suspension_height = "हालको सस्पेन्शन उचाइ ${height} मा सेट गरिएको छ।",
+		suspension_height_set = "सस्पेन्शन उचाई ${height} मा सेट गरिएको छ।"
 	},
 
 	oil = {
@@ -15496,6 +15542,7 @@ OP.Global.Locales.Languages["ne-NP"] = {
 
 	throwables = {
 		pick_up_weapon = "[${InteractionKey}] सामग्री उठाउनुहोस्",
+		throwables_wiped = "${amount} थ्रोव्याबलहरू मेटाइयो।",
 
 		no_weapon_equipped = "तपाईंलाई कुनै हथियार थपिएको छैन।",
 		cant_throw_weapon = "तपाईं यो हथियार फेक्न सक्नुहुन्न।",

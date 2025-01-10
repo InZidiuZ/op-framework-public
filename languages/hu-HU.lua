@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 35 (do not change)
+-- AUTO LOCALES: 36 (do not change)
 
 OP.Global.Locales.Languages["hu-HU"] = {
 	-- configuration settings for language
@@ -202,10 +202,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		spawned_item_for_everyone_title = "Mindenki részére beidézett tárgy",
 		spawned_item_for_everyone_details = "${consoleName} beidézte ${amount}x `${itemName}`-et mindenki részére.",
 
-		report_title = "JELENTÉS-${reportId} ${reporterName}",
-		report_logs_title = "Jelentés",
-		report_logs_details = "${consoleName} ${reportId} azonosítóval jelentést küldött a következő üzenettel: `${reportMessage}`",
-
 		announcement_staff_title = "Személyzet bejelentése",
 		announcement_server_title = "Kiszolgáló Közlemény",
 
@@ -220,47 +216,11 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		failed_to_post_announcement = "Nem sikerült közzétenni a közleményt, mert nem lett hozzáadva üzenet.",
 		failed_to_post_announcement_locale = "Nem sikerült közzétenni a közleményt, mert a hozzáadott közzététel helye nem támogatott.",
 
-		staff_title = "CSAPAT ${staffName}",
-		staff_message_logs_title = "Csapat Üzenet",
-		staff_message_logs_details = "${consoleName} a következő üzenetet küldte a csapat chatbe: `${staffMessage}`",
-		local_staff_title = "HELYI STÁB ${staffName}",
-		local_staff_message_logs_title = "Helyi Stáb Üzenete",
-		local_staff_message_logs_details = "${consoleName} a következő üzenetet küldte a helyi stáb csevegésben: `${staffMessage}`",
-
-		staff_pm_title = "CSAPAT PM ${transmissionTitle}",
-		staff_pm_logs_title = "Csapat PM",
-		staff_pm_logs_details = "${senderConsoleName} a következő üzenetet küldte ${recipientConsoleName}-nak: `${staffPrivateMessage}`",
-		staff_pm_not_logged_in = "Nem vagy bejelentkezve.",
-		staff_pm_not_user_not_found = "A(z) ${serverId} szerver azonosítójú felhasználó nem található.",
-		staff_pm_not_recipient_not_staff = "A játékos, akinek üzenetet próbálsz küldeni, nem rendelkezik adminisztrátori státusszal.",
-		staff_pm_unable_to_message_self = "Nem tudod magadnak üzenetet küldeni.",
-		staff_pm_warning = "Adminisztrátori Üzenet Figyelmeztetés",
-		staff_pm_first_time = "Látjuk, hogy még soha nem használtad a staff PM-eket. Válaszolj egy staff PM-re a /staffpm paranccsal, a címzetted azonosítójával. A válaszadáshoz használhatod a /reply parancsot is az utolsó staff PM-re válaszként.",
-		reply_pm_not_found = "Nincs olyan staff üzenet, amire válaszolni tudnál.",
-
-		important_staff_pm_title = "!ADMIN ÜZENET Te -> ${recipient}",
-		close_staffpm = "Bezárás",
-		staffpm_from = "<i>${from}</i> adminisztrátori üzenete",
-		important_staff_pm_logs_title = "Fontos Adminisztrátori Üzenet",
-		important_staff_pm_logs_details = "${senderConsoleName} következő fontos üzenetet küldte ${recipientConsoleName}-nek: `${message}`",
-
-		external_staff_message = "Külső Staff Üzenet",
-		external_staff_message_from_player = "Külső Staff Üzenet ${playerName} játékostól",
-		external_staff_message_content = "${staffMessage} (Erre az üzenetre nem válaszolhatsz.)",
-
-		unable_to_staff_message_yourself = "Nem tudod magadnak küldeni a staff üzenetet.",
-		message_sent = "Üzenet elküldve.",
-		player_not_found = "Játékos nem található.",
-		missing_valid_target_source_parameter = "Hiányzik egy érvényes 'célszerver' paraméter.",
-		missing_valid_message_parameter = "Hiányzik egy érvényes 'üzenet' paraméter.",
-
 		invalid_coordinates = "Érvénytelen x, y, z vagy w koordináták megadva.",
 		player_not_loaded_character = "A játékosnak nincs betöltött karakter.",
 		teleport_successful = "Játékos sikeresen teleportálva.",
 
 		player_revived_success = "Játékos sikeresen újraélesztve.",
-
-		missing_valid_license_identifier_parameter = "Hiányzik egy érvényes 'licenc azonosító' paraméter.",
 
 		wipe_broken = "törölni - Törött/széttört objektumok",
 		wipe_npcs = "npck - NPC-k és járműveik.",
@@ -376,12 +336,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 		report_muted_no_reason = "Letiltották a jelentés parancs használatát ok nélkül.",
 		report_muted = "Letiltották a jelentés parancs használatát az alábbi ok miatt: `${reason}`.",
-
-		already_sending_report = "Már küldesz egy jelentést. Kérlek várj.",
-		unable_to_send_identical_report = "Nem tudsz két azonos jelentést egymás után küldeni.",
-
-		already_sending_staff_message = "Már küldesz egy csapattag üzenetet. Kérlek várj.",
-		unable_to_send_identical_staff_message = "Nem tudsz két azonos csapattag üzenetet egymás után küldeni 30 másodpercen belül.",
 
 		population_density_set_to = "A népsűrűség multiplikációja beállítva: ${multiplierLabel}%.",
 		population_density_set_off = "A népsűrűség többszörző felülbírált értéke le lett kapcsolva.",
@@ -881,51 +835,11 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		marathon_command_substitutes = "",
 
 		-- base/admin
-		report_command = "jelentés",
-		report_command_help = "Üzenet küldése az összes aktív személyzetnek.",
-		report_command_parameter_message = "üzenet",
-		report_command_parameter_message_help = "Recherche de personnage",
-		report_command_substitutes = "jelentés",
-
 		announce_command = "közlemény",
 		announce_command_help = "Közlemény küldése az összes játékosnak.",
 		announce_command_parameter_message = "üzenet",
 		announce_command_parameter_message_help = "Az üzenet, amit szeretnél közzétenni.",
 		announce_command_substitutes = "",
-
-		staff_pm_command = "staff_pm",
-		staff_pm_command_help = "Üzenet küldése egy staff tagnek, vagy egy játékosnak staff tagként.",
-		staff_pm_command_parameter_server_id = "szerver azonosító",
-		staff_pm_command_parameter_server_id_help = "A játékos szerver azonosítója, akinek üzenetet szeretnél küldeni.",
-		staff_pm_command_parameter_message = "üzenet",
-		staff_pm_command_parameter_message_help = "Az üzenet, amit küldeni szeretnél.",
-		staff_pm_command_substitutes = "staffpm, üzenet, pm, msg",
-
-		important_staff_pm_command = "fontos_staff_pm",
-		important_staff_pm_command_help = "Egy fontos üzenetet küldeni egy játékosnak, mint személyzet tag.",
-		important_staff_pm_command_parameter_server_id = "szerver azonosító",
-		important_staff_pm_command_parameter_server_id_help = "A játékos szerver azonosítója, akinek az üzenetet szeretnéd küldeni.",
-		important_staff_pm_command_parameter_message = "üzenet",
-		important_staff_pm_command_parameter_message_help = "Az fontos üzenet, amit szeretnél elküldeni.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
-
-		reply_pm_command = "válaszol_pm",
-		reply_pm_command_help = "Válaszolj az utolsó kapott staff üzenetre.",
-		reply_pm_command_parameter_message = "üzenet",
-		reply_pm_command_parameter_message_help = "Az üzenet, amit küldeni szeretnél.",
-		reply_pm_command_substitutes = "valasz",
-
-		staff_command = "staff",
-		staff_command_help = "Egy üzenetet küld a jelenlegi aktív személyzetnek.",
-		staff_command_parameter_message = "üzenet",
-		staff_command_parameter_message_help = "Az üzenet, amit szeretnél elküldeni.",
-		staff_command_substitutes = "",
-
-		local_staff_command = "helyi_szemelyzet",
-		local_staff_command_help = "Küldjön üzenetet az összes aktív személyzettagnak a 25m sugarú körzetben.",
-		local_staff_command_parameter_message = "uzenet",
-		local_staff_command_parameter_message_help = "Az üzenet, amelyet szeretne elküldeni.",
-		local_staff_command_substitutes = "l_szemelyzet",
 
 		wipe_command = "wipe",
 		wipe_command_help = "Törölje a nem kívánt entitásokat a térképről.",
@@ -1437,11 +1351,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		emojis_refresh_command_help = "Frissíti az elérhető emojikat. Ez a Discord szerver legújabb listáját fogja lekérni.",
 		emojis_refresh_command_substitutes = "",
 
-		-- base/ping
-		get_pings_command = "pingek_lekérése",
-		get_pings_command_help = "Különböző szerverekre vonatkozó átlag ping lekérése a világ minden részéről, hogy megtaláljuk a legmegfelelőbb szerverhelyet a jelenlegi játékosok számára.",
-		get_pings_command_substitutes = "",
-
 		-- base/points
 		points_command = "points",
 		points_command_help = "Megmutatja az OP pontjainak számát.",
@@ -1465,6 +1374,47 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		remove_twitch_ban_exception_command_parameter_server_id = "${consoleName} a activé les reflets.",
 		remove_twitch_ban_exception_command_parameter_server_id_help = "${consoleName} a désactivé les reflets.",
 		remove_twitch_ban_exception_command_substitutes = "",
+
+		-- base/staff_pm
+		report_command = "jelentés",
+		report_command_help = "Üzenet küldése az összes aktív személyzetnek.",
+		report_command_parameter_message = "üzenet",
+		report_command_parameter_message_help = "Recherche de personnage",
+		report_command_substitutes = "calladmin, wallop, modreq, helpme",
+
+		claim_report_command = "claim_report",
+		claim_report_command_help = "Egy konkrét jelentés igénylése.",
+		claim_report_command_parameter_report_id = "jelentés azonosító",
+		claim_report_command_parameter_report_id_help = "Az azonosítója annak a jelentésnek, amelyet igénybe szeretne venni.",
+		claim_report_command_substitutes = "claim, cr, claimreport",
+
+		staff_pm_command = "staff_pm",
+		staff_pm_command_help = "Üzenet küldése egy staff tagnek, vagy egy játékosnak staff tagként.",
+		staff_pm_command_parameter_server_id = "szerver azonosító",
+		staff_pm_command_parameter_server_id_help = "A játékos szerver azonosítója, akinek üzenetet szeretnél küldeni.",
+		staff_pm_command_parameter_message = "üzenet",
+		staff_pm_command_parameter_message_help = "Az üzenet, amit küldeni szeretnél.",
+		staff_pm_command_substitutes = "staffpm, üzenet, pm, msg, válasz, válaszpm, válasz_pm",
+
+		important_staff_pm_command = "fontos_staff_pm",
+		important_staff_pm_command_help = "Egy fontos üzenetet küldeni egy játékosnak, mint személyzet tag.",
+		important_staff_pm_command_parameter_server_id = "szerver azonosító",
+		important_staff_pm_command_parameter_server_id_help = "A játékos szerver azonosítója, akinek az üzenetet szeretnéd küldeni.",
+		important_staff_pm_command_parameter_message = "üzenet",
+		important_staff_pm_command_parameter_message_help = "Az fontos üzenet, amit szeretnél elküldeni.",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
+
+		staff_command = "staff",
+		staff_command_help = "Egy üzenetet küld a jelenlegi aktív személyzetnek.",
+		staff_command_parameter_message = "üzenet",
+		staff_command_parameter_message_help = "Az üzenet, amit szeretnél elküldeni.",
+		staff_command_substitutes = "",
+
+		local_staff_command = "helyi_szemelyzet",
+		local_staff_command_help = "Küldjön üzenetet az összes aktív személyzettagnak a 25m sugarú körzetben.",
+		local_staff_command_parameter_message = "uzenet",
+		local_staff_command_parameter_message_help = "Az üzenet, amelyet szeretne elküldeni.",
+		local_staff_command_substitutes = "l_szemelyzet",
 
 		-- base/users
 		playtime_command = "játékidő",
@@ -1582,11 +1532,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		play_audio_command_parameter_server_id_help = "Az a játékos szerverazonosítója, akinek ezt az audio lejátszást szeretnéd lejátszani. `-1`-et használhatsz az összes játékoshoz.",
 		play_audio_command_substitutes = "",
 
-		-- game/audio_emitters
-		toggle_audio_emitters_command = "toggle_audio_emitters",
-		toggle_audio_emitters_command_help = "Nativ audio emitterek ki- és bekapcsolása.",
-		toggle_audio_emitters_command_substitutes = "",
-
 		-- game/bandaids
 		random_bandaid_command = "random_bandaid",
 		random_bandaid_command_help = "Ad egy véletlenszerű kötszert. :)",
@@ -1683,17 +1628,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		buddy_pass_command = "baráti_jegy",
 		buddy_pass_command_help = "Megnyitja a baráti jegy felületet.",
 		buddy_pass_command_substitutes = "",
-
-		-- game/cache
-		cache_assets_command = "célfájl_gyorsítótár",
-		cache_assets_command_help = "Kényszerítően kérjen és töltse le a legtöbb közvetített erőforrást (járművek, tárgyak és ruházat). Ez nem ajánlott, hacsak lassú internetkapcsolatod van, és az erőforrások nem töltődnek le elég gyorsan a kifinomultság érdekében. Ez az üzemidő alatt ügyfélösszeomlásokat is okozhat.",
-		cache_assets_command_parameter_slow_download = "lassú letöltés",
-		cache_assets_command_parameter_slow_download_help = "Szeretnéd a tartalmakat lassan letölteni? Ez sokkal hosszabb időt vesz igénybe, de csökkenti a program összeomlásának esélyét.",
-		cache_assets_command_substitutes = "letöltés_tároló, előzetes_tároló, betöltési_tároló",
-
-		cache_join_toggle_command = "cache_csatlakozás_váltás",
-		cache_join_toggle_command_help = "Automatikusan váltson a tartalmak helyi tárolásának ki/be kapcsolása, amikor csatlakozol a szerverre.",
-		cache_join_toggle_command_substitutes = "",
 
 		-- game/camera
 		stable_cam_command = "stabil_kamera",
@@ -3735,10 +3669,14 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 		ped_reverse_command = "ped_reverse",
 		ped_reverse_command_help = "A legközelebbi NPC járműben utazó NPC-t kénytelen hátramenetre kényszeríteni.",
+		ped_reverse_command_parameter_duration = "időtartam",
+		ped_reverse_command_parameter_duration_help = "Az előre száguldás időtartama másodpercben (1s - 20s, alapértelmezett: 4s).",
 		ped_reverse_command_substitutes = "",
 
 		ped_forwards_command = "ped_forwards",
 		ped_forwards_command_help = "A legközelebbi NPC járműben utazó NPC-t kénytelen előremenetre kényszeríteni.",
+		ped_forwards_command_parameter_duration = "időtartam",
+		ped_forwards_command_parameter_duration_help = "Az előre hajtás időtartama másodpercben (1s - 20s, alapértelmezett: 4s).",
 		ped_forwards_command_substitutes = "",
 
 		vehicle_flip_command = "jármű_fordítás",
@@ -3787,6 +3725,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		polygon_command = "Comptes d'épargne",
 		polygon_command_help = "2D sokszög meghatározása.",
 		polygon_command_substitutes = "Confirmer",
+
+		box_command = "doboz",
+		box_command_help = "Definiáljon egy 3D dobozt.",
+		box_command_substitutes = "",
 
 		-- global/states
 		entity_states_command = "entitásállapotok",
@@ -3969,6 +3911,27 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		tasks_debug_command_parameter_area_id_help = "A hibakeresni kívánt feladat területazonosítója. Hagyd üresen az összes terület kinyomtatásához.",
 		tasks_debug_command_substitutes = "",
 
+		-- jobs/taxi
+		taxi_display_command = "taxi_kijelző",
+		taxi_display_command_help = "Váltás a taxi kijelzőn.",
+		taxi_display_command_substitutes = "taxikijelző, taxi",
+
+		taxi_hire_command = "taxi_berel",
+		taxi_hire_command_help = "Váltson taxibérlésre.",
+		taxi_hire_command_substitutes = "taxiberel",
+
+		taxi_reset_command = "taxi_reset",
+		taxi_reset_command_help = "Állítsa vissza a taxi mérőjét.",
+		taxi_reset_command_substitutes = "taxireset",
+
+		taxi_fare_command = "taxi_dij",
+		taxi_fare_command_help = "Állítsa be a taxi viteldíját.",
+		taxi_fare_command_parameter_type = "osszeg",
+		taxi_fare_command_parameter_type_help = "Az összeg típusa, amelyet be szeretne állítani (segítség, mutat, kezdeti, mérföld vagy perc).",
+		taxi_fare_command_parameter_amount = "összeg",
+		taxi_fare_command_parameter_amount_help = "Az összeg, amire be akarja állítani a viteldíjat.",
+		taxi_fare_command_substitutes = "taxidíj",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "mechanikus_üzenetek",
 		toggle_mechanic_messages_command_help = "Be- vagy kikapcsolja, ha szeretne-e mechanikai üzeneteket kapni.",
@@ -4088,13 +4051,11 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		wheel_offset_command_parameter_value_help = "A módosítástól függően a kívánt érték. Ez lehet -0,15-től 0,2-ig, 0 az alapértelmezett.",
 		wheel_offset_command_substitutes = "",
 
-		wheel_rotation_command = "kerék_forgás",
-		wheel_rotation_command_help = "Módosítsa a jármű kerekeinek forgását.",
-		wheel_rotation_command_parameter_wheels = "elülső/hátsó",
-		wheel_rotation_command_parameter_wheels_help = "Melyik kerekeket szeretnéd módosítani?",
-		wheel_rotation_command_parameter_value = "érték",
-		wheel_rotation_command_parameter_value_help = "Az érték, amely szerint módosítani szeretnéd. Ez -0,5 és 0,5 között lehet, a 0 a default érték.",
-		wheel_rotation_command_substitutes = "",
+		suspension_height_command = "felfüggesztés_magasság",
+		suspension_height_command_help = "Módosítsa egy jármű vizuális felfüggesztési magasságát.",
+		suspension_height_command_parameter_value = "érték",
+		suspension_height_command_parameter_value_help = "Az összeg, amennyivel módosítani szeretné. Ez -0.15-től 0.1-ig terjedhet, a 0 a kezdeti érték.",
+		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
 		oil_level_command = "olaj_szint",
@@ -4258,6 +4219,12 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		throw_weapon_command_help = "Eldobja a jelenleg felszerelt fegyveredet.",
 		throw_weapon_command_substitutes = "dobd, eldob",
 
+		wipe_throwables_command = "dobálhatók_törlése",
+		wipe_throwables_command_help = "Törli az összes dobott fegyvert a megadott sugárban.",
+		wipe_throwables_command_parameter_radius = "sugár",
+		wipe_throwables_command_parameter_radius_help = "A dobott fegyverek törlésére szolgáló sugár (alapértelmezett: 5).",
+		wipe_throwables_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "ellenoriz_lom",
 		check_ammo_command_help = "Ellenőrzi, mennyi lőszered van összesen.",
@@ -4344,12 +4311,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		local_firewall_blocked = "Helyi tűzfal: Blokkolva ${playerName} (${licenseIdentifier})"
 	},
 
-	ping = {
-		getting_pings = "Minden játékos pingjének lekérése. Ez néhány másodpercig tarthat.",
-		host_data = "${position}. ${location} - ${averagePing} Átlagos ping (alapul véve ${totalPings} klienst), 10% Alacsony: ${averagePingLow}, 10% Magas: ${averagePingHigh}",
-		list_hosts = "${listHosts}"
-	},
-
 	points = {
 		you_have_points = "Önnek ${frameworkPoints} OP pontja van.",
 		used_points = "Felhasznált ${amount} OP pontot a(z) `${label}` címke alatt.",
@@ -4362,11 +4323,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 	profile = {
 		profile_debug_enabled = "A profil hibakereső engedélyezve lett. Ellenőrizd az F8 konzolt a kimenetért.",
 		profile_debug_disabled = "A profil hibakereső letiltva lett."
-	},
-
-	proxy = {
-		proxied_via_logs_title = "Proxy által",
-		proxied_via_logs_details = "${consoleName} proxy-n keresztül érkezett `${serverName}` szerveren."
 	},
 
 	restart = {
@@ -4511,6 +4467,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		ping_stable = "Az internetkapcsolat mostmár stabil."
 	},
 
+	vpn = {
+		vpn_not_allowed_for_new_players = "A VPN használata nem engedélyezett olyan játékosok számára, akiknek kevesebb mint 24 órája játszottak."
+	},
+
 	whitelist = {
 		not_whitelisted = "Nincs engedélyezve a szerveren.\n\nCsatlakozz a Discord szerverünkhöz, hogy megtudhasd, hogyan nyújthatod be a jelentkezésedet: ${communityDiscord}"
 	},
@@ -4644,12 +4604,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		description_rat_unnamed = "Ez a ${gender} patkány, ${age} kalandvágyó és ${weight} súlyú, mint egy megfelelő intelligenciával felvértezett és váratlan bájjal megáldott felfedező, járja a világot. Az abszolút hűség hajtja a(z) ${food} iránt, minden sarkot potenciális felfedezéssé, minden árnyékot pedig játszótérré varázsol.",
 		description_rat_named = "${name}, egy ${gender} patkány, aki ${age} éves és kíváncsi az élet nagy kísérleteire. ${weight} súlyú és tele van személyiséggel. Elválaszthatatlan kapcsolata van a(z) ${food}-val. ${name} a kíváncsiság szellemét testesíti meg - kicsi méretben, végtelen lelkesedéssel.",
 
+		pick_up = "[${SeatEjectKey}] Felkap",
 		pick_up_named = "[${SeatEjectKey}] Felvenni ${name}-t",
-		pick_up_cat = "[${SeatEjectKey}] Macskát felvenni",
-		pick_up_dog = "[${SeatEjectKey}] Kutyát felvenni",
-		pick_up_hen = "[${SeatEjectKey}] Tyúkot felvenni",
-		pick_up_rabbit = "[${SeatEjectKey}] Nyuszit felvenni",
-		pick_up_rat = "[${SeatEjectKey}] Patkányt felvenni",
 
 		failed_pickup_cat = "Nem sikerült felvenni a macskát.",
 		failed_pickup_dog = "Nem sikerült felvenni a kutyát.",
@@ -4996,11 +4952,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} a hanghatást játszott el mindenki számára. A hanghatásnak URL címe `${url}` volt, és a hangerő `${volume}` szintre lett állítva.",
 		played_audio_effect_for_player_title = "Hanghatás lejátszása játékosnak",
 		played_audio_effect_for_player_details = "${consoleName} a hanghatást játszott el ${targetConsoleName} számára. A hanghatásnak URL címe `${url}` volt, és a hangerő `${volume}` szintre lett állítva."
-	},
-
-	audio_emitters = {
-		audio_emitters_disabled = "Hangszórók letiltva.",
-		audio_emitters_enabled = "Hangszórók engedélyezve."
 	},
 
 	balls = {
@@ -5401,15 +5352,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 	bus_map = {
 		bus_tracker = "Busz"
-	},
-
-	cache = {
-		download_progress = "Letöltési folyamat:\n- Járművek: ${vehiclesDone}/${vehiclesTotal}\n- Objektumok: ${objectsDone}/${objectsTotal}\n- Személyek: ${pedsDone}/${pedsTotal}\n- Öltözékek: ${clothingRequested}/${clothingTotal}",
-		slow_download_enabled = "Lassú letöltés engedélyezve.",
-		slow_download_disabled = "Lassú letöltés letiltva.",
-
-		join_cache_disabled = "Csatlakozási gyorsítótár letiltva.",
-		join_cache_enable = "Csatlakozás gyorsítótár engedélyezve."
 	},
 
 	caffeine = {
@@ -6307,6 +6249,11 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		crafting_ammo = "Töltény készítése",
 		crafted_ammo = "Elkészült töltény.",
 		failed_craft_ammo = "Nem sikerült elkészíteni a töltényt.",
+
+		gift_box_bomb_recipe = "Speciális Ajándék Doboz",
+		crafting_gift = "Ajándék Doboz Készítése",
+		crafted_gift = "Elkészített ajándék doboz.",
+		failed_craft_gift = "Nem sikerült a ajándék doboz elkészítése.",
 
 		process_weed = "Növényfeldolgozás",
 		press_to_process_weed = "[${SeatEjectKey}] Növényfeldolgozás",
@@ -8195,6 +8142,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		cinema = "Mozi",
 		strip_club = "Sztriptíz klub",
 		police_store = "Rendőrségi bolt",
+		utility_crate = "Használati Doboz",
 		fib_store = "FIB Bolt",
 		deputy_madison = "Helyettes Madison",
 		sergeant_harris = "Százados Harris",
@@ -8246,11 +8194,17 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		target_inventory_full = "A játékos csomagtere tele van.",
 		received_item = "${displayName} vous a donné ${amount}x ${item}.",
 
+		inspecting_item = "Tárgy Megvizsgálása",
+
 		inspect_weapon = "Ez ${itemName} sorozatszáma `${itemId}`-nak tűnik.",
 		inspect_weapon_broken = "Ez ${itemName} sorozatszáma `${itemId}`-nak tűnik, de teljesen tönkrement.",
 		inspect_bank_property = "Ce ${item} est propriété de la banque ${bank}.",
 		inspect_bank_property_cid = "Ez a(z) ${item} a(z) ${bank} Bank tulajdona. A(z) #${characterId} számlaszámon keresztül lett kivonva.",
 		inspect_no_property = "Ce ${item} ne semble pas avoir de marquage de propriété.",
+
+		gift_box_normal = "Ez az ajándék doboz teljesen normálisnak tűnik.",
+		gift_box_suspicious = "Ez az ajándék doboz kissé gyanúsnak tűnik.",
+		gift_box_residue = "Ez az ajándék doboz szürkés por nyomokat mutat.",
 
 		searching_dumpster = "Szemetesböngészés",
 		searching_homeless_tent = "Hajléktalan Sátor Átkutatása",
@@ -8625,6 +8579,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		empty_box_description = "Kezdd ezzel az egyszerű, masszív dobozzal a személyre szabott ajándék készítését. Töltsd meg nem romlandó kincsekkel, és készen áll arra, hogy gondosan elkészített ajándékká váljon. Ideális minden olyan dolog csomagolására, ami az szeretetet szimbolizálja, kivéve a romlandó élelmiszereket és fegyvereket.",
 		gift_box = "Ajándék Doboz",
 		gift_box_description = "Ez a elegánsan lezárt ajándék doboz, díszítve egy ünnepi szalaggal, gyönyörű módon mutatja be a gondosan kiválasztott tárgyaidat. Tökéletes különleges alkalmakra, melegséget és gondoskodást közvetítve, biztosítva, hogy az adakozásod olyan öröm legyen, mint az ajándék a dobozban.",
+		gift_box_bomb = "Ajándék Doboz",
+		gift_box_bomb_description = "Ez elegánsan lezárható ajándék doboz, díszítve egy ünnepi szalaggal, gyönyörű módon mutatja be gondosan kiválasztott tárgyait. Kiváló alkalom esetén melegséget és gondoskodást sugall, biztosítva, hogy az ajándékadás által hagyott hatás örökre megmarad.",
 
 		ear_defenders = "Fülvédők",
 		ear_defenders_description = "Használd ezeket a fülvédőket, hogy megvédhesd a füledet a hangos zajoktól.",
@@ -9234,6 +9190,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		pet_snowman_description = "Recherche de ${type} (\"${search}\")",
 		pet_owl = "Hooty",
 		pet_owl_description = "Hooty, a bölcsek és éber társad, elegánsan ül a válladon. Éles szemeivel és puha tollaival ez a elbűvölő bagoly varázslatot csempész az kalandjaidba. Mindig kész arra, hogy megosztson egy bölcselettel, Hooty tökéletes mellékszereplő bármelyik utazáshoz.",
+		pet_pig = "Porkchop",
+		pet_pig_description = "Egy apró malacocska nagy személyiséggel, boldogan üldögél a válladon. Mindig készen áll az ösztönző röfögésre vagy az édesoldalú életdöntéseid megítélésére. Legyen szó kalandról vagy csak sétáról, ez a zsebméretű társ tökéletesen keveri a báj és a frappáns megjegyzések világát.",
 
 		hotwheels_mcqueen = "Villám McQueen",
 		hotwheels_mcqueen_description = "Sebesség, én vagyok a Sebesség, Úszok, mint egy Cadillac, Szúrok, mint egy Beemer. KATCHOW KATCHOW KATCHOW",
@@ -9549,6 +9507,9 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		wires = "Drótok",
 		wires_description = "Mindent összetart.",
 
+		microcontroller = "Mikrovezérlő",
+		microcontroller_description = "Egy apró, de erős agy az elektronikus kreációidnak, képes komplex ötleteket életre kelteni csupán néhány sor kóddal. Az innováció néma hőse, csendesen irányítja a varázslatot a háttérben.",
+
 		note = "Megjegyzés",
 		note_description = "Valami megjegyzés, nem tudom srác.",
 
@@ -9743,6 +9704,17 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		wheel_clamp_description = "Itt nincsenek menekülő autók! A gumitámasztó komolyan veszi a dolgát, erősen rögzíti a járműveket, és megakadályozza az engedély nélküli mozgásukat. Ez a nehézkes szerkezet egy néma végrehajtója a parkolási szabályoknak, hogy azokat tiszteletben tartsák és betartsák.",
 		old_rug = "Régi szőnyeg",
 		old_rug_description = "Terítsd le ezt a kényelmes szőnyeget a következő szabadtéri összejövetelhez, és tartsd a dolgokat kényelmesen! Ideális a fűbe fekvéshez anélkül, hogy a nadrágod zöld foltokkal borulna be. Terítsd ki, lazulj el, és élvezd környezetedet stílusosan és kényelmesen.",
+
+		evidence_marker_1 = "Jelölő 1",
+		evidence_marker_1_description = "A rejtély kiindulópontja, az első nyom arra, hogy kibogozzák az igazságot.",
+		evidence_marker_2 = "Jelölő 2",
+		evidence_marker_2_description = "Egy további nyom, ami közelebb viszi az nyomozókat a nagyobb képhez.",
+		evidence_marker_3 = "Jelölő 3",
+		evidence_marker_3_description = "A részlet, mely megdöntheti vagy megerősítheti az ügyet – ne hagyja figyelmen kívül.",
+		evidence_marker_4 = "Jelölő 4",
+		evidence_marker_4_description = "A rejtély egyik kritikus darabja, csendesen várva, hogy észrevegyék.",
+		evidence_marker_5 = "Jelölő 5",
+		evidence_marker_5_description = "Az utolsó jelölő, ami összekapcsol mindent, vagy több kérdést hagy maga után, mint választ.",
 
 		bandit_1 = "Bandita 1",
 		bandit_1_description = "Az elsődleges választás a gyakorlati forgatókönyvekhez, mindig kész játszani a gonosztevőt anélkül, hogy panaszkodna a hosszú órák miatt vagy a forgatókönyv hiánya miatt. Bárhol elhelyezhető a világban.",
@@ -10604,6 +10576,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		invalid_invisibility_mode = "Érvénytelen láthatatlanság mód. 'teljes' vagy 'normál' lehet csak.",
 		invisibility_mode_full = "Teljes láthatatlanság mód beállítva. A normál személyzet nem lát téged.",
 		invisibility_mode_normal = "Normál láthatatlanság mód beállítva. Mostantól a normál személyzet láthat téged.",
+		current_invisibility_mode = "Jelenleg az láthatatlanság mód beállítása '${mode}'.",
 
 		toggled_invisibility = "Sikeresen átkapcsolva ${displayName} átláthatatlansága.",
 		failed_invisibility = "${displayName} átláthatatlanságának kapcsolása sikertelen.",
@@ -10699,6 +10672,9 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		logs_used_weather_spell_title = "Időjárás varázslat használata",
 		logs_used_weather_spell_details = "${consoleName} használta az időjárás varázslatot `${itemName}`.",
 
+		gift_box_bomb_logs_title = "Felrobbant Explosive Ajándék Doboz",
+		gift_box_bomb_logs_details = "${consoleName} felnyitott egy robbanó ajándék dobozt.",
+
 		you_have_used_jail_card = "Felhasználtál egy 'szabadulj ki a börtönből' kártyát!",
 		you_are_not_in_jail = "Nem vagy a börtönben.",
 
@@ -10791,9 +10767,9 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		sentence_reduced = "Az ítéleted csökkentve lett ${amount} hónappal, még ${remaining} hónapod van hátra.",
 		sentence_increased = "Az ítéleted ${amount} hónappal nőtt, most ${remaining} hónapod van hátra.",
 		sentence_over = "Az ítéleted véget ért.",
-		remaining_time_fmt = "${months} hónap (*${display}*)",
+		remaining_time_fmt = "${months} hónap (${display})",
 		remaining_time = "Hátralévő Idő: ${remaining}.",
-		jailed = "Lefogtak ${amount} időre.",
+		jailed = "Be vagy zárva ${amount} hónapra.",
 
 		mission_help_1 = "Nyomd meg az ~INPUT_CONTEXT~ gombot a padló kitakarításához.",
 		mission_help_2 = "Nyomd meg az ~INPUT_CONTEXT~ gombot valami ennivalóhoz.",
@@ -10970,17 +10946,6 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		back = "Vissza",
 		copy_license = "Engedély azonosító",
 		copy_license_success = "Másolva!",
-		cache_assets = "Részletek letöltése",
-		download_assets = "Szeretnél letölteni és gyorsítótárazni a szerver legtöbb erőforrását? Íme, az előnyök és fontolóra vehető szempontok:",
-		cache_assets_performance = "Jobb FPS-t és kevesebb ping-ingadozást élvezhetsz játék közben, különösen ha gyengébb hardvered vagy lassabb internetkapcsolatod van.",
-		cache_assets_crashes = "A játék összeomolhat a folyamat során. Ha ez megtörténik, használd a 'lassú letöltés' lehetőséget helyette.",
-		cache_assets_restart = "A letöltés befejezése után indítsd újra a játékot a zavarok elkerülése érdekében ezen a munkameneten belül.",
-		cache_assets_disk = "Ez némi lemezterületet fog igénybe venni, ezért győződj meg róla, hogy rendelkezel elegendő szabad területtel.",
-		cache_assets_no_repeat = "Nem lesz szükséged erre minden frissítésnél, mivel csak néhány fájl fog megváltozni.",
-		vehicles = "Járművek",
-		objects = "Objektumok",
-		peds = "NPC-k",
-		clothing = "Ruházat",
 		main_menu = "Főmenü",
 		gta_settings = "GTA beállítások",
 		discord = "Discord",
@@ -11132,8 +11097,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 	lottery = {
 		lottery_announcement = "Loteria Hirdetmény",
-		lottery_about_to_roll = "5 perc múlva sorsolnak egy nyertest a mai lottón. Az aktuális tét összege jelenleg $${totalAmount}, amibe Te $${betAmount}-t tettél. Nyerési esélyed: ${odds} %.",
-		current_lottery_pot = "A teljes tét jelenleg $${totalAmount}, amelyből Ön befizetett $${betAmount}. Nyerési esélye: ${odds}%.",
+		lottery_about_to_roll = "5 perc múlva kisorsolunk egy nyertest a mai lottón. Az aktuális fődíj jelenleg $${totalAmount}, amibe beletettél $${betAmount}. Nyerési esélyed ${odds}%. Az adó ${tax}%.",
+		current_lottery_pot = "A teljes tét jelenleg ${totalAmount}$, amelyből ${betAmount}$ a tiéd. Nyerési esélyed ${odds}%. Az adó ${tax}%",
 		drew_a_lottery_winner = "Kisorsoltak egy nyertest a lottón.",
 		winner_has_been_picked = "${fullName} nyerte el a lottó nyereményalapot, amely jelenleg $${totalAmount}. Ő $${betAmount}-ot tett fel, és nyerési esélye ${odds}% volt.",
 		claimed_lottery_winnings = "Teljes lottónyereményt kértél.",
@@ -11744,6 +11709,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		hatch_claim = "IGÉNYEL",
 		hatch_opened = "IGÉNYELVE",
 		hatch_waiting = "VÁRAKOZÓ",
+		hatch_too_late = "TÚL KÉSŐ",
 
 		about_advent_calendar_title = "Az Adventi Naptárról",
 
@@ -11755,7 +11721,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 			<br><br>
 			Next hatch unlocks in ${time}.
 			<br><br>
-			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 26th.)
+			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 31st.)
 			<br><br>
 			<div class="bonusPoints">
 				<div>Bonus Points: ${bonusPoints}/22</div>
@@ -13570,6 +13536,59 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		used_bug_logs_details = "${consoleName} mikrofonhibát használt ${azonosító} célponton."
 	},
 
+	staff_pm = {
+		something_went_wrong = "Valami hiba történt az üzenet küldésekor.",
+		reports_too_fast = "Túl gyorsan küldöd a jelentéseket, lassíts.",
+		no_report_message = "Kötelező üzenetet mellékelni a jelentéshez.",
+		same_report = "Nem küldhetsz kétszer ugyanolyan jelentést.",
+		report_muted = "Nem küldhetsz jelentéseket a következő ok miatt: `${reason}`.",
+		report_muted_no_reason = "El lett némítva a bejelentések küldése.",
+
+		report_title = "BEJELENTÉS-${reportId} ${displayName}",
+		report_logs_title = "Bejelentés",
+		report_logs_details = "${consoleName} létrehozta a(z) ${reportId} azonosítójú bejelentést a következő üzenettel: `${message}`",
+
+		invalid_server_id = "Érvénytelen cél szerver azonosító.",
+		no_staff_pm_message = "Meg kell adnod egy üzenetet a privát üzenetben.",
+		user_not_staff = "A felhasználó nem dolgozik a személyzet tagjaként.",
+		staff_pm_warning = "Személyzet privát üzenet figyelmeztetés",
+		staff_pm_first_time = "Látjuk, hogy még sosem használtad a személyzet privát üzeneteit. Ha válaszolni szeretnél egy staff PM-re, használd a `/staffpm` parancsot, amit az üzenet címzettjének azonosítójával követsz. A könnyebb használat érdekében használhatod a `/reply` parancsot is, hogy válaszolj az utolsó kapott staff PM-re.",
+
+		staff_pm_title = "SZEMÉLYZETI ÜZENET ${from} -> ${to}",
+		staff_pm_title_external = "KÜLSŐ SZEMÉLYZETI ÜZENET ${from} -> ${to}",
+		close_staff_pm = "Bezárás",
+		staff_pm_from = "Személyzeti üzenet innen: <i>${from}</i>",
+		staff_pm_logs_title = "Személyzeti üzenet napló",
+		staff_pm_logs_details = "${senderConsoleName} személyzeti privát üzenetet küldött ${recipientConsoleName} részére: `${message}`",
+		important_staff_pm_logs_title = "Fontos személyzeti üzenet",
+		important_staff_pm_logs_details = "${senderConsoleName} fontos személyzeti privát üzenetet küldött ${recipientConsoleName} részére: `${message}`",
+
+		staff_toggled = "Az Ön személyzeti státusza kikapcsolva van.",
+		no_staff_message = "Meg kell adnia egy üzenetet a személyzeti csevegésben.",
+		same_staff_message = "Nem küldheti el ugyanazt a személyzeti üzenetet kétszer.",
+
+		staff_message_title = "SZEMÉLYZET ${playerName}",
+		local_staff_message_title = "HELYI SZEMÉLYZET ${playerName}",
+		staff_message_logs_title = "Személyzeti üzenet",
+		staff_message_logs_details = "${consoleName} a következő üzenetet küldte a személyzeti csevegésben: `${message}`",
+		local_staff_message_logs_title = "Helyi Személyzeti üzenet",
+		local_staff_message_logs_details = "${consoleName} a következő üzenetet küldte a helyi személyzeti csevegésben: `${message}`",
+
+		message_sent = "Üzenet elküldve.",
+		cannot_send_private_message_to_yourself = "Nem küldhetsz privát üzenetet magadnak.",
+		missing_valid_message_parameter = "Hiányzik egy érvényes 'üzenet' paraméter.",
+		missing_valid_license_identifier_parameter = "Hiányzik egy érvényes 'licenseIdentifier' paraméter.",
+		missing_valid_target_source_parameter = "Hiányzik egy érvényes 'targetSource' paraméter.",
+
+		invalid_report_id = "Érvénytelen jelentés azonosító.",
+		report_already_claimed = "Az a jelentés már *${playerName}* által lett átvéve.",
+		report_same_creator = "Nem veheted át saját jelentéseidet.",
+		failed_claim_report = "Nem sikerült a jelentés igénylésének.",
+		report_claimed = "A **${reportId}** jelentést *${playerName}* igényelte.",
+		claim_report_logs_title = "Igényelt Jelentés",
+		claim_report_logs_details = "${consoleName} igényelte a(z) ${reportId} jelentést."
+	},
+
 	starter_car = {
 		follow_the_checkpoints = "A személyes járműved a közelben van parkolva. Kövesd az ellenőrzőpontokat, hogy megtaláld.",
 
@@ -13928,6 +13947,8 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		tp_cayo = "Cayo Perico",
 
 		actions = "Műveletek",
+		jail_self = "Magadat Bezárni",
+		unjail_self = "Magad Kiengedni",
 		wander_around = "Kóborolás",
 		speed_around = "Gyors mozgás",
 		clear_tasks = "Feladatok törlése",
@@ -14114,7 +14135,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		no_maps_to_combine = "Nincs térkép, amit össze lehetne kombinálni.",
 
 		treasure_map_dug_up_logs_title = "Kincses Térkép Feltúrva",
-		treasure_map_dug_up_logs_details = "${consoleName} feltúrt egy szint ${mapTier} kincses térképet és kapott egy ${dropId} leesőazonosítót."
+		treasure_map_dug_up_logs_details = "${consoleName} feltúrt egy szint ${mapTier} kincses térképet és kapott egy ${dropId} leesőazonosítót.",
+
+		treasure_map_piece_spawned_logs_title = "Kincs Térkép Darab Elhelyezve",
+		treasure_map_piece_spawned_logs_details = "${consoleName} elhelyezte a(k) ${pieceNumber} sorszámú ${mapTier} szintű kincs térkép darabot."
 	},
 
 	tsunami = {
@@ -14335,14 +14359,24 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 	weed = {
 		strain_default = "Vad Köd",
-		strain_lemon = "Citromos Köd",
+		strain_bubble = "Buborék Bogyó",
 		strain_northern = "Északi Fények",
 		strain_kush = "OG Kush",
+		strain_diesel = "Sour Diesel",
+		strain_ak47 = "AK-47",
+		strain_dream = "Blue Dream",
+		strain_trainwreck = "Trainwreck",
+		strain_gorilla = "Gorilla Glue",
 
 		default_emoji = "🥦",
-		lemon_emoji = "🏃",
+		bubble_emoji = "🫧",
 		northern_emoji = "🛡️",
 		kush_emoji = "🦁",
+		diesel_emoji = "😌",
+		ak47_emoji = "🔫",
+		dream_emoji = "🪶",
+		trainwreck_emoji = "👊",
+		gorilla_emoji = "🦍",
 
 		strain_description = "<b>Fajta:</b> <i>${strain}</i> ${emoji}"
 	},
@@ -14392,6 +14426,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		run_as_failed = "Nem sikerült végrehajtani a parancsot ${consoleName} névvel.",
 
 		no_nearby_vehicle = "Nincs közeli jármű.",
+		invalid_duration = "Érvénytelen időtartam (1 mp - 20 mp).",
 		reversing_failed = "Nem sikerült hátramenetbe helyezni a karaktert.",
 		driving_forwards_failed = "Nem sikerült előremenetbe helyezni a karaktert.",
 		reversing_success = "Sikeresen hátramenetbe helyeztél egy karaktert.",
@@ -14927,7 +14962,16 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 		task_take_nap = "Szunyókálj egyet.",
 		task_take_nap_near = "Nyomd meg a ~INPUT_DETONATE~ gombot a szunyókáláshoz.",
-		task_take_nap_active = "Szunyókálás"
+		task_take_nap_active = "Szunyókálás",
+
+		task_water_plants = "Öntözze meg a növényeket.",
+		task_water_plants_near = "Nyomja meg a ~INPUT_DETONATE~ billentyűt a növények öntözéséhez.",
+		task_water_plants_active = "Növények öntözése"
+	},
+
+	taxi = {
+		help_text = "`initial` az alapindítási díj (alapértelmezett: 10$), `mile` a megtett mérföldek után járó díj ($5 alapértelmezett), `minute` a mérőóra bekapcsolt állapotában per perc díj ($15 alapértelmezett), `show` a jelenlegi beállítások megjelenítése.",
+		invalid_typ = "Érvénytelen típus."
 	},
 
 	tow = {
@@ -15287,8 +15331,10 @@ OP.Global.Locales.Languages["hu-HU"] = {
 		wheels_modified = "Az abroncsok módosítva lettek.",
 		wheels_none_specified = "Nincsenek megadott abroncsok.",
 		wheels_none_valid_specified = "Nincsenek érvényes abroncsok megadva.",
-		not_in_a_car = "Nem ülsz az autóban.",
-		invalid_value = "Érvénytelen érték."
+		not_in_a_car = "Nem vezetsz autót.",
+		invalid_value = "Érvénytelen érték.",
+		suspension_height = "A jelenlegi felfüggesztési magasság be van állítva ${height}-re.",
+		suspension_height_set = "A felfüggesztés magassága be lett állítva ${height}-re."
 	},
 
 	oil = {
@@ -15496,6 +15542,7 @@ OP.Global.Locales.Languages["hu-HU"] = {
 
 	throwables = {
 		pick_up_weapon = "[${InteractionKey}] Felvesz",
+		throwables_wiped = "${amount} dobható eszköz lett törölve.",
 
 		no_weapon_equipped = "Nincs fegyver felszerelve.",
 		cant_throw_weapon = "Ezt a fegyvert nem tudod eldobni.",

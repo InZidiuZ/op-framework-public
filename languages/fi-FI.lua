@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 35 (do not change)
+-- AUTO LOCALES: 36 (do not change)
 
 OP.Global.Locales.Languages["fi-FI"] = {
 	-- configuration settings for language
@@ -202,10 +202,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		spawned_item_for_everyone_title = "Spawnaa esineet kaikille",
 		spawned_item_for_everyone_details = "${consoleName} spawnaa ${itemName} ${amount} kpl:lle kaikille.",
 
-		report_title = "ILMOITUS-${reportId} ${reporterName}",
-		report_logs_title = "Ilmoitus",
-		report_logs_details = "${consoleName} luo ilmoituksen ${reportId} seuraavalla viestillä: `${reportMessage}`",
-
 		announcement_staff_title = "Staffilmoitus",
 		announcement_server_title = "Palvelimen tiedote",
 
@@ -220,47 +216,11 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		failed_to_post_announcement = "Tiedotetta ei voitu lähettää, koska viestiä ei lisätty.",
 		failed_to_post_announcement_locale = "Tiedotetta ei voitu lähettää, koska lisättyä tiedotteen lokalisointia ei tueta.",
 
-		staff_title = "HENKILÖKUNTA ${staffName}",
-		staff_message_logs_title = "Henkilökunnan viesti",
-		staff_message_logs_details = "${consoleName} lähetti seuraavan viestin henkilökunnan chattiin: `${staffMessage}`",
-		local_staff_title = "PAIKALLINEN HENKILÖKUNTA ${staffName}",
-		local_staff_message_logs_title = "Paikallisen henkilökunnan viesti",
-		local_staff_message_logs_details = "${consoleName} lähetti seuraavan viestin paikallisen henkilökunnan chattiin: `${staffMessage}`",
-
-		staff_pm_title = "HENKILÖKUNNAN YKSITYISVIESTI ${transmissionTitle}",
-		staff_pm_logs_title = "Henkilökunnan yksityisviesti",
-		staff_pm_logs_details = "${senderConsoleName} lähetti seuraavan viestin käyttäjälle ${recipientConsoleName}: `${staffPrivateMessage}`",
-		staff_pm_not_logged_in = "Et ole kirjautuneena sisään.",
-		staff_pm_not_user_not_found = "Käyttäjää, jonka palvelin-ID on ${serverId}, ei löydetty.",
-		staff_pm_not_recipient_not_staff = "Henkilö, jolle yrität lähettää viestiä, ei ole henkilökunnan jäsen.",
-		staff_pm_unable_to_message_self = "Et voi lähettää viestiä itsellesi.",
-		staff_pm_warning = "Henkilökunnan yksityisviestien varoitus",
-		staff_pm_first_time = "Havaitsemme, ettet ole koskaan käyttänyt henkilökunnan yksityisviestejä aiemmin. Vastaamiseen henkilökunnan yksityisviestiin käytä `/staffpm` ja vastaanottajan tunnusta. Helpottaaksesi käyttöä voit käyttää `/reply` vastataksesi viimeiseen henkilökunnan yksityisviestiisi.",
-		reply_pm_not_found = "Ei henkilökunnan viestiä, johon vastata.",
-
-		important_staff_pm_title = "!STAFF PM Sinä -> ${recipient}",
-		close_staffpm = "Sulje",
-		staffpm_from = "Henkilökunnan viesti käyttäjältä <i>${from}</i>",
-		important_staff_pm_logs_title = "Tärkeä henkilökunnan yksityisviesti",
-		important_staff_pm_logs_details = "${senderConsoleName} lähetti seuraavan tärkeän viestin pelaajalle ${recipientConsoleName}: `${message}`",
-
-		external_staff_message = "Ulkoisen henkilökunnan viesti",
-		external_staff_message_from_player = "Ulkoisen henkilökunnan viesti pelaajalta ${playerName}",
-		external_staff_message_content = "${staffMessage} (Et voi vastata tähän viestiin.)",
-
-		unable_to_staff_message_yourself = "Et voi lähettää henkilökunnan viestiä itsellesi.",
-		message_sent = "Viesti lähetetty.",
-		player_not_found = "Pelaajaa ei löydetty.",
-		missing_valid_target_source_parameter = "Puuttuva kelvollinen 'kohde lähde' parametri.",
-		missing_valid_message_parameter = "Puuttuva kelvollinen 'viesti' parametri.",
-
 		invalid_coordinates = "Virheelliset x, y, z tai w koordinaatit annettu.",
 		player_not_loaded_character = "Pelaajalla ei ole hahmoa ladattuna.",
 		teleport_successful = "Pelaajan teleporttaus onnistui.",
 
 		player_revived_success = "Pelaajan elvytys onnistui.",
-
-		missing_valid_license_identifier_parameter = "Puuttuva kelvollinen 'lisenssi tunniste' parametri.",
 
 		wipe_broken = "broken - Rikkoutuneet/Rikki menneet objektit",
 		wipe_npcs = "npcs - NPC:t ja niiden ajoneuvot.",
@@ -376,12 +336,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		report_muted_no_reason = "Olet estetty raportointi-komennosta ilman määriteltyä syytä.",
 		report_muted = "Olet estetty raportointi-komennosta syystä `${reason}`.",
-
-		already_sending_report = "Lähetät jo raporttia. Odota hetki.",
-		unable_to_send_identical_report = "Et voi lähettää kahta identtistä raporttia peräkkäin.",
-
-		already_sending_staff_message = "Lähetät jo henkilökunnan viestiä. Odota hetki.",
-		unable_to_send_identical_staff_message = "Et voi lähettää kahta identtistä henkilökunnan viestiä peräkkäin 30 sekunnin sisällä.",
 
 		population_density_set_to = "Asukastiheyden moninkertaistus on asetettu arvoon ${multiplierLabel}%.",
 		population_density_set_off = "Väestötiheyden monistimen ohitustoiminto on sammutettu.",
@@ -881,51 +835,11 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		marathon_command_substitutes = "",
 
 		-- base/admin
-		report_command = "ilmoita",
-		report_command_help = "Lähetä viesti kaikille aktiivisille henkilökunnan jäsenille.",
-		report_command_parameter_message = "viesti",
-		report_command_parameter_message_help = "A fucking $500 savings bond that serves as a substantial investment in your fucking future. When the fucking time is right, redeem it at a bank to unlock its full fucking value and take a significant goddamn stride toward your financial aspirations.",
-		report_command_substitutes = "ilmoitaadminille",
-
 		announce_command = "ilmoitus",
 		announce_command_help = "Lähetä ilmoitus kaikille pelaajille.",
 		announce_command_parameter_message = "viesti",
 		announce_command_parameter_message_help = "Viesti, jonka haluat lähettää.",
 		announce_command_substitutes = "",
-
-		staff_pm_command = "henkilökunta_pm",
-		staff_pm_command_help = "Lähetä viesti joko henkilökunnan jäsenelle tai pelaajana henkilökunnan jäsenenä.",
-		staff_pm_command_parameter_server_id = "palvelimen tunniste",
-		staff_pm_command_parameter_server_id_help = "Pelaajan palvelimen tunniste, jolle yrität lähettää viestin.",
-		staff_pm_command_parameter_message = "viesti",
-		staff_pm_command_parameter_message_help = "Viesti, jonka haluat lähettää.",
-		staff_pm_command_substitutes = "staffpm, viesti, pm, msg",
-
-		important_staff_pm_command = "tärkeä_henkilöstöviesti",
-		important_staff_pm_command_help = "Lähetä tärkeä viesti pelaajalle henkilöstön jäsenenä.",
-		important_staff_pm_command_parameter_server_id = "palvelimen tunniste",
-		important_staff_pm_command_parameter_server_id_help = "Pelaajan palvelimen tunniste, jolle yrität lähettää viestiä.",
-		important_staff_pm_command_parameter_message = "viesti",
-		important_staff_pm_command_parameter_message_help = "Tärkeä viesti, jonka haluat lähettää.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
-
-		reply_pm_command = "vastaa_pm",
-		reply_pm_command_help = "Vastaa viimeiseen saamaasi henkilökunnan viestiin.",
-		reply_pm_command_parameter_message = "viesti",
-		reply_pm_command_parameter_message_help = "Viesti, jonka haluat lähettää.",
-		reply_pm_command_substitutes = "vastaa",
-
-		staff_command = "henkilökunta",
-		staff_command_help = "Lähetä viesti kaikille aktiivisille henkilökunnan jäsenille.",
-		staff_command_parameter_message = "viesti",
-		staff_command_parameter_message_help = "Viesti, jonka haluat lähettää.",
-		staff_command_substitutes = "",
-
-		local_staff_command = "paikallinen_henkilökunta",
-		local_staff_command_help = "Lähetä viesti kaikille aktiivisille henkilökunnan jäsenille 25 metrin säteellä.",
-		local_staff_command_parameter_message = "viesti",
-		local_staff_command_parameter_message_help = "Viesti, jonka haluat lähettää.",
-		local_staff_command_substitutes = "lhenkilökunta",
 
 		wipe_command = "pyyhi",
 		wipe_command_help = "Poista ei-toivotut objektit kartalta.",
@@ -1437,11 +1351,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		emojis_refresh_command_help = "Päivitä käytettävissä olevat emojit. Tämä hakee uusimman listan discord-yhteisöstä.",
 		emojis_refresh_command_substitutes = "",
 
-		-- base/ping
-		get_pings_command = "get_pings",
-		get_pings_command_help = "Hae keskimääräiset ping-ajat eri palvelimille ympäri maailmaa löytääksesi sopivimman palvelimen sijainnin tämän serverin nykyisille pelaajille.",
-		get_pings_command_substitutes = "",
-
 		-- base/points
 		points_command = "pisteet",
 		points_command_help = "Näyttää kuinka monta OP-pistettä sinulla on.",
@@ -1465,6 +1374,47 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		remove_twitch_ban_exception_command_parameter_server_id = "Failed to automatically generate translation.",
 		remove_twitch_ban_exception_command_parameter_server_id_help = "Failed to automatically generate translation.",
 		remove_twitch_ban_exception_command_substitutes = "",
+
+		-- base/staff_pm
+		report_command = "ilmoita",
+		report_command_help = "Lähetä viesti kaikille aktiivisille henkilökunnan jäsenille.",
+		report_command_parameter_message = "viesti",
+		report_command_parameter_message_help = "A fucking $500 savings bond that serves as a substantial investment in your fucking future. When the fucking time is right, redeem it at a bank to unlock its full fucking value and take a significant goddamn stride toward your financial aspirations.",
+		report_command_substitutes = "calladmin, wallop, modreq, auta",
+
+		claim_report_command = "claim_report",
+		claim_report_command_help = "Vaadi tietty raportti.",
+		claim_report_command_parameter_report_id = "raportin tunniste",
+		claim_report_command_parameter_report_id_help = "Raportin tunniste, jonka haluat vaatia.",
+		claim_report_command_substitutes = "claim, cr, claimreport",
+
+		staff_pm_command = "henkilökunta_pm",
+		staff_pm_command_help = "Lähetä viesti joko henkilökunnan jäsenelle tai pelaajana henkilökunnan jäsenenä.",
+		staff_pm_command_parameter_server_id = "palvelimen tunniste",
+		staff_pm_command_parameter_server_id_help = "Pelaajan palvelimen tunniste, jolle yrität lähettää viestin.",
+		staff_pm_command_parameter_message = "viesti",
+		staff_pm_command_parameter_message_help = "Viesti, jonka haluat lähettää.",
+		staff_pm_command_substitutes = "staffpm, viesti, yv, vastaa, vastaayv, vastaa_yv",
+
+		important_staff_pm_command = "tärkeä_henkilöstöviesti",
+		important_staff_pm_command_help = "Lähetä tärkeä viesti pelaajalle henkilöstön jäsenenä.",
+		important_staff_pm_command_parameter_server_id = "palvelimen tunniste",
+		important_staff_pm_command_parameter_server_id_help = "Pelaajan palvelimen tunniste, jolle yrität lähettää viestiä.",
+		important_staff_pm_command_parameter_message = "viesti",
+		important_staff_pm_command_parameter_message_help = "Tärkeä viesti, jonka haluat lähettää.",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
+
+		staff_command = "henkilökunta",
+		staff_command_help = "Lähetä viesti kaikille aktiivisille henkilökunnan jäsenille.",
+		staff_command_parameter_message = "viesti",
+		staff_command_parameter_message_help = "Viesti, jonka haluat lähettää.",
+		staff_command_substitutes = "",
+
+		local_staff_command = "paikallinen_henkilökunta",
+		local_staff_command_help = "Lähetä viesti kaikille aktiivisille henkilökunnan jäsenille 25 metrin säteellä.",
+		local_staff_command_parameter_message = "viesti",
+		local_staff_command_parameter_message_help = "Viesti, jonka haluat lähettää.",
+		local_staff_command_substitutes = "lhenkilökunta",
 
 		-- base/users
 		playtime_command = "playtime",
@@ -1582,11 +1532,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		play_audio_command_parameter_server_id_help = "Pelaajan palvelimen ID, jolle haluat toistaa tämän äänen. Voit käyttää arvoa `-1` kaikille pelaajille.",
 		play_audio_command_substitutes = "",
 
-		-- game/audio_emitters
-		toggle_audio_emitters_command = "toggle_audio_emitters",
-		toggle_audio_emitters_command_help = "Vaihda ääniemittimet päälle tai pois.",
-		toggle_audio_emitters_command_substitutes = "",
-
 		-- game/bandaids
 		random_bandaid_command = "satunnainen_sidontanauha",
 		random_bandaid_command_help = "Antaa sinulle satunnaisen sidontanauhan. :)",
@@ -1683,17 +1628,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		buddy_pass_command = "kaverikortti",
 		buddy_pass_command_help = "Avaa kaverikortti-käyttöliittymä.",
 		buddy_pass_command_substitutes = "",
-
-		-- game/cache
-		cache_assets_command = "välimuisti_varat",
-		cache_assets_command_help = "Pakota pyyntö ja lataa suurin osa striimatusta materiaalista (ajoneuvot, objektit ja vaatteet). Tätä ei suositella ellei sinulla ole hidas yhteys eikä materiaali lataudu riittävän nopeasti pyynnöstä saumattomasti. Tämä voi myös aiheuttaa asiakasohjelman kaatumisen toimiessaan.",
-		cache_assets_command_parameter_slow_download = "hidasta latausta",
-		cache_assets_command_parameter_slow_download_help = "Haluatko ladata varat hitaammin? Tämä tekee lataamisesta paljon hitaampaa, mutta vähentää myös kaatumisriskiä.",
-		cache_assets_command_substitutes = "lataus_cache, esilataa_cache, lataa_cache",
-
-		cache_join_toggle_command = "cache_join_toggle",
-		cache_join_toggle_command_help = "Vaihda automaattisesti joitain varoja välimuistiin aina liittyessäsi palvelimelle.",
-		cache_join_toggle_command_substitutes = "",
 
 		-- game/camera
 		stable_cam_command = "vakaa_kamera",
@@ -3735,10 +3669,14 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		ped_reverse_command = "ped_reverse",
 		ped_reverse_command_help = "Pakottaa lähimmän NPC-hahmon ajoneuvon peruuttamaan.",
+		ped_reverse_command_parameter_duration = "kestoaika",
+		ped_reverse_command_parameter_duration_help = "Käännöksen kesto sekunneissa (1 s - 20 s, oletusarvo on 4 s).",
 		ped_reverse_command_substitutes = "",
 
 		ped_forwards_command = "ped_forwards",
 		ped_forwards_command_help = "Pakottaa lähimmän NPC-hahmon ajoneuvon ajamaan eteenpäin.",
+		ped_forwards_command_parameter_duration = "kesto",
+		ped_forwards_command_parameter_duration_help = "Ajettavan eteenpäin kesto sekunneissa (1 s - 20 s, oletusarvo on 4 s).",
 		ped_forwards_command_substitutes = "",
 
 		vehicle_flip_command = "käännä_auto",
@@ -3787,6 +3725,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		polygon_command = "Failed to automatically generate translation.",
 		polygon_command_help = "Määrittele 2D-monikulmio.",
 		polygon_command_substitutes = "Failed to automatically generate translation.",
+
+		box_command = "laatikko",
+		box_command_help = "Määritä 3D-laatikko.",
+		box_command_substitutes = "",
 
 		-- global/states
 		entity_states_command = "entiteettien_tilat",
@@ -3969,6 +3911,27 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		tasks_debug_command_parameter_area_id_help = "Tehtävän alueen tunniste, jonka tietoja haluat tarkastella. Jätä tyhjäksi tulostaaksesi kaikki alueet.",
 		tasks_debug_command_substitutes = "",
 
+		-- jobs/taxi
+		taxi_display_command = "taksinäyttö",
+		taxi_display_command_help = "Vaihda taksinäytön tilaa.",
+		taxi_display_command_substitutes = "taksinäyttö, taksinäyttö",
+
+		taxi_hire_command = "taksin_tilaus",
+		taxi_hire_command_help = "Vaihda taksin tilausta.",
+		taxi_hire_command_substitutes = "taksin_tilaus",
+
+		taxi_reset_command = "taksin_nollaus",
+		taxi_reset_command_help = "Nollaa taksimittari.",
+		taxi_reset_command_substitutes = "taksin_nollaus",
+
+		taxi_fare_command = "taksin_maksu",
+		taxi_fare_command_help = "Aseta taksin maksu.",
+		taxi_fare_command_parameter_type = "tyyppi",
+		taxi_fare_command_parameter_type_help = "Minkä tyyppisen maksun haluat asettaa (ohje, näytä, alku, maili tai minuutti).",
+		taxi_fare_command_parameter_amount = "määrä",
+		taxi_fare_command_parameter_amount_help = "Summa, jonka haluat asettaa maksuksi.",
+		taxi_fare_command_substitutes = "taksimaksu",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "vaihda_mekaanikon_viestejä",
 		toggle_mechanic_messages_command_help = "Vaihtaa, saatko mekaanikon viestejä vai et.",
@@ -4088,13 +4051,11 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		wheel_offset_command_parameter_value_help = "Kuinka paljon haluat muokata sitä. Tämä voi olla välillä -0.15 ja 0.2, 0 on oletusarvo.",
 		wheel_offset_command_substitutes = "",
 
-		wheel_rotation_command = "pyörän_kierto",
-		wheel_rotation_command_help = "Muokkaa ajoneuvon pyörien kiertoa.",
-		wheel_rotation_command_parameter_wheels = "etu/taka",
-		wheel_rotation_command_parameter_wheels_help = "Mitä pyöriä haluat muokata?",
-		wheel_rotation_command_parameter_value = "arvo",
-		wheel_rotation_command_parameter_value_help = "Kuinka paljon haluat sitä muuttaa. Tämä voi olla -0.5 ja 0.5 välillä, 0 on oletusarvo.",
-		wheel_rotation_command_substitutes = "",
+		suspension_height_command = "jousituksen_korkeus",
+		suspension_height_command_help = "Muuta ajoneuvon visuaalista jousituksen korkeutta.",
+		suspension_height_command_parameter_value = "arvo",
+		suspension_height_command_parameter_value_help = "Summa, jolla haluat muuttaa sitä. Tämä voi olla mistä tahansa -0.15:stä 0.1:een, 0 on oletusarvo.",
+		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
 		oil_level_command = "öljyn_taso",
@@ -4258,6 +4219,12 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		throw_weapon_command_help = "Heitä tällä hetkellä käytössä oleva ase.",
 		throw_weapon_command_substitutes = "yeet, heitä",
 
+		wipe_throwables_command = "pyyhi_heittotavarat",
+		wipe_throwables_command_help = "Pyyhkii kaikki heitetyt aseet määritetyllä säteellä.",
+		wipe_throwables_command_parameter_radius = "säde",
+		wipe_throwables_command_parameter_radius_help = "Säde, jolla heitetyt aseet pyyhitään (oletus: 5).",
+		wipe_throwables_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "tarkista_ammu",
 		check_ammo_command_help = "Tarkista kuinka paljon ammuksia sinulla on yhteensä.",
@@ -4344,12 +4311,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		local_firewall_blocked = "Paikallinen palomuuri: Estetty ${playerName} (${licenseIdentifier})"
 	},
 
-	ping = {
-		getting_pings = "Haetaan viiveitä kaikilta pelaajilta. Tämä saattaa kestää muutaman sekunnin.",
-		host_data = "${position}. ${location} - ${averagePing} keskimääräinen viive (perustuen ${totalPings} asiakkaaseen), 10% Alin: ${averagePingLow}, 10% Ylin: ${averagePingHigh}",
-		list_hosts = "${listHosts}"
-	},
-
 	points = {
 		you_have_points = "Sinulla on ${frameworkPoints} OP-pistettä.",
 		used_points = "Käytetty ${amount} OP-pistettä tunnuksella `${label}`.",
@@ -4362,11 +4323,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 	profile = {
 		profile_debug_enabled = "The profile debugger has been enabled. Check the F8 console for output.",
 		profile_debug_disabled = "The profile debugger has been disabled."
-	},
-
-	proxy = {
-		proxied_via_logs_title = "Proxied Via",
-		proxied_via_logs_details = "${consoleName} was proxied via `${serverName}`."
 	},
 
 	restart = {
@@ -4511,6 +4467,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		ping_stable = "Pingisi on nyt taas vakaa."
 	},
 
+	vpn = {
+		vpn_not_allowed_for_new_players = "VPN:n käyttöä ei sallita pelaajille, joilla on alle 24 tunnin peliaika."
+	},
+
 	whitelist = {
 		not_whitelisted = "Sinulla ei ole valkoista listaa tällä palvelimella.\n\nLiity Discord-yhteisöömme saadaksesi lisätietoja kuinka hakea ${communityDiscord}"
 	},
@@ -4644,12 +4604,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		description_rat_unnamed = "Tämä seikkailunhaluinen ${gender} rotta, ${age} ja painoltaan ${weight} kiloa, navigoi maailmaa terävällä älykkyydellä ja odottamattomalla viehätyksellä. Täysin omistautunut ruoalleen, rotta tekee jokaisesta nurkasta potentiaalisen löydön, jokaisesta varjosta leikkikentän.",
 		description_rat_named = "${name}, ${gender} rotta, joka on ${age} ja joka on heittäytynyt elämän suureen kokeiluun, painaen ${weight} ja puhjeten persoonallisuudesta. Tekemätön side ${food}:iin, ${name} henkii uteliaisuuden henkeä—pieni kooltaan, loputtoman suuri hengeltään.",
 
+		pick_up = "[${SeatEjectKey}] Nosta ylös",
 		pick_up_named = "[${SeatEjectKey}] Nosta ${name}",
-		pick_up_cat = "[${SeatEjectKey}] Nosta kissa",
-		pick_up_dog = "[${SeatEjectKey}] Nosta koira",
-		pick_up_hen = "[${SeatEjectKey}] Nosta kana",
-		pick_up_rabbit = "[${SeatEjectKey}] Nosta kani",
-		pick_up_rat = "[${SeatEjectKey}] Nosta rotta",
 
 		failed_pickup_cat = "Kissan nostaminen epäonnistui.",
 		failed_pickup_dog = "Koiran nostaminen epäonnistui.",
@@ -4996,11 +4952,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} toisti ääniefektin kaikille. Ääniefektillä oli URL-osoite `${url}` ja se oli asetettu soittamaan äänenvoimakkuudella `${volume}`.",
 		played_audio_effect_for_player_title = "Toistettiin ääniefekti pelaajalle",
 		played_audio_effect_for_player_details = "${consoleName} toisti ääniefektin pelaajalle ${targetConsoleName}. Ääniefektillä oli URL-osoite `${url}` ja se oli asetettu soittamaan äänenvoimakkuudella `${volume}`."
-	},
-
-	audio_emitters = {
-		audio_emitters_disabled = "Äänisäteilijät on poistettu käytöstä.",
-		audio_emitters_enabled = "Äänisäteilijät on otettu käyttöön."
 	},
 
 	balls = {
@@ -5401,15 +5352,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 	bus_map = {
 		bus_tracker = "Bussi"
-	},
-
-	cache = {
-		download_progress = "Latauksen eteneminen:\n- Ajoneuvot: ${vehiclesDone}/${vehiclesTotal}\n- Objektit: ${objectsDone}/${objectsTotal}\n- Kaupunkilaiset: ${pedsDone}/${pedsTotal}\n- Vaatteet: ${clothingRequested}/${clothingTotal}",
-		slow_download_enabled = "Hidas lataus on otettu käyttöön.",
-		slow_download_disabled = "Hidas lataus on poistettu käytöstä.",
-
-		join_cache_disabled = "Liittymisvälimuisti on poistettu käytöstä.",
-		join_cache_enable = "Liitymisen välimuisti on käytössä."
 	},
 
 	caffeine = {
@@ -6307,6 +6249,11 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		crafting_ammo = "Ammusten valmistus",
 		crafted_ammo = "Valmistettu ammuksia.",
 		failed_craft_ammo = "Ammusten valmistus epäonnistui.",
+
+		gift_box_bomb_recipe = "Erityinen lahjarasia",
+		crafting_gift = "Käsintehdyt lahjarasiat",
+		crafted_gift = "Valmistettu lahjarasia.",
+		failed_craft_gift = "Lahjarasian valmistuksessa tapahtui virhe.",
 
 		process_weed = "Prosessoi kasvia",
 		press_to_process_weed = "[${SeatEjectKey}] Prosessoi kasvia",
@@ -8195,6 +8142,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		cinema = "Elokuva-teatteri",
 		strip_club = "Strip Club",
 		police_store = "Polisin kauppa",
+		utility_crate = "Hyötylaatikko",
 		fib_store = "FIB-kauppa",
 		deputy_madison = "Apulaissheriffi Madison",
 		sergeant_harris = "Vääpeli Harris",
@@ -8246,11 +8194,17 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		target_inventory_full = "Glock 18C",
 		received_item = "Soporte para Micrófono",
 
+		inspecting_item = "Tutkitaan esinettä",
+
 		inspect_weapon = "Tämän ${itemName} sarjanumero näyttää olevan `${itemId}`.",
 		inspect_weapon_broken = "Tämän ${itemName} sarjanumero näyttää olevan `${itemId}`, se näyttää myös olevan täysin rikki.",
 		inspect_bank_property = "Amplifica el alcance de tu voz con el Soporte para Micrófono. ¡Haz que tu mensaje se escuche lejos y cerca!",
 		inspect_bank_property_cid = "Tämä ${item} on merkitty ${bank} Pankin omaisuudeksi. Se on nostettu tilinumerolla #${characterId}.",
 		inspect_no_property = "Guinness",
+
+		gift_box_normal = "Tämä lahjarasia näyttää täysin normaalilta.",
+		gift_box_suspicious = "Tämä lahjarasia vaikuttaa hieman epäilyttävältä.",
+		gift_box_residue = "Tässä lahjarasiassa on hieman harmaata jauhetta jäämiä.",
 
 		searching_dumpster = "Tutkitaan roska-astiaa",
 		searching_homeless_tent = "Etsit kodittoman telttaa",
@@ -8625,6 +8579,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		empty_box_description = "Aloita tästä yksinkertaisesta, tukevasta laatikosta luodaksesi henkilökohtaisen lahjan. Täytä se ei-pilaantuvilla aarteilla, ja se on valmis muuttumaan ajatuksekkaaksi lahjaksi. Ihanteellinen kaiken pakkaamiseen, mikä symboloi kiintymystä, lukuun ottamatta pilaantuvia elintarvikkeita ja aseita.",
 		gift_box = "Lahjalaatikko",
 		gift_box_description = "Tämä tyylikkäästi suljettu lahjalaatikko, koristeltu juhlavalla nauhalla, on kaunis tapa esitellä huolella valitsemasi tuotteet. Täydellinen erityisiin tilaisuuksiin, se välittää lämpöä ja ajattelevaisuutta, varmistaen että antamasi ele on yhtä miellyttävä kuin laatikon sisällä oleva lahja.",
+		gift_box_bomb = "Pommi-lahjarasia",
+		gift_box_bomb_description = "Tämä tyylikkäästi sinetöity lahjarasia, koristeltu juhlavalla nauhalla, on kaunis tapa esitellä huolella valitsemasi esineet. Täydellinen erityisiin tilaisuuksiin, se välittää lämpöä ja huomaavaisuutta varmistaen, että antamasi ele jättää pysyvän vaikutuksen.",
 
 		ear_defenders = "Kuulosuojaimet",
 		ear_defenders_description = "Kuulosuojaimet suojaa korvat kovilta ääniltä.",
@@ -9234,6 +9190,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		pet_snowman_description = "A shitty $200 savings bond that represents your fucking commitment to financial security. This shit can be cashed in at participating banks, providing you with a fucking boost to your savings and a fucking step closer to your fucking financial goals.",
 		pet_owl = "Hooty",
 		pet_owl_description = "Hooty, viisas ja valpas seuralaisesi, istuu elegantisti olallasi. Sen terävät silmät ja pehmeät höyhenet tekevät tästä lumoavasta pöllöstä taianomaisen lisän seikkailuihisi. Aina valmis tarjoamaan viisauden huuhtaisun, Hooty on täydellinen apuri mille tahansa matkalle.",
+		pet_pig = "Porkchop",
+		pet_pig_description = "Pieni possu, jolla on suuri persoonallisuus, iloisesti olallasi. Aina valmis mörisemään kannustusta tai arvostelemaan elämänvalintojasi suloisella sivusilmäyksellä. Olitpa sitten seikkailussa tai vain kävelyllä, tämä pintakokoinen seuralainen on täydellinen yhdistelmä viehätystä ja sassia.",
 
 		hotwheels_mcqueen = "Salama McQueen",
 		hotwheels_mcqueen_description = "Nopeus, olen nopeus. Uinu kuin Cadillac, pistä kuin Beemer. KATCHOW KATCHOW KATCHOW",
@@ -9549,6 +9507,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		wires = "Johtimet",
 		wires_description = "Pitää kaiken kasassa.",
 
+		microcontroller = "Mikro-ohjain",
+		microcontroller_description = "Pieni mutta voimakas aivot kaikille elektronisille luomuksillesi, kykenee tuomaan monimutkaisia ​​ideoita eloon vain muutamalla koodirivillä. Se on innovaation unohdettu sankari, hiljaa orkestroimassa taikuutta kulissien takana.",
+
 		note = "Huomio",
 		note_description = "Jotain huomiota, en tiedä kaveri.",
 
@@ -9743,6 +9704,17 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		wheel_clamp_description = "Ei pakomatkoja täällä! Pyöräklemmari pitää ajoneuvot tukevasti paikoillaan ja lopettaa luvattoman liikkumisen. Tämä tukevarakenteinen vempain on äänetön valvoja ja varmistaa, että pysäköintisääntöjä kunnioitetaan ja noudatetaan.",
 		old_rug = "Vanha matto",
 		old_rug_description = "Aseta tämä viihtyisä matto seuraavaa ulkoistuntopyöräilyä varten ja pidä asiat mukavana! Se on täydellinen löhöilyym vihreä lisäteksti kaikkiin teksteihinästä ilman että saisi noita ärsyttäviä vihreitä tahroja housuihisi. Levitä se, rentoudu ja nauti ympäristöstäsi tyylillä ja mukavuudella.",
+
+		evidence_marker_1 = "Merkki 1",
+		evidence_marker_1_description = "Mysteerin aloituspiste, merkitsee ensimmäistä johtolankaa totuuden selvittämiseksi.",
+		evidence_marker_2 = "Merkki 2",
+		evidence_marker_2_description = "Seurantajohtolanka, joka johdattaa tutkijat lähemmäs suurempaa kokonaisuutta.",
+		evidence_marker_3 = "Merkki 3",
+		evidence_marker_3_description = "Yksityiskohta, joka voi ratkaista koko tapauksen – älä jätä sitä huomiotta.",
+		evidence_marker_4 = "Merkki 4",
+		evidence_marker_4_description = "Kriittinen palanen palapeliä, hiljaa odottaen huomioimistaan.",
+		evidence_marker_5 = "Merkki 5",
+		evidence_marker_5_description = "Viimeinen merkki, joka joko yhdistää kaiken tai jättää enemmän kysymyksiä kuin vastauksia.",
 
 		bandit_1 = "Rosvo 1",
 		bandit_1_description = "undefined",
@@ -10604,6 +10576,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		invalid_invisibility_mode = "Virheellinen näkymättömyystila. Tulee olla 'täysi' tai 'normaali'.",
 		invisibility_mode_full = "Näkymättömyystila asetettu 'täysiksi'. Tavalliset henkilökunnan jäsenet eivät näe sinua.",
 		invisibility_mode_normal = "Näkymättömyystila asetettu 'normaaliksi'. Tavalliset henkilökunnan jäsenet voivat nyt nähdä sinut.",
+		current_invisibility_mode = "Nykyinen näkymättömyystila on asetettu '${mode}'-tilaan.",
 
 		toggled_invisibility = "${displayName}'n näkymättömyys onnistuneesti vaihdettu päälle/pois päältä.",
 		failed_invisibility = "Epäonnistui ${displayName}'n näkymättömyyden vaihtaminen.",
@@ -10699,6 +10672,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		logs_used_weather_spell_title = "Käytetty sääloitsu",
 		logs_used_weather_spell_details = "${consoleName} käytti sääloitsua `${itemName}`.",
 
+		gift_box_bomb_logs_title = "Avattu räjähteellinen lahjarasia",
+		gift_box_bomb_logs_details = "${consoleName} avasi räjähteellisen lahjarasian.",
+
 		you_have_used_jail_card = "Olet käyttänyt vapaalipun vankilasta!",
 		you_are_not_in_jail = "Et ole vankilassa.",
 
@@ -10791,9 +10767,9 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		sentence_reduced = "Tuomiosi lyhennettiin ${amount} kuukaudella, sinulla on jäljellä ${remaining} kuukautta.",
 		sentence_increased = "Rangaistustasi kasvatettiin ${amount} kuukaudella, sinulla on jäljellä ${remaining} kuukautta.",
 		sentence_over = "Tuomiosi on päättynyt.",
-		remaining_time_fmt = "${months} kuukautta (*${display}*)",
+		remaining_time_fmt = "${months} kuukautta (${display})",
 		remaining_time = "Jäljellä oleva aika: ${remaining}.",
-		jailed = "Sinut on vangittu ${amount} ajaksi.",
+		jailed = "Sinut on vangittu ${amount} kuukaudeksi.",
 
 		mission_help_1 = "Paina ~INPUT_CONTEXT~, jotta siivoat lattian.",
 		mission_help_2 = "Paina ~INPUT_CONTEXT~, jotta syöt jotakin.",
@@ -10970,17 +10946,6 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		back = "Takaisin",
 		copy_license = "Henkilötodistuksen tunniste",
 		copy_license_success = "Kopioitu!",
-		cache_assets = "Välimuistin lataus",
-		download_assets = "Haluatko ladata ja tallentaa suurimman osan palvelimen resursseista? Tässä hyödyt ja huomioitavaa:",
-		cache_assets_performance = "Nauti paremmasta FPS:stä ja vähemmistä ping-piikeistä pelikokemuksen aikana, erityisesti jos sinulla on heikkolaatuinen laitteisto tai hidas yhteys.",
-		cache_assets_crashes = "Peli saattaa kaatua prosessin aikana. Jos näin tapahtuu, käytä 'hidasta latausta' -vaihtoehtoa sen sijaan.",
-		cache_assets_restart = "Suorita pelin uudelleenkäynnistys latauksen päätyttyä välttääksesi viivettä tämän pelisession aikana.",
-		cache_assets_disk = "Tämä käyttää hieman levytilaa, joten varmista, että sinulla on riittävästi vapaata tilaa.",
-		cache_assets_no_repeat = "Sinun ei tarvitse tehdä tätä jokaisen päivityksen yhteydessä, koska vain muutama tiedosto muuttuu.",
-		vehicles = "Ajoneuvot",
-		objects = "Esineet",
-		peds = "Jalkautuneet hahmot",
-		clothing = "Vaatteet",
 		main_menu = "Päävalikko",
 		gta_settings = "GTA Asetukset",
 		discord = "Discord",
@@ -11132,8 +11097,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 	lottery = {
 		lottery_announcement = "Arvontailmoitus",
-		lottery_about_to_roll = "Voittaja arvotaan 5 minuutin kuluttua päivän lottoarvonnassa. Palkintopotti on tällä hetkellä $${totalAmount}, johon olet panostanut $${betAmount}. Mahdollisuutesi voittaa on ${odds} %.",
-		current_lottery_pot = "Kokonaispotissa on tällä hetkellä $${totalAmount}, johon olet panostanut $${betAmount}. Voittomahdollisuutesi ovat ${odds} %.",
+		lottery_about_to_roll = "Voittaja arvotaan 5 minuutin kuluttua tämän päivän lottoon. Potissa on tällä hetkellä $${totalAmount}, johon olet panostanut $${betAmount}. Voittomahdollisuutesi on ${odds}%. Veroprosentti on ${tax}%.",
+		current_lottery_pot = "Nykyinen potti on tällä hetkellä $${totalAmount}, johon olet panostanut $${betAmount}. Voittomahdollisuutesi on ${odds}%. Veroprosentti on ${tax}%",
 		drew_a_lottery_winner = "Arvonta on suoritettu ja voittaja on valittu.",
 		winner_has_been_picked = "${fullName} voitti loton potin $${totalAmount}! He panostivat $${betAmount} ja heidän voittomahdollisuutensa oli ${odds} %.",
 		claimed_lottery_winnings = "Haettu kaikki arvontavoitot.",
@@ -11744,6 +11709,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		hatch_claim = "LUNASTA",
 		hatch_opened = "LUNASTETTU",
 		hatch_waiting = "ODOTETTAESSA",
+		hatch_too_late = "LIHANEN MUKAANSA",
 
 		about_advent_calendar_title = "Tietoa Joulukalenterista",
 
@@ -11755,7 +11721,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 			<br><br>
 			Next hatch unlocks in ${time}.
 			<br><br>
-			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 26th.)
+			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 31st.)
 			<br><br>
 			<div class="bonusPoints">
 				<div>Bonus Points: ${bonusPoints}/22</div>
@@ -13570,6 +13536,59 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		used_bug_logs_details = "${consoleName} käytti mikrofonibugia henkilöllisyydellä ${identifier}."
 	},
 
+	staff_pm = {
+		something_went_wrong = "Jotakin meni pieleen viestin lähetyksessä.",
+		reports_too_fast = "Lähetät raportteja liian nopeasti, hidasta vauhtia.",
+		no_report_message = "Sinun on sisällytettävä viesti raporttiisi.",
+		same_report = "Et voi lähettää samaa raporttia kahdesti.",
+		report_muted = "Olet estetty lähettämästä raportteja syystä: `${reason}`.",
+		report_muted_no_reason = "Sinulla on estetty mahdollisuus lähettää raportteja.",
+
+		report_title = "RAPORTTI-${reportId} ${displayName}",
+		report_logs_title = "Raportti",
+		report_logs_details = "${consoleName} loi raportin ${reportId} seuraavalla viestillä: `${message}`",
+
+		invalid_server_id = "Virheellinen kohdepalvelimen tunniste.",
+		no_staff_pm_message = "Sinun tulee sisällyttää viesti yksityisviestiisi.",
+		user_not_staff = "Käyttäjä ei ole henkilökunnan jäsen.",
+		staff_pm_warning = "Henkilökunnan yksityisviesti varoitus",
+		staff_pm_first_time = "Havaitsemme, ettet ole koskaan käyttänyt henkilökunnan yksityisviestejä aiemmin. Vastataksesi henkilökunnan yksityisviestiin, käytä `/staffpm` ja vastaanottajan tunnistetta. Voit myös helpottaa vastaamista käyttämällä `/reply` vastataksesi viimeiseen saamaasi henkilökunnan yksityisviestiin.",
+
+		staff_pm_title = "HENKILÖKUNTA YV ${from} -> ${to}",
+		staff_pm_title_external = "ULKOINEN HENKILÖKUNTA YV ${from} -> ${to}",
+		close_staff_pm = "Sulje",
+		staff_pm_from = "Henkilökunnan YV lähettäjältä <i>${from}</i>",
+		staff_pm_logs_title = "Henkilökunnan YV",
+		staff_pm_logs_details = "${senderConsoleName} lähetti henkilökunnan yksityisviestin vastaanottajalle ${recipientConsoleName}: `${message}`",
+		important_staff_pm_logs_title = "Tärkeä Henkilökunnan YV",
+		important_staff_pm_logs_details = "${senderConsoleName} lähetti tärkeän henkilökunnan yksityisviestin vastaanottajalle ${recipientConsoleName}: `${message}`",
+
+		staff_toggled = "Henkilökuntatilasi on kytketty pois päältä.",
+		no_staff_message = "Sinun on sisällytettävä viesti henkilökuntakeskusteluusi.",
+		same_staff_message = "Et voi lähettää samaa henkilökuntaviestia kahdesti.",
+
+		staff_message_title = "HENKILÖKUNTA ${playerName}",
+		local_staff_message_title = "PAIKALLINEN HENKILÖKUNTA ${playerName}",
+		staff_message_logs_title = "Henkilökunnan viesti",
+		staff_message_logs_details = "${consoleName} lähetti seuraavan viestin henkilökuntakeskustelussa: `${message}`",
+		local_staff_message_logs_title = "Paikallinen henkilökunnan viesti",
+		local_staff_message_logs_details = "${consoleName} lähetti seuraavan viestin paikallisen henkilökunnan keskustelussa: `${message}`",
+
+		message_sent = "Viesti lähetetty.",
+		cannot_send_private_message_to_yourself = "Et voi lähettää yksityisviestiä itsellesi.",
+		missing_valid_message_parameter = "Puuttuva kelvollinen 'viesti' parametri.",
+		missing_valid_license_identifier_parameter = "Puuttuva kelvollinen 'lisenssintunnistin' parametri.",
+		missing_valid_target_source_parameter = "Puuttuva kelvollinen 'kohdeLähde' parametri.",
+
+		invalid_report_id = "Virheellinen raportin tunniste.",
+		report_already_claimed = "Kyseinen raportti on jo otettu haltuun käyttäjän *${playerName}* toimesta.",
+		report_same_creator = "Et voi ottaa haltuun omia raporttejasi.",
+		failed_claim_report = "Virhe raportin lunastuksessa.",
+		report_claimed = "Raportti **${reportId}** lunastettiin pelaajan *${playerName}* toimesta.",
+		claim_report_logs_title = "Lunastettu raportti",
+		claim_report_logs_details = "${consoleName} lunasti raportin ${reportId}."
+	},
+
 	starter_car = {
 		follow_the_checkpoints = "Henkilökohtainen ajoneuvosi on parkkeerattuna lähistöllä. Seuraa tarkistuspisteitä löytääksesi sen.",
 
@@ -13928,6 +13947,8 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		tp_cayo = "Cayo Perico",
 
 		actions = "Toiminnot",
+		jail_self = "Laita itsesi vankilaan",
+		unjail_self = "Vapauta itsesi vankilasta",
 		wander_around = "Haahuilla ympäriinsä",
 		speed_around = "Liikkua nopeasti",
 		clear_tasks = "Tyhjentää tehtävät",
@@ -14114,7 +14135,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		no_maps_to_combine = "Sinulla ei ole karttoja yhdistettäväksi.",
 
 		treasure_map_dug_up_logs_title = "Aarteen kartta kaivettu ylös",
-		treasure_map_dug_up_logs_details = "${consoleName} on kaivanut ylös aarteen kartan tasolta ${mapTier} ja saanut pudotustunnisteen ${dropId}."
+		treasure_map_dug_up_logs_details = "${consoleName} on kaivanut ylös aarteen kartan tasolta ${mapTier} ja saanut pudotustunnisteen ${dropId}.",
+
+		treasure_map_piece_spawned_logs_title = "Aarteenkarttapalan syntymä",
+		treasure_map_piece_spawned_logs_details = "${consoleName} on synnyttänyt aarteenkarttapalan numero ${pieceNumber} tasolta ${mapTier}."
 	},
 
 	tsunami = {
@@ -14335,14 +14359,24 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 	weed = {
 		strain_default = "Wild Haze",
-		strain_lemon = "Lemon Haze",
+		strain_bubble = "Kuplaberry",
 		strain_northern = "Northern Lights",
 		strain_kush = "OG Kush",
+		strain_diesel = "Sour Diesel",
+		strain_ak47 = "AK-47",
+		strain_dream = "Blue Dream",
+		strain_trainwreck = "Trainwreck",
+		strain_gorilla = "Gorilla Glue",
 
 		default_emoji = "🥦",
-		lemon_emoji = "🏃",
+		bubble_emoji = "🫧",
 		northern_emoji = "🛡️",
 		kush_emoji = "🦁",
+		diesel_emoji = "😌",
+		ak47_emoji = "🔫",
+		dream_emoji = "🪶",
+		trainwreck_emoji = "👊",
+		gorilla_emoji = "🦍",
 
 		strain_description = "<b>Laatu:</b> <i>${strain}</i> ${emoji}"
 	},
@@ -14392,6 +14426,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		run_as_failed = "Ei onnistuttu suorittamaan komentoa pelaajana ${consoleName}.",
 
 		no_nearby_vehicle = "Lähistöllä ei ole ajoneuvoa.",
+		invalid_duration = "Virheellinen kesto (1s - 20s).",
 		reversing_failed = "Pedin peruutus epäonnistui.",
 		driving_forwards_failed = "Pedin eteenpäin ajaminen epäonnistui.",
 		reversing_success = "Pedin peruuttaminen onnistui.",
@@ -14927,7 +14962,16 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 		task_take_nap = "Nuku päiväunet.",
 		task_take_nap_near = "Paina ~INPUT_DETONATE~, jotta otat päiväunet.",
-		task_take_nap_active = "Nukkumassa päiväunia"
+		task_take_nap_active = "Nukkumassa päiväunia",
+
+		task_water_plants = "Kastele kasvit.",
+		task_water_plants_near = "Paina ~INPUT_DETONATE~ kastaaksesi kasvit.",
+		task_water_plants_active = "Kasvien kastelu"
+	},
+
+	taxi = {
+		help_text = "`initial` on perus aloitustaksa (oletusarvo: $10), `mile` on hinta per ajettu maili (oletusarvo: $5), `minute` on hinta per minuutti, kun mittari on päällä (oletusarvo: $15), `show` näyttää nykyiset asetuksesi.",
+		invalid_typ = "Virheellinen tyyppi."
 	},
 
 	tow = {
@@ -15287,8 +15331,10 @@ OP.Global.Locales.Languages["fi-FI"] = {
 		wheels_modified = "Renkaiden asentoa muutettu.",
 		wheels_none_specified = "Ei määriteltyjä renkaita.",
 		wheels_none_valid_specified = "Ei kelvollisia renkaita määritelty.",
-		not_in_a_car = "Et ole autossa.",
-		invalid_value = "Virheellinen arvo."
+		not_in_a_car = "Et ole auton ratissa.",
+		invalid_value = "Virheellinen arvo.",
+		suspension_height = "Nykyinen jousitus on asetettu korkeuteen ${height}.",
+		suspension_height_set = "Jousituksen korkeus on asetettu arvoon ${height}."
 	},
 
 	oil = {
@@ -15496,6 +15542,7 @@ OP.Global.Locales.Languages["fi-FI"] = {
 
 	throwables = {
 		pick_up_weapon = "[${InteractionKey}] Poimi",
+		throwables_wiped = "Poistettu ${amount} heitettävää esinettä.",
 
 		no_weapon_equipped = "Sinulla ei ole asetta varustettuna.",
 		cant_throw_weapon = "Et voi heittää tätä asetta.",

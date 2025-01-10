@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 35 (do not change)
+-- AUTO LOCALES: 36 (do not change)
 
 OP.Global.Locales.Languages["meme-uwu"] = {
 	-- configuration settings for language
@@ -202,10 +202,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		spawned_item_for_everyone_title = "Spawned Item Fow Evewyone",
 		spawned_item_for_everyone_details = "${consoleName} spawned in ${amount}x `${itemName}` fow evewyone.",
 
-		report_title = "WEPOWT-${reportId} ${reportewName}",
-		report_logs_title = "Wepowt",
-		report_logs_details = "${consoleName} cweated wepowt ${reportId} with the fowwowing message: `${weportMessage}`",
-
 		announcement_staff_title = "Staff Announce-mwnt",
 		announcement_server_title = "Sewvew Announce-mwnt",
 
@@ -220,47 +216,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		failed_to_post_announcement = "Failed to post announcement messawge as no messawge was added.",
 		failed_to_post_announcement_locale = "Failed to post announcement messawge as the announcement locale added is not supported.",
 
-		staff_title = "STAFF ${staffName}",
-		staff_message_logs_title = "Staff Messawge",
-		staff_message_logs_details = "${consoleName} sent the fowwowing message in the staff chat: `${staffMessage}`",
-		local_staff_title = "WOCAL STAFF ${staffName} UwU",
-		local_staff_message_logs_title = "Wocaw Staff Message UwU",
-		local_staff_message_logs_details = "${consoleName} sent teh fowwowing message in teh wocaw staff chat: `${staffMessage}` UwU",
-
-		staff_pm_title = "STAFF PM ${transmissionTitle}",
-		staff_pm_logs_title = "Staff PM",
-		staff_pm_logs_details = "${senderConsoleName} sent the fowwowing message to ${recipientConsoleName}: `${staffPrivateMessage}`",
-		staff_pm_not_logged_in = "Uwu awe not logged in.",
-		staff_pm_not_user_not_found = "User with sewver ID ${serverId} was not found.",
-		staff_pm_not_recipient_not_staff = "Da pwayew you are attempting to send a message to is not a staff membew.",
-		staff_pm_unable_to_message_self = "You awe not abwe to message yourself.",
-		staff_pm_warning = "Staff PM Wawnwing",
-		staff_pm_first_time = "UwU see uwu have nyever used staff PMs befowe. To wespond to a staff PM, use `/staffpm` fowwowed by the wecipients id. Fow ease of use uwu can use `/wepwy` to wespond to the wast staff PM uwu weceived.",
-		reply_pm_not_found = "Thewe is no staff message to wepwy to.",
-
-		important_staff_pm_title = "!STAFF PM You -> ${wecipient}",
-		close_staffpm = "Cwose",
-		staffpm_from = "StwaffPM fwom <i>${fwom}</i>",
-		important_staff_pm_logs_title = "Impowtant Stwaff PM",
-		important_staff_pm_logs_details = "${senderConsoleName} sent the fowwowing impowtant message to ${wecipientConsoleName}: `${message}`",
-
-		external_staff_message = "Extewnal Staff Message",
-		external_staff_message_from_player = "Extewnal Staff Message Fwom ${playerName}",
-		external_staff_message_content = "${staffMessage} (You can not wespond to this message.)",
-
-		unable_to_staff_message_yourself = "OwO sowwy, cawn't staff message yuwself!",
-		message_sent = "Messyage sent!",
-		player_not_found = "Sowwy, I couldn't find that pwaywer :c",
-		missing_valid_target_source_parameter = "Oopsy woopsy! Yuw forgot to specify the 'tawget source' parameter.",
-		missing_valid_message_parameter = "Uhh ohh, Yuw forgot to add a message to send OwO",
-
 		invalid_coordinates = "The coordinates yuw entered are invalid :(",
 		player_not_loaded_character = "Sowwy OwO, that pwaywer doesn't have a character loaded.",
 		teleport_successful = "Tweleportation was successful! ^w^",
 
 		player_revived_success = "Revived pwayer successfuwwy uwu.",
-
-		missing_valid_license_identifier_parameter = "Mwissing a vawid 'wicenseIdentifiwer' pawameter uwu.",
 
 		wipe_broken = "bwoken - Bwoken/Fwagmented Objects",
 		wipe_npcs = "npcs - NPCs awnd theiw vehicwes.",
@@ -376,12 +336,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		report_muted_no_reason = "Uwu hab ben muted fwom teh weport command wifout a specified weason.",
 		report_muted = "Uwu hab ben muted fwom teh weport command for weason `${reason}`.",
-
-		already_sending_report = "Uwu aweady sending a weport. Pwease wait.",
-		unable_to_send_identical_report = "UwU, You awre unable t-tu send two identical weports after each othewr OwO.",
-
-		already_sending_staff_message = "You awe alweady sending a staff message, pwease wait UWU.",
-		unable_to_send_identical_staff_message = "You awre unable to send two identical staff messages after each other within 30 seconds, pwease wait OwO.",
 
 		population_density_set_to = "The popuwation density muwtiplier ovewwide has been set to ${multiplierLabel}%.",
 		population_density_set_off = "The popuwation density muwtipwier ovewwide has been tuwned off. UwU",
@@ -881,51 +835,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		marathon_command_substitutes = "",
 
 		-- base/admin
-		report_command = "weport",
-		report_command_help = "Send a message to aww active staff membews.",
-		report_command_parameter_message = "message",
-		report_command_parameter_message_help = "The message you would wike to send. A showt summawy of what you awe wepowting (Exampwe: \"I just got vdmed, theiw id was...\") OwO.",
-		report_command_substitutes = "cawwadmin",
-
 		announce_command = "announce",
 		announce_command_help = "Bwoadcast an announcement to all pwayers.",
 		announce_command_parameter_message = "message",
 		announce_command_parameter_message_help = "The message you wouwd wike to bwoadcast.",
 		announce_command_substitutes = "",
-
-		staff_pm_command = "staff_pm",
-		staff_pm_command_help = "Send a message to either a staff member, ow to a pleyer as a staff member >w<",
-		staff_pm_command_parameter_server_id = "server id",
-		staff_pm_command_parameter_server_id_help = "The pwayer's sewver ID you are twying to message.",
-		staff_pm_command_parameter_message = "message",
-		staff_pm_command_parameter_message_help = "The message you wouwd wike to send >w<",
-		staff_pm_command_substitutes = "stwaffpm, meswage, pm, msg",
-
-		important_staff_pm_command = "impowtant_staff_pm",
-		important_staff_pm_command_help = "Send an impowtant message to a pwayew as a staff membew.",
-		important_staff_pm_command_parameter_server_id = "sewvew id",
-		important_staff_pm_command_parameter_server_id_help = "The playew's sewvew ID UwU awe twying tuwu mewssage.",
-		important_staff_pm_command_parameter_message = "mewssage",
-		important_staff_pm_command_parameter_message_help = "The impowtant mewssage UwU wouwd wike tuwu send.",
-		important_staff_pm_command_substitutes = "!stwaffpm, !stwaff_pm, !pm",
-
-		reply_pm_command = "wepwy_pm",
-		reply_pm_command_help = "Wepwy tuwu the wast staff message yuw weceived.",
-		reply_pm_command_parameter_message = "message",
-		reply_pm_command_parameter_message_help = "The message yuw wouwd wike tuwu send.",
-		reply_pm_command_substitutes = "wepwy",
-
-		staff_command = "staff",
-		staff_command_help = "Bwoadcast a message to all active staff membews >w<",
-		staff_command_parameter_message = "messy-wessy",
-		staff_command_parameter_message_help = "Da messy-wessy yuw wouwd wike to send OwO.",
-		staff_command_substitutes = "",
-
-		local_staff_command = "wocaw_staff",
-		local_staff_command_help = "Bwoadcast a mesdage to aww active staff membews within a 25m wadius.",
-		local_staff_command_parameter_message = "mesdage",
-		local_staff_command_parameter_message_help = "The mesdage ywou wouwd wike to send.",
-		local_staff_command_substitutes = "wstaff",
 
 		wipe_command = "wipey-wipe",
 		wipe_command_help = "Wipey-wipe unwanted entities fwom da map :3.",
@@ -1437,11 +1351,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		emojis_refresh_command_help = "Wefwesh da avaiwabwe emojis. Dis wiww fetch da latest wist fwom da discord guiwd.",
 		emojis_refresh_command_substitutes = "",
 
-		-- base/ping
-		get_pings_command = "get_pings",
-		get_pings_command_help = "Get avewage ping to vawious hosts awound da wowwd to find da most suitabwe host wocation for dis sewvew's culwent playews.",
-		get_pings_command_substitutes = "",
-
 		-- base/points
 		points_command = "pwoints",
 		points_command_help = "Show the amount of OP Pwoints you have.",
@@ -1465,6 +1374,47 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		remove_twitch_ban_exception_command_parameter_server_id = "sewvew id",
 		remove_twitch_ban_exception_command_parameter_server_id_help = "The sewvew ID of the pwayew you want to wemove the exception fwom.",
 		remove_twitch_ban_exception_command_substitutes = "",
+
+		-- base/staff_pm
+		report_command = "weport",
+		report_command_help = "Send a message to aww active staff membews.",
+		report_command_parameter_message = "message",
+		report_command_parameter_message_help = "The message you would wike to send. A showt summawy of what you awe wepowting (Exampwe: \"I just got vdmed, theiw id was...\") OwO.",
+		report_command_substitutes = "cawwadmin, wawwop, modweq, hewpme",
+
+		claim_report_command = "cwaaim_wepowt",
+		claim_report_command_help = "Cwaaim a specific wepowt.",
+		claim_report_command_parameter_report_id = "wepowt id",
+		claim_report_command_parameter_report_id_help = "The id of the wepowt you want to cwaaim.",
+		claim_report_command_substitutes = "cwaaim, cw, cwaaimwepowt",
+
+		staff_pm_command = "staff_pm",
+		staff_pm_command_help = "Send a message to either a staff member, ow to a pleyer as a staff member >w<",
+		staff_pm_command_parameter_server_id = "server id",
+		staff_pm_command_parameter_server_id_help = "The pwayer's sewver ID you are twying to message.",
+		staff_pm_command_parameter_message = "message",
+		staff_pm_command_parameter_message_help = "The message you wouwd wike to send >w<",
+		staff_pm_command_substitutes = "staffpm, message, pm, msg, wepwy, weplympm, wepwy_pm",
+
+		important_staff_pm_command = "impowtant_staff_pm",
+		important_staff_pm_command_help = "Send an impowtant message to a pwayew as a staff membew.",
+		important_staff_pm_command_parameter_server_id = "sewvew id",
+		important_staff_pm_command_parameter_server_id_help = "The playew's sewvew ID UwU awe twying tuwu mewssage.",
+		important_staff_pm_command_parameter_message = "mewssage",
+		important_staff_pm_command_parameter_message_help = "The impowtant mewssage UwU wouwd wike tuwu send.",
+		important_staff_pm_command_substitutes = "!stwaffpm, !stwaff_pm, !pm",
+
+		staff_command = "staff",
+		staff_command_help = "Bwoadcast a message to all active staff membews >w<",
+		staff_command_parameter_message = "messy-wessy",
+		staff_command_parameter_message_help = "Da messy-wessy yuw wouwd wike to send OwO.",
+		staff_command_substitutes = "",
+
+		local_staff_command = "wocaw_staff",
+		local_staff_command_help = "Bwoadcast a mesdage to aww active staff membews within a 25m wadius.",
+		local_staff_command_parameter_message = "mesdage",
+		local_staff_command_parameter_message_help = "The mesdage ywou wouwd wike to send.",
+		local_staff_command_substitutes = "wstaff",
 
 		-- base/users
 		playtime_command = "pwaytime",
@@ -1582,11 +1532,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		play_audio_command_parameter_server_id_help = "The pwayew's sewvew ID uwu want to pway this audio fow. uwu can do `-1` fow aww pwayews.",
 		play_audio_command_substitutes = "",
 
-		-- game/audio_emitters
-		toggle_audio_emitters_command = "togguwu_audiuwu_emitters",
-		toggle_audio_emitters_command_help = "Togguwu nativuwe audiuwu emittuws.",
-		toggle_audio_emitters_command_substitutes = "",
-
 		-- game/bandaids
 		random_bandaid_command = "wandow_bandaid",
 		random_bandaid_command_help = "Gives uwu a wandom bandaid. UwU :)",
@@ -1683,17 +1628,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		buddy_pass_command = "buddy_pass",
 		buddy_pass_command_help = "Open the buddy pass UI. (Open da buddy pass UwU)",
 		buddy_pass_command_substitutes = "",
-
-		-- game/cache
-		cache_assets_command = "cache_assets",
-		cache_assets_command_help = "Fowcefully wequest and download most streamed assets (vehicles, objects and clothing). This is not wecommended unless you have a slow connection and assets don't download fast enough on demand to be seamless, teehee. This may also cause client crashes while it's in action. >w<",
-		cache_assets_command_parameter_slow_download = "swow downwoad",
-		cache_assets_command_parameter_slow_download_help = "Do you want to cache the assets swowly? Doing that will make it take much wonger, but will also weduce the chance of cwashing.",
-		cache_assets_command_substitutes = "downwoad_cache, pweaload_cache, load_cache",
-
-		cache_join_toggle_command = "cachwe_join_togglwe",
-		cache_join_toggle_command_help = "Twogglwe cachwing of somwe assets automatically whwen you join thwe sowvwew.",
-		cache_join_toggle_command_substitutes = "",
 
 		-- game/camera
 		stable_cam_command = "stabwe_cam",
@@ -3735,10 +3669,14 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		ped_reverse_command = "ped_wevewse",
 		ped_reverse_command_help = "Maketh the nearest ped in a vewicle wevewse UwU",
+		ped_reverse_command_parameter_duration = "duwation",
+		ped_reverse_command_parameter_duration_help = "The duwation of the wevewse in seconds (1s - 20s, defauwt is 4s).",
 		ped_reverse_command_substitutes = "",
 
 		ped_forwards_command = "ped_fowawds",
 		ped_forwards_command_help = "Makes teh neawest ped in a vehicwe dwive fowawds.",
+		ped_forwards_command_parameter_duration = "duwation",
+		ped_forwards_command_parameter_duration_help = "The duwation of the dwive fowwawds in seconds (1s - 20s, defauwt is 4s).",
 		ped_forwards_command_substitutes = "",
 
 		vehicle_flip_command = "vehicwe_fwiw",
@@ -3787,6 +3725,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		polygon_command = "powygon",
 		polygon_command_help = "Dewfine a 2D powygon.",
 		polygon_command_substitutes = "powy",
+
+		box_command = "box",
+		box_command_help = "Define a 3D box.",
+		box_command_substitutes = "",
 
 		-- global/states
 		entity_states_command = "entity_statuses",
@@ -3969,6 +3911,27 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		tasks_debug_command_parameter_area_id_help = "The awa id of the task you want to debug. Weave empty to pwint aww aweas.",
 		tasks_debug_command_substitutes = "",
 
+		-- jobs/taxi
+		taxi_display_command = "taxi_dispway",
+		taxi_display_command_help = "Toggwe youw taxi dispway.",
+		taxi_display_command_substitutes = "taxidispway, taxi",
+
+		taxi_hire_command = "taxi_hire_uwu",
+		taxi_hire_command_help = "Toggle youw taxi hiwe.",
+		taxi_hire_command_substitutes = "taxihire_uwu",
+
+		taxi_reset_command = "taxi_weset",
+		taxi_reset_command_help = "Weset youw taxi metew.",
+		taxi_reset_command_substitutes = "taxiweset",
+
+		taxi_fare_command = "taxi_fawe",
+		taxi_fare_command_help = "Set youw taxi fawe.",
+		taxi_fare_command_parameter_type = "amount",
+		taxi_fare_command_parameter_type_help = "The type of fawe you want to set (hewp, show, initiaw, miwe or minute).",
+		taxi_fare_command_parameter_amount = "amount",
+		taxi_fare_command_parameter_amount_help = "The amount uwu wawnt tuwu set the fawre to.",
+		taxi_fare_command_substitutes = "taxifare",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "toggwe_mechanic_messages",
 		toggle_mechanic_messages_command_help = "Toggwes whethew ow not you weceive mechanic messages.",
@@ -4088,13 +4051,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		wheel_offset_command_parameter_value_help = "The amount you would like it to be modified. This can be anywhere fwom -0.15 to 0.2, 0 being default UwU.",
 		wheel_offset_command_substitutes = "",
 
-		wheel_rotation_command = "wheel_wotation",
-		wheel_rotation_command_help = "Modiwy a vehicle's wheels' wotation.",
-		wheel_rotation_command_parameter_wheels = "fwont/back",
-		wheel_rotation_command_parameter_wheels_help = "Which wheels would you wike to modiwy?",
-		wheel_rotation_command_parameter_value = "value",
-		wheel_rotation_command_parameter_value_help = "The amount you would wike it to be modiwy. This can be anywhere fwom -0.5 to 0.5, 0 being defauwt.",
-		wheel_rotation_command_substitutes = "",
+		suspension_height_command = "suspension_height",
+		suspension_height_command_help = "Modify a vehicwe's visuwaw suspension height.",
+		suspension_height_command_parameter_value = "vawue",
+		suspension_height_command_parameter_value_help = "The amount ywou wouwd wike it tuwu be modified. This can be anywhewe fwom -0.15 tuwu 0.1, 0 being defauwt.",
+		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
 		oil_level_command = "owo_levew",
@@ -4258,6 +4219,12 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		throw_weapon_command_help = "Thwow youw cewwuntwy equipped weapon.",
 		throw_weapon_command_substitutes = "yeet, thwow",
 
+		wipe_throwables_command = "wipe_throwables",
+		wipe_throwables_command_help = "Wipes all thrown weapons within the specified wadius.",
+		wipe_throwables_command_parameter_radius = "wadius",
+		wipe_throwables_command_parameter_radius_help = "The wadius to wipe thrown weapons in (defwault: 5).",
+		wipe_throwables_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "ch-heck_amwo",
 		check_ammo_command_help = "Checws how much ammo uwu have in totaw uwu.",
@@ -4344,12 +4311,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		local_firewall_blocked = "Wocaw Fwiwaww: Bwocked ${pwayewName} (${wicenseIdentifiew}) uwu"
 	},
 
-	ping = {
-		getting_pings = "Getting pings fwom all playews. This may take a few seconds.",
-		host_data = "${position}. ${location} - ${averagePing} Avewage Ping (based on ${totalPings} cwients), 10% Wow: ${averagePingLow}, 10% High: ${averagePingHigh}",
-		list_hosts = "${listHosts}"
-	},
-
 	points = {
 		you_have_points = "Yuwu have ${fwamewowkPoints} OP Point(s).",
 		used_points = "Used ${amount} OP Point(s) undew the wabew `${wabew}`.",
@@ -4362,11 +4323,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 	profile = {
 		profile_debug_enabled = "The pwofile debuggew has been enabled. Check the F8 console fow output.",
 		profile_debug_disabled = "The pwofile debuggew has been disabled."
-	},
-
-	proxy = {
-		proxied_via_logs_title = "Pwoxied Vwia",
-		proxied_via_logs_details = "${consoleName} was pwoxied vvia `${serverName}`."
 	},
 
 	restart = {
@@ -4511,6 +4467,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		ping_stable = "undefined"
 	},
 
+	vpn = {
+		vpn_not_allowed_for_new_players = "The use of a VwPN is nowt allowed for players with less than 24 hours of playtime."
+	},
+
 	whitelist = {
 		not_whitelisted = "You awe not whitewisted on this sewvver.\n\nJoin ouw Discowd guiwd fow infowmation on how to appwy at ${communityDiscowd}"
 	},
@@ -4644,12 +4604,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		description_rat_unnamed = "Dis ${gender} wat, ${age} adventuwous an' weighin' ${weight}, nyavigates teh wowld wif wayzow-shawp intewwigence an' unexpectewd chawm. Dwiven by an absowute devotion tuwu ${foowd}, it tuwns evewy cownew into a potentiaw discuvewy, evewy shadow into a pwaygwound.",
 		description_rat_named = "${name}, a ${gender} w-wat ${age} into wife's gwand experiment, weighing ${weight} awnd busiesting with pewsonality. With an unbreakable bond to ${food}, ${name} embodies the spirit of cuwiosity—smaww in sizwe, infinitwe in spirituwu.",
 
+		pick_up = "[${SeatEjectKey}] Pick up",
 		pick_up_named = "[${SeatEjectKey}] Pick up ${name}",
-		pick_up_cat = "[${SeatEjectKey}] Pick Up Cat",
-		pick_up_dog = "[${SeatEjectKey}] Pick Up Dog",
-		pick_up_hen = "[${SeatEjectKey}] Pick Up Hen",
-		pick_up_rabbit = "[${SeatEjectKey}] Pick Up Wat",
-		pick_up_rat = "[${SeatEjectKey}] Pick Up Wat",
 
 		failed_pickup_cat = "Faiwed to pick up the cat.",
 		failed_pickup_dog = "Faiwed to pick up the dog.",
@@ -4996,11 +4952,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} pwayed a aaudio effect fow evewyone. The audio effect had URL `${url}` and was set to pway at volwume level `${volume}`.",
 		played_audio_effect_for_player_title = "Pwayed Audio Effect For Pwayer",
 		played_audio_effect_for_player_details = "${consoleName} pwayed a audio effect fow ${targetConsoleName}. The audio effect had URL `${url}` and was set to pway at vowume level `${volume}`."
-	},
-
-	audio_emitters = {
-		audio_emitters_disabled = "OwOdio emitters have been disabwed.",
-		audio_emitters_enabled = "OwOdio emitters have been enabwed."
 	},
 
 	balls = {
@@ -5401,15 +5352,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 	bus_map = {
 		bus_tracker = "undefined"
-	},
-
-	cache = {
-		download_progress = "Download Pwogwess:\n- Vehicwes: ${vehiclesDone}/${vehiclesTotal}\n- Objects: ${objectsDone}/${objectsTotal}\n- Peds: ${pedsDone}/${pedsTotal}\n- Clothing: ${clothingRequested}/${clothingTotal}",
-		slow_download_enabled = "Swow download has been enabled.",
-		slow_download_disabled = "Swow download has been disabled.",
-
-		join_cache_disabled = "Join cache disabwed.",
-		join_cache_enable = "Join cache enabwed."
 	},
 
 	caffeine = {
@@ -6307,6 +6249,11 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		crafting_ammo = "Cwafting Ammo owo",
 		crafted_ammo = "Cwafted ammo UwU",
 		failed_craft_ammo = "UwU Oopsy woopsy! Failed to cwaft ammo. (* ^ ω ^)",
+
+		gift_box_bomb_recipe = "Special Gift Box",
+		crafting_gift = "Crafting Gift Box",
+		crafted_gift = "Crafted gift box.",
+		failed_craft_gift = "Faiwed tuwu cwaft gift box.",
 
 		process_weed = "undefined",
 		press_to_process_weed = "undefined",
@@ -8195,6 +8142,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		cinema = "Cinyema",
 		strip_club = "Stwip Cwub",
 		police_store = "Powice Stowe",
+		utility_crate = "Utiwity Cwate",
 		fib_store = "FIB Stowe",
 		deputy_madison = "Deputy Madison",
 		sergeant_harris = "Sewgeant Hawwis",
@@ -8246,11 +8194,17 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		target_inventory_full = "The pwayer's inventowy is fuww.",
 		received_item = "${displayName} gwaved you ${amount}x ${item}.",
 
+		inspecting_item = "Inspecting Item",
+
 		inspect_weapon = "Da seriaw numbew of dis ${itemName} appeaws to be `${itemId}`.",
 		inspect_weapon_broken = "Da seriaw numbew of dis ${itemName} appeaws to be `${itemId}`, is also appeaws to be completely bwoken.",
 		inspect_bank_property = "This ${item} is mawked pwopewty of the ${bank} Bank.",
 		inspect_bank_property_cid = "This ${item} is mawked pwopewty of the ${banky-wanky} Bank. It was withdwen by account nyumber #${characterId}.",
 		inspect_no_property = "This ${item} does nyot seem to have any pwopewty markings on it.",
+
+		gift_box_normal = "This gift box wooks compwetewy nowmaw.",
+		gift_box_suspicious = "This gift box wooks a wittwe suspiwious.",
+		gift_box_residue = "This gift box has some gweyish powdew wesidue on it.",
 
 		searching_dumpster = "Sowarching Dumpstew UwU",
 		searching_homeless_tent = "Seawching Homewess Tent",
@@ -8625,6 +8579,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		empty_box_description = "Stawt with this simpwe, sturdy box to cweate a pewsonawized gift. Fiww it with non-pewishabwe tweasuwees, awnd it's weady to be twansfowmed into a thoughtfuw pwesent. Ideaw fow packing evewything that symbowizes affection, except pewishables awnd weapons. uwu",
 		gift_box = "Gift Box OwO",
 		gift_box_description = "This ewegantwy seawed gift box, adowned with a festivwe wibbon, is a bootifuw way to pwesent youw cawefuwwy chosen items. Pewfect fow speciaw occasions, it conveyws wawmth awnd thoughtfuwness, ensuwing youw gestuwe of giving is as dewightfuw as the gift inside. uwu",
+		gift_box_bomb = "Gift Box",
+		gift_box_bomb_description = "This ewegantwy seawed gift box, adowned with a festiwe wibbon, is a beautifuw way to pwesent youw cawefuwwy chosen items. Pewfect fow speciaw occasions, it conveyws wawmth and thoughtfuwness, ensuwing youw jestuwe of giving weaves a wastwing impwession.",
 
 		ear_defenders = "Ear Defendews",
 		ear_defenders_description = "Used to pwotect youw ears fwom loud noises.",
@@ -9234,6 +9190,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		pet_snowman_description = "Get fwosty with youw vewy own showdew snowman! This tiny, chiwwy companion adds a touch of wintew wondew to youw stywe, making it pewfect fow snowy adventuwes and spweading fwosty cheew.",
 		pet_owl = "Hooty-chan",
 		pet_owl_description = "Hooty-chan, yo-uw wi-ise and watchful companion, perches elegantly on youw shouwulde-ur. With its keen eyes and soft feathews, this enchanting owl adds a touch of magic to youw adventuwus. A-always weady to lend a hoot of wisdom, Hooty-chan is the pe-erfect sidekick fuw any jouwurney.",
+		pet_pig = "Porkchopowo",
+		pet_pig_description = "A tiny pigwet with a big perswonality, perched happiwy on youw showder. Awways weady to snort encouwagement ow judge youw wife choicwes with an adowabwe sidw-eye. Whethew you’we adventuwing ow just stwolwing, this pint-sized companion is the pewfect blend of chawm and sass.",
 
 		hotwheels_mcqueen = "Wightning McQueen",
 		hotwheels_mcqueen_description = "Speed I am Speed, Float like a Cadillac sting Like a Beemer. KATCHOW KATCHOW KATCHOW",
@@ -9549,6 +9507,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		wires = "Wiwes",
 		wires_description = "Holding evewything togethew.",
 
+		microcontroller = "Micwontwowwew",
+		microcontroller_description = "A tiny but powewful bwain fow aww youw ewectwonic cweations, capabwe of bwinging complex ideas to wife with just a few wines of codw. It’s the unsung hewo of innovation, siwentwy owchestwating the magic behind the scenwes.",
+
 		note = "Note",
 		note_description = "Some note idk man.",
 
@@ -9743,6 +9704,17 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		wheel_clamp_description = "No getaway caws hewe! The Wheew Cwamp means business, secuwing v-vehicwes fiwmwy in p-pwace and putting an end to unauthowized movement. This hea-vy-duty contwaption is a siwent enfewcwer, ensuw-ing that parking wuwes awe wespected and fowwowed.",
 		old_rug = "Owld Wug",
 		old_rug_description = "Way down dis cozy wug fow youw nyext outdoow hangout awnd keep things comfowtable! It’s pewfect fow lounging in the grawss without getting dose pesky gween stains on youw pants. Spwead it out, kick back, awnd enjoy youw suwwoundings in stywe awnd comfowt.",
+
+		evidence_marker_1 = "UwU Markew 1",
+		evidence_marker_1_description = "The stawting point of the mystewy, mawking the fiwst cwue to unwavew the twuth.",
+		evidence_marker_2 = "UwU Markew 2",
+		evidence_marker_2_description = "A fowwow-up cwue, weading investigators cwosew to the biggew pictuwe.",
+		evidence_marker_3 = "UwU Markew 3",
+		evidence_marker_3_description = "The detaiw that might make ow bweak the case—don't ovewwook it.",
+		evidence_marker_4 = "UwU Markew 4",
+		evidence_marker_4_description = "A cwiticaw piece of the puzzwe, quietwy waiting to be noticed.",
+		evidence_marker_5 = "Mawker 5",
+		evidence_marker_5_description = "The finyawl mawker, tyinying evewything togethew ow weaving mowe questions than answews.",
 
 		bandit_1 = "Bandit 1 UwU",
 		bandit_1_description = "Y-your go-twu guy fow twaining scenawios, always weady to pway the viwwain without compwaining about the wong houws ow wack of scwipt. Can be pwaced anywhewe in the wowld.",
@@ -10604,6 +10576,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		invalid_invisibility_mode = "Invawid invisibiwity mode owo. Has to be 'fuww' ow 'nyowmaw' uwu.",
 		invisibility_mode_full = "Invisibility mode set to 'fuww'. Weguwaw staff members can nyot see ywou.",
 		invisibility_mode_normal = "Invisibility mode set to 'nyowmaw'. Weguwaw staff members can nyow see ywou.",
+		current_invisibility_mode = "UwUwUwU Cuwwent invisibiwity mode is set to '${mode}'.",
 
 		toggled_invisibility = "Successfully toggled ${displayName}'s invisibility UwU.",
 		failed_invisibility = "Failed to toggle ${displayName}'s invisibility UwU.",
@@ -10699,6 +10672,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		logs_used_weather_spell_title = "Used Wevver Spell",
 		logs_used_weather_spell_details = "${consoleName} used wevver spell `${itemName}`, owo.",
 
+		gift_box_bomb_logs_title = "Opened Expwosive Gift Box",
+		gift_box_bomb_logs_details = "${consoleName} opened an expwosive gift box.",
+
 		you_have_used_jail_card = "You have used a 'get owt of jail card', uwu!",
 		you_are_not_in_jail = "You awe not in jaiw.",
 
@@ -10791,9 +10767,9 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		sentence_reduced = "Youw sentence was weduced by ${amount} months, you have ${remaining} months left.",
 		sentence_increased = "undefined",
 		sentence_over = "Youw sentence is over.",
-		remaining_time_fmt = "undefined",
+		remaining_time_fmt = "${months} months (${dispway})",
 		remaining_time = "undefined",
-		jailed = "undefined",
+		jailed = "You have been jaiwed fow ${amount} months.",
 
 		mission_help_1 = "Pwess ~INPUT_CONTEXT~ to clean the floor.",
 		mission_help_2 = "Pwess ~INPUT_CONTEXT~ to eat something.",
@@ -10970,17 +10946,6 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		back = "Bacc",
 		copy_license = "License ID",
 		copy_license_success = "Copied!",
-		cache_assets = "Cache Assets",
-		download_assets = "Would yuw wike to downwoad and cache most of the sewvew's assets? Hewe awe the benefits and considewations:",
-		cache_assets_performance = "Enjoy bettew FPS and fewew ping spikes duwing gameplay, especiawwy if yuw have wowew-end hawdwawe ow a swowew connection.",
-		cache_assets_crashes = "The game may cwash duwing the pwocess. If this happens, use the 'swow downwoad' option instead.",
-		cache_assets_restart = "Aftew compweting the downwoad, westawt youw game to pwevent wag duwing this session.",
-		cache_assets_disk = "Dis wiww use some desk space, so make suwe yuw have enyough avaiwabwe.",
-		cache_assets_no_repeat = "Yuw won't need to du dis fow evewy update, as onwy a few fiwes wiww change.",
-		vehicles = "Vehicwes",
-		objects = "Objects",
-		peds = "Peds",
-		clothing = "Clofing",
 		main_menu = "Main Menu",
 		gta_settings = "GTA Settings",
 		discord = "Discord",
@@ -11132,8 +11097,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 	lottery = {
 		lottery_announcement = "Wottery Announcement",
-		lottery_about_to_roll = "undefined",
-		current_lottery_pot = "undefined",
+		lottery_about_to_roll = "A winnyew wiww be dwawn in 5 minutes fow today's wottery. The totaw pot is cuwwently at $${totawAmount} whewe you have put in $${betAmount}. Youw chance of winning is ${odds}%. The tax is ${tax}%.",
+		current_lottery_pot = "The totaw pot is curwentwy at $${totawAmount} whewe you have put in $${betAmount}. Youw chance of winning is ${odds}%. The tawx iws ${tax}%.",
 		drew_a_lottery_winner = "A winnew fow da wottery has been dwawn.",
 		winner_has_been_picked = "undefined",
 		claimed_lottery_winnings = "Cwaimed aww wottery winnings.",
@@ -11744,6 +11709,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		hatch_claim = "CWAIM",
 		hatch_opened = "CWAIMED",
 		hatch_waiting = "WAITWING",
+		hatch_too_late = "TOO WATE",
 
 		about_advent_calendar_title = "Abowt The Advent Cawendaw",
 
@@ -11755,7 +11721,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 			<br><br>
 			Next hatch unlocks in ${time}.
 			<br><br>
-			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 26th.)
+			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 31st.)
 			<br><br>
 			<div class="bonusPoints">
 				<div>Bonus Points: ${bonusPoints}/22</div>
@@ -13570,6 +13536,59 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		used_bug_logs_details = "undefined"
 	},
 
+	staff_pm = {
+		something_went_wrong = "Somethwing went wwong when sending the messwage.",
+		reports_too_fast = "You awe sending wepowts twoo fast, swow down.",
+		no_report_message = "You must incwude a messwage with youw wepowt.",
+		same_report = "You cannot send the same wepowt twice.",
+		report_muted = "You awe muted fwom submitting wepowts fow: `${weason}`.",
+		report_muted_no_reason = "Uwu awe mutewd fwom sending wepowts.",
+
+		report_title = "WEPOWT-${weportId} ${dispwayName}",
+		report_logs_title = "Wepowt",
+		report_logs_details = "${conswoweName} cweated wepowt ${weportId} with teh fowwowing message: `${message}`",
+
+		invalid_server_id = "Invawid tawget sewvew id.",
+		no_staff_pm_message = "Yuw must incwude a message in yuw pwivate message.",
+		user_not_staff = "Teh usew is nyot a staff membew.",
+		staff_pm_warning = "Staff PM Wawning",
+		staff_pm_first_time = "We see yuw have nevew used staff PMs befowe. To wespond to a staff PM, use `/staffpm` fowwowed by teh wecipients id. Fow ease of use yuw can use `/wepwy` to wespond to teh wast staff PM yuw weceived.",
+
+		staff_pm_title = "STAFF PW ${from} -> ${to}",
+		staff_pm_title_external = "EXTERNAL STAFF PW ${from} -> ${to}",
+		close_staff_pm = "Cwose",
+		staff_pm_from = "StaffPW fwom <i>${from}</i>",
+		staff_pm_logs_title = "Staff PW",
+		staff_pm_logs_details = "${senderConsoleName} sent a staff pwivate message to ${recipientConsoleName}: `${message}`",
+		important_staff_pm_logs_title = "Impowtant Staff PW",
+		important_staff_pm_logs_details = "${senderConsoleName} sent an impowtant staff pwivate message to ${recipientConsoleName}: `${message}`",
+
+		staff_toggled = "Y-Your staff status is toggled off, uwu.",
+		no_staff_message = "UwU must include a message in your staff chat, pwease.",
+		same_staff_message = "UwU cannot send the same staff message twice, sowwy.",
+
+		staff_message_title = "STAFF ${playerName} uwu",
+		local_staff_message_title = "LOCAL STAFF ${playerName} uwu",
+		staff_message_logs_title = "Staff Message uwu",
+		staff_message_logs_details = "${consoleName} sent the fowwowing message in the staff chat: `${message}` uwu",
+		local_staff_message_logs_title = "Local Staff Message uwu",
+		local_staff_message_logs_details = "${consoleName} sent the fowwowing message in the wocaw staff chat: `${message}` uwu",
+
+		message_sent = "Message sent uwu.",
+		cannot_send_private_message_to_yourself = "Yuwu cannot send a pwivate message to youwself uwu.",
+		missing_valid_message_parameter = "Missing a vawid 'message' pawameter uwu.",
+		missing_valid_license_identifier_parameter = "Missing a vawid 'wicenseIdentifiew' pawameter uwu.",
+		missing_valid_target_source_parameter = "Missing a vawid 'targetSouwce' pawameter uwu.",
+
+		invalid_report_id = "Invawid weport id uwu.",
+		report_already_claimed = "That weport was alweady cwaimed by *${playerName}* uwu.",
+		report_same_creator = "Yuwu cannot cwaim youw own weports uwu.",
+		failed_claim_report = "Faiwed to cwaim wepowt.",
+		report_claimed = "Wepowt **${wepowtId}** was cwaimed by *${pwayewNyame}*.",
+		claim_report_logs_title = "Cwaimed Wepowt",
+		claim_report_logs_details = "${conswoweNyame} cwaimed wepowt ${wepowtId}."
+	},
+
 	starter_car = {
 		follow_the_checkpoints = "Youw pewsonal vehicwe is pawked nyabwe. Fowwow the checkpoints 2 find it.",
 
@@ -13928,6 +13947,8 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		tp_cayo = "Cayo Pewico",
 
 		actions = "Actions",
+		jail_self = "Jaiw Youwsewf",
+		unjail_self = "Unjaiw Youwsewf",
 		wander_around = "Wandew Awound",
 		speed_around = "Speed Awound",
 		clear_tasks = "Cweaw Tasks",
@@ -14114,7 +14135,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		no_maps_to_combine = "uwu You have no maps to combine. UwU",
 
 		treasure_map_dug_up_logs_title = "Tweasure Map Dug Up",
-		treasure_map_dug_up_logs_details = "${consoleName} has dug up a tweasure map of tiew ${mapTier} and weceived dwop ID ${dropId}. UwU"
+		treasure_map_dug_up_logs_details = "${consoleName} has dug up a tweasure map of tiew ${mapTier} and weceived dwop ID ${dropId}. UwU",
+
+		treasure_map_piece_spawned_logs_title = "Tweasuwe Map Piece Spawned",
+		treasure_map_piece_spawned_logs_details = "${conswoweNyame} has spawned tweauswe map piece ${pieceNyumbew} of tiew ${mapTiew}."
 	},
 
 	tsunami = {
@@ -14335,14 +14359,24 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 	weed = {
 		strain_default = "undefined",
-		strain_lemon = "undefined",
+		strain_bubble = "Bubbwe Bewwy",
 		strain_northern = "undefined",
 		strain_kush = "undefined",
+		strain_diesel = "S-souw Die-sel",
+		strain_ak47 = "AK-47",
+		strain_dream = "Bwue Dweam",
+		strain_trainwreck = "Twainwwecw",
+		strain_gorilla = "Gowilla Gwue",
 
 		default_emoji = "undefined",
-		lemon_emoji = "undefined",
+		bubble_emoji = "🫧",
 		northern_emoji = "undefined",
 		kush_emoji = "undefined",
+		diesel_emoji = "😌",
+		ak47_emoji = "🔫",
+		dream_emoji = "🪶",
+		trainwreck_emoji = "👊",
+		gorilla_emoji = "🦍",
 
 		strain_description = "undefined"
 	},
@@ -14392,6 +14426,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		run_as_failed = "OwO what's this? Faiwed to wun command as ${consoleName}.",
 
 		no_nearby_vehicle = "No vewyicle nearby. >.<",
+		invalid_duration = "Invawid duwation (1s - 20s).",
 		reversing_failed = "Faiwed to make ped wevewse.",
 		driving_forwards_failed = "Faiwed to make pad dwive fowawds.",
 		reversing_success = "Successfuwwy made ped wevewse. UwU",
@@ -14927,7 +14962,16 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 		task_take_nap = "Take a nap uwu.",
 		task_take_nap_near = "Pwess ~INPUT_DETONATE~ tuwu take a nap uwu.",
-		task_take_nap_active = "Taking Nap"
+		task_take_nap_active = "Taking Nap",
+
+		task_water_plants = "Watew the pwants.",
+		task_water_plants_near = "Pwess ~INPUT_DETONATE~ to watew the pwants.",
+		task_water_plants_active = "Watewing Pwants"
+	},
+
+	taxi = {
+		help_text = "`initiaw` is the base stawting fawe (defauwt: $10), `miwe` is the wate pew miwe dwiven (defauwt: $5), `minute` is the wate pew minute whiwe the metew is on (defauwt: $15), `show` wiww dispway youw cuwwent settings.",
+		invalid_typ = "Invalid typie."
 	},
 
 	tow = {
@@ -15287,8 +15331,10 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 		wheels_modified = "The wheews have been modified. OwO",
 		wheels_none_specified = "No wheews specified. QwQ",
 		wheels_none_valid_specified = "No vawid wheews specified. ;-;",
-		not_in_a_car = "You awe not in a caw. ówò",
-		invalid_value = "Invawid vawue. ;~;"
+		not_in_a_car = "UwU awe nyot dwiving a caw.",
+		invalid_value = "Invawid vawue. ;~;",
+		suspension_height = "Cuwwent suspension height is set to ${height}.",
+		suspension_height_set = "The suspension height has been set to ${height}."
 	},
 
 	oil = {
@@ -15496,6 +15542,7 @@ OP.Global.Locales.Languages["meme-uwu"] = {
 
 	throwables = {
 		pick_up_weapon = "[${IntewwactionKwey}] Pick Up",
+		throwables_wiped = "Wiped ${amount} throwabweies.",
 
 		no_weapon_equipped = "You don't have a weapon equipped.",
 		cant_throw_weapon = "You can't thwow this weapon.",

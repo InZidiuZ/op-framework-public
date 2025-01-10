@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 35 (do not change)
+-- AUTO LOCALES: 36 (do not change)
 
 OP.Global.Locales.Languages["es-PR"] = {
 	-- configuration settings for language
@@ -202,10 +202,6 @@ OP.Global.Locales.Languages["es-PR"] = {
 		spawned_item_for_everyone_title = "Objeto Generado para Todos",
 		spawned_item_for_everyone_details = "${consoleName} ha generado ${amount}x objeto `${itemName}` para todos.",
 
-		report_title = "REPORTE-${reportId} ${reporterName}",
-		report_logs_title = "Reporte",
-		report_logs_details = "${consoleName} ha creado el reporte ${reportId} con el siguiente mensaje: `${reportMessage}`",
-
 		announcement_staff_title = "Anuncio del Equipo de Staff",
 		announcement_server_title = "Anuncio del Servidor",
 
@@ -220,47 +216,11 @@ OP.Global.Locales.Languages["es-PR"] = {
 		failed_to_post_announcement = "Error al publicar el mensaje de anuncio ya que no se agregó ningún mensaje.",
 		failed_to_post_announcement_locale = "Error al publicar el mensaje de anuncio ya que el locale del anuncio agregado no es compatible.",
 
-		staff_title = "STAFF ${staffName}",
-		staff_message_logs_title = "Mensaje del Staff",
-		staff_message_logs_details = "${consoleName} envió el siguiente mensaje en el chat del staff: `${staffMessage}`",
-		local_staff_title = "PERSONAL LOCAL ${staffName}",
-		local_staff_message_logs_title = "Registro de Mensajes del Personal Local",
-		local_staff_message_logs_details = "${consoleName} envió el siguiente mensaje en el chat del personal local: `${staffMessage}`",
-
-		staff_pm_title = "STAFF PM ${transmissionTitle}",
-		staff_pm_logs_title = "Mensaje Privado del Staff",
-		staff_pm_logs_details = "${senderConsoleName} envió el siguiente mensaje a ${recipientConsoleName}: `${staffPrivateMessage}`",
-		staff_pm_not_logged_in = "No has iniciado sesión.",
-		staff_pm_not_user_not_found = "No se encontró un usuario con el ID del servidor ${serverId}.",
-		staff_pm_not_recipient_not_staff = "El jugador al que estás intentando enviar un mensaje no es un miembro del personal.",
-		staff_pm_unable_to_message_self = "No puedes enviarte un mensaje a ti mismo.",
-		staff_pm_warning = "Advertencia de Mensaje al Personal",
-		staff_pm_first_time = "Vemos que nunca has utilizado los mensajes privados del personal. Para responder a un mensaje privado del personal, utiliza `/staffpm` seguido del ID del destinatario. Para mayor facilidad, puedes utilizar `/reply` para responder al último mensaje privado del personal que recibiste.",
-		reply_pm_not_found = "No hay un mensaje del personal al cual responder.",
-
-		important_staff_pm_title = "!MENSAJE AL PERSONAL De ti -> ${recipient}",
-		close_staffpm = "Cerrar",
-		staffpm_from = "Mensaje al Personal de <i>${from}</i>",
-		important_staff_pm_logs_title = "Mensaje al Personal Importante",
-		important_staff_pm_logs_details = "${senderConsoleName} envió el siguiente mensaje importante a ${recipientConsoleName}: `${message}`",
-
-		external_staff_message = "Mensaje Externo del Staff",
-		external_staff_message_from_player = "Mensaje Externo del Staff de ${playerName}",
-		external_staff_message_content = "${staffMessage} (No puedes responder a este mensaje.)",
-
-		unable_to_staff_message_yourself = "No puedes enviarte un mensaje a ti mismo.",
-		message_sent = "Mensaje enviado.",
-		player_not_found = "Jugador no encontrado.",
-		missing_valid_target_source_parameter = "Falta un parámetro válido 'fuente del objetivo'.",
-		missing_valid_message_parameter = "Falta un parámetro válido 'mensaje'.",
-
 		invalid_coordinates = "Coordenadas x, y, z o w inválidas.",
 		player_not_loaded_character = "El jugador no tiene un personaje cargado.",
 		teleport_successful = "Jugador teletransportado exitosamente.",
 
 		player_revived_success = "Jugador revivido exitosamente.",
-
-		missing_valid_license_identifier_parameter = "Falta un parámetro válido 'identificador de licencia'.",
 
 		wipe_broken = "roto - Objetos Rotos/Fragmentados",
 		wipe_npcs = "npcs - NPCs y sus vehículos.",
@@ -376,12 +336,6 @@ OP.Global.Locales.Languages["es-PR"] = {
 
 		report_muted_no_reason = "Se te ha silenciado del comando de reporte sin una razón especificada.",
 		report_muted = "Se te ha silenciado del comando de reporte por la razón `${reason}`.",
-
-		already_sending_report = "Ya estás enviando un reporte. Por favor espera.",
-		unable_to_send_identical_report = "No puedes enviar dos informes idénticos seguidos.",
-
-		already_sending_staff_message = "Ya estás enviando un mensaje al personal. Por favor espera.",
-		unable_to_send_identical_staff_message = "No puedes enviar dos mensajes idénticos al personal seguidos en un lapso de 30 segundos.",
 
 		population_density_set_to = "La multiplicación de densidad de población se ha establecido en ${multiplierLabel}%.",
 		population_density_set_off = "La multiplicación de la densidad de población se ha desactivado.",
@@ -881,51 +835,11 @@ OP.Global.Locales.Languages["es-PR"] = {
 		marathon_command_substitutes = "",
 
 		-- base/admin
-		report_command = "reportar",
-		report_command_help = "Envía un mensaje a todos los miembros del equipo de staff activos.",
-		report_command_parameter_message = "mensaje",
-		report_command_parameter_message_help = "El mensaje que desea enviar. Un resumen breve de lo que está reportando (Ejemplo: \"Acabo de ser VDM, su ID era...\").",
-		report_command_substitutes = "llamaradmin",
-
 		announce_command = "anunciar",
 		announce_command_help = "Transmite un anuncio a todos los jugadores.",
 		announce_command_parameter_message = "mensaje",
 		announce_command_parameter_message_help = "El mensaje que te gustaría transmitir.",
 		announce_command_substitutes = "",
-
-		staff_pm_command = "mp_staff",
-		staff_pm_command_help = "Envía un mensaje a un miembro del personal, o a un jugador como miembro del personal.",
-		staff_pm_command_parameter_server_id = "ID de servidor",
-		staff_pm_command_parameter_server_id_help = "ID de servidor del jugador al que intentas enviar un mensaje.",
-		staff_pm_command_parameter_message = "mensaje",
-		staff_pm_command_parameter_message_help = "El mensaje que deseas enviar.",
-		staff_pm_command_substitutes = "staffpm, mensaje, pm, msg",
-
-		important_staff_pm_command = "mensaje_importante_staff",
-		important_staff_pm_command_help = "Enviar un mensaje importante a un jugador como miembro del personal.",
-		important_staff_pm_command_parameter_server_id = "ID del servidor",
-		important_staff_pm_command_parameter_server_id_help = "El ID del servidor del jugador al que estás tratando de enviar un mensaje.",
-		important_staff_pm_command_parameter_message = "mensaje",
-		important_staff_pm_command_parameter_message_help = "El mensaje importante que desea enviar.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
-
-		reply_pm_command = "responder_md",
-		reply_pm_command_help = "Responder al último mensaje del personal que recibiste.",
-		reply_pm_command_parameter_message = "mensaje",
-		reply_pm_command_parameter_message_help = "El mensaje que deseas enviar.",
-		reply_pm_command_substitutes = "contestar",
-
-		staff_command = "staff",
-		staff_command_help = "Transmitir un mensaje a todos los miembros del personal activos.",
-		staff_command_parameter_message = "mensaje",
-		staff_command_parameter_message_help = "El mensaje que desea enviar.",
-		staff_command_substitutes = "",
-
-		local_staff_command = "personal_local",
-		local_staff_command_help = "Transmitir un mensaje a todos los miembros del personal activos dentro de un radio de 25m.",
-		local_staff_command_parameter_message = "mensaje",
-		local_staff_command_parameter_message_help = "El mensaje que te gustaría enviar.",
-		local_staff_command_substitutes = "lspersonal",
 
 		wipe_command = "wipe",
 		wipe_command_help = "Eliminar entidades no deseadas del mapa.",
@@ -1437,11 +1351,6 @@ OP.Global.Locales.Languages["es-PR"] = {
 		emojis_refresh_command_help = "Actualiza los emojis disponibles. Esto obtendrá la última lista desde el servidor de Discord.",
 		emojis_refresh_command_substitutes = "",
 
-		-- base/ping
-		get_pings_command = "obtener_pings",
-		get_pings_command_help = "Obtener el promedio de ping a diferentes servidores alrededor del mundo para encontrar la ubicación de host más adecuada para los jugadores actuales de este servidor.",
-		get_pings_command_substitutes = "",
-
 		-- base/points
 		points_command = "puntos",
 		points_command_help = "Muestra la cantidad de puntos de OP que tienes.",
@@ -1465,6 +1374,47 @@ OP.Global.Locales.Languages["es-PR"] = {
 		remove_twitch_ban_exception_command_parameter_server_id = "identificador de servidor",
 		remove_twitch_ban_exception_command_parameter_server_id_help = "El identificador de servidor del jugador del cual deseas remover la excepción.",
 		remove_twitch_ban_exception_command_substitutes = "",
+
+		-- base/staff_pm
+		report_command = "reportar",
+		report_command_help = "Envía un mensaje a todos los miembros del equipo de staff activos.",
+		report_command_parameter_message = "mensaje",
+		report_command_parameter_message_help = "El mensaje que desea enviar. Un resumen breve de lo que está reportando (Ejemplo: \"Acabo de ser VDM, su ID era...\").",
+		report_command_substitutes = "llamaradmin, golpear, solmod, ayudame",
+
+		claim_report_command = "reclamar_reporte",
+		claim_report_command_help = "Reclamar un reporte específico.",
+		claim_report_command_parameter_report_id = "id_reporte",
+		claim_report_command_parameter_report_id_help = "El id del reporte que deseas reclamar.",
+		claim_report_command_substitutes = "reclamar, rr, reclamarreporte",
+
+		staff_pm_command = "mp_staff",
+		staff_pm_command_help = "Envía un mensaje a un miembro del personal, o a un jugador como miembro del personal.",
+		staff_pm_command_parameter_server_id = "ID de servidor",
+		staff_pm_command_parameter_server_id_help = "ID de servidor del jugador al que intentas enviar un mensaje.",
+		staff_pm_command_parameter_message = "mensaje",
+		staff_pm_command_parameter_message_help = "El mensaje que deseas enviar.",
+		staff_pm_command_substitutes = "pmstaff, mensaje, pm, msg, responder, resppm, responder_pm",
+
+		important_staff_pm_command = "mensaje_importante_staff",
+		important_staff_pm_command_help = "Enviar un mensaje importante a un jugador como miembro del personal.",
+		important_staff_pm_command_parameter_server_id = "ID del servidor",
+		important_staff_pm_command_parameter_server_id_help = "El ID del servidor del jugador al que estás tratando de enviar un mensaje.",
+		important_staff_pm_command_parameter_message = "mensaje",
+		important_staff_pm_command_parameter_message_help = "El mensaje importante que desea enviar.",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
+
+		staff_command = "staff",
+		staff_command_help = "Transmitir un mensaje a todos los miembros del personal activos.",
+		staff_command_parameter_message = "mensaje",
+		staff_command_parameter_message_help = "El mensaje que desea enviar.",
+		staff_command_substitutes = "",
+
+		local_staff_command = "personal_local",
+		local_staff_command_help = "Transmitir un mensaje a todos los miembros del personal activos dentro de un radio de 25m.",
+		local_staff_command_parameter_message = "mensaje",
+		local_staff_command_parameter_message_help = "El mensaje que te gustaría enviar.",
+		local_staff_command_substitutes = "lspersonal",
 
 		-- base/users
 		playtime_command = "tiempo_juego",
@@ -1582,11 +1532,6 @@ OP.Global.Locales.Languages["es-PR"] = {
 		play_audio_command_parameter_server_id_help = "La ID del servidor del jugador para el que deseas reproducir este audio. Puedes usar `-1` para todos los jugadores.",
 		play_audio_command_substitutes = "",
 
-		-- game/audio_emitters
-		toggle_audio_emitters_command = "toggle_audio_emitters",
-		toggle_audio_emitters_command_help = "Alternar emisores de audio nativos.",
-		toggle_audio_emitters_command_substitutes = "",
-
 		-- game/bandaids
 		random_bandaid_command = "random_bandaid",
 		random_bandaid_command_help = "Te da una venda al azar. :)",
@@ -1683,17 +1628,6 @@ OP.Global.Locales.Languages["es-PR"] = {
 		buddy_pass_command = "buddy_pass",
 		buddy_pass_command_help = "Abre la interfaz de pase de amigo.",
 		buddy_pass_command_substitutes = "",
-
-		-- game/cache
-		cache_assets_command = "cache_assets",
-		cache_assets_command_help = "Solicita y descarga forzadamente los activos más transmitidos (vehículos, objetos y ropa). No se recomienda a menos que tengas una conexión lenta y los activos no se descarguen lo suficientemente rápido bajo demanda para una experiencia sin problemas. Esto también puede causar bloqueos en el cliente mientras está en funcionamiento.",
-		cache_assets_command_parameter_slow_download = "descarga lenta",
-		cache_assets_command_parameter_slow_download_help = "¿Deseas almacenar en caché los activos lentamente? Esto hará que tome mucho más tiempo, pero también reducirá la posibilidad de bloqueos.",
-		cache_assets_command_substitutes = "descarga_cache, precarga_cache, carga_cache",
-
-		cache_join_toggle_command = "cache_join_toggle",
-		cache_join_toggle_command_help = "Activa o desactiva automáticamente el almacenamiento en caché de algunos activos cada vez que te unes al servidor.",
-		cache_join_toggle_command_substitutes = "",
 
 		-- game/camera
 		stable_cam_command = "cam_estable",
@@ -3735,10 +3669,14 @@ OP.Global.Locales.Languages["es-PR"] = {
 
 		ped_reverse_command = "ped_reversa",
 		ped_reverse_command_help = "Hace que el peatón más cercano en un vehículo retroceda.",
+		ped_reverse_command_parameter_duration = "duración",
+		ped_reverse_command_parameter_duration_help = "La duración de la reversa en segundos (1s - 20s, el valor predeterminado es 4s).",
 		ped_reverse_command_substitutes = "",
 
 		ped_forwards_command = "ped_adelante",
 		ped_forwards_command_help = "Hace que el peatón más cercano en un vehículo conduzca hacia adelante.",
+		ped_forwards_command_parameter_duration = "duración",
+		ped_forwards_command_parameter_duration_help = "La duración de la conducción hacia adelante en segundos (1s - 20s, el valor predeterminado es 4s).",
 		ped_forwards_command_substitutes = "",
 
 		vehicle_flip_command = "voltear_vehículo",
@@ -3787,6 +3725,10 @@ OP.Global.Locales.Languages["es-PR"] = {
 		polygon_command = "polígono",
 		polygon_command_help = "Definir un polígono 2D.",
 		polygon_command_substitutes = "poli",
+
+		box_command = "caja",
+		box_command_help = "Definir una caja 3D.",
+		box_command_substitutes = "",
 
 		-- global/states
 		entity_states_command = "estados_entidad",
@@ -3969,6 +3911,27 @@ OP.Global.Locales.Languages["es-PR"] = {
 		tasks_debug_command_parameter_area_id_help = "El ID de área de la tarea que deseas depurar. Deja en blanco para imprimir todas las áreas.",
 		tasks_debug_command_substitutes = "",
 
+		-- jobs/taxi
+		taxi_display_command = "mostrar_taxi",
+		taxi_display_command_help = "Alternar la visualización de tu taxi.",
+		taxi_display_command_substitutes = "mostrartaxi, taxi",
+
+		taxi_hire_command = "contratar_taxi",
+		taxi_hire_command_help = "Alternar la contratación de tu taxi.",
+		taxi_hire_command_substitutes = "contratartaxi",
+
+		taxi_reset_command = "reiniciar_taxi",
+		taxi_reset_command_help = "Reinicia tu medidor de taxi.",
+		taxi_reset_command_substitutes = "reiniciartaxi",
+
+		taxi_fare_command = "tarifa_taxi",
+		taxi_fare_command_help = "Establece tu tarifa de taxi.",
+		taxi_fare_command_parameter_type = "tipo",
+		taxi_fare_command_parameter_type_help = "El tipo de tarifa que deseas establecer (ayuda, mostrar, inicial, milla o minuto).",
+		taxi_fare_command_parameter_amount = "cantidad",
+		taxi_fare_command_parameter_amount_help = "La cantidad que deseas establecer como tarifa.",
+		taxi_fare_command_substitutes = "tarifataxi",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "toggle_mensajes_mecanico",
 		toggle_mechanic_messages_command_help = "Activa o desactiva la recepción de mensajes del mecánico.",
@@ -4088,13 +4051,11 @@ OP.Global.Locales.Languages["es-PR"] = {
 		wheel_offset_command_parameter_value_help = "La cantidad que deseas modificar. Puede ser desde -0.15 hasta 0.2, siendo 0 el valor predeterminado.",
 		wheel_offset_command_substitutes = "",
 
-		wheel_rotation_command = "rotación_rueda",
-		wheel_rotation_command_help = "Modifica la rotación de las ruedas de un vehículo.",
-		wheel_rotation_command_parameter_wheels = "delanteras/traseras",
-		wheel_rotation_command_parameter_wheels_help = "¿Qué ruedas le gustaría modificar?",
-		wheel_rotation_command_parameter_value = "valor",
-		wheel_rotation_command_parameter_value_help = "La cantidad que desea modificar. Esto puede ser en un rango de -0.5 a 0.5, siendo 0 el valor predeterminado.",
-		wheel_rotation_command_substitutes = "",
+		suspension_height_command = "altura_suspension",
+		suspension_height_command_help = "Modificar la altura de la suspensión visual de un vehículo.",
+		suspension_height_command_parameter_value = "valor",
+		suspension_height_command_parameter_value_help = "La cantidad que te gustaría modificar. Puede ser desde -0.15 hasta 0.1, siendo 0 el valor predeterminado.",
+		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
 		oil_level_command = "nivel_de_aceite",
@@ -4258,6 +4219,12 @@ OP.Global.Locales.Languages["es-PR"] = {
 		throw_weapon_command_help = "Lanza el arma que tienes equipada actualmente.",
 		throw_weapon_command_substitutes = "lanzar, tirar",
 
+		wipe_throwables_command = "limpiar_objetos_arrojables",
+		wipe_throwables_command_help = "Elimina todas las armas arrojadas dentro del radio especificado.",
+		wipe_throwables_command_parameter_radius = "radio",
+		wipe_throwables_command_parameter_radius_help = "El radio para eliminar armas arrojadas (por defecto: 5).",
+		wipe_throwables_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "revisar_municion",
 		check_ammo_command_help = "Revisa cuánta munición tienes en total.",
@@ -4344,12 +4311,6 @@ OP.Global.Locales.Languages["es-PR"] = {
 		local_firewall_blocked = "Firewall local: Bloqueado ${playerName} (${licenseIdentifier})"
 	},
 
-	ping = {
-		getting_pings = "Obteniendo pings de todos los jugadores. Esto puede llevar unos segundos.",
-		host_data = "${position}. ${location} - ${averagePing} Ping promedio (según ${totalPings} clientes), 10% Bajo: ${averagePingLow}, 10% Alto: ${averagePingHigh}",
-		list_hosts = "${listarHosts}"
-	},
-
 	points = {
 		you_have_points = "Tienes ${frameworkPoints} punto(s) OP.",
 		used_points = "Se usaron ${amount} punto(s) OP bajo la etiqueta `${label}`.",
@@ -4362,11 +4323,6 @@ OP.Global.Locales.Languages["es-PR"] = {
 	profile = {
 		profile_debug_enabled = "El depurador de perfiles ha sido habilitado. Verifica la consola F8 para ver la salida.",
 		profile_debug_disabled = "El depurador de perfiles ha sido deshabilitado."
-	},
-
-	proxy = {
-		proxied_via_logs_title = "Proxied Via",
-		proxied_via_logs_details = "${consoleName} fue proxificado a través de `${serverName}`."
 	},
 
 	restart = {
@@ -4511,6 +4467,10 @@ OP.Global.Locales.Languages["es-PR"] = {
 		ping_stable = "Tu ping ahora es estable nuevamente."
 	},
 
+	vpn = {
+		vpn_not_allowed_for_new_players = "No se permite el uso de VPN para jugadores con menos de 24 horas de tiempo de juego."
+	},
+
 	whitelist = {
 		not_whitelisted = "No estás en la lista blanca de este servidor.\n\nÚnete a nuestro servidor de Discord para obtener información sobre cómo aplicar en ${communityDiscord}"
 	},
@@ -4644,12 +4604,8 @@ OP.Global.Locales.Languages["es-PR"] = {
 		description_rat_unnamed = "Esta rata ${gender}, aventurera de ${age} años y con un peso de ${weight}, navega por el mundo con una inteligencia afilada y un encanto inesperado. Impulsada por una devoción absoluta por ${food}, convierte cada esquina en un descubrimiento potencial, cada sombra en un campo de juegos.",
 		description_rat_named = "${name}, una rata ${gender} de ${age} metida en el gran experimento de la vida, pesando ${weight} y llena de personalidad. Con un lazo inquebrantable con ${food}, ${name} encarna el espíritu de la curiosidad — pequeña en tamaño, infinita en espíritu.",
 
+		pick_up = "[${SeatEjectKey}] Recoger",
 		pick_up_named = "[${SeatEjectKey}] Recoger a ${name}",
-		pick_up_cat = "[${SeatEjectKey}] Recoger Gato",
-		pick_up_dog = "[${SeatEjectKey}] Recoger Perro",
-		pick_up_hen = "[${SeatEjectKey}] Recoger Gallina",
-		pick_up_rabbit = "[${SeatEjectKey}] Recoger Conejo",
-		pick_up_rat = "[${SeatEjectKey}] Recoger Rata",
 
 		failed_pickup_cat = "No se pudo recoger al gato.",
 		failed_pickup_dog = "No se pudo recoger al perro.",
@@ -4996,11 +4952,6 @@ OP.Global.Locales.Languages["es-PR"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} reprodujo un efecto de sonido para todos. El efecto de sonido tenía la URL `${url}` y se reprodujo con un nivel de volumen de `${volume}`.",
 		played_audio_effect_for_player_title = "Reproducido Efecto de Sonido Para Jugador",
 		played_audio_effect_for_player_details = "${consoleName} reprodujo un efecto de sonido para ${targetConsoleName}. El efecto de sonido tenía la URL `${url}` y se reprodujo con un nivel de volumen de `${volume}`."
-	},
-
-	audio_emitters = {
-		audio_emitters_disabled = "Los emisores de audio han sido desactivados.",
-		audio_emitters_enabled = "Los emisores de audio han sido activados."
 	},
 
 	balls = {
@@ -5401,15 +5352,6 @@ OP.Global.Locales.Languages["es-PR"] = {
 
 	bus_map = {
 		bus_tracker = "Autobús"
-	},
-
-	cache = {
-		download_progress = "Progreso de Descarga:\n- Vehículos: ${vehiclesDone}/${vehiclesTotal}\n- Objetos: ${objectsDone}/${objectsTotal}\n- Peds: ${pedsDone}/${pedsTotal}\n- Ropa: ${clothingRequested}/${clothingTotal}",
-		slow_download_enabled = "La descarga lenta ha sido activada.",
-		slow_download_disabled = "La descarga lenta ha sido desactivada.",
-
-		join_cache_disabled = "El caché de unirse ha sido desactivado.",
-		join_cache_enable = "Unirse a la caché habilitada."
 	},
 
 	caffeine = {
@@ -6307,6 +6249,11 @@ OP.Global.Locales.Languages["es-PR"] = {
 		crafting_ammo = "Fabricando munición",
 		crafted_ammo = "Munición fabricada.",
 		failed_craft_ammo = "No se pudo fabricar la munición.",
+
+		gift_box_bomb_recipe = "Caja de regalo especial",
+		crafting_gift = "Elaborando caja de regalo",
+		crafted_gift = "Caja de regalo elaborada.",
+		failed_craft_gift = "Falló al crear la caja de regalo.",
 
 		process_weed = "Procesar Hierba",
 		press_to_process_weed = "[${SeatEjectKey}] Procesar Hierba",
@@ -8195,6 +8142,7 @@ OP.Global.Locales.Languages["es-PR"] = {
 		cinema = "Cine",
 		strip_club = "Club de Striptease",
 		police_store = "Tienda de la Policía",
+		utility_crate = "Caja de Utilidades",
 		fib_store = "Tienda del FIB",
 		deputy_madison = "Deputy Madison",
 		sergeant_harris = "Sargento Harris",
@@ -8246,11 +8194,17 @@ OP.Global.Locales.Languages["es-PR"] = {
 		target_inventory_full = "El inventario del jugador está lleno.",
 		received_item = "${consoleName} ha creado un envío de ${weight}su por $${price} con ${company}.",
 
+		inspecting_item = "Inspeccionando Objeto",
+
 		inspect_weapon = "El número de serie de este ${itemName} parece ser `${itemId}`.",
 		inspect_weapon_broken = "El número de serie de este ${itemName} parece ser `${itemId}`, también parece estar completamente roto.",
 		inspect_bank_property = "${consoleName} ha reclamado un envío de ${weight}su con ${company}.",
 		inspect_bank_property_cid = "Esta ${item} está marcada como propiedad del Banco ${bank}. Fue retirada por el número de cuenta #${characterId}.",
 		inspect_no_property = "Recibido",
+
+		gift_box_normal = "Esta caja de regalo parece completamente normal.",
+		gift_box_suspicious = "Esta caja de regalo parece un poco sospechosa.",
+		gift_box_residue = "Esta caja de regalo tiene residuos de polvo grisáceo.",
 
 		searching_dumpster = "Buscando en el contenedor de basura",
 		searching_homeless_tent = "Buscando en Tienda de Indigentes",
@@ -8625,6 +8579,8 @@ OP.Global.Locales.Languages["es-PR"] = {
 		empty_box_description = "Empieza con esta caja simple pero resistente para crear un regalo personalizado. Llénala con tesoros no perecederos y estará lista para transformarse en un regalo pensado. Ideal para empacar todo lo que simbolice afecto, excepto alimentos perecederos y armas.",
 		gift_box = "Caja de Regalo",
 		gift_box_description = "Esta elegante caja de regalo sellada, adornada con un lazo festivo, es una hermosa manera de presentar tus artículos cuidadosamente elegidos. Perfecta para ocasiones especiales, transmite calidez y consideración, asegurando que tu gesto de regalo sea tan encantador como el regalo que contiene.",
+		gift_box_bomb = "Caja de Regalo",
+		gift_box_bomb_description = "Esta elegante caja de regalo sellada, adornada con un lazo festivo, es una hermosa forma de presentar tus objetos cuidadosamente elegidos. Perfecta para ocasiones especiales, transmite calidez y consideración, asegurando que tu gesto de dar deje una impresión duradera.",
 
 		ear_defenders = "Protectores de oídos",
 		ear_defenders_description = "Se utilizan para proteger tus oídos del ruido fuerte.",
@@ -9234,6 +9190,8 @@ OP.Global.Locales.Languages["es-PR"] = {
 		pet_snowman_description = "Failed to automatically generate translation.",
 		pet_owl = "Hooty",
 		pet_owl_description = "Hooty, tu compañero sabio y vigilante, se posa elegantemente en tu hombro. Con sus ojos agudos y sus suaves plumas, esta encantadora lechuza agrega un toque de magia a tus aventuras. Siempre listo para prestar un ulular de sabiduría, Hooty es el compañero perfecto para cualquier viaje.",
+		pet_pig = "Porkchop",
+		pet_pig_description = "Un cerdito pequeño con una gran personalidad, encaramado felizmente en tu hombro. Siempre listo para gruñir con ánimo o juzgar tus decisiones de vida con una mirada de reojo adorable. Ya sea que estés aventurando o simplemente paseando, este compañero de tamaño de bolsillo es la combinación perfecta de encanto y desfachatez.",
 
 		hotwheels_mcqueen = "Rayo McQueen",
 		hotwheels_mcqueen_description = "Velocidad, soy velocidad, flota como un Cadillac, pica como un BMW. KATCHOW KATCHOW KATCHOW",
@@ -9549,6 +9507,9 @@ OP.Global.Locales.Languages["es-PR"] = {
 		wires = "Cables",
 		wires_description = "Manteniendo todo junto.",
 
+		microcontroller = "Microcontrolador",
+		microcontroller_description = "Un cerebro diminuto pero poderoso para todas tus creaciones electrónicas, capaz de dar vida a ideas complejas con solo unas pocas líneas de código. Es el héroe anónimo de la innovación, orquestando silenciosamente la magia detrás de escena.",
+
 		note = "Nota",
 		note_description = "Alguna nota no sé hombre.",
 
@@ -9743,6 +9704,17 @@ OP.Global.Locales.Languages["es-PR"] = {
 		wheel_clamp_description = "¡Aquí no hay escapatoria! La Pinza de Rueda es un dispositivo resistente que asegura firmemente los vehículos en su lugar y pone fin al movimiento no autorizado. Esta pesada herramienta es un cumplidor silencioso, asegurando que las normas de estacionamiento sean respetadas y seguidas.",
 		old_rug = "Alfombra Vieja",
 		old_rug_description = "Coloca esta acogedora alfombra para tu próximo hangout al aire libre y mantén las cosas cómodas. ¡Es perfecta para descansar en el césped sin mancharte los pantalones de verde! Estírala, relájate y disfruta de tu entorno con estilo y comodidad.",
+
+		evidence_marker_1 = "Marcador 1",
+		evidence_marker_1_description = "El punto de inicio del misterio, marcando la primera pista para desentrañar la verdad.",
+		evidence_marker_2 = "Marcador 2",
+		evidence_marker_2_description = "Una pista de seguimiento, llevando a los investigadores más cerca del panorama completo.",
+		evidence_marker_3 = "Marcador 3",
+		evidence_marker_3_description = "El detalle que puede hacer o deshacer el caso, no lo pases por alto.",
+		evidence_marker_4 = "Marcador 4",
+		evidence_marker_4_description = "Una pieza crítica del rompecabezas, esperando en silencio ser notada.",
+		evidence_marker_5 = "Marcador 5",
+		evidence_marker_5_description = "El marcador final, que une todo o deja más preguntas que respuestas.",
 
 		bandit_1 = "Bandido 1",
 		bandit_1_description = "undefined",
@@ -10604,6 +10576,7 @@ OP.Global.Locales.Languages["es-PR"] = {
 		invalid_invisibility_mode = "Modo de invisibilidad inválido. Debe ser 'completo' o 'normal'.",
 		invisibility_mode_full = "Modo invisibilidad establecido en 'completo'. Los miembros del personal regular no pueden verte.",
 		invisibility_mode_normal = "Modo invisibilidad establecido en 'normal'. Los miembros del personal regular ahora pueden verte.",
+		current_invisibility_mode = "El modo de invisibilidad actual está establecido en '${mode}'.",
 
 		toggled_invisibility = "Invisibilidad de ${displayName} activada correctamente.",
 		failed_invisibility = "Error al activar la invisibilidad de ${displayName}.",
@@ -10699,6 +10672,9 @@ OP.Global.Locales.Languages["es-PR"] = {
 		logs_used_weather_spell_title = "Hechizo de clima utilizado",
 		logs_used_weather_spell_details = "${consoleName} utilizó el hechizo de clima `${itemName}`.",
 
+		gift_box_bomb_logs_title = "Caja de Regalo Explosiva Abierta",
+		gift_box_bomb_logs_details = "${consoleName} abrió una caja de regalo explosiva.",
+
 		you_have_used_jail_card = "¡Has usado una 'tarjeta de salir de la cárcel'!",
 		you_are_not_in_jail = "No estás en la cárcel.",
 
@@ -10791,9 +10767,9 @@ OP.Global.Locales.Languages["es-PR"] = {
 		sentence_reduced = "Tu condena se redujo por ${amount} meses, te quedan ${remaining} meses.",
 		sentence_increased = "Tu sentencia fue incrementada por ${amount} meses, te quedan ${remaining} meses.",
 		sentence_over = "Tu condena ha terminado.",
-		remaining_time_fmt = "${months} meses (*${display}*)",
+		remaining_time_fmt = "${months} meses (${display})",
 		remaining_time = "Tiempo Restante: ${remaining}.",
-		jailed = "Has sido encarcelado por ${amount}.",
+		jailed = "Has sido encarcelado por ${amount} meses.",
 
 		mission_help_1 = "Presiona ~INPUT_CONTEXT~ para limpiar el suelo.",
 		mission_help_2 = "Presiona ~INPUT_CONTEXT~ para comer algo.",
@@ -10970,17 +10946,6 @@ OP.Global.Locales.Languages["es-PR"] = {
 		back = "Atrás",
 		copy_license = "Identificación de licencia",
 		copy_license_success = "¡Copiado!",
-		cache_assets = "Almacenar en caché los recursos",
-		download_assets = "¿Te gustaría descargar y almacenar en caché la mayoría de los activos del servidor? Aquí están los beneficios y consideraciones:",
-		cache_assets_performance = "Disfruta de un mejor FPS y menos picos de ping durante el juego, especialmente si tienes hardware de gama baja o una conexión más lenta.",
-		cache_assets_crashes = "El juego puede fallar durante el proceso. Si esto sucede, utiliza la opción de 'descarga lenta' en su lugar.",
-		cache_assets_restart = "Después de completar la descarga, reinicia tu juego para prevenir el lag durante esta sesión.",
-		cache_assets_disk = "Esto usará algo de espacio en disco, así que asegúrate de tener suficiente disponible.",
-		cache_assets_no_repeat = "No necesitarás hacer esto en cada actualización, ya que solo unos pocos archivos cambiarán.",
-		vehicles = "Vehículos",
-		objects = "Objetos",
-		peds = "Personajes",
-		clothing = "Ropa",
 		main_menu = "Menú Principal",
 		gta_settings = "Configuración de GTA",
 		discord = "Discord",
@@ -11132,8 +11097,8 @@ OP.Global.Locales.Languages["es-PR"] = {
 
 	lottery = {
 		lottery_announcement = "Anuncio de Lotería",
-		lottery_about_to_roll = "En 5 minutos se seleccionará un ganador para la lotería de hoy. El pozo total es de $${totalAmount} donde has apostado $${betAmount}. Tu probabilidad de ganar es del ${odds}%.",
-		current_lottery_pot = "El bote total actual es de $${totalAmount} donde has apostado $${betAmount}. ¡Tu probabilidad de ganar es del ${odds}%!",
+		lottery_about_to_roll = "En 5 minutos se elegirá un ganador para la lotería de hoy. El bote total actualmente es de $${totalAmount} donde has invertido $${betAmount}. Tu probabilidad de ganar es del ${odds}%. El impuesto es del ${tax}%.",
+		current_lottery_pot = "La potencia total es actualmente de $${totalAmount} donde has apostado $${betAmount}. Tu probabilidad de ganar es del ${odds}%. El impuesto es del ${tax}%.",
 		drew_a_lottery_winner = "Se ha seleccionado un ganador para la lotería.",
 		winner_has_been_picked = "¡${fullName} ha ganado el bote de la lotería de $${totalAmount}! ¡Apostaron $${betAmount} y su probabilidad de ganar era del ${odds}%!",
 		claimed_lottery_winnings = "Se han reclamado todas las ganancias de la lotería.",
@@ -11744,6 +11709,7 @@ OP.Global.Locales.Languages["es-PR"] = {
 		hatch_claim = "RECLAMAR",
 		hatch_opened = "RECLAMADO",
 		hatch_waiting = "ESPERANDO",
+		hatch_too_late = "MUY TARDE",
 
 		about_advent_calendar_title = "Acerca del Calendario de Adviento",
 
@@ -11755,7 +11721,7 @@ OP.Global.Locales.Languages["es-PR"] = {
 			<br><br>
 			Next hatch unlocks in ${time}.
 			<br><br>
-			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 26th.)
+			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 31st.)
 			<br><br>
 			<div class="bonusPoints">
 				<div>Bonus Points: ${bonusPoints}/22</div>
@@ -13570,6 +13536,59 @@ OP.Global.Locales.Languages["es-PR"] = {
 		used_bug_logs_details = "${consoleName} utilizó un micrófono espía en ${identifier}."
 	},
 
+	staff_pm = {
+		something_went_wrong = "Algo salió mal al enviar el mensaje.",
+		reports_too_fast = "Estás enviando reportes muy rápido, disminuye la velocidad.",
+		no_report_message = "Debes incluir un mensaje con tu reporte.",
+		same_report = "No puedes enviar el mismo reporte dos veces.",
+		report_muted = "Estás silenciado/a de enviar reportes por: `${reason}`.",
+		report_muted_no_reason = "Estás silenciado/a de enviar reportes.",
+
+		report_title = "REPORT-${reportId} ${displayName}",
+		report_logs_title = "Reporte",
+		report_logs_details = "${consoleName} creó reporte ${reportId} con el siguiente mensaje: `${message}`",
+
+		invalid_server_id = "ID de servidor objetivo no válida.",
+		no_staff_pm_message = "Debes incluir un mensaje en tu mensaje privado.",
+		user_not_staff = "El usuario no es un miembro del equipo.",
+		staff_pm_warning = "Advertencia de mensaje privado de equipo",
+		staff_pm_first_time = "Vemos que nunca has usado mensajes privados de equipo antes. Para responder a un mensaje privado de equipo, usa `/staffpm` seguido del id del destinatario. Para mayor comodidad, puedes usar `/reply` para responder al último mensaje privado de equipo que recibiste.",
+
+		staff_pm_title = "STAFF PM ${from} -> ${to}",
+		staff_pm_title_external = "STAFF PM EXTERNO ${from} -> ${to}",
+		close_staff_pm = "Cerrar",
+		staff_pm_from = "StaffPM de <i>${from}</i>",
+		staff_pm_logs_title = "Mensajes Privados del Staff",
+		staff_pm_logs_details = "${senderConsoleName} envió un mensaje privado de staff a ${recipientConsoleName}: `${message}`",
+		important_staff_pm_logs_title = "Mensajes Privados del Staff Importantes",
+		important_staff_pm_logs_details = "${senderConsoleName} envió un mensaje privado de staff importante a ${recipientConsoleName}: `${message}`",
+
+		staff_toggled = "Tu estado de staff se ha desactivado.",
+		no_staff_message = "Debes incluir un mensaje en el chat de staff.",
+		same_staff_message = "No puedes enviar el mismo mensaje de staff dos veces.",
+
+		staff_message_title = "STAFF ${playerName}",
+		local_staff_message_title = "STAFF LOCAL ${playerName}",
+		staff_message_logs_title = "Mensaje de Staff",
+		staff_message_logs_details = "${consoleName} envió el siguiente mensaje en el chat de staff: `${message}`",
+		local_staff_message_logs_title = "Mensaje de Staff Local",
+		local_staff_message_logs_details = "${consoleName} envió el siguiente mensaje en el chat de staff local: `${message}`",
+
+		message_sent = "Mensaje enviado.",
+		cannot_send_private_message_to_yourself = "No puedes enviar un mensaje privado a ti mismo.",
+		missing_valid_message_parameter = "Falta un parámetro de 'mensaje' válido.",
+		missing_valid_license_identifier_parameter = "Falta un parámetro de 'licenseIdentifier' válido.",
+		missing_valid_target_source_parameter = "Falta un parámetro de 'targetSource' válido.",
+
+		invalid_report_id = "ID de reporte inválido.",
+		report_already_claimed = "Ese reporte ya fue reclamado por *${playerName}*.",
+		report_same_creator = "No puedes reclamar tus propios reportes.",
+		failed_claim_report = "Error al reclamar informe.",
+		report_claimed = "Informe **${reportId}** fue reclamado por *${playerName}*.",
+		claim_report_logs_title = "Informe reclamado",
+		claim_report_logs_details = "${consoleName} reclamó informe ${reportId}."
+	},
+
 	starter_car = {
 		follow_the_checkpoints = "Tu vehículo personal está estacionado cerca. Sigue los puntos de control para encontrarlo.",
 
@@ -13928,6 +13947,8 @@ OP.Global.Locales.Languages["es-PR"] = {
 		tp_cayo = "Cayo Perico",
 
 		actions = "Acciones",
+		jail_self = "Encarcelarse a uno mismo",
+		unjail_self = "Liberarse a uno mismo",
 		wander_around = "Explorar",
 		speed_around = "Velocidad",
 		clear_tasks = "Limpiar Tareas",
@@ -14114,7 +14135,10 @@ OP.Global.Locales.Languages["es-PR"] = {
 		no_maps_to_combine = "No tienes mapas para combinar.",
 
 		treasure_map_dug_up_logs_title = "Mapa de tesoro excavado",
-		treasure_map_dug_up_logs_details = "${consoleName} ha excavado un mapa de tesoro de nivel ${mapTier} y ha recibido el drop ID ${dropId}."
+		treasure_map_dug_up_logs_details = "${consoleName} ha excavado un mapa de tesoro de nivel ${mapTier} y ha recibido el drop ID ${dropId}.",
+
+		treasure_map_piece_spawned_logs_title = "Pieza de mapa del tesoro generada",
+		treasure_map_piece_spawned_logs_details = "${consoleName} ha generado la pieza de mapa del tesoro ${pieceNumber} de nivel ${mapTier}."
 	},
 
 	tsunami = {
@@ -14335,14 +14359,24 @@ OP.Global.Locales.Languages["es-PR"] = {
 
 	weed = {
 		strain_default = "Haze Salvaje",
-		strain_lemon = "Haze de Limón",
+		strain_bubble = "Baya Burbuja",
 		strain_northern = "Luces del Norte",
 		strain_kush = "OG Kush",
+		strain_diesel = "Diésel Agrio",
+		strain_ak47 = "AK-47",
+		strain_dream = "Sueño Azul",
+		strain_trainwreck = "Desastre de Tren",
+		strain_gorilla = "Gorilla Glue",
 
 		default_emoji = "🥦",
-		lemon_emoji = "🏃",
+		bubble_emoji = "🫧",
 		northern_emoji = "🛡️",
 		kush_emoji = "🦁",
+		diesel_emoji = "😌",
+		ak47_emoji = "🔫",
+		dream_emoji = "🪶",
+		trainwreck_emoji = "👊",
+		gorilla_emoji = "🦍",
 
 		strain_description = "<b>Cepa:</b> <i>${strain}</i> ${emoji}"
 	},
@@ -14392,6 +14426,7 @@ OP.Global.Locales.Languages["es-PR"] = {
 		run_as_failed = "No se pudo ejecutar el comando como ${consoleName}.",
 
 		no_nearby_vehicle = "No hay ningún vehículo cerca.",
+		invalid_duration = "Duración no válida (1s - 20s).",
 		reversing_failed = "No se pudo hacer retroceder al personaje.",
 		driving_forwards_failed = "No se pudo hacer que el personaje conduzca hacia adelante.",
 		reversing_success = "Se logró hacer retroceder al personaje exitosamente.",
@@ -14927,7 +14962,16 @@ OP.Global.Locales.Languages["es-PR"] = {
 
 		task_take_nap = "Tomar una siesta.",
 		task_take_nap_near = "Presiona ~INPUT_DETONATE~ para tomar una siesta.",
-		task_take_nap_active = "Tomando Siesta"
+		task_take_nap_active = "Tomando Siesta",
+
+		task_water_plants = "Regar las plantas.",
+		task_water_plants_near = "Presiona ~INPUT_DETONATE~ para regar las plantas.",
+		task_water_plants_active = "Regando Plantas"
+	},
+
+	taxi = {
+		help_text = "`initial` es la tarifa base de inicio (por defecto: $10), `mile` es la tarifa por milla recorrida (por defecto: $5), `minute` es la tarifa por minuto mientras el taxímetro está activado (por defecto: $15), `show` mostrará tu configuración actual.",
+		invalid_typ = "Tipo inválido."
 	},
 
 	tow = {
@@ -15287,8 +15331,10 @@ OP.Global.Locales.Languages["es-PR"] = {
 		wheels_modified = "Se han modificado las ruedas.",
 		wheels_none_specified = "No se especificaron ruedas.",
 		wheels_none_valid_specified = "No se especificaron ruedas válidas.",
-		not_in_a_car = "No estás en un vehículo.",
-		invalid_value = "Valor inválido."
+		not_in_a_car = "No estás conduciendo un carro.",
+		invalid_value = "Valor inválido.",
+		suspension_height = "La altura de la suspensión actual está configurada en ${height}.",
+		suspension_height_set = "La altura de la suspensión se ha configurado en ${height}."
 	},
 
 	oil = {
@@ -15496,6 +15542,7 @@ OP.Global.Locales.Languages["es-PR"] = {
 
 	throwables = {
 		pick_up_weapon = "[${InteractionKey}] Recoger",
+		throwables_wiped = "Eliminaste ${amount} proyectiles.",
 
 		no_weapon_equipped = "No tienes un arma equipada.",
 		cant_throw_weapon = "No puedes lanzar esta arma.",

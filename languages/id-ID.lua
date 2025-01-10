@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 35 (do not change)
+-- AUTO LOCALES: 36 (do not change)
 
 OP.Global.Locales.Languages["id-ID"] = {
 	-- configuration settings for language
@@ -202,10 +202,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		spawned_item_for_everyone_title = "Item yang Dibuat untuk Semua",
 		spawned_item_for_everyone_details = "${consoleName} telah memunculkan ${amount}x `${itemName}` untuk semua orang.",
 
-		report_title = "LAPORAN-${reportId} ${reporterName}",
-		report_logs_title = "Laporan",
-		report_logs_details = "${consoleName} membuat laporan ${reportId} dengan pesan berikut: `${reportMessage}`",
-
 		announcement_staff_title = "Pengumuman Staff",
 		announcement_server_title = "Pengumuman Server",
 
@@ -220,47 +216,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		failed_to_post_announcement = "Gagal memposting pesan pengumuman karena tidak ada pesan yang ditambahkan.",
 		failed_to_post_announcement_locale = "Gagal memposting pesan pengumuman karena lokal pengumuman yang ditambahkan tidak didukung.",
 
-		staff_title = "STAF ${namaStaff}",
-		staff_message_logs_title = "Pesan Staff",
-		staff_message_logs_details = "${consoleName} mengirim pesan berikut dalam obrolan staff: `${staffMessage}`",
-		local_staff_title = "STAF LOKAL ${staffName}",
-		local_staff_message_logs_title = "Riwayat Pesan Staf Lokal",
-		local_staff_message_logs_details = "${consoleName} mengirim pesan berikut di obrolan staf lokal: `${staffMessage}`",
-
-		staff_pm_title = "STAF PM ${transmissionTitle}",
-		staff_pm_logs_title = "Staf PM",
-		staff_pm_logs_details = "${senderConsoleName} mengirim pesan berikut kepada ${recipientConsoleName}: `${staffPrivateMessage}`",
-		staff_pm_not_logged_in = "Anda tidak masuk.",
-		staff_pm_not_user_not_found = "Pengguna dengan ID server ${serverId} tidak ditemukan.",
-		staff_pm_not_recipient_not_staff = "Pemain yang Anda coba kirim pesan bukanlah anggota staff.",
-		staff_pm_unable_to_message_self = "Anda tidak dapat mengirim pesan kepada diri sendiri.",
-		staff_pm_warning = "Peringatan Staff PM",
-		staff_pm_first_time = "Kami melihat bahwa Anda belum pernah menggunakan staff PMs sebelumnya. Untuk merespons pesan dari staff, gunakan `/staffpm` diikuti dengan id penerima. Untuk kemudahan, Anda dapat menggunakan `/reply` untuk merespons staff PM terakhir yang Anda terima.",
-		reply_pm_not_found = "Tidak ada pesan staff untuk dibalas.",
-
-		important_staff_pm_title = "!STAFF PM Anda -> ${recipient}",
-		close_staffpm = "Tutup",
-		staffpm_from = "StaffPM dari <i>${from}</i>",
-		important_staff_pm_logs_title = "Important Staff PM",
-		important_staff_pm_logs_details = "${senderConsoleName} mengirimkan pesan penting berikut kepada ${recipientConsoleName}: `${message}`",
-
-		external_staff_message = "Pesan Staf Eksternal",
-		external_staff_message_from_player = "Pesan Staf Eksternal Dari ${playerName}",
-		external_staff_message_content = "${staffMessage} (Anda tidak dapat membalas pesan ini.)",
-
-		unable_to_staff_message_yourself = "Tidak dapat mengirim pesan staf kepada diri sendiri.",
-		message_sent = "Pesan terkirim.",
-		player_not_found = "Pemain tidak ditemukan.",
-		missing_valid_target_source_parameter = "Parameter 'sumber target' tidak valid atau tidak ada.",
-		missing_valid_message_parameter = "Parameter 'pesan' tidak valid atau tidak ada.",
-
 		invalid_coordinates = "Koordinat x, y, z, atau w tidak valid.",
 		player_not_loaded_character = "Pemain tidak memiliki karakter yang dimuat.",
 		teleport_successful = "Berhasil memindahkan pemain.",
 
 		player_revived_success = "Berhasil menghidupkan kembali pemain.",
-
-		missing_valid_license_identifier_parameter = "Parameter 'identifier lisensi' tidak valid atau tidak ada.",
 
 		wipe_broken = "broken - Objek Rusak/Fragmentasi",
 		wipe_npcs = "npcs - NPC dan kendaraan mereka.",
@@ -376,12 +336,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		report_muted_no_reason = "Anda telah dimute dari perintah laporan tanpa alasan yang ditentukan.",
 		report_muted = "Anda telah dimute dari perintah laporan dengan alasan `${reason}`.",
-
-		already_sending_report = "Anda sudah mengirim laporan. Mohon tunggu.",
-		unable_to_send_identical_report = "Anda tidak dapat mengirimkan dua laporan yang identik berturut-turut.",
-
-		already_sending_staff_message = "Anda sedang mengirim pesan staff. Harap tunggu.",
-		unable_to_send_identical_staff_message = "Anda tidak dapat mengirimkan dua pesan staff yang identik berturut-turut dalam 30 detik.",
 
 		population_density_set_to = "Penggandaan kepadatan penduduk telah diatur ke ${multiplierLabel}%.",
 		population_density_set_off = "Pengganda kerapatan penduduk sudah dimatikan.",
@@ -881,51 +835,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		marathon_command_substitutes = "",
 
 		-- base/admin
-		report_command = "lapor",
-		report_command_help = "Mengirim pesan kepada seluruh staf yang sedang aktif.",
-		report_command_parameter_message = "pesan",
-		report_command_parameter_message_help = "Pesan yang ingin Anda kirimkan. Ringkasan singkat tentang apa yang Anda laporkan (Contoh: \"Saya baru saja di VDM, ID mereka adalah...\").",
-		report_command_substitutes = "jelentés",
-
 		announce_command = "pengumuman",
 		announce_command_help = "Menyampaikan pengumuman kepada semua pemain.",
 		announce_command_parameter_message = "pesan",
 		announce_command_parameter_message_help = "Pesan yang ingin Anda sampaikan.",
 		announce_command_substitutes = "",
-
-		staff_pm_command = "staff_pm",
-		staff_pm_command_help = "Mengirim pesan kepada staf atau pemain sebagai staf.",
-		staff_pm_command_parameter_server_id = "ID server",
-		staff_pm_command_parameter_server_id_help = "ID server pemain yang ingin Anda kirim pesan.",
-		staff_pm_command_parameter_message = "pesan",
-		staff_pm_command_parameter_message_help = "Pesan yang ingin Anda kirim.",
-		staff_pm_command_substitutes = "staffpm, pesan, pm, msg",
-
-		important_staff_pm_command = "important_staff_pm",
-		important_staff_pm_command_help = "Kirim pesan penting kepada pemain sebagai staf.",
-		important_staff_pm_command_parameter_server_id = "ID server",
-		important_staff_pm_command_parameter_server_id_help = "ID server pemain yang ingin Anda kirim pesan.",
-		important_staff_pm_command_parameter_message = "pesan",
-		important_staff_pm_command_parameter_message_help = "Pesan penting yang ingin Anda kirim.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
-
-		reply_pm_command = "balas_pm",
-		reply_pm_command_help = "Balas pesan staf terakhir yang Anda terima.",
-		reply_pm_command_parameter_message = "pesan",
-		reply_pm_command_parameter_message_help = "Pesan yang ingin Anda kirim.",
-		reply_pm_command_substitutes = "reply",
-
-		staff_command = "staff",
-		staff_command_help = "Siarkan pesan kepada semua anggota staf yang aktif.",
-		staff_command_parameter_message = "pesan",
-		staff_command_parameter_message_help = "Pesan yang ingin Anda kirim.",
-		staff_command_substitutes = "",
-
-		local_staff_command = "local_staff",
-		local_staff_command_help = "Menyiarkan pesan kepada semua anggota staf aktif dalam radius 25m.",
-		local_staff_command_parameter_message = "pesan",
-		local_staff_command_parameter_message_help = "Pesan yang ingin Anda kirim.",
-		local_staff_command_substitutes = "lstaff",
 
 		wipe_command = "wipe",
 		wipe_command_help = "Hapus entitas yang tidak diinginkan dari peta.",
@@ -1437,11 +1351,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		emojis_refresh_command_help = "Memperbarui emoji yang tersedia. Ini akan mengambil daftar terbaru dari guild discord.",
 		emojis_refresh_command_substitutes = "",
 
-		-- base/ping
-		get_pings_command = "get_pings",
-		get_pings_command_help = "Dapatkan rata-rata ping ke berbagai host di seluruh dunia untuk menemukan lokasi host yang paling cocok untuk pemain saat ini di server ini.",
-		get_pings_command_substitutes = "",
-
 		-- base/points
 		points_command = "points",
 		points_command_help = "Menampilkan jumlah OP Points yang kamu miliki.",
@@ -1465,6 +1374,47 @@ OP.Global.Locales.Languages["id-ID"] = {
 		remove_twitch_ban_exception_command_parameter_server_id = "${consoleName} ने सभी को अपने पास टेलीपोर्ट किया।",
 		remove_twitch_ban_exception_command_parameter_server_id_help = "टीपी टू",
 		remove_twitch_ban_exception_command_substitutes = "",
+
+		-- base/staff_pm
+		report_command = "lapor",
+		report_command_help = "Mengirim pesan kepada seluruh staf yang sedang aktif.",
+		report_command_parameter_message = "pesan",
+		report_command_parameter_message_help = "Pesan yang ingin Anda kirimkan. Ringkasan singkat tentang apa yang Anda laporkan (Contoh: \"Saya baru saja di VDM, ID mereka adalah...\").",
+		report_command_substitutes = "calladmin, wallop, modreq, helpme",
+
+		claim_report_command = "claim_report",
+		claim_report_command_help = "Mengklaim laporan tertentu.",
+		claim_report_command_parameter_report_id = "id laporan",
+		claim_report_command_parameter_report_id_help = "ID dari laporan yang ingin Anda klaim.",
+		claim_report_command_substitutes = "claim, cr, claimreport",
+
+		staff_pm_command = "staff_pm",
+		staff_pm_command_help = "Mengirim pesan kepada staf atau pemain sebagai staf.",
+		staff_pm_command_parameter_server_id = "ID server",
+		staff_pm_command_parameter_server_id_help = "ID server pemain yang ingin Anda kirim pesan.",
+		staff_pm_command_parameter_message = "pesan",
+		staff_pm_command_parameter_message_help = "Pesan yang ingin Anda kirim.",
+		staff_pm_command_substitutes = "staffpm, message, pm, msg, reply, replypm, reply_pm",
+
+		important_staff_pm_command = "important_staff_pm",
+		important_staff_pm_command_help = "Kirim pesan penting kepada pemain sebagai staf.",
+		important_staff_pm_command_parameter_server_id = "ID server",
+		important_staff_pm_command_parameter_server_id_help = "ID server pemain yang ingin Anda kirim pesan.",
+		important_staff_pm_command_parameter_message = "pesan",
+		important_staff_pm_command_parameter_message_help = "Pesan penting yang ingin Anda kirim.",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
+
+		staff_command = "staff",
+		staff_command_help = "Siarkan pesan kepada semua anggota staf yang aktif.",
+		staff_command_parameter_message = "pesan",
+		staff_command_parameter_message_help = "Pesan yang ingin Anda kirim.",
+		staff_command_substitutes = "",
+
+		local_staff_command = "local_staff",
+		local_staff_command_help = "Menyiarkan pesan kepada semua anggota staf aktif dalam radius 25m.",
+		local_staff_command_parameter_message = "pesan",
+		local_staff_command_parameter_message_help = "Pesan yang ingin Anda kirim.",
+		local_staff_command_substitutes = "lstaff",
 
 		-- base/users
 		playtime_command = "playtime",
@@ -1582,11 +1532,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		play_audio_command_parameter_server_id_help = "ID server pemain yang ingin Anda mainkan audio ini. Anda dapat menggunakan `-1` untuk semua pemain.",
 		play_audio_command_substitutes = "",
 
-		-- game/audio_emitters
-		toggle_audio_emitters_command = "toggle_audio_emitters",
-		toggle_audio_emitters_command_help = "Mengaktifkan atau menonaktifkan pemancar audio bawaan.",
-		toggle_audio_emitters_command_substitutes = "",
-
 		-- game/bandaids
 		random_bandaid_command = "random_bandaid",
 		random_bandaid_command_help = "Memberikan Anda sebuah bandaid acak. :)",
@@ -1683,17 +1628,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		buddy_pass_command = "Mengubah status 'vehicle smoke'.",
 		buddy_pass_command_help = "id server",
 		buddy_pass_command_substitutes = "",
-
-		-- game/cache
-		cache_assets_command = "Jika Anda ingin mengubah status 'vehicle smoke' untuk orang lain, masukkan id server mereka di sini.",
-		cache_assets_command_help = "warna r",
-		cache_assets_command_parameter_slow_download = "unduh_lambat",
-		cache_assets_command_parameter_slow_download_help = "Apakah Anda ingin mengunduh asset secara perlahan? Melakukan hal ini akan memakan waktu lebih lama, namun juga mengurangi kemungkinan terjadinya crash.",
-		cache_assets_command_substitutes = "unduh_cache, awal_cache, muat_cache",
-
-		cache_join_toggle_command = "cache_join_toggle",
-		cache_join_toggle_command_help = "Nyalakan/Matikan pengunduhan asset secara otomatis ketika Anda bergabung ke server.",
-		cache_join_toggle_command_substitutes = "",
 
 		-- game/camera
 		stable_cam_command = "kamera_stabil",
@@ -3735,10 +3669,14 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		ped_reverse_command = "ped_reverse",
 		ped_reverse_command_help = "Membuat ped terdekat di dalam kendaraan mundur.",
+		ped_reverse_command_parameter_duration = "durasi",
+		ped_reverse_command_parameter_duration_help = "Durasi mundur dalam detik (1s - 20s, default adalah 4s).",
 		ped_reverse_command_substitutes = "",
 
 		ped_forwards_command = "ped_forwards",
 		ped_forwards_command_help = "Membuat ped terdekat di dalam kendaraan maju.",
+		ped_forwards_command_parameter_duration = "durasi",
+		ped_forwards_command_parameter_duration_help = "Durasi drive ke depan dalam detik (1s - 20s, default adalah 4s).",
 		ped_forwards_command_substitutes = "",
 
 		vehicle_flip_command = "vehicle_flip",
@@ -3787,6 +3725,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		polygon_command = "${consoleName} ने ${sourceConsoleName} को ${targetConsoleName} के पास टेलीपोर्ट किया।",
 		polygon_command_help = "Mendefinisikan poligon 2D.",
 		polygon_command_substitutes = "सेविंग्स बॉन्ड",
+
+		box_command = "kotak",
+		box_command_help = "Tentukan kotak 3D.",
+		box_command_substitutes = "",
 
 		-- global/states
 		entity_states_command = "entity_states",
@@ -3969,6 +3911,27 @@ OP.Global.Locales.Languages["id-ID"] = {
 		tasks_debug_command_parameter_area_id_help = "ID area tugas yang ingin Anda debug. Kosongkan untuk mencetak semua area.",
 		tasks_debug_command_substitutes = "",
 
+		-- jobs/taxi
+		taxi_display_command = "tampilan_taksi",
+		taxi_display_command_help = "Mengalihkan tampilan taksi Anda.",
+		taxi_display_command_substitutes = "taxidisplay, taxi",
+
+		taxi_hire_command = "taxi_sewa",
+		taxi_hire_command_help = "Aktifkan atau nonaktifkan penyewaan taksi Anda.",
+		taxi_hire_command_substitutes = "taxisewa",
+
+		taxi_reset_command = "taxi_reset",
+		taxi_reset_command_help = "Reset meter taksi Anda.",
+		taxi_reset_command_substitutes = "taxireset",
+
+		taxi_fare_command = "taxi_tarif",
+		taxi_fare_command_help = "Atur tarif taksi Anda.",
+		taxi_fare_command_parameter_type = "jumlah",
+		taxi_fare_command_parameter_type_help = "Jenis tarif yang ingin Anda atur (bantuan, tampilkan, awal, mil atau menit).",
+		taxi_fare_command_parameter_amount = "jumlah",
+		taxi_fare_command_parameter_amount_help = "Jumlah yang ingin Anda tetapkan untuk tarifnya.",
+		taxi_fare_command_substitutes = "tarifsewa",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "toggle_pesan_mekanik",
 		toggle_mechanic_messages_command_help = "Mengaktifkan atau menonaktifkan pesan mekanik yang diterima.",
@@ -4088,13 +4051,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		wheel_offset_command_parameter_value_help = "Jumlah pengubahan yang Anda inginkan. Nilai dapat berupa -0.15 hingga 0.2, 0 adalah nilai default.",
 		wheel_offset_command_substitutes = "",
 
-		wheel_rotation_command = "rotasi_roda",
-		wheel_rotation_command_help = "Ubah rotasi roda pada kendaraan.",
-		wheel_rotation_command_parameter_wheels = "depan/belakang",
-		wheel_rotation_command_parameter_wheels_help = "Roda mana yang ingin Anda ubah?",
-		wheel_rotation_command_parameter_value = "nilai",
-		wheel_rotation_command_parameter_value_help = "Jumlah yang ingin Anda ubah. Ini dapat berada di antara -0.5 hingga 0.5, 0 adalah default.",
-		wheel_rotation_command_substitutes = "",
+		suspension_height_command = "suspension_height",
+		suspension_height_command_help = "Memodifikasi tinggi visual suspensi kendaraan.",
+		suspension_height_command_parameter_value = "nilai",
+		suspension_height_command_parameter_value_help = "Jumlah yang ingin Anda modifikasi. Ini dapat berada di antara -0,15 hingga 0,1, 0 adalah ukuran default.",
+		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
 		oil_level_command = "tingkat_minyak",
@@ -4258,6 +4219,12 @@ OP.Global.Locales.Languages["id-ID"] = {
 		throw_weapon_command_help = "Lempar senjata yang sedang kamu pakai.",
 		throw_weapon_command_substitutes = "yeet, lempar",
 
+		wipe_throwables_command = "wipe_throwables",
+		wipe_throwables_command_help = "Menghapus semua senjata yang dilemparkan dalam radius yang ditentukan.",
+		wipe_throwables_command_parameter_radius = "radius",
+		wipe_throwables_command_parameter_radius_help = "Radius untuk menghapus senjata yang dilempar (default: 5).",
+		wipe_throwables_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "cek_peluru",
 		check_ammo_command_help = "Memeriksa jumlah peluru yang kamu miliki secara total.",
@@ -4344,12 +4311,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		local_firewall_blocked = "Firewall Lokal: Diblokir ${playerName} (${licenseIdentifier})"
 	},
 
-	ping = {
-		getting_pings = "Mendapatkan ping dari semua pemain. Ini mungkin membutuhkan beberapa detik.",
-		host_data = "${position}. ${location} - Rata-rata Ping ${averagePing} (berdasarkan ${totalPings} klien), 10% Terendah: ${averagePingLow}, 10% Tertinggi: ${averagePingHigh}",
-		list_hosts = "${listHosts}"
-	},
-
 	points = {
 		you_have_points = "Anda memiliki ${frameworkPoints} Poin OP.",
 		used_points = "Menggunakan ${amount} Poin OP dengan label `${label}`.",
@@ -4362,11 +4323,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 	profile = {
 		profile_debug_enabled = "Pemecah masalah profil telah diaktifkan. Periksa konsol F8 untuk keluaran.",
 		profile_debug_disabled = "Pemecah masalah profil telah dinonaktifkan."
-	},
-
-	proxy = {
-		proxied_via_logs_title = "Diproses Melalui",
-		proxied_via_logs_details = "${consoleName} telah diproses melalui `${serverName}`."
 	},
 
 	restart = {
@@ -4511,6 +4467,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		ping_stable = "Ping Anda kembali stabil."
 	},
 
+	vpn = {
+		vpn_not_allowed_for_new_players = "Penggunaan VPN tidak diperbolehkan untuk pemain dengan waktu bermain kurang dari 24 jam."
+	},
+
 	whitelist = {
 		not_whitelisted = "Anda tidak termasuk dalam daftar putih (whitelist) server ini.\n\nBergabunglah dengan guild Discord kami untuk informasi tentang cara mengajukan aplikasi di ${communityDiscord}"
 	},
@@ -4644,12 +4604,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		description_rat_unnamed = "Tikus ${gender} ini, penuh petualangan berusia ${age} dan berat ${weight}, menjelajahi dunia dengan kecerdasan tajam dan pesona tak terduga. Didorong oleh dedikasi mutlak terhadap ${food}, ia mengubah setiap sudut menjadi penemuan potensial, setiap bayangan menjadi tempat bermain.",
 		description_rat_named = "${name}, seekor tikus ${gender} yang ${age} menyukai eksperimen kehidupan, memiliki berat ${weight} dan penuh dengan kepribadian. Dengan ikatan yang tak terpisahkan dengan ${food}, ${name} mencerminkan semangat keingintahuan—kecil namun penuh semangat.",
 
+		pick_up = "[${SeatEjectKey}] Ambil",
 		pick_up_named = "[${SeatEjectKey}] Angkat ${name}",
-		pick_up_cat = "[${SeatEjectKey}] Angkat Kucing",
-		pick_up_dog = "[${SeatEjectKey}] Angkat Anjing",
-		pick_up_hen = "[${SeatEjectKey}] Angkat Ayam",
-		pick_up_rabbit = "[${SeatEjectKey}] Angkat Kelinci",
-		pick_up_rat = "[${SeatEjectKey}] Angkat Tikus",
 
 		failed_pickup_cat = "Gagal mengambil kucing.",
 		failed_pickup_dog = "Gagal mengambil anjing.",
@@ -4996,11 +4952,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} memutar efek audio untuk semua orang. Efek audio memiliki URL `${url}` dan diatur untuk diputar dengan tingkat volume `${volume}`.",
 		played_audio_effect_for_player_title = "Memutar Efek Audio Untuk Pemain",
 		played_audio_effect_for_player_details = "${consoleName} memutar efek audio untuk ${targetConsoleName}. Efek audio memiliki URL `${url}` dan diatur untuk diputar dengan tingkat volume `${volume}`."
-	},
-
-	audio_emitters = {
-		audio_emitters_disabled = "Pemancar audio telah dinonaktifkan.",
-		audio_emitters_enabled = "Pemancar audio telah diaktifkan."
 	},
 
 	balls = {
@@ -5401,15 +5352,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 	bus_map = {
 		bus_tracker = "Bus"
-	},
-
-	cache = {
-		download_progress = "Progres Unduhan:\n- Kendaraan: ${vehiclesDone}/${vehiclesTotal}\n- Objek: ${objectsDone}/${objectsTotal}\n- Peds: ${pedsDone}/${pedsTotal}\n- Pakaian: ${clothingRequested}/${clothingTotal}",
-		slow_download_enabled = "Unduhan Lambat telah diaktifkan.",
-		slow_download_disabled = "Unduhan Lambat telah dinonaktifkan.",
-
-		join_cache_disabled = "Join cache dinonaktifkan.",
-		join_cache_enable = "Join cache diaktifkan."
 	},
 
 	caffeine = {
@@ -6307,6 +6249,11 @@ OP.Global.Locales.Languages["id-ID"] = {
 		crafting_ammo = "Membuat Peluru",
 		crafted_ammo = "Berhasil membuat peluru.",
 		failed_craft_ammo = "Gagal membuat peluru.",
+
+		gift_box_bomb_recipe = "Kotak Hadiah Khusus",
+		crafting_gift = "Membuat Kotak Hadiah",
+		crafted_gift = "Kotak hadiah yang dibuat.",
+		failed_craft_gift = "Gagal membuat kotak hadiah.",
 
 		process_weed = "Proses Ganja",
 		press_to_process_weed = "[${SeatEjectKey}] Proses Ganja",
@@ -8195,6 +8142,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		cinema = "Bioskop",
 		strip_club = "Strip Club",
 		police_store = "Toko Polisi",
+		utility_crate = "Peti Utilitas",
 		fib_store = "Toko FIB",
 		deputy_madison = "Deputy Madison",
 		sergeant_harris = "Sersan Harris",
@@ -8246,11 +8194,17 @@ OP.Global.Locales.Languages["id-ID"] = {
 		target_inventory_full = "दस्तावेज़ी कागज",
 		received_item = "${displayName} memberimu ${amount}x ${item}.",
 
+		inspecting_item = "Memeriksa Barang",
+
 		inspect_weapon = "Nomor seri dari ${itemName} ini adalah `${itemId}`.",
 		inspect_weapon_broken = "Nomor seri dari ${itemName} ini adalah `${itemId}`, tampaknya juga sepenuhnya rusak.",
 		inspect_bank_property = "Item ini merupakan milik ${bank} Bank.",
 		inspect_bank_property_cid = "${item} ini adalah milik Bank ${bank}. Ditarik menggunakan nomor akun #${characterId}.",
 		inspect_no_property = "Item ini tidak terlihat memiliki tanda kepemilikan.",
+
+		gift_box_normal = "Kotak hadiah ini terlihat sepenuhnya normal.",
+		gift_box_suspicious = "Kotak hadiah ini terlihat sedikit mencurigakan.",
+		gift_box_residue = "Kotak hadiah ini memiliki sisa bubuk abu-abu di atasnya.",
 
 		searching_dumpster = "Mencari di Dumpster",
 		searching_homeless_tent = "Mencari Tenda Tunawisma",
@@ -8625,6 +8579,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		empty_box_description = "Mulailah dengan kotak sederhana dan kokoh ini untuk membuat hadiah yang dipersonalisasi. Isi dengan harta tak berwujud, dan ia siap diubah menjadi hadiah yang penuh perhatian. Ideal untuk memasukkan segala hal yang melambangkan kasih sayang, kecuali barang yang mudah busuk dan senjata.",
 		gift_box = "Kotak Hadiah",
 		gift_box_description = "Kotak hadiah yang tersegel dengan elegan, dihiasi dengan pita meriah, adalah cara indah untuk menyajikan barang-barang pilihan Anda dengan cermat. Sempurna untuk acara istimewa, ia menyampaikan kehangatan dan kecermatan, memastikan bahwa tindakan memberi Anda secerah hadiah di dalamnya.",
+		gift_box_bomb = "Kotak Hadiah",
+		gift_box_bomb_description = "Kotak hadiah yang tersegel dengan elegan, dihiasi dengan pita meriah, adalah cara indah untuk menyajikan barang-barang pilihan Anda dengan cermat. Sempurna untuk acara spesial, kotak ini menyampaikan kehangatan dan ketulusan, memastikan gestur pemberian Anda meninggalkan kesan yang abadi.",
 
 		ear_defenders = "Pelindung Telinga",
 		ear_defenders_description = "Digunakan untuk melindungi telinga Anda dari suara keras.",
@@ -9234,6 +9190,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		pet_snowman_description = "गेराजसे निकालें",
 		pet_owl = "Hooty",
 		pet_owl_description = "Hooty, sahabat bijak dan waspada Anda, bertengger dengan anggun di atas bahu Anda. Dengan mata tajam dan bulu lembutnya, burung hantu menawan ini menambah sentuhan keajaiban pada petualangan Anda. Selalu siap memberikan hoot bijak, Hooty adalah sahabat sempurna untuk setiap perjalanan.",
+		pet_pig = "Porkchop",
+		pet_pig_description = "Seekor babi kecil dengan kepribadian besar, duduk dengan bahagia di pundak Anda. Selalu siap untuk mendongeng dan menghakimi pilihan hidup Anda dengan tatapan mata samping yang menggemaskan. Baik Anda sedang berpetualang atau sekadar berjalan-jalan, sahabat kecil ini adalah gabungan sempurna antara pesona dan kelicikan.",
 
 		hotwheels_mcqueen = "Lightning McQueen",
 		hotwheels_mcqueen_description = "Kecepatan, aku adalah Kecepatan, Mengambang seperti Cadillac, Mematuk seperti Beemer. KATCHOW KATCHOW KATCHOW",
@@ -9549,6 +9507,9 @@ OP.Global.Locales.Languages["id-ID"] = {
 		wires = "Kabel",
 		wires_description = "Menahan semuanya agar tetap terhubung.",
 
+		microcontroller = "Microcontroller",
+		microcontroller_description = "Sebuah otak kecil namun kuat untuk semua kreasi elektronik Anda, mampu mewujudkan ide-ide kompleks menjadi nyata hanya dengan beberapa baris kode. Ia adalah pahlawan tak terdengar dari inovasi, diam-diam mengatur sihir di balik layar.",
+
 		note = "Catatan",
 		note_description = "Beberapa catatan, entahlah.",
 
@@ -9743,6 +9704,17 @@ OP.Global.Locales.Languages["id-ID"] = {
 		wheel_clamp_description = "Tidak ada mobil kabur di sini! Ban Terkunci serius, mengamankan kendaraan dengan kuat dan menghentikan gerakan yang tidak diizinkan. Perangkat ini yang tahan banting adalah pengawas yang diam, memastikan aturan parkir dihormati dan diikuti.",
 		old_rug = "Karpet Lama",
 		old_rug_description = "Letakkan karpet nyaman ini untuk pertemuan di luar berikutnya dan menjaga kenyamanannya! Sangat sempurna untuk bersantai di rumput tanpa membuat noda hijau yang menjengkelkan pada celana Anda. Lapangkan, bersantailah, dan nikmati sekeliling Anda dengan gaya dan kenyamanan.",
+
+		evidence_marker_1 = "Penanda 1",
+		evidence_marker_1_description = "Titik awal misteri, menandai petunjuk pertama untuk mengungkap kebenaran.",
+		evidence_marker_2 = "Penanda 2",
+		evidence_marker_2_description = "Petunjuk lanjutan, membimbing penyelidik lebih dekat ke gambaran yang lebih besar.",
+		evidence_marker_3 = "Penanda 3",
+		evidence_marker_3_description = "Detail yang mungkin menentukan kelangsungan kasus ini—jangan abaikan.",
+		evidence_marker_4 = "Penanda 4",
+		evidence_marker_4_description = "Potongan kritis dari teka-teki, diam-diam menunggu untuk diperhatikan.",
+		evidence_marker_5 = "Penanda 5",
+		evidence_marker_5_description = "Penanda terakhir, mengikat semua informasi bersama atau meninggalkan lebih banyak pertanyaan daripada jawaban.",
 
 		bandit_1 = "Bandit 1",
 		bandit_1_description = "undefined",
@@ -10604,6 +10576,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		invalid_invisibility_mode = "Mode kealpaan tidak valid. Harus 'penuh' atau 'normal'.",
 		invisibility_mode_full = "Mode kelebihan 'penuh'. Staff biasa tidak bisa melihatmu.",
 		invisibility_mode_normal = "Mode kelebihan diubah ke 'normal'. Staff biasa sekarang bisa melihatmu.",
+		current_invisibility_mode = "Mode ketidakterlihatan saat ini diatur ke '${mode}'.",
 
 		toggled_invisibility = "Berhasil mengubah invisibilitas ${displayName}.",
 		failed_invisibility = "Gagal mengubah invisibilitas ${displayName}.",
@@ -10699,6 +10672,9 @@ OP.Global.Locales.Languages["id-ID"] = {
 		logs_used_weather_spell_title = "Menggunakan Sihir Cuaca",
 		logs_used_weather_spell_details = "${consoleName} menggunakan sihir cuaca `${itemName}`.",
 
+		gift_box_bomb_logs_title = "Kotak Hadiah Peledak Dibuka",
+		gift_box_bomb_logs_details = "${consoleName} membuka kotak hadiah peledak.",
+
 		you_have_used_jail_card = "Anda telah menggunakan kartu 'bebas dari penjara'!",
 		you_are_not_in_jail = "Anda tidak berada di penjara.",
 
@@ -10791,7 +10767,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		sentence_reduced = "Hukumanmu dikurangi ${amount} bulan, masih tersisa ${remaining} bulan.",
 		sentence_increased = "Hukuman Anda diperpanjang sebesar ${amount} bulan, Anda memiliki sisa ${remaining} bulan.",
 		sentence_over = "Hukumanmu sudah selesai.",
-		remaining_time_fmt = "${months} bulan (*${display}*)",
+		remaining_time_fmt = "${months} bulan (${display})",
 		remaining_time = "Waktu Tersisa: ${remaining}.",
 		jailed = "Anda telah dipenjara selama ${amount} bulan.",
 
@@ -10970,17 +10946,6 @@ OP.Global.Locales.Languages["id-ID"] = {
 		back = "Kembali",
 		copy_license = "ID Lisensi",
 		copy_license_success = "Tersalin!",
-		cache_assets = "Simpan Aset",
-		download_assets = "Apakah Anda ingin mengunduh dan menyimpan sebagian besar aset server? Berikut adalah manfaat dan pertimbangan:",
-		cache_assets_performance = "Nikmati FPS yang lebih baik dan lebih sedikit lonjakan ping selama bermain, terutama jika Anda menggunakan hardware yang lebih rendah atau koneksi yang lambat.",
-		cache_assets_crashes = "Permainan mungkin akan crash selama proses ini. Jika hal ini terjadi, gunakan opsi 'slow download' sebagai gantinya.",
-		cache_assets_restart = "Setelah selesai mengunduh, restart permainan Anda untuk mencegah lag selama sesi ini.",
-		cache_assets_disk = "Ini akan menggunakan beberapa ruang disk, jadi pastikan Anda memiliki cukup ruang yang tersedia.",
-		cache_assets_no_repeat = "Anda tidak perlu melakukannya untuk setiap pembaruan, karena hanya beberapa file yang akan berubah.",
-		vehicles = "Kendaraan",
-		objects = "Objek",
-		peds = "Orang",
-		clothing = "Pakaian",
 		main_menu = "Menu Utama",
 		gta_settings = "Pengaturan GTA",
 		discord = "Discord",
@@ -11132,8 +11097,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 	lottery = {
 		lottery_announcement = "Pengumuman Lotere",
-		lottery_about_to_roll = "Pemenang akan diumumkan dalam 5 menit untuk undian hari ini. Total hadiah saat ini adalah $${totalAmount} di mana Anda telah memasang $${betAmount}. Peluang Anda untuk menang adalah ${odds}%.",
-		current_lottery_pot = "Total hadiah saat ini adalah $${totalAmount} di mana Anda telah memasang $${betAmount}. Peluang Anda untuk menang adalah ${odds}%.",
+		lottery_about_to_roll = "Pemenang akan diundi dalam 5 menit untuk undian hari ini. Total hadiah saat ini adalah $${totalAmount} di mana Anda telah memasukkan $${betAmount}. Peluang Anda untuk menang adalah ${odds}%. Pajaknya adalah ${tax}%.",
+		current_lottery_pot = "Total pot saat ini adalah $${totalAmount} di mana Anda telah memasang $${betAmount}. Peluang Anda untuk menang adalah ${odds}%. Pajaknya adalah ${tax}%.",
 		drew_a_lottery_winner = "Pemenang undian telah dipilih.",
 		winner_has_been_picked = "${fullName} telah memenangkan hadiah lotre sebesar $${totalAmount}! Mereka memasang $${betAmount} dan peluang mereka untuk menang adalah ${odds}%.",
 		claimed_lottery_winnings = "Mengklaim semua hadiah undian.",
@@ -11744,6 +11709,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		hatch_claim = "KLAIM",
 		hatch_opened = "DIKLAIM",
 		hatch_waiting = "MENUNGGU",
+		hatch_too_late = "TERLAMBAT",
 
 		about_advent_calendar_title = "Tentang Kalender Advent",
 
@@ -11755,7 +11721,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 			<br><br>
 			Next hatch unlocks in ${time}.
 			<br><br>
-			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 26th.)
+			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 31st.)
 			<br><br>
 			<div class="bonusPoints">
 				<div>Bonus Points: ${bonusPoints}/22</div>
@@ -13570,6 +13536,59 @@ OP.Global.Locales.Languages["id-ID"] = {
 		used_bug_logs_details = "${consoleName} menggunakan bug mikrofon pada ${identifier}."
 	},
 
+	staff_pm = {
+		something_went_wrong = "Ada yang salah saat mengirim pesan.",
+		reports_too_fast = "Anda sedang mengirim laporan terlalu cepat, perlahan.",
+		no_report_message = "Anda harus menyertakan pesan dalam laporan Anda.",
+		same_report = "Anda tidak dapat mengirim laporan yang sama dua kali.",
+		report_muted = "Anda dimute dari mengirim laporan selama: `${reason}`.",
+		report_muted_no_reason = "Anda dibisukan dari mengirim laporan.",
+
+		report_title = "LAPORAN-${reportId} ${displayName}",
+		report_logs_title = "Laporan",
+		report_logs_details = "${consoleName} membuat laporan ${reportId} dengan pesan berikut: `${message}`",
+
+		invalid_server_id = "ID server target tidak valid.",
+		no_staff_pm_message = "Anda harus menyertakan pesan dalam pesan pribadi Anda.",
+		user_not_staff = "Pengguna tersebut bukan anggota staf.",
+		staff_pm_warning = "Peringatan PM Staf",
+		staff_pm_first_time = "Kami melihat Anda belum pernah menggunakan PM staf sebelumnya. Untuk merespons PM staf, gunakan `/staffpm` diikuti oleh id penerima. Untuk kemudahan penggunaan, Anda dapat menggunakan `/reply` untuk merespons PM staf terakhir yang Anda terima.",
+
+		staff_pm_title = "STAFF PM ${from} -> ${to}",
+		staff_pm_title_external = "STAFF PM EKSTERNAL ${from} -> ${to}",
+		close_staff_pm = "Tutup",
+		staff_pm_from = "StaffPM dari <i>${from}</i>",
+		staff_pm_logs_title = "Staff PM",
+		staff_pm_logs_details = "${senderConsoleName} mengirim pesan pribadi staff kepada ${recipientConsoleName}: `${message}`",
+		important_staff_pm_logs_title = "Staff PM Penting",
+		important_staff_pm_logs_details = "${senderConsoleName} mengirim pesan pribadi staff penting kepada ${recipientConsoleName}: `${message}`",
+
+		staff_toggled = "Status staf Anda dimatikan.",
+		no_staff_message = "Anda harus menyertakan pesan dalam obrolan staf Anda.",
+		same_staff_message = "Anda tidak dapat mengirim pesan staf yang sama dua kali.",
+
+		staff_message_title = "STAF ${playerName}",
+		local_staff_message_title = "STAF LOKAL ${playerName}",
+		staff_message_logs_title = "Pesan Staf",
+		staff_message_logs_details = "${consoleName} mengirim pesan berikut dalam obrolan staf: `${message}`",
+		local_staff_message_logs_title = "Pesan Staf Lokal",
+		local_staff_message_logs_details = "${consoleName} mengirim pesan berikut dalam obrolan staf lokal: `${message}`",
+
+		message_sent = "Pesan terkirim.",
+		cannot_send_private_message_to_yourself = "Anda tidak dapat mengirim pesan pribadi ke diri sendiri.",
+		missing_valid_message_parameter = "Parameter 'message' tidak valid atau hilang.",
+		missing_valid_license_identifier_parameter = "Parameter 'licenseIdentifier' tidak valid atau hilang.",
+		missing_valid_target_source_parameter = "Parameter 'targetSource' tidak valid atau hilang.",
+
+		invalid_report_id = "ID laporan tidak valid.",
+		report_already_claimed = "Laporan itu sudah diambil oleh *${playerName}*.",
+		report_same_creator = "Anda tidak dapat mengklaim laporan Anda sendiri.",
+		failed_claim_report = "Gagal mengklaim laporan.",
+		report_claimed = "Laporan **${reportId}** telah diklaim oleh *${playerName}*.",
+		claim_report_logs_title = "Laporan yang Diklaim",
+		claim_report_logs_details = "${consoleName} telah mengklaim laporan ${reportId}."
+	},
+
 	starter_car = {
 		follow_the_checkpoints = "Mobil pribadi Anda parkir di dekat sini. Ikuti checkpoint untuk menemukannya.",
 
@@ -13928,6 +13947,8 @@ OP.Global.Locales.Languages["id-ID"] = {
 		tp_cayo = "Pulau Cayo Perico",
 
 		actions = "Aksi",
+		jail_self = "Penjara Diri",
+		unjail_self = "Melepaskan dari Penjara",
 		wander_around = "Berkeliling",
 		speed_around = "Berlari Cepat",
 		clear_tasks = "Hapus Tugas",
@@ -14114,7 +14135,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		no_maps_to_combine = "Anda tidak memiliki peta untuk digabungkan.",
 
 		treasure_map_dug_up_logs_title = "Harta Karun Digali",
-		treasure_map_dug_up_logs_details = "${consoleName} telah menggali peta harta karun tier ${mapTier} dan menerima drop ID ${dropId}."
+		treasure_map_dug_up_logs_details = "${consoleName} telah menggali peta harta karun tier ${mapTier} dan menerima drop ID ${dropId}.",
+
+		treasure_map_piece_spawned_logs_title = "Potongan Peta Harta Karun Muncul",
+		treasure_map_piece_spawned_logs_details = "${consoleName} telah memunculkan potongan peta harta karun ${pieceNumber} dari tier ${mapTier}."
 	},
 
 	tsunami = {
@@ -14335,14 +14359,24 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 	weed = {
 		strain_default = "Wild Haze",
-		strain_lemon = "Lemon Haze",
+		strain_bubble = "Buah Gelembung",
 		strain_northern = "Northern Lights",
 		strain_kush = "OG Kush",
+		strain_diesel = "Sour Diesel",
+		strain_ak47 = "AK-47",
+		strain_dream = "Blue Dream",
+		strain_trainwreck = "Trainwreck",
+		strain_gorilla = "Gorilla Glue",
 
 		default_emoji = "🥦",
-		lemon_emoji = "🏃",
+		bubble_emoji = "🫧",
 		northern_emoji = "🛡️",
 		kush_emoji = "🦁",
+		diesel_emoji = "😌",
+		ak47_emoji = "🔫",
+		dream_emoji = "🪶",
+		trainwreck_emoji = "👊",
+		gorilla_emoji = "🦍",
 
 		strain_description = "<b>Strain:</b> <i>${strain}</i> ${emoji}"
 	},
@@ -14392,6 +14426,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 		run_as_failed = "Gagal menjalankan perintah sebagai ${consoleName}.",
 
 		no_nearby_vehicle = "Tidak ada kendaraan di dekatnya.",
+		invalid_duration = "Durasi tidak valid (1 detik - 20 detik).",
 		reversing_failed = "Gagal membuat karakter mundur.",
 		driving_forwards_failed = "Gagal membuat karakter maju.",
 		reversing_success = "Berhasil membuat karakter mundur.",
@@ -14927,7 +14962,16 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 		task_take_nap = "Tidur siang.",
 		task_take_nap_near = "Tekan ~INPUT_DETONATE~ untuk tidur siang.",
-		task_take_nap_active = "Tidur Siang"
+		task_take_nap_active = "Tidur Siang",
+
+		task_water_plants = "Siram tanaman.",
+		task_water_plants_near = "Tekan ~INPUT_DETONATE~ untuk menyiram tanaman.",
+		task_water_plants_active = "Menyiram Tanaman"
+	},
+
+	taxi = {
+		help_text = "`initial` adalah tarif dasar (default: $10), `mile` adalah tarif per mil yang dijalani (default: $5), `minute` adalah tarif per menit saat argometer aktif (default: $15), `show` akan menampilkan pengaturan saat ini.",
+		invalid_typ = "Tipe tidak valid."
 	},
 
 	tow = {
@@ -15287,8 +15331,10 @@ OP.Global.Locales.Languages["id-ID"] = {
 		wheels_modified = "Roda mobil telah dimodifikasi.",
 		wheels_none_specified = "Tidak ada roda yang ditentukan.",
 		wheels_none_valid_specified = "Tidak ada roda yang valid yang ditentukan.",
-		not_in_a_car = "Anda tidak berada di dalam mobil.",
-		invalid_value = "Nilai tidak valid."
+		not_in_a_car = "Anda tidak sedang mengemudi mobil.",
+		invalid_value = "Nilai tidak valid.",
+		suspension_height = "Tinggi suspensi saat ini diatur ke ${height}.",
+		suspension_height_set = "Tinggi suspensi telah diatur ke ${height}."
 	},
 
 	oil = {
@@ -15496,6 +15542,7 @@ OP.Global.Locales.Languages["id-ID"] = {
 
 	throwables = {
 		pick_up_weapon = "[${InteractionKey}] Ambil",
+		throwables_wiped = "Menghapus ${amount} bahan lempar.",
 
 		no_weapon_equipped = "Anda tidak memiliki senjata yang dipasang.",
 		cant_throw_weapon = "Anda tidak dapat melempar senjata ini.",

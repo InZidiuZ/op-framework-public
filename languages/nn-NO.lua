@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 35 (do not change)
+-- AUTO LOCALES: 36 (do not change)
 
 OP.Global.Locales.Languages["nn-NO"] = {
 	-- configuration settings for language
@@ -202,10 +202,6 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		spawned_item_for_everyone_title = "Spawnet inn gjenstand for alle",
 		spawned_item_for_everyone_details = "${consoleName} spawnet inn ${amount}x `${itemName}` for alle.",
 
-		report_title = "RAPPORT-${reportId} ${reporterName}",
-		report_logs_title = "Rapport",
-		report_logs_details = "${consoleName} opprettet rapport ${reportId} med følgende melding: `${reportMessage}`",
-
 		announcement_staff_title = "Personalekunngjøring",
 		announcement_server_title = "Serverkunngjøring",
 
@@ -220,47 +216,11 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		failed_to_post_announcement = "Kunngjøringa kunne ikkje publiserast sidan ingen melding blei lagt til.",
 		failed_to_post_announcement_locale = "Kunngjøringa kunne ikkje publiserast sidan den lagde lokaliteten ikkje blir støtta.",
 
-		staff_title = "STAB ${staffName}",
-		staff_message_logs_title = "Melding frå stab",
-		staff_message_logs_details = "${consoleName} sende følgjande melding i stab-chatten: `${staffMessage}`",
-		local_staff_title = "LOKALT PERSONELL ${staffName}",
-		local_staff_message_logs_title = "Lokal Personell Melding",
-		local_staff_message_logs_details = "${consoleName} sendte følgende melding i lokal personell chat: `${staffMessage}`",
-
-		staff_pm_title = "STAB PRIVATMELDING ${transmissionTitle}",
-		staff_pm_logs_title = "Stab privatmelding",
-		staff_pm_logs_details = "${senderConsoleName} sende følgjande melding til ${recipientConsoleName}: `${staffPrivateMessage}`",
-		staff_pm_not_logged_in = "Du er ikkje logga inn.",
-		staff_pm_not_user_not_found = "Fann ikkje brukar med server-ID ${serverId}.",
-		staff_pm_not_recipient_not_staff = "Den spelaren du prøver å sende ei melding til er ikkje ein ansatt.",
-		staff_pm_unable_to_message_self = "Du kan ikkje sende melding til deg sjølv.",
-		staff_pm_warning = "Personleg melding til ansatt",
-		staff_pm_first_time = "Me ser at du aldri har brukt staff-PM før. For å svare på ein staff-PM, bruk `/staffpm` etterfulgt av mottakaren si ID. For enkelheits skyld kan du bruke `/svar` for å svare på den siste staff-PMen du mottok.",
-		reply_pm_not_found = "Det er ingen staff-melding å svare på.",
-
-		important_staff_pm_title = "!STAFF PM Du -> ${recipient}",
-		close_staffpm = "Lukk",
-		staffpm_from = "Personleg melding frå <i>${from}</i>",
-		important_staff_pm_logs_title = "Viktig personleg melding til ansatt",
-		important_staff_pm_logs_details = "${senderConsoleName} sende følgjande viktige melding til ${recipientConsoleName}: `${message}`",
-
-		external_staff_message = "Ekstern personalemelding",
-		external_staff_message_from_player = "Ekstern personalemelding frå ${playerName}",
-		external_staff_message_content = "${staffMessage} (Du kan ikkje svare på denne meldinga.)",
-
-		unable_to_staff_message_yourself = "Kan ikkje sende personalemelding til deg sjølv.",
-		message_sent = "Melding sendt.",
-		player_not_found = "Spelar ikkje funnen.",
-		missing_valid_target_source_parameter = "Manglar ein gyldig 'mål kjelde' parameter.",
-		missing_valid_message_parameter = "Manglar ein gyldig 'melding' parameter.",
-
 		invalid_coordinates = "Ugyldige x-, y-, z- eller w-koordinatar blir sendt inn.",
 		player_not_loaded_character = "Spelaren har ikkje lasta inn ein karakter.",
 		teleport_successful = "Spelaren blei teleportert suksessfult.",
 
 		player_revived_success = "Spelaren blei gjenoppliva suksessfult.",
-
-		missing_valid_license_identifier_parameter = "Manglar ein gyldig 'lisensidentifikator' parameter.",
 
 		wipe_broken = "broken - Øydelagde/fragmenterte objekt",
 		wipe_npcs = "npcs - NPC-er og kjøretøyene de bruker.",
@@ -376,12 +336,6 @@ OP.Global.Locales.Languages["nn-NO"] = {
 
 		report_muted_no_reason = "Du er dempet fra rapportkommandoen uten angitt grunn.",
 		report_muted = "Du er dempet fra rapportkommandoen for grunnen `${reason}`.",
-
-		already_sending_report = "Du sender allerede en rapport. Vennligst vent.",
-		unable_to_send_identical_report = "Du kan ikkje sende to identiske rapportar etter kvarandre.",
-
-		already_sending_staff_message = "Du sender allereie ei melding til staben. Ver venleg å vent.",
-		unable_to_send_identical_staff_message = "Du kan ikkje sende to identiske meldingar til staben etter kvarandre innan 30 sekund.",
 
 		population_density_set_to = "Populasjonsdensitetsmultiplikatoren er satt til ${multiplierLabel}%.",
 		population_density_set_off = "Dette mangedoblingsvalget for befolkningstetthet er slått av.",
@@ -881,51 +835,11 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		marathon_command_substitutes = "",
 
 		-- base/admin
-		report_command = "rapport",
-		report_command_help = "Send en melding til alle aktive personalet.",
-		report_command_parameter_message = "melding",
-		report_command_parameter_message_help = "Verwijder een spelers Twitch ban-uitzondering.",
-		report_command_substitutes = "rapportere",
-
 		announce_command = "kunngjør",
 		announce_command_help = "Send ut en kunngjøring til alle spillere.",
 		announce_command_parameter_message = "melding",
 		announce_command_parameter_message_help = "Meldingen du vil sende ut.",
 		announce_command_substitutes = "",
-
-		staff_pm_command = "ansatt_pm",
-		staff_pm_command_help = "Send en melding enten til en ansatt eller til en spiller som en ansatt.",
-		staff_pm_command_parameter_server_id = "server-ID",
-		staff_pm_command_parameter_server_id_help = "Spillerens server-ID du ønsker å sende melding til.",
-		staff_pm_command_parameter_message = "melding",
-		staff_pm_command_parameter_message_help = "Meldingen du ønsker å sende.",
-		staff_pm_command_substitutes = "staffpm, melding, pm, msg",
-
-		important_staff_pm_command = "viktig_personalmeld",
-		important_staff_pm_command_help = "Send en viktig melding til en spiller som en ansatt.",
-		important_staff_pm_command_parameter_server_id = "server-ID",
-		important_staff_pm_command_parameter_server_id_help = "Spillerens server-ID du prøver å sende melding til.",
-		important_staff_pm_command_parameter_message = "melding",
-		important_staff_pm_command_parameter_message_help = "Den viktige meldinga du vil sende.",
-		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
-
-		reply_pm_command = "svar_pm",
-		reply_pm_command_help = "Svar på den siste meldingen fra personalet du mottok.",
-		reply_pm_command_parameter_message = "melding",
-		reply_pm_command_parameter_message_help = "Meldingen du ønsker å sende.",
-		reply_pm_command_substitutes = "svar",
-
-		staff_command = "personell",
-		staff_command_help = "Send ei melding til alle aktive personellmedlemmar.",
-		staff_command_parameter_message = "melding",
-		staff_command_parameter_message_help = "Meldinga du vil sende.",
-		staff_command_substitutes = "",
-
-		local_staff_command = "lokale_ansatte",
-		local_staff_command_help = "Send ut ei melding til alle aktive ansatte innanfor ein radius på 25m.",
-		local_staff_command_parameter_message = "melding",
-		local_staff_command_parameter_message_help = "Meldinga du vil sende.",
-		local_staff_command_substitutes = "lans",
 
 		wipe_command = "slett",
 		wipe_command_help = "Slett uønska objekt frå kartet.",
@@ -1437,11 +1351,6 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		emojis_refresh_command_help = "Oppdatere tilgjengelege emojis. Dette vil hente den nyaste lista frå discord guilden.",
 		emojis_refresh_command_substitutes = "",
 
-		-- base/ping
-		get_pings_command = "få_pingar",
-		get_pings_command_help = "Få gjennomsnittleg ping til ulike vertar rundt om i verda for å finne den mest eigna vertslokalasjonen for spelarane på denne serveren.",
-		get_pings_command_substitutes = "",
-
 		-- base/points
 		points_command = "poeng",
 		points_command_help = "Vis mengden OP-poeng du har.",
@@ -1465,6 +1374,47 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		remove_twitch_ban_exception_command_parameter_server_id = "server id",
 		remove_twitch_ban_exception_command_parameter_server_id_help = "Server-IDen til spilleren du vil fjerne unntak fra.",
 		remove_twitch_ban_exception_command_substitutes = "",
+
+		-- base/staff_pm
+		report_command = "rapport",
+		report_command_help = "Send en melding til alle aktive personalet.",
+		report_command_parameter_message = "melding",
+		report_command_parameter_message_help = "Verwijder een spelers Twitch ban-uitzondering.",
+		report_command_substitutes = "ringadmin, vyne, modreq, hjelpmeg",
+
+		claim_report_command = "hevda_rapport",
+		claim_report_command_help = "Hevda en spesifikk rapport.",
+		claim_report_command_parameter_report_id = "rapport id",
+		claim_report_command_parameter_report_id_help = "Id'en til rapporten du vil hevde.",
+		claim_report_command_substitutes = "hevda, hr, hevdarapport",
+
+		staff_pm_command = "ansatt_pm",
+		staff_pm_command_help = "Send en melding enten til en ansatt eller til en spiller som en ansatt.",
+		staff_pm_command_parameter_server_id = "server-ID",
+		staff_pm_command_parameter_server_id_help = "Spillerens server-ID du ønsker å sende melding til.",
+		staff_pm_command_parameter_message = "melding",
+		staff_pm_command_parameter_message_help = "Meldingen du ønsker å sende.",
+		staff_pm_command_substitutes = "ansattpm, melding, pm, msg, svar, svarpm, svar_pm",
+
+		important_staff_pm_command = "viktig_personalmeld",
+		important_staff_pm_command_help = "Send en viktig melding til en spiller som en ansatt.",
+		important_staff_pm_command_parameter_server_id = "server-ID",
+		important_staff_pm_command_parameter_server_id_help = "Spillerens server-ID du prøver å sende melding til.",
+		important_staff_pm_command_parameter_message = "melding",
+		important_staff_pm_command_parameter_message_help = "Den viktige meldinga du vil sende.",
+		important_staff_pm_command_substitutes = "!staffpm, !staff_pm, !pm",
+
+		staff_command = "personell",
+		staff_command_help = "Send ei melding til alle aktive personellmedlemmar.",
+		staff_command_parameter_message = "melding",
+		staff_command_parameter_message_help = "Meldinga du vil sende.",
+		staff_command_substitutes = "",
+
+		local_staff_command = "lokale_ansatte",
+		local_staff_command_help = "Send ut ei melding til alle aktive ansatte innanfor ein radius på 25m.",
+		local_staff_command_parameter_message = "melding",
+		local_staff_command_parameter_message_help = "Meldinga du vil sende.",
+		local_staff_command_substitutes = "lans",
 
 		-- base/users
 		playtime_command = "spilletid",
@@ -1582,11 +1532,6 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		play_audio_command_parameter_server_id_help = "Server-IDen til spilleren du ønsker å spille av denne lyden for. Du kan bruke `-1` for å spille av for alle spillere.",
 		play_audio_command_substitutes = "",
 
-		-- game/audio_emitters
-		toggle_audio_emitters_command = "toggle_audio_emitters",
-		toggle_audio_emitters_command_help = "Slår av og på native lydutsendere.",
-		toggle_audio_emitters_command_substitutes = "",
-
 		-- game/bandaids
 		random_bandaid_command = "tilfeldig_bandasje",
 		random_bandaid_command_help = "Gir deg en tilfeldig bandasje. :)",
@@ -1683,17 +1628,6 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		buddy_pass_command = "buddy_pass",
 		buddy_pass_command_help = "Åpne buddy pass-grensesnittet.",
 		buddy_pass_command_substitutes = "",
-
-		-- game/cache
-		cache_assets_command = "cache_assets",
-		cache_assets_command_help = "Tvinger forespørsel og nedlasting av de fleste strømmede ressurser (kjøretøy, objekter og klær). Dette anbefales ikke med mindre du har en treg tilkobling og ressursene ikke laster ned raskt nok ved påkrevd sømløshet. Dette kan også føre til klientkrasjer mens den er aktiv.",
-		cache_assets_command_parameter_slow_download = "treg nedlasting",
-		cache_assets_command_parameter_slow_download_help = "Ønsker du å laste ned ressursene tregt? Dette vil gjøre nedlastingen mye lengre, men vil også redusere risikoen for krasj.",
-		cache_assets_command_substitutes = "nedlastings_cache, forhåndsinnlastings_cache, last_inn_cache",
-
-		cache_join_toggle_command = "slå_av_pålogging_cache",
-		cache_join_toggle_command_help = "Slår av/på automatisk caching av noen ressurser hver gang du logger på serveren.",
-		cache_join_toggle_command_substitutes = "",
 
 		-- game/camera
 		stable_cam_command = "stabil_kamera",
@@ -3735,10 +3669,14 @@ OP.Global.Locales.Languages["nn-NO"] = {
 
 		ped_reverse_command = "ped_bakover",
 		ped_reverse_command_help = "Får den nærmeste fotgjengeren i et kjøretøy til å kjøre bakover.",
+		ped_reverse_command_parameter_duration = "varighet",
+		ped_reverse_command_parameter_duration_help = "Tidsvarigheten for revers i sekunder (1s - 20s, standard er 4s).",
 		ped_reverse_command_substitutes = "",
 
 		ped_forwards_command = "ped_framover",
 		ped_forwards_command_help = "Får den nærmeste fotgjengeren i et kjøretøy til å kjøre fremover.",
+		ped_forwards_command_parameter_duration = "varighet",
+		ped_forwards_command_parameter_duration_help = "Tidsvarigheten for å kjøre fremover i sekunder (1s - 20s, standard er 4s).",
 		ped_forwards_command_substitutes = "",
 
 		vehicle_flip_command = "kjøretøy snu",
@@ -3787,6 +3725,10 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		polygon_command = "polygon",
 		polygon_command_help = "Definer en 2D polygon.",
 		polygon_command_substitutes = "poly",
+
+		box_command = "boks",
+		box_command_help = "Definer en 3D-boks.",
+		box_command_substitutes = "",
 
 		-- global/states
 		entity_states_command = "entitetstilstander",
@@ -3969,6 +3911,27 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		tasks_debug_command_parameter_area_id_help = "Område ID-en til oppgaven du ønsker å feilsøke. La stå tomt for å skrive ut alle områder.",
 		tasks_debug_command_substitutes = "",
 
+		-- jobs/taxi
+		taxi_display_command = "taxi_visning",
+		taxi_display_command_help = "Veksle visningen av din taxi.",
+		taxi_display_command_substitutes = "taxivisning, taxi",
+
+		taxi_hire_command = "taxi_leigetaking",
+		taxi_hire_command_help = "Veksle taxi-leigetakingen din av/på.",
+		taxi_hire_command_substitutes = "taxileigetaking",
+
+		taxi_reset_command = "taxi_nullstill",
+		taxi_reset_command_help = "Nullstill taximeteret ditt.",
+		taxi_reset_command_substitutes = "taxinullstill",
+
+		taxi_fare_command = "taxi_takst",
+		taxi_fare_command_help = "Set taksten din for taxituren.",
+		taxi_fare_command_parameter_type = "type",
+		taxi_fare_command_parameter_type_help = "Typen takst du vil setje (hjelp, vis, start, mil eller minutt).",
+		taxi_fare_command_parameter_amount = "beløp",
+		taxi_fare_command_parameter_amount_help = "Beløpet du vil sette taksten til.",
+		taxi_fare_command_substitutes = "taxitakst",
+
 		-- jobs/tow
 		toggle_mechanic_messages_command = "toggle_mekaniker_meldinger",
 		toggle_mechanic_messages_command_help = "Slår av eller på om du mottar mekanikermeldinger.",
@@ -4088,13 +4051,11 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		wheel_offset_command_parameter_value_help = "Hvor mye ønsker du å endre det? Dette kan være alt fra -0.15 til 0.2, der 0 er standard.",
 		wheel_offset_command_substitutes = "",
 
-		wheel_rotation_command = "hjul_rotasjon",
-		wheel_rotation_command_help = "Endre rotasjonen på hjulene til et kjøretøy.",
-		wheel_rotation_command_parameter_wheels = "framme/bak",
-		wheel_rotation_command_parameter_wheels_help = "Kva hjul vil du endre?",
-		wheel_rotation_command_parameter_value = "verdi",
-		wheel_rotation_command_parameter_value_help = "Kor mykje vil du endre det. Dette kan vere frå -0,5 til 0,5, der 0 er standard.",
-		wheel_rotation_command_substitutes = "",
+		suspension_height_command = "fjærhøyde",
+		suspension_height_command_help = "Endre en kjøretøys visuelle fjærhøyde.",
+		suspension_height_command_parameter_value = "verdi",
+		suspension_height_command_parameter_value_help = "Beløpet du vil at det skal endres til. Dette kan være hvor som helst fra -0.15 til 0.1, der 0 er standard.",
+		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
 		oil_level_command = "oljenivå",
@@ -4258,6 +4219,12 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		throw_weapon_command_help = "Kast det våpenet du har utstyrt.",
 		throw_weapon_command_substitutes = "kast, yeet",
 
+		wipe_throwables_command = "slett_kastebare",
+		wipe_throwables_command_help = "Fjerner alle kasta våpen innanfor den spesifiserte radiusen.",
+		wipe_throwables_command_parameter_radius = "radius",
+		wipe_throwables_command_parameter_radius_help = "Radiusen for å fjerne kasta våpen (standard: 5).",
+		wipe_throwables_command_substitutes = "",
+
 		-- weapons/weapons
 		check_ammo_command = "sjekk_ammo",
 		check_ammo_command_help = "Sjekker hvor mye ammunisjon du har totalt.",
@@ -4344,12 +4311,6 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		local_firewall_blocked = "Lokal brannmur: Blokkerte ${playerName} (${licenseIdentifier})"
 	},
 
-	ping = {
-		getting_pings = "Henter ping fra alle spillere. Dette kan ta noen sekunder.",
-		host_data = "${posisjon}. ${stedsnavn} - ${averagePing} Gjennomsnittlig ping (basert på ${totalPings} spillere), 10% Lav: ${averagePingLow}, 10% Høy: ${averagePingHigh}",
-		list_hosts = "${listHosts}"
-	},
-
 	points = {
 		you_have_points = "Du har ${frameworkPoints} OP-poeng.",
 		used_points = "Brukt ${amount} OP-poeng under etiketten `${label}`.",
@@ -4362,11 +4323,6 @@ OP.Global.Locales.Languages["nn-NO"] = {
 	profile = {
 		profile_debug_enabled = "Profilfeilsøkeren er aktivert. Sjekk F8-konsollen for utdata.",
 		profile_debug_disabled = "Profilfeilsøkeren er deaktivert."
-	},
-
-	proxy = {
-		proxied_via_logs_title = "Proxy via",
-		proxied_via_logs_details = "${consoleName} ble proxyet via `${serverName}`."
 	},
 
 	restart = {
@@ -4511,6 +4467,10 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		ping_stable = "Pingeten din er no stabil igjen."
 	},
 
+	vpn = {
+		vpn_not_allowed_for_new_players = "Bruk av ein VPN er ikkje tillate for spelarar med mindre enn 24 timar med speltid."
+	},
+
 	whitelist = {
 		not_whitelisted = "Du har ikke hvitelistet tilgang på denne serveren.\n\nDelta i vår Discord-kanal for informasjon om hvordan du søker hos ${communityDiscord}"
 	},
@@ -4644,12 +4604,8 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		description_rat_unnamed = "Denne ${gender} råtta, ${age} eventyrlysten og vegande ${weight}, navigerer verda med knivskarp intelligens og uventa sjarm. Motivert av ein ubetinga Hengivenheit til ${food}, gjer den kvar sving om til eit mogleg funn, kvar skygge til ein leikeplass.",
 		description_rat_named = "${name}, ein ${gender} rotte ${age} som er med på livets store eksperiment, som veg ${weight} og er full av personlegheit. Med ein ubryteleg band til ${food}, inkarnere ${name} ånden til nysgjerrigheit – liten i størrelse, uendeleg i ånd.",
 
+		pick_up = "[${SeatEjectKey}] Plukk opp",
 		pick_up_named = "[${SeatEjectKey}] Plukk opp ${name}",
-		pick_up_cat = "[${SeatEjectKey}] Plukk opp Katt",
-		pick_up_dog = "[${SeatEjectKey}] Plukk opp Hund",
-		pick_up_hen = "[${SeatEjectKey}] Plukk opp Høne",
-		pick_up_rabbit = "[${SeatEjectKey}] Plukk opp Kanin",
-		pick_up_rat = "[${SeatEjectKey}] Plukk opp Rotte",
 
 		failed_pickup_cat = "Klarte ikkje å plukke opp katten.",
 		failed_pickup_dog = "Klarte ikkje å plukke opp hunden.",
@@ -4996,11 +4952,6 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		played_audio_effect_for_everyone_details = "${consoleName} spelte av ein lydeffekt for alle. Lydeffekten hadde URL `${url}` og var sett til å spele på lydstyrkenivå `${volume}`.",
 		played_audio_effect_for_player_title = "Spelte av lydeffekt for spelar",
 		played_audio_effect_for_player_details = "${consoleName} spelte av ein lydeffekt for ${targetConsoleName}. Lydeffekten hadde URL `${url}` og var sett til å spele på lydstyrkenivå `${volume}`."
-	},
-
-	audio_emitters = {
-		audio_emitters_disabled = "Lydemitterar er deaktivert.",
-		audio_emitters_enabled = "Lydemitterar er aktivert."
 	},
 
 	balls = {
@@ -5401,15 +5352,6 @@ OP.Global.Locales.Languages["nn-NO"] = {
 
 	bus_map = {
 		bus_tracker = "Buss"
-	},
-
-	cache = {
-		download_progress = "Nedlastingsprogresjon:\n- Kjøretøy: ${vehiclesDone}/${vehiclesTotal}\n- Objekter: ${objectsDone}/${objectsTotal}\n- Personer: ${pedsDone}/${pedsTotal}\n- Klær: ${clothingRequested}/${clothingTotal}",
-		slow_download_enabled = "Treg nedlasting har blitt aktivert.",
-		slow_download_disabled = "Treg nedlasting har blitt deaktivert.",
-
-		join_cache_disabled = "Join-cache er deaktivert.",
-		join_cache_enable = "Join cache aktivert."
 	},
 
 	caffeine = {
@@ -6307,6 +6249,11 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		crafting_ammo = "Ammunisjonsproduksjon",
 		crafted_ammo = "Laget ammunisjon.",
 		failed_craft_ammo = "Kunne ikke lage ammunisjon.",
+
+		gift_box_bomb_recipe = "Spesiell gåveeske",
+		crafting_gift = "Laging av gåveeske",
+		crafted_gift = "Laga gåveeske.",
+		failed_craft_gift = "Klarte ikkje å lage gåveeske.",
 
 		process_weed = "Bearbeid ugras",
 		press_to_process_weed = "[${SeatEjectKey}] Bearbeider ugras",
@@ -8195,6 +8142,7 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		cinema = "Kino",
 		strip_club = "Strippeklubb",
 		police_store = "Politiutsalg",
+		utility_crate = "Nyttig Kasse",
 		fib_store = "FIB-utsalg",
 		deputy_madison = "Viseavdelingsleiar Madison",
 		sergeant_harris = "Sersjant Harris",
@@ -8246,11 +8194,17 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		target_inventory_full = "Spillerens inventar er fullt.",
 		received_item = "${displayName} gav deg ${amount}x ${item}.",
 
+		inspecting_item = "Inspeksjon av Gjenstand",
+
 		inspect_weapon = "Serienummeret på denne ${itemName} ser ut til å være `${itemId}`.",
 		inspect_weapon_broken = "Serienummeret på denne ${itemName} ser ut til å være `${itemId}`, den ser også ut til å være helt ødelagt.",
 		inspect_bank_property = "Dette ${item} er merket som eiendom til ${bank} Bank.",
 		inspect_bank_property_cid = "Dette ${itemet} er merka som eigedom til ${banken} Bank. Det vart trekt ut med kontonummer #${characterId}.",
 		inspect_no_property = "Dette ${item} ser ikke ut til å ha noen eiendomsmerking på seg.",
+
+		gift_box_normal = "Denne gåveesken ser heilt normal ut.",
+		gift_box_suspicious = "Denne gåveesken ser litt mistenkeleg ut.",
+		gift_box_residue = "Denne gåveesken har litt gråaktig pulverrester på seg.",
 
 		searching_dumpster = "Søker i søppeldunken",
 		searching_homeless_tent = "Søker i Hjemløs-Telt",
@@ -8625,6 +8579,8 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		empty_box_description = "Start med denne enkle, solide boksen for å lage en personlig gave. Fyll den med ikke-periske skatter, og den er klar til å bli forvandlet til en tankefull gave. Ideell for å pakke alt som symboliserer hengivenhet, unntatt bedervelige varer og våpen.",
 		gift_box = "Gaveboks",
 		gift_box_description = "Denne elegant forseglede gaveboksen, prydet med et festlig bånd, er en vakker måte å presentere dine nøye utvalgte gjenstander på. Perfekt for spesielle anledninger, formidler den varme og omtanke, og sikrer at din gest av gavegivning er like herlig som gaven inni.",
+		gift_box_bomb = "Gåveeske",
+		gift_box_bomb_description = "Denne elegant forseglede gåveesken, dekorert med ein festleg sløyfe, er ein vakker måte å presentere nøye utvalde gjenstandar på. Perfekt for spesielle anledningar, formidlar den varme og omtanke, og sikrar at gesten din med å gje etterlet seg eit varig inntrykk.",
 
 		ear_defenders = "Ørebeskyttere",
 		ear_defenders_description = "Brukes for å beskytte ørene mot høye lyder.",
@@ -9234,6 +9190,8 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		pet_snowman_description = "doden",
 		pet_owl = "Ulvina",
 		pet_owl_description = "Ulvina, den visdomme og årvåkne følgjesvennen din, sit på elegant på skulderen din. Med sine skarpe auge og mjuk fjør, tilfører denne fortryllande ugla eit snev av magi til dine opplevingar. Alltid klar til å gi ein visdomsfull hooting, er Ulvina den perfekte medhjelparen på kvar reise.",
+		pet_pig = "Porkchop",
+		pet_pig_description = "Ei lita grisunge med stor personlegdom, som sit lukkeleg på skulderen din. Alltid klar til å snøre oppmuntring eller døma livsvala dine med eit sjarmerande sideblikk. Enten du er på eit eventyr eller berre spasertur, er denne lommestore følgjesvennen den perfekte blandinga av sjarm og frekkheit.",
 
 		hotwheels_mcqueen = "Lightning McQueen",
 		hotwheels_mcqueen_description = "Fart, Eg er fart, Svev som ein Cadillac, stikk som ein Beemer. KATCHOW KATCHOW KATCHOW",
@@ -9549,6 +9507,9 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		wires = "Kablar",
 		wires_description = "Holdar alt saman.",
 
+		microcontroller = "Mikrokontroller",
+		microcontroller_description = "Ei lita men kraftig hjerne for all dine elektroniske skapningar, i stand til å realisere komplekse idear med berre nokre få linjer med kode. Den er den usungne helten av innovasjon, stiltig orkestrerende magien bak scenen.",
+
 		note = "Merknad",
 		note_description = "Nokon merknad, veit ikkje eg mann.",
 
@@ -9743,6 +9704,17 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		wheel_clamp_description = "Ingen fluktbiler her! Hjulklemmen betyr alvor, sikrer kjøretøyene godt på plass og setter en stopper for uautorisert bevegelse. Denne kraftige innretningen er en taus håndhever, og sørger for at parkeringsreglene respekteres og følges.",
 		old_rug = "Gamalt teppe",
 		old_rug_description = "Legg ned dette koselige teppet for din neste utendørs sammenkomst og hold det komfortabelt! Det er perfekt for å slenge på gresset uten å få de irriterende grønne flekkene på buksene dine. Brett det ut, lene deg tilbake og nyt omgivelsene dine i stil og komfort.",
+
+		evidence_marker_1 = "Markør 1",
+		evidence_marker_1_description = "Startpunktet for mysteriet, markerer det første spor for å avsløre sannheten.",
+		evidence_marker_2 = "Markør 2",
+		evidence_marker_2_description = "Et oppfølgingsspor som leder etterforskerne nærmere det store bildet.",
+		evidence_marker_3 = "Markør 3",
+		evidence_marker_3_description = "Det lille detaljen som kan avgjøre saken – ikke oversett den.",
+		evidence_marker_4 = "Markør 4",
+		evidence_marker_4_description = "En kritisk del av puslespillet, som stille venter på å bli lagt merke til.",
+		evidence_marker_5 = "Markør 5",
+		evidence_marker_5_description = "Den siste markøren, som enten knyt alt sammen eller etterlater flere spørsmål enn svar.",
 
 		bandit_1 = "Banditt 1",
 		bandit_1_description = "Din mann for treningscenarier, alltid klar til å spille skurken uten å klage på de lange timene eller mangel på manus. Kan plasseres hvor som helst i verden.",
@@ -10604,6 +10576,7 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		invalid_invisibility_mode = "Ugyldig usynligheitsmodus. Må være 'full' eller 'normal'.",
 		invisibility_mode_full = "Usynlighetsmodus er satt til 'fullt'. Vanlige ansatte kan ikke se deg.",
 		invisibility_mode_normal = "Usynlighetsmodus er satt til 'normalt'. Vanlige ansatte kan nå se deg.",
+		current_invisibility_mode = "Gjeldende usynlighetsmodus er satt til '${mode}'.",
 
 		toggled_invisibility = "Aktiverte usynlighet for ${displayName}.",
 		failed_invisibility = "Klarte ikke å aktivere usynlighet for ${displayName}.",
@@ -10699,6 +10672,9 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		logs_used_weather_spell_title = "Brukte ver-formel",
 		logs_used_weather_spell_details = "${consoleName} brukte ver-formelen `${itemName}`.",
 
+		gift_box_bomb_logs_title = "Åpnet Eksplosiv Gaveeske",
+		gift_box_bomb_logs_details = "${consoleName} åpnet en eksplosiv gaveeske.",
+
 		you_have_used_jail_card = "Du har brukt et 'kom deg ut av fengsel' kort!",
 		you_are_not_in_jail = "Du er ikke i fengsel.",
 
@@ -10791,9 +10767,9 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		sentence_reduced = "Din straff ble redusert med ${amount} måneder, du har ${remaining} måneder igjen.",
 		sentence_increased = "Din dom vart auka med ${amount} månader, du har ${remaining} månader igjen.",
 		sentence_over = "Din straff er over.",
-		remaining_time_fmt = "${months} månader (*${display}*)",
+		remaining_time_fmt = "${months} månader (${display})",
 		remaining_time = "Gjenståande tid: ${remaining}.",
-		jailed = "Du har vorte fengsla i ${amount}.",
+		jailed = "Du har blitt fengsla i ${amount} månader.",
 
 		mission_help_1 = "Trykk ~INPUT_CONTEXT~ for å rengjøre gulvet.",
 		mission_help_2 = "Trykk ~INPUT_CONTEXT~ for å spise noe.",
@@ -10970,17 +10946,6 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		back = "Tilbake",
 		copy_license = "Lisens ID",
 		copy_license_success = "Kopiert!",
-		cache_assets = "Lagre ressurser",
-		download_assets = "Vil du laste ned og mellomlagre dei fleste av serverens ressursar? Her er fordelane og omsyna:",
-		cache_assets_performance = "Nyt betre FPS og færre ping-sprett under spelet, spesielt om du har eldre maskinvare eller ein tregare tilkopling.",
-		cache_assets_crashes = "Spelet kan krasje under prosessen. Om det skjer, bruk heller alternativet for 'sakte nedlasting'.",
-		cache_assets_restart = "Etter at nedlastingen er fullført, start spelet på nytt for å forebygge lag under denne økta.",
-		cache_assets_disk = "Dette vil bruke litt lagringsplass, så sørg for at du har nok tilgjengelig.",
-		cache_assets_no_repeat = "Du trenger ikke å gjøre dette for hver oppdatering, da bare noen få filer vil endre seg.",
-		vehicles = "Kjøretøy",
-		objects = "Objekter",
-		peds = "Personer",
-		clothing = "Klær",
 		main_menu = "Hovudmeny",
 		gta_settings = "GTA-innstillingar",
 		discord = "Discord",
@@ -11132,8 +11097,8 @@ OP.Global.Locales.Languages["nn-NO"] = {
 
 	lottery = {
 		lottery_announcement = "Lotteri-annonse",
-		lottery_about_to_roll = "En vinnar vil bli trekt om 5 minutt for dagens lotteri. Den totale potten er no på $${totalAmount} der du har innsats på $${betAmount}. Din sjanse for å vinne er ${odds}%.",
-		current_lottery_pot = "Den totale potten er no på $${totalAmount} der du har innsats på $${betAmount}. Din sjanse for å vinne er ${odds}%.",
+		lottery_about_to_roll = "En vinnar vil bli trukke om 5 minutt for dagens lotteri. Den totale potten er for øyeblikket på $${totalAmount} der du har satset $${betAmount}. Din sjanse for å vinne er ${odds}%. Skatten er ${tax}%.",
+		current_lottery_pot = "Den totale potten er for øyeblikket på $${totalAmount} der du har satset $${betAmount}. Din sjanse til å vinne er ${odds}%. Skatten er ${tax}%.",
 		drew_a_lottery_winner = "En vinner for lotteriet er trukket.",
 		winner_has_been_picked = "${fullName} har vunne lottomengde på $${totalAmount}! De satset $${betAmount} og deira sjanse for å vinne var ${odds}%.",
 		claimed_lottery_winnings = "Har mottatt alle lotterigevinster.",
@@ -11744,6 +11709,7 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		hatch_claim = "KREV",
 		hatch_opened = "KREVET",
 		hatch_waiting = "VENTER",
+		hatch_too_late = "FOR SENT",
 
 		about_advent_calendar_title = "Om Adventskalenderen",
 
@@ -11755,7 +11721,7 @@ OP.Global.Locales.Languages["nn-NO"] = {
 			<br><br>
 			Next hatch unlocks in ${time}.
 			<br><br>
-			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 26th.)
+			Opening a hatch on the day it was unlocked, gives you a bonus point. If you obtain enough bonus points, you will receive a special gift on the 24th of December. (The bonus gift must be claimed before the 31st.)
 			<br><br>
 			<div class="bonusPoints">
 				<div>Bonus Points: ${bonusPoints}/22</div>
@@ -13570,6 +13536,59 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		used_bug_logs_details = "${consoleName} brukte en mikrofonfeil på ${identifier}."
 	},
 
+	staff_pm = {
+		something_went_wrong = "Det oppstod en feil under sendingen av meldingen.",
+		reports_too_fast = "Du sender rapporter for fort, ro ned.",
+		no_report_message = "Du må inkludere en melding med rapporten din.",
+		same_report = "Du kan ikke sende den samme rapporten to ganger.",
+		report_muted = "Du er utestengt fra å sende rapporter på grunn av: `${reason}`.",
+		report_muted_no_reason = "Du er mutet frå å sende rapportar.",
+
+		report_title = "RAPPORT-${reportId} ${displayName}",
+		report_logs_title = "Rapport",
+		report_logs_details = "${consoleName} oppretta rapport ${reportId} med følgjande melding: `${message}`",
+
+		invalid_server_id = "Ugyldig målserver-id.",
+		no_staff_pm_message = "Du må inkludere ei melding i den private meldinga di.",
+		user_not_staff = "Brukaren er ikkje eit staff-medlem.",
+		staff_pm_warning = "Personale PM-Advarsel",
+		staff_pm_first_time = "Vi ser at du aldri har brukt staff-PM-ar før. For å svare på ein staff PM, bruk `/staffpm` etterfulgt av mottakar-ID-en. For enklare bruk kan du bruke `/svar` for å svare på den siste staff PM-en du mottok.",
+
+		staff_pm_title = "STAFF MELDING ${from} -> ${to}",
+		staff_pm_title_external = "EKSTERN STAFF MELDING ${from} -> ${to}",
+		close_staff_pm = "Lukk",
+		staff_pm_from = "Staffmelding fra <i>${from}</i>",
+		staff_pm_logs_title = "Staffmeldinger",
+		staff_pm_logs_details = "${senderConsoleName} sendte en privat melding til ${recipientConsoleName}: `${message}`",
+		important_staff_pm_logs_title = "Viktig Staffmelding",
+		important_staff_pm_logs_details = "${senderConsoleName} sendte en viktig privat melding til ${recipientConsoleName}: `${message}`",
+
+		staff_toggled = "Din personvernsstatus er slått av.",
+		no_staff_message = "Du må inkludere en melding i din personvernchat.",
+		same_staff_message = "Du kan ikke sende den samme personvernsmeldingen to ganger.",
+
+		staff_message_title = "PERSONVERN ${playerName}",
+		local_staff_message_title = "LOKAL PERSONVERN ${playerName}",
+		staff_message_logs_title = "Personvernsmelding",
+		staff_message_logs_details = "${consoleName} sendte følgende melding i personvernchatten: `${message}`",
+		local_staff_message_logs_title = "Lokal Personvernsmelding",
+		local_staff_message_logs_details = "${consoleName} sendte følgende melding i den lokale personvernchatten: `${message}`",
+
+		message_sent = "Melding sendt.",
+		cannot_send_private_message_to_yourself = "Du kan ikkje sende ein privat melding til deg sjølv.",
+		missing_valid_message_parameter = "Manglar ein gyldig 'message'-parameter.",
+		missing_valid_license_identifier_parameter = "Manglar ein gyldig 'licenseIdentifier'-parameter.",
+		missing_valid_target_source_parameter = "Manglar ein gyldig 'targetSource'-parameter.",
+
+		invalid_report_id = "Ugyldig rapport-id.",
+		report_already_claimed = "Denne rapporten vart allereie teken av *${playerName}*.",
+		report_same_creator = "Du kan ikkje ta på deg dine eigne rapportar.",
+		failed_claim_report = "Klarte ikkje å ta over rapport.",
+		report_claimed = "Rapport **${reportId}** vart teke over av *${playerName}*.",
+		claim_report_logs_title = "Ta over Rapport",
+		claim_report_logs_details = "${consoleName} tok over rapport ${reportId}."
+	},
+
 	starter_car = {
 		follow_the_checkpoints = "Din personleg kjøretøy er parkert i nærleiken. Følg sjekkpunkta for å finne det.",
 
@@ -13928,6 +13947,8 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		tp_cayo = "Cayo Perico",
 
 		actions = "Handlinger",
+		jail_self = "Fengsle Deg Sjølv",
+		unjail_self = "Fri Deg Sjølv",
 		wander_around = "Vandre Rundt",
 		speed_around = "Fart Rundt",
 		clear_tasks = "Fjern Oppgaver",
@@ -14114,7 +14135,10 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		no_maps_to_combine = "Du har ingen kart å kombinere.",
 
 		treasure_map_dug_up_logs_title = "Søkkart gravd opp",
-		treasure_map_dug_up_logs_details = "${consoleName} har gravd opp et søkkart av tier ${mapTier} og mottatt drop ID ${dropId}."
+		treasure_map_dug_up_logs_details = "${consoleName} har gravd opp et søkkart av tier ${mapTier} og mottatt drop ID ${dropId}.",
+
+		treasure_map_piece_spawned_logs_title = "Skattkartbit Spawna",
+		treasure_map_piece_spawned_logs_details = "${consoleName} har spawna skattkartbit ${pieceNumber} av nivå ${mapTier}."
 	},
 
 	tsunami = {
@@ -14335,14 +14359,24 @@ OP.Global.Locales.Languages["nn-NO"] = {
 
 	weed = {
 		strain_default = "Wild Haze",
-		strain_lemon = "Sitron Haze",
+		strain_bubble = "Boblebær",
 		strain_northern = "Northern Lights",
 		strain_kush = "OG Kush",
+		strain_diesel = "Surna Diesel",
+		strain_ak47 = "AK-47",
+		strain_dream = "Blå draum",
+		strain_trainwreck = "Togforlis",
+		strain_gorilla = "Gorilla-lim",
 
 		default_emoji = "🥦",
-		lemon_emoji = "🏃",
+		bubble_emoji = "🫐",
 		northern_emoji = "🛡️",
 		kush_emoji = "🦁",
+		diesel_emoji = "😌",
+		ak47_emoji = "🔫",
+		dream_emoji = "🪶",
+		trainwreck_emoji = "👊",
+		gorilla_emoji = "🦍",
 
 		strain_description = "<b>Type:</b> <i>${strain}</i> ${emoji}"
 	},
@@ -14392,6 +14426,7 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		run_as_failed = "Klarte ikkje å utføre kommando som ${consoleName}.",
 
 		no_nearby_vehicle = "Ingen kjøretøy i nærheten.",
+		invalid_duration = "Ugyldig varigheit (1s - 20s).",
 		reversing_failed = "Klarte ikke å få karakteren til å rygge.",
 		driving_forwards_failed = "Klarte ikke å få karakteren til å kjøre framover.",
 		reversing_success = "Karakteren rygger nå.",
@@ -14927,7 +14962,16 @@ OP.Global.Locales.Languages["nn-NO"] = {
 
 		task_take_nap = "Ta en lur.",
 		task_take_nap_near = "Trykk ~INPUT_DETONATE~ for å ta en lur.",
-		task_take_nap_active = "Tar Lur"
+		task_take_nap_active = "Tar Lur",
+
+		task_water_plants = "Vatne plantane.",
+		task_water_plants_near = "Trykk ~INPUT_DETONATE~ for å vatne plantane.",
+		task_water_plants_active = "Vatnar Plantar"
+	},
+
+	taxi = {
+		help_text = "`initial` er startprisen (standard: $10), `mile` er prisen per køyrd mile (standard: $5), `minute` er prisen per minutt med taksameteret på (standard: $15), `show` vil vise dine noverande innstillingar.",
+		invalid_typ = "Ugyldig type."
 	},
 
 	tow = {
@@ -15287,8 +15331,10 @@ OP.Global.Locales.Languages["nn-NO"] = {
 		wheels_modified = "Hjulene er blitt modifisert.",
 		wheels_none_specified = "Ingen hjul er angitt.",
 		wheels_none_valid_specified = "Ingen gyldige hjul er angitt.",
-		not_in_a_car = "Du er ikke i en bil.",
-		invalid_value = "Ugyldig verdi."
+		not_in_a_car = "Du kjører ikke en bil.",
+		invalid_value = "Ugyldig verdi.",
+		suspension_height = "Gjeldende fjæringshøyde er satt til ${height}.",
+		suspension_height_set = "Fjæringshøyden er justert til ${height}."
 	},
 
 	oil = {
@@ -15496,6 +15542,7 @@ OP.Global.Locales.Languages["nn-NO"] = {
 
 	throwables = {
 		pick_up_weapon = "[${InteractionKey}] Plukk opp",
+		throwables_wiped = "Slettet ${amount} kastbare gjenstander.",
 
 		no_weapon_equipped = "Du har ikke en våpen utstyrt.",
 		cant_throw_weapon = "Du kan ikke kaste dette våpenet.",
