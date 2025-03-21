@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 36 (do not change)
+-- AUTO LOCALES: 37 (do not change)
 
 OP.Global.Locales.Languages["ro-RO"] = {
 	-- configuration settings for language
@@ -23,6 +23,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		yes = "Da",
 		no = "Nu",
 		n_a = "N/A",
+		off = "Oprit",
 		invalid_server_id = "ID server invalid.",
 		appreciated_tier = "Nivel Apreciat",
 		respected_tier = "Nivel Respectat",
@@ -196,11 +197,13 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		removed_bank_from_everyone = "S-au retras $${amount} din contul bancar al tuturor.",
 
 		spawned_item_title = "Obiect generat",
-		spawned_item_details = "${consoleName} a generat ${amount}x `${itemName}` pentru ei însuși.",
+		spawned_item_details = "${consoleName} a generat ${amount}x ${itemLabel} pentru ei înșiși.",
 		spawned_item_for_player_title = "Obiect generat pentru jucător",
-		spawned_item_for_player_details = "${consoleName} a generat ${amount}x obiectul `${itemName}` pentru ${targetConsoleName}.",
+		spawned_item_for_player_details = "${consoleName} a generat ${amount}x ${itemLabel} pentru ${targetConsoleName}.",
 		spawned_item_for_everyone_title = "Obiect generat pentru toți jucătorii",
-		spawned_item_for_everyone_details = "${consoleName} a generat ${amount}x obiectul `${itemName}` pentru toți jucătorii.",
+		spawned_item_for_everyone_details = "${consoleName} a generat ${amount}x ${itemLabel} pentru toată lumea.",
+		received_spawned_item_logs = "A primit un obiect generat",
+		received_spawned_item_logs_details = "${targetConsoleName} a primit un obiect generat (${amount}x ${itemLabel}) de la ${consoleName}.",
 
 		announcement_staff_title = "Anunț al Staff-ului",
 		announcement_server_title = "Anunț al Server-ului",
@@ -221,6 +224,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		teleport_successful = "Teleportarea jucătorului s-a realizat cu succes.",
 
 		player_revived_success = "Jucătorul a fost reînviat cu succes.",
+		missing_valid_target_source_parameter = "Lipsă un parametru valid 'targetSource'.",
 
 		wipe_broken = "broken - Obiecte Deteriorate/Fragmentate",
 		wipe_npcs = "npcs - NPC-uri și vehiculele acestora.",
@@ -481,6 +485,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		unscooped_players = "Ai eliberat ${amount} din ${total} jucător(i).",
 		unscoop_failed = "Eroare la încercarea de eliberare a jucătorilor.",
 
+		invalid_snapshot_radius = "Rază de instantanee invalidă (1 <-> 400)",
+		snapshot_header = "ID Server, Licență, Nume Jucător, ID Personaj, Nume Personaj, Distanță",
+		snapshot_completed = "Instantaneul a fost copiat cu ${amount} jucători în clipboard-ul tău.",
+
 		freeze_success = "S-a reușit înghețarea lui ${consoleName}.",
 		failed_freeze = "Nu s-a reușit înghețarea jucătorului.",
 		unfreeze_success = "S-a reușit dezghețarea lui ${consoleName}.",
@@ -578,7 +586,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		suspicious_transfer_title = "Transfer Suspect",
 		suspicious_transfer_details = "${consoleName} a transferat $${amount} către ${targetConsoleName}.",
 
-		-- GPT-4 generated ban messages
+		-- GPT-4o generated ban messages
 		bad_entity_spawn = "Ah, încercând să invoci artifcatul antic `${modelName}`, ai fost? Acesta nu este un episod din Antiques Roadshow, iar acea relicvă rămâne în seif.",
 		blacklisted_command_ban = "Ne pare rău, însă nu ai permisiunile necesare pentru a efectua această comandă. Te rog contactează administratorii server-ului dacă crezi că este o eroare.",
 		clear_tasks_ban = "Aceasta nu este o academie Jedi de antrenament mental. Încercarea ta de a influența liberul arbitru al altora a fost observată... și respinsă.",
@@ -614,6 +622,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		handling_field_ban = "Se pare că ai încercat să-ți turbochargezi legile fizicii. Frumos încercat, dar în lumea asta, ținem roțile bine ancorate în realitate.",
 		teleported_ban = "Clipiți și ați dispărut? Nu în această dimensiune, călătorule.",
 		honeypot_native = "Of, bai, s-a întâmplat! Se pare că ai dat peste un loc unde mierea nu era menită să fie găsită. Unele vase ar trebui lăsate neatinse, oricât de tentante ar părea.",
+		illegal_event_usage_ban = "Țesătura existenței a vibra pentru un moment—ca o pătură cusută prost care se desfăcea la margini. Dar nu-ți face griji, am reparat acel mic anomali… prin îndepărtarea acului.",
 
 		type_aimbot = "Aimbot",
 		type_bad_creation = "Creare defectă",
@@ -654,6 +663,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		type_thermal_night_vision = "Vizualizare termică/nocturnă",
 		type_vehicle_modification = "Modificare vehicul",
 		type_illegal_local_vehicle = "Utilizarea vehiculului neconectat la rețea",
+		type_illegal_event_usage = "Utilizare Ilegală a Evenimentului",
 
 		event_prefix = "Anti-Cheat: ${type}",
 
@@ -1273,6 +1283,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		unscoop_command_parameter_revive_help = "Revivează jucătorii capturați dacă sunt doborâți.",
 		unscoop_command_substitutes = "",
 
+		snapshot_command = "instantanee",
+		snapshot_command_help = "Fă o instantanee cu toți cei din jurul tău într-un anumit rațiu.",
+		snapshot_command_parameter_radius = "rațiu",
+		snapshot_command_parameter_radius_help = "Rațiul din care vrei să faci o instantanee.",
+		snapshot_command_substitutes = "",
+
 		peek_command = "priveste",
 		peek_command_help = "Priveste va afișa toți jucătorii invizibili din jurul tău (inclusiv pe tine însuți).",
 		peek_command_substitutes = "",
@@ -1481,7 +1497,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		-- game/airstrike
 		call_airstrike_command = "chemare_aire",
 		call_airstrike_command_help = "Apelează un atac aerian asupra poziției tale curente.",
-		call_airstrike_command_substitutes = "",
+		call_airstrike_command_substitutes = "atac_aerian",
 
 		-- game/airsupport
 		airsupport_command = "airsupport",
@@ -1603,9 +1619,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
-		mute_boomboxes_command = "opreste_sunete_boxe",
-		mute_boomboxes_command_help = "Oprește/Activează sunetul la toate boomboxurile.",
-		mute_boomboxes_command_substitutes = "",
+		boomboxes_mute_command = "boomboxes_mute",
+		boomboxes_mute_command_help = "Dezactivează boombox-urile.",
+		boomboxes_mute_command_substitutes = "",
 
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "Șterge boombox-urile.",
@@ -1676,6 +1692,14 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		cinema_focus_command = "cinema_focus",
 		cinema_focus_command_help = "Concentrați-vă pe cel mai apropiat ecran de cinema pentru o experiență mai bună de vizionare.",
 		cinema_focus_command_substitutes = "concentrați_pe_cinema",
+
+		cinemas_disable_command = "cinemas_disable",
+		cinemas_disable_command_help = "Dezactivează ecranele de cinema.",
+		cinemas_disable_command_substitutes = "",
+
+		cinemas_mute_command = "cinema_mute",
+		cinemas_mute_command_help = "Dezactivează sunetul ecranelor de cinema.",
+		cinemas_mute_command_substitutes = "",
 
 		-- game/cinematic
 		cinematic_command = "cinematic",
@@ -2521,6 +2545,18 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		clear_evidence_command_parameter_evidence_id_help = "ID-ul depozitului de probe pe care doriți să îl ștergeți.",
 		clear_evidence_command_substitutes = "",
 
+		shuffle_inventory_command = "amestecă_inventar",
+		shuffle_inventory_command_help = "Amestecă un inventar specificat.",
+		shuffle_inventory_command_parameter_inventory = "inventar",
+		shuffle_inventory_command_parameter_inventory_help = "Inventarul pe care dorești să-l amesteci.",
+		shuffle_inventory_command_substitutes = "",
+
+		dementia_mode_command = "mod_demență",
+		dementia_mode_command_help = "Comută modul de demență pentru tine sau pentru un alt jucător.",
+		dementia_mode_command_parameter_server_id = "id server",
+		dementia_mode_command_parameter_server_id_help = "ID-ul serverului al jucătorului pentru care doriți să activați sau să dezactivați demența.",
+		dementia_mode_command_substitutes = "demență",
+
 		-- game/invisibility
 		invisibility_command = "invizibilitate",
 		invisibility_command_help = "Comută starea de invizibilitate.",
@@ -2746,10 +2782,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		use_measurement_command_parameter_measurement_help = "Sistemul de unități pe care doriți să îl utilizați. Valorile valide sunt „Imperial” și „Metric”. Puteți lăsa acest parametru necompletat sau cu o valoare incorectă pentru a utiliza setările implicite.",
 		use_measurement_command_substitutes = "măsură, mas",
 
-		no_copyright_command = "no_drepturi_autor",
-		no_copyright_command_help = "Acest comandă va dezactiva toate sunetele care pot fi protejate de dreptul de autor furnizate de framework când este activată.",
-		no_copyright_command_substitutes = "",
-
 		picture_command = "poza",
 		picture_command_help = "Generează un obiect ce conține o imagine personalizată și o descriere.",
 		picture_command_parameter_url = "url",
@@ -2797,8 +2829,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		model_view_command_parameter_model_help = "Numele sau hash-ul modelului pe care dorești să-l vezi.",
 		model_view_command_parameter_no_blocker = "fără blocare",
 		model_view_command_parameter_no_blocker_help = "Dezactivează blocarea umbrei (implicit: nu).",
-		model_view_command_parameter_clamp = "limita",
-		model_view_command_parameter_clamp_help = "Limitați dimensiunea să fie întotdeauna mai mare de 0.25 (ajută cu modelele mici).",
+		model_view_command_parameter_padding = "marge",
+		model_view_command_parameter_padding_help = "Distanță suplimentară de margine.",
 		model_view_command_parameter_components = "componente",
 		model_view_command_parameter_components_help = "Componentele armelor (separate prin virgulă).",
 		model_view_command_substitutes = "model, view",
@@ -2965,7 +2997,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		ped_spawn_command_parameter_weapon_help = "Ce armă ar trebui să aibă NPC-ul (opțional, \"false\" pentru a sari peste acest pas).",
 		ped_spawn_command_parameter_invincible = "invincibil",
 		ped_spawn_command_parameter_invincible_help = "Dacă ped-ul ar trebui să fie invincibil. (implicit: nu).",
-		ped_spawn_command_substitutes = "",
+		ped_spawn_command_substitutes = "apariție_ped",
 
 		ped_task_command = "sarcină_NPC",
 		ped_task_command_help = "Asignează o sarcină pietonilor generați.",
@@ -2989,15 +3021,15 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		ped_attack_command_help = "Face ca cel mai apropiat ped să atace un anumit jucător.",
 		ped_attack_command_parameter_target = "țintă",
 		ped_attack_command_parameter_target_help = "Jucătorul pe care doriți ca cel mai apropiat ped să-l atace.",
-		ped_attack_command_substitutes = "",
+		ped_attack_command_substitutes = "atac",
 
 		list_ped_emotes_command = "listare_emoticoane_ped",
 		list_ped_emotes_command_help = "Listează toate emoticoanele disponibile pentru ped.",
-		list_ped_emotes_command_substitutes = "",
+		list_ped_emotes_command_substitutes = "emoticonuri_ped",
 
 		list_ped_tasks_command = "listare_tascuri_ped",
 		list_ped_tasks_command_help = "Listează toate sarcinile disponibile pentru ped.",
-		list_ped_tasks_command_substitutes = "",
+		list_ped_tasks_command_substitutes = "task-uri_ped",
 
 		-- game/ped_steal
 		ped_steal_command = "furaped",
@@ -3060,6 +3092,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		pole_dancing_offset_command_parameter_model_name_help = "Numele modelului pe care doriți să-l ajustați.",
 		pole_dancing_offset_command_substitutes = "",
 
+		-- game/pool
+		pool_debug_command = "debug_bazin",
+		pool_debug_command_help = "Comută vizualizarea de depanare a piscinei (jocului).",
+		pool_debug_command_substitutes = "",
+
 		-- game/properties
 		properties_debug_command = "proprietati_debug",
 		properties_debug_command_help = "Comuta modul de depanare al proprietatilor.",
@@ -3086,11 +3123,13 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		spawn_prop_command_parameter_model_hash = "model",
 		spawn_prop_command_parameter_model_hash_help = "Modelul proprietatii pe care doriti sa o spawnati.",
 		spawn_prop_command_parameter_network = "rețea",
-		spawn_prop_command_parameter_network_help = "Doriți să rețelegeți obiectul? Este recomandat să activați această opțiune doar pentru obiecte care ar trebui să poată fi mutate. Nu toate obiectele sunt mobile însă.",
+		spawn_prop_command_parameter_network_help = "Doriți să rețeați prop-ul? Se recomandă să activați aceasta doar pentru prop-uri care ar trebui să poată fi mutate. Nu toate prop-urile sunt mutabile. (`1` pentru activare sau `0` pentru dezactivare)",
 		spawn_prop_command_parameter_restricted = "restrict",
-		spawn_prop_command_parameter_restricted_help = "Permiteți doar super adminilor să ridice acest obiect.",
+		spawn_prop_command_parameter_restricted_help = "Permiteți acest prop să fie ridicat doar de super administratori. (`1` pentru activare sau `0` pentru dezactivare)",
 		spawn_prop_command_parameter_culling = "culling",
-		spawn_prop_command_parameter_culling_help = "Raza de cenzură la care distanța obiectul este generat/șters. Raza implicită este de 200m, creșteți doar această valoare pentru obiecte mari care ar trebui să fie vizibile de la distanțe mari.",
+		spawn_prop_command_parameter_culling_help = "Raza de culling la care prop-ul este generat/steres. Raza implicită este de 200m, creșteți aceasta doar pentru prop-uri mari care ar trebui să fie vizibile de la distanță. (`0` sau `false` pentru a folosi valoarea implicită)",
+		spawn_prop_command_parameter_persistent = "persistent",
+		spawn_prop_command_parameter_persistent_help = "Ar trebui ca obiectul să rămână și după reporniri? Folosește aceasta cu moderație, pentru că va afecta jocul tuturor. (`1` pentru a activa sau `0` pentru a dezactiva)",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "debug_prop-uri",
@@ -3247,6 +3286,13 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		remove_riot_player_command_parameter_server_id_help = "ID-ul serverului pentru jucătorul pe care doriți să îl eliminați. Lăsați acest câmp necompletat pentru a vă selecta automat.",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rockstar
+		rockstar_editor_command = "editor_rockstar",
+		rockstar_editor_command_help = "Comandă de ușor utilizat pentru folosirea editorului rockstar.",
+		rockstar_editor_command_parameter_action = "acțiune",
+		rockstar_editor_command_parameter_action_help = "Acțiunea pe care încerci să o efectuezi. Acțiunea poate fi `înregistrează`, `salvează`, `aruncă` sau `deschide`.",
+		rockstar_editor_command_substitutes = "rockstar",
+
 		-- game/rooms
 		rooms_debug_command = "debugare_camere",
 		rooms_debug_command_help = "Debugează toate camerele.",
@@ -3319,6 +3365,13 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		draw_shroom_areas_command = "desenează_zone_ciuperci",
 		draw_shroom_areas_command_help = "Desenează toate zonele de ciuperci și adaugă altele noi.",
 		draw_shroom_areas_command_substitutes = "zone_ciuperci",
+
+		-- game/smile
+		smile_command = "zâmbește",
+		smile_command_help = ":)",
+		smile_command_parameter_server_id = "id server",
+		smile_command_parameter_server_id_help = "ID-ul serverului țintă.",
+		smile_command_substitutes = "",
 
 		-- game/smell
 		smell_command = "mirosi",
@@ -3523,6 +3576,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		train_passes_command = "treceri_tren",
 		train_passes_command_help = "Verificați numărul de treceri la tren pe care le aveți.",
 		train_passes_command_substitutes = "",
+
+		-- game/trains
+		trains_debug_command = "debug_trenuri",
+		trains_debug_command_help = "Debug toate trenurile.",
+		trains_debug_command_substitutes = "",
 
 		-- game/treasure_maps
 		spawn_map_piece_command = "spawn_pièce_hartă",
@@ -3730,6 +3788,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		box_command_help = "Definesc o cutie 3D.",
 		box_command_substitutes = "",
 
+		define_points_command = "definește_puncte",
+		define_points_command_help = "Definirea unei serii de coordonate/puncte.",
+		define_points_command_substitutes = "",
+
 		-- global/states
 		entity_states_command = "stări_entități",
 		entity_states_command_help = "Afișează toate stările unei anumite entități.",
@@ -3775,6 +3837,21 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		start_bus_route_command_parameter_route = "rută",
 		start_bus_route_command_parameter_route_help = "Numele rutei pe care doriți să o porniți.",
 		start_bus_route_command_substitutes = "",
+
+		draw_bus_route_command = "traseu_autobuz",
+		draw_bus_route_command_help = "Desenează un traseu specific de autobuz pe GPS-ul tău.",
+		draw_bus_route_command_parameter_route = "ruta",
+		draw_bus_route_command_parameter_route_help = "Numele rutei pe care dorești să o desenezi.",
+		draw_bus_route_command_substitutes = "",
+
+		-- jobs/dealership
+		set_pdm_slot_command = "setează_slot_pdm",
+		set_pdm_slot_command_help = "Setează vehiculul în slotul specificat în PDM.",
+		set_pdm_slot_command_parameter_slot = "slot",
+		set_pdm_slot_command_parameter_slot_help = "Slotul în care dorești să setezi vehiculul. (1 - 8)",
+		set_pdm_slot_command_parameter_model_name = "numele modelului",
+		set_pdm_slot_command_parameter_model_name_help = "Numele modelului vehiculului pe care dorești să-l setezi.",
+		set_pdm_slot_command_substitutes = "pdm_slot, pdm",
 
 		--jobs/doj
 		lookup_character_command = "Failed to automatically generate translation.",
@@ -3822,8 +3899,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		job_command_help = "Actualizează slujba cuiva pe baza unui shortcut sau activează/dezactivează interfața de slujbă.",
 		job_command_parameter_server_id = "server id",
 		job_command_parameter_server_id_help = "Id-ul jucătorului sau 0 pentru a te selecta pe tine.",
-		job_command_parameter_shortcut = "shortcut",
-		job_command_parameter_shortcut_help = "Shortcut-ul către slujba pe care dorești să o setezi. Lasă acest câmp gol pentru a activa/dezactiva interfața de slujbă.",
 		job_command_substitutes = "",
 
 		reset_job_command = "reset_job",
@@ -4048,13 +4123,13 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		wheel_offset_command_parameter_wheels = "față/spate",
 		wheel_offset_command_parameter_wheels_help = "Care roți doresti sa le modifici?",
 		wheel_offset_command_parameter_value = "valoare",
-		wheel_offset_command_parameter_value_help = "Valoarea cu care dorești să o modifici. Aceasta poate fi oriunde între -0,15 și 0,2, 0 fiind implicită.",
+		wheel_offset_command_parameter_value_help = "Cantitatea pe care doriți să o modificați. Aceasta poate fi între -0.25 și 0.2, 0 fiind valoarea implicită.",
 		wheel_offset_command_substitutes = "",
 
 		suspension_height_command = "inaltime_suspendare",
 		suspension_height_command_help = "Modifică înălțimea vizuală a suspensiei unui vehicul.",
 		suspension_height_command_parameter_value = "valoare",
-		suspension_height_command_parameter_value_help = "Suma cu care doriți să fie modificată. Aceasta poate fi oriunde între -0.15 și 0.1, 0 reprezentând valoarea implicită.",
+		suspension_height_command_parameter_value_help = "Cantitatea pe care doriți să o modificați. Aceasta poate fi între -0.2 și 0.1, 0 fiind valoarea implicită.",
 		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
@@ -4337,7 +4412,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		restart_cancelled = "Restartul server-ului a fost anulat.",
 
-		server_restarting = "Server-ul se restarteaza. Te poti reconecta in cateva minute.",
+		server_restarting = "Serverul se restartează.",
 
 		executed_restart_command = "Comanda de restart a fost executata.",
 		already_executed_restart_command = "Comanda de restart a fost deja executata.",
@@ -4420,9 +4495,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		reason_unknown = "Motiv necunoscut.",
 
 		unloaded_character = "Personajul încărcat a fost descărcat.",
+		loaded_character = "Caracter încărcat.",
 		user_does_not_have_sent_character_loaded = "Utilizatorul nu are personajul trimis încărcat.",
 		user_has_no_character_loaded = "Utilizatorul nu are niciun personaj încărcat.",
+		user_already_has_character_loaded = "Utilizatorul are deja un caracter încărcat.",
 		user_not_found = "Utilizatorul trimis nu a fost găsit pe server.",
+		user_does_not_have_character = "Utilizatorul nu are un personaj cu ID-ul de caracter furnizat.",
 		invalid_character_id = "ID-ul personajului trimis este invalid.",
 		invalid_license_identifier = "Identificatorul de licență trimis este invalid.",
 
@@ -4464,7 +4542,13 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		critical_error_while_loading_data = "A apărut o eroare critică în timpul încărcării datelor tale.",
 
 		ping_unstable = "Ping-ul tău este instabil.",
-		ping_stable = "Ping-ul tău este acum stabil din nou."
+		ping_stable = "Ping-ul tău este acum stabil din nou.",
+
+		the_command_has_been_run = "Comanda a fost executată.",
+		the_camera_has_been_updated = "Camera de joc a fost actualizată.",
+		not_able_to_use_on_developer = "Nu ai permisiunea de a folosi această rută pe dezvoltatori.",
+		the_spectator_camera_has_been_updated = "Camera spectatorului a fost actualizată.",
+		the_spectator_mode_has_been_updated = "Modul spectator a fost actualizat."
 	},
 
 	vpn = {
@@ -4554,7 +4638,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		helipad = "Pistă de elicopter",
 		looking_up = "Căutând înregistrarea",
 		registration_not_found = "Înregistrarea nu a fost găsită.",
-		registration_lookup = "Numărul de înregistrare al aeronavei `${registration}` a fost ultima dată închiriat de către ${fullName} #${characterId}."
+		registration_lookup = "Numărul de înregistrare al aeronavei `${registration}` a fost ultima dată închiriat de către ${fullName} #${characterId}.",
+
+		withdrew_vehicle_logs = "Vehicul retras de la Aeroport",
+		withdrew_vehicle_logs_details = "${consoleName} a retras un ${label} cu un depozit de $${deposit} (la `${coords}`).",
+		parked_vehicle_logs = "Vehicul parcări Aeroport",
+		parked_vehicle_logs_details = "${consoleName} a parcat un ${label}."
 	},
 
 	airstrike = {
@@ -4589,6 +4678,20 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		male = "masculin",
 		female = "feminin",
 
+		feed_interaction = "Hrănește ${name}",
+		feed_doing = "Hrănesc ${name}",
+		feed_success = "Am hrănit ${name} cu puțin ${food}.",
+		feed_failed = "Nu am reușit să hrănesc ${name} cu puțin ${food}.",
+
+		type_cat = "Pisică",
+		type_dog = "Câine",
+		type_rabbit = "Iepure",
+		type_hen = "Coteț",
+		type_rat = "Șobolan",
+		type_pigeon = "Porumbel",
+		type_seagull = "Pescarus",
+		type_crow = "Cioară",
+
 		description_cat_unnamed = "Un felin ${gender} care umblă prin viață cu un aer de mister, ${age} de ani și cântărind ${weight}. Cu o slăbiciune de nepotolit pentru ${food}, acest rătăcit mustăcios s-ar putea să complota pentru dominarea lumii într-un moment și să se culce la o siestă în următorul. Fiecare mustățic spune o poveste, fiecare privire ascunde un secret.",
 		description_cat_named = "${name}, pisica ${gender}, este un companion în vârstă de ${age} ani care poartă înțelepciunea a numeroase somnuri însorite și aventuri de la miezul nopții. Cu o greutate de ${weight} și o pasiune de neclintit pentru ${food}, ${name} se mișcă prin lume ca un enigmă vie - parte demnitar regal, parte filozof stradal ștrengar.",
 
@@ -4604,8 +4707,17 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		description_rat_unnamed = "Această șobolană ${gender}, ${age} aventuroasă și cântărind ${weight}, navighează în lume cu o inteligență ascuțită și șarm neașteptat. Condusă de o devotare absolută față de ${food}, transformă fiecare colț într-o posibilă descoperire, fiecare umbră într-un loc de joacă.",
 		description_rat_named = "${name}, o șobolană ${gender} de ${age} ani, implicată în marea experiență a vieții, cântărind ${weight} și plină de personalitate. Cu o legătură indestructibilă cu ${food}, ${name} întruchipează spiritul curiozității - mică în dimensiune, infinită în spirit.",
 
+		description_pigeon_unnamed = "O ${gender} porumbel, de ${age} ani și cântărind ${weight}, plutește prin viață cu un farmec fără efort. Cu o pasiune neclintită pentru ${food}, acest călător înaripat zboară între acoperișuri și trotuare, căutând mereu următoarea masă grozavă—sau poate un moment filosofic deasupra unei felinare.",
+		description_pigeon_named = "${name}, porumbelul ${gender}, ${age} în această poveste înaltă, cântărește ${weight} și poartă o dragoste neclintită pentru ${food}. Fie că plutește cu grație prin străzile orașului sau se plimbă cu o încredere liniștită, ${name} este o enigmă înaripată, o combinație între supraviețuitor urban și poet al cerului.",
+
+		description_seagull_unnamed = "O rață de mare ${gender}, de ${age} ani și având o greutate de ${weight}, un adevărat maestru al coastelor și cuceritor al gustărilor. Fie că strigă peste valurile spumoase sau se află într-o luptă epică pentru ${food}, acest oportunist cu pene prosperă acolo unde cerul se întâlnește cu marea, alergând pentru următoarea mare cină.",
+		description_seagull_named = "${name}, rața de mare ${gender}, ${age} în această aventură sărată, însorită, cântărind ${weight} și condusă de o foame nesătulă pentru ${food}. Cu aripi construite pentru cerul deschis și un ochi pentru locul perfect de hrănire, ${name} este un explorator neobosit al mareelor, vânturilor și crusta de sandviș uitată.",
+
+		description_crow_unnamed = "O corb ${gender}, de ${age} ani, având greutatea de ${weight}, o umbră în cer cu o inteligență la fel de ascuțită ca ciocul său. Atras de misterul ${food}, acest truc enigmatic observă, învață și acționează cu o precizie înfiorătoare, străbătând viața ca o enigmă vie.",
+		description_crow_named = "${name}, corbul ${gender}, ${age} în vasta narațiune a naturii, cântărind ${weight} și alimentat de o fascinație pentru ${food}. Fiecare sclipire din ochii lui ${name} ascunde un secret, fiecare strigăt este un șocot al poveștilor neauzite, dovedind că unele dintre cele mai înțelepte suflete au pene în loc de cuvinte.",
+
+		feed = "[${InteractionKey}] Hrănește",
 		pick_up = "[${SeatEjectKey}] Ridică",
-		pick_up_named = "[${SeatEjectKey}] Ridică ${name}",
 
 		failed_pickup_cat = "Nu s-a putut ridica pisica.",
 		failed_pickup_dog = "Nu s-a putut ridica câinele.",
@@ -4933,7 +5045,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		last_concat = "și",
 
 		attachments_logs_title = "Modificări și nuanțe",
-		attachments_logs_details = "${consoleName} a modificat arma `${weaponName}`: ${modifications}.",
+		attachments_logs_details = "${consoleName} a modificat ${itemLabel} propriu: ${modifications}.",
 
 		removed_attachments = "Desprins ${removed}",
 		added_attachments = "Adăugat ${added}",
@@ -5030,7 +5142,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		team_marker = "Marcator echipă",
 		trophy_information_top = "${name} este cel mai bun!",
 		trophy_information_bottom = "Au fost un total de ${playerAmount} jucători în meci și ai omorât ${kills} dintre ei.",
-		not_able_to_join_while_in_match = "Nu poți să te alături unei lobby-uri în timp ce joci un meci."
+		not_able_to_join_while_in_match = "Nu poți să te alături unei lobby-uri în timp ce joci un meci.",
+		picked_up_item_logs = "Element ridicat BR",
+		picked_up_item_logs_details = "${consoleName} a ridicat un ${itemLabel} în timpul unei meci de Battle Royale."
 	},
 
 	bazaar = {
@@ -5135,6 +5249,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		sushi_restaurant = "Restaurant Sushi",
 		pizza_this = "Comanda Pizza",
 		city_hall = "Primăria",
+		luxury_autos = "Autos de lux",
 
 		bank = "Bancă",
 		hospital = "Spital",
@@ -5486,7 +5601,18 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		how_to_reduce_latency_part_2 = "Selectați opțiunea avansată în 'Modul de ieșire' sub secțiunea 'Ieșire'.",
 		how_to_reduce_latency_part_3 = "Căutați setarea Intervalului de Chei în Setările Codificatorului.",
 		how_to_reduce_latency_part_4 = "Setează intervalul cheie pe 1s.",
-		custom_stream = "Stream personalizat"
+		custom_stream = "Stream personalizat",
+
+		already_have_a_key = "Deja ai o cheie:",
+		already_have_a_key_1 = "Dacă ai deja o cheie pe care vrei să o folosești, o poți introduce aici.",
+		already_have_a_key_2 = "Acest lucru este util dacă vrei ca două televizoare să aibă același flux.",
+		already_have_a_key_3 = "Fiți atent, deoarece acest lucru va crește semnificativ utilizarea lățimii de bandă.",
+		already_have_a_key_4 = "Va întârzia dacă faceți prea multe.",
+
+		cinemas_disabled = "Cinemele dezactivate.",
+		cinemas_enabled = "Cinemele activate.",
+		cinemas_muted = "Cinemele sunt reduse la tăcere.",
+		cinemas_unmuted = "Cinemele sunt activate din nou."
 	},
 
 	cinematic = {
@@ -6764,12 +6890,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		flashing = "Se declanșează explozia"
 	},
 
-	clip_saver = {
-		start_recording = "Începere Înregistrare",
-		clip_save = "Salvare Clip",
-		clip_discard = "Renunțare Clip"
-	},
-
 	compass = {
 		north = "N",
 		north_east = "NE",
@@ -6890,6 +7010,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		visit_the_location = "Vizitează ${location}.",
 		punch_a_shark = "Și-a lovit un rechin.",
 		put_bets_in_lottery = "Plasează un total de $${amount} în Loterie.",
+		buy_weazel_news = "Cumpără un număr de Weazel News.",
 
 		confirm_task_refresh = "Ești sigur că vrei să reîmprospătezi această sarcină? Costul este de $${cost}.",
 		yes = "Da",
@@ -7165,7 +7286,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		jewelry_store_closed = "Magazinul de bijuterii este închis momentan. Reveniți mai târziu.",
 		bank_closed = "Banca este închisă momentan. Reveniți mai târziu.",
 		store_closed = "Magazinul este închis momentan. Reveniți mai târziu.",
-		failed_to_sync_doors = "Nu s-a putut sincroniza ușile. Ceva a cauzat o eroare. Încercați din nou, vă rugăm.",
 		saved_doors_to_file = "S-au salvat ${amount} uși într-un fișier de pe server.",
 		no_nearby_doors = "Nu există uși în apropiere pentru a fi salvate.",
 		copied_doors = "Copiate ${usi} usi.",
@@ -8183,11 +8303,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		press_to_access_store = "Apasă ~INPUT_REPLAY_SHOWHOTKEY~ pentru a accesa magazinul.",
 		press_to_access_locker = "Apasă ~INPUT_REPLAY_SHOWHOTKEY~ pentru a accesa dulapul tău privat.",
 		press_to_access_shared_storage = "Apasă ~INPUT_REPLAY_SHOWHOTKEY~ pentru a accesa depozitul comun.",
-		device_printout_details = "<b>Tip:</b> <i>${type}</i>, <b>Text:</b> <i>${text}</i>",
 		copy_serial_number = "Copiază Numărul de Serie",
 		serial_number_copied = "${itemName}, Număr de Serie: ${serialNumber}",
 		copy_fingerprint = "Copiază Amprenta",
 		copy_evidence = "Copiază Dovezi",
+		copy_sample = "Copiază datele exemplu",
 
 		failed_give = "Numer seryjny: ${serialNumber}<br><i>Ta broń jest zarejestrowana na ${fullName} (#${characterId}).</i>",
 		character_too_far = "Numer seryjny: ${serialNumber}<br><i>Ta broń nie jest zarejestrowana.</i>",
@@ -8215,6 +8335,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		inventory_no_more_items = "Nu mai poți pune alte obiecte în acest inventar.",
 
 		press_to_access_shredder = "[${InteractionKey}] Accesează distrugătorul.",
+		shredded_logs_title = "Articole distruse",
+		shredded_logs_details = "${consoleName} a distrus: ${shredded}.",
 
 		invalid_item_id = "ID de obiect nevalid.",
 		item_not_found = "Nu s-a putut găsi obiectul cu ID-ul `${itemId}`.",
@@ -8227,6 +8349,13 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		clear_evidence_logs_title = "Dovede șterse",
 		clear_evidence_logs_details = "${consoleName} a șters dovada cu ID-ul `${evidenceId}`. Au fost șterse ${deleted} elemente și s-au păstrat ${kept}.",
+
+		shuffled_inventory = "Inventarul `${inventoryName}` a fost amestecat cu succes.",
+		shuffle_inventory_failed = "Nu s-a reușit amestecarea inventarului.",
+
+		failed_toggle_dementia = "Nu s-a reușit activarea demenței.",
+		toggled_dementia_on = "Demența a fost activată pentru `${displayName}`.",
+		toggled_dementia_off = "Demența a fost dezactivată pentru `${displayName}`.",
 
 		big_inventory_disabled = "Resetează sloturile inventarului caracterului la valorile implicite.",
 		big_inventory_enabled = "A fost activat temporar extinderea sloturilor din inventarul caracterului.",
@@ -8242,6 +8371,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		pizza_this_counter = "Ghișeu Pizza This",
 		yellow_jack_counter = "Ghișeu Yellow Jack",
 		bean_machine_counter = "Platou automat de cafea",
+		irish_pub_counter = "Punct de Vânzare Irish Pub",
+		vanilla_unicorn_counter = "Punct de Vânzare Vanilla Unicorn",
 
 		inventory_name_missing = "Lipsește parametrul nume inventar.",
 
@@ -9141,6 +9272,11 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		generic_prescription = "Prescripție Generică",
 		generic_prescription_description = "Prescripție pentru medicamente generice. Ar trebui să fie bună pentru a fi refăcută.",
 
+		blood_test_kit = "Kit de Testare a Sângelui",
+		blood_test_kit_description = "Un kit de testare a sângelui foarte convenabil care îți ia îndoielile cu privire la ceea ce curge prin venele tale. Cu doar câteva picături și puțină răbdare, vei descoperi misterul grupei tale de sânge—perfect pentru pregătiri medicale sau doar pentru a câștiga concursuri de curiozități ciudate.",
+		blood_vial = "Flacon cu sânge",
+		blood_vial_description = "Un mic flacon plin cu un eşantion de sânge colectat cu atenție, care deține indicii vitale ce așteaptă să fie descoperite. Fie că provine de la o persoană, de la o scenă a crimei sau dintr-o mister neaşteptat, acest mic recipient este biletul tău către răspunsuri—dacă reușești să-l analizezi în laborator.",
+
 		brownies = "Briose cu hasis",
 		brownies_description = "Briose moi, spumoase cu dublu cantitate de ciocolata si doar o urma din extras pentru a te face sa stai si sa iti pui intrebari despre intreaga ta viata.",
 		weed_gummies = "Gumițe cu iarbă",
@@ -9192,11 +9328,18 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		pet_owl_description = "Hooty, companionul tău înțelept și vigilent, se așează elegant pe umărul tău. Cu ochii săi ageri și penele moi, această bufniță fermecătoare adaugă o notă de magie aventurilor tale. Întotdeauna gata să ofere un hohot de înțelepciune, Hooty este partenerul perfect pentru orice călătorie.",
 		pet_pig = "Șoricioaica",
 		pet_pig_description = "Un porc mic cu o personalitate mare, așezat fericit pe umărul tău. Întotdeauna gata să încurajeze cu un snort sau să-ți judece alegerile de viață cu un ochi admirativ adorabil. Indiferent dacă te aventura sau doar te plimbi, acest companion de dimensiuni mici este combinația perfectă între farmec și aroganță.",
+		pet_flamingo = "Floof Elegant",
+		pet_flamingo_description = "Un flamingo flamboyant care se așază cu grație pe umărul tău, adăugând o pată de culoare și stil aventurilor tale. Cu penajul său roz vibrant și încrederea neclintită, această pasăre elegantă este companionul ideal pentru a ieși în evidență și a face o declarație oriunde te-ai duce.",
 
 		hotwheels_mcqueen = "Fulgur, mașina roșie",
 		hotwheels_mcqueen_description = "Viteza, asta sunt eu! Floating ca un Cadillac, picioare ca un BMW. KATCHOW KATCHOW KATCHOW",
 		hotwheels_towmater = "Tow Mater, mașina de tractat",
 		hotwheels_towmater_description = "Mă cheamă Mater, ca tomato dar fără Tuh.",
+
+		mini_police = "Mașină Poliție Model",
+		mini_police_description = "O vehicul miniatural de aplicare a legii, conceput pentru antrenamente practice. Folosit pentru a învăța poziționarea corectă, unghiurile de abordare și manevrele tactice în scenarii cu risc ridicat. Poate fi mic, dar joacă un rol important în pregătirea ofițerilor pentru situații reale.",
+		mini_car = "Mașină Civilă Model",
+		mini_car_description = "O replică la scară mică a unei mașini civile standard, perfectă pentru scenarii de antrenament și demonstrații tactice. Fie că exersezi opriri de trafic, blocaje de drum sau tactici de urmărire, această mașină mică îi ajută pe ofițeri să-și planifice mișcările—fără riscurile unui accident real.",
 
 		kinder_surprise = "Ou surpriză Kinder",
 		kinder_surprise_description = "Acesta nu este un ou obișnuit! Sparge-l pentru a descoperi o lume a minunilor și un companion adorabil care așteaptă să-ți fie prieten. Cine vei găsi înăuntru? Ar putea fi vibrantul Sparky McBowtie, înțeleptul Căpitan Whiskerface, sau poate chiar elegatul Sir Fancy Pants? Surpriza e pe jumătate distracția!",
@@ -9244,6 +9387,15 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		rabbit_2_description = "Un iepure bej cu un blănos matasos și iscusință în a sări în cele mai incomode locuri. Este o combinație egală de adorabil și ușor infuriant.",
 		rabbit_3 = "Iepure Gri",
 		rabbit_3_description = "Un iepure gri lucios care se deplasează ca un nor de fum în vânt. Clipiți și a dispărut - dar nu înainte de a vă fura inima (și, poate, salata dumneavoastră).",
+
+		pigeon_0 = "Porumbel",
+		pigeon_0_description = "Un porumbel șmecher, cu morali discutabile și o dragoste neștirbită pentru firimituri. Cules din sălbăticie, acest parazit cu pene te va însoți oriunde mergi, judecându-ți în tăcere alegerile în viață în timp ce își planifică următoarea jaf de gustare.",
+
+		seagull_0 = "Pescăruș",
+		seagull_0_description = "Un pescăruș zgomotos și neînfricat, cu un talent pentru furt și zero respect pentru spațiul personal. Fie că îți răsfață mâncarea, strigă în gol sau pur și simplu stă pe umărul tău, această amenințare pufoasă este mereu pe cale să facă ceva neobișnuit.",
+
+		crow_0 = "Ciori",
+		crow_0_description = "O cioară extrem de inteligentă, cu un interes suspect de mare pentru obiectele strălucitoare și comportamentul uman. Fie că complotează pentru a domina lumea sau pur și simplu fură trinketuri mici, acest maestru cu pene este întotdeauna cu cinci pași înainte.",
 
 		boxing_gloves = "Mănuși de box",
 		boxing_gloves_description = "Te transformă în Rocky, dar probabil nu vei primi o continuare...",
@@ -9638,6 +9790,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		spotlight_description = "Un far care este gata să facă orice sau pe oricine vedeta spectacolului. Perfect pentru fotografii profesionale, iluminare dramatică sau pur și simplu pentru a te simți ca o vedetă de cinema în camera ta de zi. Este luminos, fiabil și întotdeauna atrage atenția.",
 		tube_light = "Lumina tubulară",
 		tube_light_description = "O lampă tubulară elegantă și minimalistă care renunță la luminozitate în favoarea stilului, adăugând o lumină difuză fără a acapara camera. Perfectă pentru crearea unei ambianțe cozy, este o îmbunătățire subtilă care arată mult mai cool decât contrapartidele sale mai voluminoase.",
+		studio_light = "Lumină de Studio",
+		studio_light_description = "O lumina de studio de calitate profesională, concepută pentru a transforma orice spațiu într-o capodoperă perfect iluminată. Fie că surprinzi fotografia perfectă, filmezi o scenă dramatică sau pur și simplu vrei să arăți mult mai bine decât în realitate, această lumină puternică asigură că ești întotdeauna în centrul atenției.",
 		yoga_mat = "Saltea de yoga",
 		yoga_mat_description = "Această saltea de yoga portabilă este fundația ta pentru relaxare și exerciții în aer liber. Dezvolt-o pentru a regăsi starea de zen sau pentru a te întinde după o drumeție vigorousă. Poate fi plasat oriunde în lume.",
 		cooler_box = "Cutie frigorifică",
@@ -9704,6 +9858,26 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		wheel_clamp_description = "Aici nu există mașini de evadare! Cleștele pentru roți face afaceri, fixând vehicule ferm în loc și punând capăt mișcării neautorizate. Această dispozitivă robustă este un executor tăcut, asigurându-se că regulile de parcare sunt respectate și urmate.",
 		old_rug = "Covor Vechi",
 		old_rug_description = "Așază acest covor confortabil pentru următoarea ta întâlnire în aer liber și menține lucrurile confortabile! Este perfect pentru relaxare în iarbă fără a avea acele pete verzi enervante pe pantaloni. Întinde-l, relaxează-te și bucură-te de împrejurimile tale cu stil și confort.",
+		box = "Cutie",
+		box_description = "O cutie simplă din carton, fără surprize ascunse. Nu stochează nimic, nu face nimic fancy, dar există - și uneori, asta e de ajuns.",
+		arm_chair = "Fotoliu Vechi",
+		arm_chair_description = "Un fotoliu bine folosit care a cunoscut zile mai bune, dar oferă totuși un nivel discutabil de confort. Pernele sunt denivelate, materialul este decolorat și există o șansă bună ca ceva să trăiască în el - dar hei, are istorie.",
+		plank = "Lemn Plăcaj",
+		plank_description = "O placă groasă din lemn, uzată de vreme, care este la fel de versatilă pe cât de misterioasă. Poate că a fost cândva parte dintr-o masă, o ladă sau proiectul DIY discutabil al cuiva—oricum, este aici acum, gata să fie reutilizată sau doar lăsată deoparte ca un relicvar uitat.",
+		wooden_table = "Masă din lemn",
+		wooden_table_description = "O masă simplă din lemn, puțin instabilă, care a văzut probabil o viață întreagă de pete, zgârieturi și decizii discutabile. Perfectă pentru servirea mesei, meșteșuguri sau doar pentru a susține lucruri până când cineva inevitabil se va izbi de ea.",
+		pigeon_statue = "Statuia Porumbelului",
+		pigeon_statue_description = "O statuie bizară și ușor neliniștitoare a unui porumbel care pare să-și fi pierdut capul. Fie că este vorba de artă modernă, un defect de fabricație sau un fel de relicvă blestemată, un lucru este sigur—această pasăre nu zboară nicăieri.",
+		wheel = "Roată de Rezervă",
+		wheel_description = "O roată de rezervă compactă, cunoscută și sub numele de anvelopa \"care mă duce acasă\". Nu este construită pentru viteză sau confort, dar atunci când apare dezastrul, acest mic salvator este gata să se clatine spre victorie—doar să nu îți testezi prea mult norocul.",
+		ems_dummy_1 = "Larry Șchiop",
+		ems_dummy_1_description = "Un manechin clasic de antrenament cu leziuni minime, perfect pentru a exersa procedurile medicale de bază. Nu se va plânge, dar nici nu va face lucrurile ușoare—exact ca un pacient real.",
+		ems_dummy_2 = "Harry Țintă",
+		ems_dummy_2_description = "Suferind de o accidentare destul de nefericită la cap, acest manechin îi ajută pe cursanții EMS să facă față situațiilor severe de traume. Nu este cel mai bun la conversație, dar își face treaba.",
+		ems_dummy_3 = "Ben Bătut",
+		ems_dummy_3_description = "Acoperit în diverse răni și fracturi, acest manechin de antrenament nefericit este excelent pentru scenarii cu multiple traume. Dacă există o modalitate greșită de a cădea, Ben a făcut-o deja.",
+		ems_dummy_4 = "Charlie cu rană la piept",
+		ems_dummy_4_description = "Cu o rană dramatică la torace, Charlie este păpușa preferată pentru a exersa intervenții salvatoare. Poate că nu are prea multă bătaie de inimă, dar totuși oferă lecții valoroase.",
 
 		evidence_marker_1 = "Marcaj 1",
 		evidence_marker_1_description = "Punctul de pornire al misterului, marcând primul indiciu pentru a dezlega adevărul.",
@@ -9742,6 +9916,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		mine = "Mina",
 		mine_description = "Pentru când ai nevoie de un „covor de bun venit” în caz că ATF bate la ușă. Plasează, activează și privește cum orice „invitat” nepoftit se transformă în ceață roșie fină.",
 
+		small_tv = "Televizor mic",
+		small_tv_description = "Un televizor compact, de modă veche, care poate funcționa sau nu. Calitatea imaginii este discutabilă, antena necesită o poziționare strategică, iar există o șansă bună să primești doar static—dar, hei, are caracter.",
 		tv_stand = "Suport TV",
 		tv_stand_description = "Îmbunătățește-ți configurarea pentru maratoanele de vizionare cu acest stand TV stilat. Păstrează-ți televizorul la nivelul ochilor și are spațiu pentru toate gadgeturile tale aleatoare. Este ca tronul pentru ecranul tău.",
 		big_tv = "Televizor mare",
@@ -10257,6 +10433,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		weapon_heavyrifle = "Pușcă grea",
 		weapon_tacticalrifle = "Carabină de serviciu",
 		weapon_battlerifle = "Pușcă de luptă",
+		weapon_strickler = "Strickler",
 
 		weapon_mg = "Mitralieră",
 		weapon_combatmg = "Mitralieră de luptă",
@@ -10387,6 +10564,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		weapon_heavyrifle_description = "Mai greu înseamnă mai bun, nu-i așa?! Da, să mergem pe asta.",
 		weapon_tacticalrifle_description = "Hardware-ul obligatoriu al acestui sezon pentru forțele de ordine, personalul militar și oricine este implicat într-o luptă la moarte cu forțele de ordine sau personalul militar.",
 		weapon_battlerifle_description = "Întâlnește pușca de luptă, o combinație între fiabilitatea FN FAL și precizia Heckler &amp; Koch G3. Cu un magazin asemănător cu cel al carabinei Vepr 7.62x54r, este arma ta de bază pentru putere și precizie în luptă.",
+		weapon_strickler_description = "Nimic nu strigă \"Clasă\" mai tare decât să tragi în subalterni necredincioși cu o pușcă militară placată cu aur. Face parte din Agenții Sabotajului.",
 
 		weapon_mg_description = "Mitraliera de uz general care combina un design rezistent cu performante de incredere. Putere penetranta pe distante mari. Foarte eficienta impotriva grupurilor mari de inamici.",
 		weapon_combatmg_description = "Mitraliera usor de manevrat, compacta, care combina excelenta manevrabilitate cu o rata mare de foc, pentru efect devastator.",
@@ -10441,7 +10619,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		-- NOTE: Addon weapons
 		weapon_addon_huntingrifle = "Pușcă de vânătoare",
-		weapon_addon_huntingrifle_description = "Pușca preferată pentru vânătoare.",
+		weapon_addon_huntingrifle_description = "O pușcă de vânătoare de precizie alimentată cu aer, construită pentru vânătoare etică. Letală împotriva căprioarelor, leilor de munte și micilor prăzi, dar complet inofensivă pentru oameni. Proiectată pentru vânători, nu pentru confruntări—perfectă pentru vânătoare, inutilă pentru intimidare.",
 
 		weapon_addon_vfcombatpistol = "Pistol de luptă VF",
 		weapon_addon_vfcombatpistol_description = "Zâmbește și așteaptă pentru făclie.",
@@ -10814,7 +10992,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 	label_printer = {
 		image_url = "https://image.url/here.png",
 		printing = "Se tiparește...",
-		print = "Tipărește"
+		print = "Tipărește",
+		failed_print = "Neaștepata etichetă nu a fost imprimată."
 	},
 
 	lag = {
@@ -11001,7 +11180,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		los_santos_police_dept = "DEPARTAMENTUL DE POLIȚIE LOS SANTOS",
 
 		welcome_msg_title = "Bine ai venit în ${communityName}!",
-		welcome_msg = "Ai primit unele articole care te vor ajuta să începi. Poți folosi articolele din bara ta de instrumente folosind tastele 1-5. \n\nApasă **${InventoryKey}** pentru a-ți deschide inventarul sau apasă **1** pentru a-ți citi broșura.",
+		welcome_msg = "Ai primit câteva obiecte pentru a te ajuta să începi. Poți folosi obiectele din bara ta rapidă apăsând tastele 1-5. \n\nApasă **${+inventory_toggle}** pentru a deschide inventarul sau apasă **1** pentru a citi broșura ta.",
 
 		press_to_go_back_to_menu = "Apasă ~g~${InteractionKey}~w~ pentru a te întoarce la meniu.",
 		go_back_to_menu = "Întoarce-te la meniu.",
@@ -11030,9 +11209,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		queuer_not_found = "Jucătorul în așteptare nu a fost găsit.",
 		queuer_skipped_queue = "Jucătorul în așteptare a trecut peste coadă.",
-
-		slots_set_to = "Numărul de sloturi server a fost setat la `${slots}`.",
-		slots_already_set_to = "Numărul de sloturi server este deja setat la `${slots}`.",
 
 		death = "Deces",
 		normal = "Normal",
@@ -11391,7 +11567,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		bad_ped_message = "Încercare de a crea un mesaj posibil neadecvat pentru pieton: \"${pedMessage}\"",
 		bad_twitter_post = "Încercare de a crea un post posibil neadecvat pe Twitter: \"${twitterPost}\"",
 		bad_twitter_account = "S-a încercat crearea unui cont de Twitter posibil rău: \"${username}\"",
-		bad_phone_message = "S-a încercat crearea unui post Twitter potențial rău: „${message}”",
+		bad_phone_message = "S-a încercat să se creeze un mesaj telefonic posibil problematic: \"${message}\"",
 		user_not_found = "Nu am putut găsi un utilizator cu ID-ul serverului `${serverId}`.",
 		player_already_muted = "${consoleName} a fost deja mutat.",
 		player_has_been_muted_no_reason = "${consoleName} a fost mutat fără un motiv specificat.",
@@ -11424,10 +11600,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		already_using_metric_measurement = "Deja ai setat metric ca sistem tău preferat de măsurare.",
 		already_using_imperial_measurement = "Deja ai setat imperial ca sistem tău preferat de măsurare.",
 		already_using_default_measurement = "Folosești deja sistemul de măsură implicit al localei.",
-		no_copyright = "Fără drepturi de autor",
-		no_copyright_warning = "Bună! Ești streamer sau creator de conținut și te confrunți cu problema DMCA și a reclamațiilor pentru drepturi de autor? În caz afirmativ, îți sugerăm să activezi comanda '${noCopyrightCommand}' pentru ca noi să împiedicăm afișarea și redarea anumitor materiale protejate de drepturile de autor în jocul tău.",
-		no_copyright_enabled = "Funcția 'Fără drepturi de autor' a fost activată.",
-		no_copyright_disabled = "Funcția 'Fără drepturi de autor' a fost dezactivată.",
 		server_tps = "TPS Server",
 		server_tps_response = "${tps}", -- Răspunsul pentru comanda "/tps",
 		license_copied = "Licența a fost copiată cu succes.",
@@ -11663,7 +11835,14 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		chop_shop_sound = "Dezactivează Sunetul Radio Chop Shop",
 		seatbelt_sound = "Dezactivează Sunetul Centurii de Siguranță",
 		eating_noises_sound = "Dezactivează zgomotele din timpul mesei",
+		minigame_colors = "Culorile Mini-Jocurilor",
+		minigame_colors_text = "Schimbă culorile anumitor mini-jocuri pentru a face obiectele mai vizibile și mai ușor de observat. Nu funcționează pentru toate mini-jocurile, ci doar pentru câteva selectate.",
 		sound_effect_placeholder = "URL către fișierul .oog...",
+
+		color_0 = "Implicit",
+		color_1 = "Roz",
+		color_2 = "Galben",
+		color_3 = "Verde",
 
 		button_save = "Salvează",
 		button_reset = "Resetare",
@@ -12430,7 +12609,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		pacific_bank_reward_logs_title = "Recompensă la Banca Pacific",
 		pacific_bank_reward_saving_bonds_logs_details = "${consoleName} a căutat într-un seif și a primit oblițiuni de economisire în valoare de $${amount}.",
-		pacific_bank_reward_items_logs_details = "${consoleName} a căutat într-un seif și a primit ${amount}x obiecte."
+		pacific_bank_reward_items_logs_details = "${consoleName} a căutat într-un seif și a primit ${amount}x obiecte.",
+
+		disabled_generators_logs_title = "Generatoare dezactivate",
+		disabled_generators_logs_details = "${consoleName} a dezactivat ${disabledGeneratorsCount} generator(e) pentru Pacific Bank folosind o comandă de administrator."
 	},
 
 	panel = {
@@ -12447,6 +12629,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		system_issuer = "Sistem",
 		add_note_title = "Adăugare Notă",
 		message_placeholder = "${playerName} a făcut o greșeală...",
+		failed_auth_token = "Eșec la obținerea token-ului de autentificare.",
+		no_permissions = "Nu ai permisiuni pentru a vizualiza panoul de administrare obișnuit.",
+		panel_unavailable = "Panoul de administrare obișnuit nu este disponibil.",
 
 		type_note = "Notă",
 		type_warning = "Avertisment",
@@ -12587,7 +12772,6 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 	ped_objects = {
 		illegal_ped_object = "Se incearca adaugarea unui obiect ped care nu este in lista de obiecte permise.",
-		illegal_ped_weapon_object = "Se incearca adaugarea unui obiecte de arma ped care nu este in lista de arme permise.",
 		illegal_raw_ped_object = "Încercarea de a adăuga un obiect brut de ped fără permisiunile corespunzătoare."
 	},
 
@@ -12749,6 +12933,19 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 		robbed_ped_logs_title = "Persoană jefuită",
 		robbed_ped_logs_details = "${consoleName} a jefuit o persoană și a primit $${payout}."
+	},
+
+	pool = {
+		reset_table = "Apasă ~INPUT_DETONATE~ pentru a reseta masa.",
+		resetting_table = "Resetează tabelul",
+
+		active_table = "${tables} Tabel activ",
+		active_tables = "${tables} Tabele active",
+		inactive_table = "${tables} Tabel inactiv",
+		inactive_tables = "${tables} Tabele inactive",
+		time = "Timp: ${time}~t~ms/t",
+		steps = "Pași: ${steps}~t~/t",
+		checks = "Verificări: ${checks}~t~/t"
 	},
 
 	pools = {
@@ -13041,6 +13238,25 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		failed_to_remove_riot_player = "Nu am reușit să elimin ${consoleName} din lista de revolte."
 	},
 
+	rockstar = {
+		already_recording = "Ești deja înregistrat.",
+		started_recording = "Înregistrarea a început.",
+		not_recording = "Nu ești înregistrat.",
+		saved_recording = "Clipul înregistrat a fost salvat.",
+		discarded_recording = "Clipul înregistrat a fost eliminat.",
+		unknown_action = "Acțiune necunoscută `${action}`.",
+
+		keybind_record = "RE: Începe înregistrarea",
+		keybind_save = "RE: Salvează clipul înregistrat",
+		keybind_discard = "RE: Renunță la clipul înregistrat",
+		keybind_open = "RE: Deschide Editorul",
+
+		record = "Începe o înregistrare.",
+		save = "Oprește înregistrarea și salvează clipul înregistrat.",
+		discard = "Oprește înregistrarea și renunță la clipul înregistrat.",
+		open = "Deschide editorul Rockstar (și te deconectează)."
+	},
+
 	rules = {
 		invalid_rule = "ID-ul regulii este invalid.",
 
@@ -13161,7 +13377,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 	screenshots = {
 		screenshot_created = "O captură de ecran a fost creată cu succes.",
-		screenshot_failed = "Nu am putut obține o captură de ecran de la jucătorul respectiv.",
+		screenshot_failed = "A apărut o problemă în timp ce încercam să fac o captură de ecran.",
 		screencapture_created = "O captură video a fost creată cu succes.",
 		user_not_found_with_server_id = "Nu s-a putut găsi utilizatorul cu ID-ul de server furnizat.",
 		invalid_lifespan_parameter = "Parametrul de durată de viață este invalid.",
@@ -13170,6 +13386,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		invalid_fps_parameter = "Parametrul de fps este invalid.",
 		missing_server_id_parameter = "Parametrul de ID de server lipsește.",
 
+		screenshot_failed = "A apărut o problemă în timp ce încercam să fac o captură de ecran.",
 		screenshot_error_client_false = "Nu s-a reușit crearea capturii de ecran.",
 		screenshot_error_user_not_found = "Utilizatorul nu a fost găsit.",
 		screenshot_error_user_developer = "Utilizatorul este dezvoltator.",
@@ -13359,6 +13576,14 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		skylift_magnet_turned_on_logs_details = "${consoleName} a pornit magnetul Skylift.",
 		skylift_attached_vehicle_logs_title = "Vehicul atasat la Skylift",
 		skylift_attached_vehicle_logs_details = "${consoleName} a atasat un vehicul la Skylift-ul lor."
+	},
+
+	smile = {
+		failed_smile = "Ceva a mers prost.",
+		smile_success = "Zâmbetul a fost activat cu succes pentru ${displayName}.",
+
+		smile_logs_title = "Zâmbet Activat",
+		smile_logs_details = "${consoleName} a activat zâmbetul pentru ${targetName}."
 	},
 
 	smell = {
@@ -13553,6 +13778,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		user_not_staff = "Utilizatorul nu este membru al personalului.",
 		staff_pm_warning = "Avertizare PM personal",
 		staff_pm_first_time = "Vedem că nu ai folosit niciodată PM-urile pentru personal înainte. Pentru a răspunde la un PM pentru personal, folosește `/staffpm` urmat de id-ul destinatarului. Pentru a răspunde mai ușor la ultimul PM pentru personal pe care l-ai primit, poți folosi `/reply`.",
+		sent_important_pm = "Mesaj privat important trimis lui ${displayName}.",
 
 		staff_pm_title = "STAFF PM ${from} -> ${to}",
 		staff_pm_title_external = "STAFF PM EXTERN ${from} -> ${to}",
@@ -13915,27 +14141,59 @@ OP.Global.Locales.Languages["ro-RO"] = {
 	test_server = {
 		menu_title = "Meniu OP",
 
+		settings = "Setări",
+		settings_description = "Ajustează diverse setări pentru meniul de testare.",
+		phasing = "Fazare",
+		phasing_description = "Activează sau dezactivează fazarea vehiculelor pentru a trece prin mașinile din apropiere.",
+		infinite_ammo = "Muniție Infinită",
+		infinite_ammo_description = "Amuniție nelimitată fără a fi nevoie să te reaprovizionzi, dar încă trebuie să reîncarci.",
+		fixed_time = "Timp fix",
+		fixed_time_description = "Blochează timpul la dimineață, amiază, seară sau miezul nopții, afectând doar pe tine.",
+		always_morning = "Dimineața",
+		always_noon = "Amiaza",
+		always_evening = "Seara",
+		always_night = "Miezul nopții",
+
 		vehicles = "Opțiuni pentru mașină",
+		vehicles_description = "Modifică și interacționează cu vehiculul tău curent.",
 		spawn_car = "Generare mașină",
+		spawn_car_description = "Spawn un vehicul dintr-o selecție prestabilită.",
 		upgrade_vehicle = "Upgrade pentru mașină",
+		upgrade_vehicle_description = "Îmbunătățește performanța vehiculului tău cu upgrade-uri.",
 		break_windows = "Spargerea Ferestrelor",
+		break_windows_description = "Sparge toate feroneriile de pe vehiculul tău actual.",
 		pop_tires = "Punctează cauciucurile",
+		pop_tires_description = "Desumfle toate pneurile de pe vehiculul tău actual.",
 		detach_doors = "Desprinde ușile",
+		detach_doors_description = "Îndepărtează complet toate ușile de pe vehiculul tău.",
 		damage_vehicle = "Dăunează mașinii",
+		damage_vehicle_description = "Aplică daune vehiculului tău până când motorul începe să fumege.",
 		repair_vehicle = "Repară mașina",
+		repair_vehicle_description = "Restabilește complet vehiculul tău la starea perfectă.",
 		delete_vehicle = "Șterge mașina",
+		delete_vehicle_description = "Îndepărtează vehiculul tău actual din existență.",
 
 		player = "Opțiuni pentru jucători",
+		player_description = "Modifică atributele și condițiile jucătorului.",
 		starve = "Înfometează-te",
+		starve_description = "Setează nivelurile tale de foame și sete foarte scăzute.",
 		add_stress = "Adaugă Stres",
+		add_stress_description = "Umple instantaneu nivelul tău de stres.",
 		feed = "Hrănește-te",
+		feed_description = "Restaurează complet foamea și setea.",
 		relief_stress = "Eliberează stresul",
+		relief_stress_description = "Elimină complet stresul tău.",
 		reset_health = "Resetare sănătate",
+		reset_health_description = "Restaurează sănătatea ta la maximum.",
 		remove_injuries = "Elimină rănile",
+		remove_injuries_description = "Vindecă toate rănile care afectează caracterul tău.",
 		toggle_noclip = "Comutare Noclip",
+		toggle_noclip_description = "Activează sau dezactivează modul noclip pentru mișcare liberă.",
 
 		teleport = "Opțiuni pentru teleportare",
+		teleport_description = "Călătorește instantaneu către diverse locații presetate.",
 		teleport_to = "Teleportare la",
+		teleport_to_description = "Alegeți o destinație din locațiile de teleportare presetate.",
 		tp_customs = "LS Customs",
 		tp_legion = "Piața Legiunii",
 		tp_garage_a = "Garajul A",
@@ -13945,13 +14203,20 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		tp_airport = "Aeroportul LS",
 		tp_carrier = "Portavion",
 		tp_cayo = "Insula Cayo Perico",
+		tp_staff_tower = "\"Turnul Personalului\"",
 
 		actions = "Acțiuni",
+		actions_description = "Declanșați diferite acțiuni legate de jucători.",
 		jail_self = "Închideți-vă în închisoare",
+		jail_self_description = "Trimiteți-vă instantaneu la închisoare.",
 		unjail_self = "Eliberați-vă din închisoare",
+		unjail_self_description = "Eliberați-vă imediat din închisoare.",
 		wander_around = "Hoinăriți în jur",
+		wander_around_description = "Faceți-vă personajul să se plimbe aleatoriu pe jos sau în vehicul.",
 		speed_around = "Deplasare rapidă",
+		speed_around_description = "Conduceți imprudent cu viteze mari ignorând regulile de circulație.",
 		clear_tasks = "Curățare sarcini",
+		clear_tasks_description = "Resetați toate acțiunile și sarcinile atribuite personajului dvs.",
 
 		you_are_not_in_a_vehicle = "Nu te afli intr-un vehicul.",
 		you_are_in_a_vehicle = "Te afli in momentul de fata intr-un vehicul.",
@@ -14093,6 +14358,12 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		training = "Antrenament"
 	},
 
+	trains = {
+		debug_enabled = "Debugul trenului activat.",
+		debug_disabled = "Debugul trenului dezactivat.",
+		trains = "Trenuri: ${trains}"
+	},
+
 	traps = {
 		rearming = "Rearmare",
 		press_to_rearm = "[${InteractionKey}] Rearmare",
@@ -14152,25 +14423,25 @@ OP.Global.Locales.Languages["ro-RO"] = {
 	},
 
 	tuner_shop = {
+		no_vehicle = "Niciun vehicul în acest loc.",
+		near_label = "${label} | $${price}",
 		purchase_label = "[${SeatEjectKey}] Cumpără ${label} pentru $${price}",
-		purchase_label_far = "${label} | $${price}",
-		purchase_label_timer = "[${timer}] ${label} | $${price}",
-		purchase_label_sale = "[${SeatEjectKey}] Cumpără ${label} pentru $${price} (-${discount}%)",
-		purchase_label_sale_far = "La reducere | ${label} | $${price} (-${discount}%)",
-		purchase_label_sale_timer = "[${timer}] ${label} | $${price} (-${discount}%)",
-
-		failed_vehicle_spawn = "Nu s-a putut crea vehiculul.",
+		purchase_label_timer = "[${timer}] Cumpără ${label} pentru $${price}",
+		purchased_vehicle = "Vehiculul ${label} a fost cumpărat cu succes.",
+		failed_vehicle_spawn = "A eșuat generarea vehiculului. Vehiculul va fi în continuare disponibil din garajul tău.",
+		computer_interact = "[${InteractionKey}] Schimbă Vehicule",
+		computer_near = "Schimbă Vehicule",
+		menu_title = "Magazin Tuner",
+		vehicle_spot = "Locul vehiculului",
+		vehicle = "Vehicul",
+		tuner_shop_blip = "Magazin tunere Midnight",
 		not_enough_funds = "Fonduri insuficiente pentru a finaliza cumpărarea.",
 		area_not_clear = "Zona de spawn nu este clară.",
+		purchase_active = "Cineva achiziționează deja un vehicul, te rugăm să aștepți un moment.",
 		something_went_wrong = "Ceva nu a mers bine în timpul încercării de a cumpăra vehiculul.",
 
-		purchased_vehicle = "Ai cumpărat ${label} pentru $${price}.",
-
-		tuner_shop_blip = "Magazin tunere Midnight",
-
 		log_title = "Achiziție din magazinul de tuning",
-		log_description = "Ai cumpărat `${label}` pentru $${price}.",
-		log_description_discount = "Ai cumpărat `${label}` pentru $${price} cu o reducere de ${discount} %."
+		log_description = "Ai cumpărat `${label}` pentru $${price}."
 	},
 
 	tunerchip = {
@@ -14299,6 +14570,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		actual_channel = "Canal actual: ${actualChannel}",
 		target_radius = "Rază țintă: ${targetRadius}",
 		actual_radius = "Rază actuală: ${actualRadius}",
+		invalid_target_source = "Sursă țintă invalidă.",
+		invalid_frequency = "Frecvență invalidă.",
+		set_player_radio_frequency_successfully = "Frecvența radio a jucătorului a fost setată cu succes.",
 
 		intent_music = "Setează modul de intrare vocală la 'muzică'.",
 		intent_speech = "Setează modul de intrare vocală înapoi la 'vorbire'.",
@@ -14391,6 +14665,13 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		enter_vehicle_player = "Intră în vehiculul cel mai apropiat",
 		exit_vehicle_player = "Părăsește Vehiculul",
 		yank_steering_wheel_player = "Smulge Volanul",
+		yank_steering_wheel_player_random = "Aleatoriu",
+		yank_steering_wheel_player_right = "Dreapta",
+		yank_steering_wheel_player_left = "Stânga",
+		tap_gas_or_brakes = "Apasă pe",
+		tap_gas = "Accelerație",
+		tap_brakes = "Frâne",
+		tap_handbrake = "Frână de mână",
 		flashbang_player = "Grenadă Fumigenă",
 		paper_bag_player = "Pungă de Hârtie",
 		ignite_player = "Pune în Flăcări",
@@ -14612,6 +14893,8 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		shutdown_engine = "Oprește motorul și așteaptă pasagerii.",
 		return_to_hq = "Întoarce-te la sediul central.",
 		bus_stop = "Stationare autobuz",
+		cleared_route = "Ruta desenată a fost ștearsă.",
+		drew_route = "Ruta autobuzului desenată: `${route}`",
 		pay_for_ticket = "Apasă ~INPUT_CONTEXT~ pentru a plăti pentru un bilet ($18).",
 		not_enough_money_ticket = "Nu ai suficienți bani pentru un bilet ($18).",
 		ticket_paid = "${displayName} a plătit pentru un bilet de autobuz.",
@@ -14635,9 +14918,17 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		route_68_route = "Traseul 68 Direct",
 		airport_route = "Autobuz Aeroport",
 		business_route = "Linia Business",
+		gambling_route = "Linia de jocuri",
 
 		finished_job_logs_title = "Traseu de autobuz finalizat",
 		finished_job_logs_details = "${consoleName} a terminat de condus traseul de autobuz `${route}` și a primit $${payout}."
+	},
+
+	dealership = {
+		invalid_slot = "Slot invalid.",
+		invalid_model = "Lipsă nume model.",
+		model_no_catalog = "Modelul nu este în catalog.",
+		not_at_dealership = "Nu ești suficient de aproape de computerul PDM."
 	},
 
 	doj = {
@@ -14728,6 +15019,28 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		set_job_logs_details = "${consoleName} a setat jobul lui ${targetConsoleName} (#${characterId}) la `${jobName}, ${departmentName}, ${positionName}`.",
 		reset_job_logs_title = "Resetează Jobul",
 		reset_job_logs_details = "${consoleName} a resetat jobul lui ${targetConsoleName} (#${characterId})."
+	},
+
+	medical = {
+		using_test_self = "Testare propriul sânge",
+		using_test_other = "Testare jucător din apropiere",
+		failed_blood_test = "Testul de sânge a fost eşuat.",
+		waiting_results = "Așteptând rezultatele testului",
+		failed_test_results = "Nu s-au putut obține rezultatele testului.",
+
+		laboratory = "Laborator",
+		not_near_laboratory = "Nu te afli într-un laborator pentru a analiza acest obiect.",
+		analyzing_item = "Analizând ${item}",
+		analyzed_item = "Obiectul ${item} a fost analizat cu succes.",
+		failed_analyze_item = "Nu s-a putut analiza ${item}.",
+
+		blood_test = "Test de Sânge",
+		collected_time = "Colectat la: ${time}",
+		collected_area = "Colectat în apropierea: ${area}",
+		dna_gid = "GID: ${dna}",
+		blood_type = "Tip Sânge: ${bloodType}",
+		not_analyzed = "Nu a fost analizat încă",
+		sample_incomplete = "Eșantion Incomplet/Inutilizabil"
 	},
 
 	police = {
@@ -14852,6 +15165,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		you_are_now_married = "Ești acum căsătorit cu ${name}.",
 		you_are_no_longer_married = "Nu mai ești căsătorit cu ${name}.",
 
+		gave_license_logs = "Licență Acordată",
+		gave_license_details = "${consoleName} a acordat caracterului #${characterId} licența `${license}`.",
+		removed_license_logs = "Licență Înlăturată",
+		removed_license_details = "${consoleName} a îndepărtat licența `${license}` de la caracterul #${characterId}.",
 		divorced_logs_title = "Divorț",
 		divorced_logs_details = "${consoleName} a actualizat starea de căsătorie a lui ${nameA} #${cidA} și ${nameB} #${cidB} la `divorțat`.",
 		married_logs_title = "Căsătorit",
@@ -15048,7 +15365,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		air_unit_not_enough_cash = "Nu ai destui bani pentru a folosi Unitatea Aeriană.",
 		air_unit_exit_vehicle = "Părăsește vehiculul pentru a utiliza Unitatea Aeriană.",
 		air_unit_press_to_use = "Apasă ~g~${SeatEjectKey} ~w~pentru a utiliza Unitatea Aeriană pentru $${cost}.",
-		air_unit_purchase_cleaning_kit = "Apasă ~g~${InventoryKey} ~w~pentru a cumpăra un Kit de curățat mașinile.",
+		air_unit_purchase_cleaning_kit = "Apasă ~g~${+inventory_toggle} ~w~pentru a achiziționa un Kit de Curățare.",
 		cleaning_vehicle = "Curățarea vehiculului",
 		not_enough_money = "Nu ai suficienți bani pentru a folosi Unitatea Aeriană.",
 		vehicle_not_in_range = "Vehiculul s-a deplasat prea departe pentru a fi curățat."
@@ -15129,7 +15446,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		tank_full = "Rezervorul este plin.",
 		battery_full = "Bateria este plină.",
 		vehicle_busy = "Vehiculul din apropiere este ocupat.",
-		purchase_jerry_can = "Apasă ~g~${InventoryKey} ~w~pentru a cumpăra o canistră.",
+		purchase_jerry_can = "Apasă ~g~${+inventory_toggle} ~w~pentru a achiziționa un Canistru de Benzină.",
 		gas_station = "Stație de benzină",
 		petrolcan_fuel_text = "Quantidade de Combustível Restante: ${petrolAmount}%~n~Pressione ~g~${InteractionKey} ~w~para parar o abastecimento.",
 		battery_fuel_text = "Încărcare rămasă: ${petrolAmount}%~n~Apasă ~g~${InteractionKey} ~w~pentru a opri încărcarea.",
@@ -15370,6 +15687,10 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		fake_plate_inactive = "S-a resetat numărul de înmatriculare al vehiculului înapoi la cel original."
 	},
 
+	redline = {
+		engine_blowout = "Motorul tău s-a stricat din cauza stresului excesiv."
+	},
+
 	runways = {
 		you_are_not_in_a_plane = "Nu ești într-un avion.",
 		ifr_disabled = "IFR a fost dezactivat.",
@@ -15510,7 +15831,9 @@ OP.Global.Locales.Languages["ro-RO"] = {
 
 	wheel_slash = {
 		hold_to_slash = "[${InteractionKey}] Przytrzymaj, aby podciąć",
-		slashing_tire = "Podcinanie opony"
+		slashing_tire = "Podcinanie opony",
+		removing_wheel = "Îndepărtarea roții",
+		attaching_wheel = "Prinderea roții"
 	},
 
 	-- weapons/*
@@ -15674,7 +15997,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		bleeding_with_injury = "sângerare cu ${label} leziune",
 		bleeding_reduced = "Scăderea sângerării",
 		bleeding_self_stopped = "Sângerarea a fost oprită singură",
-		thanks_for_loot = "Ai fost jefuit când erai inconștient. Unele obiecte ar putea lipsi. Se zice că a fost Nancy.",
+		thanks_for_loot = "Ai fost jefuit în timp ce erai inconștient. Unele obiecte ar putea lipsi. Se zvonește că a fost Nancy.",
 		guards_found_unconcious = "Gărzile te-au găsit inconștient și te-au dus la spitalul închisorii.",
 		serial_number = "Numer seryjny: ${serialNumber}<br><i>Ta broń jest zarejestrowana na ${fullName} (#${characterId}).</i>",
 		serial_number_unknown = "Numer seryjny: ${serialNumber}<br><i>Ta broń nie jest zarejestrowana.</i>",
@@ -15728,7 +16051,7 @@ OP.Global.Locales.Languages["ro-RO"] = {
 		left_shoulder = "Umăr stâng",
 		right_wrist = "Încheietura mâinii drepte",
 		left_wrist = "Încheietura mâinii stângi",
-		tounge = "Limbă",
+		tounge = "Limba",
 		upper_lip = "Buza superioară",
 		lower_lip = "Buza inferioară",
 		right_thigh = "Coapsa dreaptă",

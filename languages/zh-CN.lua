@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 36 (do not change)
+-- AUTO LOCALES: 37 (do not change)
 
 OP.Global.Locales.Languages["zh-CN"] = {
 	-- configuration settings for language
@@ -23,6 +23,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		yes = "是",
 		no = "否",
 		n_a = "不适用",
+		off = "关闭",
 		invalid_server_id = "无效的服务器ID。",
 		appreciated_tier = "受赏赏模式",
 		respected_tier = "受尊敬模式",
@@ -196,11 +197,13 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		removed_bank_from_everyone = "已从所有人移除 $${amount} 从银行。",
 
 		spawned_item_title = "生成物品",
-		spawned_item_details = "${consoleName} 生成了 ${amount}x `${itemName}`。",
+		spawned_item_details = "${consoleName} 为自己生成了 ${amount}x ${itemLabel}.",
 		spawned_item_for_player_title = "为玩家生成物品",
-		spawned_item_for_player_details = "${consoleName} 为 ${targetConsoleName} 生成了 ${amount} 个 `${itemName}`。",
+		spawned_item_for_player_details = "${consoleName} 为 ${targetConsoleName} 生成了 ${amount}x ${itemLabel}.",
 		spawned_item_for_everyone_title = "为所有人生成物品",
-		spawned_item_for_everyone_details = "${consoleName} 为所有人生成了 ${amount} 个 `${itemName}`。",
+		spawned_item_for_everyone_details = "${consoleName} 为所有人生成了 ${amount}x ${itemLabel}.",
+		received_spawned_item_logs = "收到生成的物品",
+		received_spawned_item_logs_details = "${targetConsoleName} 收到了来自 ${consoleName} 的生成物品 (${amount}x ${itemLabel}).",
 
 		announcement_staff_title = "员工通告",
 		announcement_server_title = "服务器公告",
@@ -221,6 +224,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		teleport_successful = "成功传送玩家。",
 
 		player_revived_success = "成功复活玩家。",
+		missing_valid_target_source_parameter = "缺少有效的 'targetSource' 参数。",
 
 		wipe_broken = "broken - 损坏/碎片化的物体",
 		wipe_npcs = "npcs - NPC 及其车辆。",
@@ -481,6 +485,10 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		unscooped_players = "未收起${total}名玩家中的${amount}名玩家。",
 		unscoop_failed = "无法取消收起玩家。",
 
+		invalid_snapshot_radius = "无效的快照半径 (1 <-> 400)",
+		snapshot_header = "服务器 ID，许可证，玩家名称，角色 ID，角色名称，距离",
+		snapshot_completed = "已将 ${amount} 名玩家的快照复制到您的剪贴板。",
+
 		freeze_success = "成功冻结 ${consoleName}。",
 		failed_freeze = "无法冻结玩家。",
 		unfreeze_success = "成功解冻 ${consoleName}。",
@@ -578,7 +586,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		suspicious_transfer_title = "可疑交易",
 		suspicious_transfer_details = "${consoleName} 向 ${targetConsoleName} 转账 $${amount}。",
 
-		-- GPT-4 generated ban messages
+		-- GPT-4o generated ban messages
 		bad_entity_spawn = "噢，你在尝试召唤`${modelName}`这件古代遗物吗？这不是《古董鉴定路演》节目，那个遗物将留在保险库中。",
 		blacklisted_command_ban = "抱歉，您没有权限执行此命令。如果您认为这是一个错误，请联系服务器管理员。",
 		clear_tasks_ban = "这不是绝地心灵控制训练中心。您试图影响他人自由意志的努力已被记录下来...并被拒绝。",
@@ -614,6 +622,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		handling_field_ban = "undefined",
 		teleported_ban = "眨眼间你就消失了？在这个维度不行，旅行者。",
 		honeypot_native = "哦，麻烦了！看起来你迷失在了一个不该找到蜜的地方。有些罐子最好留在原地，无论它们看起来多诱人。",
+		illegal_event_usage_ban = "存在的织物短暂扭动了一下——就像一块拼接不当的被子边缘在解开。然而，不用担心，我们已经修补了这个小异常……通过移除针头。",
 
 		type_aimbot = "自瞄作弊",
 		type_bad_creation = "不良创建",
@@ -654,6 +663,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		type_thermal_night_vision = "热成像/夜视",
 		type_vehicle_modification = "车辆改装",
 		type_illegal_local_vehicle = "正在使用非网络化座驾",
+		type_illegal_event_usage = "非法事件使用",
 
 		event_prefix = "反作弊: ${type}",
 
@@ -1273,6 +1283,12 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		unscoop_command_parameter_revive_help = "如果被扣起的玩家处于倒地状态，则复活他们。",
 		unscoop_command_substitutes = "",
 
+		snapshot_command = "快照",
+		snapshot_command_help = "对你周围一定半径内的所有人拍摄快照。",
+		snapshot_command_parameter_radius = "半径",
+		snapshot_command_parameter_radius_help = "你想要拍摄快照的半径。",
+		snapshot_command_substitutes = "",
+
 		peek_command = "peek",
 		peek_command_help = "查看你周围的所有隐身玩家（包括自己）。",
 		peek_command_substitutes = "",
@@ -1481,7 +1497,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		-- game/airstrike
 		call_airstrike_command = "call_airstrike",
 		call_airstrike_command_help = "在你当前的位置呼叫空袭。",
-		call_airstrike_command_substitutes = "",
+		call_airstrike_command_substitutes = "空袭",
 
 		-- game/airsupport
 		airsupport_command = "airsupport",
@@ -1603,9 +1619,9 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		toggle_ignition_bomb_command_substitutes = "切换引擎炸弹",
 
 		-- game/boomboxes
-		mute_boomboxes_command = "mute_boomboxes",
-		mute_boomboxes_command_help = "静音/取消静音所有音乐播放器。",
-		mute_boomboxes_command_substitutes = "",
+		boomboxes_mute_command = "收音机静音",
+		boomboxes_mute_command_help = "静音收音机。",
+		boomboxes_mute_command_substitutes = "",
 
 		wipe_boomboxes_command = "清除音响",
 		wipe_boomboxes_command_help = "清除音响。",
@@ -1676,6 +1692,14 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		cinema_focus_command = "cinema_focus",
 		cinema_focus_command_help = "聚焦最近的电影院屏幕，获得更好的观影体验。",
 		cinema_focus_command_substitutes = "focus_cinema",
+
+		cinemas_disable_command = "禁用电影院",
+		cinemas_disable_command_help = "禁用电影院屏幕。",
+		cinemas_disable_command_substitutes = "",
+
+		cinemas_mute_command = "影院静音",
+		cinemas_mute_command_help = "静音影院屏幕。",
+		cinemas_mute_command_substitutes = "",
 
 		-- game/cinematic
 		cinematic_command = "cinematic",
@@ -2521,6 +2545,18 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		clear_evidence_command_parameter_evidence_id_help = "要清除的物证存储柜的ID。",
 		clear_evidence_command_substitutes = "",
 
+		shuffle_inventory_command = "打乱库存",
+		shuffle_inventory_command_help = "打乱指定的库存。",
+		shuffle_inventory_command_parameter_inventory = "库存",
+		shuffle_inventory_command_parameter_inventory_help = "您想要打乱的库存。",
+		shuffle_inventory_command_substitutes = "",
+
+		dementia_mode_command = "痴呆模式",
+		dementia_mode_command_help = "为您自己或其他玩家切换痴呆模式。",
+		dementia_mode_command_parameter_server_id = "服务器 ID",
+		dementia_mode_command_parameter_server_id_help = "您想切换失智症模式的玩家的服务器ID。",
+		dementia_mode_command_substitutes = "失智症",
+
 		-- game/invisibility
 		invisibility_command = "隐身",
 		invisibility_command_help = "切换你的隐身状态。",
@@ -2746,10 +2782,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		use_measurement_command_parameter_measurement_help = "您想要使用的测量系统。有效值为`Imperial`和`Metric`。您可以将此参数留空或设置为无效值以使用默认值。",
 		use_measurement_command_substitutes = "measurement, meas",
 
-		no_copyright_command = "no_copyright",
-		no_copyright_command_help = "此命令将在启用时禁用框架中的所有潜在有版权的声音。",
-		no_copyright_command_substitutes = "",
-
 		picture_command = "picture",
 		picture_command_help = "生成带有自定义图像URL的图片物品。",
 		picture_command_parameter_url = "url",
@@ -2797,8 +2829,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		model_view_command_parameter_model_help = "您想查看的模型名称或哈希值。",
 		model_view_command_parameter_no_blocker = "no blocker",
 		model_view_command_parameter_no_blocker_help = "禁用阴影遮挡器（默认：不禁用）。",
-		model_view_command_parameter_clamp = "clamp",
-		model_view_command_parameter_clamp_help = "将大小限制在始终大于0.25（有助于小模型）。",
+		model_view_command_parameter_padding = "填充",
+		model_view_command_parameter_padding_help = "额外的距离填充。",
 		model_view_command_parameter_components = "components",
 		model_view_command_parameter_components_help = "武器配件（逗号分隔）。",
 		model_view_command_substitutes = "model, view",
@@ -2965,7 +2997,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		ped_spawn_command_parameter_weapon_help = "生物应该拥有的武器（可选，使用\"false\"跳过）。",
 		ped_spawn_command_parameter_invincible = "invincible",
 		ped_spawn_command_parameter_invincible_help = "如果 NPC 应该无敌。 （默认值：否）",
-		ped_spawn_command_substitutes = "",
+		ped_spawn_command_substitutes = "生成_ped",
 
 		ped_task_command = "生物任务",
 		ped_task_command_help = "为你生成的生物指定一个任务。",
@@ -2989,15 +3021,15 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		ped_attack_command_help = "使最近的行人攻击特定玩家。",
 		ped_attack_command_parameter_target = "target",
 		ped_attack_command_parameter_target_help = "您希望最近的行人攻击的玩家。",
-		ped_attack_command_substitutes = "",
+		ped_attack_command_substitutes = "攻击",
 
 		list_ped_emotes_command = "list_ped_emotes",
 		list_ped_emotes_command_help = "列出所有可用的人物动作.",
-		list_ped_emotes_command_substitutes = "",
+		list_ped_emotes_command_substitutes = "ped_emotes",
 
 		list_ped_tasks_command = "list_ped_tasks",
 		list_ped_tasks_command_help = "列出所有可用的人物任务.",
-		list_ped_tasks_command_substitutes = "",
+		list_ped_tasks_command_substitutes = "ped_tasks",
 
 		-- game/ped_steal
 		ped_steal_command = "ped_steal",
@@ -3060,6 +3092,11 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		pole_dancing_offset_command_parameter_model_name_help = "您想要调整的模型名称。",
 		pole_dancing_offset_command_substitutes = "",
 
+		-- game/pool
+		pool_debug_command = "池调试",
+		pool_debug_command_help = "切换池（游戏）调试视图。",
+		pool_debug_command_substitutes = "",
+
 		-- game/properties
 		properties_debug_command = "propertiesdebug",
 		properties_debug_command_help = "切换属性调试。",
@@ -3086,11 +3123,13 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		spawn_prop_command_parameter_model_hash = "模型",
 		spawn_prop_command_parameter_model_hash_help = "您想要生成的道具模型。",
 		spawn_prop_command_parameter_network = "网络",
-		spawn_prop_command_parameter_network_help = "您希望对这个道具进行网络化吗？建议仅对应该能够移动的道具启用此选项。然而，并非所有道具都是可移动的。",
+		spawn_prop_command_parameter_network_help = "您想要网络化这个道具吗？建议仅对应该能够移动的道具启用此选项。并非所有道具都是可移动的。(`1` 启用或 `0` 禁用)",
 		spawn_prop_command_parameter_restricted = "restricted",
-		spawn_prop_command_parameter_restricted_help = "仅允许超级管理员拾取此道具。",
+		spawn_prop_command_parameter_restricted_help = "仅允许超级管理员拾取此道具。(`1` 启用或 `0` 禁用)",
 		spawn_prop_command_parameter_culling = "culling",
-		spawn_prop_command_parameter_culling_help = "剔除半径，在此距离内生成/删除道具。默认半径为200米，仅在应该从远处可见的大型道具上增加此值。",
+		spawn_prop_command_parameter_culling_help = "道具生成/销毁的剔除半径。默认半径为200米，只有在道具较大且需要远距离可见时才增加此值。(`0` 或 `false` 使用默认值)",
+		spawn_prop_command_parameter_persistent = "持久化",
+		spawn_prop_command_parameter_persistent_help = "该道具在重启后是否应该保持？请谨慎使用，因为这会影响每个人的游戏。（`1`启用或`0`禁用）",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3247,6 +3286,13 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		remove_riot_player_command_parameter_server_id_help = "要移除的玩家的服务器ID。留空以自动选择自己。",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rockstar
+		rockstar_editor_command = "洛克斯塔编辑器",
+		rockstar_editor_command_help = "使用洛克斯塔编辑器的简单命令。",
+		rockstar_editor_command_parameter_action = "动作",
+		rockstar_editor_command_parameter_action_help = "您要执行的动作。动作可以是`录制`、`保存`、`丢弃`或`打开`。",
+		rockstar_editor_command_substitutes = "洛克星",
+
 		-- game/rooms
 		rooms_debug_command = "rooms_debug",
 		rooms_debug_command_help = "调试所有房间。",
@@ -3319,6 +3365,13 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		draw_shroom_areas_command = "绘制蘑菇区域",
 		draw_shroom_areas_command_help = "绘制所有蘑菇区域并添加更多。",
 		draw_shroom_areas_command_substitutes = "蘑菇区域",
+
+		-- game/smile
+		smile_command = "微笑",
+		smile_command_help = ":)",
+		smile_command_parameter_server_id = "服务器 ID",
+		smile_command_parameter_server_id_help = "目标服务器 ID。",
+		smile_command_substitutes = "",
 
 		-- game/smell
 		smell_command = "嗅探",
@@ -3523,6 +3576,11 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		train_passes_command = "train_passes",
 		train_passes_command_help = "检查你拥有的火车通行证数量。",
 		train_passes_command_substitutes = "",
+
+		-- game/trains
+		trains_debug_command = "列车调试",
+		trains_debug_command_help = "调试所有列车。",
+		trains_debug_command_substitutes = "",
 
 		-- game/treasure_maps
 		spawn_map_piece_command = "生成地图碎片",
@@ -3730,6 +3788,10 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		box_command_help = "定义一个3D盒子。",
 		box_command_substitutes = "",
 
+		define_points_command = "定义坐标",
+		define_points_command_help = "定义一系列坐标/点。",
+		define_points_command_substitutes = "",
+
 		-- global/states
 		entity_states_command = "实体状态",
 		entity_states_command_help = "打印特定实体的所有状态。",
@@ -3775,6 +3837,21 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		start_bus_route_command_parameter_route = "route",
 		start_bus_route_command_parameter_route_help = "您希望启动的路线的名称。",
 		start_bus_route_command_substitutes = "",
+
+		draw_bus_route_command = "绘制公交路线",
+		draw_bus_route_command_help = "在您的 GPS 上绘制特定的公交路线。",
+		draw_bus_route_command_parameter_route = "路线",
+		draw_bus_route_command_parameter_route_help = "您想要绘制的路线名称。",
+		draw_bus_route_command_substitutes = "",
+
+		-- jobs/dealership
+		set_pdm_slot_command = "设置PDM槽位",
+		set_pdm_slot_command_help = "将车辆设置到指定的PDM槽位。",
+		set_pdm_slot_command_parameter_slot = "槽位",
+		set_pdm_slot_command_parameter_slot_help = "您想要设置车辆的槽位。（1 - 8）",
+		set_pdm_slot_command_parameter_model_name = "模型名称",
+		set_pdm_slot_command_parameter_model_name_help = "您想要设置的车辆模型名称。",
+		set_pdm_slot_command_substitutes = "pdm_slot, pdm",
 
 		--jobs/doj
 		lookup_character_command = "lookup_character",
@@ -3822,8 +3899,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		job_command_help = "根据快捷方式更新某人的工作或切换工作UI。",
 		job_command_parameter_server_id = "服务器ID",
 		job_command_parameter_server_id_help = "玩家的服务器ID，或者将其设置为0以选择自己。",
-		job_command_parameter_shortcut = "捷径",
-		job_command_parameter_shortcut_help = "您要设置的工作的快捷方式。将其留空以切换工作UI。",
 		job_command_substitutes = "",
 
 		reset_job_command = "reset_job",
@@ -4048,13 +4123,13 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		wheel_offset_command_parameter_wheels = "前/后",
 		wheel_offset_command_parameter_wheels_help = "您想要修改哪些轮子？",
 		wheel_offset_command_parameter_value = "数值",
-		wheel_offset_command_parameter_value_help = "您想要修改的量。可以在-0.15到0.2之间任意选择，0为默认值。",
+		wheel_offset_command_parameter_value_help = "您希望修改的数量。范围在 -0.25 到 0.2 之间，0 为默认值。",
 		wheel_offset_command_substitutes = "",
 
 		suspension_height_command = "悬架高度",
 		suspension_height_command_help = "修改车辆的可视悬架高度。",
 		suspension_height_command_parameter_value = "数值",
-		suspension_height_command_parameter_value_help = "您希望将其修改的数量。 这可以是从-0.15到0.1的任何值，0代表默认值。",
+		suspension_height_command_parameter_value_help = "您希望修改的数量。范围在 -0.2 到 0.1 之间，0 为默认值。",
 		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
@@ -4337,7 +4412,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 		restart_cancelled = "服务器重启已取消。",
 
-		server_restarting = "服务器正在重启。您可以在几分钟后重新加入。",
+		server_restarting = "服务器正在重启。",
 
 		executed_restart_command = "已执行重启命令。",
 		already_executed_restart_command = "重启命令已经执行过。",
@@ -4420,9 +4495,12 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		reason_unknown = "原因未知。",
 
 		unloaded_character = "未加载角色。",
+		loaded_character = "已加载角色。",
 		user_does_not_have_sent_character_loaded = "用户未加载发送的角色。",
 		user_has_no_character_loaded = "用户未加载任何角色。",
+		user_already_has_character_loaded = "用户已加载角色。",
 		user_not_found = "在服务器上找不到发送的用户。",
+		user_does_not_have_character = "用户没有与提供的角色ID对应的角色。",
 		invalid_character_id = "发送的角色ID参数无效。",
 		invalid_license_identifier = "无效的许可证标识参数。",
 
@@ -4464,7 +4542,13 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		critical_error_while_loading_data = "加载数据时发生关键错误。",
 
 		ping_unstable = "undefined",
-		ping_stable = "undefined"
+		ping_stable = "undefined",
+
+		the_command_has_been_run = "命令已执行。",
+		the_camera_has_been_updated = "游戏摄像头已更新。",
+		not_able_to_use_on_developer = "您无法在开发者身上使用此路线。",
+		the_spectator_camera_has_been_updated = "观众摄像头已更新。",
+		the_spectator_mode_has_been_updated = "观众模式已更新。"
 	},
 
 	vpn = {
@@ -4554,7 +4638,12 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		helipad = "直升机停机坪",
 		looking_up = "查找注册信息中",
 		registration_not_found = "未找到该注册信息。",
-		registration_lookup = "飞机注册号 `${registration}` 最后出租给 ${fullName} #${characterId}。"
+		registration_lookup = "飞机注册号 `${registration}` 最后出租给 ${fullName} #${characterId}。",
+
+		withdrew_vehicle_logs = "已提取机场车辆",
+		withdrew_vehicle_logs_details = "${consoleName} 提取了一辆 ${label}，存款为 $${deposit} (位置: `${coords}`).",
+		parked_vehicle_logs = "停放的机场车辆",
+		parked_vehicle_logs_details = "${consoleName} 停放了一辆 ${label}。"
 	},
 
 	airstrike = {
@@ -4589,6 +4678,20 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		male = "男性",
 		female = "女性",
 
+		feed_interaction = "喂 ${name}",
+		feed_doing = "正在喂 ${name}",
+		feed_success = "已经给 ${name} 喂了一些 ${food}。",
+		feed_failed = "喂 ${name} 一些 ${food} 失败了。",
+
+		type_cat = "猫",
+		type_dog = "狗",
+		type_rabbit = "兔子",
+		type_hen = "母鸡",
+		type_rat = "老鼠",
+		type_pigeon = "鸽子",
+		type_seagull = "海鸥",
+		type_crow = "乌鸦",
+
 		description_cat_unnamed = "一只${gender}的猫在生活中漫步，带着一种神秘的气息，${age}岁，体重${weight}。对${food}无法抵抗，这只长须游荡者可能会一会儿在策划着世界统治，下一刻却蜷缩着打个盹。每根胡须都述说着一个故事，每个眼神都隐藏着一个秘密。",
 		description_cat_named = "${name}，${gender}猫，是一只${age}岁的伴侣，拥有无数晒太阳打盹和午夜冒险的智慧。体重${weight}，对${food}有着坚定的热爱，${name}像一个活着的谜一样穿行于世界之中 —— 既是皇家使节，又是调皮的街头哲学家。",
 
@@ -4604,8 +4707,17 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		description_rat_unnamed = "这只${gender}老鼠，年龄${age}，体重${weight}，以刀锋般的智慧和出乎意料的魅力驰骋于世界之中。出于对${food}的绝对忠诚，它将每个角落都视为潜在的发现，每个阴影都视为嬉戏的乐园。",
 		description_rat_named = "${name}，一只${gender}老鼠，${age}岁，热爱探索生活的伟大实验，体重${weight}，充满个性。与${food}之间有着牢不可破的联系，${name}体现了好奇精神的本质——虽小，其精神却无限。",
 
+		description_pigeon_unnamed = "一只${gender}的鸽子，${age}岁，体重${weight}，在生活中轻松翱翔，展现出迷人的魅力。对${food}怀有不灭的热情，这位翅膀游子在屋顶和人行道之间飞舞，总是在寻找下一顿美餐——或者也许是在路灯上获得一次哲学的瞬间。",
+		description_pigeon_named = "${name}，这只${gender}的鸽子，${age}岁，加入了这个天空故事，体重${weight}，怀揣着对${food}不可动摇的热爱。无论是在城市街道中优雅滑行，还是自信满满地走来走去，${name}都是一个羽毛般的谜团，兼具城市生存者和天空诗人的魅力。",
+
+		description_seagull_unnamed = "一只${gender}海鸥，${age}岁，体重${weight}，真正的海岸大师和零食征服者。无论是在猛烈的波涛中呼喊，还是在为${food}而进行史诗般的斗争，这只羽毛丰富的 opportunist 生活在天际与海洋交汇之处，永远追逐着下一个丰盛的盛宴。",
+		description_seagull_named = "${name}，这只${gender}海鸥，${age}岁，踏上这场咸味阳光的冒险，体重${weight}，永不满足于对${food}的渴望。拥有适合开阔天空的翅膀和寻找完美觅食地点的眼光，${name}是潮汐、风和被遗忘的三明治边角的无情探索者。",
+
+		description_crow_unnamed = "一只${gender}乌鸦，${age}岁，体重${weight}，在天空中的阴影，智慧锋利如其喙。被${food}的神秘所吸引，这个神秘的恶作剧者观察、学习，以令人毛骨悚然的精准行动，像一条活着的谜语穿梭于生活。",
+		description_crow_named = "${name}，这只${gender}乌鸦，${age}岁，融入广阔的野外叙事，体重${weight}，对${food}充满着迷。${name}眼中的每一闪光都隐藏着秘密，每一个叫声都是未诉故事的低语，证明了一些最聪明的灵魂拥有羽毛而不是语言。",
+
+		feed = "[${InteractionKey}] 喂食",
 		pick_up = "[${SeatEjectKey}] 拾取",
-		pick_up_named = "[${SeatEjectKey}] 捡起${name}",
 
 		failed_pickup_cat = "未能捡起猫。",
 		failed_pickup_dog = "未能捡起狗。",
@@ -4933,7 +5045,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		last_concat = "和",
 
 		attachments_logs_title = "配件和涂装",
-		attachments_logs_details = "${consoleName} 修改了他们的 `${weaponName}`: ${modifications}.",
+		attachments_logs_details = "${consoleName} 修改了他们的 ${itemLabel}: ${modifications}.",
 
 		removed_attachments = "拆卸 ${removed}",
 		added_attachments = "添加 ${added}",
@@ -5030,7 +5142,9 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		team_marker = "团队标记",
 		trophy_information_top = "${name}是最棒的！",
 		trophy_information_bottom = "比赛总共有${playerAmount}名玩家参与，你击杀了其中的${kills}名。",
-		not_able_to_join_while_in_match = "在比赛中无法加入大厅。"
+		not_able_to_join_while_in_match = "在比赛中无法加入大厅。",
+		picked_up_item_logs = "拾起 BR 物品",
+		picked_up_item_logs_details = "${consoleName} 在一场大逃杀比赛中拾起了一件 ${itemLabel}."
 	},
 
 	bazaar = {
@@ -5135,6 +5249,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		sushi_restaurant = "寿司餐厅",
 		pizza_this = "这家比萨店",
 		city_hall = "市政厅",
+		luxury_autos = "豪华汽车",
 
 		bank = "银行",
 		hospital = "医院",
@@ -5486,7 +5601,18 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		how_to_reduce_latency_part_2 = "在“输出”部分的“输出模式”下选择高级选项。",
 		how_to_reduce_latency_part_3 = "在编码器设置中查找关键帧间隔设置。",
 		how_to_reduce_latency_part_4 = "将关键帧间隔设置为1秒。",
-		custom_stream = "自定义流式传输"
+		custom_stream = "自定义流式传输",
+
+		already_have_a_key = "已经有一个钥匙了:",
+		already_have_a_key_1 = "如果你已经有一个想要使用的钥匙，可以把它放在这里。",
+		already_have_a_key_2 = "这在你想要两个电视播放相同节目时很有用。",
+		already_have_a_key_3 = "请注意，这将大幅增加带宽使用量。",
+		already_have_a_key_4 = "如果你做得太多，将会造成延迟。",
+
+		cinemas_disabled = "电影院已禁用。",
+		cinemas_enabled = "电影院已启用。",
+		cinemas_muted = "电影院已静音。",
+		cinemas_unmuted = "电影院已取消静音。"
 	},
 
 	cinematic = {
@@ -6764,12 +6890,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		flashing = "特效中"
 	},
 
-	clip_saver = {
-		start_recording = "开始录制",
-		clip_save = "保存剪辑",
-		clip_discard = "丢弃剪辑"
-	},
-
 	compass = {
 		north = "北",
 		north_east = "东北",
@@ -6890,6 +7010,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		visit_the_location = "参观${location}。",
 		punch_a_shark = "猛击一只鲨鱼。",
 		put_bets_in_lottery = "在彩票中总共投注 $${amount}。",
+		buy_weazel_news = "购买一份Weazel新闻。",
 
 		confirm_task_refresh = "您确定要刷新此任务吗? 成本为$${cost}。",
 		yes = "是",
@@ -7165,7 +7286,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		jewelry_store_closed = "珠宝店当前已关闭，请稍后再来。",
 		bank_closed = "银行当前已关闭，请稍后再来。",
 		store_closed = "商店当前已关闭，请稍后再来。",
-		failed_to_sync_doors = "无法同步门状态。可能是某些数据损坏，请重试。",
 		saved_doors_to_file = "已保存`${amount}`个门到服务器上的文件。",
 		no_nearby_doors = "附近没有要保存的门。",
 		copied_doors = "复制了 ${doors} 扇门。",
@@ -8183,11 +8303,11 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		press_to_access_store = "按下 ~INPUT_REPLAY_SHOWHOTKEY~ 键进入商店。",
 		press_to_access_locker = "按下 ~INPUT_REPLAY_SHOWHOTKEY~ 键进入私人保险箱。",
 		press_to_access_shared_storage = "按下 ~INPUT_REPLAY_SHOWHOTKEY~ 键以访问共享存储。",
-		device_printout_details = "<b>类型：</b> <i>${type}</i>，<b>文本：</b> <i>${text}</i>",
 		copy_serial_number = "复制序列号",
 		serial_number_copied = "复制${itemName}的序列号：${serialNumber}",
 		copy_fingerprint = "复制指纹",
 		copy_evidence = "复制证据",
+		copy_sample = "复制示例数据",
 
 		failed_give = "无法将物品给予玩家。",
 		character_too_far = "玩家距离太远。",
@@ -8215,6 +8335,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		inventory_no_more_items = "您无法再放置更多物品在此库存中。",
 
 		press_to_access_shredder = "[${InteractionKey}] 访问碎纸机。",
+		shredded_logs_title = "已粉碎的物品",
+		shredded_logs_details = "${consoleName} 已粉碎: ${shredded}。",
 
 		invalid_item_id = "无效的物品ID。",
 		item_not_found = "找不到ID为`${itemId}`的物品。",
@@ -8227,6 +8349,13 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 		clear_evidence_logs_title = "已清除证据",
 		clear_evidence_logs_details = "${consoleName} 清除了ID为`${evidenceId}`的证据。删除了 ${deleted} 个物品，保留了 ${kept}个。",
+
+		shuffled_inventory = "成功打乱了 `${inventoryName}`。",
+		shuffle_inventory_failed = "库存重排失败。",
+
+		failed_toggle_dementia = "切换痴呆症失败。",
+		toggled_dementia_on = "已为 `${displayName}` 启用痴呆症。",
+		toggled_dementia_off = "已为 `${displayName}` 禁用痴呆症。",
 
 		big_inventory_disabled = "将角色物品栏重置为默认。",
 		big_inventory_enabled = "暂时增加了你的角色物品栏。",
@@ -8242,6 +8371,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		pizza_this_counter = "这家披萨柜台",
 		yellow_jack_counter = "黄杰克柜台",
 		bean_machine_counter = "豆机柜台",
+		irish_pub_counter = "爱尔兰酒吧柜台",
+		vanilla_unicorn_counter = "香草独角兽柜台",
 
 		inventory_name_missing = "缺少库存名称参数。",
 
@@ -9141,6 +9272,11 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		generic_prescription = "通用处方",
 		generic_prescription_description = "一些药物的处方。应该适合补充。",
 
+		blood_test_kit = "血液检测工具包",
+		blood_test_kit_description = "一个方便的血液检测工具包，可以帮助你了解自己的血液成分。只需几滴血液和一点耐心，你就能解开血型之谜——非常适合医疗准备或在奇怪的知识竞赛中获胜。",
+		blood_vial = "血液瓶",
+		blood_vial_description = "一个小瓶，里面盛有经过精心采集的血样，蕴含着等待被揭开的重要线索。无论来自于一个人、犯罪现场或是一个意外的谜团，这个小容器都是你获得答案的通行证——如果你能在实验室对其进行分析的话。",
+
 		brownies = "巧克力布朗尼",
 		brownies_description = "湿润、蓬松，加入双倍巧克力，只有一点额外的刺激，让你静静地回首并质疑生活中的一切。",
 		weed_gummies = "undefined",
@@ -9192,11 +9328,18 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		pet_owl_description = "普嗲，你聪慧而警惕的伙伴，优雅地栖息在你的肩膀上。凭借敏锐的眼睛和柔软的羽毛，这只迷人的猫头鹰为你的冒险增添了一丝魔力。普嗲随时准备提供智慧的叫声，是任何旅程的完美搭档。",
 		pet_pig = "猪排",
 		pet_pig_description = "一只带有强烈个性的小猪宝宝，开心地栖息在你的肩膀上。总是随时准备发出鼻音鼓励或用可爱的侧眼来评判你的人生选择。无论你是在冒险还是漫步，这只袖珍伙伴都是魅力和魅力的完美结合。",
+		pet_flamingo = "华丽的火烈鸟",
+		pet_flamingo_description = "一只华丽的火烈鸟，优雅地栖息在你的肩膀上，为你的冒险增添一丝色彩和风采。它那鲜艳的粉色羽毛和坚定的自信，使这只时尚的鸟成为让你在人群中脱颖而出并表达个性的最佳伴侣。",
 
 		hotwheels_mcqueen = "闪电麦昆",
 		hotwheels_mcqueen_description = "速度，我就是速度，像一辆凯迪拉克漂浮，像一辆宝马刺。咔唰咔唰咔唰",
 		hotwheels_towmater = "拖车马特",
 		hotwheels_towmater_description = "我的名字是马特，就像tomater但没有Tuh。",
+
+		mini_police = "迷你警车",
+		mini_police_description = "一款专为实践培训设计的迷你执法车辆。用于教授正确的位置、接近角度以及高风险场景中的战术动作。虽然体积小，但在为警员准备实际情况中发挥着重要作用。",
+		mini_car = "迷你民用车",
+		mini_car_description = "标准民用车辆的小型复制品，适合培训场景和战术演示。无论是练习交通检查、路障还是追逐战术，这辆小车都能帮助警员制定行动计划——而不必担心真实的碰撞风险。",
 
 		kinder_surprise = "undefined",
 		kinder_surprise_description = "undefined",
@@ -9244,6 +9387,15 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		rabbit_2_description = "一只深褐色的兔子，毛发光滑如黄油，喜欢跳到最不方便的地方。它既可爱又令人略感恼火。",
 		rabbit_3 = "灰兔",
 		rabbit_3_description = "一只光滑的灰色兔子，行动如同风中的一团烟雾。眨眼间，它就消失了，但在消失前它可能会偷走你的心（也许还有你的生菜）。",
+
+		pigeon_0 = "鸽子",
+		pigeon_0_description = "一只见多识广的鸽子，道德观存疑，拥有对面包屑坚定不移的热爱。从野外捡到的这只羽毛飘逸的寄生者，无论你去哪里都会跟随着你，默默地评判你的生活选择，同时策划下一次的零食抢劫。",
+
+		seagull_0 = "海鸥",
+		seagull_0_description = "一只声音洪亮、无所畏惧的海鸥，擅长盗窃，对个人空间完全不尊重。不论是盯着你的食物、对着虚空大喊，还是悠闲地栖息在你的肩膀上，这只羽毛肆意的恶霸始终忙于搞事情。",
+
+		crow_0 = "乌鸦",
+		crow_0_description = "一种极具智慧的乌鸦，对闪亮物体和人类行为有着异常强烈的兴趣。无论是策划世界统治还是只是偷小玩意，这位羽毛天才总是领先五步。",
 
 		boxing_gloves = "拳击手套",
 		boxing_gloves_description = "让你变成洛奇，但你可能不会有续集...",
@@ -9638,6 +9790,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		spotlight_description = "一盏准备好让任何事物或任何人成为焦点的聚光灯。非常适合用于专业摄影、戏剧性照明，或者只是让您在客厅里感觉像一位电影明星。明亮、可靠，永远吸引眼球。",
 		tube_light = "管灯",
 		tube_light_description = "一款时尚简约的管灯，以风格取代亮度，为房间增添柔和的光芒而不是压倒性的亮度。非常适合营造舒适的氛围，是一个细微的升级，看起来比它那些笨重的对手要酷得多。",
+		studio_light = "摄影棚灯",
+		studio_light_description = "一款专业级摄影棚灯，旨在将任何空间打造成完美光照的杰作。无论你是在捕捉完美镜头、拍摄戏剧场景，还是仅仅想让自己看起来比现实好得多，这款强大的灯具都能确保你始终处于聚光灯下。",
 		yoga_mat = "瑜伽垫",
 		yoga_mat_description = "undefined",
 		cooler_box = "冷藏箱",
@@ -9704,6 +9858,26 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		wheel_clamp_description = "这可不是用来逃跑的！车轮夹是认真的，将车辆牢牢固定在原地，结束未经授权的移动。这个重型装置是一种无声的执行者，确保停车规则得到尊重和遵守。",
 		old_rug = "旧地毯",
 		old_rug_description = "铺上这条舒适的地毯，让您的户外聚会变得更加舒适！它非常适合在草地上休息，而且不用担心裤子会沾上那些讨厌的绿色污渍。铺开它，躺下来，以时尚和舒适的方式享受周围环境。",
+		box = "盒子",
+		box_description = "一个普通的，没有任何花哨设计的纸箱，绝对没有隐藏的惊喜。它不储存任何东西，不做任何花哨的事，但它确实存在——有时候，这就足够了。",
+		arm_chair = "旧扶手椅",
+		arm_chair_description = "一把磨损严重的扶手椅，看起来曾经更好，但仍然提供了可疑的舒适度。坐垫很不平整，面料褪色，还有很大机会某种生物在里面居住——但嘿，它有历史。",
+		plank = "木板",
+		plank_description = "一块厚重、风化的木板，既多功能又神秘。也许它曾是某张桌子、一个箱子，或者某人的可疑DIY项目的一部分——无论如何，它现在在这里，准备被重新利用，或者就像一个被遗忘的遗物一样闲置。",
+		wooden_table = "木桌",
+		wooden_table_description = "一张简单、略微摇晃的木桌，可能经历了无数的洒落、划痕和可疑的决定。非常适合用作餐桌、工艺桌，或者只是用于放东西，直到有人不可避免地撞到它。",
+		pigeon_statue = "鸽子雕像",
+		pigeon_statue_description = "一尊奇怪的、有点不安的鸽子雕像，似乎丢失了头部。不管它是现代艺术、工厂缺陷，还是某种被诅咒的遗物，有一点是肯定的——这只鸟是飞不起来的。",
+		wheel = "备用轮胎",
+		wheel_description = "一个紧凑的备用轮胎，也被称为“只要让我回家”的轮胎。并不是为速度或舒适而设计，但当灾难来临时，这个小救星准备摇摇晃晃地走向胜利——只要不要过于冒险。",
+		ems_dummy_1 = "瘸腿拉里",
+		ems_dummy_1_description = "一个经典的训练假人，有着轻微的伤害，非常适合练习基本的医疗程序。他不会抱怨，但也不会让事情变得简单——就像真正的病人一样。",
+		ems_dummy_2 = "爆头哈里",
+		ems_dummy_2_description = "因头部受伤而遭遇不幸的假人，帮助急救培训生处理严重创伤情况。虽然不是个好交谈者，但他能完成任务。",
+		ems_dummy_3 = "受伤本",
+		ems_dummy_3_description = "遍布各种伤口和骨折的倒霉培训假人，非常适合进行多重创伤情景训练。如果有错误的摔倒方式，本已经体验过了。",
+		ems_dummy_4 = "胸部伤口查理",
+		ems_dummy_4_description = "查理身上有一个引人注目的躯干伤害，是进行救生干预练习的首选道具。他可能心跳微弱，但仍能传授宝贵的教训。",
 
 		evidence_marker_1 = "标记 1",
 		evidence_marker_1_description = "谜团的起点，标志着揭示真相的第一个线索。",
@@ -9742,6 +9916,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		mine = "地雷",
 		mine_description = "当您需要额外的\"迎宾地毯\"，以防ATF来敲门时。只需放置、布雷，看着任何不受欢迎的访客化为一团红雾。",
 
+		small_tv = "小电视",
+		small_tv_description = "一台紧凑的老式电视，可能还在工作，也可能已经坏了。画质堪忧，天线需要战略性定位，且很有可能你只能收到杂音——不过，嘿，它很有个性。",
 		tv_stand = "电视架",
 		tv_stand_description = "用这款时尚的电视柜升级您的连续看剧设置。它将您的电视置于最佳高度，并有空间放置所有您的随意小玩意。就像是为您的屏幕准备的王座一样。",
 		big_tv = "大电视",
@@ -10257,6 +10433,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		weapon_heavyrifle = "重步枪",
 		weapon_tacticalrifle = "战术步枪",
 		weapon_battlerifle = "战斗步枪",
+		weapon_strickler = "斯特里克勒",
 
 		weapon_mg = "机关枪",
 		weapon_combatmg = "战斗机关枪",
@@ -10387,6 +10564,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		weapon_heavyrifle_description = "更重意味着更好，对吧？是的，我们就这么说吧。",
 		weapon_tacticalrifle_description = "这个季节必备的硬件，适用于执法人员、军事人员以及与执法人员或军事人员进行生死搏斗的人。",
 		weapon_battlerifle_description = "战斗步枪融合了FN FAL的可靠性和Heckler & Koch G3的精准度。与Vepr 7.62x54r类似的弹夹使其成为战场上的强大和准确武器。",
+		weapon_strickler_description = "没有什么比用镀金军事步枪射杀不忠的手下更能体现\"高端表演\"。这是\"破坏代理人\"的一部分。",
 
 		weapon_mg_description = "通用型机枪，结合坚固的设计和可靠的性能。具有远程穿透力，对大群体非常有效。",
 		weapon_combatmg_description = "轻巧、紧凑的机枪，将出色的机动性与高射速相结合，造成毁灭性的效果。",
@@ -10441,7 +10619,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 		-- NOTE: Addon weapons
 		weapon_addon_huntingrifle = "狩猎步枪",
-		weapon_addon_huntingrifle_description = "用于狩猎的常用步枪。",
+		weapon_addon_huntingrifle_description = "一款用于道德狩猎的精确空气动力步枪。对鹿、山狮和小型猎物致命，但对人类完全无害。旨在服务于运动员，而非对峙——非常适合狩猎，却对恐吓毫无用处。",
 
 		weapon_addon_vfcombatpistol = "VF 战斗手枪",
 		weapon_addon_vfcombatpistol_description = "笑容迎面而来。",
@@ -10814,7 +10992,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 	label_printer = {
 		image_url = "https://image.url/here.png",
 		printing = "打印中...",
-		print = "打印"
+		print = "打印",
+		failed_print = "标签打印失败。"
 	},
 
 	lag = {
@@ -11001,7 +11180,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		los_santos_police_dept = "洛圣都警察局",
 
 		welcome_msg_title = "欢迎来到${communityName}！",
-		welcome_msg = "您已获得一些物品，帮助您入门。您可以使用1-5键来使用热键栏中的物品。\n\n按下**${InventoryKey}**键打开您的物品栏，或按下**1**键阅读您的宣传册。",
+		welcome_msg = "您已获得一些物品来帮助您开始游戏。您可以使用热键栏中的1-5键来使用这些物品。 \n\n按 **${+inventory_toggle}** 打开您的背包，或按 **1** 阅读您的宣传册。",
 
 		press_to_go_back_to_menu = "按下 ~g~${InteractionKey}~w~ 返回菜单。",
 		go_back_to_menu = "返回菜单。",
@@ -11030,9 +11209,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 		queuer_not_found = "找不到排队者。",
 		queuer_skipped_queue = "排队者跳过了队列。",
-
-		slots_set_to = "服务器的槽位已经设置为`${slots}`。",
-		slots_already_set_to = "服务器的槽位已经设置为`${slots}`。",
 
 		death = "死亡",
 		normal = "普通",
@@ -11391,7 +11567,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		bad_ped_message = "尝试创建可能存在问题的 ped 消息：“${pedMessage}”",
 		bad_twitter_post = "尝试创建可能存在问题的推特帖子：“${twitterPost}”",
 		bad_twitter_account = "尝试创建可能不良的 Twitter 帐户: \"${username}\"",
-		bad_phone_message = "尝试创建可能存在问题的手机短信：“${message}”",
+		bad_phone_message = "尝试创建可能不好的手机消息: \"${message}\"",
 		user_not_found = "无法找到服务器ID为 `${serverId}` 的用户。",
 		player_already_muted = "${consoleName} 已被禁言。",
 		player_has_been_muted_no_reason = "${consoleName} 已被禁言，未指定原因。",
@@ -11424,10 +11600,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		already_using_metric_measurement = "您已经将度量制设置为您偏好的度量系统。",
 		already_using_imperial_measurement = "您已经将英制设置为您偏好的度量系统。",
 		already_using_default_measurement = "您已经使用本地默认的度量系统。",
-		no_copyright = "无版权",
-		no_copyright_warning = "您好！您是一名流媒体主或内容创作者吗？DMCA和版权索赔是否是一个问题？如果是的话，我们建议切换`${noCopyrightCommand}`命令，这样我们就可以停止播放和显示某些受版权保护的内容。该功能一旦切换即可生效。",
-		no_copyright_enabled = "已启用'无版权'功能。",
-		no_copyright_disabled = "已禁用'无版权'功能。",
 		server_tps = "服务器TPS",
 		server_tps_response = "${tps}",
 		license_copied = "已成功复制许可证到剪贴板。",
@@ -11663,7 +11835,14 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		chop_shop_sound = "禁用私人车场的收音机声音",
 		seatbelt_sound = "禁用安全带提示音",
 		eating_noises_sound = "禁用吃饭声音",
+		minigame_colors = "迷你游戏颜色",
+		minigame_colors_text = "更改某些迷你游戏的颜色，以使物品更明显且更易于找到。并非所有迷你游戏都适用，仅适用于部分游戏。",
 		sound_effect_placeholder = ".oog文件的URL...",
+
+		color_0 = "默认",
+		color_1 = "粉色",
+		color_2 = "黄色",
+		color_3 = "绿色",
 
 		button_save = "保存",
 		button_reset = "重置",
@@ -12430,7 +12609,10 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 		pacific_bank_reward_logs_title = "太平洋银行奖励",
 		pacific_bank_reward_saving_bonds_logs_details = "${consoleName} 搜查了一个保险柜，获得价值$${amount}的储蓄债券。",
-		pacific_bank_reward_items_logs_details = "${consoleName} 搜查了一个保险柜，获得了${amount}件物品。"
+		pacific_bank_reward_items_logs_details = "${consoleName} 搜查了一个保险柜，获得了${amount}件物品。",
+
+		disabled_generators_logs_title = "已禁用的发电机",
+		disabled_generators_logs_details = "${consoleName} 使用管理员命令禁用了 ${disabledGeneratorsCount} 个发电机，针对太平洋银行。"
 	},
 
 	panel = {
@@ -12447,6 +12629,9 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		system_issuer = "系统",
 		add_note_title = "添加备注",
 		message_placeholder = "${playerName}犯了一个错误...",
+		failed_auth_token = "获取身份验证令牌失败。",
+		no_permissions = "您没有权限查看常规管理员面板。",
+		panel_unavailable = "常规管理员面板不可用。",
 
 		type_note = "备注",
 		type_warning = "警告",
@@ -12587,7 +12772,6 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 	ped_objects = {
 		illegal_ped_object = "尝试添加不在允许的人物对象列表中的对象。",
-		illegal_ped_weapon_object = "尝试添加不在武器列表中的人物武器物体。",
 		illegal_raw_ped_object = "尝试添加未经适当权限的原始人物物体。"
 	},
 
@@ -12749,6 +12933,19 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 		robbed_ped_logs_title = "抢劫平民",
 		robbed_ped_logs_details = "${consoleName} 抢劫了一个平民，并获得了$${payout}。"
+	},
+
+	pool = {
+		reset_table = "按 ~INPUT_DETONATE~ 重置表格。",
+		resetting_table = "正在重置表格",
+
+		active_table = "${tables} 活动表格",
+		active_tables = "${tables} 活动表格",
+		inactive_table = "${tables} 非活动表格",
+		inactive_tables = "${tables} 非活动表格",
+		time = "时间: ${time}~t~毫秒/t",
+		steps = "步骤: ${steps}~t~/t",
+		checks = "检查: ${checks}~t~/t"
 	},
 
 	pools = {
@@ -13041,6 +13238,25 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		failed_to_remove_riot_player = "无法将 ${consoleName} 从暴乱名单中移除。"
 	},
 
+	rockstar = {
+		already_recording = "您已在录制。",
+		started_recording = "已开始录制。",
+		not_recording = "您没有在录制。",
+		saved_recording = "已保存录制的片段。",
+		discarded_recording = "已丢弃录制的片段。",
+		unknown_action = "未知的动作 `${action}`。",
+
+		keybind_record = "RE: 开始录制",
+		keybind_save = "RE: 保存录制的片段",
+		keybind_discard = "RE: 丢弃录制的片段",
+		keybind_open = "RE: 打开编辑器",
+
+		record = "开始录制。",
+		save = "停止录制并保存录制的片段。",
+		discard = "停止录制并丢弃录制的片段。",
+		open = "打开Rockstar编辑器（并断开连接）。"
+	},
+
 	rules = {
 		invalid_rule = "无效的规则 ID。",
 
@@ -13161,7 +13377,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 	screenshots = {
 		screenshot_created = "截图已成功创建。",
-		screenshot_failed = "无法从给定的用户获取截图。",
+		screenshot_failed = "尝试截屏时发生错误。",
 		screencapture_created = "屏幕截图已成功创建。",
 		user_not_found_with_server_id = "找不到具有给定服务器ID的用户。",
 		invalid_lifespan_parameter = "无效的寿命参数。",
@@ -13170,6 +13386,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		invalid_fps_parameter = "帧率参数无效。",
 		missing_server_id_parameter = "缺少服务器ID参数。",
 
+		screenshot_failed = "尝试截屏时发生错误。",
 		screenshot_error_client_false = "无法创建截图。",
 		screenshot_error_user_not_found = "找不到用户。",
 		screenshot_error_user_developer = "用户是开发人员。",
@@ -13359,6 +13576,14 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		skylift_magnet_turned_on_logs_details = "${consoleName} 打开了天空升降机的磁铁。",
 		skylift_attached_vehicle_logs_title = "天空升降机连接了车辆",
 		skylift_attached_vehicle_logs_details = "${consoleName} 将车辆连接到了天空升降机。"
+	},
+
+	smile = {
+		failed_smile = "出错了。",
+		smile_success = "成功为 ${displayName} 触发微笑。",
+
+		smile_logs_title = "触发微笑",
+		smile_logs_details = "${consoleName} 为 ${targetName} 触发了微笑。"
 	},
 
 	smell = {
@@ -13553,6 +13778,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		user_not_staff = "该用户不是员工。",
 		staff_pm_warning = "员工私信警告",
 		staff_pm_first_time = "我们发现您从未使用过员工私信。要回复员工私信，请使用`/staffpm`，后跟接收者的 ID。您也可使用`/reply`来回复您最近收到的员工私信。",
+		sent_important_pm = "已向 ${displayName} 发送重要的工作人员私信。",
 
 		staff_pm_title = "STAFF PM ${from} -> ${to}",
 		staff_pm_title_external = "EXTERNAL STAFF PM ${from} -> ${to}",
@@ -13915,27 +14141,59 @@ OP.Global.Locales.Languages["zh-CN"] = {
 	test_server = {
 		menu_title = "操作菜单",
 
+		settings = "设置",
+		settings_description = "调整测试菜单的各种设置。",
+		phasing = "穿透",
+		phasing_description = "启用或禁用车辆穿透以通过附近的汽车。",
+		infinite_ammo = "无限弹药",
+		infinite_ammo_description = "无限弹药，无需重新补给，但仍需要进行重新装填。",
+		fixed_time = "固定时间",
+		fixed_time_description = "锁定时间为早晨、正午、傍晚或午夜，仅影响你。",
+		always_morning = "早晨",
+		always_noon = "正午",
+		always_evening = "傍晚",
+		always_night = "午夜",
+
 		vehicles = "车辆选项",
+		vehicles_description = "修改并与您当前的车辆互动。",
 		spawn_car = "生成车辆",
+		spawn_car_description = "从预定义的选项中生成一辆车辆。",
 		upgrade_vehicle = "升级车辆",
+		upgrade_vehicle_description = "通过升级增强您的车辆性能。",
 		break_windows = "砸窗户",
+		break_windows_description = "打碎你当前车辆的所有窗户。",
 		pop_tires = "爆胎",
+		pop_tires_description = "放气你当前车辆的所有轮胎。",
 		detach_doors = "拆卸车门",
+		detach_doors_description = "完全移除你车辆的所有车门。",
 		damage_vehicle = "损坏车辆",
+		damage_vehicle_description = "给你的车辆造成损坏，直到引擎开始冒烟。",
 		repair_vehicle = "修理车辆",
+		repair_vehicle_description = "将你的车辆完全恢复到完美状态。",
 		delete_vehicle = "删除车辆",
+		delete_vehicle_description = "让你当前的车辆消失。",
 
 		player = "玩家选项",
+		player_description = "修改玩家属性和状态。",
 		starve = "饿自己",
+		starve_description = "将你的饥饿和口渴水平设置得非常低。",
 		add_stress = "增加压力",
+		add_stress_description = "立即将你的压力水平拉满。",
 		feed = "喂养自己",
+		feed_description = "完全恢复你的饥饿和口渴。",
 		relief_stress = "解压",
+		relief_stress_description = "完全消除你的压力。",
 		reset_health = "重置健康",
+		reset_health_description = "将你的健康恢复到满值。",
 		remove_injuries = "移除伤害",
+		remove_injuries_description = "治愈你角色身上的所有伤害。",
 		toggle_noclip = "切换无碰撞模式",
+		toggle_noclip_description = "启用或禁用无碰撞模式以实现自由移动。",
 
 		teleport = "传送选项",
+		teleport_description = "瞬间移动到各种预设位置。",
 		teleport_to = "传送至",
+		teleport_to_description = "从预设的传送地点中选择一个目的地。",
 		tp_customs = "车行定制店",
 		tp_legion = "军团广场",
 		tp_garage_a = "A车库",
@@ -13945,13 +14203,20 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		tp_airport = "洛圣都机场",
 		tp_carrier = "航空母舰",
 		tp_cayo = "埃尔佩里科岛",
+		tp_staff_tower = "\"工作人员塔\"",
 
 		actions = "操作",
+		actions_description = "触发各种与玩家相关的动作。",
 		jail_self = "自己监禁",
+		jail_self_description = "立即将自己发送到监狱。",
 		unjail_self = "释放自己",
+		unjail_self_description = "立即释放自己出监狱。",
 		wander_around = "闲逛",
+		wander_around_description = "让你的角色在地面或车辆中随机游荡。",
 		speed_around = "快速移动",
+		speed_around_description = "在高速行驶时无视交通规则，进行鲁莽驾驶。",
 		clear_tasks = "清空任务",
+		clear_tasks_description = "重置分配给你的角色的所有动作和任务。",
 
 		you_are_not_in_a_vehicle = "你没有在车辆内。",
 		you_are_in_a_vehicle = "你当前在一辆车辆内。",
@@ -14093,6 +14358,12 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		training = "培训"
 	},
 
+	trains = {
+		debug_enabled = "已启用列车调试。",
+		debug_disabled = "已禁用列车调试。",
+		trains = "列车: ${trains}"
+	},
+
 	traps = {
 		rearming = "重新装填",
 		press_to_rearm = "[${InteractionKey}] 重新装填",
@@ -14152,25 +14423,25 @@ OP.Global.Locales.Languages["zh-CN"] = {
 	},
 
 	tuner_shop = {
+		no_vehicle = "该位置没有车辆。",
+		near_label = "${label} | $${price}",
 		purchase_label = "[${SeatEjectKey}] 花费$${price}购买${label}",
-		purchase_label_far = "${label} | ¥${price}",
-		purchase_label_timer = "[${timer}] ${label} | ¥${price}",
-		purchase_label_sale = "[${SeatEjectKey}] 购买 ${label} | ¥${price} (-${discount}%)",
-		purchase_label_sale_far = "特价 | ${label} | ¥${price} (-${discount}%)",
-		purchase_label_sale_timer = "[${timer}] ${label} | ¥${price} (-${discount}%)",
-
-		failed_vehicle_spawn = "无法生成车辆。",
+		purchase_label_timer = "[${timer}] 购买 ${label} 价钱为 $${price}",
+		purchased_vehicle = "成功购买 ${label}。",
+		failed_vehicle_spawn = "车辆生成失败。该车辆仍可从你的车库中获得。",
+		computer_interact = "[${InteractionKey}] 更换车辆",
+		computer_near = "更换车辆",
+		menu_title = "调音师商店",
+		vehicle_spot = "车位",
+		vehicle = "车辆",
+		tuner_shop_blip = "午夜改装店",
 		not_enough_funds = "账户余额不足，请补充资金。",
 		area_not_clear = "生成区域未清空。",
+		purchase_active = "有人正在购买车辆，请稍等片刻。",
 		something_went_wrong = "购买车辆时出现了问题。",
 
-		purchased_vehicle = "购买了${label}，价格为$${price}。",
-
-		tuner_shop_blip = "午夜改装店",
-
 		log_title = "改装店购买",
-		log_description = "购买了`${label}`，价格为$${price}。",
-		log_description_discount = "使用${discount}%的折扣购买了`${label}`，价格为$${price}。"
+		log_description = "购买了`${label}`，价格为$${price}。"
 	},
 
 	tunerchip = {
@@ -14299,6 +14570,9 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		actual_channel = "当前频道：${actualChannel}",
 		target_radius = "目标半径：${targetRadius}",
 		actual_radius = "当前半径：${actualRadius}",
+		invalid_target_source = "无效的目标来源。",
+		invalid_frequency = "无效的频率。",
+		set_player_radio_frequency_successfully = "成功设置玩家的广播频率。",
 
 		intent_music = "将语音输入模式设置为'音乐'。",
 		intent_speech = "将语音输入模式设置回'语音'。",
@@ -14391,6 +14665,13 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		enter_vehicle_player = "进入最近的车辆",
 		exit_vehicle_player = "离开车辆",
 		yank_steering_wheel_player = "拉动方向盘",
+		yank_steering_wheel_player_random = "随机",
+		yank_steering_wheel_player_right = "右",
+		yank_steering_wheel_player_left = "左",
+		tap_gas_or_brakes = "轻按",
+		tap_gas = "油门",
+		tap_brakes = "刹车",
+		tap_handbrake = "手刹",
 		flashbang_player = "闪光弹",
 		paper_bag_player = "纸袋",
 		ignite_player = "点燃火焰",
@@ -14612,6 +14893,8 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		shutdown_engine = "关闭引擎并等待乘客上车。",
 		return_to_hq = "返回总部。",
 		bus_stop = "公交车站",
+		cleared_route = "清除了绘制的路线。",
+		drew_route = "绘制了公交路线: `${route}`",
 		pay_for_ticket = "按住 ~INPUT_CONTEXT~ 支付车票费用（$18）。",
 		not_enough_money_ticket = "你的现金不足以支付车票费用（$18）。",
 		ticket_paid = "${displayName} 支付了公交车票费用。",
@@ -14635,9 +14918,17 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		route_68_route = "68号直达",
 		airport_route = "机场班车",
 		business_route = "商务线路",
+		gambling_route = "赌博线路",
 
 		finished_job_logs_title = "完成巴士路线",
 		finished_job_logs_details = "${consoleName} 完成了 `${route}` 巴士路线并获得了 $${payout}。"
+	},
+
+	dealership = {
+		invalid_slot = "无效的插槽。",
+		invalid_model = "缺少模型名称。",
+		model_no_catalog = "该模型不在目录中。",
+		not_at_dealership = "您离PDM电脑不够近。"
 	},
 
 	doj = {
@@ -14728,6 +15019,28 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		set_job_logs_details = "${consoleName}将${targetConsoleName}（#${characterId}）的职位设定为`${jobName}, ${departmentName}, ${positionName}`。",
 		reset_job_logs_title = "重置职位",
 		reset_job_logs_details = "${consoleName}重置${targetConsoleName}（#${characterId}）的职位。"
+	},
+
+	medical = {
+		using_test_self = "测试自我血液",
+		using_test_other = "测试附近玩家",
+		failed_blood_test = "血液检测失败。",
+		waiting_results = "等待检测结果",
+		failed_test_results = "获取测试结果失败。",
+
+		laboratory = "实验室",
+		not_near_laboratory = "你不在实验室，无法分析此物品。",
+		analyzing_item = "正在分析 ${item}",
+		analyzed_item = "成功分析 ${item}。",
+		failed_analyze_item = "分析 ${item} 失败。",
+
+		blood_test = "血液测试",
+		collected_time = "采集时间: ${time}",
+		collected_area = "采集地点: ${area}",
+		dna_gid = "GID: ${dna}",
+		blood_type = "血型: ${bloodType}",
+		not_analyzed = "尚未分析",
+		sample_incomplete = "样本不完整/无法使用"
 	},
 
 	police = {
@@ -14852,6 +15165,10 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		you_are_now_married = "你现在与 ${name} 结婚了。",
 		you_are_no_longer_married = "你不再与 ${name} 结婚。",
 
+		gave_license_logs = "发放执照",
+		gave_license_details = "${consoleName} 给角色 #${characterId} 发放了 `${license}` 执照。",
+		removed_license_logs = "移除执照",
+		removed_license_details = "${consoleName} 从角色 #${characterId} 移除了 `${license}` 执照。",
 		divorced_logs_title = "离婚",
 		divorced_logs_details = "${consoleName} 更新了 ${nameA} #${cidA} 和 ${nameB} #${cidB} 的婚姻状态为 `离婚`。",
 		married_logs_title = "已婚",
@@ -15048,7 +15365,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		air_unit_not_enough_cash = "您没有足够的现金来使用飞行器。",
 		air_unit_exit_vehicle = "下车后才能使用飞行器。",
 		air_unit_press_to_use = "按下 ~g~${SeatEjectKey} ~w~键使用飞行器，价格为$${cost}。",
-		air_unit_purchase_cleaning_kit = "按下 ~g~${InventoryKey} ~w~购买清洁工具包。",
+		air_unit_purchase_cleaning_kit = "按 ~g~${+inventory_toggle} ~w~购买清洁工具包。",
 		cleaning_vehicle = "清洗车辆",
 		not_enough_money = "您没有足够的钱来使用飞行器。",
 		vehicle_not_in_range = "车辆已经移动太远，无法清洗。"
@@ -15129,7 +15446,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		tank_full = "油箱已满。",
 		battery_full = "电池已充满。",
 		vehicle_busy = "附近的车辆正在使用。",
-		purchase_jerry_can = "按下 ~g~${InventoryKey} ~w~购买一个汽油罐。",
+		purchase_jerry_can = "按 ~g~${+inventory_toggle} ~w~购买油桶。",
 		gas_station = "加油站",
 		petrolcan_fuel_text = "汽油剩余量：${petrolAmount}%~n~按下 ~g~${InteractionKey} ~w~停止加油。",
 		battery_fuel_text = "剩余电量：${petrolAmount}%~n~按下 ~g~${InteractionKey} ~w~ 停止充电。",
@@ -15370,6 +15687,10 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		fake_plate_inactive = "已将车辆的车牌号重置为原始车牌。"
 	},
 
+	redline = {
+		engine_blowout = "你的引擎因过度压力而爆炸。"
+	},
+
 	runways = {
 		you_are_not_in_a_plane = "您当前没有乘坐飞机。",
 		ifr_disabled = "IFR已被禁用。",
@@ -15510,7 +15831,9 @@ OP.Global.Locales.Languages["zh-CN"] = {
 
 	wheel_slash = {
 		hold_to_slash = "[${InteractionKey}] 按住进行切割",
-		slashing_tire = "切割轮胎"
+		slashing_tire = "切割轮胎",
+		removing_wheel = "正在拆卸轮子",
+		attaching_wheel = "正在安装轮子"
 	},
 
 	-- weapons/*
@@ -15674,7 +15997,7 @@ OP.Global.Locales.Languages["zh-CN"] = {
 		bleeding_with_injury = "流血并受伤(${label})",
 		bleeding_reduced = "流血减少",
 		bleeding_self_stopped = "流血自动停止",
-		thanks_for_loot = "你在昏迷期间遭到抢劫。可能有物品丢失。传言说是南希干的。",
+		thanks_for_loot = "你在失去知觉时被抢劫了。可能会缺少一些物品。传言是南希做的。",
 		guards_found_unconcious = "卫兵们发现您失去意识，并将您带到监狱医院。",
 		serial_number = "序列号：${serialNumber}<br><i>此武器的所有者是 ${fullName}（ID：#${characterId}）。</i>",
 		serial_number_unknown = "序列号：${serialNumber}<br><i>此武器无注册信息。</i>",

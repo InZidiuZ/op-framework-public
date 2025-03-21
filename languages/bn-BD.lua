@@ -3,7 +3,7 @@ if not OP.Global then OP.Global = {} end
 if not OP.Global.Locales then OP.Global.Locales = {} end
 if not OP.Global.Locales.Languages then OP.Global.Locales.Languages = {} end
 
--- AUTO LOCALES: 36 (do not change)
+-- AUTO LOCALES: 37 (do not change)
 
 OP.Global.Locales.Languages["bn-BD"] = {
 	-- configuration settings for language
@@ -23,6 +23,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		yes = "হ্যাঁ",
 		no = "না",
 		n_a = "প্রযোজ্য নয়",
+		off = "বন্ধ",
 		invalid_server_id = "অবৈধ সার্ভার আইডি।",
 		appreciated_tier = "মৌলিক পর্ব",
 		respected_tier = "শ্রদ্ধাপূর্বক পর্ব",
@@ -196,11 +197,13 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		removed_bank_from_everyone = "সবার ব্যাংক থেকে $${amount} টাকা সরানো হয়েছে।",
 
 		spawned_item_title = "আইটেম স্পন করা হয়েছে",
-		spawned_item_details = "${consoleName} নিজের জন্য ${amount}x `${itemName}` স্পন করেছেন।",
+		spawned_item_details = "${consoleName} তাদের জন্য ${amount}x ${itemLabel} উপণ্য তৈরি করেছেন।",
 		spawned_item_for_player_title = "প্লেয়ারের জন্য জন্মদাতা আইটেম",
-		spawned_item_for_player_details = "${consoleName} একজন ${targetConsoleName}-এর জন্য ${itemName} আইটেম উত্পন্ন করেছেন। মোট ${amount}টি।",
+		spawned_item_for_player_details = "${consoleName} ${targetConsoleName} এর জন্য ${amount}x ${itemLabel} তৈরি করেছেন।",
 		spawned_item_for_everyone_title = "সবার জন্য জন্মদাতা আইটেম",
-		spawned_item_for_everyone_details = "${consoleName} সবার জন্য ${itemName} আইটেম উত্পন্ন করেছেন। মোট ${amount}টি।",
+		spawned_item_for_everyone_details = "${consoleName} সকলের জন্য ${amount}x ${itemLabel} তৈরি করেছেন।",
+		received_spawned_item_logs = "প্রাপ্ত তৈরি করা উপণ্য",
+		received_spawned_item_logs_details = "${targetConsoleName} ${consoleName} থেকে একটি তৈরি করা উপণ্য (${amount}x ${itemLabel}) গ্রহণ করেছেন।",
 
 		announcement_staff_title = "কর্মকর্তাগণের ঘোষণা",
 		announcement_server_title = "সার্ভার ঘোষণা",
@@ -221,6 +224,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		teleport_successful = "প্লেয়ারকে সফলভাবে টেলিপোর্ট করা হয়েছে।",
 
 		player_revived_success = "প্লেয়ারকে সফলভাবে পুনরুদ্ধার করা হয়েছে।",
+		missing_valid_target_source_parameter = "'targetSource' প্যারামিটারটি বৈধ নয়।",
 
 		wipe_broken = "ভাঙ্গা - ভাঙ্গা/টুকরা ভাঙ্গা জিনিসপত্র",
 		wipe_npcs = "নিউরাল প্রকল্পগুলি - এনপিসি এবং তাদের গাড়িগুলি।",
@@ -481,6 +485,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		unscooped_players = "${total} টি খেলোয়াড়কের মধ্যে থেকে ${amount} জন উঠানো হয়েছে।",
 		unscoop_failed = "খেলোয়াড়কের উঠানো ব্যর্থ হয়েছে।",
 
+		invalid_snapshot_radius = "অবৈধ স্ন্যাপশট রেডিয়াস (1 <-> 400)",
+		snapshot_header = "সার্ভার আইডি, লাইসেন্স, প্লেয়ার নাম, চরিত্র আইডি, চরিত্র নাম, দূরত্ব",
+		snapshot_completed = "${amount} খেলোয়াড়ের স্ন্যাপশট আপনার ক্লিপবোর্ডে কপিপ হয়েছে।",
+
 		freeze_success = "${consoleName}-কে সফলভাবে স্থাবিত করা হয়েছে।",
 		failed_freeze = "খেলোয়াড়কে স্থাবিত করতে ব্যর্থ হয়েছে।",
 		unfreeze_success = "${consoleName}-কে সফলভাবে আনফ্রিজ করা হয়েছে।",
@@ -578,7 +586,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		suspicious_transfer_title = "সন্দিগ্ধ স্থানান্তর",
 		suspicious_transfer_details = "${consoleName} এক্সেসের ${amount}$ স্থানান্তর করেছেন ${targetConsoleName} এ।",
 
-		-- GPT-4 generated ban messages
+		-- GPT-4o generated ban messages
 		bad_entity_spawn = "আহা, আপনি `${modelName}` এর প্রাচীন অবয়বটি উৎপাদন করার চেষ্টা করছেন ছিলেন? এটা কোনও এন্টিক রোডশোর একটি পর্ব নয়, এবং সেই অদ্ভূত নখটা ভর্তি থাকবে।",
 		blacklisted_command_ban = "দুঃখিত, তথ্য দেওয়া অক্ষম হওয়ার কারণে এই কমান্ডটি আপনি সম্পাদন করতে পারবেন না। অক্ষম বলে মনে হলে দয়া করে সার্ভার প্রশাসকদের সাথে যোগাযোগ করুন।",
 		clear_tasks_ban = "এটি জৈনিক একটি প্রজাপতি মাথায় হত্যাকারী প্রশিক্ষণ কেন্দ্র নয়। আপনার চেষ্টা ফলাফলশূন্য হয়েছে আর অন্যকে একাদেশ করার চেষ্টা অস্বীকৃত করা হয়েছে।",
@@ -614,6 +622,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		handling_field_ban = "দেখতে মনে হচ্ছে তুমি পদার্থবিজ্ঞানের সীমার গতি বাড়ানোর চেষ্টা করেছ। স্বাগতম, কিন্তু এই বিশ্বে, আমরা পৃথিবীতে আমাদের চাকাগুলি কীভাবে দৃঢ় করে রেখেছি।",
 		teleported_ban = "হাসির মতে চলে গেলেই? এই বহুমিতিকে, ভ্রমণকারী।",
 		honeypot_native = "হোনিপটে পরিস্থিতি হয়েছে। আছে যেখানে মধু পাওয়ার জন্য যাওয়া উচিত না ছিল। অবশ্যই কিছু খনি ছেড়ে দিতে উচিত, হয় তা কতটা আকর্ষণীয় হয়ে থাকুক।",
+		illegal_event_usage_ban = "অস্তিত্বের অস্ত্রোপচার এক ক্ষণ জন্য কাল্পনিকভাবে কেঁপে উঠেছিল—যেমন একটি খারাপভাবে সেলাই করা কোর্ট ধীরে ধীরে সুরক্ষিত করা হচ্ছে। কিন্তু দুশ্চিন্তার কিছু নেই, আমরা সেই ছোট অ্যানোমালি মেরামত করেছি… সূঁচটি সরিয়ে নিয়ে।",
 
 		type_aimbot = "লক্ষ্য করার যন্ত্র",
 		type_bad_creation = "খারাপ সৃষ্টি",
@@ -654,6 +663,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		type_thermal_night_vision = "তাপীয় / রাতের ভিশন",
 		type_vehicle_modification = "গাড়ির সংশোধন",
 		type_illegal_local_vehicle = "ধারণকৃত নেটওয়ার্ককৃত গাড়ী ব্যবহার হচ্ছে",
+		type_illegal_event_usage = "অবৈধ ইভেন্ট ব্যবহারের",
 
 		event_prefix = "অ্যান্টি-চিট: ${type}",
 
@@ -1273,6 +1283,12 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		unscoop_command_parameter_revive_help = "উঠিয়ে নিয়া যে খেলোয়াররা অবস্থান্তর অবস্থায় আছে তাদের উদ্ধার করে ফিরিয়ে দিবেন।",
 		unscoop_command_substitutes = "",
 
+		snapshot_command = "ছবি তোলা",
+		snapshot_command_help = "আপনার চারপাশে নির্দিষ্ট রেডিয়াসে থাকা সকলের একটি ছবি তোলা।",
+		snapshot_command_parameter_radius = "রেডিয়াস",
+		snapshot_command_parameter_radius_help = "আপনি যে রেডিয়াসে ছবি তুলতে চান।",
+		snapshot_command_substitutes = "",
+
 		peek_command = "পিক",
 		peek_command_help = "পিক এমন সকল অদৃশ্য খেলোয়ারদের তালিকা উপস্থাপন করে যারা আপনার সবচেয়ে নিকটবর্তী অবস্থানে আছে (আপনিও অন্তর্দৃষ্টি খেলোয়াড় হিসাবে থাকতে পারেন)।",
 		peek_command_substitutes = "",
@@ -1481,7 +1497,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		-- game/airstrike
 		call_airstrike_command = "এয়ারস্ট্রাইক_কল",
 		call_airstrike_command_help = "আপনার বর্তমান অবস্থানে একটি এয়ারস্ট্রাইক কল করে।",
-		call_airstrike_command_substitutes = "",
+		call_airstrike_command_substitutes = "এয়ার স্ট্রাইক",
 
 		-- game/airsupport
 		airsupport_command = "বায়ুসহায়ত্য",
@@ -1603,9 +1619,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		toggle_ignition_bomb_command_substitutes = "ignition_bomb",
 
 		-- game/boomboxes
-		mute_boomboxes_command = "mute_boomboxes",
-		mute_boomboxes_command_help = "সব বুমবক্স মিউট/আনমিউট করুন।",
-		mute_boomboxes_command_substitutes = "",
+		boomboxes_mute_command = "বুমবক্স মিউট করুন",
+		boomboxes_mute_command_help = "বুমবক্সগুলো মিউট করুন।",
+		boomboxes_mute_command_substitutes = "",
 
 		wipe_boomboxes_command = "wipe_boomboxes",
 		wipe_boomboxes_command_help = "বুমবক্স মুছে ফেলুন।",
@@ -1676,6 +1692,14 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		cinema_focus_command = "cinema_focus",
 		cinema_focus_command_help = "একটি ভাল দর্শন অভিজ্ঞতার জন্য সর্বনিকটের সিনেমা স্ক্রীনে ফোকাস করেন।",
 		cinema_focus_command_substitutes = "focus_cinema",
+
+		cinemas_disable_command = "সিনেমা ডিজেবল করুন",
+		cinemas_disable_command_help = "সিনেমা পর্দাগুলো নিষ্ক্রিয় করুন।",
+		cinemas_disable_command_substitutes = "",
+
+		cinemas_mute_command = "সিনেমার_মিউট",
+		cinemas_mute_command_help = "সিনেমার পর্দাগুলো মিউট করুন।",
+		cinemas_mute_command_substitutes = "",
 
 		-- game/cinematic
 		cinematic_command = "cinematic",
@@ -2521,6 +2545,18 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		clear_evidence_command_parameter_evidence_id_help = "আপনি যে প্রমাণ লকারটি স্পষ্ট করতে চান তার আইডি।",
 		clear_evidence_command_substitutes = "",
 
+		shuffle_inventory_command = "ইনভেন্টরি_শাফেল",
+		shuffle_inventory_command_help = "নির্দিষ্ট ইনভেন্টরি শাফেল করুন।",
+		shuffle_inventory_command_parameter_inventory = "ইনভেন্টরি",
+		shuffle_inventory_command_parameter_inventory_help = "আপনি যে ইনভেন্টরিটি শাফেল করতে চান।",
+		shuffle_inventory_command_substitutes = "",
+
+		dementia_mode_command = "ডিমেনশিয়া_মোড",
+		dementia_mode_command_help = "আপনার বা অন্য একজন খেলোয়াড়ের জন্য ডিমেনশিয়া মোড চালু/বন্ধ করুন।",
+		dementia_mode_command_parameter_server_id = "সার্ভার আইডি",
+		dementia_mode_command_parameter_server_id_help = "যে খেলোয়াড়ের জন্য আপনি ডিমেনশিয়া স্যুইচ করতে চান তার সার্ভার আইডি।",
+		dementia_mode_command_substitutes = "ডিমেনশিয়া",
+
 		-- game/invisibility
 		invisibility_command = "অদৃশ্যতা",
 		invisibility_command_help = "আপনার অদৃশ্যতা চালিয়ে দিন।",
@@ -2746,10 +2782,6 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		use_measurement_command_parameter_measurement_help = "আপনি কোন পদ্ধতিতে পরিমাপ করতে চান সেট করতে হবে। বৈধ মান হল `Imperial` এবং `Metric`। আপনি এই পরামিতি খালি এবং অবৈধ মানে রাখতে পারেন ডিফল্ট ব্যবহার করতে।",
 		use_measurement_command_substitutes = "পরিমাপ, পদ্ধতি",
 
-		no_copyright_command = "noCopyright",
-		no_copyright_command_help = "এই কমান্ডটি চালু করলে ফ্রেমওয়ার্ক থেকে সম্ভবতঃ কপিরাইটযুক্ত শব্দগুলি নিষ্ক্রিয় হবে।",
-		no_copyright_command_substitutes = "",
-
 		picture_command = "ছবি",
 		picture_command_help = "একটি কাস্টম ইমেজ ইউআরএল সহ একটি চিত্র আইটেম স্প্যান করুন।",
 		picture_command_parameter_url = "ইউআরএল",
@@ -2797,8 +2829,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		model_view_command_parameter_model_help = "আপনি দেখতে চান মডেলের নাম বা হ্যাশ।",
 		model_view_command_parameter_no_blocker = "কোন প্রতিবন্ধক না",
 		model_view_command_parameter_no_blocker_help = "ছায়া প্রতিবন্ধক নিরস্ত করুন (ডিফল্ট: না)।",
-		model_view_command_parameter_clamp = "ক্ল্যাম্প",
-		model_view_command_parameter_clamp_help = "আকারকে সর্বদা 0.25 এর বেশি রাখা (ছোট মডেলের জন্য সাহায্য করে)।",
+		model_view_command_parameter_padding = "প্যাডিং",
+		model_view_command_parameter_padding_help = "অতিরিক্ত দূরত্ব প্যাডিং।",
 		model_view_command_parameter_components = "কোম্পোনেন্টস",
 		model_view_command_parameter_components_help = "অস্ত্রের কোম্পোনেন্টস (কমা দিয়ে পৃথক করুন).",
 		model_view_command_substitutes = "মডেল, দৃশ্য",
@@ -2965,7 +2997,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		ped_spawn_command_parameter_weapon_help = "কোন অস্ত্র পেডটি থাকা উচিত (ঐচ্ছিক, এটি ছাড়াও \"false\" এ দিন)।",
 		ped_spawn_command_parameter_invincible = "invincible",
 		ped_spawn_command_parameter_invincible_help = "যদি পেডটি অক্ষতহওয়া হয়। (ডিফল্ট: না)",
-		ped_spawn_command_substitutes = "",
+		ped_spawn_command_substitutes = "স্প্যাওন_পেড",
 
 		ped_task_command = "পেড টাস্ক",
 		ped_task_command_help = "আপনার স্পল করা পেডগুলিকে একটি কাজ দেয়।",
@@ -2989,15 +3021,15 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		ped_attack_command_help = "নিকটতম পেডটিকে নির্দিষ্ট একজন গেমারকে আক্রমণ করিয়ে দেয়।",
 		ped_attack_command_parameter_target = "লক্ষ্য",
 		ped_attack_command_parameter_target_help = "নিকটতম পেড যার আক্রমণ চান তার নাম।",
-		ped_attack_command_substitutes = "",
+		ped_attack_command_substitutes = "আক্রমণ",
 
 		list_ped_emotes_command = "পেড ইমোটগুলি তালিকা করো",
 		list_ped_emotes_command_help = "সমস্ত উপলব্ধ পেড ইমোট তালিকা করে।",
-		list_ped_emotes_command_substitutes = "",
+		list_ped_emotes_command_substitutes = "পেড_ইমোটস",
 
 		list_ped_tasks_command = "পেড কাজের তালিকা করো",
 		list_ped_tasks_command_help = "সমস্ত উপলব্ধ পেড কাজের তালিকা করে।",
-		list_ped_tasks_command_substitutes = "",
+		list_ped_tasks_command_substitutes = "পেড_টাস্কস",
 
 		-- game/ped_steal
 		ped_steal_command = "পেড চুরি করো",
@@ -3060,6 +3092,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		pole_dancing_offset_command_parameter_model_name_help = "টুইক করতে চান মডেল নামটি প্রবেশ করান।",
 		pole_dancing_offset_command_substitutes = "",
 
+		-- game/pool
+		pool_debug_command = "পুল_ডিবাগ",
+		pool_debug_command_help = "পুল (গেম) ডিবাগ ভিউটি চালু/বন্ধ করে।",
+		pool_debug_command_substitutes = "",
+
 		-- game/properties
 		properties_debug_command = "বিশেষত্ব_ডিবাগ",
 		properties_debug_command_help = "বিশেষত্ব ডিবাগ চালু/বন্ধ করুন।",
@@ -3086,11 +3123,13 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		spawn_prop_command_parameter_model_hash = "মডেল",
 		spawn_prop_command_parameter_model_hash_help = "আপনি যে সম্পদ মডেলটি উৎপন্ন করতে চান তা উল্লেখ করুন।",
 		spawn_prop_command_parameter_network = "নেটওয়ার্ক",
-		spawn_prop_command_parameter_network_help = "কি আপনি প্রপ-এর নেটওয়ার্ক করতে চান? প্রপ-গুলি যেসব গতিশীল হওয়া উচিত তারা জন্য মাত্র এটি সুপারের জনদের কে অনুমতি দেয়া হলো বলে এটি সুপারের সময় সতর্কতা অবশ্যই রেখেন। তবে সব প্রপ-গুলি সর্বশেষ উচিত নন।",
+		spawn_prop_command_parameter_network_help = "আপনি কি প্রপটি নেটওয়ার্ক করতে চান? এটি শুধুমাত্র সেসব প্রপের জন্য সক্ষম করার সুপারিশ করা হয় যা সরানো যায়। তাতে সকল প্রপ সরানো যায় না। (`1` সক্রিয় করতে অথবা `0` নিষ্ক্রিয় করতে)",
 		spawn_prop_command_parameter_restricted = "সীমিত",
-		spawn_prop_command_parameter_restricted_help = "শুধুমাত্র এই প্রপটি সুপার অ্যাডমিন দ্বারা উঠানোর অনুমতি দেওয়া আছে।",
+		spawn_prop_command_parameter_restricted_help = "এই প্রপটি শুধুমাত্র সুপার অ্যাডমিনদের দ্বারা তুলতে দেওয়া হবে। (`1` সক্রিয় করতে অথবা `0` নিষ্ক্রিয় করতে)",
 		spawn_prop_command_parameter_culling = "কালিং",
-		spawn_prop_command_parameter_culling_help = "প্রপটির কে দূরত্বের সাথে যে দূরত্বে স্পউন/ডিস্পউন হয় তার অধীনে কালিং ব্যার্ডিয়াস। ডিফল্ট আতি: 200 মিটার, এইটি মাত্র দূর থেকে দেখা যাবে সেইজন্য উচিত বড় প্রপগুলির জন্য এটি বেঞ্চনা করা।",
+		spawn_prop_command_parameter_culling_help = "কুলিং রেডিয়াস যার মাধ্যমে প্রপটি স্পনড/ডিসপনড হয়। ডিফল্ট রেডিয়াস 200m, দূর থেকে দৃশ্যমান বড় প্রপের জন্য এটি শুধু বাড়ানো উচিত। (`0` অথবা `false` ডিফল্ট ব্যবহার করতে)",
+		spawn_prop_command_parameter_persistent = "স্থায়ী",
+		spawn_prop_command_parameter_persistent_help = "প্রপটি কি পুনরারম্ভের মাধ্যমে অব্যাহত রাখতে হবে? এটি সবার গেমের উপর প্রভাব ফেলবে তাই এটি কম ব্যবহার করুন। (`1` সক্ষম করতে বা `0` অক্ষম করতে)",
 		spawn_prop_command_substitutes = "",
 
 		props_debug_command = "props_debug",
@@ -3247,6 +3286,13 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		remove_riot_player_command_parameter_server_id_help = "আপনি যে খেলোয়াড় মুছে ফেলতে চান সেই খেলোয়াড়ের সার্ভার আইডি। সম্পূর্ণ নিজস্ব ভাগ হিসেবে এই স্থানটি ফাঁকা রাখুন।",
 		remove_riot_player_command_substitutes = "",
 
+		-- game/rockstar
+		rockstar_editor_command = "রকস্টার_এডিটর",
+		rockstar_editor_command_help = "রকস্টার এডিটর ব্যবহারের জন্য সুবিধাজনক কমান্ড।",
+		rockstar_editor_command_parameter_action = "অ্যাকশন",
+		rockstar_editor_command_parameter_action_help = "আপনি যে অ্যাকশনটি করতে চান। অ্যাকশন হতে পারে `রেকর্ড`, `সংরক্ষণ`, `বাতিল` বা `খুলুন`।",
+		rockstar_editor_command_substitutes = "রকস্টার",
+
 		-- game/rooms
 		rooms_debug_command = "rooms_debug",
 		rooms_debug_command_help = "সমস্ত কক্ষগুলি ডিবাগ করুন।",
@@ -3319,6 +3365,13 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		draw_shroom_areas_command = "draw_shroom_areas",
 		draw_shroom_areas_command_help = "সমস্ত শ্রুম এলাকা আঁকুন এবং অধিক যোগ করুন।",
 		draw_shroom_areas_command_substitutes = "shroom_areas",
+
+		-- game/smile
+		smile_command = "মুচকি",
+		smile_command_help = ":)",
+		smile_command_parameter_server_id = "সার্ভার আইডি",
+		smile_command_parameter_server_id_help = "লক্ষ্য সার্ভার আইডি।",
+		smile_command_substitutes = "",
 
 		-- game/smell
 		smell_command = "গন্ধ",
@@ -3523,6 +3576,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		train_passes_command = "ট্রেন_পাস",
 		train_passes_command_help = "আপনার কতটি ট্রেন পাস আছে তা পরীক্ষা করুন।",
 		train_passes_command_substitutes = "",
+
+		-- game/trains
+		trains_debug_command = "ট্রেনস_debug",
+		trains_debug_command_help = "সমস্ত ট্রেন ডিবাগ করুন।",
+		trains_debug_command_substitutes = "",
 
 		-- game/treasure_maps
 		spawn_map_piece_command = "ম্যাপ টুকরা উত্পন্ন করুন",
@@ -3730,6 +3788,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		box_command_help = "একটি ৩ডি বক্স নির্ধারণ করুন।",
 		box_command_substitutes = "",
 
+		define_points_command = "পয়েন্টসমূহ_নির্ধারণ",
+		define_points_command_help = "একটির পর এক কোঅর্ডিনেট/পয়েন্ট নির্ধারণ করুন।",
+		define_points_command_substitutes = "",
+
 		-- global/states
 		entity_states_command = "এনটিটি_স্টেটস",
 		entity_states_command_help = "একটি নির্দিষ্ট এনটিটির সমস্ত অবস্থা প্রিন্ট করে।",
@@ -3775,6 +3837,21 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		start_bus_route_command_parameter_route = "রুট",
 		start_bus_route_command_parameter_route_help = "আপনি শুরু করতে চান তার রুটটির নাম।",
 		start_bus_route_command_substitutes = "",
+
+		draw_bus_route_command = "বাসের_রুট_অঙ্কন",
+		draw_bus_route_command_help = "আপনার জিপিএসে একটি নির্দিষ্ট বাস রুট অঙ্কন করুন।",
+		draw_bus_route_command_parameter_route = "রুট",
+		draw_bus_route_command_parameter_route_help = "যে রুটটি আপনি অঙ্কন করতে চান তার নাম।",
+		draw_bus_route_command_substitutes = "",
+
+		-- jobs/dealership
+		set_pdm_slot_command = "পিডিএম স্লট সেট করুন",
+		set_pdm_slot_command_help = "পিডিএম-এ নির্দিষ্ট স্লটে গাড়িটি সেট করুন।",
+		set_pdm_slot_command_parameter_slot = "স্লট",
+		set_pdm_slot_command_parameter_slot_help = "আপনি যে স্লটে গাড়িটি সেট করতে চান। (1 - 8)",
+		set_pdm_slot_command_parameter_model_name = "মডেল নাম",
+		set_pdm_slot_command_parameter_model_name_help = "আপনি যে গাড়ির মডেল নামটি সেট করতে চান।",
+		set_pdm_slot_command_substitutes = "পিডিএম_স্লট, পিডিএম",
 
 		--jobs/doj
 		lookup_character_command = "lookup_character",
@@ -3822,8 +3899,6 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		job_command_help = "কোনও শর্টকাটের ভিত্তিতে বা এজেন্ট UI চালু / বন্ধ করুন",
 		job_command_parameter_server_id = "সার্ভার আইডি",
 		job_command_parameter_server_id_help = "খেলোয়ার সার্ভার আইডি বা নিজেকে নির্বাচন করতে সর্বোচ্চ সার্ভার আইডি 0।",
-		job_command_parameter_shortcut = "শর্টকাট",
-		job_command_parameter_shortcut_help = "পদক্ষেপে আপনি যে কাজে অবস্থিত হতে চান তা শর্টকাট। এটি বন্ধ করার বদলে পাঁচির UI টগল করতে খালি রাখুন।",
 		job_command_substitutes = "",
 
 		reset_job_command = "কাজ রিসেট",
@@ -4048,13 +4123,13 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		wheel_offset_command_parameter_wheels = "ফ্রন্ট/ব্যাক",
 		wheel_offset_command_parameter_wheels_help = "আপনি কোন চাকাদানের সংশোধন করতে চান?",
 		wheel_offset_command_parameter_value = "মান",
-		wheel_offset_command_parameter_value_help = "আপনি যা পরিবর্তন করতে চান তা। এটি -0.15 থেকে 0.2 এর মধ্যে যেকোন জায়গায় হতে পারে, ডিফল্ট হচ্ছে 0।",
+		wheel_offset_command_parameter_value_help = "আপনি কতটুকু পরিবর্তন করতে চান। এটি -0.25 থেকে 0.2 এর মধ্যে যেকোনো কিছু হতে পারে, এবং 0 হলো ডিফল্ট।",
 		wheel_offset_command_substitutes = "",
 
 		suspension_height_command = "সাসপেনশন_উচ্চতা",
 		suspension_height_command_help = "গাড়ির ভিজুয়াল সাসপেনশন উচ্চতা পরিবর্তন করুন।",
 		suspension_height_command_parameter_value = "মান",
-		suspension_height_command_parameter_value_help = "আপনি যেটা পরিবর্তিত করতে চান তা পরিমাণ। এটি -0.15 থেকে 0.1 পর্যন্ত হতে পারে, 0 হচ্ছে ডিফল্ট।",
+		suspension_height_command_parameter_value_help = "আপনি কতটুকু পরিবর্তন করতে চান। এটি -0.2 থেকে 0.1 এর মধ্যে যেকোনো কিছু হতে পারে, এবং 0 হলো ডিফল্ট।",
 		suspension_height_command_substitutes = "",
 
 		-- vehicles/oil
@@ -4337,7 +4412,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		restart_cancelled = "সার্ভার পুনরায় আরম্ভ হবে না।",
 
-		server_restarting = "সার্ভারটি পুনরায় চালু হচ্ছে। আপনি কয়েকটি মিনিটে পূর্বে যোগদান করতে পারেন।",
+		server_restarting = "সার্ভারটি পুনরায় চালু হচ্ছে।",
 
 		executed_restart_command = "পুনরায় চালু কমান্ড পালন করা হয়েছে।",
 		already_executed_restart_command = "পুনরায় চালু কমান্ডটি ইতিমধ্যে পালন করা হয়েছে।",
@@ -4420,9 +4495,12 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		reason_unknown = "কারণ অজানা।",
 
 		unloaded_character = "আনলোড করা ক্যারেক্টার।",
+		loaded_character = "লোড করা চরিত্র।",
 		user_does_not_have_sent_character_loaded = "ব্যবহারকারী পাঠানো ক্যারেক্টারটি লোড করে নেই।",
 		user_has_no_character_loaded = "ব্যবহারকারী কোন চরিত্র লোড করে নেই।",
+		user_already_has_character_loaded = "ব্যবহারকারীর ইতিমধ্যেই একটি চরিত্র লোড করা আছে।",
 		user_not_found = "সার্ভারে পাওয়া যায় নি প্রেরিত ব্যবহারকারী।",
+		user_does_not_have_character = "ব্যবহারকারীর দেওয়া চরিত্র আইডির সাথে কোন চরিত্র নেই।",
 		invalid_character_id = "প্রেরিত ক্যারেক্টার আইডি পারামিটারটি অবৈধ।",
 		invalid_license_identifier = "অবৈধ লাইসেন্স চিহ্নিত পারামিটার পাঠানো হয়েছে।",
 
@@ -4464,7 +4542,13 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		critical_error_while_loading_data = "আপনার ডেটা লোড করার চেষ্টা করতে ক্রিটিক্যাল ত্রুটি হয়েছে।",
 
 		ping_unstable = "আপনার পিং অস্থির।",
-		ping_stable = "আপনার পিং এখন আবার স্থির হয়েছে।"
+		ping_stable = "আপনার পিং এখন আবার স্থির হয়েছে।",
+
+		the_command_has_been_run = "আমন্ত্রণটি চালিত হয়েছে।",
+		the_camera_has_been_updated = "গেমপ্লে ক্যামেরা আপডেট করা হয়েছে।",
+		not_able_to_use_on_developer = "আপনি ডেভেলপারদের উপর এই রুটটি ব্যবহার করতে পারেন না।",
+		the_spectator_camera_has_been_updated = "দর্শক ক্যামেরা আপডেট করা হয়েছে।",
+		the_spectator_mode_has_been_updated = "দর্শক মোড আপডেট করা হয়েছে।"
 	},
 
 	vpn = {
@@ -4554,7 +4638,12 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		helipad = "হেলিপ্যাড",
 		looking_up = "প্রবেশ দরখাস্ত",
 		registration_not_found = "নিবন্ধনটি খুঁজে পাওয়া যায়নি।",
-		registration_lookup = "এয়ারক্রাফ্ট নিবন্ধন নাম্বার `${registration}` সর্বশেষে ভাড়া দেওয়া হয়েছিল ${fullName} #${characterId} এ।"
+		registration_lookup = "এয়ারক্রাফ্ট নিবন্ধন নাম্বার `${registration}` সর্বশেষে ভাড়া দেওয়া হয়েছিল ${fullName} #${characterId} এ।",
+
+		withdrew_vehicle_logs = "বিমানবন্দরের যানবাহন প্রত্যাহার করা হয়েছে।",
+		withdrew_vehicle_logs_details = "${consoleName} একটি ${label} $${deposit} জামানত সহ তুলে নিয়েছে (`${coords}`-এ)।",
+		parked_vehicle_logs = "পার্ক করা বিমানবন্দরের যান",
+		parked_vehicle_logs_details = "${consoleName} একটি ${label} পার্ক করেছে।"
 	},
 
 	airstrike = {
@@ -4589,6 +4678,20 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		male = "পুরুষ",
 		female = "নারী",
 
+		feed_interaction = "${name} কে খাবার দিন",
+		feed_doing = "${name} কে খাবার দিচ্ছি",
+		feed_success = "${name} কে ${food} এর একটু খাবার দিলাম।",
+		feed_failed = "${name} কে ${food} এর একটু খাবার দিতে ব্যর্থ।",
+
+		type_cat = "বিড়াল",
+		type_dog = "কুকুর",
+		type_rabbit = "খরগোশ",
+		type_hen = "মুরগী",
+		type_rat = "ইঁদুর",
+		type_pigeon = "পাঁঠা",
+		type_seagull = "সাগরের পায়রা",
+		type_crow = "কাক",
+
 		description_cat_unnamed = "একটি ${gender} বিরহী বেগমা, জীবনের মাঝে ঝলমলানো, ${age} বছর বয়সী এবং ${weight} ওজনের। ${food} এর প্রতি অতিষ্ট্র ভীতির সাথে, এই বীথিরা ক্ষুদ্র বালুক এক সময় বিশ্ব দখম কুয়া ঵লু্মেন্ট্র এবং পরের প্রেঞ্জালিং নেপটা। প্রতিটি মুৎসিকা একটি কাহিনী বলে, প্রতি একটি একটা আড়া সিলেট অধিকার করে।",
 		description_cat_named = "${name}, ${gender} বিচার করার একজন ${age} বছরের বয়সী ঘোড়া, এক ছোট যাত্রী যিনি অবিশ্বাস্য বহুনির্বাচন শৈখিত্ব নিয়ে অতীতের সূর্যালোকময় ঘুমের মধ্য এবং মধ্যরাতের অভিযান। ${weight} ও ভাতের জন্য অদ্বারোদ পূর্ণ, ${name} জীবিত একটি গুপ্তপণ্ডিত — অংশ রাজসূযাম্ভ দিননায়ক, অংশ জাড়া ব্লগম্যান্দবা।",
 
@@ -4604,8 +4707,17 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		description_rat_unnamed = "এই ${gender} ইঁদুর, ${age} সাহসী এবং ${weight} ওজন ধারণ করে, এটি রেজার-সার্প বুদ্ধিমানতা এবং আশ্চর্যজনক সান্ত্বনা দিয়ে পৃথিবীতে পরিভ্রমণ করে। এটি ${food} এর একটি নিঃশ্বাসযোগ্য ভাক্ত উদ্দেশ্য দ্বারা পরিচালিত, এটি প্রতিটি কোণাকে একটি সম্ভাব্য আবিষ্কারের জন্য পরিণত করে, প্রতিটি ছায়াকে একটি বন্য খেলা মেনে নেয়।",
 		description_rat_named = "${name}, একটি ${gender} ইঁদুর ${age}, জীবনের মহাপরিস্কারে আর গভীরিত, ওজন ${weight} এবং ব্যক্তিত্বে ভরপুর। ${food} এর সাথে একটি বিচ্ছিন্ন সংবর্ধন—${name} প্রশ্নাবেগের আত্মবিশ্বস্ততা প্রতিনিধিত্ত্ব করে—পরিমাণে ছোট, আবির্ভাবে অসীম।",
 
+		description_pigeon_unnamed = "একটি ${gender} পায়রা, ${age} বছর বয়সী এবং ${weight} বজনের, জীবনের সাথে ছাড়াছাড়ির এক অসাধারণ মাধুর্যে উড়ে চলে। ${food} এর জন্য অবিরাম ভালোবাসা নিয়ে, এই পাখির নায়ক rooftops এবং ফুটপাথের মাঝে সীমানা পাড়ি দেয়, সর্বদা পরবর্তী মহান খাবারের অনুসন্ধানে—অথবা সম্ভবত একটি দার্শনিক মুহূর্তের জন্য যে একটি ল্যাম্পপোস্টের উপরে।",
+		description_pigeon_named = "${name}, ${gender} পায়রা, এই আকাশভরা কাহিনীতে ${age} বছর ধরে, ${weight} ওজন নিয়ে আসে এবং ${food} এর জন্য একটি অবিচল প্রেম বহন করে। শহরের রাস্তায় অন rhythm একটি সুন্দর ভাবে উড়তে বা শান্ত আত্মবিশ্বাসে হাঁটতে, ${name} একটি পাখির রহস্য, নগরের জীবিত প্রাণী এবং আকাশের কবির সমান অংশ।",
+
+		description_seagull_unnamed = "একটি ${gender} ঠোঁটদেওয়া পেঁচা, বয়স ${age} এবং ওজন ${weight}, উপকূলে একজন সত্যিকার মাস্টার এবং স্ন্যাকসের বিজয়ী। সে যদি জোড়ালো ঢেউয়ের ওপর ডাকল বা ${food} এর জন্য একটি মহাকাব্যিক যুদ্ধে লকড হয়, তবে এই পাখির সুযোগসন্ধানী তখন সেখানে টিকে থাকে যেখানে আকাশ সমুদ্রের সাথে মেশে, চিরকাল পরবর্তী বিশাল ভোজের জন্য তাড়া করে।",
+		description_seagull_named = "${name}, ${gender} পেঁচা, ${age} এই লোনা, রৌদ্রোজ্জ্বল অভিযানে, ওজন ${weight} এবং ${food} এর জন্য অপরিসীম ক্ষুধায় নেতৃত্বাধীন। খোলামেলা আকাশের জন্য তৈরি ডানা নিয়ে এবং নিখুঁত স্ক্যাভেঞ্জিং স্পটের প্রতি নজর রেখে, ${name} হচ্ছে জোয়ারের, বাতাসের এবং ভুলে যাওয়া স্যান্ডউইচের ক্রাস্টের নিরলস অনুসন্ধানকারী।",
+
+		description_crow_unnamed = "একটি ${gender} কাক, ${age} বছর বয়সী এবং ${weight} ওজনের, আকাশে একটি ছায়া যার বুদ্ধিমত্তা তার ঠোঁটের মতো তীক্ষ্ণ। ${food} এর রহস্যে আকৃষ্ট হয়ে, এই রহস্যময় ঠকবাজটি দেখছে, শিখছে এবং অদ্ভুত সঠিকতার সঙ্গে কাজ করছে, জীবনের মধ্যে একটি জীবন্ত ধাঁধার মতো বেড়ে উঠছে।",
+		description_crow_named = "${name}, ${gender} কাক, ${age} বছরের অভিজ্ঞতার সঙ্গে বন্যার বিশাল কাহিনীতে প্রবাহিত হচ্ছে, ${weight} ওজনের এবং ${food} এর প্রতি এক আকর্ষণে অনুপ্রাণিত। ${name} এর চোখের প্রতিটি ঝলক একটি গোপনীয়তা লুকিয়ে রাখে, প্রতিটি ডাক একটি অজানা গল্পের গোপনিয়া প্রকাশ, প্রমাণিত করে যে কিছু প্রবীণ আত্মার পালক আছে কথা নেই।",
+
+		feed = "[${InteractionKey}] খাবার",
 		pick_up = "[${SeatEjectKey}] উঠান",
-		pick_up_named = "[${SeatEjectKey}] ${name} উঠান",
 
 		failed_pickup_cat = "বিড়ালটি উঠাতে ব্যর্থ হয়েছে।",
 		failed_pickup_dog = "কুকুরটি উঠাতে ব্যর্থ হয়েছে।",
@@ -4933,7 +5045,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		last_concat = "এবং",
 
 		attachments_logs_title = "সংযোগিতা এবং রঙ",
-		attachments_logs_details = "${consoleName} তাদের `${weaponName}` পরিবর্তন করেছে: ${modifications}.",
+		attachments_logs_details = "${consoleName} তাদের ${itemLabel} পরিবর্তন করেছেন: ${modifications}.",
 
 		removed_attachments = "${removed}-এর বদলে স্থানান্তর হয়েছে",
 		added_attachments = "${added}-এর সংযুক্তি করা হয়েছে",
@@ -5030,7 +5142,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		team_marker = "দল মার্কার",
 		trophy_information_top = "${name} সেরা!",
 		trophy_information_bottom = "ম্যাচে সর্বমোট ${playerAmount} জন খেলোয়াড় ছিল এবং আপনি তাদের মধ্যে ${kills} জনকে হত্যা করেছেন।",
-		not_able_to_join_while_in_match = "আপনি ম্যাচে থাকার সময় একটি লবি যোগ করতে পারবেন না।"
+		not_able_to_join_while_in_match = "আপনি ম্যাচে থাকার সময় একটি লবি যোগ করতে পারবেন না।",
+		picked_up_item_logs = "বিআর আইটেম তোলা হয়েছে",
+		picked_up_item_logs_details = "${consoleName} একটি ব্যাটল রয়্যাল ম্যাচের সময় একটি ${itemLabel} তোলেন."
 	},
 
 	bazaar = {
@@ -5135,6 +5249,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		sushi_restaurant = "সুশি রেস্তোরাঁ",
 		pizza_this = "পিজা এই",
 		city_hall = "সিটি হল",
+		luxury_autos = "লাক্সারি অটো",
 
 		bank = "ব্যাংক",
 		hospital = "হাসপাতাল",
@@ -5486,7 +5601,18 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		how_to_reduce_latency_part_2 = "'আউটপুট' সেকশনের 'আউটপুট মোড' অধীনে সুচারু বিকল্পটি নির্বাচন করুন।",
 		how_to_reduce_latency_part_3 = "এনকোডার সেটিংসের মধ্যে কিফ্রেম ইন্টারভেল সেটিং খুঁজুন।",
 		how_to_reduce_latency_part_4 = "কি ফ্রেম ইন্টারভাল প্রতি সেকেন্ডে 1 সেট করুন।",
-		custom_stream = "কাস্টম স্ট্রিম"
+		custom_stream = "কাস্টম স্ট্রিম",
+
+		already_have_a_key = "ইতিমধ্যে একটি কী আছে:",
+		already_have_a_key_1 = "যদি আপনি ইতিমধ্যে একটি কী দিয়ে ব্যবহার করতে চান, তবে আপনি এটি এখানে রাখতে পারেন.",
+		already_have_a_key_2 = "যখন আপনি চান যে দুইটি টিভি একই স্ট্রিমকে দেখায় তখন এটি সাহায্যকারী।",
+		already_have_a_key_3 = " তবে মনে রাখবেন, এটি ব্যান্ডউইথ ব্যবহৃত বৃদ্ধি করবে।",
+		already_have_a_key_4 = "আপনি যদি слишком বেশি করেন তবে এটি ল্যাগ করবে।",
+
+		cinemas_disabled = "সিনেমা নিষ্ক্রিয়।",
+		cinemas_enabled = "সিনেমা সক্রিয়।",
+		cinemas_muted = "সিনেমা মিউট করা হয়েছে।",
+		cinemas_unmuted = "সিনেমা আনমিউট করা হয়েছে।"
 	},
 
 	cinematic = {
@@ -6764,12 +6890,6 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		flashing = "ফ্ল্যাশিং"
 	},
 
-	clip_saver = {
-		start_recording = "রেকর্ডিং শুরু করুন",
-		clip_save = "ক্লিপ সংরক্ষণ করুন",
-		clip_discard = "ক্লিপ বাতিল করুন"
-	},
-
 	compass = {
 		north = "উ",
 		north_east = "উত্তর-পূর্ব",
@@ -6890,6 +7010,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		visit_the_location = "${location} ভিজিট করুন।",
 		punch_a_shark = "একটি হাঙ্গর মারা।",
 		put_bets_in_lottery = "লটারিতে মোট $${amount} মূল্যের বাজি হাতে ধরেছেন।",
+		buy_weazel_news = "একটি ওয়েজেল নিউজের সংখ্যা কিনুন।",
 
 		confirm_task_refresh = "${cost} টাকা খরচ করে আপনি কি সত্যিই এই কাজটি রিফ্রেশ করতে চান?",
 		yes = "হ্যাঁ",
@@ -7165,7 +7286,6 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		jewelry_store_closed = "জুয়েলারি স্টোর বর্তমানে বন্ধ রয়েছে। দয়া করে পরে আবার আসুন।",
 		bank_closed = "ব্যাংক বর্তমানে বন্ধ রয়েছে। দয়া করে পরে আবার আসুন।",
 		store_closed = "দোকান বর্তমানে বন্ধ রয়েছে। দয়া করে পরে আবার আসুন।",
-		failed_to_sync_doors = "দরজাগুলি সিঙ্ক করা ব্যর্থ হয়েছে। কিছু না কিছু ক্ষতিগ্রস্ত হয়েছে। দয়া করে আবার চেষ্টা করুন।",
 		saved_doors_to_file = "`${amount}`টি দরজা সার্ভারের ফাইলে সংরক্ষিত হয়েছে।",
 		no_nearby_doors = "সঞ্চয় করার জন্য কোন নিকটবর্তী দরজা নেই।",
 		copied_doors = "কপি করা হয়েছে ${doors} দরজা।",
@@ -8183,11 +8303,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		press_to_access_store = "স্টোরে প্রবেশ করতে ~INPUT_REPLAY_SHOWHOTKEY~ চাপুন।",
 		press_to_access_locker = "আপনার ব্যক্তিগত লকারে প্রবেশ করতে ~INPUT_REPLAY_SHOWHOTKEY~ চাপুন।",
 		press_to_access_shared_storage = "শেয়ারড স্টোরেজ এ প্রবেশ করতে ~INPUT_REPLAY_SHOWHOTKEY~ চাপুন।",
-		device_printout_details = "<b>ধরন:</b> <i>${type}</i>, <b>পাঠ্য:</b> <i>${text}</i>",
 		copy_serial_number = "সিরিয়াল নম্বার কপি করুন",
 		serial_number_copied = "${itemName}, সিরিয়াল নম্বার: ${serialNumber}",
 		copy_fingerprint = "আঙুলপ্রতিচ্ছবি কপি",
 		copy_evidence = "প্রমাণ কপি করুন",
+		copy_sample = "নমুনা তথ্য কপি করুন",
 
 		failed_give = "বস্তু(গুলি) খেয়াল ব্যক্তিকে দিতে ব্যর্থ হয়েছে।",
 		character_too_far = "ব্যক্তি খুব দূরে রয়েছে।",
@@ -8215,6 +8335,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		inventory_no_more_items = "আপনি এই ইনভেন্টরির অধিক আইটেম রাখতে পারবেন না।",
 
 		press_to_access_shredder = "[${InteractionKey}] শ্রেডারে প্রবেশ করুন।",
+		shredded_logs_title = "কাটা আইটেমসমূহ",
+		shredded_logs_details = "${consoleName} কাটলো: ${shredded}।",
 
 		invalid_item_id = "অবৈধ আইটেম আইডি।",
 		item_not_found = "${itemId} আইডি সহ আইটেম খুঁজে পাওয়া যায়নি।",
@@ -8227,6 +8349,13 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		clear_evidence_logs_title = "সাফ করা প্রমাণপত্র",
 		clear_evidence_logs_details = "${consoleName} এর দ্বারা প্রমাণপত্রের সাফ করা হয়েছে আইডি `${evidenceId}`. ${deleted} বস্তু(সমূহ) মুছে ফেলা হয়েছে এবং ${kept} ভাগটি রেখে দেওয়া হয়েছে।",
+
+		shuffled_inventory = "সফলভাবে `${inventoryName}` পুনর্বিন্যাস করা হয়েছে।",
+		shuffle_inventory_failed = "ইনভেন্টরি এলোমেলো করতে ব্যর্থ।",
+
+		failed_toggle_dementia = "ডিমেনশিয়া চালু করতে ব্যর্থ।",
+		toggled_dementia_on = "${displayName} এর জন্য ডিমেনশিয়া চালু করা হয়েছে।",
+		toggled_dementia_off = "${displayName} এর জন্য ডিমেনশিয়া বন্ধ করা হয়েছে।",
 
 		big_inventory_disabled = "ক্যারেক্টারের ইনভেন্টরির স্লটগুলি ডিফল্টে রিসেট করুন।",
 		big_inventory_enabled = "অস্থায়ীভাবে আপনার ক্যারেক্টারের ইনভেন্টরির স্লটগুলি বাড়িয়ে দেওয়া হয়েছে।",
@@ -8242,6 +8371,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		pizza_this_counter = "পিজা দিস কাউন্টার",
 		yellow_jack_counter = "ইলো জ্যাক কাউন্টার",
 		bean_machine_counter = "বিন মেশিন কাউন্টার",
+		irish_pub_counter = "আয়ারিশ পাব কাউন্টার",
+		vanilla_unicorn_counter = "ভ্যানিলা ইউনিকর্ন কাউন্টার",
 
 		inventory_name_missing = "ইনভেন্টরি নাম পরিমাণ অনুসারে অস্তিত্ব নেই।",
 
@@ -9141,6 +9272,11 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		generic_prescription = "সাধারণ প্রেসক্রিপশন",
 		generic_prescription_description = "কিছু ঔষধের জন্য একটি প্রেসক্রিপশন। রিফিলের জন্য ভাল হতে পারে।",
 
+		blood_test_kit = "রক্ত পরীক্ষা কিট",
+		blood_test_kit_description = "একটি উপকারী রক্ত পরীক্ষা কিট যা আপনার রক্তের ধারাকে জানা খুব সহজ করে দেয়। কয়েকটি ফোঁটা এবং একটু ধৈর্য্য সহ, আপনি আপনার রক্তের গ্রুপের রহস্যউন্মোচন করবেন—চমৎকার মেডিকেল প্রস্তুতির জন্য বা অদ্ভূত ট্রিভিয়া প্রতিযোগিতায় জিতার জন্য আদর্শ।",
+		blood_vial = "রক্তেরAmpoule",
+		blood_vial_description = "একটি ছোট Ampoule যা সতর্কতার সাথে সংগৃহীত একটি রক্তের নমুনা দ্বারা পূর্ণ, যা গুরুত্বপূর্ণ সূত্র ধারণ করছে যা আবিষ্কারের অপেক্ষায়। এটি একটি ব্যক্তির, একটি অপরাধস্থল থেকে, অথবা একটি অপ্রত্যাশিত রহস্য থেকে আসুক না কেন, এই ছোট কন্টেইনারটি আপনার উত্তর পাওয়ার পাস—যদি আপনি এটি পরীক্ষাগারে বিশ্লেষণ করাতে পারেন।",
+
 		brownies = "ব্রাউনি",
 		brownies_description = "গুদমেজাজ, ফোমি এবং দ্বিগুণ চকোলেট এর পরিমাণ একটু বেশী দিয়ে বাকি সবকটুকুই সমালোচনা করতে উপযোগী।",
 		weed_gummies = "ওয়িড গামি",
@@ -9192,11 +9328,18 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		pet_owl_description = "হুটি, আপনার বুদ্ধিমান এবং সতর্ক সঙ্গী, আপনার কন্ঠে সুন্দর ভাবে বসে। তার অবলম্বন চোখ এবং মৃদু পাখির সাথে, এই মোহনীয় উল্লু আপনার প্রত্যাশায় জাদু যুক্ত করে দেয় এগিয়ে যান। সর্বদা মূল্যায়ন প্রদান করতে প্রস্তুত, হুটি যে সকল প্রযান্তরের জন্য একটি উত্তম সহায়ক।",
 		pet_pig = "পর্চঁপ",
 		pet_pig_description = "একটি ছোট পিঁপিটি যার ভিতরে প্রেমবোধ, সর্বদা আপনার কন্ঠে উত্সাহবর্ধক হাং-হাং করে। একদম প্রবল সাবডোক্সএর সাথে জুড়ে, বা অ্যাডভেঞ্চারিং বা শোঁক করতে, এই পাইন্ট-সাইজ প্রেরিতা একটি কারিশ্মাময় এবং স্বামীর মোহন্য দুটো দাম।",
+		pet_flamingo = "ফ্যাশনেবল ফ্লামিঙ্গো",
+		pet_flamingo_description = "একটি চটকদার ফ্লামিঙ্গো যা আপনার কাঁধে সঠিকভাবে বসে, আপনার অভিযানে রঙ এবং স্টাইল যোগ করছে। এর উজ্জ্বল গোলাপী পালা এবং অটুট আস্থা দিয়ে, এই ফ্যাশনেবল পাখিটি আপনার সাথে যেকোনো জায়গায় দাঁড়িয়ে এবংবক্তব্য প্রকাশ করার জন্য সর্বোত্তম সঙ্গী।",
 
 		hotwheels_mcqueen = "লাইটনিং ম্যাককুইন",
 		hotwheels_mcqueen_description = "গতি আমি গতি, ম্যাককুইন এর মত ফ্লোট করুন একটি ক্যাডিল্যাক এর মতো আঘাত একটি বিমার এর মতো হউন। ক্যাচোও ক্যাচোও ক্যাচোও",
 		hotwheels_towmater = "টো মেটার",
 		hotwheels_towmater_description = "আমার নাম ম্যাটার, টমেটার এর মত কিন্তু T ছাড়া।",
+
+		mini_police = "মডেল পুলিশ গাড়ি",
+		mini_police_description = "একটি ক্ষুদ্র আইনশৃঙ্খলা রক্ষাকারী যান যা হাতে-কলমে প্রশিক্ষণের জন্য ডিজাইন করা হয়েছে। সঠিক অবস্থান, অ্যাপ্রোচ অ্যাঙ্গেল এবং উচ্চ-ঝুঁকির পরিস্থিতিতে ট্যাক্টিকাল ম্যানিউভারগুলি শেখার জন্য ব্যবহৃত হয়। এটি যদিও ছোট, তবে এটি অফিসারদের বাস্তব পরিস্থিতির জন্য প্রস্তুত করতে গুরুত্বপূর্ণ ভূমিকা পালন করে।",
+		mini_car = "মডেল সিভিলিয়ান গাড়ি",
+		mini_car_description = "একটি মানসম্পন্ন নাগরিক যানবাহনের ছোট আকারের রেপ্লিকা, প্রশিক্ষণ পরিস্থিতি এবং ট্যাক্টিকাল প্রদর্শনের জন্য নিখুঁত। আপনি যদি ট্রাফিক স্টপ, রোডব্লক, বা প pursuing ত্ত্যাক্টিক্স অনুশীলন করছেন, এই ছোট গাড়িটি অফিসারদের তাদের পদক্ষেপগুলি পরিকল্পনা করতে সাহায্য করে—বাস্তব দুর্ঘটনার ঝুঁকি ছাড়া।",
 
 		kinder_surprise = "কিন্দার সারপ্রাইজ ডিম",
 		kinder_surprise_description = "এটি আপনার সাধারণ ডিম নয়! এটি ভেঙ্গে খোলা আবিষ্কারী খেলার জগত এবং চুমুরদার অনুবাদকেরের জন্য অপেক্ষমান সহকারী। আপনি কি ভেত্তায় বেবী কার্টুন বিপুল, যা স্মার্ট হাঁটু মহাপুরুষ, বা শৈলীশীল স্যার ফ্যান্সি প্যান্টস দেখতে গিরিয়েছেন? আশ্চর্য হলো ফোটাটা৤",
@@ -9244,6 +9387,15 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		rabbit_2_description = "একটি ট্যান খরগোশ যার মখানই স্মুদ মোটায় এবং সর্বোপরি অসুবিধাজনক জায়গা গেলে আটকতের জন্য একটি ক্ষামতার আছে। এটা সমানভাবে মনোরম এবং সামান্যভাবে উন্মাদকর।",
 		rabbit_3 = "ধূসর মৃগী",
 		rabbit_3_description = "একটি ধূসর উটবাড়ি, যা বায়ুর ঝিম মতো চলে। চোখ বন্ধ করুন, এবং এটি চলে যাবে - কিন্তু আপনার হৃদয় (এবং সম্ভবত আপনার লেটুস) চুরি করার আগে।",
+
+		pigeon_0 = "পিজন",
+		pigeon_0_description = "একটি রাস্তায় অভিজ্ঞ পিজন, যার নৈতিকতা সন্দেহজনক এবং প crumb এর জন্য অটুট ভালোবাসা রয়েছে। বন্য থেকে তুলে নেওয়া, এই পালকের ফ্রিলোডার আপনার সাথে যাত্রা করবে, আপনার জীবনের সিদ্ধান্তগুলি নিঃশব্দে বিচার করবে এবং তার পরবর্তী স্ন্যাক হাইজের পরিকল্পনা করবে।",
+
+		seagull_0 = "সাগরপাখি",
+		seagull_0_description = "একটি জোরালো, নির্ভীক সাগরপাখি যার চুরি করার প্রতিভা এবং ব্যক্তিগত স্পেসের জন্য শূন্য সম্মান রয়েছে। আপনার খাবারের দিকে নজর দেয়া, শূন্যতার দিকে চিৎকার করা, বা আপনার কাঁধে আসন নেওয়ার মতো, এই পালকের দূষণকারী সর্বদা কিছু একটা করতে ব্যস্ত।",
+
+		crow_0 = "কাক",
+		crow_0_description = "একটি অত্যন্ত বুদ্ধিমান কাক যার চকচকে বস্তু এবং মানব আচরণের প্রতি সন্দেহজনকভাবে আগ্রহ রয়েছে। বিশ্বজুড়ে আধিপত্যের পরিকল্পনা করা হোক বা ছোট ছোট পান্ডুলিপি চুরি করা হোক, এই পালকযুক্ত মাস্টারমাইন্ড সবসময় পাঁচ পদক্ষেপে এগিয়ে।",
 
 		boxing_gloves = "বক্সিং দস্তানা",
 		boxing_gloves_description = "আপনাকে রকি তৈরি করে দিবে কিন্তু আপনি সম্ভবতঃ একটি পরবর্তী সিকুয়েল পাবেন না ...",
@@ -9638,6 +9790,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		spotlight_description = "এমন একটি স্পটলাইট যা প্রদর্শনার সিনের সুত্রাসত্তা করার জন্য প্রস্তুত। পেশাদার ছবি, তীব্র আলো, অথবা মাত্র আপনার বাসায় মুভি স্টার মনে করতে সুবিধা করে। এটা উজ্জ্বল, নির্ভুল, এবং সবসময় দৃশ্য চুরি করে।",
 		tube_light = "টিউব লাইট",
 		tube_light_description = "একটি সুন্দর এবং সাধারণ টিউব লাইট যা ভবনে প্রকাশ নয়, ধৈর্যের জন্য জগায়, ঊর্ধ্বমুखী লাইট হারায় এবং ঘরটি জায়গাটি নিয়ন্ত্রন করে। একটি আকর্ষণীয় আত্মগল্প তৈরির জন্য শেষগ্রাম আবতদী। এটি বাকা হিসেবে এত শীঘ্র দর্শন করে।",
+		studio_light = "স্টুডিও লাইট",
+		studio_light_description = "একটি পেশাদার মানের স্টুডিও লাইট যা যেকোনো স্থানকে একটি নিখুঁত আলোয় রূপান্তরিত করতে ডিজাইন করা হয়েছে। আপনি যেই শটটি ধারণ করছেন, নাটকীয় দৃশ্যটি চলচ্চিত্রায়ন করছেন বা সহজভাবে বাস্তবতার চেয়ে অনেক সুন্দর দেখতে চাইছেন, এই শক্তিশালী লাইট নিশ্চিত করে যে আপনি সবসময় সবার নজরে আছেন।",
 		yoga_mat = "ইয়োগা ম্যাট",
 		yoga_mat_description = "এই পোর্টাবল ইয়োগা ম্যাট আপনার আউটডোর রিল্যাক্সেশন এবং ব্যায়ামের জন্য আপনার ভিত্তি। এটি অনরোল করুন আপনার জেন পাওয়ার জন্য বা একটি উগ্র সাইকেলিং পর্বের পর স্ট্রেচ করার জন্য। পূর্বে যেথায়ও রাখা যেতে পারে।",
 		cooler_box = "কুলার বক্স",
@@ -9704,6 +9858,26 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		wheel_clamp_description = "এখানে কোনও চোর গাড়ি নেই! চাকার সংযম নিশ্চিত করে গাড়িগুলি দৃড়ভাবে বন্ধ হয় এবং অননুমোদিত চলন সম্পূর্ণ শেষ করে। এই ভারী শ্রমসাধ্য যন্ত্রটি একটি সাধারণ নিষ্ঠুর, যা পার্কিং বৈধতা সম্মান কিংবা অনুসরণ করার নিশ্চিত করে।",
 		old_rug = "পুরাতন চার্পাই",
 		old_rug_description = "তালগাছে বিতরণ করার জন্য এই আরামদায়ক চার্পাইটি এবং বসতে থাকার সময় সুবিধা বন্ধ রাখুন! এটি আপনির প্যান্টে সেবের ওপর সবুজের দাগ না পেতে তালগাছে শায় বসে থাকার জন্য এককলে। এটি বিস্তৃত করুন, পিছুটিছু করুন এবং আপনার পরিবেশে শৈলীতে এবং সুবিধায় উপভোগ করুন।",
+		box = "বক্স",
+		box_description = "একটি সাধারণ, জটিলতার অভাবযুক্ত কার্ডবোর্ড বক্স যা একদম কোনো গোপন চমক বহন করে না। এটি কিছু সংরক্ষণ করে না, বিশেষ কিছু করে না, কিন্তু এটি অস্তিত্বে আছে—এবং কখনও কখনও, সেটাই যথেষ্ট।",
+		arm_chair = "পুরনো আরামদায়ক চেয়ার",
+		arm_chair_description = "একটি ভালোভাবে ব্যবহৃত আরামদায়ক চেয়ার যা অনেক ভালো সময় দেখেছে কিন্তু এখনও সন্দেহজনক স্তরের স্বাচ্ছন্দ্য রয়েছে। কুশনগুলো আকারে বিকৃত, ফ্যাব্রিকটি দৃষ্টিতে ফ্যাকাশে, এবং এটা সম্ভব যে কিছু এখানে বাসা বেঁধে আছে—কিন্তু hey, এটি ইতিহাস আছে।",
+		plank = "কাঠের তক্তা",
+		plank_description = "একটি মজবুত, আবহাওয়ার করুণায় পড়ে যাওয়া কাঠের প্লাঙ্ক, যা রহস্যময় এবং বহুমুখী। হয়তো এটি একসময় একটি টেবিল, একটি বাক্স, অথবা কারও সন্দেহজনক DIY প্রকল্পের অংশ ছিল—যাই হোক, এটি এখন এখানে আছে, পুনরায় ব্যবহারের জন্য প্রস্তুত অথবা একটি ভুলে যাওয়া স্মারকের মতো পড়ে থাকার জন্য।",
+		wooden_table = "কাঠের টেবিল",
+		wooden_table_description = "একটি সাধারণ, সামান্য দুলন্ত কাঠের টেবিল যা সম্ভবত এক জীবন ধরে ঝরনা, আঁচড় এবং সন্দেহজনক সিদ্ধান্ত কিছু দেখেছে। খাবার গ্রহণ, কারুকাজ বা কেবল জিনিসগুলো রাখার জন্য উপযুক্ত যতক্ষণ না কেউ অবশ্যম্ভাবীরূপে এটি আঘাত করে।",
+		pigeon_statue = "পায়রা মূর্তি",
+		pigeon_statue_description = "একটি অদ্ভুত, সামান্য অস্বস্তিকর পায়রা মূর্তি যা মনে হচ্ছে তার মাথা হারিয়ে ফেলেছে। এটি আধুনিক শিল্প, একটি ফ্যাক্টরি ত্রুটি, অথবা কোনও ধরনের অভিশপ্ত স্মারক কিনা, এক নিশ্চিত—এই পাখিটি কোথাও উড়ে চলেছে না।",
+		wheel = "স্পেয়ার শাসণ",
+		wheel_description = "একটি সংকুচিত স্পেয়ার শাসণ, যা \"শুধু আমাকে বাড়ি পৌঁছে দাও\" টায়ার নামেও পরিচিত। গতি বা আরামের জন্য তৈরি নয়, তবে যখন বিপদ আসে, তখন এই ছোট জীবনরক্ষক বিজয় অর্জনের জন্য প্রস্তুত—শুধু আপনার ভাগ্যের বেশি পরীক্ষা করবেন না।",
+		ems_dummy_1 = "লিম্প ল্যারি",
+		ems_dummy_1_description = "একটি ক্লাসিক প্রশিক্ষণ ডামি, যা ন্যূনতম আঘাত নিয়ে গঠিত, মৌলিক চিকিৎসা পদ্ধতি অনুশীলন করার জন্য উপযোগী। সে অভিযোগ করবে না, তবে কাজটি সহজও করবেনা—একদম একটি বাস্তব রোগীর মতো।",
+		ems_dummy_2 = "হেডশট হ্যারি",
+		ems_dummy_2_description = "একটি দুর্ভাগ্যজনক মাথার আঘাতের কারণে, এই ডামিটি EMS প্রশিক্ষকদের তীব্র ট্রমা পরিস্থিতি পরিচালনার জন্য সহায়তা করে। আলাপচারিতায় খুবই ভাল না হলেও, সে কাজটি সঠিকভাবে সম্পন্ন করে।",
+		ems_dummy_3 = "ব‍্যাটার্ড বেং",
+		ems_dummy_3_description = "বিভিন্ন আঘাত এবং ফ্র্যাকচার দ্বারা আচ্ছন্ন, এই দুর্ভাগা প্রশিক্ষণ ডামিটি মাল্টি-ট্রমা পরিস্থিতির জন্য চমৎকার। যদি পড়ার কোনও ভুল উপায় থাকে, বেং তা ইতিমধ্যেই করে ফেলেছে।",
+		ems_dummy_4 = "বুকের আঘাত চার্লি",
+		ems_dummy_4_description = "একটি নাটকীয় শরীরের আঘাত নিয়ে চার্লি জীবনরক্ষাকারী হস্তক্ষেপের প্রশিক্ষণের জন্য সেরা পুতুল। তার হৃদস্পন্দন হয়তো খুব কমই আছে, কিন্তু সে এখনও মূল্যবান পাঠ শেখায়।",
 
 		evidence_marker_1 = "মার্কার 1",
 		evidence_marker_1_description = "গোয়া শুরুর পয়েন্ট, সত্যের গুপ্তচরের প্রথম পরিকল্পনা চিহ্নিত করা।",
@@ -9742,6 +9916,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		mine = "কয়েল",
 		mine_description = "যখন আপনার এটিএফ এ পাশে হাঁটোরা আসে তখন আপনি যদি একটি অতিরিক্ত \"স্বাগত চটকানি\" দরকার হয় তাহলে এটা প্রয়োজন হয়। কাউকে স্থান দিয়ে রাখুন, আর্ম সম্পাদন করুন, এবং দেখুন যে কোনও অকৃত্রিম অতিথি কী করে জল-রক্তমিশ্র থাকে।",
 
+		small_tv = "ছোট টিভি",
+		small_tv_description = "একটি সংক্ষিপ্ত, পুরানো ধরনের টিভি যা হয়তো এখনও কাজ করে। ছবির গুণমান সন্দেহজনক, অ্যান্টেনা কৌশলগত ভাবে স্থাপন করতে হয়, এবং এর ফলে হয়তো একমাত্র যে জিনিসটি পাবে তা হল স্থিরতা—কিন্তু嘿, এটি চরিত্রযুক্ত।",
 		tv_stand = "টিভি স্ট্যান্ড",
 		tv_stand_description = "এই শঈলিক টিভি স্ট্যান্ড দিয়ে আপনার বিজ-উইচিং সেটআপ আপগ্রেড করুন। এটা আপনার টিভি কে সঠিক চোখের উপর রেখে রাখে এবং সব আফাহামি ডিভাইসের জন্য জগৎ স্থান সজ্জ। এটি আপনার স্ক্রিনের জন্য গাদা মত।",
 		big_tv = "বড় টিভি",
@@ -10257,6 +10433,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		weapon_heavyrifle = "ভারী রাইফেল",
 		weapon_tacticalrifle = "সার্ভিস কারবাইন",
 		weapon_battlerifle = "যুদ্ধ ব্রাইফেল",
+		weapon_strickler = "এল স্ট্রিকলার",
 
 		weapon_mg = "এমজি",
 		weapon_combatmg = "যুদ্ধ এমজি",
@@ -10387,6 +10564,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		weapon_heavyrifle_description = "ভারী মানে ভালো হয় না? হ্যাঁ, আমরা তাই বলছি।",
 		weapon_tacticalrifle_description = "এই ঋতুর জনপ্রিয় হার্ডওয়্যার আইন প্রফেশনালদের, সামরিক কর্মকর্তাদের এবং একজন যে কোনও আইন প্রফেশনালকে নিয়ে সংঘটিত জীবন এর লড়াইতে।",
 		weapon_battlerifle_description = "যুদ্ধ ব্রাইফেল, এফএন ফ্যালের দৃঢ়তা এবং হেকলার এন্ড কোচ জি৩ নির্ভরতা একত্রিত একটি কম্প্রেশন। ম্যাগাজিনটি ভেপ্র ৭.৬২x৫৪আর এর মতো হলেও এটি সৈন্য ক্ষেত্রে শক্তি এবং সঠিকতার জন্য আপনার সর্বোচ্চ স্বতন্ত্রতা।",
+		weapon_strickler_description = "একটি স্বর্ণ-প্লেটেড সামরিক রাইফেলের সাহায্যে বিশ্বাসঘাতক লেকিদের গুলি করাই \"শ্রেণীর কৃতিত্ব\" নির্দেশ করে। স্যাবোটেজ এজেন্টদের অংশ।",
 
 		weapon_mg_description = "সমস্ত উদ্দেশ্যের জন্য উপযুক্ত মেশিন গান যা দক্ষতাসম্পন্ন পারফরমেন্স সঙ্গে কঠোর ডিজাইন যোগ করে। দীর্ঘ দূরত্ব প্রবেশ ক্ষমতা। বৃহত্তর গ্রুপ বিরোধী খুব কার্যকর।",
 		weapon_combatmg_description = "উন্নয়ন করা, সংকোচিত মেশিন গান যা দমনীয় প্রভাবের সাথে উচ্চ দক্ষতার সমন্বয় করে।",
@@ -10441,7 +10619,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		-- NOTE: Addon weapons
 		weapon_addon_huntingrifle = "হান্টিং রাইফেল",
-		weapon_addon_huntingrifle_description = "শিকার করার জন্য আপনার গো-টু রাইফেল।",
+		weapon_addon_huntingrifle_description = "একটি সঠিক এয়ার-পাওয়ারড হান্টিং রাইফেল যা নৈতিক শিকার জন্য নির্মিত। হরিণ, পর্বত সিংহ এবং ছোট শিকারীর বিরুদ্ধে প্রাণঘাতী, তবে মানবদের জন্য সম্পূর্ণ নিরীহ। ক্রীড়াবিদদের জন্য ডিজাইন করা হয়েছে, প্রতিযোগিতার জন্য নয়—শিকারের জন্য নিখুঁত, ভয় দেখানোর জন্য অকেজো।",
 
 		weapon_addon_vfcombatpistol = "ভিএফ কমব্যাট পিস্তল",
 		weapon_addon_vfcombatpistol_description = "বিস্মিত হতে ও আশাহারা হতে চেষ্টা করতে হবে।",
@@ -10814,7 +10992,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 	label_printer = {
 		image_url = "https://image.url/here.png",
 		printing = "প্রিন্ট করা হচ্ছে...",
-		print = "প্রিন্ট"
+		print = "প্রিন্ট",
+		failed_print = "লেবেল মুদ্রণ করতে ব্যর্থ হয়েছে।"
 	},
 
 	lag = {
@@ -11001,7 +11180,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		los_santos_police_dept = "লস স্যান্টোস পুলিশ ডিপার্টমেন্ট",
 
 		welcome_msg_title = "${communityName}-এ আপনাকে স্বাগতম!",
-		welcome_msg = "আপনি শুরু করতে উদ্দেশ্য কুছ আইটেম পাবেন। আপনি 1-5 কী ব্যবহার করে আইটেমগুলি ব্যবহার করতে পারবেন। \n\n আপনি আপনার ইনভেন্টরিটি খোলতে **${InventoryKey}** চাপুন বা আপনার ব্রোশারটি পড়তে  **1** চাপুন।",
+		welcome_msg = "আপনি কিছু আইটেম পেয়েছেন যা আপনাকে শুরু করতে সহায়তা করবে। আপনি 1-5 কী ব্যবহার করে আপনার হটবারে আইটেমগুলি ব্যবহার করতে পারেন। \n\nআপনার ইনভেন্টরি খুলতে **${+inventory_toggle}** চাপুন বা আপনার ব্রোশিওর পড়তে **1** চাপুন।",
 
 		press_to_go_back_to_menu = "মেনুতে ফিরে যেতে ~g~${InteractionKey}~w~ চাপুন।",
 		go_back_to_menu = "মেনুতে ফিরে যান।",
@@ -11030,9 +11209,6 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		queuer_not_found = "কিউয়ার পাওয়া যায়নি।",
 		queuer_skipped_queue = "কিউয়ার পাশাপাশি এটিকে অব্যাহত করেছেন।",
-
-		slots_set_to = "সার্ভার স্লট ${slots} এ সেট করা হয়েছে।",
-		slots_already_set_to = "সার্ভার স্লট ইতিমধ্যে সেট করা হয়েছে ${slots}।",
 
 		death = "মৃত্যু",
 		normal = "সাধারণ",
@@ -11391,7 +11567,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		bad_ped_message = "সম্ভবতঃ খারাপ পেড মেসেজ তৈরি করা হয়েছে: \"${pedMessage}\"",
 		bad_twitter_post = "সম্ভবতঃ খারাপ টুইটার পোস্ট তৈরি করা হয়েছে: \"${twitterPost}\"",
 		bad_twitter_account = "সম্ভাব্যভাবে খারাপ টুইটার অ্যাকাউন্ট তৈরি করার চেষ্টা করা হয়েছে: \"${username}\"",
-		bad_phone_message = "টুইটারে অপসন্দযোগ্য পোস্ট তৈরি করার চেষ্টা করা হয়েছে: \"${message}\"",
+		bad_phone_message = "সম্ভবত একটি খারাপ ফোন বার্তা তৈরি করার চেষ্টা করা হয়েছে: \"${message}\"",
 		user_not_found = "আমরা সার্ভার আইডি `${serverId}` সহ কোনও ব্যবহারকারী খুঁজে পাই নি।",
 		player_already_muted = "${consoleName} ইতিমধ্যেই মিউট করা হয়েছে।",
 		player_has_been_muted_no_reason = "কোনও নির্দিষ্ট কারণ ছাড়াও ${consoleName} এখন মিউট করা হয়েছে।",
@@ -11424,10 +11600,6 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		already_using_metric_measurement = "আপনি ইতিমধ্যে মেট্রিক মান পছন্দ করেছেন।",
 		already_using_imperial_measurement = "আপনি ইতিমধ্যে ইমপেরিয়াল মান পছন্দ করেছেন।",
 		already_using_default_measurement = "আপনি ইতিমধ্যে লোকেলের ডিফল্ট মান ব্যবহার করছেন।",
-		no_copyright = "কপিরাইট নেই",
-		no_copyright_warning = "হাই! আপনি কি এমন কোনও স্ট্রিমার বা কনটেন্ট ক্রিয়েটর যারা DMCA এবং কপিরাইট দাবিতে সমস্যায় পড়ে? যদি হ্যাঁ, তবে আমরা আপনাকে `${noCopyrightCommand}` কমান্ড চালু করার পরামর্শ দিচ্ছি যাতে আমরা আপনার খেলায় কেটে যাওয়া কিছু কপিরাইট সম্পদ প্রদর্শন করা এবং শুনানো বন্ধ করতে পারি। এই ফিচারটি টগল করা হয় তা এক্ষেত্রে কাজ করতে শুরু করে।",
-		no_copyright_enabled = "কপিরাইট",
-		no_copyright_disabled = "",
 		server_tps = "সার্ভার TPS",
 		server_tps_response = "${tps}",
 		license_copied = "লাইসেন্স সফলভাবে ক্লিপবোর্ডে কপি করা হয়েছে।",
@@ -11663,7 +11835,14 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		chop_shop_sound = "চপ শপ রেডিও শব্দ অকার্যকর করুন",
 		seatbelt_sound = "গড়ি অপসারণ শব্দ অকার্যকর করুন",
 		eating_noises_sound = "খারাপ শব্দ নিষ্ক্রিয় করুন",
+		minigame_colors = "মিনিগেম রঙ",
+		minigame_colors_text = "কিছু মিনিগেমের রঙ পরিবর্তন করুন যাতে আইটেমগুলি আরও দৃশ্যমান এবং খুঁজে পেতে সহজ হয়। সব মিনিগেমের জন্য কাজ করে না, তবে কিছু নির্দিষ্ট মিনিগেমের জন্য এটি কাজ করে।",
 		sound_effect_placeholder = "ফাইল URL .oog...",
+
+		color_0 = "ডিফল্ট",
+		color_1 = "গােলা",
+		color_2 = "হলুদ",
+		color_3 = "সবুজ",
 
 		button_save = "সংরক্ষণ করুন",
 		button_reset = "রিসেট করুন",
@@ -12430,7 +12609,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		pacific_bank_reward_logs_title = "প্যাসিফিক ব্যাংক পুরস্কার",
 		pacific_bank_reward_saving_bonds_logs_details = "${consoleName} একটি সেফ খুঁজে বোঝা যায় যে ${amount} মৌলিক বন্ড পান হয়েছিল যুক্তমূল্যে $${amount}।",
-		pacific_bank_reward_items_logs_details = "${consoleName} একটি সেফ খুঁজে বোঝা যায় যে ${amount}টি পণ্য প্রাপ্ত করেছিলেন।"
+		pacific_bank_reward_items_logs_details = "${consoleName} একটি সেফ খুঁজে বোঝা যায় যে ${amount}টি পণ্য প্রাপ্ত করেছিলেন।",
+
+		disabled_generators_logs_title = "অক্ষম জেনারেটর",
+		disabled_generators_logs_details = "${consoleName} প্রশাসক কমান্ড ব্যবহার করে প্যাসিফিক ব্যাংকের জন্য ${disabledGeneratorsCount} জেনারেটর অক্ষম করেছে।"
 	},
 
 	panel = {
@@ -12447,6 +12629,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		system_issuer = "সিস্টেম",
 		add_note_title = "নোট যুক্ত করুন",
 		message_placeholder = "${playerName} একটি ভুল করেছেন...",
+		failed_auth_token = "অথরাইজেশন টোকেন পাওয়ায় ব্যর্থ।",
+		no_permissions = "আপনার নিয়মিত প্রশাসক প্যানেল দেখা করার অনুমতি নেই।",
+		panel_unavailable = "নিয়মিত প্রশাসক প্যানেল উপলব্ধ নয়।",
 
 		type_note = "নোট",
 		type_warning = "সতর্কতা",
@@ -12587,7 +12772,6 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 	ped_objects = {
 		illegal_ped_object = "'অনুমোদিত' তালিকার বাইরে পেড অবজেক্ট যোগ করতে চেষ্টা করা হচ্ছে।",
-		illegal_ped_weapon_object = "অস্বীকৃত হাত অবজেক্ট জুড়ে পেড অবজেক্ট যোগ করার চেষ্টা করা হচ্ছে।",
 		illegal_raw_ped_object = "খেলোয়াড় উচিত অনুমতি না থাকা একটি কাচাল পেড় অবজেক্ট যোগ করতে চেষ্টা করছে।"
 	},
 
@@ -12749,6 +12933,19 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 		robbed_ped_logs_title = "লুটে গেছে পেড",
 		robbed_ped_logs_details = "${consoleName} একটি পেড লুটে এবং $${payout} পেয়েছে।"
+	},
+
+	pool = {
+		reset_table = "~INPUT_DETONATE~ চাপ দিন টেবিল পুনরায় সেট করতে।",
+		resetting_table = "টেবিল রিসেট করা হচ্ছে",
+
+		active_table = "${tables} অ্যাক্টিভ টেবিল",
+		active_tables = "${tables} অ্যাক্টিভ টেবিলগুলো",
+		inactive_table = "${tables} অক্রিয় টেবিল",
+		inactive_tables = "${tables} অক্রিয় টেবিলগুলো",
+		time = "সময়: ${time}~t~ms/t",
+		steps = "পদক্ষেপ: ${steps}~t~/t",
+		checks = "চেক: ${checks}~t~/t"
 	},
 
 	pools = {
@@ -13041,6 +13238,25 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		failed_to_remove_riot_player = "${consoleName}-কে হুমকির তালিকা থেকে সরানো যাচ্ছে না।"
 	},
 
+	rockstar = {
+		already_recording = "আপনি ইতিমধ্যে রেকর্ডিং করছেন।",
+		started_recording = "রেকর্ডিং শুরু হয়েছে।",
+		not_recording = "আপনি রেকর্ডিং করছেন না।",
+		saved_recording = "রেকর্ড করা ক্লিপ সংরক্ষণ করা হয়েছে।",
+		discarded_recording = "রেকর্ড করা ক্লিপ বিলুপ্ত করা হয়েছে।",
+		unknown_action = "অজানা ক্রিয়া `${action}`।",
+
+		keybind_record = "RE: রেকর্ডিং শুরু করুন",
+		keybind_save = "RE: রেকর্ড করা ক্লিপ সংরক্ষণ করুন",
+		keybind_discard = "RE: রেকর্ড করা ক্লিপ বাতিল করুন",
+		keybind_open = "RE: এডিটর খুলুন",
+
+		record = "একটি রেকর্ডিং শুরু করে।",
+		save = "রেকর্ডিং বন্ধ করে এবং রেকর্ড করা ক্লিপকে সংরক্ষণ করে।",
+		discard = "রেকর্ডিং বন্ধ করে এবং রেকর্ড করা ক্লিপকে বাতিল করে।",
+		open = "রকস্টার এডিটর খুলে (এবং আপনাকে ডিসকনেক্ট করে)।"
+	},
+
 	rules = {
 		invalid_rule = "অবৈধ নিয়ম আইডি।",
 
@@ -13161,7 +13377,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 	screenshots = {
 		screenshot_created = "একটি স্ক্রীনশট সফলভাবে তৈরি করা হয়েছে।",
-		screenshot_failed = "দেয়া ব্যবহারকারী থেকে স্ক্রীনশট গ্রহণ করা ব্যর্থ হয়েছে।",
+		screenshot_failed = "স্ক্রিনশট নেওয়ার সময় কিছু ভুল হয়েছে।",
 		screencapture_created = "একটি স্ক্রীনক্যাপচার সফলভাবে তৈরি করা হয়েছে।",
 		user_not_found_with_server_id = "দেওয়া সার্ভার আইডি দিয়ে কোন ব্যবহারকারী খুঁজে পাওয়া যায়নি।",
 		invalid_lifespan_parameter = "সময় প্যারামিটার অবৈধ।",
@@ -13170,6 +13386,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		invalid_fps_parameter = "এফপিএস প্যারামিটার অবৈধ।",
 		missing_server_id_parameter = "সার্ভার আইডি প্যারামিটার অনুপস্থিত।",
 
+		screenshot_failed = "স্ক্রিনশট নেওয়ার সময় কিছু ভুল হয়েছে।",
 		screenshot_error_client_false = "স্ক্রিনশট তৈরি করা যায়নি",
 		screenshot_error_user_not_found = "ব্যবহারকারী খুঁজে পাওয়া যায়নি।",
 		screenshot_error_user_developer = "ব্যবহারকারী একটি ডেভেলপার।",
@@ -13359,6 +13576,14 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		skylift_magnet_turned_on_logs_details = "${consoleName} স্কাইলিফট ম্যাগনটি চালু করেছে।",
 		skylift_attached_vehicle_logs_title = "স্কাইলিফট যুক্ত গাড়ি",
 		skylift_attached_vehicle_logs_details = "${consoleName} তাদের স্কাইলিফটে গাড়ি যুক্ত করেছে।"
+	},
+
+	smile = {
+		failed_smile = "কিছু ভুল হয়েছে।",
+		smile_success = "${displayName} এর জন্য হাসি সফলভাবে চালু করা হয়েছে।",
+
+		smile_logs_title = "হাসি চালু করা হয়েছে",
+		smile_logs_details = "${consoleName} ${targetName} এর জন্য হাসি চালু করেছে।"
 	},
 
 	smell = {
@@ -13553,6 +13778,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		user_not_staff = "ব্যবহারকারীটি একজন স্টাফ সদস্য নয়।",
 		staff_pm_warning = "স্টাফ পি.এম. সতর্কতা",
 		staff_pm_first_time = "আমরা দেখতেছি আপনি পূর্বে কখনো স্টাফ পি.এম. ব্যবহার করেননি। স্টাফ পি.এম এ প্রতিক্রিয়া দিতে, `/staffpm` এটি অনুসরণ করে আপনার অ্যাইডি দিয়ে। সহজ ব্যবহারের জন্য আপনি শেষ পাওয়া স্টাফ পি.এম. এ উত্তর দেওয়ার জন্য `/উত্তর` ব্যবহার করতে পারেন।",
+		sent_important_pm = "${displayName} এর জন্য গুরুত্বপূর্ণ স্টাফ পিএম পাঠানো হয়েছে।",
 
 		staff_pm_title = "স্টাফ পিএম ${from} -> ${to}",
 		staff_pm_title_external = "বাহ্যিক স্টাফ পিএম ${from} -> ${to}",
@@ -13915,27 +14141,59 @@ OP.Global.Locales.Languages["bn-BD"] = {
 	test_server = {
 		menu_title = "ওপ মেনু",
 
+		settings = "সেটিংস",
+		settings_description = "পরীক্ষামূলক মেনুর জন্য বিভিন্ন সেটিংস ঠিক করুন।",
+		phasing = "ফেজিং",
+		phasing_description = "নিকটবর্তী গাড়িগুলোর মধ্য দিয়ে যাওয়ার জন্য গাড়ির ফেজিং সক্রিয় বা নিষ্ক্রিয় করুন।",
+		infinite_ammo = "অসীম গুলি",
+		infinite_ammo_description = "আমরা পুনরায় প্রয়োজন ছাড়া সীমাহীন গুলি পাবেন, কিন্তু রিলোড করা এখনও আবশ্যক।",
+		fixed_time = "নিশ্চিত সময়",
+		fixed_time_description = "সকাল, দুপুর, সন্ধ্যা বা মধ্যরাতে সময় বন্ধ করুন, যা কেবল আপনাকে প্রভাবিত করে।",
+		always_morning = "সকাল",
+		always_noon = "দুপুর",
+		always_evening = "সন্ধ্যা",
+		always_night = "মধ্যরাত",
+
 		vehicles = "বাহন বিকল্পসমূহ",
+		vehicles_description = "আপনার বর্তমান যানবাহন পরিবর্তন এবং взаимодействие করুন।",
 		spawn_car = "গাড়ি উৎপন্ন করুন",
+		spawn_car_description = "প্রি-নির্ধারিত নির্বাচন থেকে একটি যানবাহন জন্মগ্রহণ করুন।",
 		upgrade_vehicle = "গাড়ি উন্নয়ন করুন",
+		upgrade_vehicle_description = "আপনার যানবাহনের পারফরম্যান্স উন্নত করতে উন্নয়ন করুন।",
 		break_windows = "ঝরিয়ে জানাও",
+		break_windows_description = "আপনার বর্তমান যানবাহনের সব উইন্ডো ভেঙে ফেলুন।",
 		pop_tires = "পপ টায়ার",
+		pop_tires_description = "আপনার বর্তমান যানবাহনের সব টায়ার ফাঁকা করুন।",
 		detach_doors = "দরজা ছিটান",
+		detach_doors_description = "আপনার যানবাহনের সব দরজা সম্পূর্ণরূপে সরিয়ে ফেলুন।",
 		damage_vehicle = "গাড়ি ক্ষতিগ্রস্ত",
+		damage_vehicle_description = "আপনার যানবাহনে ক্ষতি করুন যতক্ষণ না ইঞ্জিন ধোঁয়া বের করা শুরু করে।",
 		repair_vehicle = "গাড়ি মেরামত করুন",
+		repair_vehicle_description = "আপনার যানবাহনকে সম্পূর্ণভাবে তৈরি করে নিখুঁত অবস্থায় ফিরিয়ে আনুন।",
 		delete_vehicle = "গাড়ি মুছুন",
+		delete_vehicle_description = "আপনার বর্তমান যানবাহনকে অস্তিত্ব থেকে মুছে ফেলুন।",
 
 		player = "খেলোয়াড় বিকল্পসমূহ",
+		player_description = "প্লেয়ারের বৈশিষ্ট্য এবং অবস্থায় পরিবর্তন করুন।",
 		starve = "স্টার্ভ আপ ইউর সেলফ",
+		starve_description = "আপনার ক্ষুধা এবং তৃষ্ণার স্তর খুব কম সেট করুন।",
 		add_stress = "জোর দাও",
+		add_stress_description = "সরাসরি আপনার চাপের স্তর সর্বাধিক করুন।",
 		feed = "খাওয়ান",
+		feed_description = "আপনার ক্ষুধা এবং তৃষ্ণা সম্পূর্ণভাবে পূরণ করুন।",
 		relief_stress = "বিনোদন করুন",
+		relief_stress_description = "আপনার চাপ সম্পূর্ণরূপে দুর্ভোগ করুন।",
 		reset_health = "স্বাস্থ্য রিসেট করুন",
+		reset_health_description = "আপনার স্বাস্থ্যের স্তর পূর্ণ করুন।",
 		remove_injuries = "ক্ষতি মুছে ফেলুন",
+		remove_injuries_description = "আপনার চরিত্রের সব আঘাত সারিয়ে তুলুন।",
 		toggle_noclip = "নকলিপ চালু/বন্ধ করুন",
+		toggle_noclip_description = "মুক্ত আন্দোলনের জন্য নোক্লিপ মোড সক্ষম বা অক্ষম করুন।",
 
 		teleport = "টেলিপোর্ট বিকল্পসমূহ",
+		teleport_description = "অবিলম্বে বিভিন্ন প্রিসেট স্থানে ভ্রমণ করুন।",
 		teleport_to = "টিপি টু",
+		teleport_to_description = "নির্ধারিত টেলিপোর্ট স্থানের মধ্যে থেকে একটি গন্তব্য নির্বাচন করুন।",
 		tp_customs = "এলএস কাস্টমস",
 		tp_legion = "লেজিয়ন স্কোয়ার",
 		tp_garage_a = "গ্যারেজ এ",
@@ -13945,13 +14203,20 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		tp_airport = "এলএস বিমানবন্দর",
 		tp_carrier = "এয়ারক্রাফ্ট ক্যারিয়ার",
 		tp_cayo = "কায়ো পেরিকো",
+		tp_staff_tower = "\"স্টাফ টাওয়ার\"",
 
 		actions = "ক্রিয়াকলাপসমূহ",
+		actions_description = "বিভিন্ন প্লেয়ার সম্পর্কিত ক্রিয়া কার্যকর করুন।",
 		jail_self = "নিজেকে জেলে রাখুন",
+		jail_self_description = "নিজেকে তাত্ক্ষণিকভাবে জেলে পাঠান।",
 		unjail_self = "নিজেকে জেল থেকে মুক্ত করুন",
+		unjail_self_description = "তাত্ক্ষণিকভাবে নিজেকে জেল থেকে মুক্ত করুন।",
 		wander_around = "ঘুরে বেড়া",
+		wander_around_description = "আপনার চরিত্রকে পায়ে অথবা একটি যানবাহনে স্বতঃস্ফূর্তভাবে ঘুরতে দিন।",
 		speed_around = "দ্রুতগতি সহ ঘুরে বেড়া",
+		speed_around_description = "যানবাহন চালাতে চালাতে উচ্চ গতিতে আইন লঙ্ঘন করুন।",
 		clear_tasks = "কার্যাদি মুছুন",
+		clear_tasks_description = "আপনার চরিত্রের কাছে নিযুক্ত সকল ক্রিয়াকলাপ এবং কাজ পুনরায় সেট করুন।",
 
 		you_are_not_in_a_vehicle = "আপনি গাড়ির মধ্যে নেই।",
 		you_are_in_a_vehicle = "আপনি বর্তমানে একটি গাড়ির ভিতরে রয়েছেন।",
@@ -14093,6 +14358,12 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		training = "প্রশিক্ষণ"
 	},
 
+	trains = {
+		debug_enabled = "ট্রেন ডিবাগ সক্রিয় করা হয়েছে।",
+		debug_disabled = "ট্রেন ডিবাগ নিষ্ক্রিয় করা হয়েছে।",
+		trains = "ট্রেন: ${trains}"
+	},
+
 	traps = {
 		rearming = "পুনরায় সজ্জিত করা হচ্ছে",
 		press_to_rearm = "[${InteractionKey}] সজ্জিত করুন",
@@ -14152,25 +14423,25 @@ OP.Global.Locales.Languages["bn-BD"] = {
 	},
 
 	tuner_shop = {
+		no_vehicle = "এই স্থানে কোন যানবাহন নেই।",
+		near_label = "${label} | $${price}",
 		purchase_label = "[${SeatEjectKey}] ক্রয় করুন ${label} জন্য $${price}",
-		purchase_label_far = "${label} | $${price}",
-		purchase_label_timer = "[${timer}] ${label} | $${price}",
-		purchase_label_sale = "[${SeatEjectKey}] ক্রয় করুন ${label} জন্য $${price} (-${discount}%)",
-		purchase_label_sale_far = "বিক্রয়ে | ${label} | $${price} (-${discount}%)",
-		purchase_label_sale_timer = "[${timer}] ${label} | $${price} (-${discount}%) (-${discount}%)",
-
-		failed_vehicle_spawn = "গাড়ি উত্পন্ন করা ব্যর্থ হয়েছে।",
+		purchase_label_timer = "[${timer}] ${label} কেনার জন্য $${price}",
+		purchased_vehicle = "${label} সফলভাবে কেনা হয়েছে।",
+		failed_vehicle_spawn = "যানবাহন স্পাউন করতে ব্যর্থ হয়েছে। যানবাহন এখনও আপনার গ্যারেজ থেকে উপলব্ধ থাকবে।",
+		computer_interact = "[${InteractionKey}] যানবাহন পরিবর্তন করুন",
+		computer_near = "যানবাহন পরিবর্তন করুন",
+		menu_title = "টিউনার শপ",
+		vehicle_spot = "স্পট",
+		vehicle = "গাড়ি",
+		tuner_shop_blip = "মিডনাইট টিউনারশপ",
 		not_enough_funds = "ক্রয় সম্পন্ন করার জন্য পর্যাপ্ত তথ্য নেই।",
 		area_not_clear = "স্পঁদানীতে প্রবেশ করতে পারবেন না।",
+		purchase_active = "কেউ ইতিমধ্যেই একটি গাড়ি কিনছে, দয়া করে কিছুক্ষণ অপেক্ষা করুন।",
 		something_went_wrong = "বাহন ক্রয় করার চেষ্টা করতে কিছু একটা সমস্যা হয়ে গেছে।",
 
-		purchased_vehicle = "${label}-টি সর্বনিম্ন $${price}-এ কেনা হয়েছে।",
-
-		tuner_shop_blip = "মিডনাইট টিউনারশপ",
-
 		log_title = "টিউনারশপ ক্রয়",
-		log_description = "$${price}-এ `${label}` কেনা হয়েছে।",
-		log_description_discount = "${discount}% ছাড় পাওয়ার সাথে `${label}` কেনা হয়েছে এবং এর দাম $${price}।"
+		log_description = "$${price}-এ `${label}` কেনা হয়েছে।"
 	},
 
 	tunerchip = {
@@ -14299,6 +14570,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		actual_channel = "বর্তমান চ্যানেল: ${actualChannel}",
 		target_radius = "লক্ষ্যের ব্যাস: ${targetRadius}",
 		actual_radius = "বর্তমান ব্যাস: ${actualRadius}",
+		invalid_target_source = "অকার্যকর লক্ষ্য উৎস।",
+		invalid_frequency = "অকার্যকর ফ্রিকোয়েন্সি।",
+		set_player_radio_frequency_successfully = " খেলোয়াড়ের রেডিও ফ্রিকোয়েন্সি সফলভাবে সেট করা হয়েছে।",
 
 		intent_music = "ভস্মে ইনপুট মোড সেট করুন 'সংগীত'।",
 		intent_speech = "ভস্মে ইনপুট মোড সেট করুন ফিরে 'বক্তৃতা' এ।",
@@ -14391,6 +14665,13 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		enter_vehicle_player = "নিকটবর্তী গাড়িতে ঢুকুন",
 		exit_vehicle_player = "গাড়িতে বসে থাকা থেকে বের হওয়া",
 		yank_steering_wheel_player = "স্টীলিং হুইল টেনে নেওয়া",
+		yank_steering_wheel_player_random = "এলোমেলো",
+		yank_steering_wheel_player_right = "ডানে",
+		yank_steering_wheel_player_left = "বামে",
+		tap_gas_or_brakes = "এতে ক্লিক করুন",
+		tap_gas = "গ্যাস",
+		tap_brakes = "ব্রেক",
+		tap_handbrake = "হ্যান্ডব্রেক",
 		flashbang_player = "ফ্ল্যাশব্যাং",
 		paper_bag_player = "পেপার ব্যাগ",
 		ignite_player = "আগুন লাগান",
@@ -14612,6 +14893,8 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		shutdown_engine = "আপনার ইঞ্জিন বন্ধ করুন এবং প্যাসেঞ্জারদের জন্য অপেক্ষা করুন।",
 		return_to_hq = "এইচকিউতে ফিরে যান।",
 		bus_stop = "বাস স্টপ",
+		cleared_route = "আঁকা পথ পরিষ্কার করা হয়েছে।",
+		drew_route = "বাসের রুট আঁকা হয়েছে: `${route}`",
 		pay_for_ticket = "~INPUT_CONTEXT~ ধরে একটি টিকেট কিনুন ($18)।",
 		not_enough_money_ticket = "আপনার টিকেটের জন্য যথেষ্ট টাকা নেই ($18)।",
 		ticket_paid = "${displayName} একটি বাস টিকেট পেমেন্ট করেছেন।",
@@ -14635,9 +14918,17 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		route_68_route = "রুট ৬৮ ডিরেক্ট",
 		airport_route = "এয়ারপোর্ট শাটল",
 		business_route = "ব্যবসা লাইন",
+		gambling_route = "জুয়া রুট",
 
 		finished_job_logs_title = "বাস রুট সমাপ্ত হয়েছে",
 		finished_job_logs_details = "${consoleName} ${route} বাস রুট চালানোর সম্পর্কে সমাপ্ত হয়েছে এবং $${payout} প্রাপ্তি করেন।"
+	},
+
+	dealership = {
+		invalid_slot = "অবৈধ স্লট।",
+		invalid_model = "মডেল নাম অনুপস্থিত।",
+		model_no_catalog = "মডেল ক্যাটালগে নেই।",
+		not_at_dealership = "আপনি PDM কম্পিউটারের খুব কাছে নন।"
 	},
 
 	doj = {
@@ -14728,6 +15019,28 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		set_job_logs_details = "${consoleName} ${targetConsoleName} (#${characterId}) এর কাজকে `${jobName}, ${departmentName}, ${positionName}` তে সেট করেছেন।",
 		reset_job_logs_title = "কাজ রিসেট করুন",
 		reset_job_logs_details = "${consoleName} ${targetConsoleName} (#${characterId}) এর কাজকে রিসেট করেছেন।"
+	},
+
+	medical = {
+		using_test_self = "নিজস্ব রক্ত পরীক্ষা করা হচ্ছে",
+		using_test_other = "নিকটবর্তী প্লেয়ার পরীক্ষা করা হচ্ছে",
+		failed_blood_test = "রক্ত পরীক্ষায় ব্যর্থ হয়েছে।",
+		waiting_results = "পরীক্ষার ফলাফলের জন্য অপেক্ষা করা হচ্ছে",
+		failed_test_results = "পরীক্ষার ফলাফল পাওয়া যায়নি।",
+
+		laboratory = "ল্যাবরেটরি",
+		not_near_laboratory = "আপনি এই আইটেমটি বিশ্লেষণ করার জন্য ল্যাবরেটরির কাছে নেই।",
+		analyzing_item = "${item} বিশ্লেষণ করা হচ্ছে",
+		analyzed_item = "${item} সফলভাবে বিশ্লেষণ করা হয়েছে।",
+		failed_analyze_item = "${item} বিশ্লেষণ করতে ব্যর্থ।",
+
+		blood_test = "রক্ত পরীক্ষা",
+		collected_time = "সংগ্রহের সময়: ${time}",
+		collected_area = "সংগ্রহ করা হয়েছে: ${area}",
+		dna_gid = "GID: ${dna}",
+		blood_type = "রক্তের প্রকার: ${bloodType}",
+		not_analyzed = "এখনো বিশ্লেষণ করা হয়নি",
+		sample_incomplete = "অসামাপ্ত/অব্যবহারযোগ্য নমুনা"
 	},
 
 	police = {
@@ -14852,6 +15165,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		you_are_now_married = "আপনি এখন ${name}-কে বিয়ে করেছেন।",
 		you_are_no_longer_married = "আপনি এখন ${name}-কে বিয়ে হয়নি।",
 
+		gave_license_logs = "লাইসেন্স দেওয়া হয়েছে",
+		gave_license_details = "${consoleName} চরিত্র #${characterId} কে `${license}` লাইসেন্স দিয়েছে।",
+		removed_license_logs = "লাইসেন্স অপসারণ করা হয়েছে",
+		removed_license_details = "${consoleName} চরিত্র #${characterId} থেকে `${license}` লাইসেন্সটি অপসারণ করেছে।",
 		divorced_logs_title = "তালাক",
 		divorced_logs_details = "${consoleName} ${nameA} #${cidA} এবং ${nameB} #${cidB}-র বিবাহ অবস্থার আপডেট করেছেন `তালাক`।",
 		married_logs_title = "বিয়ে হয়েছে",
@@ -15048,7 +15365,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		air_unit_not_enough_cash = "আপনি বায়ু ইউনিটটি ব্যবহার করতে পারবেন না কারণ আপনার যথেষ্ট টাকা নেই।",
 		air_unit_exit_vehicle = "বায়ু ইউনিট ব্যবহার করতে গাড়ি থেকে প্রস্থান করুন।",
 		air_unit_press_to_use = "বায়ু ইউনিটটি ব্যবহার করতে  ${SeatEjectKey} চাপুন। এর মূল্য হলো $${cost}।",
-		air_unit_purchase_cleaning_kit = "একটি ক্লিনিং কিট কেনার জন্য ~g~${InventoryKey} ~w~চাপুন।",
+		air_unit_purchase_cleaning_kit = "একটি ক্লিনিং কিট কিনতে ~g~${+inventory_toggle} ~w~এ চাপুন।",
 		cleaning_vehicle = "পরিষ্কারণ গাড়ি",
 		not_enough_money = "আপনার পরিমানটি যথাযথ নয় এই এয়ার ইউনিট ব্যবহার করতে।",
 		vehicle_not_in_range = "গাড়ি এত দূরে চলে গেছে যেন সাফ করা যায় না।"
@@ -15129,7 +15446,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		tank_full = "ট্যাংক পূর্ণ।",
 		battery_full = "ব্যাটারি পূর্ণ।",
 		vehicle_busy = "নিকটবর্তী যানবাহন ব্যস্ত।",
-		purchase_jerry_can = "জেরি ক্যান ক্রয় করতে ~g~${InventoryKey} ~w~চাপুন।",
+		purchase_jerry_can = "একটি জেরি ক্যান কিনতে ~g~${+inventory_toggle} ~w~এ চাপুন।",
 		gas_station = "গ্যাস স্টেশন",
 		petrolcan_fuel_text = "পেট্রলের পরিমাণ বাকি: ${petrolAmount}%~n~পেট্রোলিং বন্ধ করতে ~g~${InteractionKey} ~w~চাপুন।",
 		battery_fuel_text = "বাকি চার্জ: ${petrolAmount}%~n~বাঁধার জন্য ~g~${InteractionKey} ~w~চাপুন।",
@@ -15370,6 +15687,10 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		fake_plate_inactive = "গাড়ির প্লেট আবার মূল অবস্থায় ফিরে যেতে হয়েছে।"
 	},
 
+	redline = {
+		engine_blowout = "আপনার ইঞ্জিন অতিরিক্ত চাপের কারণে বিকল হয়ে গেছে।"
+	},
+
 	runways = {
 		you_are_not_in_a_plane = "আপনি কোন প্লেনে নেই।",
 		ifr_disabled = "IFR নিষ্ক্রিয় করা হয়েছে।",
@@ -15510,7 +15831,9 @@ OP.Global.Locales.Languages["bn-BD"] = {
 
 	wheel_slash = {
 		hold_to_slash = "[${InteractionKey}] শেষ করতে ধরুন",
-		slashing_tire = "টায়ার কেটানো হচ্ছে"
+		slashing_tire = "টায়ার কেটানো হচ্ছে",
+		removing_wheel = "চাকা অপসারিত করা হচ্ছে",
+		attaching_wheel = "চাকা সংযুক্ত করা হচ্ছে"
 	},
 
 	-- weapons/*
@@ -15674,7 +15997,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		bleeding_with_injury = "${label} আঘাতের সাথে রক্তস্রাব হচ্ছে",
 		bleeding_reduced = "রক্তস্রাব কমে গেছে",
 		bleeding_self_stopped = "রক্তস্রাব নিজেই বন্ধ হয়ে গেছে",
-		thanks_for_loot = "আপনার স্বচ্ছন্দ অশক্ত হওয়ার সময় আপনাকে লুট করেছে। কিছু আইটেম ছাড়া হওয়া হতে পারে। ইয়েমন খবর যাচ্ছে যে, এটা ন্যান্সির কাছ থেকে হয়েছিল।",
+		thanks_for_loot = "আপনার অজ্ঞান অবস্থায় ছিনতাই করা হয়েছে। কিছু জিনিস অদৃশ্য হতে পারে। গুজব ছড়িয়েছে এটি ন্যান্সি ছিল।",
 		guards_found_unconcious = "গার্ডগুলি আপনাকে অসচেতন পায়েছেন এবং আপনাকে কারাগার হাসপাতালে নিয়ে গিয়েছেন।",
 		serial_number = "সিরিয়াল নম্বর: ${serialNumber}<br><i>এই সহিত হয়েছে ${fullName} (#${characterId}) এর নামে।</i>",
 		serial_number_unknown = "সিরিয়াল নম্বর: ${serialNumber}<br><i>এই সহিত নমানিবাদ।</i>",
@@ -15728,7 +16051,7 @@ OP.Global.Locales.Languages["bn-BD"] = {
 		left_shoulder = "বাঁ কন্ঠস্থল",
 		right_wrist = "ডান কবজার জন্য কলাস্থল",
 		left_wrist = "বাঁ কবজার জন্য কলাস্থল",
-		tounge = "জিহ্বা",
+		tounge = "জিভ",
 		upper_lip = "ঊর্ধ্বতন ঠোঁট",
 		lower_lip = "নিচের ঠোঁট",
 		right_thigh = "ডান ফেমুর",
